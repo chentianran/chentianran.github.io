@@ -5,15 +5,22 @@
 
     <body>
 
-    {% include header.html %}
+       {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrap">
-      {{ content }}
-      </div>
-    </div>
+	<div id="ww">
+	<div class="container">
+	    <div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
 
-    {% include footer.html %}
+		    <!-- img src="assets/img/user.png" alt="Tianran Chen" -->
+		    {{ content }}
+
+		</div><!-- /col-lg-8 -->
+	    </div><!-- /row -->
+	</div> <!-- /container -->
+	</div>
+
+	{% include footer.html %}
 
     </body>
 </html>
