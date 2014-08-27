@@ -21,8 +21,12 @@ polynomial equations has, counting multiplicity, is bounded by
 the mixed volume of Newton polytopes of the system.
 This bound is usually much tighter than another well studied bound, the Bezout number.
 
-More detailed discussion can be found on my 
-[main page on mixed volume and mixed cells](research/mixcell/).
+* What is mixed volume?
+* Bernshtein's theorem and BKK bound for polynomial systems
+* Mixed volume computation via fine mixed subdivision
+* Parallel mixed volume and mixed cells computation
+* MixedVol-3 a parallel software package for computing mixed cells
+
 
 Homotopy continuation methods
 =============================
@@ -34,6 +38,18 @@ The basic idea behind such methods is to deform a hard problem in to
 an easier problem or into a problem whose solutions are already known,
 and use the solutions of the easier problem to find those of the harder problem.
 
-More detailed discussion can be found on my 
-[main page on homotopy continuation methods](research/homotopy/).
+* What is homotopy continuation methods?
+* Real homotopy continuation methods
+* Framework for homotopy continuation methods over the complex numbers
+* Polyhedral homotopy 
+
+
+Binomial systems
+================
+
+A binomial is a polynomial having exactly two terms.
+
+A system of binomial equations (or simply binomial systems) can be solved easily
+regardless the degree and the number of variables.
+
 
