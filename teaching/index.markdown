@@ -50,8 +50,8 @@ then no revisition is needed.
     of the type of problems we will be dealing with this semester.
     Students are not expected to give complete solutions.
     Some of the problems will be revisited in future homework assignments.
-* Homework 2 (Due date: 9/08) Solutions
-* Homework 3 (Due date: 9/15) Solutions
+* Homework 2 (Due date: 9/15)
+* Homework 3 (Due date: 9/22)
 
 
 Lecture notes and in-class worksheets
@@ -62,10 +62,11 @@ Be aware that these notes may not be up to date.
 * [Lecture 2](299-lec2.pdf): (9/03)
     In this lecture we discuss basic concepts such as
     statements, negation, disjunction, conjunction, and implication.
-* Lecture 3: (9/05)
+* [Lecture 3](299-lec3.pdf): (9/05)
     This lecture discusses more advanced constructions
     including the converse, inverse, and the contrapositive of a logical implication
     together with biconditionals.
+    With those, we define the concept of tautology and contradiction.
 
 
 
