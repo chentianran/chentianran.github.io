@@ -37,11 +37,11 @@ students are expected to revise the solutions
 according to the remarks and suggestions provided by the instructor.
 This revision is due the following Monday (together with the original graded work),
 and it will also be graded.
-In other words, _each homework assignment is graded twice_: 
+In other words, each homework assignment is graded twice: 
 once for the first draft and once for the revision. 
 
 In writing the revision, students are 
-_only required to address issues pointed out by the instructor_.
+only required to address issues pointed out by the instructor.
 In particular, if the instructor provided no comment on the (first draft),
 then no revisition is needed.
 
@@ -50,7 +50,8 @@ then no revisition is needed.
     of the type of problems we will be dealing with this semester.
     Students are not expected to give complete solutions.
     Some of the problems will be revisited in future homework assignments.
-* Homework 2 (Due date: 9/15)
+* [Homework 2](299-hw2.pdf) (Due date: 9/15):
+    This homework assignment focus on logic but also include some simple proofs.
 * Homework 3 (Due date: 9/22)
 
 
@@ -59,14 +60,17 @@ Lecture notes and in-class worksheets
 
 Be aware that these notes may not be up to date.
 
-* [Lecture 2](299-lec2.pdf): (9/03)
+* [Lecture 2](299-lec2.pdf) (9/03):
     In this lecture we discuss basic concepts such as
     statements, negation, disjunction, conjunction, and implication.
-* [Lecture 3](299-lec3.pdf): (9/05)
+* [Lecture 3](299-lec3.pdf) (9/05):
     This lecture discusses more advanced constructions
     including the converse, inverse, and the contrapositive of a logical implication
     together with biconditionals.
     With those, we define the concept of tautology and contradiction.
+* Lecture 4 (9/08):
+    This lecture covers logical equivalence, certain "laws" of logic,
+    and quantified statements.
 
 
 
