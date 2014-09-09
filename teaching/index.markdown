@@ -43,13 +43,16 @@ once for the first draft and once for the revision.
 In writing the revision, students are 
 only required to address issues pointed out by the instructor.
 In particular, if the instructor provided no comment on the (first draft),
-then no revisition is needed.
+then no revision is needed.
 
 * [Homework 1](299-hw1.pdf) (Due date: 9/03): 
     The purpose of this homework is to give students a preview 
     of the type of problems we will be dealing with this semester.
     Students are not expected to give complete solutions.
     Some of the problems will be revisited in future homework assignments.
+    For this assignment, the first draft worth 70%,
+    while the revision worth 30%.
+    ([Hints/suggestions for revision](299-hw1-hints.pdf))
 * [Homework 2](299-hw2.pdf) (Due date: 9/15):
     This homework assignment focus on logic but also include some simple proofs.
 * Homework 3 (Due date: 9/22)
