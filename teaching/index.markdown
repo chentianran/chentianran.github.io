@@ -71,9 +71,14 @@ Be aware that these notes may not be up to date.
     including the converse, inverse, and the contrapositive of a logical implication
     together with biconditionals.
     With those, we define the concept of tautology and contradiction.
-* Lecture 4 (9/08):
+* [Lecture 4](299-lec4.pdf) (9/08):
     This lecture covers logical equivalence, certain "laws" of logic,
     and quantified statements.
+* [Lecture 5](299-lec5.pdf) (9/10):
+    More examples of quantified statements and the negation of quantified statements.
+    This lecture also includes a quick review of logic (chapter 2).
+* Lecture 6 (9/12):
+    Direct proofs via a few examples.
 
 
 
