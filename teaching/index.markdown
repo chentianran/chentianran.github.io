@@ -24,6 +24,8 @@ serves as a transition course between calculus and more advanced mathematical su
 | 9/03 -- 9/05 | Chapter 2: logic               |
 | 9/08 -- 9/12 | Chapter 2: more logic          |
 |              | Chapter 3: direct proofs       |
+| 9/15 -- 9/19 | Chapter 3: more proofs         |
+
 
 Homework assignments
 ====================
@@ -55,7 +57,7 @@ then no revision is needed.
     ([Hints/suggestions for revision](299-hw1-hints.pdf))
 * [Homework 2](299-hw2.pdf) (Due date: 9/15):
     This homework assignment focus on logic but also include some simple proofs.
-* Homework 3 (Due date: 9/22)
+* [Homework 3](299-hw3.pdf) (Due date: 9/22)
 
 
 Lecture notes and in-class worksheets
@@ -77,8 +79,10 @@ Be aware that these notes may not be up to date.
 * [Lecture 5](299-lec5.pdf) (9/10):
     More examples of quantified statements and the negation of quantified statements.
     This lecture also includes a quick review of logic (chapter 2).
-* Lecture 6 (9/12):
-    Direct proofs via a few examples.
+* [Lecture 6](299-lec6.pdf) (9/12):
+    Direct proofs via a few examples involving divisibility.
+* Lecture 7 (9/15):
+    Proofs via multiple cases and contrapositives (involving divisibility and congruence).
 
 
 
