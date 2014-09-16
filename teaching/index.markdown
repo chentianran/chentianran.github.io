@@ -25,6 +25,7 @@ serves as a transition course between calculus and more advanced mathematical su
 | 9/08 -- 9/12 | Chapter 2: more logic          |
 |              | Chapter 3: direct proofs       |
 | 9/15 -- 9/19 | Chapter 3: more proofs         |
+|              | Chapter 4: more proofs         |
 
 
 Homework assignments
@@ -81,8 +82,10 @@ Be aware that these notes may not be up to date.
     This lecture also includes a quick review of logic (chapter 2).
 * [Lecture 6](299-lec6.pdf) (9/12):
     Direct proofs via a few examples involving divisibility.
-* Lecture 7 (9/15):
-    Proofs via multiple cases and contrapositives (involving divisibility and congruence).
+* [Lecture 7](299-lec7.pdf) (9/15):
+    Proofs via multiple cases and contrapositives.
+* Lecture 8 (9/17):
+    Congruence and proofs involving congruence.
 
 
 
