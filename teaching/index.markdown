@@ -18,14 +18,16 @@ serves as a transition course between calculus and more advanced mathematical su
 * Exam 2: Nov. 13
 * Final exam: Dec. 10
 
-| Week         | Topic                          |
-|--------------|--------------------------------|
-| 8/27 -- 8/29 | Preview/overview of the course |
-| 9/03 -- 9/05 | Chapter 2: logic               |
-| 9/08 -- 9/12 | Chapter 2: more logic          |
-|              | Chapter 3: direct proofs       |
-| 9/15 -- 9/19 | Chapter 3: more proofs         |
-|              | Chapter 4: more proofs         |
+| Week         | Topic                            |
+|--------------|----------------------------------|
+| 8/27 -- 8/29 | Preview/overview of the course   |
+| 9/03 -- 9/05 | Chapter 2: logic                 |
+| 9/08 -- 9/12 | Chapter 2: more logic            |
+|              | Chapter 3: direct proofs         |
+| 9/15 -- 9/19 | Chapter 3: more proofs           |
+|              | Chapter 4: more proofs           |
+| 9/22 -- 9/26 | Chapter 1: basic set theory      |
+|              | Chapter 4: proofs involving sets |
 
 
 Homework assignments
@@ -59,7 +61,11 @@ then no revision is needed.
 * [Homework 2](299-hw2.pdf) (Due date: 9/15):
     This homework assignment focus on logic but also include some simple proofs.
 * [Homework 3](299-hw3.pdf) (Due date: 9/22)
-
+    This homework assignment focuses on proofs involving divisibility.
+* [Homework 4](299-hw4.pdf) (Due date: 9/29)
+    This homework assignment studies the congruence relation among integers.
+* [Homework 5](299-hw5.pdf) (Due date: 10/01)
+    This is a short homework assignment that includes 3 problems on set theory.
 
 Lecture notes and in-class worksheets
 =====================================
