@@ -3,8 +3,25 @@ layout: default
 title: Research
 ---
 
-My current research focuses on numerical solutions to systems of polynomial equations
-and the more general field of numerical algebraic geometry.
+My research revolves around the numerical methods for solving
+systems of nonlinear equations (or simply nonlinear systems)
+which is an important problem in mathematics
+that has a wide range of applications in sciences and engineering.
+My recent research has been focused on a major class of numerical methods 
+known as the _homotopy continuation methods_, 
+which deform the given nonlinear system into a closely related system that is trivial to solve. 
+Then continuation methods are applied to track paths 
+originating at the known solutions of the trivial system
+and ending at the solutions of the given system.
+In the last decades, these methods have been proven to be reliable, efficient, and highly parallel.
+It is now used as the basic building block for other numerical methods, 
+such as _numerical irreducible decomposition_ algorithms, 
+opening up new possibilities.
+My work touches many different aspects of this subject
+including its theoretical foundation, 
+the construction of new homotopy methods for solving specific problems,
+its application to many different areas of science,
+as well as its high performance parallel implementations.
 
 Mixed volume and mixed cells
 ============================
@@ -16,16 +33,14 @@ their relative positions.
 This concept has a wide range of applications in geometry and combinatorics. 
 In the recent decades, it has found important applications in the study of 
 system of polynomial equations (i.e. algebraic geometry):
-by the Bershtein's theorem, the number of isolated solutions a system of
+by the Bershtein's theorem: the number of isolated nonzero solutions a system of
 polynomial equations has, counting multiplicity, is bounded by
 the mixed volume of Newton polytopes of the system.
 This bound is usually much tighter than another well studied bound, the Bezout number.
 
-* What is mixed volume?
-* Bernshtein's theorem and BKK bound for polynomial systems
-* Mixed volume computation via fine mixed subdivision
-* Parallel mixed volume and mixed cells computation
-* MixedVol-3 a parallel software package for computing mixed cells
+_MixedVol-3_ is a software package that computes mixed volume and mixed cells using fast numerical algorithms. 
+It is capable of performing computation in parallel on a variety of parallel computer architectures
+including multi-core architecture, NUMA architecture, computer clusters, and distributed environment.
 
 
 Homotopy continuation methods
@@ -38,18 +53,17 @@ The basic idea behind such methods is to deform a hard problem in to
 an easier problem or into a problem whose solutions are already known,
 and use the solutions of the easier problem to find those of the harder problem.
 
-* What is homotopy continuation methods?
-* Real homotopy continuation methods
-* Framework for homotopy continuation methods over the complex numbers
-* Polyhedral homotopy 
-
 
 Binomial systems
 ================
 
-A binomial is a polynomial having exactly two terms.
-
-A system of binomial equations (or simply binomial systems) can be solved easily
-regardless the degree and the number of variables.
-
+A _binomial system_ is a polynomial system having exactly two terms on each equation.
+Solving such systems is an important step in the Polyhedral homotopy method,
+since our target system is generally deformed into binomial systems. In addition,
+they also have a great number of applications, relating to toric algebraic geometry,
+particle physics, statistics, and many other subjects.
+Basic tools for such computation are generally developed
+in the context of _Laurent binomial ideals_
+where the problem of solving a binomial system is reduced
+to the geometric problem of understanding a corresponding lattice polytope.
 
