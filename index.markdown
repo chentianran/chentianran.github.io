@@ -74,6 +74,6 @@ Scientific Software
 -   Sole developer of __BinomialSolver__: 
     A parallel numerical solver for binomial systems.
 
-All software available from [www.hom4ps3.org](www.hom4ps3.org).
+All software available from [www.hom4ps3.org](http://www.hom4ps3.org).
 
 
