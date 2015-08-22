@@ -26,15 +26,24 @@ Mixed volume: the definition
 Given \\(n\\) convex bodies (nonempty convex sets) \\(A_1,\ldots,A_n\\) in \\(\mathbb{R}^n\\),
 we consider their scaled versions \\(\lambda_1 A_1, \ldots, \lambda_n A_n\\) by positive
 scaling factors \\(\lambda_1,\ldots,\lambda_n\\).
+It can be shown that the Minkowski sum 
+\\(\lambda_1 \, A_1 \, + \, \cdots \, + \, \lambda_n \, A_n\\)
+is also a convex body.
 <div>
 \[
     \text{Vol}_n(\lambda_1 \, A_1 \, + \, \cdots \, + \, \lambda_n \, A_n)
 \]
 </div>
 is a homogeneous polynomial in the variables \\(\lambda_1,\ldots,\lambda_n\\).
-This is the contend of the Minkowki Theorem and essence of mixed volume.
+This is the content of the Minkowki Theorem and essence of mixed volume.
 This polynomial contains almost everything one needs to understand the concept
 of mixed volume.
+
+The notation
+<div>
+\[ \operatorname{MVol} (A_1, \ldots, A_n) \]
+</div>
+is often used.
 
 
 Simple case: mixed area
