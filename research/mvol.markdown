@@ -6,7 +6,7 @@ title: Mixed volume
 What is mixed volume
 ====================
 
-Given $n$ convex bodies (nonempty convex sets) in $R^n$.
+Given \\(n\\) convex bodies (nonempty convex sets) in \\(R^n\\).
 <div>
 \[
     vol(A_1,A_2)
