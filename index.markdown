@@ -58,33 +58,38 @@ Publications
 -   **Tianran Chen**, Tien-Yien Li, and Xiaoshen Wang.  
     "Theoretical aspects of mixed volume computation via mixed subdivision".  
     *Communications in Information and Systems* (2014)  
-    [ [link](http://dx.doi.org/10.4310/CIS.2014.v14.n4.a1) ].
+    [ [pdf](research/papers/mvol.pdf) ]
+    [ [link](http://dx.doi.org/10.4310/CIS.2014.v14.n4.a1) ]
     [ [bibtex](research/papers/chen_theoretical_2014.bib) ].
 
 -   Dhagash Mehta, **Tianran Chen**, Jonathan Hauenstein, and David Wales.  
     "Newton homotopies for sampling stationary points of potential energy landscapes".  
     *The Journal of Chemical Physics 141 (12), 121104* (2014)  
     [ [arXiv](http://arxiv.org/abs/1412.3810) ]
-    [ [link](http://dx.doi.org/10.1063/1.4896657) ].
+    [ [link](http://dx.doi.org/10.1063/1.4896657) ]
     [ [bibtex](research/papers/mehta_newton_2014.bib) ].
 
 -   **Tianran Chen** and Tien-Yien Li.  
     "Solutions to systems of binomial equations".  
     *Annales Mathematicae Silesianae 28:7–34* (2014).
+    [ [bibtex](research/papers/chen_solutions_2014.bib) ].
 
--   Hom4PS-3: A Parallel Numerical Solver for Systems of Polynomial Equations Based on Polyhedral Homotopy Continuation Methods.
-    (with Tsung-Lin Lee and Tien-Yien Li)
-    *Mathematical Software -- ICMS 2014 -- 4th International Congress, Seoul, South Korea, August 5-9, 2014. Proceedings 8592:183–190*
-    <http://dx.doi.org/10.1007/978-3-662-44199-2_30>
+-   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
+    "Hom4PS-3: A Parallel Numerical Solver for Systems of Polynomial Equations Based on Polyhedral Homotopy Continuation Methods" (Extended abstract).  
+    *Mathematical Software -- ICMS 2014 -- 4th International Congress, Seoul, South Korea, August 5-9, 2014. Proceedings 8592:183–190*  
+    [ [link](http://dx.doi.org/10.1007/978-3-662-44199-2_30) ]
+    [ [bibtex](research/papers/chen_hom4ps3_2014.bib) ].
 
--   Mixed cells computation in parallel.
-    (with Tsung-Lin Lee and Tien-Yien Li)
+-   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
+    "Mixed cells computation in parallel".  
     *Taiwanese Journal of Mathematics 18(1):93–114* (2014).
+    [ [bibtex](research/papers/chen_mixed_2014.bib) ].
 
--   Spherical projective path tracking for homotopy continuation methods.
-    (with Tien-Yien Li).
-    *Communications in Information and Systems 12(3):195-220* (2012)
-    <http://dx.doi.org/10.4310/CIS.2012.v12.n3.a2>
+-   **Tianran Chen** and Tien-Yien Li.  
+    "Spherical projective path tracking for homotopy continuation methods".  
+    *Communications in Information and Systems 12(3):195-220* (2012)  
+    [ [link](http://dx.doi.org/10.4310/CIS.2012.v12.n3.a2) ]
+    [ [bibtex](research/papers/chen_spherical_2014.bib) ].
 
 Scientific Software
 -------------------
