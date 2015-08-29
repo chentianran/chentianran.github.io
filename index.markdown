@@ -21,6 +21,14 @@ MixedVol-3, and the binomial system solver module inside Hom4PS-3.
 
 My detailed CV is [here](cv.pdf).
 
+This semester, I am teaching MTH-309
+
+- Office: C237 Wells Hall
+- Office hour:
+    * Mon 3:00pm -- 4:00pm, 5:30pm -- 6:00pm
+    * Wed 3:30pm -- 4:00pm, 5:30pm -- 6:00pm
+    * Thu 3:00pm -- 4:00pm
+
 
 Research Interests
 ------------------
