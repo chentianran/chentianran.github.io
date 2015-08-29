@@ -38,10 +38,22 @@ Research Interests
 Publications
 ------------
 
--   Exploring the potential energy landscape of the Thomson problem via Newton Homotopies.
-    (with Dhagash Mehta, David Wales, and John Morgan)
-    *The Journal of Chemical Physics 142 194113* (2015)
-    [(JCP)](http://dx.doi.org/10.1063/1.4921163).
+-   **Tianran Chen**, Tsung-Lin Lee, Tien-Yien Li.
+    "Mixed cell computation in Hom4PS-3".
+    *Numerical Algebraic Geometry: Special Issue of Journal of Symbolic Computation*
+    (To appear).
+
+-   **Tianran Chen** and Dhagash Mehta.
+    "Parallel degree computation for binomial systems".
+    *Numerical Algebraic Geometry: Special Issue of Journal of Symbolic Computation*
+    (To appear).
+
+
+-   Dhagash Mehta, **Tianran Chen**, David Wales, and John Morgan.
+    "Exploring the potential energy landscape of the Thomson problem via Newton homotopies".
+    *The Journal of Chemical Physics 142 194113* (2015)  
+    [ [ link ] ](http://dx.doi.org/10.1063/1.4921163)
+    [ [ bibtex ] ](papers/mehta_exploring_2015.bib).
 
 -   Theoretical aspects of mixed volume computation via mixed subdivision.
     (with Tien-Yien Li and Xiaoshen Wang)
@@ -83,4 +95,3 @@ Scientific Software
     A parallel numerical solver for binomial systems.
 
 All software available from [www.hom4ps3.org](http://www.hom4ps3.org).
-
