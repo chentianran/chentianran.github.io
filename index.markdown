@@ -49,7 +49,6 @@ Publications
     *Numerical Algebraic Geometry: Special Issue of Journal of Symbolic Computation*
     (To appear).
 
-
 -   Dhagash Mehta, **Tianran Chen**, David Wales, and John Morgan.  
     "Exploring the potential energy landscape of the Thomson problem via Newton homotopies".  
     *The Journal of Chemical Physics 142 194113* (2015)  
@@ -83,7 +82,7 @@ Publications
 
 -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
     "Mixed cells computation in parallel".  
-    *Taiwanese Journal of Mathematics 18(1):93–114* (2014).
+    *Taiwanese Journal of Mathematics 18(1):93–114* (2014).  
     [ [bibtex](research/papers/chen_mixed_2014.bib) ].
 
 -   **Tianran Chen** and Tien-Yien Li.  
@@ -95,11 +94,11 @@ Publications
 Scientific Software
 -------------------
 
--   Core developer of __Hom4PS-3__:
+-   __Hom4PS-3__:
     A parallel numerical solver for systems of polynomial equations based on the Polyhedral Homotopy Method.
--   Core developer of __MixedVol-3__:
+-   __MixedVol-3__:
     A parallel software package for computing mixed volume, BKK bound, and fine mixed cells.
--   Sole developer of __BinomialSolver__:
+-   __BinomialSolver__:
     A parallel numerical solver for binomial systems.
 
 All software available from [www.hom4ps3.org](http://www.hom4ps3.org).
