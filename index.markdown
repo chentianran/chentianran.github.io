@@ -83,6 +83,7 @@ Publications
 -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
     "Mixed cells computation in parallel".  
     *Taiwanese Journal of Mathematics 18(1):93–114* (2014).  
+    [ [line](http://dx.doi.org/10.11650/tjm.18.2014.3276) ]
     [ [bibtex](research/papers/chen_mixed_2014.bib) ].
 
 -   **Tianran Chen** and Tien-Yien Li.  
