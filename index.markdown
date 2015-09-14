@@ -49,7 +49,7 @@ Publications
     *Numerical Algebraic Geometry: Special Issue of Journal of Symbolic Computation*
     (To appear).
 
--   Dhagash Mehta, **Tianran Chen**, David Wales, and John Morgan.  
+-   Dhagash Mehta, **Tianran Chen**, John Morgan, and David Wales.  
     "Exploring the potential energy landscape of the Thomson problem via Newton homotopies".  
     *The Journal of Chemical Physics 142 194113* (2015)  
     [ [link](http://dx.doi.org/10.1063/1.4921163) ]
