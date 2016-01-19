@@ -15,19 +15,19 @@ and other aspects of numerical algebraic geometry.
 In particular, my recent works revolve around the
 *polyhedral homotopy continuation method* for solving polynomial systems.
 
-I am among the core developers of several software packages/programs for
+I am among the core developers of several software packages for
 numerical computation: [Hom4PS-3](http://www.hom4ps3.org),
 MixedVol-3, and the binomial system solver module inside Hom4PS-3.
 
 My detailed CV is [here](cv.pdf).
 
-This semester, I am teaching [MTH-309](teaching/)
+This semester, I am teaching [MTH-299](teaching/)
 
 - Office: C237 Wells Hall
 - Office hour:
-    * Mon 3:00pm -- 4:00pm
-    * Wed 3:30pm -- 4:00pm
-    * Thu 3:00pm -- 4:00pm
+    * Mon 11:15am -- 12:00pm
+    * Wed 11:15am -- 12:00pm and 3:30pm -- 4:00pm
+    * Fri 11:15am -- 12:00pm
     * ...and by appointment
 
 
@@ -49,6 +49,20 @@ Publications
     *Numerical Algebraic Geometry: Special Issue of Journal of Symbolic Computation*
     (To appear).
 
+-   Dhagash Mehta, **Tianran Chen**, John Morgan, and David Wales.  
+    Response to "Comment on 'Exploring the potential energy landscape
+    of the Thomson problem via Newton homotopies'".  
+    *The Journal of Chemical Physics 143, 247102* (2015)  
+    [ [link](http://dx.doi.org/10.1063/1.4939011) ]
+    [ [bibtex](research/papers/mehta_response_2015.bib) ].
+
+-   **Tianran Chen** and Tien-Yien Li.  
+    "Homotopy continuation method for solving systems of
+    nonlinear and polynomial equations".  
+    *Communications in Information and Systems 15(2):119--307* (2015).  
+    [ [link](http://dx.doi.org/10.4310/CIS.2015.v15.n2.a1) ]
+    [ [bibtex](research/papers/chen_homotopy_2015.bib) ].
+
 -   Dhagash Mehta, **Tianran Chen**, David Wales, and John Morgan.  
     "Exploring the potential energy landscape of the Thomson problem via Newton homotopies".  
     *The Journal of Chemical Physics 142 194113* (2015)  
@@ -65,6 +79,7 @@ Publications
 -   Dhagash Mehta, **Tianran Chen**, Jonathan Hauenstein, and David Wales.  
     "Newton homotopies for sampling stationary points of potential energy landscapes".  
     *The Journal of Chemical Physics 141 (12), 121104* (2014)  
+    (Selected for a Journal of Chemical Physics Editors' Choice for 2014)  
     [ [arXiv](http://arxiv.org/abs/1412.3810) ]
     [ [link](http://dx.doi.org/10.1063/1.4896657) ]
     [ [bibtex](research/papers/mehta_newton_2014.bib) ].
@@ -81,8 +96,9 @@ Publications
     [ [bibtex](research/papers/chen_hom4ps3_2014.bib) ].
 
 -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
-    "Mixed cells computation in parallel".  
+    "Mixed volume computation in parallel".  
     *Taiwanese Journal of Mathematics 18(1):93–114* (2014).  
+    [ [link](http://dx.doi.org/10.11650/tjm.18.2014.3276) ]
     [ [bibtex](research/papers/chen_mixed_2014.bib) ].
 
 -   **Tianran Chen** and Tien-Yien Li.  

@@ -3,19 +3,32 @@ layout: default
 title: Teaching
 ---
 
-MTH-309
+MTH-299
 =======
 
-This course will cover the basic concepts of linear algebra:
-linear systems of equations, matrices, vector spaces,
-linear independence, linear transformations, determinants, and
-eigenvalues and eigenvectors, and if time permits:
-inner product spaces.
+This course acts as a bridge from your training in calculus which typically
+focuses on formulas and calculations to that of higher mathematics which
+focuses on abstraction, problem solving, and proof.
+You will be taught to think independently, to digest abstract concepts and
+tools from higher mathematics, and to express yourself clearly in a
+mathematical proof.
+You will be exposed to and learn some basic concepts from real analysis
+(rigorous calculus), linear algebra (things similar to vectors and matrices
+from vector calculus), number theory, and group theory.
+You will be expected to become proficient with the structure of mathematical logic,
+including truth tables, and you will be expected to become proficient in some
+basic styles of proof, such as: direct proof, proof by contradiction, proof by
+induction, proof by contrapositive, equivalences, and more.
 
 * [Syllabus](syllabus.pdf)
-* Final exam: Dec. 14
-* Textbook: Steven Leon, *Linear Algebra, 8th edition*. Prentice Hall, 2010.
-* Class meetings: Mon. Wed. 4:10pm -- 5:30pm A334 Wells Hall.
+* Exams:
+    - Feb. 25, 2016
+    - Apr. 21, 2016.
+* Final exam: May 2, 2016 5:45pm -- 7:45pm
+* Textbook: How to Think Like a Mathematician (by Kevin Houston).
+* Online components:
+    - [D2L portal](https://d2l.msu.edu)
+    - [Piazza forum](https://piazza.com/class/iihmrxrmz9w3v)
 
 Tentative schedule
 ------------------
