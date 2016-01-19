@@ -86,7 +86,7 @@ Publications
 
 -   **Tianran Chen** and Tien-Yien Li.  
     "Solutions to systems of binomial equations".  
-    *Annales Mathematicae Silesianae 28:7–34* (2014).
+    *Annales Mathematicae Silesianae 28:7–34* (2014).  
     [ [bibtex](research/papers/chen_solutions_2014.bib) ].
 
 -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
