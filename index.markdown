@@ -7,27 +7,22 @@ title: Tianran Chen
 Hi, I am Tianran Chen
 =====================
 
-I am a research instructor at Michigan State University.
-My research interests span a wide range of subjects in numerical analysis
-and scientific computation as well as their applications in science and engineering.
-My current research focuses on numerical solutions to nonlinear system of equations
-and other aspects of numerical algebraic geometry.
-In particular, my recent works revolve around the
-*polyhedral homotopy continuation method* for solving polynomial systems.
+I am an Assistant Professor at Auburn University, Montgomery in the
+Department of Mathematics and Computer Science.
+My main research interests are numerical analysis and scientific computing 
+as well as their applications in science and engineering.
+My current research focuses on numerical solutions to systems of polynomial equations.
+You can find out more about my research [here](research/).
 
-I am among the core developers of several software packages for
-numerical computation: [Hom4PS-3](http://www.hom4ps3.org),
-MixedVol-3, and the binomial system solver module inside Hom4PS-3.
+This semester I am teaching 
+[MATH-1120D](teaching/1120),
+[MATH-1610A](teaching/1610),
+[MATH-1620A](teaching/1620).
 
-My detailed CV is [here](cv.pdf).
-
-This semester, I am teaching [MTH-299](teaching/)
-
-- Office: C237 Wells Hall
+- Office: Goodwyn Hall 
 - Office hour:
-    * Mon 11:15am -- 12:00pm
-    * Wed 11:15am -- 12:00pm and 3:30pm -- 4:00pm
-    * Fri 11:15am -- 12:00pm
+    * Mon, Wed 3:00pm -- 5:00pm
+    * Tue, Thu 2:00pm -- 3:00pm
     * ...and by appointment
 
 
