@@ -59,11 +59,18 @@ Similarly, any smart devices with internet capabilities are also not allowed.
 
 ### Quizzes
 
-### Mid-term exam
+There will be a short quiz at the beginning of _every_ class meeting to test
+our understanding of the material discussed in the previous meeting.
+No makeup quiz will be offerred. 
+However, in computing the final grade, up to four missed quizzes will be dropped.
+In other words, each student can miss up to four quizzes without affecting the
+final grade.
+In addition, two of the lowest quiz scores (that are not missed) will also be dropped.
 
-### Final exam
+### Exams
 
-### Homework
+The in-class mid-term and final exams scheduled in this syllabus are mandatory 
+and constitute major part of your grade.
 
 ### Grade composition
 
