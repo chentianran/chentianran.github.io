@@ -1,0 +1,19 @@
+---
+layout: default
+title: MATH-1610
+---
+
+# MATH-1610 (Calculus I) Fall 2016 Course Syllabus
+
+### When & Where
+
+* Time: Mon, Wed 5:00pm -- 6:45pm
+* Room: 218 Goodwyn Hall
+
+### Instructor
+
+* Dr. Tianran Chen
+* Email: <tchen1@aum.edu>
+* Web page: <http://www.tianranchen.org>
+
+
