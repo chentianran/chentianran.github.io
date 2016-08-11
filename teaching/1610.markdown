@@ -12,8 +12,50 @@ title: MATH-1610
 
 ### Instructor
 
-* Dr. Tianran Chen
+My name is _Dr. Tianran Chen_, and my job is to help you to succeed in this class.
+I will be happy to discuss issues related to this course (or anything mathematical)
+in person or through email:
+
 * Email: <tchen1@aum.edu>
+* Office: 301A Goodwyn Hall
+* Office hour: MW 3pm -- 5pm, TT 2pm -- 3pm
 * Web page: <http://www.tianranchen.org>
 
+### What we will learn
 
+This is the first course in the calculus sequence.
+We will focus on basic calculus concepts involving functions of one variable:
+limits, derivatives, and integrals. 
+Conceptual understanding is paramount. 
+Mathematical rigor will be kept to the minimum, 
+and concepts will be illustrated in at least three different ways: symbolically, geometrically, and numerically. 
+
+### Prerequisite
+
+In order succeed in this class, certain basic mathematical skills are necessary.
+In particular, we need to feel comfortable manipulating algebraic expressions
+and trigonomitric functions.
+Formally, the prerequisite can be satisifed by any one of the following:
+
+* MATH-1120 (Precalculus algebra) _and_ MATH-1550 (Trigonometry)
+* MATH-1150 (Precalculus algebra with trigonometry)
+* An ACT Math score of 25 or higher (620 on SAT)
+* An appropriate score in the AUM Math Placement Test.
+
+### Textbook
+
+_Calculus: Early Transcendentals_ (6th edition) by Larson & Edwards
+
+### Policy for calculators and smart devices
+
+You may use scientific calculators for each test, but you will be required to show all work for the part of the mid-term exam and the final exam and if you rely on calculators for answers you will get a zero credit. Graphing calculators such as TI-89 or TI-92 are not allowed on any of the exams. Laptop computers, iPads, cell phones or other devices with internet capabilities are also not allowed. 
+
+### Grade composition
+
+Your final grade is determined according to your overall performance of quizzes, the mid-term exam, and the final exam, and is calculated according to the following weight.
+
+| Component | Weight |
+|-----------|--------|
+| Quizzes | 50% | 
+| Mid-term Exam | 25% |
+| Final Exam | 25% |
