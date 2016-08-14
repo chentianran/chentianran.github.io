@@ -46,36 +46,60 @@ Formally, the prerequisite can be satisifed by any one of the following:
 
 _Calculus: Early Transcendentals_ (6th edition) by Larson & Edwards
 
+Reading assignment and homework problems will be assigned from the textbook.
+
 ### Attendance and participation
 
 Participation in in-class discussions and activities is an important part 
 of the learning process. 
-Therefore attendance is expected. 
+Therefore class attendance is expected and recorded. 
+It is your responsibility to sign the attendance sheet at each class meeting. 
+Moreover, in order to get a passing grade you should have attended at least 80% 
+of the classes for which attendance was recorded.
+
+### Code of conduct
+
+Please be respectful of other people and use common sense.
+In particular,
+
+* __DO NOT__ use cell phones
+* __DO NOT__ use social media
+* __DO NOT__ take photos without permission
+* __DO NOT__ sleep
+
+Students who violate these rules will be asked to leave the classroom 
+and will not be allowed to return until they have spoken privately with me.
 
 ### Policy for calculators and smart devices
 
-You may use scientific calculators one quizzes or exams for basic arithmetics.
-However, since these are designed to test your skills in algebra and calculus
-(rather than your skill in using a calculator), you shall not rely on caculators
-for algebraic manipulation, differentiation, or integration.
-Therefore advanced graphing calculators such as TI-89 or TI-92 are not allowed 
-on any of the quizzes and exams. 
-Similarly, any smart devices with internet capabilities are also not allowed.
+Scientific calculators or equivalent software programs can be helpful in
+doing homework problems. 
+However, all the quizzes and exams are designed so that no calculator will be needed.
+Therefore calculators or any smart devices with internet capabilities 
+are not allowed on any of the quizzes and exams.
 
 ### Quizzes
 
 There will be a short quiz at the beginning of _every_ class meeting to test
 our understanding of the material discussed in the previous meeting.
-No makeup quiz will be offerred. 
-However, in computing the final grade, up to _three_ missed quizzes will be dropped.
-In other words, each student can miss up to _three_ quizzes without affecting the
-final grade.
-In addition, _two of the lowest_ quiz scores (that are not missed) will also be dropped.
+No makeup quiz will be offerred.
+However, a missing quiz may be excused if valid reasons
+(military assignments, medical issues, family emergency, etc)
+and _proper documentation_ are provided _in advance_.
+
+In computing the final scores, _two of the lowest_ quiz scores (that are not missed) 
+will be dropped.
 
 ### Exams
 
-Two in-class exams and a final exam are mandatory and constitute 
-major parts of your course grade.
+Two in-class exams constitute an important part of your course grade.
+No makeup exams will be offerred,
+but a missing exam may be excused if valid reasons
+(military assignments, medical issues, family emergency, etc)
+and _proper documentation_ are provided _in advance_.
+
+The final exam is mandatory and constitute 
+a major part of your course grade.
 
 ### Grade composition
 
@@ -91,9 +115,20 @@ following weights.
 | Exam 2 | 15%
 | Final Exam | 20% |
 
+### Grading scale 
+
+* A: 90% - 100% 
+* B: 80% - 89% 
+* C: 65% - 79% 
+* D: 55% - 64% 
+* F: 54 or below 
+
+Borderline grades are determined by in-class participation 
+(in discussions and activities) as well as attandence.
+
 ## University policies
 
-**Student Privacy Policy:** The family Education Rights and Privacy Act of 1974, 
+**Student Privacy Policy:** The Family Education Rights and Privacy Act of 1974, 
 as amended, (FERPA) requires institutions receiving federal monies to protect
 the privacy of students' educational records.
 For details go to the AUM's FERPA website: <http://www.aum.edu/academics/Registrars-office>
