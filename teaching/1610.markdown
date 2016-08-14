@@ -7,7 +7,7 @@ title: MATH-1610
 
 ### When & Where
 
-* Time: Mon, Wed 5:00pm -- 6:45pm
+* Time: Mon, Wed 5:00pm -- 6:40pm
 * Room: 218 Goodwyn Hall
 
 ### Instructor
@@ -20,16 +20,15 @@ title: MATH-1610
 
 My job is to help you to succeed in this class.
 I will be happy to discuss issues related to this course 
-(or anything mathematical) in person or via email:
+(or anything mathematical) in person or via email.
 
 ### What we will learn
 
 This is the first course in the calculus sequence.
 We will focus on basic calculus concepts involving functions of one variable:
 limits, derivatives, and integrals. 
-Conceptual understanding is paramount. 
-Mathematical rigor will be kept to the minimum, 
-and concepts will be illustrated in at least three different ways: symbolically, geometrically, and numerically. 
+In this course, conceptual understanding is paramount,
+and mathematical rigor will be kept to the minimum.
 
 ### Prerequisite
 
@@ -47,6 +46,12 @@ Formally, the prerequisite can be satisifed by any one of the following:
 
 _Calculus: Early Transcendentals_ (6th edition) by Larson & Edwards
 
+### Attendance and participation
+
+Participation in in-class discussions and activities is an important part 
+of the learning process. 
+Therefore attendance is expected. 
+
 ### Policy for calculators and smart devices
 
 You may use scientific calculators one quizzes or exams for basic arithmetics.
@@ -62,26 +67,29 @@ Similarly, any smart devices with internet capabilities are also not allowed.
 There will be a short quiz at the beginning of _every_ class meeting to test
 our understanding of the material discussed in the previous meeting.
 No makeup quiz will be offerred. 
-However, in computing the final grade, up to four missed quizzes will be dropped.
-In other words, each student can miss up to four quizzes without affecting the
+However, in computing the final grade, up to _three_ missed quizzes will be dropped.
+In other words, each student can miss up to _three_ quizzes without affecting the
 final grade.
-In addition, two of the lowest quiz scores (that are not missed) will also be dropped.
+In addition, _two of the lowest_ quiz scores (that are not missed) will also be dropped.
 
 ### Exams
 
-The in-class mid-term and final exams scheduled in this syllabus are mandatory 
-and constitute major part of your grade.
+Two in-class exams and a final exam are mandatory and constitute 
+major parts of your course grade.
 
 ### Grade composition
 
 Your final grade is determined according to your overall performance of quizzes, 
-the mid-term exam, and the final exam, and is calculated according to the following weight.
+the in-class exams, and the final exam, and is calculated according to the 
+following weights.
 
-| Component | Weight |
-|-----------|--------|
-| Quizzes | 50% | 
-| Mid-term Exam | 25% |
-| Final Exam | 25% |
+| Component  | Weight |
+|------------|--------|
+| Attendance | 5%     |
+| Quizzes    | 45% | 
+| Exam 1 | 15%% |
+| Exam 2 | 15%
+| Final Exam | 20% |
 
 ## University policies
 
