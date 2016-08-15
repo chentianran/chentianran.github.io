@@ -7,7 +7,7 @@ title: Tianran Chen
 Hi, I am Tianran Chen
 =====================
 
-I am an Assistant Professor at Auburn University, Montgomery (AUM) 
+I am an Assistant Professor at [Auburn University at Montgomery](http://www.aum.edu) 
 in the Department of Mathematics and Computer Science.
 My main research interests are numerical analysis and scientific computing 
 as well as their applications in science and engineering.
@@ -25,6 +25,10 @@ This semester I am teaching
     * Tue, Thu 2:00pm -- 3:00pm
     * ...and by appointment
 
+Schedule
+--------
+
+<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=k7cas66vp4vba2cruqhh4cila8%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FChicago" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 Research Interests
 ------------------
