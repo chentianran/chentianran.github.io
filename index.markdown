@@ -15,9 +15,9 @@ My current research focuses on numerical solutions to systems of polynomial equa
 You can find out more about my research [here](research/).
 
 This semester I am teaching 
-[MATH-1120D](teaching/1120.html),
-[MATH-1610A](teaching/1610.html),
-[MATH-1620A](teaching/1620.html).
+[MATH-1120D](teaching/1120/),
+[MATH-1610A](teaching/1610/),
+[MATH-1620A](teaching/1620/).
 
 - Office: 310A Goodwyn Hall 
 - Office hour:
