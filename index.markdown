@@ -7,19 +7,19 @@ title: Tianran Chen
 Hi, I am Tianran Chen
 =====================
 
-I am an Assistant Professor at Auburn University, Montgomery in the
-Department of Mathematics and Computer Science.
+I am an Assistant Professor at Auburn University, Montgomery (AUM) 
+in the Department of Mathematics and Computer Science.
 My main research interests are numerical analysis and scientific computing 
 as well as their applications in science and engineering.
 My current research focuses on numerical solutions to systems of polynomial equations.
 You can find out more about my research [here](research/).
 
 This semester I am teaching 
-[MATH-1120D](teaching/1120),
-[MATH-1610A](teaching/1610),
-[MATH-1620A](teaching/1620).
+[MATH-1120D](teaching/1120.html),
+[MATH-1610A](teaching/1610.html),
+[MATH-1620A](teaching/1620.html).
 
-- Office: Goodwyn Hall 
+- Office: 310A Goodwyn Hall 
 - Office hour:
     * Mon, Wed 3:00pm -- 5:00pm
     * Tue, Thu 2:00pm -- 3:00pm
