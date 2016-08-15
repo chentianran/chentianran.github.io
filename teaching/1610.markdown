@@ -77,7 +77,7 @@ In particular, you cannot copy (totally or partially) someone else's solutions
 or allow someone else to copy your solutions on quizzes or exams.
 You will receive an "F" in the course if you are caught.
 
-### Policy for calculators and smart devices
+### Calculators/smart devices policy
 
 Scientific calculators or equivalent software programs can be helpful in
 doing homework problems. 
@@ -105,8 +105,8 @@ but a missing exam may be excused if valid reasons
 (military assignments, medical issues, family emergency, etc)
 and _proper documentation_ are provided _in advance_.
 
-The final exam is mandatory and constitute 
-a major part of your course grade.
+The mandatory final exam is scheduled at 5:00pm--7:30pm Dec. 5 2016.
+It constitutes a major part of your course grade.
 
 ### Grade composition
 
@@ -118,8 +118,8 @@ following weights.
 |------------|--------|
 | Attendance | 5%     |
 | Quizzes    | 45% | 
-| Exam 1 | 15%% |
-| Exam 2 | 15%
+| Exam 1     | 15%% |
+| Exam 2     | 15%
 | Final Exam | 20% |
 
 ### Grading scale 
