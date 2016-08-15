@@ -5,14 +5,11 @@ title: MATH-1610
 
 # MATH-1610 Fall 2016 Course Syllabus
 
-### When & Where
+### When, where, and who
 
 * Time: Mon, Wed 5:00pm -- 6:40pm
 * Room: 218 Goodwyn Hall
-
-### Instructor
-
-* Name: Dr. Tianran Chen
+* Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Office: 310A Goodwyn Hall
 * Office hour: MW 3pm -- 5pm, TT 2pm -- 3pm
@@ -204,4 +201,10 @@ For details go to the AUM's FERPA website: <http://www.aum.edu/academics/Registr
 
 ## Calendar
 
+Below is the tentative schedule, and it may not reflect changes announced in class.
+Please check with me for the most up-to-date information.
+
 <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=do4jkapu6fe5n1vf28d9f4cdf4%40group.calendar.google.com&amp;color=%2328754E&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+The instructor reserves the right to adjust the policies outlined in this course syllabus.
+All changes will be clearly communicated to the students in class.
