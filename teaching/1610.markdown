@@ -70,6 +70,13 @@ In particular,
 Students who violate these rules will be asked to leave the classroom 
 and will not be allowed to return until they have spoken privately with me.
 
+### Cheating policy
+
+Cheating of any kind will not be tolerated.
+In particular, you cannot copy (totally or partially) someone else's solutions
+or allow someone else to copy your solutions on quizzes or exams.
+You will receive an "F" in the course if you are caught.
+
 ### Policy for calculators and smart devices
 
 Scientific calculators or equivalent software programs can be helpful in
