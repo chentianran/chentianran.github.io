@@ -14,13 +14,15 @@ title: MATH-1610
 
 * Name: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
-* Office: 301A Goodwyn Hall
+* Office: 310A Goodwyn Hall
 * Office hour: MW 3pm -- 5pm, TT 2pm -- 3pm
 * Web page: <http://www.tianranchen.org>
 
 My job is to help you to succeed in this class.
 I will be happy to discuss issues related to this course 
 (or anything mathematical) in person or via email.
+In addition to the normal office hours listed above,
+alternative meeting time may be arranged.
 
 ### What we will learn
 
@@ -59,8 +61,8 @@ of the classes for which attendance was recorded.
 
 ### Code of conduct
 
-Please be respectful of other people and use common sense.
-In particular,
+Please be respectful of other people in the classroom and use common sense.
+In particular, please...
 
 * __DO NOT__ use cell phones
 * __DO NOT__ use social media
@@ -116,11 +118,11 @@ following weights.
 
 | Component  | Weight |
 |------------|--------|
-| Attendance | 5%     |
-| Quizzes    | 45% | 
-| Exam 1     | 15%% |
-| Exam 2     | 15%
-| Final Exam | 20% |
+| Attendance |  5%    |
+| Quizzes    | 45%    | 
+| Exam 1     | 15%    |
+| Exam 2     | 15%    |
+| Final Exam | 20%    |
 
 ### Grading scale 
 
