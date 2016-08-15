@@ -3,7 +3,7 @@ layout: default
 title: MATH-1610
 ---
 
-# MATH-1610 (Calculus I) Fall 2016 Course Syllabus
+# MATH-1610 Fall 2016 Course Syllabus
 
 ### When & Where
 
@@ -22,7 +22,8 @@ My job is to help you to succeed in this class.
 I will be happy to discuss issues related to this course 
 (or anything mathematical) in person or via email.
 In addition to the normal office hours listed above,
-alternative meeting time may be arranged.
+alternative meeting time may be arranged
+(please give me at least 48hr advanced notice).
 
 ### What we will learn
 
@@ -34,10 +35,10 @@ and mathematical rigor will be kept to the minimum.
 
 ### Prerequisite
 
-In order succeed in this class, certain basic mathematical skills are necessary.
+In order to succeed in this class, certain basic mathematical skills are necessary.
 In particular, we need to feel comfortable manipulating algebraic expressions
-and trigonomitric functions.
-Formally, the prerequisite can be satisifed by any one of the following:
+and functions (including trigonometric, exponential, and logarithmic functions).
+These prerequisite can be satisfied by any one of the following:
 
 * MATH-1120 (Precalculus algebra) _and_ MATH-1550 (Trigonometry)
 * MATH-1150 (Precalculus algebra with trigonometry)
@@ -78,11 +79,17 @@ Cheating of any kind will not be tolerated.
 In particular, you cannot copy (totally or partially) someone else's solutions
 or allow someone else to copy your solutions on quizzes or exams.
 You will receive an "F" in the course if you are caught.
+Please consult Student Handbook for addition guidelines.
 
-### Calculators/smart devices policy
+### Policy for calculators and smart devices
 
 Scientific calculators or equivalent software programs can be helpful in
 doing homework problems. 
+According to AUM Mathematics Department Calculator Policy,
+students are required to have a graphing calculator
+(TI-84 is recommended).
+The use of such calculators may be required for certain homework problems
+or in-class activities.
 However, all the quizzes and exams are designed so that no calculator will be needed.
 Therefore calculators or any smart devices with internet capabilities 
 are not allowed on any of the quizzes and exams.
@@ -91,21 +98,23 @@ are not allowed on any of the quizzes and exams.
 
 There will be a short quiz at the beginning of _every_ class meeting to test
 our understanding of the material discussed in the previous meeting.
-No makeup quiz will be offerred.
+No makeup quiz will be offered.
 However, a missing quiz may be excused if valid reasons
 (military assignments, medical issues, family emergency, etc)
 and _proper documentation_ are provided _in advance_.
+Otherwise, a missing quiz receives a score of zero.
 
-In computing the final scores, _two of the lowest_ quiz scores (that are not missed) 
-will be dropped.
+In computing the final scores, _two of the lowest_ quiz scores 
+(that are not missed) will be dropped.
 
 ### Exams
 
 Two in-class exams constitute an important part of your course grade.
-No makeup exams will be offerred,
+No makeup exams will be offered,
 but a missing exam may be excused if valid reasons
 (military assignments, medical issues, family emergency, etc)
 and _proper documentation_ are provided _in advance_.
+Otherwise, a missing exam receives a score of zero.
 
 The mandatory final exam is scheduled at 5:00pm--7:30pm Dec. 5 2016.
 It constitutes a major part of your course grade.
@@ -133,7 +142,7 @@ following weights.
 * F: 54 or below 
 
 Borderline grades are determined by in-class participation 
-(in discussions and activities) as well as attandence.
+(in discussions and activities) as well as attendance.
 
 ### Suggested homework problems
 
@@ -141,9 +150,9 @@ Practice is a crucial component in the learning process.
 The following is a list of good exercise problems.
 They will not be collected or graded. 
 However, since all exams are very similar to questions from homework, 
-doing the homework problems regularly is crucial for success in this course.
+doing the homework problems regularly is crucial for our success in this course.
 
-(Ignore questions (or parts of questions) about using a graphing utility)
+(Ignore questions or parts that requires advanced graphing programs)
 
 * Section 1.3: # 1 – 39; 43 – 71 all odd
 * Section 1.5: # 1 – 15; 27 – 33; 71 - 77 all odd 
@@ -151,7 +160,7 @@ doing the homework problems regularly is crucial for success in this course.
 * Section 2.1: # 5, 6, 7
 * Section 2.2: # 1 – 29 all odd
 * Section 2.3: # 5 – 79 all odd
-* Section 2.4: 1 – 59 all odd
+* Section 2.4: # 1 – 59 all odd
 * Section 2.5: # 1 – 53 all odd
 * Section 3.1: # 1 – 23; 33 – 37; 65 – 79 all odd
 * Section 3.2: # 1 – 51; 57 – 69 all odd
