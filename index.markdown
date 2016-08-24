@@ -41,13 +41,13 @@ Publications
 -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
     "Mixed cell computation in Hom4PS-3".  
     *Numerical Algebraic Geometry: Special Issue of Journal of Symbolic Computation*
-    (To appear) 
+    (To appear)  
     [ [link](http://dx.doi.org/10.1016/j.jsc.2016.07.017) ]
 
 -   **Tianran Chen** and Dhagash Mehta.  
     "Parallel degree computation for binomial systems".  
     *Numerical Algebraic Geometry: Special Issue of Journal of Symbolic Computation*
-    (To appear) 
+    (To appear)  
     [ [link](http://dx.doi.org/10.1016/j.jsc.2016.07.018) ]
 
 -   Dhagash Mehta, **Tianran Chen**, John Morgan, and David Wales.  
