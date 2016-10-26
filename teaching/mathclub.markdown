@@ -14,7 +14,7 @@ _any_ AUM student or faculty/staff member interested in mathematics.
 
 ### Officers
 
-* Eddie Linsey
+* Eddie Lindsey
 * Emily Cosgrov
 
 ### Main goals
