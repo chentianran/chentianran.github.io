@@ -43,7 +43,7 @@ Publications
 
 -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
     "Mixed cell computation in Hom4PS-3".  
-    * Journal of Symbolic Computation (2017), pp. 516-534*  
+    *Journal of Symbolic Computation (2017), pp. 516-534*  
     [ [link](http://dx.doi.org/10.1016/j.jsc.2016.07.017) ]
 
 -   **Tianran Chen** and Dhagash Mehta.  
