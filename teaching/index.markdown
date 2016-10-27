@@ -17,6 +17,8 @@ This semester I am teaching
     * Tue, Thu 2:00pm -- 3:00pm
     * ...and by appointment
 
+I am also the faculty advisor of the [AUM Math Club](mathclub/)
+
 Schedule
 --------
 
