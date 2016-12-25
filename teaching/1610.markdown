@@ -44,7 +44,11 @@ These prerequisite can be satisfied by any one of the following:
 
 ### Textbook
 
-_Calculus: Early Transcendentals_ (6th edition) by Larson & Edwards
+- _Calculus: Early Transcendentals_ (6th edition) by Larson & Edwards
+- _Calculus_ by Gilbert Strang (PDF version is _free_!)
+    * [One single big PDF file](http://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf)
+    * [PDF files by chapters](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/)
+    * [A few greate video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
 
 Reading assignment and homework problems will be assigned from the textbook.
 
