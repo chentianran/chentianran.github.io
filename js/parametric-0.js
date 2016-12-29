@@ -9,7 +9,9 @@ function update() {
 }
 
 function setup() {
-  createCanvas(500,500);
+  var canvas = createCanvas(500,500);
+  canvas.parent('sketch-holder');
+
   background(255,255,255);
   frameRate(30);
 }
