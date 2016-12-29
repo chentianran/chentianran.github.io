@@ -19,7 +19,6 @@ function setup() {
 function draw() {
   update();
 
-  var alpha = trace_slider.value();
   background(255,255,255,5);
   ellipseMode(CENTER);
   noStroke();
