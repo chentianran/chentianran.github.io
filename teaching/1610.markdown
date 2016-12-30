@@ -11,12 +11,11 @@ title: MATH-1610
 * Room: 218 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
-* Office: 310A Goodwyn Hall
-* Office hour: MW 4pm -- 5pm, T 2pm -- 6pm
-* Web page: <http://www.tianranchen.org>
+* Course page: <http://www.tianranchen.org/teaching/1610/>
+{% include hours.markdown %}
 
 My job is to help you to succeed in this class.
-I will be happy to discuss issues related to this course 
+I will be happy to discuss issues related to this course
 (or anything mathematical) in person or via email.
 In addition to the normal office hours listed above,
 alternative meeting time may be arranged
@@ -26,7 +25,7 @@ alternative meeting time may be arranged
 
 This is the first course in the calculus sequence.
 We will focus on basic calculus concepts involving functions of one variable:
-limits, derivatives, and integrals. 
+limits, derivatives, and integrals.
 In this course, conceptual understanding is paramount,
 and mathematical rigor will be kept to the minimum.
 
@@ -54,11 +53,11 @@ Reading assignment and homework problems will be assigned from the textbook.
 
 ### Attendance and participation
 
-Participation in in-class discussions and activities is an important part 
-of the learning process. 
-Therefore class attendance is expected and recorded. 
-It is your responsibility to sign the attendance sheet at each class meeting. 
-Moreover, in order to get a passing grade you should have attended at least 80% 
+Participation in in-class discussions and activities is an important part
+of the learning process.
+Therefore class attendance is expected and recorded.
+It is your responsibility to sign the attendance sheet at each class meeting.
+Moreover, in order to get a passing grade you should have attended at least 80%
 of the classes for which attendance was recorded.
 
 ### Code of conduct
@@ -71,7 +70,7 @@ In particular, please...
 * __DO NOT__ take photos without permission
 * __DO NOT__ sleep
 
-Students who violate these rules will be asked to leave the classroom 
+Students who violate these rules will be asked to leave the classroom
 and will not be allowed to return until they have spoken privately with me.
 
 ### Cheating policy
@@ -85,14 +84,14 @@ Please consult Student Handbook for addition guidelines.
 ### Policy for calculators and smart devices
 
 Scientific calculators or equivalent software programs can be helpful in
-doing homework problems. 
+doing homework problems.
 According to AUM Mathematics Department Calculator Policy,
 students are required to have a graphing calculator
 (TI-84 is recommended).
 The use of such calculators may be required for certain homework problems
 or in-class activities.
 However, all the quizzes and exams are designed so that no calculator will be needed.
-Therefore calculators or any smart devices with internet capabilities 
+Therefore calculators or any smart devices with internet capabilities
 are not allowed on any of the quizzes and exams.
 
 ### Daily quizzes
@@ -105,7 +104,7 @@ However, a missing quiz may be excused if valid reasons
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero.
 
-In computing the final scores, _one of the lowest_ quiz scores 
+In computing the final scores, _one of the lowest_ quiz scores
 (that are not missed) will be dropped.
 
 ### Final exam
@@ -121,8 +120,8 @@ The final exam consists of two parts:
 
 ### Grade composition
 
-Your final grade is determined according to your overall performance of quizzes, 
-the in-class exams, and the final exam, and is calculated according to the 
+Your final grade is determined according to your overall performance of quizzes,
+the in-class exams, and the final exam, and is calculated according to the
 following weights.
 
 | Component  | Points |
@@ -132,29 +131,29 @@ following weights.
 | Projects   |  200   |
 | Final Exam |   50   |
 
-### Grading scale 
+### Grading scale
 
-* A: 90% - 100% 
-* B: 80% - 89.9% 
-* C: 70% - 79.9% 
-* D: 60% - 69.9% 
-* F: below 60% or fail to achieve 80% on the "core" part of the final exam 
+* A: 90% - 100%
+* B: 80% - 89.9%
+* C: 70% - 79.9%
+* D: 60% - 69.9%
+* F: below 60% or fail to achieve 80% on the "core" part of the final exam
 
-Borderline grades are determined by in-class participation 
+Borderline grades are determined by in-class participation
 (in discussions and activities) as well as attendance.
 
 ### Suggested homework problems
 
 Practice is a crucial component in the learning process.
 The following is a list of good exercise problems.
-They will not be collected or graded. 
-However, since all exams are very similar to questions from homework, 
+They will not be collected or graded.
+However, since all exams are very similar to questions from homework,
 doing the homework problems regularly is crucial for our success in this course.
 
 (Ignore questions or parts that requires advanced graphing programs)
 
 * Section 1.3: # 1 – 39; 43 – 71 all odd
-* Section 1.5: # 1 – 15; 27 – 33; 71 - 77 all odd 
+* Section 1.5: # 1 – 15; 27 – 33; 71 - 77 all odd
 * Section 1.6: # 1 – 37; 53 – 71; 81 – 109 all odd
 * Section 2.1: # 5, 6, 7
 * Section 2.2: # 1 – 29 all odd
@@ -167,7 +166,7 @@ doing the homework problems regularly is crucial for our success in this course.
 * Section 3.4: # 1 – 33; 43 – 151 all odd
 * Section 3.5: # 1 – 75 all odd
 * Section 3.6: # 1 – 55 all odd
-* Section 3.8: # 5 – 15 all odd 
+* Section 3.8: # 5 – 15 all odd
 * Section 4.1: # 1 – 43 all odd
 * Section 4.2: # 9 – 21; 39 - 51 all odd
 * Section 4.3: # 3 - 63 all odd
@@ -185,7 +184,7 @@ doing the homework problems regularly is crucial for our success in this course.
 
 **Disability accommodations:**
 AUM attempts to make reasonable accommodations to meet the special needs of its students with disabilities.
-Students who need accommodations are asked to arrange a meeting 
+Students who need accommodations are asked to arrange a meeting
 during office hours to discuss your accommodations.
 If you have a conflict with my office hours, an alternative time
 can be arranged.
@@ -195,8 +194,8 @@ the Center for Disability Services (CDS), but need accommodations,
 make an appointment with CDS, 147 Taylor Center,
 or call 334-244-2631 or email CDS at <cds@aum.edu>.
 
-**Student Privacy Policy:** 
-The Family Education Rights and Privacy Act of 1974, 
+**Student Privacy Policy:**
+The Family Education Rights and Privacy Act of 1974,
 as amended, (FERPA) requires institutions receiving federal monies to protect
 the privacy of students' educational records.
 For details go to the AUM's FERPA website: <http://www.aum.edu/academics/Registrars-office>
