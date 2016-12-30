@@ -7,14 +7,11 @@ title: MATH-1620
 
 ### When, where, and who
 
-* Time: Tue, Thu 12:20pm -- 2:00pm
-* Room: 317 Goodwyn Hall
+* Time: Tue, Thu 5:00pm -- 6:40pm
+* Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
-* Office: 310A Goodwyn Hall
-* Office hour: MW 3pm -- 5pm, TT 2pm -- 3pm
-* Web page: <http://www.tianranchen.org/teaching/>
-
+* Course page: <http://www.tianranchen.org/teaching/1620/>
 {% include hours.markdown %}
 
 My job is to help you to succeed in this class.
@@ -27,16 +24,29 @@ alternative meeting time may be arranged
 ### What we will learn
 
 This is the second course in the calculus sequence.
-We will study more advanced integration techniques as well as their applications.
-Related topics of infinite series and parametric equations will also be discussed.
+We will discuss more advanced topics in calculus and related areas of mathematics.
 In particular, we will cover...
 
-* Chapter 5: Integration
-* Chapter 7: Applications of Integration
-* Chapter 8: Integration Techniques, L’Hopital’s Rule and Improper Integrals
-* Chapter 9: Infinite Series Chatper
-* 10: Conics, Parametric Equations, and Polar Coordinates
-
+* Deeper subjects involving limits
+  - Technical definition of limits
+  - Limits of sequences
+  - Limits of indeterminate form
+* Infinite series
+  - Convergence properties
+  - Rules for testing Convergence
+  - Taylor series of functions
+* Important functions
+  - Exponential functions
+  - Logarithm functions
+  - Inverse trigonometric functions
+  - Hyperbolic functions
+* Simple differential equations
+* Describing curves using parametric equations
+* Advanced integration techniques
+  - Integration by substitution
+  - Integration by parts
+  - Integration involving inverse trigonometric functions
+  - Improper Integrals
 
 ### Prerequisite
 
@@ -46,9 +56,13 @@ or an appropriate score in the AUM Math Placement Test.
 
 ### Textbook
 
-_Calculus: Early Transcendentals_ (6th edition) by Larson & Edwards
+- _Calculus: Early Transcendentals_ (6th edition) by Larson & Edwards
+- _Calculus_ by Gilbert Strang (PDF version is _free_!)
+    * [One single big PDF file](http://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf)
+    * [PDF files by chapters](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/)
+    * [A few greate video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
 
-Reading assignment and homework problems will be assigned from the textbook.
+Reading assignment and homework problems will be assigned from these textbook.
 
 ### Attendance and participation
 
@@ -90,29 +104,29 @@ However, all the quizzes and exams are designed so that no calculator will be ne
 Therefore calculators or any smart devices with internet capabilities
 are not allowed on any of the quizzes and exams.
 
-### Quizzes
+### Daily quizzes
 
-There will be a short quiz each week.
-No makeup quiz will be offered.
+There will be a short quiz at the beginning of _every_ class meeting to test
+our understanding of the material discussed in the previous meeting.
+__No makeup quiz will be offered__.
 However, a missing quiz may be excused if valid reasons
 (military assignments, medical issues, family emergency, etc)
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero.
 
-In computing the final scores, _two of the lowest_ quiz scores
+In computing the final scores, _one of the lowest_ quiz scores
 (that are not missed) will be dropped.
 
-### Exams
+### Final exam
 
-Two in-class exams constitute an important part of your course grade.
-No makeup exams will be offered,
-but a missing exam may be excused if valid reasons
-(military assignments, medical issues, family emergency, etc)
-and _proper documentation_ are provided _in advance_.
-Otherwise, a missing exam receives a score of zero.
-
-The mandatory final exam is scheduled 10:45am--1:15pm Dec. 6 2016.
+The mandatory final exam is scheduled at 1:30pm--3:00pm May 3rd 2017.
 It constitutes a major part of your course grade.
+The final exam consists of two parts:
+
+- The _core part_ tests basic understanding of fundamental concepts.
+  In order to earn a passing grade (D or higher) one must achieve
+  80% or higher on this part.
+- The _other part_ is just the regular type of comprehensive exam.
 
 ### Grade composition
 
@@ -120,20 +134,20 @@ Your final grade is determined according to your overall performance of quizzes,
 the in-class exams, and the final exam, and is calculated according to the
 following weights.
 
-| Component  | Weight |
+| Component  | Points |
 |------------|--------|
-| Quizzes    | 40%    |
-| Exam 1     | 20%    |
-| Exam 2     | 20%    |
-| Final Exam | 20%    |
+| Worksheet  |  250   |
+| Quizzes    |  500   |
+| Projects   |  200   |
+| Final Exam |   50   |
 
 ### Grading scale
 
 * A: 90% - 100%
-* B: 80% - 89%
-* C: 65% - 79%
-* D: 55% - 64%
-* F: 54 or below
+* B: 80% - 89.9%
+* C: 70% - 79.9%
+* D: 60% - 69.9%
+* F: below 60% or fail to achieve 80% on the "core" part of the final exam
 
 Borderline grades are determined by in-class participation
 (in discussions and activities) as well as attendance.
