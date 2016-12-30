@@ -15,8 +15,10 @@ title: MATH-1620
 * Office hour: MW 3pm -- 5pm, TT 2pm -- 3pm
 * Web page: <http://www.tianranchen.org/teaching/>
 
+{% include hours.markdown %}
+
 My job is to help you to succeed in this class.
-I will be happy to discuss issues related to this course 
+I will be happy to discuss issues related to this course
 (or anything mathematical) in person or via email.
 In addition to the normal office hours listed above,
 alternative meeting time may be arranged
@@ -29,10 +31,10 @@ We will study more advanced integration techniques as well as their applications
 Related topics of infinite series and parametric equations will also be discussed.
 In particular, we will cover...
 
-* Chapter 5: Integration 
-* Chapter 7: Applications of Integration 
-* Chapter 8: Integration Techniques, L’Hopital’s Rule and Improper Integrals 
-* Chapter 9: Infinite Series Chatper 
+* Chapter 5: Integration
+* Chapter 7: Applications of Integration
+* Chapter 8: Integration Techniques, L’Hopital’s Rule and Improper Integrals
+* Chapter 9: Infinite Series Chatper
 * 10: Conics, Parametric Equations, and Polar Coordinates
 
 
@@ -50,8 +52,8 @@ Reading assignment and homework problems will be assigned from the textbook.
 
 ### Attendance and participation
 
-Participation in in-class discussions and activities is an important part 
-of the learning process. 
+Participation in in-class discussions and activities is an important part
+of the learning process.
 Therefore class attendance is expected.
 
 ### Code of conduct
@@ -64,7 +66,7 @@ In particular, please...
 * __DO NOT__ take photos without permission
 * __DO NOT__ sleep
 
-Students who violate these rules will be asked to leave the classroom 
+Students who violate these rules will be asked to leave the classroom
 and will not be allowed to return until they have spoken privately with me.
 
 ### Cheating policy
@@ -78,14 +80,14 @@ Please consult Student Handbook for addition guidelines.
 ### Policy for calculators and smart devices
 
 Scientific calculators or equivalent software programs can be helpful in
-doing homework problems. 
+doing homework problems.
 According to AUM Mathematics Department Calculator Policy,
 students are required to have a graphing calculator
 (TI-84 is recommended).
 The use of such calculators may be required for certain homework problems
 or in-class activities.
 However, all the quizzes and exams are designed so that no calculator will be needed.
-Therefore calculators or any smart devices with internet capabilities 
+Therefore calculators or any smart devices with internet capabilities
 are not allowed on any of the quizzes and exams.
 
 ### Quizzes
@@ -97,7 +99,7 @@ However, a missing quiz may be excused if valid reasons
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero.
 
-In computing the final scores, _two of the lowest_ quiz scores 
+In computing the final scores, _two of the lowest_ quiz scores
 (that are not missed) will be dropped.
 
 ### Exams
@@ -114,41 +116,41 @@ It constitutes a major part of your course grade.
 
 ### Grade composition
 
-Your final grade is determined according to your overall performance of quizzes, 
-the in-class exams, and the final exam, and is calculated according to the 
+Your final grade is determined according to your overall performance of quizzes,
+the in-class exams, and the final exam, and is calculated according to the
 following weights.
 
 | Component  | Weight |
 |------------|--------|
-| Quizzes    | 40%    | 
+| Quizzes    | 40%    |
 | Exam 1     | 20%    |
 | Exam 2     | 20%    |
 | Final Exam | 20%    |
 
-### Grading scale 
+### Grading scale
 
-* A: 90% - 100% 
-* B: 80% - 89% 
-* C: 65% - 79% 
-* D: 55% - 64% 
-* F: 54 or below 
+* A: 90% - 100%
+* B: 80% - 89%
+* C: 65% - 79%
+* D: 55% - 64%
+* F: 54 or below
 
-Borderline grades are determined by in-class participation 
+Borderline grades are determined by in-class participation
 (in discussions and activities) as well as attendance.
 
 ### Suggested homework problems
 
 Practice is a crucial component in the learning process.
 Certain exercise problems will be assigned in class.
-They will not be collected or graded. 
-However, since all exams are very similar to questions from homework, 
+They will not be collected or graded.
+However, since all exams are very similar to questions from homework,
 doing the homework problems regularly is crucial for our success in this course.
 
 ## University policies
 
 **Disability accommodations:**
 AUM attempts to make reasonable accommodations to meet the special needs of its students with disabilities.
-Students who need accommodations are asked to arrange a meeting 
+Students who need accommodations are asked to arrange a meeting
 during office hours to discuss your accommodations.
 If you have a conflict with my office hours, an alternative time
 can be arranged.
@@ -158,15 +160,15 @@ the Center for Disability Services (CDS), but need accommodations,
 make an appointment with CDS, 147 Taylor Center,
 or call 334-244-2631 or email CDS at <cds@aum.edu>.
 
-**Student Privacy Policy:** 
-The Family Education Rights and Privacy Act of 1974, 
+**Student Privacy Policy:**
+The Family Education Rights and Privacy Act of 1974,
 as amended, (FERPA) requires institutions receiving federal monies to protect
 the privacy of students' educational records.
 For details go to the AUM's FERPA website: <http://www.aum.edu/academics/Registrars-office>
 
 ## Course schedule
 
-Below is the tentative schedule. 
+Below is the tentative schedule.
 Please be aware that changes may be announced in class or via email.
 
 <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=qlsurb5gsna1hslnokeu39963g%40group.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>

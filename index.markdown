@@ -7,24 +7,19 @@ title: Tianran Chen
 Hi, I am Tianran Chen
 =====================
 
-I am an Assistant Professor at [Auburn University at Montgomery](http://www.aum.edu) 
+I am an Assistant Professor at [Auburn University at Montgomery](http://www.aum.edu)
 in the Department of Mathematics and Computer Science.
-My main research interests are numerical analysis and scientific computing 
-as well as their applications in science and engineering.
+My main research interests are numerical analysis and scientific computing
+as well as their applications in physics, chemistry, biology, and engineering.
 My current research focuses on _numerical algebraic geometry_.
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv.pdf).
 
-This semester I am teaching 
-[MATH-1120D](teaching/1120/),
-[MATH-1610A](teaching/1610/),
-[MATH-1620A](teaching/1620/).
+This semester I am teaching
+[MATH-1610](teaching/1610/) (Calculus I),
+[MATH-1620](teaching/1620/) (Calculus II).
 
-- Office: 310A Goodwyn Hall 
-- Office hour:
-    * Mon, Wed 3:00pm -- 5:00pm
-    * Tue, Thu 2:00pm -- 3:00pm
-    * ...and by appointment
+{% include hours.markdown %}
 
 I am also the advisor for the [AUM Math Club](teaching/mathclub/).
 
