@@ -73,14 +73,6 @@ In particular, please...
 Students who violate these rules will be asked to leave the classroom
 and will not be allowed to return until they have spoken privately with me.
 
-### Cheating policy
-
-Cheating of any kind will not be tolerated.
-In particular, you cannot copy (totally or partially) someone else's solutions
-or allow someone else to copy your solutions on quizzes or exams.
-You will receive an "F" in the course if you are caught.
-Please consult Student Handbook for addition guidelines.
-
 ### Policy for calculators and smart devices
 
 Scientific calculators or equivalent software programs can be helpful in
@@ -96,16 +88,19 @@ are not allowed on any of the quizzes and exams.
 
 ### Daily quizzes
 
-There will be a short quiz at the beginning of _every_ class meeting to test
-our understanding of the material discussed in the previous meeting.
-__No makeup quiz will be offered__.
+There will be a short quiz at the beginning of __every__ class meeting
+to test our understanding of the material discussed in the previous meeting.
+Since the solutions will be released on the same day,
+__no makeup quiz will be offered__.
 However, a missing quiz may be excused if valid reasons
-(military assignments, medical issues, family emergency, etc)
+(o official university events, illness or medical emergencies,
+death of immediate family, military orders, jury duty,
+religious holidays, or extreme weather conditions)
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero.
 
-In computing the final scores, _one of the lowest_ quiz scores
-(that are not missed) will be dropped.
+### Worksheets
+
 
 ### Final exam
 
@@ -180,25 +175,9 @@ doing the homework problems regularly is crucial for our success in this course.
 * Section 5.3: # 1 – 55; 67 - 71 all odd
 * Section 5.4: # 1 – 59; 79 - 97 all odd
 
-## University policies
+### Other policies
 
-**Disability accommodations:**
-AUM attempts to make reasonable accommodations to meet the special needs of its students with disabilities.
-Students who need accommodations are asked to arrange a meeting
-during office hours to discuss your accommodations.
-If you have a conflict with my office hours, an alternative time
-can be arranged.
-To set up thjis meeting, please contact me by e-mail.
-If you have not registered for accommodation services through
-the Center for Disability Services (CDS), but need accommodations,
-make an appointment with CDS, 147 Taylor Center,
-or call 334-244-2631 or email CDS at <cds@aum.edu>.
-
-**Student Privacy Policy:**
-The Family Education Rights and Privacy Act of 1974,
-as amended, (FERPA) requires institutions receiving federal monies to protect
-the privacy of students' educational records.
-For details go to the AUM's FERPA website: <http://www.aum.edu/academics/Registrars-office>
+{% include syllabus_policy.markdown %}
 
 ## Calendar
 
