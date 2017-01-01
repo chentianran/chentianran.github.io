@@ -12,10 +12,8 @@ As this line passes through the point where it meets the curve
 (point of tangency) this line is suppose to "going in the same direction" as the curve.
 Stated another way, a tangent line to a curve at a given point is the
 best straight-line approximation of the curve near that point.
-
 This definition is probably very confusing.
 That's because we didn't use calculus.
-
 In the demo below we have a curve and two points (red) on the curve.
 We also have a line that cut through the curve at these two points.
 We call such a line a __secant line__ of the curve
