@@ -23,8 +23,8 @@ function draw() {
     sum = sum + (1.0 / d);
   }
 
-  background("f2f2f2");
-  fill(255,0,0);
+  background("#f2f2f2");
+  fill(0,0,0);
   text("n = ", width/2, height/2);
   text(n, width/2+20, height/2);
 
@@ -36,9 +36,9 @@ function draw() {
     var dx = tw * (i + r/step);
     var tx = width*0.75 - dx;
     if (i < 0) {
-      fill(255,0,0,80 + i*25);
+      fill(0,0,0,80 + i*25);
     } else {
-      fill(255,0,0,255 - i*20);
+      fill(0,0,0,255 - i*20);
     }
     if (n-i > 0) {
       text("1",tx,15);
