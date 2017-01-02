@@ -42,7 +42,7 @@ function draw() {
     }
     if (n-i > 0) {
       var di = denom(n-i);
-      di = Math.floor(di * 10000.0) / 10000.0;
+      di = Math.floor(di * 1000.0) / 1000.0;
       text("1",tx,15);
       text("─",tx,22);
       text("+",tx-10,22);
