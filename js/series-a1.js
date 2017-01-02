@@ -47,7 +47,7 @@ function draw() {
     if (n-i > 0) {
       text("1",tx,15);
       text("─",tx,22);
-      if (0 == (n % 2)) {
+      if (0 == ((n-i) % 2)) {
         text("-",tx-10,22);
       } else {
         text("+",tx-10,22);
