@@ -41,10 +41,12 @@ function draw() {
       fill(0,0,0,255 - i*20);
     }
     if (n-i > 0) {
+      var di = denom(n-i);
+      di = Math.floor(di * 10000.0) / 10000.0;
       text("1",tx,15);
       text("─",tx,22);
       text("+",tx-10,22);
-      text(denom(n-i),tx,30);
+      text(di,tx,30);
     }
   }
   k = k + 1;
