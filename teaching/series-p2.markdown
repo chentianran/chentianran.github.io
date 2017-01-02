@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Harmonic series
+title: Hyperharmonic series
 ---
 
 # Hyperharmonic series (P=2)

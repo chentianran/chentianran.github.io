@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Harmonic series
+title: Alternating harmonic series
 ---
 
 # Alternating harmonic series

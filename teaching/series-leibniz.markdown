@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Harmonic series
+title: Leibniz series
 ---
 
 # Leibniz series

@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Parametric equations
+title: Tangent line of a curve
 ---
 
-# Tangent line of a curve
+# {{ page.title }}
 
 A __tangent line__ to a curve at a given point is the straight line that
 "just touches" the curve at that point.
