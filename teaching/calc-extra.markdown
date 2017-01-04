@@ -7,9 +7,12 @@ title: Calculus additional material
 
 ## Big picture calculus
 
-- Play with secant line and tangent line
+- [Playing with secant lines](../tangent/)
 
 ## Infinite series
 
-- [Harmonic series](../series-a1/)
-- [Hyperharmonic series](../series-p2/)
+- [Harmonic series](../series-p1/)
+- [Hyperharmonic series with p=2](../series-p2/)
+- [Hyperharmonic series with p=1.01](../series-p101/)
+- [Alternating harmonic series](../series-a1/)
+- [Leibniz series](../series-leibniz/)
