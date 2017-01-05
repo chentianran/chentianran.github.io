@@ -11,7 +11,7 @@ title: MATH-1610
 * Room: 218 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
-* Course page: <http://www.tianranchen.org/teaching/1610/>
+* Course page: <http://www.tianranchen.org/teaching/calc1/>
 {% include hours.markdown %}
 
 My job is to help you to succeed in this class.
