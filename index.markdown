@@ -16,8 +16,8 @@ You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv.pdf).
 
 This semester I am teaching
-[MATH-1610](teaching/1610/) (Calculus I),
-[MATH-1620](teaching/1620/) (Calculus II).
+[MATH-1610B](teaching/calc1/) (Calculus I),
+[MATH-1620A](teaching/calc2/) (Calculus II).
 
 {% include hours.markdown %}
 

@@ -8,6 +8,6 @@ title: MATH-1610
 * [Course syllabus](syllabus/)
 * [Reading assignments](reading/)
 
-# Additional material
+## Additional material
 
-- [Playing with secant lines](../tangent/)
+- [Playing with secant lines](tangent/)
