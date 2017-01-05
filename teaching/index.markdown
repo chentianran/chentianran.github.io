@@ -6,16 +6,12 @@ title: Teaching
 Teaching
 ========
 
-This semester I am teaching 
-[MATH-1120D](1120/),
-[MATH-1610A](1610/),
-[MATH-1620A](1620/).
+This semester I am teaching
 
-- Office: 310A Goodwyn Hall 
-- Office hour:
-    * Mon, Wed 3:00pm -- 5:00pm
-    * Tue, Thu 2:00pm -- 3:00pm
-    * ...and by appointment
+- [MATH-1610B Calculus I](calc1/),
+- [MATH-1620A Calculus II](calc2/).
+
+{% include hours.markdown %}
 
 I am also the faculty advisor of the [AUM Math Club](mathclub/)
 
