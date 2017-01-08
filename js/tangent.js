@@ -10,13 +10,14 @@ function draw() {
   var x0 = width;
   var y0 = height;
   arc(x0,y0,900,900,3.3,4.6);
+  noStroke();
   fill(255,0,0);
 
   var x1 = 181.8;
   var y1 = 181.8;
   ellipse(x1,y1,6,6);
 
-  if ((mouseX < width) && (mouseX > 0)) {
+  if ((mouseX < width - 50) && (mouseX > 50)) {
     var dx = width - mouseX;
     var dy = sqrt(450*450 - dx*dx);
     var x2 = mouseX;
@@ -31,6 +32,9 @@ function draw() {
       var xr = width;
       var yr = y1 + (xr-x1)*dy/dx;
       line(xl,yl,xr,yr);
+
+      text("slope = ", 400, 400);
+      text( dy/dx,     480, 500);
     }
   }
 }
