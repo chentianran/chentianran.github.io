@@ -7,6 +7,7 @@ title: MATH-1620A
 
 * [Course syllabus](syllabus/)
 * [Informal syllabus summary](summary/)
+
 ## Additional material
 
 ### Infinite series
