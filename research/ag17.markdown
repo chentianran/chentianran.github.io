@@ -1,0 +1,38 @@
+---
+layout: default
+title: SIAM AG17 Minisymposium on Algorithms and Implementation in Numerical Algebraic Geometry
+---
+
+# Minisymposium on Algorithms and Implementation in Numerical Algebraic Geometry
+
+### When and where
+* Georgia Institute of Technology (Atlanta GA, USA)
+* July 31 to August 4 2017
+
+### Overview
+The foundation of algebraic geometry is the problem of solving systems of
+polynomial equations.
+Numerical methods can be used to perform algebraic geometric computations forming
+the field of numerical algebraic geometry which continues to advance rapidly.
+The continuing progress in computer hardware and software has enabled new algorithms and implementations.
+Examples include irreducible decompositions in multi-projective spaces,
+and numerical techniques for computing discrete objects such as polytopes.
+This session will feature recent progress in algorithms and implementations
+of theoretical advances in numerical algebraic geometry.
+
+### Organizer
+
+* Tianran Chen  
+_Auburn University at Montgomery_  
+Montgomery AL USA
+
+### Confirmed Speakers
+
+* Nathan Bliss (nbliss2@uic.edu)<br/>University of Illinois at Chicago
+* Jose Rodriguez (JoIsRo@uchicago.edu)<br/>University of Chicago
+* Jesse Drendel (jesse.drendel@gmail.com)<br/>Colorado State University
+* Zeng, Zhonggang<br/>Northeastern Illinois University
+* Dani Brake<br/>University of Notre Dame
+* Jeff Sommars (sommars1@uic.edu)<br/>University of Illinois at Chicago
+* Maggie Regan (mregan9@nd.edu)<br/>University of Notre Dame
+* Lixing Han<br/>University of Michigan-Flint

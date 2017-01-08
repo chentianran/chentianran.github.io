@@ -26,12 +26,23 @@ I am also the advisor for the [AUM Math Club](teaching/mathclub/).
 Schedule
 --------
 
-<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=k7cas66vp4vba2cruqhh4cila8%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FChicago" style="border-width:0" width="600" height="400" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=700&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=k7cas66vp4vba2cruqhh4cila8%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FChicago" style="border-width:0" width="700" height="300" frameborder="0" scrolling="no"></iframe>
+
+News
+----
+
+I am organizing a
+[minisymposium on algorithms and implementations in numerical algebraic geometry](research/ag17/)
+at the
+[SIAM Conference on Applied Algebraic Geometry 2017](https://www.siam.org/meetings/ag17/).
 
 Research Interests
 ------------------
--   Numerical analysis, scientific computing, application of numerical methods in physics and chemistry,
-    systems of polynomial equations, homotopy continuation methods, numerical algebraic geometry
+- Numerical analysis, scientific computing, high performance computing
+- Application of numerical methods in physics, chemistry, and engineering
+- Systems of polynomial equations
+- Homotopy continuation methods
+- Numerical algebraic geometry
 
 Publications
 ------------
