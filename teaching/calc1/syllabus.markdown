@@ -48,7 +48,7 @@ These prerequisite can be satisfied by any one of the following:
 - [Optional] _Calculus_ by Gilbert Strang (PDF version is _free_!)
     * [One single big PDF file](http://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf)
     * [PDF files by chapters](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/)
-    * [A few greate video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
+    * [A few great video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
 
 Reading assignment and homework problems will be assigned from the required textbook.
 
@@ -85,12 +85,15 @@ Therefore calculators or any smart devices with internet capabilities
 are not allowed on any of the quizzes and exams.
 
 ### Homework
-
 Practice is an important part of learning process.
 Homework problem will be assigned every week.
 
-### Daily quizzes
+### Projects
+Projects are more complicated mathematical problems that will
+guide you to gain deeper understanding of the material we learn in class.
+They are a major part of your course grade.
 
+### Daily quizzes
 There will be a short quiz at the beginning of __every__ class meeting
 to test our understanding of the material discussed in the previous meetings.
 Since the solutions will be released on the same day,
@@ -184,7 +187,7 @@ doing the homework problems regularly is crucial for our success in this course.
 Below is the tentative schedule, and it may not reflect changes announced in class.
 Please check with me for the most up-to-date information.
 
-<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=do4jkapu6fe5n1vf28d9f4cdf4%40group.calendar.google.com&amp;color=%2328754E&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=900&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=do4jkapu6fe5n1vf28d9f4cdf4%40group.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="900" frameborder="0" scrolling="no"></iframe>
 
 The instructor reserves the right to adjust the policies outlined in this course syllabus.
 All changes will be clearly communicated to the students in class.
