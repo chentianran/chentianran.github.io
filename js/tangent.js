@@ -33,8 +33,8 @@ function draw() {
       var yr = y1 + (xr-x1)*dy/dx;
       line(xl,yl,xr,yr);
 
-      text("slope = ", 400, 400);
-      text( dy/dx,     480, 500);
+      text("slope = ", 300, 400);
+      text( -dy/dx,    360, 400);
     }
   }
 }
