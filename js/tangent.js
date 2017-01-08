@@ -10,7 +10,7 @@ function draw() {
   var x0 = width;
   var y0 = height;
   arc(x0,y0,900,900,3.3,4.6);
-  noStroke();
+  //noStroke();
   fill(255,0,0);
 
   var x1 = 181.8;
