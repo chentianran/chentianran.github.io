@@ -3,7 +3,7 @@ layout: default
 title: MATH-1620
 ---
 
-# MATH-1620A Spring 2017 Course Syllabus
+# MATH-1620A (CRN 2696) Spring 2017 Course Syllabus
 
 ### When, where, and who
 
@@ -11,7 +11,7 @@ title: MATH-1620
 * Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
-* Course page: <http://www.tianranchen.org/teaching/1620/>
+* Course page: <http://www.tianranchen.org/teaching/calc2/>
 {% include hours.markdown %}
 
 My job is to help you to succeed in this class.
@@ -112,19 +112,21 @@ and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero.
 
 ### Worksheets
-
 In-class practice is an important component of the learning process.
-Worksheets will be distributed during every class meeting.
+Worksheets will be distributed during _every_ class meeting.
 Students will work on problems on the worksheets (possibly in groups).
+Worksheets _will be collected_ at the end of the class and _graded_.
 
+### Projects
+Projects are more complicated mathematical problems that will
+guide you to gain deeper understanding of the material we learn in class.
+They are a major part of your course grade.
 
 ### Final exam
-
 The mandatory final exam is scheduled at 5:00pm--6:30pm May 3rd 2017.
 It constitutes a major part of your course grade.
 
 ### Grade composition
-
 Your final grade is determined according to your overall performance of quizzes,
 the in-class worksheets, projects, and the final exam,
 and is calculated according to the following weights.
@@ -145,7 +147,6 @@ and is calculated according to the following weights.
 * F: below 60%
 
 ### Suggested homework problems
-
 Practice is a crucial component in the learning process.
 Certain exercise problems will be assigned in class.
 They will not be collected or graded.
@@ -161,7 +162,7 @@ doing the homework problems regularly is crucial for our success in this course.
 Below is the tentative schedule.
 Please be aware that changes may be announced in class or via email.
 
-<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=qlsurb5gsna1hslnokeu39963g%40group.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=900&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=qlsurb5gsna1hslnokeu39963g%40group.calendar.google.com&amp;color=%2342104A&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="900" frameborder="0" scrolling="no"></iframe>
 
 The instructor reserves the right to adjust the policies outlined in this course syllabus.
 All changes will be clearly communicated to the students in class.
