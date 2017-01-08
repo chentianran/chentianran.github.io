@@ -10,6 +10,9 @@ title: MATH-1620A
 
 ## Additional material
 
+I have created the following interactive demonstrations for certain
+difficult concepts one may encounter in this course.
+
 ### Infinite series
 
 - [Harmonic series](series-p1/)
