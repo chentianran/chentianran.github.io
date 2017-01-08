@@ -3,7 +3,7 @@ layout: default
 title: MATH-1620
 ---
 
-# MATH-1620 Fall 2016 Course Syllabus
+# MATH-1620A Spring 2017 Course Syllabus
 
 ### When, where, and who
 
@@ -34,7 +34,7 @@ In particular, we will cover...
 * Infinite series
   - Convergence properties
   - Rules for testing Convergence
-  - Taylor series of functions
+  - Taylor series expansion of functions
 * Important functions
   - Exponential functions
   - Logarithm functions
@@ -47,6 +47,10 @@ In particular, we will cover...
   - Integration by parts
   - Integration involving inverse trigonometric functions
   - Improper Integrals
+* Applications of Integrals
+  - Computing arc-length
+  - Computing volume
+  - Computing center of mass
 
 ### Prerequisite
 
@@ -56,11 +60,12 @@ or an appropriate score in the AUM Math Placement Test.
 
 ### Textbook
 
-- _Calculus: Early Transcendentals_ (6th edition) by Larson & Edwards
-- _Calculus_ by Gilbert Strang (PDF version is _free_!)
+- [Required] _Calculus: Early Transcendentals_ (any edition) by Larson & Edwards
+  (8th edition ISBN: 978-1285741550)
+- [Optional] _Calculus_ by Gilbert Strang (PDF version is _free_!)
     * [One single big PDF file](http://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf)
     * [PDF files by chapters](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/)
-    * [A few greate video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
+    * [A few great video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
 
 Reading assignment and homework problems will be assigned from these textbook.
 
@@ -82,14 +87,6 @@ In particular, please...
 
 Students who violate these rules will be asked to leave the classroom
 and will not be allowed to return until they have spoken privately with me.
-
-### Cheating policy
-
-Cheating of any kind will not be tolerated.
-In particular, you cannot copy (totally or partially) someone else's solutions
-or allow someone else to copy your solutions on quizzes or exams.
-You will receive an "F" in the course if you are caught.
-Please consult Student Handbook for addition guidelines.
 
 ### Policy for calculators and smart devices
 
@@ -114,32 +111,30 @@ However, a missing quiz may be excused if valid reasons
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero.
 
-In computing the final scores, _one of the lowest_ quiz scores
-(that are not missed) will be dropped.
+### Worksheets
+
+In-class practice is an important component of the learning process.
+Worksheets will be distributed during every class meeting.
+Students will work on problems on the worksheets (possibly in groups).
+
 
 ### Final exam
 
-The mandatory final exam is scheduled at 1:30pm--3:00pm May 3rd 2017.
+The mandatory final exam is scheduled at 5:00pm--6:30pm May 3rd 2017.
 It constitutes a major part of your course grade.
-The final exam consists of two parts:
-
-- The _core part_ tests basic understanding of fundamental concepts.
-  In order to earn a passing grade (D or higher) one must achieve
-  80% or higher on this part.
-- The _other part_ is just the regular type of comprehensive exam.
 
 ### Grade composition
 
 Your final grade is determined according to your overall performance of quizzes,
-the in-class exams, and the final exam, and is calculated according to the
-following weights.
+the in-class worksheets, projects, and the final exam,
+and is calculated according to the following weights.
 
 | Component  | Points |
 |------------|--------|
-| Worksheet  |  250   |
-| Quizzes    |  500   |
-| Projects   |  200   |
-| Final Exam |   50   |
+| Worksheet  |  260   |
+| Quizzes    |  540   |
+| Projects   |  100   |
+| Final Exam |  100   |
 
 ### Grading scale
 
@@ -147,10 +142,7 @@ following weights.
 * B: 80% - 89.9%
 * C: 70% - 79.9%
 * D: 60% - 69.9%
-* F: below 60% or fail to achieve 80% on the "core" part of the final exam
-
-Borderline grades are determined by in-class participation
-(in discussions and activities) as well as attendance.
+* F: below 60%
 
 ### Suggested homework problems
 
@@ -160,25 +152,9 @@ They will not be collected or graded.
 However, since all exams are very similar to questions from homework,
 doing the homework problems regularly is crucial for our success in this course.
 
-## University policies
+### Other policies
 
-**Disability accommodations:**
-AUM attempts to make reasonable accommodations to meet the special needs of its students with disabilities.
-Students who need accommodations are asked to arrange a meeting
-during office hours to discuss your accommodations.
-If you have a conflict with my office hours, an alternative time
-can be arranged.
-To set up thjis meeting, please contact me by e-mail.
-If you have not registered for accommodation services through
-the Center for Disability Services (CDS), but need accommodations,
-make an appointment with CDS, 147 Taylor Center,
-or call 334-244-2631 or email CDS at <cds@aum.edu>.
-
-**Student Privacy Policy:**
-The Family Education Rights and Privacy Act of 1974,
-as amended, (FERPA) requires institutions receiving federal monies to protect
-the privacy of students' educational records.
-For details go to the AUM's FERPA website: <http://www.aum.edu/academics/Registrars-office>
+{% include syllabus_policy.markdown %}
 
 ## Course schedule
 
