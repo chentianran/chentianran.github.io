@@ -5,7 +5,7 @@ title: CV
 
 ### Employment
 
-- 2016 – Assistant Professor, Auburn University Montgomery.
+- 2016 – present Assistant Professor, Auburn University Montgomery.
 - 2012 – 2016 Research Instructor, Michigan State University.
 - 2006 – 2012 Research and Teaching Assistant, Michigan State University.
 - 2003 – 2005 Research Assistant, Western Connecticut State University.
@@ -41,8 +41,11 @@ title: CV
 {% include publications.markdown %}
 
 ### Teaching Experience
-- 2016 – Instructor, Pre-calculus, Calculus I,II.
-- 2017 – 2016 Instructor, College level algebra courses, Calculus sequence, Calculus sequence for business majors, Linear Algebra, Transition to Advanced Mathematics, Abstract algebra.
+| | |
+|-----------|-------------------------------------|
+| 2016 –    | Pre-calculus, Calculus I,II |
+| 2012 – 2016 | College level algebra courses, Calculus sequence, Calculus sequence for business majors, Linear Algebra, Transition to Advanced Mathematics, Abstract algebra. |
+| 2006 -- 2012 | Teaching Assistant for Calculus sequence |
 
 ### Professional Services
 - 2017 Organizer for the Special Session on
