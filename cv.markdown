@@ -41,7 +41,7 @@ title: CV
 {% include publications.markdown %}
 
 ### Teaching Experience
-| | |
+| Years | Courses |
 |-----------|-------------------------------------|
 | 2016 –    | Pre-calculus, Calculus I,II |
 | 2012 – 2016 | College level algebra courses, Calculus sequence, Calculus sequence for business majors, Linear Algebra, Transition to Advanced Mathematics, Abstract algebra. |
