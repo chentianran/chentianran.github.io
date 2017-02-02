@@ -28,11 +28,21 @@ Montgomery AL USA
 
 ### Confirmed Speakers
 
-* Nathan Bliss (nbliss2@uic.edu)<br/>University of Illinois at Chicago
-* Jose Rodriguez (JoIsRo@uchicago.edu)<br/>University of Chicago
-* Jesse Drendel (jesse.drendel@gmail.com)<br/>Colorado State University
-* Zeng, Zhonggang<br/>Northeastern Illinois University
-* Dani Brake<br/>University of Notre Dame
-* Jeff Sommars (sommars1@uic.edu)<br/>University of Illinois at Chicago
-* Maggie Regan (mregan9@nd.edu)<br/>University of Notre Dame
-* Lixing Han<br/>University of Michigan-Flint
+* Nathan Bliss (University of Illinois at Chicago)
+* Dani Brake (University of Notre Dame)
+* Jesse Drendel (Colorado State University)
+* Lixing Han (University of Michigan-Flint)
+* Maggie Regan (University of Notre Dame)
+* Jose Rodriguez (University of Chicago)
+* Jeff Sommars (University of Illinois at Chicago)
+* Zhonggang Zeng (Northeastern Illinois University)
+
+### Funding
+
+* [Student travel awards](http://www.siam.org/prizes/sponsored/travel.php)
+* [NSF-funded Early Career Attendees support](http://www.siam.org/prizes/sponsored/earlycareertravel.php)
+
+### Links
+
+* [Conference main page](http://www.siam.org/meetings/ag17/index.php)
+* [Program](http://meetings.siam.org/program.cfm?CONFCODE=AG17)
