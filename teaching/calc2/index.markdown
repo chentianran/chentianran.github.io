@@ -50,6 +50,7 @@ difficult concepts one may encounter in this course.
 
 - [Polar coordinate system](polar/)
 - [Polar spiral](polar-spiral/)
+- [Polar rose](polar-rose/)
 
 ### Misc.
 

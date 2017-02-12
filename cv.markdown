@@ -42,9 +42,9 @@ title: CV
 
 ### Teaching Experience
 
-| Years | Courses |
-|-----------|-------------------------------------|
-| 2016 to 2017    | Pre-calculus, Calculus I,II |
+|              |                                              |
+|--------------|----------------------------------------------|
+| 2016 to 2017 | Pre-calculus, Calculus I,II |
 | 2012 to 2016 | Calculus sequence, Linear Algebra, Transition to Advanced Mathematics, Abstract algebra. |
 | 2006 to 2012 | Teaching Assistant for Calculus sequence |
 
