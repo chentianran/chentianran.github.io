@@ -19,9 +19,11 @@ are represented in the polar coordinate system.
 The polar coordinates r and ϕ can be converted to the Cartesian coordinates
 x and y by using the trigonometric functions:
 
-\[
-    x = r \cos(\theta)
-\]
+\\[
+  \begin{align*}
+    x &= r \cos(\theta) \\
+    y &= r \sin(\theta)
+\\]
 
 <script language="javascript" type="text/javascript" src="/js/p5.min.js"></script>
 <script language="javascript" type="text/javascript" src="/js/polar.js"></script>
