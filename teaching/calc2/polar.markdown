@@ -9,10 +9,16 @@ Polar coordinate system is a planar (2-dimensional) coordinate system in which
 each point on a plane is represented by its distance from a reference point
 (the _pole_ or _origin_) and an angle from a reference direction (the _polar axis_).
 
+### TL;DR
+* It uses the pair of numbers (distance,angle) to represent a point.
+* We usually use the notation $$(r,\theta)$$.
+* We require $$r \ge 0$$ and $$\theta \in [0,2\pi)$$.
+
+### How does it work?
 In the demonstration below, move your mouse to see how points on the plane
 are represented in the polar coordinate system.
 
-<div id="sketch-holder" class="center-block">
+<div id="sketch-holder" class="text-center">
   <!-- Our sketch will go here! -->
 </div>
 
@@ -22,6 +28,8 @@ But instead of using $$(x,y)$$, the polar coordinate system uses $$(r,\theta)$$
 where $$r$$ represents the distance between this point and the pole
 while $$\theta$$ angle between the reference direction and the ray formed by
 the pole and this point.
+
+### Polar coordinates are never unique
 
 ### Conversion between Cartesian coordinate system
 
