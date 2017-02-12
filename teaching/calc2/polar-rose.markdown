@@ -8,7 +8,7 @@ title: Polar rose
 The following curve is defined by the equation in polar coordinate system:
 <p>
 \[
-    r = \cdot (k \theta)
+    r = \cos (k \cdot \theta)
 \]
 </p>
 where the constant $$k$$ a constant.
@@ -18,5 +18,5 @@ where the constant $$k$$ a constant.
 </div>
 
 <script language="javascript" type="text/javascript" src="/js/p5.min.js"></script>
-<script language="javascript" type="text/javascript" src="/js/polar-rose.js"></script>
+<script language="javascript" type="text/javascript" src="/js/polar-rose0.js"></script>
 <script language="javascript" type="text/javascript" src="/js/polar-curve.js"></script>
