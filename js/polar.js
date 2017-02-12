@@ -13,7 +13,7 @@ function draw() {
   var cx = width  / 2;
   var cy = height / 2;
 
-  //--- origin -------------------------------
+  //--- pole ---------------------------------
   stroke(0);
   fill(0);
   ellipse (cx, cy, 3, 3);
@@ -32,6 +32,13 @@ function draw() {
     text (i, cx+i*(dr/2)+4,cy-5);
   }
 
+  if (mouseX <= 0 || mouseX >= width) {
+    return;
+  }
+  if (mouseY <= 0 || mouseY >= height) {
+    return;
+  }
+  
   //--- line ---------------------------------
   stroke(255,0,0,100);
   line(cx,cy,mouseX,mouseY);
