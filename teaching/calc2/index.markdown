@@ -49,6 +49,7 @@ difficult concepts one may encounter in this course.
 ### Coordinate systems
 
 - [Polar coordinate system](polar/)
+- [Polar spiral](polar-spiral/)
 
 ### Misc.
 
