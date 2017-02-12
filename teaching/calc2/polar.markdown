@@ -20,10 +20,7 @@ The polar coordinates r and ϕ can be converted to the Cartesian coordinates
 x and y by using the trigonometric functions:
 
 \[
-  \begin{align*}
-    x &= r \cos(\theta) \\
-    y &= r \sin(\theta)
-  \end{align*}
+    x = r \cos(\theta)
 \]
 
 <script language="javascript" type="text/javascript" src="/js/p5.min.js"></script>
