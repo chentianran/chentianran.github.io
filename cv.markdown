@@ -45,7 +45,7 @@ title: CV
 | Years | Courses |
 |-----------|-------------------------------------|
 | 2016 to 2017    | Pre-calculus, Calculus I,II |
-| 2012 to 2016 | College level algebra courses, Calculus sequence, Calculus sequence for business majors, Linear Algebra, Transition to Advanced Mathematics, Abstract algebra. |
+| 2012 to 2016 | Calculus sequence, Linear Algebra, Transition to Advanced Mathematics, Abstract algebra. |
 | 2006 to 2012 | Teaching Assistant for Calculus sequence |
 
 ### Professional Services
