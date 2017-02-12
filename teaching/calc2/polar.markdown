@@ -23,6 +23,7 @@ x and y by using the trigonometric functions:
   \begin{align*}
     x &= r \cos(\theta) \\
     y &= r \sin(\theta)
+  \end{align*}
 \\]
 
 <script language="javascript" type="text/javascript" src="/js/p5.min.js"></script>
