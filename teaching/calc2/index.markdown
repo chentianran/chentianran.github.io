@@ -8,12 +8,14 @@ title: MATH-1620A
 * [Course syllabus](syllabus/)
 * [Informal syllabus summary](summary/)
 
+## Projects
+
 ## How to survive this course?
 
 * Read before class
   - Reading is an important component in our learning process.
   - Reading assignment are listed in the course calendar (to be finished before class)
-  - Reading questions are also given to provide guidance to your Reading
+  - Reading questions are also given to provide guidance to your reading
     (Keep them in mind as you read, you don't have to provide definitive answers,
     but you should attempt to answer them as you read)
 * Read your quizzes and the solution sheets
@@ -43,6 +45,10 @@ difficult concepts one may encounter in this course.
 ### Parametric curves
 
 - [Basic example: circle](parametric/)
+
+### Coordinate systems
+
+- [Polar coordinate system](polar/)
 
 ### Misc.
 
