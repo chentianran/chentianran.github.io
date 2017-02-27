@@ -10,6 +10,21 @@ title: MATH-1620A
 
 ## Projects
 
+There will be several projects that will guide you to explore some deeper
+topics in this course.
+Each project contains several questions or versions,
+and depending on the difficulty levels they carry different type of points:
+
+* Regular points: You can earn up to 100 regular points.
+* "++" points: You can earn "++" points by exploring deeper questions.
+  You can earn up to 60 "++" points.
+* "\*\*" points: Certain questions that are beyond Calc-2 level may carry
+  "\*\*" points. There is no limit on how many "\*\*" you can earn.
+
+Due days will be announced in class.
+You _must_ type your solutions.
+See a list of projects [here](projects/).
+
 ## How to survive this course?
 
 * Read before class
