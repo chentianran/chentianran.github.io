@@ -12,7 +12,7 @@ each point on a plane is represented by its distance from a reference point
 ### TL;DR
 * It uses the pair of numbers (distance,angle) to represent a point.
 * We usually use the notation $$(r,\theta)$$.
-* We require $$r \ge 0$$ and $$\theta \in [0,2\pi)$$.
+* We usually require $$r \ge 0$$ and $$\theta \in [0,2\pi)$$ (there are other conventions out there).
 
 ### How does it work?
 In the demonstration below, move your mouse to see how points on the plane
@@ -29,7 +29,9 @@ where $$r$$ represents the distance between this point and the pole
 while $$\theta$$ angle between the reference direction and the ray formed by
 the pole and this point.
 
-### Polar coordinates are never unique
+### Polar coordinates are may not be unique
+* First of all, $$(0,\theta)$$ for all choice of $$\theta$$ point to the pole.
+
 
 ### Conversion between Cartesian coordinate system
 
