@@ -29,14 +29,31 @@ __(5pt)__ The number $$e$$ can be computed as $$e^1$$.
 Use at least 20 terms from the above series to approximate the value at $$x=1$$.
 
 __(**5pt)__ Use _Taylor Theorem_ to show that the above series agree with the
-function $$e^x$$ for any $x$.
+function $$e^x$$ for any $$x$$.
 
+### The sine function as a power series
+
+__(5pt)__ Verify that the Taylor series expansion of the function
+$$f(x) = \sin(x)$$ is
+<p>
+\[ \sum_{k=1}^{\infty} (-1)^{k-1} \frac{x^k}{(2k-1)!} \]
+</p>
+You should show the computation for at least 9 terms
+and explain why the general pattern holds.
+
+__(5pt)__ Find the derivative of each term.
+Show your computation.
+What do these tell you about the derivative of the sine function?
+
+__(5pt)__ Find the antiderivative of each term.
+Show your computation.
+What do these tell you about the antiderivative of the sine function?
 
 ## Polar coordinates
 
 ## Differential equations
 
-## [A] Falling objects
+### [A] Falling objects
 
 __(5pt)__ For this part, let us assume that there is no air resistance.
 (i.e., we will only consider the influence of gravitational pull).
@@ -71,7 +88,7 @@ Under this assumption, the system of differential equations will become
 Solve this system using the same initial conditions used above.
 
 
-## [B] Trajectory of a basket ball
+### [B] Trajectory of a basket ball
 
 __(5pt)__ For this part, let us assume that there is no air resistance.
 (i.e., we will only consider the influence of gravitational pull).
@@ -98,7 +115,7 @@ using the initial conditions
 </p>
 Note that here $$-9.8m/s^2$$ is the gravitational acceleration.
 
-(++5pt) Suppose a player stands 5 meters from the hoop (horizontal distance),
+__(++5pt)__ Suppose a player stands 5 meters from the hoop (horizontal distance),
 which is just outside the free throw line, and throws the ball from a height
 of 2 meters (vertical height).
 The standard NBA hoop is about 3 meters from the floor.
