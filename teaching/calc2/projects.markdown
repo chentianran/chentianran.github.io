@@ -36,10 +36,11 @@ function $$e^x$$ for any $$x$$.
 __(5pt)__ Verify that the Taylor series expansion of the function
 $$f(x) = \sin(x)$$ is
 <p>
-\[ \sum_{k=1}^{\infty} (-1)^{k-1} \frac{x^k}{(2k-1)!} \]
+\[ \sum_{k=1}^{\infty} (-1)^{k-1} \frac{x^{2k-1}}{(2k-1)!} \]
 </p>
 You should show the computation for at least 9 terms
 and explain why the general pattern holds.
+(You may want to review the definition of Taylor series for this one)
 
 __(5pt)__ Find the derivative of each term.
 Show your computation.
@@ -48,6 +49,9 @@ What do these tell you about the derivative of the sine function?
 __(5pt)__ Find the antiderivative of each term.
 Show your computation.
 What do these tell you about the antiderivative of the sine function?
+
+__(**5pt)__ Use _Taylor Theorem_ to show that the above series agree with the
+function $$\sin(x)$$ for any $$x$$.
 
 ## Polar coordinates
 
@@ -92,7 +96,7 @@ Solve this system using the same initial conditions used above.
 
 __(5pt)__ For this part, let us assume that there is no air resistance.
 (i.e., we will only consider the influence of gravitational pull).
-Compute the trajectory of a basket ball begin thrown with initial
+Compute the trajectory of a basket ball being thrown with initial
 horizontal and vertical velocity of $$v_x$$ and $$v_y$$ respectively
 and from a height of 2 meters.
 That is, solve the system of differential equations
@@ -135,9 +139,25 @@ Under this assumption, the system of differential equations will become
 </p>
 Solve this system using the same initial conditions used above.
 
+## Integration
 
-### Radar tracking
+### The differential symbol
 
-### Drop a bomb
+__(++5)__ If $$u$$ is a function of $$x$$, how should we compute $$du$$?
 
-### Lead your target
+__(++5pt)__ We have been using the symbols $$dx$$, $$dy$$, or $$du$$.
+Explain what they are.
+
+### Tabular integration
+
+__(5pt)__ Use the method of "tabular integration" to compute
+$$\int x^3 \cos(x) dx$$.
+
+__(5pt)__ Use the method of "tabular integration" to compute
+$$\int x^5 \cos(x) dx$$.
+
+__(++5pt)__ From the previous problems, can you see a pattern?
+In general, what will be $$\int x^n \cos(x) dx$$ for some positive integer $$n$$?
+
+__(5pt)__ Explain what is the connection between _tabular integration_
+and _integration by parts_.
