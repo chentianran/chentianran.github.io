@@ -49,6 +49,10 @@ Publications
 
 {% include publications.markdown %}
 
+Preprints
+
+{% include manuscripts.markdown %}
+
 Scientific Software
 -------------------
 
