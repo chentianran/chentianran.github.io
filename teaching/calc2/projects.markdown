@@ -34,7 +34,7 @@ function $$e^x$$ for any $$x$$.
 ### The sine function as a power series
 
 __(5pt)__ Verify that the Taylor series expansion of the function
-$$f(x) = \sin(x)$$ is
+$$f(x) = \sin(x)$$ centered at $$x=0$$ is
 <p>
 \[ \sum_{k=1}^{\infty} (-1)^{k-1} \frac{x^{2k-1}}{(2k-1)!} \]
 </p>
@@ -143,7 +143,7 @@ Solve this system using the same initial conditions used above.
 
 ### The differential symbol
 
-__(++5)__ If $$u$$ is a function of $$x$$, how should we compute $$du$$?
+__(++5pt)__ If $$u$$ is a function of $$x$$, how should we compute $$du$$?
 
 __(++5pt)__ We have been using the symbols $$dx$$, $$dy$$, or $$du$$.
 Explain what they are.
