@@ -50,6 +50,7 @@ Publications
 {% include publications.markdown %}
 
 Preprints
+---------
 
 {% include manuscripts.markdown %}
 
@@ -59,6 +60,7 @@ Scientific Software
 -   [__Hom4PS-3__](http://www.hom4ps3.org):
     A parallel numerical solver for systems of polynomial equations based on the Polyhedral Homotopy Method.
 -   __MixedVol-3__:
-    A parallel software package for computing mixed volume, BKK bound, and fine mixed cells (now a part of [Hom4PS-3](http://www.hom4ps3.org).
+    A parallel software package for computing mixed volume, BKK bound,
+    and fine mixed subdivisions (now a part of [Hom4PS-3](http://www.hom4ps3.org)).
 -   [__libtropicana__](https://github.com/chentianran/libtropicana):
     A library designed to find regular simplicial subdivision of lattice convex polytopes and also compute normalized volume as a byproduct. It is written completely in C++ with optional interface for leveraging spBLAS (Sparse BLAS) routines. It is open source software. Users may freely distribute its source under the terms of the LGPLv3 license.
