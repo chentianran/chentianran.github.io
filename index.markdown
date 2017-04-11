@@ -44,15 +44,15 @@ Research Interests
 - Homotopy continuation methods
 - Numerical algebraic geometry
 
-Publications
-------------
-
-{% include publications.markdown %}
-
 Preprints
 ---------
 
 {% include manuscripts.markdown %}
+
+Publications
+------------
+
+{% include publications.markdown %}
 
 Scientific Software
 -------------------
