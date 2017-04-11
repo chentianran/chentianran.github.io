@@ -161,3 +161,12 @@ In general, what will be $$\int x^n \cos(x) dx$$ for some positive integer $$n$$
 
 __(5pt)__ Explain what is the connection between _tabular integration_
 and _integration by parts_.
+
+### Volume computation
+
+__(5pt)__ Compute the volume of a sphere using the _disk method_.
+
+__(5pt)__ Compute the volume of a sphere using the _cylindrical shell method_.
+
+__(++10pt)__ Create an _impressive_ visualization of the cylindrical shell method
+using digital images, 3D animations, or physical models.
