@@ -6,10 +6,10 @@ title: Teaching
 Teaching
 ========
 
-This semester I am teaching
+In the Summer semester of 2017, I am teaching...
 
-- [MATH-1610B Calculus I](calc1/),
-- [MATH-1620A Calculus II](calc2/).
+- [MATH-1610 Calculus I ](calc1/),
+- [MATH-1620 Calculus II](calc2/).
 
 {% include hours.markdown %}
 

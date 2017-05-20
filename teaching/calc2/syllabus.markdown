@@ -3,11 +3,11 @@ layout: default
 title: MATH-1620
 ---
 
-# MATH-1620A (CRN 2696) Spring 2017 Course Syllabus
+# MATH-1620A (CRN 3401) Summer 2017 Course Syllabus
 
 ### When, where, and who
 
-* Time: Tue, Thu 5:00pm -- 6:40pm
+* Time: Tue, Thu 1:00pm -- 3:05pm
 * Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
@@ -61,7 +61,7 @@ or an appropriate score in the AUM Math Placement Test.
 ### Textbook
 
 - [Required] _Calculus: Early Transcendentals_ (any edition) by Larson & Edwards
-  (8th edition ISBN: 978-1285741550)
+  (6th edition ISBN: 978-1285774770)
 - [Optional] _Calculus_ by Gilbert Strang (PDF version is _free_!)
     * [One single big PDF file](http://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf)
     * [PDF files by chapters](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/)
@@ -98,7 +98,7 @@ students are required to have a graphing calculator
 The use of such calculators may be required for certain homework problems
 or in-class activities.
 However, all the quizzes and exams are designed so that no calculator will be needed.
-Therefore calculators or any smart devices with internet capabilities
+Therefore calculators or any smart devices with Internet capabilities
 are not allowed on any of the quizzes and exams.
 
 ### Daily quizzes
@@ -111,19 +111,13 @@ However, a missing quiz may be excused if valid reasons
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero.
 
-### Worksheets
-In-class practice is an important component of the learning process.
-Worksheets will be distributed during _every_ class meeting.
-Students will work on problems on the worksheets (possibly in groups).
-Worksheets _will be collected_ at the end of the class and _graded_.
-
 ### Projects
 Projects are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
 They are a major part of your course grade.
 
 ### Final exam
-The mandatory final exam is scheduled at 5:00pm--6:30pm May 3rd 2017.
+The mandatory final exam will take place in the last day of class.
 It constitutes a major part of your course grade.
 
 ### Grade composition
@@ -133,10 +127,9 @@ and is calculated according to the following weights.
 
 | Component  | Points |
 |------------|--------|
-| Worksheet  |  260   |
-| Quizzes    |  540   |
-| Projects   |  100   |
-| Final Exam |  100   |
+| Quizzes    |  400   |
+| Projects   |   40   |
+| Final Exam |   60   |
 
 ### Grading scale
 
