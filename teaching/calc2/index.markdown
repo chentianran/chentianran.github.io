@@ -23,7 +23,6 @@ and depending on the difficulty levels they carry different type of points:
 
 Due days will be announced in class.
 You _must_ type your solutions.
-See a list of projects [here](projects/).
 
 ## How to survive this course?
 
