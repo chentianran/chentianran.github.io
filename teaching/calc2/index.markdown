@@ -3,7 +3,7 @@ layout: default
 title: MATH-1620A
 ---
 
-# MATH-1620A (CRN 3401) Spring 2017
+# MATH-1620A (CRN 3401) Summer 2017
 
 * [Course syllabus](syllabus/)
 * [Informal syllabus summary](summary/)
@@ -15,7 +15,6 @@ topics in this course.
 Each project contains several questions or versions,
 and depending on the difficulty levels they carry different type of points:
 
-* Regular points: You can earn up to 100 regular points.
 * "++" points: You can earn "++" points by exploring deeper questions.
   You can earn up to 60 "++" points.
 * "\*\*" points: Certain questions that are beyond Calc-2 level may carry

@@ -3,7 +3,7 @@ layout: default
 title: MATH-1610
 ---
 
-# MATH-1610B (CRN 2695) Spring 2017 Course Syllabus
+# MATH-1610A (CRN 2695) Summer 2017 Course Syllabus
 
 ### When, where, and who
 
@@ -44,7 +44,7 @@ These prerequisite can be satisfied by any one of the following:
 ### Textbook
 
 - [Required] _Calculus: Early Transcendentals_ (any edition) by Larson & Edwards
-  (8th edition ISBN: 978-1285741550)
+  (6th edition ISBN: 978-1285774770)
 - [Optional] _Calculus_ by Gilbert Strang (PDF version is _free_!)
     * [One single big PDF file](http://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf)
     * [PDF files by chapters](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/)
@@ -81,7 +81,7 @@ students are required to have a graphing calculator
 The use of such calculators may be required for certain homework problems
 or in-class activities.
 However, all the quizzes and exams are designed so that no calculator will be needed.
-Therefore calculators or any smart devices with internet capabilities
+Therefore calculators or any smart devices with Internet capabilities
 are not allowed on any of the quizzes and exams.
 
 ### Homework
@@ -124,10 +124,9 @@ and is calculated according to the following weights:
 
 | Component  | Points |
 |------------|--------|
-| Homework   |   80   |
-| Projects   |   80   |
-| Quizzes    |  540   |
-| Final Exam |  100   |
+| Quizzes    |  400   |
+| Final Exam |   60   |
+| Projects   |   40   |
 
 ### Grading scale
 
