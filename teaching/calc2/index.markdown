@@ -1,9 +1,9 @@
 ---
 layout: default
-title: MATH-1620A
+title: MATH-1620
 ---
 
-# MATH-1620A (CRN 3401) Summer 2017
+# MATH-1620 Summer 2017
 
 * [Course syllabus](syllabus/)
 * [Informal syllabus summary](summary/)

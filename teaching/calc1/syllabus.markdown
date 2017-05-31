@@ -3,12 +3,12 @@ layout: default
 title: MATH-1610
 ---
 
-# MATH-1610A (CRN 2695) Summer 2017 Course Syllabus
+# MATH-1610A (CRN 3394) Summer 2017 Course Syllabus
 
 ### When, where, and who
 
-* Time: Mon, Wed 2:10pm -- 3:50pm
-* Room: 218 Goodwyn Hall
+* Time: Mon, Tue, Wed 10:15am -- 12:20pm
+* Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/calc1/>
