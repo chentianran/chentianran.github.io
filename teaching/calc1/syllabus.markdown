@@ -107,7 +107,7 @@ Otherwise, a missing quiz receives a score of _zero_.
 
 ### Final exam
 
-The mandatory final exam is scheduled at 1:30pm--3:00pm May 3rd 2017.
+The mandatory final exam is scheduled on the last day of class.
 It constitutes a major part of your course grade.
 The final exam consists of two parts:
 
