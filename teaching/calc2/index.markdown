@@ -12,6 +12,7 @@ title: MATH-1620
 
 There will be several projects that will guide you to explore some deeper
 topics in this course.
+You can find a list of problems [here](projects/).
 Each project contains several questions or versions,
 and depending on the difficulty levels they carry different type of points:
 
