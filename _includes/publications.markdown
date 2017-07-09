@@ -1,3 +1,9 @@
+-   **Tianran Chen** and Dhagash Mehta.  
+    "On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations".  
+    *IEEE Transactions on Power Systems*  
+    [ [pdf](research/papers/powerflow-bkk.pdf) ]
+    [ [doi:10.1109/TPWRS.2017.2724030](https://doi.org/10.1109/TPWRS.2017.2724030) ]
+
 -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
     "Mixed cell computation in Hom4PS-3".  
     *Journal of Symbolic Computation (2017), pp. 516-534*  
