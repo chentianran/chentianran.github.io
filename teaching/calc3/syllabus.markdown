@@ -88,10 +88,10 @@ However, all the quizzes and exams are designed so that no calculator will be ne
 Therefore calculators or any smart devices with Internet capabilities
 are not allowed on any of the quizzes and exams.
 
-### Daily quizzes
+### Weekly quizzes
 
-There will be a short quiz at the beginning of _every_ class meeting to test
-our understanding of the material discussed in the previous meeting.
+There will be a short quiz _every week_ to test
+our understanding of the material discussed in the previous meetings.
 __No makeup quiz will be offered__.
 However, a missing quiz may be excused if valid reasons
 (military assignments, medical issues, family emergency, etc)
@@ -103,6 +103,13 @@ Projects are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
 They are a major part of your course grade.
 
+### Homework problems
+Practice is a crucial component in the learning process.
+Certain exercise problems will be assigned in class.
+
+### Participation
+Participation in in-class discussion is an important component of the learning process.
+
 ### Final exam
 The mandatory final exam will take place in the last day of class.
 It constitutes a major part of your course grade.
@@ -112,11 +119,12 @@ Your final grade is determined according to your overall performance of quizzes,
 the in-class worksheets, projects, and the final exam,
 and is calculated according to the following weights.
 
-| Component  | Points |
-|------------|--------|
-| Quizzes    |  400   |
-| Projects   |   40   |
-| Final Exam |   60   |
+| Component        | Points |
+|------------------|--------|
+| Quizzes          |  200   |
+| Projects         |  200   |
+| Final Exam       |   50   |
+| Participation/HW |   50   |
 
 ### Grading scale
 
@@ -126,16 +134,52 @@ and is calculated according to the following weights.
 * D: 60% - 69.9%
 * F: below 60%
 
-### Suggested homework problems
-Practice is a crucial component in the learning process.
-Certain exercise problems will be assigned in class.
-They will not be collected or graded.
-However, since all exams are very similar to questions from homework,
-doing the homework problems regularly is crucial for our success in this course.
-
 ### Other policies
 
 {% include syllabus_policy.markdown %}
+
+### Schedule
+
+* Day 0 : Overview and motivations
+* Day 1 : Coordinate systems for plane and space
+    - Cartesian and polar coordinate systems for the plane
+    - Cartesian, cylindrical, and spherical coordinate systems for the space
+* Day 2 : Vectors and matrices
+* Day 3 : Dot product, cross product, and matrix determinant
+* Day 4 : Review of planar curves
+* Day 5 : Parametric curves
+* Day 6 : Calculus on planar curves
+    - Tangent vectors and velocity
+    - Planar curves as solutions of differential equations
+* Day 7  : The arc-length problem
+* Day 8  : (Optional) Planar curves: parametric vs implicit
+* Day 9  : Curves in space
+* Day 10 : Planes in space
+* Day 11 : Surfaces in space
+    - Surfaces as graphs
+    - Surfaces as solutions to equations
+* Day 12 : Calculus on surfaces
+* Day 13 : The volume problem: boxes and slices
+* Day 14 : Volume computation using integrals
+* Day 15 : Differential equations on the plane
+* Day 16 : Solving differential equations
+* Day 17 : Functions of multiple variables
+    - Surface as graphs
+    - Partial derivatives
+    - Directional derivatives
+* Day 18 : Gradient fields
+* Day 19 : Line integrals
+* Day 20 : Gradient Theorem (FTC for line integrals)
+* Day 21 : Vector fields
+* Day 22 : Vector fields and differential equations
+* Day 23 : Operations on vector fields
+    - Divergence
+    - Curl
+* Day 24 : Differential equations in space
+* Day 25 : Divergence Theorem
+* Day 26 : Green's Theorem
+* Day 27 : (Optional) Stokes' Theorem
+* Day 28 : (Optional) Projects
 
 ### Calendar
 Below is the tentative schedule, and it may not reflect changes announced in class.
