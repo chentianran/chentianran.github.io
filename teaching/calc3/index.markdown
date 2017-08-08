@@ -3,23 +3,15 @@ layout: default
 title: MATH-1620
 ---
 
-# MATH-1620 Summer 2017
+# MATH-2630 A Fall 2017
 
-* [Course syllabus](syllabus/)
+This course focuses on multivariable calculus
+which is a fundamental pillar for modern science and engineering.
 
-## Projects
+* [Syllabus](syllabus/)
+* [Schedule](syllabus/#schedule)
+* [Projects)(projects/)
 
-There will be several projects that will guide you to explore some deeper
-topics in this course.
-You can find a list of problems [here](projects/).
-Each project contains several questions or versions,
-and depending on the difficulty levels they carry different type of points:
-
-* "++" points: You can earn "++" points by exploring deeper questions.
-  You can earn up to 50 "++" points.
-
-Due days will be announced in class.
-You _must_ type your solutions.
 
 ## How to survive this course?
 

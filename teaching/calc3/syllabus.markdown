@@ -1,14 +1,14 @@
 ---
 layout: default
-title: MATH-xxx
+title: MATH-2630
 ---
 
-# MATH-xxx (CRN xxx) Fall 2017 Course Syllabus
+# MATH-2630 A (CRN 1650) Fall 2017 Course Syllabus
 
 ### When, where, and who
 
-* Time: xxx
-* Room: xxx Goodwyn Hall
+* Time: MW 12:20pm --- 2:00pm (100 min)
+* Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/calc3/>
@@ -22,6 +22,27 @@ alternative meeting time may be arranged
 (please give me at least 48hr advanced notice).
 
 ### What we will learn
+
+Multivariable calculus is a fundamental pillar for modern science and engineering:
+
+- It extends single variable calculus to higher dimensions as if we are
+  putting on 3D glasses.
+  It turns out the higher dimensional structures are much richer than in the
+  single variable cases, and many familiar concepts and theorems have much more
+  interesting generalizations.
+
+- It provides the basic vocabulary for mathematical descriptions of
+  fundamental processes and phenomena..
+
+- It forms the basic building blocks for geometrical objects like curves,
+  surfaces, solids, and even higher dimensional analogs
+
+- It develops intuition needed in other fields like linear algebra or data analysis.
+
+- It prepares you for further study in many other fields
+  (not only in mathematics and its direct applications)
+
+- It makes you smarter (... I hope).
 
 This is the third course in the calculus sequence.
 We will extend calculus to functions with more than one variables.
@@ -101,30 +122,33 @@ Otherwise, a missing quiz receives a score of zero.
 ### Projects
 Projects are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
-They are a major part of your course grade.
+They will be a major part of your course grade.
 
 ### Homework problems
 Practice is a crucial component in the learning process.
 Certain exercise problems will be assigned in class.
 
 ### Participation
-Participation in in-class discussion is an important component of the learning process.
+Participation in in-class and online discussions is a crucially important
+component of the learning process.
+Your participation will be recorded and graded,
+and it constitutes a major part of your course grade.
 
 ### Final exam
-The mandatory final exam will take place in the last day of class.
-It constitutes a major part of your course grade.
+The mandatory final exam is scheduled at __11:00am---12:00pm Dec. 6.__
+If you miss the final exam, your grade will be FA.
 
 ### Grade composition
 Your final grade is determined according to your overall performance of quizzes,
 the in-class worksheets, projects, and the final exam,
 and is calculated according to the following weights.
 
-| Component        | Points |
-|------------------|--------|
-| Quizzes          |  200   |
-| Projects         |  200   |
-| Final Exam       |   50   |
-| Participation/HW |   50   |
+| Component   | Points |
+|-------------|--------|
+| Quizzes     |  140   |
+| Discussions |  250   |
+| Projects    |  550   |
+| Final Exam  |   60   |
 
 ### Grading scale
 
@@ -138,7 +162,7 @@ and is calculated according to the following weights.
 
 {% include syllabus_policy.markdown %}
 
-### Schedule
+### <a name="schedule"></a> Schedule
 
 * Day 0 : Overview and motivations
 * Day 1 : Coordinate systems for plane and space
@@ -180,10 +204,3 @@ and is calculated according to the following weights.
 * Day 26 : Green's Theorem
 * Day 27 : (Optional) Stokes' Theorem
 * Day 28 : (Optional) Projects
-
-### Calendar
-Below is the tentative schedule, and it may not reflect changes announced in class.
-The instructor reserves the right to adjust the policies outlined in this course syllabus.
-All changes will be clearly communicated to the students in class.
-
-<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=1200&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=qlsurb5gsna1hslnokeu39963g%40group.calendar.google.com&amp;color=%2342104A&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="1200" frameborder="0" scrolling="no"></iframe>
