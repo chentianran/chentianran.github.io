@@ -10,7 +10,7 @@ which is a fundamental pillar for modern science and engineering.
 
 * [Syllabus](syllabus/)
 * [Schedule](syllabus/#schedule)
-* [Projects)(projects/)
+* [Projects](projects/)
 
 
 ## How to survive this course?

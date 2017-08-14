@@ -32,15 +32,15 @@ Multivariable calculus is a fundamental pillar for modern science and engineerin
   interesting generalizations.
 
 - It provides the basic vocabulary for mathematical descriptions of
-  fundamental processes and phenomena..
+  fundamental processes and phenomena.
 
 - It forms the basic building blocks for geometrical objects like curves,
-  surfaces, solids, and even higher dimensional analogs
+  surfaces, solids, and even higher dimensional analogs.
 
 - It develops intuition needed in other fields like linear algebra or data analysis.
 
 - It prepares you for further study in many other fields
-  (not only in mathematics and its direct applications)
+  (not only in mathematics and its direct applications).
 
 - It makes you smarter (... I hope).
 
@@ -59,12 +59,13 @@ In particular, we will cover...
 * Line integrals
 * Green's theorem
 * (Optional) Stokes' and Gauss's theorems
+* (Optional) Fourier transformation and DCT
 
 ### Prerequisite
 
 In order to succeed in this class, a solid understanding of basic calculus is necessary.
-These prerequisite can be satisfied by MATH-1610
-or an appropriate score in the AUM Math Placement Test.
+These prerequisite can be satisfied by MATH-1610 and MATH-1620
+(or an appropriate score in the AUM Math Placement Test).
 
 ### Textbook
 
@@ -123,32 +124,37 @@ Otherwise, a missing quiz receives a score of zero.
 Projects are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
 They will be a major part of your course grade.
+The list of suggested project problems can be found [here](../projects/).
 
 ### Homework problems
 Practice is a crucial component in the learning process.
-Certain exercise problems will be assigned in class.
+Suggested exercise problems can be found at the end of each section.
+
+### Reading assignments
+You are expected to read the book in preparation of each class meetings.
+Reading assignments, i.e., sections (from the required textbook) are listed
+in the course schedule below.
+The reading assignments are to be completed _before_ each class meeting.
 
 ### Participation
 Participation in in-class and online discussions is a crucially important
 component of the learning process.
-Your participation will be recorded and graded,
-and it constitutes a major part of your course grade.
+Your participation will be _recorded and graded_,
+and it constitutes a _major part_ of your course grade.
 
 ### Final exam
-The mandatory final exam is scheduled at __11:00am---12:00pm Dec. 6.__
+The _mandatory_ final exam is scheduled at __11:00am---12:00pm Dec. 6.__
 If you miss the final exam, your grade will be FA.
 
-### Grade composition
-Your final grade is determined according to your overall performance of quizzes,
-the in-class worksheets, projects, and the final exam,
-and is calculated according to the following weights.
+###  <a name="grade"></a> Grade composition
+Your final grade is determined according to the following weighted average.
 
 | Component   | Points |
 |-------------|--------|
-| Quizzes     |  140   |
+| Projects    |  500   |
 | Discussions |  250   |
-| Projects    |  550   |
-| Final Exam  |   60   |
+| Quizzes     |  150   |
+| Final Exam  |  100   |
 
 ### Grading scale
 
@@ -164,43 +170,93 @@ and is calculated according to the following weights.
 
 ### <a name="schedule"></a> Schedule
 
+Listed below are the topics of discussion of each day.
+Reading the book _before_ the class meetings is very important.
+Reading assignments, i.e., sections (from the required textbook)
+that you should read to get ready for our class meeting are also listed below.
+The reading assignments are to be completed _before_ each class meeting.
+
 * Day 0 : Overview and motivations
 * Day 1 : Coordinate systems for plane and space
     - Cartesian and polar coordinate systems for the plane
     - Cartesian, cylindrical, and spherical coordinate systems for the space
+    - _Reading: 10.3, 10.4, 11.1, 11.2_
 * Day 2 : Vectors and matrices
+    - Vectors in the plane
+    - Vectors in space
+    - Matrices
+    - Matrix-vector product
+    - _Reading: 11.1, 11.2_
 * Day 3 : Dot product, cross product, and matrix determinant
+    - _Reading: 11.3, 11.4_
 * Day 4 : Review of planar curves
+    - _Reading: 10.1, 10.2, 10.3_
 * Day 5 : Parametric curves
+    - _Reading: 10.1, 10.2, 10.3, 12.1_
 * Day 6 : Calculus on planar curves
     - Tangent vectors and velocity
-    - Planar curves as solutions of differential equations
+    - Curves as solutions of differential equations
+    - _Reading: 10.3, 12.1, 12.3, review Chapter 3_
 * Day 7  : The arc-length problem
-* Day 8  : (Optional) Planar curves: parametric vs implicit
+    - Computing arc-length for planar and space curves
+    - _Reading: 12.4, 12.5, review 7.4_
+* Day 8  : (Optional) Planar curves: graph vs parametric vs implicit
+    - Curves in the plane can be described in at least three ways.
+      We shall review the differences among them.
 * Day 9  : Curves in space
+    - Some basic examples
+    - Reviewing basic calculus constructions
+    - Putting everything together, we review the different kinds of calculus
+      we can do on a curve in space
+    - _Reading: review 11.1, 12.1, 12.3, 12.4_
 * Day 10 : Planes in space
+    - _Reading: 11.5_
 * Day 11 : Surfaces in space
     - Surfaces as graphs
     - Surfaces as solutions to equations
+    - _Reading: 11.6, 13.1, 13.3_
 * Day 12 : Calculus on surfaces
+    - _Reading: 13.1, 13.3, 13.4, 13.5, 13.6_
 * Day 13 : The volume problem: boxes and slices
-* Day 14 : Volume computation using integrals
+    - The basic idea of volume in space
+    - How are the defined?
+    - How to compute volume using integrals
+    - _Reading: review Chapter 7_
+* Day 14 : Multiple integral and volume computation
+    - Rethink volume computation
+    - Concept of multiple integrals
+    - Concept of iterated integrals
+    - (Optional) Fubini's Theorem
+    - _Reading: 14.1, 14.2_
 * Day 15 : Differential equations on the plane
+    - _Reading: review Chapter 6_
 * Day 16 : Solving differential equations
+    - _Reading: review Chapter 6_
 * Day 17 : Functions of multiple variables
     - Surface as graphs
     - Partial derivatives
     - Directional derivatives
-* Day 18 : Gradient fields
+    - _Reading: review Chapter 12 and 13_
+* Day 18 : Vector fields
+    - Concept of vector fields
+    - Concept of gradient fields
+    - _Reading: 15.1_
 * Day 19 : Line integrals
+    - _Reading: 15.2_
 * Day 20 : Gradient Theorem (FTC for line integrals)
-* Day 21 : Vector fields
+    - _Reading: 15.3_
+* Day 21 : Vector fields, revisited
+    - _Reading: review 15.1, 15.2, 15.3_
 * Day 22 : Vector fields and differential equations
 * Day 23 : Operations on vector fields
     - Divergence
     - Curl
+    - _Reading: review 15.1, 15.2, 15.3_
 * Day 24 : Differential equations in space
 * Day 25 : Divergence Theorem
+    - _Reading: 15.7_
 * Day 26 : Green's Theorem
+    - _Reading: 15.4_
 * Day 27 : (Optional) Stokes' Theorem
+    - _Reading: 15.8_
 * Day 28 : (Optional) Projects

@@ -5,6 +5,29 @@ title: Multivariable Calculus Projects
 
 # {{ page.title }}
 
+The following problems will guide you to gain deeper understanding of the
+key concepts in this course.
+Please attempt as many problem as possible.
+You can earn up to __20 points__ for each problem.
+You must type your solutions and clearly label each problem
+(ideally each problem should on a separate sheet of paper).
+
+### Vectors
+
+#### [a] Different concepts (Day 4)
+Physicists and computer programmers all use the word "vector",
+but they mean different things.
+Explain what does the word mean in these two contexts.
+How are they related to the mathematical meaning of that word?
+
+#### [b] Length of a vector (Day 4)
+How is the length (magnitude) of a vector $$(x,y,z)$$ is defined?
+Why is it defined that way?
+
+### Derivatives
+
+#### [a] What is "directional derivative"
+
 ### Higher dimensional spheres
 
 #### [a] Volume of a 4-dimensional unit sphere
@@ -23,6 +46,11 @@ What do you notice?
 Do you have an intuitive explanation of this trend?
 What would be the limit be as $$n \to \infty$$?
 
+### Gravitational pull of the earth
+To make the computation easy, let us assume the earth is a perfectly spherical
+ball with a uniform density same as that of granite.
+What is the gravitational pull experienced by a point mass of 1 kg
+that is 1000 meters from the _surface_ of the earth?
 
 ### Hollow planet
 Let's suppose there is planet that has a hollow core

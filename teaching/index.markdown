@@ -6,10 +6,11 @@ title: Teaching
 Teaching
 ========
 
-In the Summer semester of 2017, I am teaching...
+In the Fall semester of 2017, I am teaching...
 
-- [MATH-1610 Calculus I ](calc1/),
-- [MATH-1620 Calculus II](calc2/).
+[MATH-2630](teaching/calc3/)  (Multivariable Calculus),
+[MATH-4320](teaching/alg2/)   (Modern Algebra II).
+[MATH-4400](teaching/modsim/) (Math Models and Simulations).
 
 {% include hours.markdown %}
 
