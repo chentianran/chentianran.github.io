@@ -8,9 +8,9 @@ Teaching
 
 In the Fall semester of 2017, I am teaching...
 
-[MATH-2630](teaching/calc3/)  (Multivariable Calculus),
-[MATH-4320](teaching/alg2/)   (Modern Algebra II).
-[MATH-4400](teaching/modsim/) (Math Models and Simulations).
+- [MATH-2630](calc3/)  (Multivariable Calculus),
+- [MATH-4320](alg2/)   (Modern Algebra II).
+- [MATH-4400](modsim/) (Math Models and Simulations).
 
 {% include hours.markdown %}
 
