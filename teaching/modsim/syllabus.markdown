@@ -33,6 +33,13 @@ Use of mathematical models and computer simulations for solving real world probl
 
 _No textbook is required._ However, the following books will be used as references:
 
+- _A first course in mathematical modeling_ (4th edition)
+  by F. Giordano, W. Fox, S. Horton, and M. Weir
+  ISBN: 978-0-495-01159-0
+- _An introduction to mathematical modeling_
+  by E. Bender
+  ISBN: 978-0-486-41180-4
+
 ### Attendance and participation
 
 Participation in in-class discussions and activities is an important part
@@ -77,6 +84,7 @@ In the context of computer simulation, basic programming skills can be very usef
 Familiarity with the following programming languages are
 _not required but strongly recommended_:
 
+- Matlab / Octave
 - C / C++
 - Python / Ruby
 - Javascript
