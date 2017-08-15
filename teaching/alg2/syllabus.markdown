@@ -23,7 +23,8 @@ alternative meeting time may be arranged
 
 ### What we will learn
 
-This undergraduate level course on abstract algebra that follows Modern Algebra I.
+This is an undergraduate level course on abstract algebra
+that follows Modern Algebra I.
 Topics include rings, ideals, fields, modules, vector spaces, factorization,
 field extensions, and Galois theory.
 
@@ -67,6 +68,12 @@ Practice is a crucial component in the learning process.
 Certain exercise problems will be assigned weekly.
 Each homework assignment is due the next Monday.
 
+### Reading assignments
+You are expected to read the book in preparation of each class meetings.
+Reading assignments, i.e., sections (from the required textbook) are listed
+in the course schedule below.
+The reading assignments are to be completed _before_ each class meeting.
+
 ### In-class discussion
 Participation in in-class discussion is an important component of the learning process.
 Your participation will be recorded.
@@ -76,16 +83,16 @@ The mandatory final exam is scheduled at 9:30am--10:30am Dec. 7.
 It constitutes a major part of your course grade.
 
 ### Grade composition
-Your final grade is determined according to your overall performance of quizzes,
-the in-class worksheets, projects, and the final exam,
-and is calculated according to the following weights.
+Your final grade is determined according to your overall performance on
+homework assignments, in-class discussions mid-term exam, and final exam.
+It is calculated according to the following weights.
 
 | Component     | Points |
 |---------------|--------|
-| Homework      |  200   |
-| Discussion    |  200   |
-| Mid-term Exam |   50   |
-| Final Exam    |   50   |
+| Homework      |  400   |
+| Discussion    |  400   |
+| Mid-term Exam |  100   |
+| Final Exam    |  100   |
 
 ### Grading scale
 
@@ -99,7 +106,7 @@ and is calculated according to the following weights.
 
 {% include syllabus_policy.markdown %}
 
-### Schedule
+### <a name="schedule"></a> Schedule
 
 * Day 1: Introduction and motivations
 * Day 2: Definition of rings
@@ -127,11 +134,3 @@ and is calculated according to the following weights.
 * Day 24: Case study: Puiseux series
 * Day 25: (Optional) An invitation to algebraic geometry
 * Day 26: Galois theory
-
-
-### Calendar
-Below is the tentative schedule, and it may not reflect changes announced in class.
-The instructor reserves the right to adjust the policies outlined in this course syllabus.
-All changes will be clearly communicated to the students in class.
-
-<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=1200&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=qlsurb5gsna1hslnokeu39963g%40group.calendar.google.com&amp;color=%2342104A&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="1200" frameborder="0" scrolling="no"></iframe>
