@@ -1,6 +1,6 @@
 ---
 layout: default
-title: MATH-1620
+title: MATH-2630
 ---
 
 # MATH-2630 A Fall 2017

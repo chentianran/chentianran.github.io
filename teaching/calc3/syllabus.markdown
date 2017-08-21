@@ -259,4 +259,3 @@ The reading assignments are to be completed _before_ each class meeting.
     - _Reading: 15.4_
 * Day 27 : (Optional) Stokes' Theorem
     - _Reading: 15.8_
-* Day 28 : (Optional) Projects

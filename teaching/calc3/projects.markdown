@@ -24,9 +24,18 @@ How are they related to the mathematical meaning of that word?
 How is the length (magnitude) of a vector $$(x,y,z)$$ is defined?
 Why is it defined that way?
 
-### Derivatives
+### Derivatives (Day 17)
 
-#### [a] What is "directional derivative"
+#### [a] What is "gradient"?
+For a function $$f(x,y)$$ in two variables,
+that is a gradient vector of $$f$$?
+From the point of view of geometry, does it mean anything?
+
+#### [b] What is "directional derivative"
+For a function $$f(x,y)$$ in two variables,
+what is the definition of a _directional derivative_ of this function?
+How is it connected to partial derivatives?
+Are partial derivatives special kinds of directional derivative?
 
 ### Higher dimensional spheres
 
@@ -45,6 +54,9 @@ and observe the general trend.
 What do you notice?
 Do you have an intuitive explanation of this trend?
 What would be the limit be as $$n \to \infty$$?
+
+#### [d] Visualizing a 4-dimensional sphere
+Can you visualize a 4-dimensional sphere? How?
 
 ### Gravitational pull of the earth
 To make the computation easy, let us assume the earth is a perfectly spherical

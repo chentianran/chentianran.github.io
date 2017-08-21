@@ -1,6 +1,6 @@
 ---
 layout: default
-title: MATH-xxx
+title: MATH-4320A
 ---
 
 # MATH-4320A (CRN 1734) Fall 2017 Course Syllabus

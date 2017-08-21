@@ -123,7 +123,7 @@ It is calculated according to the following weights.
 
 {% include syllabus_policy.markdown %}
 
-### Schedule
+### <a name="schedule"></a> Schedule
 
 * Day 0 : Overview and motivations
 * Day 1 : Basic languages of mathematics

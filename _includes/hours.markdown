@@ -1,4 +1,5 @@
 - Office: 310A Goodwyn Hall
 - Office hour:
-    * MTW 3:05pm -- 4:00pm
+    * Mon,Wed 2pm -- 3pm
+    * Tue,Thu 12:30pm -- 3pm
     * ...and by appointment
