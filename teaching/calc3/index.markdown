@@ -32,6 +32,8 @@ which is a fundamental pillar for modern science and engineering.
 ## Additional material
 
 * [Vectors](vectors/)
+* [Sum of vectors](vectorsum/)
+* [Dot product of vectors](dotprod/)
 
 ## Misc.
 

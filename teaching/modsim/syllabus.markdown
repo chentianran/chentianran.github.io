@@ -1,9 +1,9 @@
 ---
 layout: default
-title: MATH-xxx
+title: MATH-4400A
 ---
 
-# MATH-4400 A (CRN 1759) Fall 2017 Course Syllabus
+# MATH-4400A (CRN 1759) Fall 2017 Course Syllabus
 
 ### When, where, and who
 
@@ -192,4 +192,3 @@ It is calculated according to the following weights.
 * Day 25 : (optional) Case study: swarm behavior
 * Day 26 : Case study: simultaneous synchronization
 * Day 27 : Project milestone III: progress report
-* Day 28 : Discussions
