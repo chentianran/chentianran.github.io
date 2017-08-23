@@ -19,9 +19,6 @@ which is a fundamental pillar for modern science and engineering.
   - Reading is an important component in our learning process.
   - Reading assignment are listed in the course schedule
     (to be finished __before__ class)
-* Read your quizzes and the solution sheets
-  - You should understand why your answers are wrong (or why they are right)
-  - If you see the same questions again in the future, will you make the same mistakes?
 * Participate!
   - You are not a passive note-taking robot
   - Let's think together!
@@ -31,6 +28,10 @@ which is a fundamental pillar for modern science and engineering.
   - ...well, as long as you are actively trying to figure out the answers
   - the process of the trying to figure out the answer is the important part.
     The only important part!
+
+## Additional material
+
+* [Vectors](vectors/)
 
 ## Misc.
 
