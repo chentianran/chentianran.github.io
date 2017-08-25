@@ -1,3 +1,8 @@
+-   Christian Knoll, Dhagash Mehta, **Tianran Chen**, and Franz Pernkopf  
+    "Fixed points of belief propagation -- An analysis via polynomial homotopy continuation".  
+    *IEEE Transactions on Pattern Analysis and Machine Intelligence*  
+	[ [arXiv](https://arxiv.org/abs/1605.06451) ]
+
 -   **Tianran Chen** and Dhagash Mehta.  
     "On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations".  
     *IEEE Transactions on Power Systems*  
