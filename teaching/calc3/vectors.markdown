@@ -32,5 +32,18 @@ They form the numerical coordinates of a vector in _standard basis_.
   <!-- Our sketch will go here! -->
 </div>
 
+## Basic operations
+
+<p>
+\[
+    \begin{aligned}
+        &\|\vec{v}\| &&\text{the magnitude of } \vec{v} \\
+        &\vec{v} + \vec{u} &&\text{the sum of two vectors} \\
+        &-\vec{v} &&\text{reverse the direction (and keeping the magnitude)} \\
+        &c \cdot \vec{v} &&\text{scaling by a (positive) factor of } c
+    \end{aligned}
+\]
+
+
 <script language="javascript" type="text/javascript" src="/js/p5.min.js"></script>
 <script language="javascript" type="text/javascript" src="/js/vector.js"></script>
