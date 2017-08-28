@@ -22,7 +22,7 @@ title: Matrix-vector products
 \]
 </p>
 
-<div id="sketch-holder" class="text-center">
+<div id="sketch-holder" class="text-center" style="position: relative;">
   <!-- Our sketch will go here! -->
 </div>
 
