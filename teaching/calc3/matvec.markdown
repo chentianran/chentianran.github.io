@@ -92,10 +92,10 @@ and an $$n \times 1$$ vector is defined to be
     \end{bmatrix}
     =
     \begin{bmatrix}
-        a_{11} x_1 & a_{12} x_2 & \cdots & a_{1n} x_n \\
-        a_{21} x_1 & a_{22} x_2 & \cdots & a_{2n} x_n \\
-        \vdots & \vdots & \ddots & \vdots \\
-        a_{m1} x_1 & a_{m2} x_2 & \cdots & a_{mn} x_n
+        a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n \\
+        a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n \\
+        \vdots \\
+        a_{m1} x_1 + a_{m2} x_2 + \cdots + a_{mn} x_n
     \end{bmatrix}
 \]
 </p>
