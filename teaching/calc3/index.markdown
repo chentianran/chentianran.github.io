@@ -34,7 +34,9 @@ which is a fundamental pillar for modern science and engineering.
 * [Vectors](vectors/)
 * [Sum of vectors](vectorsum/)
 * [Dot product of vectors](dotprod/)
+* [Cross product of vectors](crossprod/)
 * [Matrix-vector product](matvec/)
+* [Matrix determinant](det/)
 
 ## Misc.
 

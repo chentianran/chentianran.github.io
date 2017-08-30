@@ -1,3 +1,6 @@
+- (with Robert Davis and Dhagash Mehta)  
+  "Counting equilibria of the Kuramoto model using birationally invariant intersection index"
+
 - "Unmixing the mixed volume computation"  
   [ [arXiv](https://arxiv.org/abs/1703.01684) ]
 

@@ -55,6 +55,10 @@ The book told us that this is the "signed area" of the parallelogram
 spanned by the two column vectors.
 Explain why.
 
+#### [d] Cross products and area (Day 7)
+The magnitude of the cross product between two vectors is the area of the
+parallelogram spanned by the two vectors. Explain why.
+
 ### Planar curves
 
 #### History: the brachistochrone curve problem (Day 10)

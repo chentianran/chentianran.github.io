@@ -5,7 +5,8 @@ title: CV
 
 ### Employment
 
-- 2016 – present Assistant Professor, Auburn University Montgomery.
+- 2017 – present Assistant Professor, Auburn University Montgomery.
+- 2016 – 2017 Lecturer, Auburn University Montgomery.
 - 2012 – 2016 Research Instructor, Michigan State University.
 - 2006 – 2012 Research and Teaching Assistant, Michigan State University.
 - 2003 – 2005 Research Assistant, Western Connecticut State University.
