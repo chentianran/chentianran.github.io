@@ -24,6 +24,46 @@ How are they related to the mathematical meaning of that word?
 How is the length (magnitude) of a vector $$(x,y,z)$$ is defined?
 Why is it defined that way?
 
+### Matrices
+
+#### [a] Matrices for transformations of the plane (Day 6)
+We have demonstrated that matrix-vector product using 2x2 matrices
+represent linear transformations of the plane.
+Write down matrices that represent the following transformations:
+
+- Counter clockwise rotation by an angle $$\theta$$
+- Clockwise rotation by an angle $$\theta$$
+- Uniform scaling by a factor of 2
+- Scaling by a factor of 2 in the $$x$$ direction only
+
+#### [b] Rotational matrices for 3-dimensional space (Day 6)
+How can we represent rotations in 3-dimensional space using 3x3 matrices?
+
+#### [c] Matrices determinant (Day 7)
+For a 2x2 matrix
+<p>
+\[
+    A =
+    \begin{bmatrix}
+        a & b \\
+        c & d
+    \end{bmatrix}
+\]
+</p>
+its determinant is $$\det A = ad - bc$$.
+The book told us that this is the "signed area" of the parallelogram
+spanned by the two column vectors.
+Explain why.
+
+### Planar curves
+
+#### History: the brachistochrone curve problem (Day 10)
+The brachistochrone problem is a famous mathematical problem posted by
+Johann Bernoulli in 1696 to all the best mathematicians in western Europe.
+This simple yet fascinating problem sparked the development of several
+branches of modern mathematics (arguably including calculus of variation).
+Provide a brief description of the problem, its history, and its solution(s).
+
 ### Derivatives (Day 17)
 
 #### [a] What is "gradient"?
