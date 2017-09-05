@@ -5,7 +5,8 @@ var coupled = false;
 var strength;
 
 function setup() {
-    createCanvas(600,500);
+    var canvas = createCanvas(600,500);
+    canvas.parent('sketch-holder');
     var b_reset  = createButton ('Reset');
     var b_couple = createButton ('Coupling');
 
