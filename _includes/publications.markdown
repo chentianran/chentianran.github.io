@@ -7,7 +7,21 @@
     "On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations".  
     *IEEE Transactions on Power Systems*  
     [ [pdf](research/papers/powerflow-bkk.pdf) ]
-    [ [doi:10.1109/TPWRS.2017.2724030](https://doi.org/10.1109/TPWRS.2017.2724030) ]
+    [ [link](https://doi.org/10.1109/TPWRS.2017.2724030) ]
+    [
+        <a data-toggle="collapse"
+        href="#abs-powerflow"
+        aria-expanded="false"
+        aria-controls="abs-powerflow">
+            abstract
+        </a>
+    ]
+
+    <div class="collapse" id="abs-powerflow">
+      <div class="card card-body">
+          Active research activity in power systems areas has focused on developing computational methods to solve load flow equations where a key question is the maximum number of solutions. Though several upper bounds exist, recent studies have hinted that much sharper upper bounds that depend the topology of underlying power networks may exist. This paper provides a significant refinement of these observations. We also develop a geometric construction called adjacency polytope which accurately captures the topology of a power network and is immensely useful in the computation of the solution bound. Finally we highlight the significant implications of the development of such solution bounds in numerically solving load flow equations.development of such solution bounds in numerically solving load flow equations.
+      </div>
+    </div>
 
 -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
     "Mixed cell computation in Hom4PS-3".  
