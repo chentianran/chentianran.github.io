@@ -1,7 +1,49 @@
 -   Christian Knoll, Dhagash Mehta, **Tianran Chen**, and Franz Pernkopf  
     "Fixed points of belief propagation -- An analysis via polynomial homotopy continuation".  
     *IEEE Transactions on Pattern Analysis and Machine Intelligence*  
-	[ [arXiv](https://arxiv.org/abs/1605.06451) ]
+    [ [link](https://doi.org/10.1109/TPAMI.2017.2749575) ]
+    [ [arXiv](https://arxiv.org/abs/1605.06451) ]
+    [
+        <a data-toggle="collapse"
+        href="#abs-belief"
+        aria-expanded="false"
+        aria-controls="abs-belief">
+            abstract
+        </a>
+    ]
+    [
+        <a data-toggle="collapse"
+        href="#bib-belief"
+        aria-expanded="false"
+        aria-controls="bib-belief">
+            bibtex
+        </a>
+    ]
+    <div class="collapse" id="abs-belief">
+        <div class="card card-body">
+            Belief propagation (BP) is an iterative method to perform approximate inference on arbitrary graphical models. Whether BP converges and if the solution is a unique fixed point depends on both the structure and the parametrization of the model. To understand this dependence it is interesting to find all fixed points.
+        </div>
+    </div>
+
+    <div class="collapse" id="bib-belief">
+        <div class="card card-body">
+            <pre>
+            <code>
+            @article{Knoll2017,
+                author = {Knoll, Christian and Mehta, Dhagash and Chen, Tianran and Pernkopf, Franz},
+                doi = {10.1109/TPAMI.2017.2749575},
+                issn = {0162-8828},
+                journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+                pages = {1--1},
+                title = {{Fixed Points of Belief Propagation - An Analysis via Polynomial Homotopy Continuation}},
+                url = {http://ieeexplore.ieee.org/document/8027142/},
+                year = {2017}
+            }
+            </code>
+            </pre>
+        </div>
+    </div>
+
 
 -   **Tianran Chen** and Dhagash Mehta.  
     "On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations".  
@@ -16,11 +58,38 @@
             abstract
         </a>
     ]
+    [
+        <a data-toggle="collapse"
+        href="#bib-powerflow"
+        aria-expanded="false"
+        aria-controls="bib-powerflow">
+            bibtex
+        </a>
+    ]
 
     <div class="collapse" id="abs-powerflow">
       <div class="card card-body">
           Active research activity in power systems areas has focused on developing computational methods to solve load flow equations where a key question is the maximum number of solutions. Though several upper bounds exist, recent studies have hinted that much sharper upper bounds that depend the topology of underlying power networks may exist. This paper provides a significant refinement of these observations. We also develop a geometric construction called adjacency polytope which accurately captures the topology of a power network and is immensely useful in the computation of the solution bound. Finally we highlight the significant implications of the development of such solution bounds in numerically solving load flow equations.development of such solution bounds in numerically solving load flow equations.
       </div>
+    </div>
+
+    <div class="collapse" id="bib-powerflow">
+        <div class="card card-body">
+            <pre>
+            <code>
+            @article{chen_network_2017,
+                author = {Chen, Tianran and Mehta, Dhagash},
+                doi = {10.1109/TPWRS.2017.2724030},
+                issn = {0885-8950},
+                journal = {IEEE Transactions on Power Systems},
+                pages = {1--1},
+                title = {{On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations}},
+                url = {http://ieeexplore.ieee.org/document/7971956/},
+                year = {2017}
+            }
+            </code>
+            </pre>
+        </div>
     </div>
 
 -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
