@@ -37,6 +37,7 @@ which is a fundamental pillar for modern science and engineering.
 * [Cross product of vectors](crossprod/)
 * [Matrix-vector product](matvec/)
 * [Matrix determinant](det/)
+* [Contour plots](contour/)
 
 ## Misc.
 
