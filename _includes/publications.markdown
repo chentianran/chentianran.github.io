@@ -21,7 +21,7 @@
     ]
     <div class="collapse" id="abs-belief">
         <div class="card card-body">
-            Belief propagation (BP) is an iterative method to perform approximate inference on arbitrary graphical models. Whether BP converges and if the solution is a unique fixed point depends on both the structure and the parametrization of the model. To understand this dependence it is interesting to find all fixed points.
+            Abstract: Belief propagation (BP) is an iterative method to perform approximate inference on arbitrary graphical models. Whether BP converges and if the solution is a unique fixed point depends on both the structure and the parametrization of the model. To understand this dependence it is interesting to find all fixed points.
         </div>
     </div>
 
@@ -69,7 +69,7 @@
 
     <div class="collapse" id="abs-powerflow">
       <div class="card card-body">
-          Active research activity in power systems areas has focused on developing computational methods to solve load flow equations where a key question is the maximum number of solutions. Though several upper bounds exist, recent studies have hinted that much sharper upper bounds that depend the topology of underlying power networks may exist. This paper provides a significant refinement of these observations. We also develop a geometric construction called adjacency polytope which accurately captures the topology of a power network and is immensely useful in the computation of the solution bound. Finally we highlight the significant implications of the development of such solution bounds in numerically solving load flow equations.development of such solution bounds in numerically solving load flow equations.
+          Abstract: Active research activity in power systems areas has focused on developing computational methods to solve load flow equations where a key question is the maximum number of solutions. Though several upper bounds exist, recent studies have hinted that much sharper upper bounds that depend the topology of underlying power networks may exist. This paper provides a significant refinement of these observations. We also develop a geometric construction called adjacency polytope which accurately captures the topology of a power network and is immensely useful in the computation of the solution bound. Finally we highlight the significant implications of the development of such solution bounds in numerically solving load flow equations.development of such solution bounds in numerically solving load flow equations.
       </div>
     </div>
 

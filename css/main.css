@@ -7,7 +7,8 @@
  * URL: http://blacktie.co
  */
 
-@import url('https://fonts.googleapis.com/css?family=Oswald:700|Ubuntu:300&subset=greek,greek-ext,latin-ext');
+/*@import url('https://fonts.googleapis.com/css?family=Oswald:700|Ubuntu:300&subset=greek,greek-ext,latin-ext');*/
+@import url('https://fonts.googleapis.com/css?family=Oswald:700|Raleway&subset=latin-ext');
 /* @import url(http://fonts.googleapis.com/css?family=Cardo:400,700|Merriweather+Sans:400,800); */
 /* @import url(http://fonts.googleapis.com/css?family=Cardo); */
 /* @import url(http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy);   */
@@ -15,9 +16,8 @@
 
 body {
     background-color: #ffffff;
-    font-family: 'Ubuntu', sans-serif;
-    /* font-family: 'Montserrat', sans-serif; */
-    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
     font-size: 14px;
     color: #555;
 
@@ -28,7 +28,6 @@ body {
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald', sans-serif;
-    /* font-family: 'Montserrat', sans-serif; */
     font-weight: 700;
     color: #333;
 }
