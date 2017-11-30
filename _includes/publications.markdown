@@ -29,6 +29,7 @@
         <div class="card card-body">
             <pre>
             <code>
+            {% raw %}
             @article{Knoll2017,
                 author = {Knoll, Christian and Mehta, Dhagash and Chen, Tianran and Pernkopf, Franz},
                 doi = {10.1109/TPAMI.2017.2749575},
@@ -39,6 +40,7 @@
                 url = {http://ieeexplore.ieee.org/document/8027142/},
                 year = {2017}
             }
+            {% endraw %}
             </code>
             </pre>
         </div>
@@ -77,6 +79,7 @@
         <div class="card card-body">
             <pre>
             <code>
+            {% raw %}
             @article{chen_network_2017,
                 author = {Chen, Tianran and Mehta, Dhagash},
                 doi = {10.1109/TPWRS.2017.2724030},
@@ -87,6 +90,7 @@
                 url = {http://ieeexplore.ieee.org/document/7971956/},
                 year = {2017}
             }
+            {% endraw %}
             </code>
             </pre>
         </div>
