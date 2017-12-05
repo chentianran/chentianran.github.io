@@ -1,0 +1,24 @@
+- nickname: freesum
+  title: >
+    A Product Formula for the Normalized Volume of
+    Free Sums of Lattice Polytopes
+  coauthors: Robert Davis
+  arxiv: https://arxiv.org/abs/1711.11130
+  abstract: >
+    The free sum is a basic geometric operation among convex polytopes.
+    This note focuses on the relationship between the normalized volume
+    of the free sum and that of the summands.
+    In particular, we show that the normalized volume of the free sum
+    of full dimensional polytopes is precisely the product of the
+    normalized volumes of the summands.
+  bibtex: |
+    @article{chen_product_2017,
+        archivePrefix = {arXiv},
+        arxivId = {1711.11130},
+        author = {Chen, Tianran and Davis, Robert},
+        eprint = {1711.11130},
+        month = {nov},
+        title = {{A Product Formula for the Normalized Volume of Free Sums of Lattice Polytopes}},
+        url = {http://arxiv.org/abs/1711.11130},
+        year = {2017}
+    }

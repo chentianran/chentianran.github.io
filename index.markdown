@@ -31,10 +31,8 @@ Schedule
 News
 ----
 
-I am organizing a
-[minisymposium on algorithms and implementations in numerical algebraic geometry](research/ag17/)
-at the
-[SIAM Conference on Applied Algebraic Geometry 2017](https://www.siam.org/meetings/ag17/).
+I am one of the organizers for the
+[Southern Regional Algebra Conference 2018 ](http://www.srac2018.org/).
 
 
 Research Interests
