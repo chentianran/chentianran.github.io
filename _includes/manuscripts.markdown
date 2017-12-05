@@ -1,5 +1,5 @@
 {% for paper in site.data.prep %}
--   (with {{ paper.coauthors }})  
+-   {% if paper.coauthors %}(with {{ paper.coauthors }})  {% endif %}
     "{{ paper.title }}"  
     [ [arXiv]({{ paper.arxiv }}) ]
     [
@@ -27,21 +27,10 @@
     </div>
     <div class="collapse" id="bib-{{ paper.nickname }}">
         <div class="card card-body">
-            <pre>
-            <code>
-{{ paper.bibtex }}
-            </code>
-            </pre>
+            <pre><code>{{ paper.bibtex }}</code></pre>
         </div>
     </div>
 {% endfor %}
-
-- (with Robert Davis and Dhagash Mehta)  
-  [ [arXiv](http://arxiv.org/abs/1708.09246) ]
-  "Counting equilibria of the Kuramoto model using birationally invariant intersection index"
-
-- [ [arXiv](https://arxiv.org/abs/1703.01684) ]
-  "Unmixing the mixed volume computation"
 
 - (with Dhagash Mehta and Matthew Niemerg)  
   [ [arXiv](http://arxiv.org/abs/1512.04987) ]

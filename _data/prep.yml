@@ -22,3 +22,64 @@
         url = {http://arxiv.org/abs/1711.11130},
         year = {2017}
     }
+
+- nickname: kuramoto-bii
+  title: >
+    Counting equilibria of the Kuramoto model using
+    birationally invariant intersection index
+  coauthors: Robert Davis and Dhagash Mehta
+  arxiv: http://arxiv.org/abs/1708.09246
+  abstract: >
+    Synchronization in networks of interconnected oscillators is a
+    fascinating phenomenon that appear naturally in many independent fields
+    of science and engineering.
+    A substantial amount of work has been devoted to understanding
+    all possible synchronization configurations on a given network.
+    In this setting, a key problem is to determine the total number of
+    such configurations.
+    Through an algebraic formulation, for tree and cycle graphs,
+    we provide an upper bound on this number using the
+    birationally invariant intersection index of a
+    system of rational functions on a toric variety.
+  bibtex: |
+    @article{chen_counting_2017,
+        archivePrefix = {arXiv},
+        arxivId = {1708.09246},
+        author = {Chen, Tianran and Davis, Robert and Mehta, Dhagash},
+        eprint = {1708.09246},
+        month = {aug},
+        title = {{Counting equilibria of the Kuramoto model using birationally invariant intersection index}},
+        url = {http://arxiv.org/abs/1708.09246},
+        year = {2017}
+    }
+
+- nickname: unmixing
+  title: Unmixing the mixed volume computation
+  arxiv: http://arxiv.org/abs/1703.01684
+  abstract: >
+    Computing mixed volume of convex polytopes is an important problem
+    in computational algebraic geometry.
+    This paper establishes sufficient conditions under which the mixed volume
+    of several convex polytopes exactly equals the normalized volume of the
+    convex hull of their union.
+    Under these conditions the problem of computing mixed volume of
+    several polytopes can be transformed into a volume computation problem
+    for a single polytope in the same dimension.
+    We demonstrate through problems from real world applications that
+    substantial reduction in computational costs can be achieved via
+    this transformation in situations where the convex hull of the union
+    of the polytopes has less complex geometry than the original polytopes.
+    We also discuss the important implications of this result in the
+    polyhedral homotopy method for solving polynomial systems.
+  bibtex: |
+    @article{chen_unmixing_2017,
+    author = {Chen, Tianran},
+    journal = {arXiv:1703.01684 [math]},
+    keywords = {52B55- 65H10- 65H20,Mathematics - Algebraic Geometry},
+    archivePrefix = {arXiv},
+    arxivId = {1703.01684},
+    month = {mar},
+    title = {{Unmixing the mixed volume computation}},
+    url = {http://arxiv.org/abs/1703.01684},
+    year = {2017}
+    }
