@@ -14,19 +14,18 @@ My current research focuses on _numerical algebraic geometry_.
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Fall Semester of 2017 I am teaching
+In the Spring Semester of 2018 I am teaching
 [MATH-2630](teaching/calc3/)  (Multivariable Calculus),
-[MATH-4320](teaching/alg2/)   (Modern Algebra II).
-[MATH-4400](teaching/modsim/) (Math Models and Simulations).
+[MATH-2660](teaching/linalg/) (Linear Algebra).
 
 {% include hours.markdown %}
 
 I am also the advisor for the [AUM Math Club](teaching/mathclub/).
 
-Schedule
+<!-- Schedule
 --------
 
-<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=700&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=k7cas66vp4vba2cruqhh4cila8%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FChicago" style="border-width:0" width="700" height="300" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=700&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=k7cas66vp4vba2cruqhh4cila8%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FChicago" style="border-width:0" width="700" height="300" frameborder="0" scrolling="no"></iframe> -->
 
 News
 ----
