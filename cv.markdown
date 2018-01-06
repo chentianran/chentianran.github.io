@@ -53,13 +53,17 @@ title: CV
 | 2006 to 2012 | Teaching Assistant for Calculus sequence |
 
 ### Professional Services
-- 2017 Organizer for the Special Session on
+- (2018) Organizer for the
+  [Southern Regional Algebra Conference 2018 ](http://www.srac2018.org/).
+- (2017) Organizer for the Special Session on
   _Algorithms and Implementation in Numerical Algebraic Geometry_
   at 2017 SIAM Conference on Applied Algebraic Geometry, Atlanta USA
-- 2015 Co-organizer for the Special Session on
+- (2015) Co-organizer for the Special Session on
   _Homotopy Continuation Methods and Their Applications to Science and Engineering_
   at the American Mathematical Society 2015 Central Spring Sectional Meeting,
   East Lansing USA
 - Reviewer for ACM Transactions on Mathematical Software
 - Reviewer for International Symposium on Symbolic and Algebraic Computation
+- Reviewer for IEEE Transactions on Power Systems
 - Reviewer for LMS Journal of Computation and Mathematics
+- Reviewer for SIAM Journal on Applied Dynamical Systems
