@@ -24,9 +24,11 @@ alternative meeting time may be arranged
 ### What we will learn
 
 Linear algebra is the fundamental language for manipulating high-dimensional data.
-We will cover...
+It is also the gateway to higher level mathematics.
+In this semester, We will cover...
 
-* Systems of linear equations
+* Theory of systems of linear equations
+* Theory of determinant
 * Vector space operations
 * Matrix operations
 * Matrix determinant
@@ -39,10 +41,12 @@ We will cover...
 
 ### Prerequisite
 
+__MATH-1620__ (Calculus II) or an equivalent course
+
 In order to succeed in this class,
-a solid understanding of algebra and basic calculus is necessary.
+a solid understanding of pre-calculus algebra
+and basic calculus is necessary.
 The ability to write formal proofs is also required.
-Please check with the course catalog for all the prerequisite courses.
 
 ### Textbook
 
@@ -53,13 +57,13 @@ Please check with the course catalog for all the prerequisite courses.
   by __Sheldon Axler__
   (ISBN 978-3-319-30765-7)
 
-Reading assignment and homework problems will be assigned from these textbook.
-
 ### Attendance and participation
 
 Participation in in-class discussions and activities is an important part
 of the learning process.
 Therefore class attendance is expected.
+_Students missing 6 or more classes without an approved excuse
+will receive an F grade_.
 
 ### Code of conduct
 
@@ -94,23 +98,36 @@ The reading assignments are to be completed _before_ each class meeting.
 After reading the textbook, you need to complete a short reading test
 through the Blackboard system.
 __No late submission will be accepted__.
+However, a missing reading test may be excused if valid reasons
+(military assignments, medical issues, family emergency, etc)
+and _proper documentation_ are provided _in advance_.
+Otherwise, a missing reading test receives a score of zero.
+It is recommended that you finish the reading test at least a few days
+before the due date.
+
+Each reading test allows multiple attempts.
+Please see the test descriptions on the Blackboard system for detail.
 
 ### Concept tests
 
 You will complete short online tests on the Blackboard system
 that are designed to test your overall understanding of the subject.
+All concepts tests are due on the last day of classes,
+and __no late submission will be accepted__.
+However, it is strongly recommended that you complete them as early as possible.
 
-### Weekly in-class quizzes
+### In-class quizzes
 
-There will be a short quiz _every week_ to test
-your understanding of the material discussed in the previous meetings.
+Short quizzes will be given in class meetings to test
+your understanding of the material.
 __No makeup quiz will be offered__.
 However, a missing quiz may be excused if valid reasons
 (military assignments, medical issues, family emergency, etc)
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero.
+Quiz schedule will be announced in class meetings.
 
-### Weekly in-class worksheet
+### In-class worksheets
 
 In-class practice is a crucially important component of the learning process.
 Your in-class worksheets will be _collected and graded_.
@@ -128,16 +145,21 @@ However, a missing homework assignment may be excused if valid reasons
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing homework assignment receives a score of zero.
 
+### Final exam
+The final exam is scheduled at 1:30pm -- 3:00pm May 1st.
+
 ###  <a name="grade"></a> Grade composition
-Your final grade is determined according to the following weighted average.
+Your final grade is determined according to the following
+weighted average.
 
 | Component     | Points | Where      |
 |---------------|--------|------------|
-| Reading tests | 130    | Blackboard |
-| Concept tests | 120    | Blackboard |
+| Reading tests | 150    | Blackboard |
+| Concept tests | 200    | Blackboard |
+| Homework      | 300    | Blackboard |
 | Quizzes       | 150    | In-class   |
 | Worksheets    | 100    | In-class   |
-| Homework      | 300    | Blackboard |
+| Final exam    | 100    | In-class   |
 
 ### Grading scale
 
