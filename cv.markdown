@@ -3,6 +3,8 @@ layout: default
 title: CV
 ---
 
+## Tianran Chen Ph.D.
+
 ### Employment
 
 - 2017 – present Assistant Professor, Auburn University Montgomery.
