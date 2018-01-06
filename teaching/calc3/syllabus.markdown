@@ -3,12 +3,12 @@ layout: default
 title: MATH-2630
 ---
 
-# MATH-2630 A (CRN 1650) Fall 2017 Course Syllabus
+# MATH-2630 A (CRN 2122) Spring 2018 Course Syllabus
 
 ### When, where, and who
 
-* Time: MW 12:20pm --- 2:00pm (100 min)
-* Room: 318 Goodwyn Hall
+* Time: MW 2:10pm --- 3:50pm (100 min)
+* Room: 222 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/calc3/>
@@ -41,8 +41,6 @@ Multivariable calculus is a fundamental pillar for modern science and engineerin
 
 - It prepares you for further study in many other fields
   (not only in mathematics and its direct applications).
-
-- It makes you smarter (... I hope).
 
 This is the third course in the calculus sequence.
 We will extend calculus to functions with more than one variables.
@@ -83,6 +81,8 @@ Reading assignment and homework problems will be assigned from these textbook.
 Participation in in-class discussions and activities is an important part
 of the learning process.
 Therefore class attendance is expected.
+_Students missing 6 or more classes without an approved excuse
+will receive an F grade_.
 
 ### Code of conduct
 
@@ -108,11 +108,36 @@ The use of such calculators may be required for certain homework problems
 or in-class activities.
 However, all the quizzes and exams are designed so that no calculator will be needed.
 Therefore calculators or any smart devices with Internet capabilities
-are not allowed on any of the quizzes and exams.
+are not allowed on any of the in-class quizzes and exams.
 
-### Weekly quizzes
+### Daily reading tests
 
-There will be a short quiz _every week_ to test
+After reading the textbook, you need to complete a short reading test
+through the Blackboard system.
+On average, there are two reading tests due each week.
+__No late submission will be accepted__.
+However, a missing reading test may be excused if valid reasons
+(military assignments, medical issues, family emergency, etc)
+and _proper documentation_ are provided _in advance_.
+Otherwise, a missing reading test receives a score of zero.
+It is recommended that you finish the reading test at least a few days
+before the due date.
+
+Each reading test allows multiple attempts.
+Please see the test descriptions on the Blackboard system for detail.
+
+### Concept tests
+
+You will need to complete short online tests on the Blackboard system
+that are designed to test your overall understanding of the subject.
+All concepts tests are due on the last day of classes,
+and __no late submission will be accepted__.
+However, it is strongly recommended that you complete them as early as possible.
+
+### Weekly in-class quizzes
+
+There will be a short in-class quiz _every week_
+(except the first and the last week of the semester) to test
 our understanding of the material discussed in the previous meetings.
 __No makeup quiz will be offered__.
 However, a missing quiz may be excused if valid reasons
@@ -120,41 +145,40 @@ However, a missing quiz may be excused if valid reasons
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero.
 
-### Projects
-Projects are more complicated mathematical problems that will
+### Weekly in-class worksheet
+
+In-class practice is a crucially important component of the learning process.
+Your in-class worksheets will be _collected and graded_.
+
+### Weekly homework assignments
+
+Homework problems are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
 They will be a major part of your course grade.
-The list of suggested project problems can be found [here](../projects/).
-
-### Homework problems
-Practice is a crucial component in the learning process.
-Suggested exercise problems can be found at the end of each section.
-
-### Reading assignments
-You are expected to read the book in preparation of each class meetings.
-Reading assignments, i.e., sections (from the required textbook) are listed
-in the course schedule below.
-The reading assignments are to be completed _before_ each class meeting.
-
-### Participation
-Participation in in-class and online discussions is a crucially important
-component of the learning process.
-Your participation will be _recorded and graded_,
-and it constitutes a _major part_ of your course grade.
+Homework problems are listed on our Blackboard system,
+and _they must be submitted via the Blackboard system_.
+__No late homework submission will be accepted__
+However, a missing homework assignment may be excused if valid reasons
+(military assignments, medical issues, family emergency, etc)
+and _proper documentation_ are provided _in advance_.
+Otherwise, a missing homework assignment receives a score of zero.
 
 ### Final exam
-The _mandatory_ final exam is scheduled at __11:00am---12:00pm Dec. 6.__
-If you miss the final exam, your grade will be FA.
+
+The final exam is scheduled at __1:30pm---2:30pm May 2nd__.
 
 ###  <a name="grade"></a> Grade composition
 Your final grade is determined according to the following weighted average.
 
-| Component   | Points |
-|-------------|--------|
-| Projects    |  500   |
-| Discussions |  250   |
-| Quizzes     |  150   |
-| Final Exam  |  100   |
+| Component     | Points | Where      |
+|---------------|--------|------------|
+| Reading tests | 160    | Blackboard |
+| Concept tests | 200    | Blackboard |
+| Homework      | 300    | Blackboard |
+| Quizzes       | 140    | In-class   |
+| Worksheets    | 100    | In-class   |
+| Final exam    | 100    | In-class   |
+
 
 ### Grading scale
 
@@ -174,7 +198,7 @@ Listed below are the topics of discussion of each day.
 Reading the book _before_ the class meetings is very important.
 Reading assignments, i.e., sections (from the required textbook)
 that you should read to get ready for our class meeting are also listed below.
-The reading assignments are to be completed _before_ each class meeting.
+The reading tests (on the Blackboard system) are to be completed _before_ each class meeting.
 
 * Day 0 : Overview and motivations
 * Day 1 : Coordinate systems for plane and space
@@ -253,9 +277,7 @@ The reading assignments are to be completed _before_ each class meeting.
     - Curl
     - _Reading: review 15.1, 15.2, 15.3_
 * Day 24 : Differential equations in space
-* Day 25 : Divergence Theorem
-    - _Reading: 15.7_
-* Day 26 : Green's Theorem
-    - _Reading: 15.4_
-* Day 27 : (Optional) Stokes' Theorem
+* Day 25 : Divergence Theorem and Green's Theorem
+    - _Reading: 15.7, 15.4_
+* Day 26 : (Optional) Stokes' Theorem
     - _Reading: 15.8_
