@@ -34,7 +34,7 @@
     </div>
 {% endfor %}
 
--   **Tianran Chen** and Dhagash Mehta.  
+<!-- -   **Tianran Chen** and Dhagash Mehta.  
     "On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations".  
     *IEEE Transactions on Power Systems*  
     [ [pdf](research/papers/powerflow-bkk.pdf) ]
@@ -81,12 +81,12 @@
             </code>
             </pre>
         </div>
-    </div>
+    </div> -->
 
--   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
+<!-- -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
     "Mixed cell computation in Hom4PS-3".  
     *Journal of Symbolic Computation (2017), pp. 516-534*  
-    [ [link](http://dx.doi.org/10.1016/j.jsc.2016.07.017) ]
+    [ [link](http://dx.doi.org/10.1016/j.jsc.2016.07.017) ] -->
 
 -   **Tianran Chen** and Dhagash Mehta.  
     "Parallel degree computation for binomial systems".  
