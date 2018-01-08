@@ -10,7 +10,7 @@ Teaching
 
 - [MATH-2630](calc3/)  (Multivariable Calculus),
 - [MATH-2660](linalg/) (Linear algebra).
-- [MATH-4400](modsim/) (Math Models and Simulations).
+- [CSCI-1210](matlab/) (Introduction to computer programming).
 
 
 
