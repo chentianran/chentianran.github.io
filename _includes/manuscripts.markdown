@@ -31,11 +31,3 @@
         </div>
     </div>
 {% endfor %}
-
-- (with Dhagash Mehta and Matthew Niemerg)  
-  [ [arXiv](http://arxiv.org/abs/1512.04987) ]
-  "A network topology dependent upper bound on the number of equilibria of the Kuramoto model"
-
-- (with Dhagash Mehta)  
-  [ [arXiv](http://arxiv.org/abs/1504.06622) ]
-  "An index-resolved fixed-point homotopy and potential energy landscapes"
