@@ -1,0 +1,25 @@
+- nickname: belief
+  title: >
+    Fixed points of belief propagation --
+    An analysis via polynomial homotopy continuation
+  journal: IEEE Transactions on Pattern Analysis and Machine Intelligence
+  coauthors: Christian Knoll, Dhagash Mehta, and Franz Pernkopf
+  link:  https://doi.org/10.1109/TPAMI.2017.2749575
+  arxiv: https://arxiv.org/abs/1605.06451
+  abstract: >
+    Belief propagation (BP) is an iterative method to perform approximate
+    inference on arbitrary graphical models.
+    Whether BP converges and if the solution is a unique fixed point depends
+    on both the structure and the parametrization of the model.
+    To understand this dependence it is interesting to find all fixed points.
+  bibtex: |
+    @article{knoll_fixed_2017,
+    author = {Knoll, Christian and Mehta, Dhagash and Chen, Tianran and Pernkopf, Franz},
+    doi = {10.1109/TPAMI.2017.2749575},
+    issn = {0162-8828},
+    journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+    pages = {1--1},
+    title = {{Fixed Points of Belief Propagation - An Analysis via Polynomial Homotopy Continuation}},
+    url = {http://ieeexplore.ieee.org/document/8027142/},
+    year = {2017}
+    }

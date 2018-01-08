@@ -1,51 +1,38 @@
--   Christian Knoll, Dhagash Mehta, **Tianran Chen**, and Franz Pernkopf  
-    "Fixed points of belief propagation -- An analysis via polynomial homotopy continuation".  
-    *IEEE Transactions on Pattern Analysis and Machine Intelligence*  
-    [ [link](https://doi.org/10.1109/TPAMI.2017.2749575) ]
-    [ [arXiv](https://arxiv.org/abs/1605.06451) ]
+{% for paper in site.data.pubs %}
+-   {% if paper.coauthors %}(with {{ paper.coauthors }})  {% endif %}
+    "{{ paper.title }}"  
+    *{{ paper.journal }}*  
+    {% if paper.link  %}[ [link]({{  paper.link  }}) ]{% endif %}
+    {% if paper.arxiv %}[ [arXiv]({{ paper.arxiv }}) ]{% endif %}
     [
         <a data-toggle="collapse"
-        href="#abs-belief"
+        href="#abs-{{ paper.nickname }}"
         aria-expanded="false"
-        aria-controls="abs-belief">
+        aria-controls="abs-{{ paper.nickname }}">
             abstract
         </a>
     ]
     [
         <a data-toggle="collapse"
-        href="#bib-belief"
+        href="#bib-{{ paper.nickname }}"
         aria-expanded="false"
-        aria-controls="bib-belief">
+        aria-controls="bib-{{ paper.nickname }}">
             bibtex
         </a>
     ]
-    <div class="collapse" id="abs-belief">
-        <div class="card card-body">
-            Abstract: Belief propagation (BP) is an iterative method to perform approximate inference on arbitrary graphical models. Whether BP converges and if the solution is a unique fixed point depends on both the structure and the parametrization of the model. To understand this dependence it is interesting to find all fixed points.
+    <div class="collapse" id="abs-{{ paper.nickname }}">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Abstract: {{ paper.abstract }}
+            </div>
         </div>
     </div>
-
-    <div class="collapse" id="bib-belief">
+    <div class="collapse" id="bib-{{ paper.nickname }}">
         <div class="card card-body">
-            <pre>
-            <code>
-            {% raw %}
-            @article{Knoll2017,
-                author = {Knoll, Christian and Mehta, Dhagash and Chen, Tianran and Pernkopf, Franz},
-                doi = {10.1109/TPAMI.2017.2749575},
-                issn = {0162-8828},
-                journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
-                pages = {1--1},
-                title = {{Fixed Points of Belief Propagation - An Analysis via Polynomial Homotopy Continuation}},
-                url = {http://ieeexplore.ieee.org/document/8027142/},
-                year = {2017}
-            }
-            {% endraw %}
-            </code>
-            </pre>
+            <pre><code>{{ paper.bibtex }}</code></pre>
         </div>
     </div>
-
+{% endfor %}
 
 -   **Tianran Chen** and Dhagash Mehta.  
     "On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations".  
