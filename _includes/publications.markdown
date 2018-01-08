@@ -2,8 +2,8 @@
 -   {% if paper.coauthors %}(with {{ paper.coauthors }})  {% endif %}
     "{{ paper.title }}"  
     *{{ paper.journal }}*  
-    {%- if paper.link  -%}[ [link]({{  paper.link  }}) ]{%- endif -%}
-    {%- if paper.arxiv -%}[ [arXiv]({{ paper.arxiv }}) ]{%- endif -%}
+    [ [link]({{  paper.link  }}) ]
+    {%- if paper.arxiv -%}[ [arXiv]({{ paper.arxiv }}) ] {%- endif -%}
     [
         <a data-toggle="collapse"
         href="#abs-{{ paper.nickname }}"
