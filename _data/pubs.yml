@@ -88,3 +88,38 @@
     volume = {79, Part 3},
     year = {2017}
     }
+
+- nickname: parallel-degree
+  title: Parallel degree computation for binomial systems
+  journal: Journal of Symbolic Computation (2017), pp. 535-558
+  coauthors: Dhagash Mehta
+  link: http://dx.doi.org/10.1016/j.jsc.2016.07.018
+  abstract: >
+    Solution sets of systems of binomial equations are of great interest
+    in applied mathematics. For both theoretic and applied purposes,
+    the degree of a solution set (its maximum number of isolated intersections
+    with an affine space of complementary dimension) often plays an important role
+    in understanding its geometric structure.
+    This paper proposes a specialized parallel algorithm for computing the degree
+    on GPUs that takes advantage of the massively parallel nature of GPU devices.
+    The preliminary implementation shows remarkable efficiency and scalability
+    when compared to the closest CPU-based counterpart.
+    As a case study, the algorithm is applied to the master space problem of
+    N = 1 gauge theories.
+    The GPU-based implementation achieves nearly 30 fold speedup over its
+    CPU-only counterpart enabling the discovery of previously unknown results.
+  bibtex: |
+    @article{chen_parallel_2017,
+    author = {Chen, Tianran and Mehta, Dhagash},
+    doi = {10.1016/j.jsc.2016.07.018},
+    issn = {0747-7171},
+    journal = {Journal of Symbolic Computation},
+    keywords = {Algebraic Geometry,BKK root-count,Binomial systems,Folder - Unmixing,GPU computing,Supersymmetric gauge theories,homotopy continuation},
+    month = {mar},
+    pages = {535--558},
+    series = {SI: Numerical Algebraic Geometry},
+    title = {{Parallel degree computation for binomial systems}},
+    url = {http://www.sciencedirect.com/science/article/pii/S0747717116300554},
+    volume = {79, Part 3},
+    year = {2017}
+    }
