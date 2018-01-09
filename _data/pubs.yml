@@ -307,7 +307,7 @@
     }
 
 - nickname: hom4ps3
-  title: Hom4PS-3: A Parallel Numerical Solver for Systems of Polynomial Equations Based on Polyhedral Homotopy Continuation Methods (extended abstract)
+  title: "Hom4PS-3: A Parallel Numerical Solver for Systems of Polynomial Equations Based on Polyhedral Homotopy Continuation Methods (extended abstract)"
   journal: Mathematical Software -- ICMS 2014 -- 4th International Congress, Seoul, South Korea, August 5-9, 2014. Proceedings 8592:183–190
   year: 2014
   coauthors: Tsung-Lin Lee, and Tien-Yien Li
@@ -395,7 +395,7 @@
     path tracking algorithm for tracking smooth paths of one real dimension.
     In this regard, “divergent paths” pose a tough challenge as the tracking
     of such paths is generally impossible.
-    The existence of such paths is, in part, caused by Cn,
+    The existence of such paths is, in part, caused by $$C^n$$,
     the space in which homotopy methods usually operate, being non-compact.
     A well known remedy is to operate inside the complex projective space
     CPn instead.
