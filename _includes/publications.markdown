@@ -1,9 +1,13 @@
+<ol reversed>
 {% for paper in site.data.pubs %}
--   {% if paper.coauthors %}(with {{ paper.coauthors }})  {% endif %}
-    "{{ paper.title }}"  
-    *{{ paper.journal }}*  
+  <li>
+    <p>
+    {% if paper.coauthors %}(with {{ paper.coauthors }}) <br />{% endif %}
+    "{{ paper.title }}" <br />
+    <em>{{ paper.journal }}</em><br />
     [ [link]({{  paper.link  }}) ]
-    {%- if paper.arxiv -%} [ [arXiv]({{ paper.arxiv }}) ] {%- endif -%}
+    {% if paper.pdf   %} [ [pdf](research/papers/{{ paper.pdf }}) ] {% endif %}
+    {% if paper.arxiv %} [ [arXiv]({{ paper.arxiv }}) ] {% endif %}
     [
         <a data-toggle="collapse"
         href="#abs-{{ paper.nickname }}"
@@ -20,6 +24,7 @@
             bibtex
         </a>
     ]
+    </p>
     <div class="collapse" id="abs-{{ paper.nickname }}">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -32,7 +37,9 @@
             <pre><code>{{ paper.bibtex }}</code></pre>
         </div>
     </div>
+  </li>
 {% endfor %}
+</ol>
 
 <!-- -   **Tianran Chen** and Dhagash Mehta.  
     "Parallel degree computation for binomial systems".  
