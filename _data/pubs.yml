@@ -285,3 +285,23 @@
     volume = {141},
     year = {2014}
     }
+
+- nickname: binomial
+  title: Solutions to systems of binomial equations
+  journal: Annales Mathematicae Silesianae 28:7–34 (2014)
+  year: 2014
+  coauthors: Tien-Yien Li
+  link: http://www.sbc.org.pl/Content/129017/007-034.pdf
+  abstract: >
+    This paper provides an overview on the geometry of solutions to binomial
+    equations (equations that have exactly two terms) as well as the numerical
+    methods for solving such systems.
+  bibtex: |
+    @article{chen_solutions_2014,
+    author = {Chen, Tianran and Li, Tien-Yien},
+    journal = {Annales Mathematicae Silesianae},
+    pages = {7--34},
+    title = {{Solutions to systems of binomial equations}},
+    volume = {28},
+    year = {2014}
+    }

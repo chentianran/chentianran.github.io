@@ -85,10 +85,10 @@
     [ [link](http://dx.doi.org/10.1063/1.4896657) ]
     [ [bibtex](research/papers/mehta_newton_2014.bib) ]. -->
 
--   **Tianran Chen** and Tien-Yien Li.  
+<!-- -   **Tianran Chen** and Tien-Yien Li.  
     "Solutions to systems of binomial equations".  
     *Annales Mathematicae Silesianae 28:7–34* (2014).  
-    [ [bibtex](research/papers/chen_solutions_2014.bib) ].
+    [ [bibtex](research/papers/chen_solutions_2014.bib) ]. -->
 
 -   **Tianran Chen**, Tsung-Lin Lee, and Tien-Yien Li.  
     "Hom4PS-3: A Parallel Numerical Solver for Systems of Polynomial Equations Based on Polyhedral Homotopy Continuation Methods" (Extended abstract).  
