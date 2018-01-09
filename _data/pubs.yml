@@ -395,14 +395,14 @@
     path tracking algorithm for tracking smooth paths of one real dimension.
     In this regard, “divergent paths” pose a tough challenge as the tracking
     of such paths is generally impossible.
-    The existence of such paths is, in part, caused by $$C^n$$,
+    The existence of such paths is, in part, caused by Cn,
     the space in which homotopy methods usually operate, being non-compact.
     A well known remedy is to operate inside the complex projective space
-    $$\mathbb{CP}^n$$ instead.
-    Path tracking inside $$\mathbb{CP}^n$$ is the focus of this article.
-    Taking the Riemannian geometry of $$\mathbb{CP}^n$$ into account,
+    CPn instead.
+    Path tracking inside CPn is the focus of this article.
+    Taking the Riemannian geometry of CPn$$ into account,
     we derive the basic algorithm for projective path tracking using the sphere,
-    $$S^{2n+1}$$, as the model of computation.
+    S2n+1, as the model of computation.
     Remarkable results from numerical experiments using this method are presented.
   bibtex: |
     @article{chen_spherical_2012,
