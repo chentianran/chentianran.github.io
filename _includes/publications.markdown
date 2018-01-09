@@ -3,7 +3,7 @@
     "{{ paper.title }}"  
     *{{ paper.journal }}*  
     [ [link]({{  paper.link  }}) ]
-    {%- if paper.arxiv -%}[ [arXiv]({{ paper.arxiv }}) ] {%- endif -%}
+    {%- if paper.arxiv -%} [ [arXiv]({{ paper.arxiv }}) ] {%- endif -%}
     [
         <a data-toggle="collapse"
         href="#abs-{{ paper.nickname }}"
