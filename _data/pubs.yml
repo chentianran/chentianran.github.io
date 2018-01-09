@@ -55,7 +55,7 @@
     year = {2017}
     }
 
-- nickname: hom4ps3
+- nickname: hom4ps3-mvol
   title: Mixed cell computation in Hom4PS-3
   journal: Journal of Symbolic Computation (2017), pp. 516-534
   coauthors: Tsung-Lin Lee and Tien-Yien Li
@@ -304,4 +304,113 @@
     title = {{Solutions to systems of binomial equations}},
     volume = {28},
     year = {2014}
+    }
+
+- nickname: hom4ps3
+  title: Hom4PS-3: A Parallel Numerical Solver for Systems of Polynomial Equations Based on Polyhedral Homotopy Continuation Methods (extended abstract)
+  journal: Mathematical Software -- ICMS 2014 -- 4th International Congress, Seoul, South Korea, August 5-9, 2014. Proceedings 8592:183–190
+  year: 2014
+  coauthors: Tsung-Lin Lee, and Tien-Yien Li
+  link: http://dx.doi.org/10.1007/978-3-662-44199-2_30
+  abstract: >
+    Homotopy continuation methods have been proved to be an efficient and
+    reliable class of numerical methods for solving systems of polynomial
+    equations which occur frequently in various fields of mathematics, science,
+    and engineering.
+    Based on the successful software package Hom4PS-2.0 for solving such
+    polynomial systems, Hom4PS-3 has a new fully modular design which allows
+    it to be easily extended.
+    It implements many different numerical homotopy methods including the
+    Polyhedral Homotopy continuation method.
+    Furthermore, it is capable of carrying out computation in parallel on a
+    wide range of hardware architectures including multi-core systems,
+    computer clusters, distributed environments, and GPUs with
+    great efficiency and scalability.
+    Designed to be user-friendly, it includes interfaces to a variety of
+    existing mathematical software and programming languages such as
+    Python, Ruby, Octave, Sage and Matlab.
+  bibtex: |
+    @incollection{chen_hom4ps-3,
+    author = {Chen, Tianran and Lee, Tsung-Lin and Li, Tien-Yien},
+    booktitle = {Mathematical Software – ICMS 2014},
+    editor = {Hong, Hoon and Yap, Chee},
+    isbn = {978-3-662-44198-5 978-3-662-44199-2},
+    keywords = {Algorithm Analysis and Problem Complexity,Discrete Mathematics in Computer Science,Math Applications in Computer Science,Numeric Computing,Software Engineering/Programming and Operating Sy,Theory of Computation,binomial system,homotopy continuation,polyhedral homotopy,polynomial systems},
+    month = {jan},
+    number = {8592},
+    pages = {183--190},
+    publisher = {Springer Berlin Heidelberg},
+    series = {Lecture Notes in Computer Science},
+    shorttitle = {Hom4PS-3},
+    title = {{Hom4PS-3: A Parallel Numerical Solver for Systems of Polynomial Equations Based on Polyhedral Homotopy Continuation Methods}},
+    url = {http://link.springer.com/chapter/10.1007/978-3-662-44199-2{\_}30},
+    year = {2014}
+    }
+
+- nickname: mvol-parallel
+  title: Mixed volume computation in parallel
+  journal: Taiwanese Journal of Mathematics 18(1):93–114 (2014)
+  year: 2014
+  coauthors: Tsung-Lin Lee and Tien-Yien Li
+  link: http://dx.doi.org/10.11650/tjm.18.2014.3276
+  abstract: >
+    Efficient algorithms for computing mixed volumes, via the computation of
+    mixed cells, have been implemented in DEMiCs and MixedVol-2.0.
+    While the approaches in those two packages are somewhat different,
+    they follow the same theme and are both highly serial.
+    To fit the need for the parallel computing, a reformulation of
+    the algorithms is inevitable.
+    This article proposes a reformulation of the algorithm for the mixed volume
+    computation rooted from algorithms in graph theory, making it much more
+    fine-grained and scalable.
+    The resulting parallel algorithm can be readily adapted to both distributed
+    and shared memory computing systems.
+    Illustrated by the numerical results on several different architectures,
+    the speedups of our parallel algorithms for the mixed volume computation
+    are remarkable.
+  bibtex: |
+    @article{chen_mixed_2014,
+    author = {Chen, Tianran and Lee, Tsung-Lin and Li, Tien-Yien},
+    journal = {Taiwanese Journal of Mathematics},
+    keywords = {bkk,mixed cells,mixed volume},
+    number = {1},
+    pages = {93--114},
+    title = {Mixed volume computation in parallel},
+    volume = {18},
+    year = {2014}
+    }
+
+- nickname: spherical
+  title: Spherical projective path tracking for homotopy continuation methods
+  journal: Communications in Information and Systems 12(3):195-220 (2012)
+  year: 2012
+  coauthors: Tien-Yien Li
+  link: http://dx.doi.org/10.4310/CIS.2012.v12.n3.a2
+  abstract: >
+    Solving systems of polynomial equations is an important problem in
+    mathematics with a wide range of applications in many fields.
+    The homotopy continuation method is a large class of reliable and
+    efficient numerical methods for solving systems of polynomial equations.
+    An essential component in the homotopy continuation method is the
+    path tracking algorithm for tracking smooth paths of one real dimension.
+    In this regard, “divergent paths” pose a tough challenge as the tracking
+    of such paths is generally impossible.
+    The existence of such paths is, in part, caused by $$C^n$$,
+    the space in which homotopy methods usually operate, being non-compact.
+    A well known remedy is to operate inside the complex projective space
+    $$\mathbb{CP}^n$$ instead.
+    Path tracking inside $$\mathbb{CP}^n$$ is the focus of this article.
+    Taking the Riemannian geometry of $$\mathbb{CP}^n$$ into account,
+    we derive the basic algorithm for projective path tracking using the sphere,
+    $$S^{2n+1}$$, as the model of computation.
+    Remarkable results from numerical experiments using this method are presented.
+  bibtex: |
+    @article{chen_spherical_2012,
+    author = {Chen, Tianran and Li, Tien-Yien},
+    journal = {Communication in Information and Systems},
+    number = {3},
+    pages = {195--220},
+    title = {Spherical projective path tracking for homotopy continuation methods},
+    volume = {12},
+    year = {2012}
     }
