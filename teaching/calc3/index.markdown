@@ -3,14 +3,13 @@ layout: default
 title: MATH-2630
 ---
 
-# MATH-2630 A Fall 2017
+# MATH-2630 A Spring 2018
 
 This course focuses on multivariable calculus
 which is a fundamental pillar for modern science and engineering.
 
 * [Syllabus](syllabus/)
 * [Schedule](syllabus/#schedule)
-* [Projects](projects/)
 
 
 ## How to survive this course?
@@ -19,11 +18,12 @@ which is a fundamental pillar for modern science and engineering.
   - Reading is an important component in our learning process.
   - Reading assignment are listed in the course schedule
     (to be finished __before__ class)
+  - Complete reading tests (see our course Blackboard)
 * Participate!
   - You are not a passive note-taking robot
   - Let's think together!
-  - Participate in in-class discussion (your participation will be graded)
-  - Participate in online   discussion (your participation will be graded)
+  - Participate in in-class discussion
+  - Participate in online   discussion
 * Tell yourself that it is okay to not know the correct answer
   - ...well, as long as you are actively trying to figure out the answers
   - the process of the trying to figure out the answer is the important part.
