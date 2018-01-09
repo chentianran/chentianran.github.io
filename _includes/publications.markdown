@@ -5,9 +5,13 @@
     {% if paper.coauthors %}(with {{ paper.coauthors }}) <br />{% endif %}
     "{{ paper.title }}" <br />
     <em>{{ paper.journal }}</em><br />
-    [ [link]({{  paper.link  }}) ]
-    {% if paper.pdf   %} [ [pdf](research/papers/{{ paper.pdf }}) ] {% endif %}
-    {% if paper.arxiv %} [ [arXiv]({{ paper.arxiv }}) ] {% endif %}
+    [ <a href="{{ paper.link }}">link</a> ]
+    {% if paper.pdf   %}
+      [ <a href="research/papers/{{ paper.pdf }}">pdf</a> ]
+    {% endif %}
+    {% if paper.arxiv %}
+      [ <a href="{{ paper.arxiv }}">arXiv</a> ]
+    {% endif %}
     [
         <a data-toggle="collapse"
         href="#abs-{{ paper.nickname }}"
