@@ -39,40 +39,40 @@
     *Journal of Symbolic Computation (2017), pp. 535-558*  
     [ [link](http://dx.doi.org/10.1016/j.jsc.2016.07.018) ] -->
 
--   Dhagash Mehta, **Tianran Chen**, John Morgan, and David Wales.  
+<!-- -   Dhagash Mehta, **Tianran Chen**, John Morgan, and David Wales.  
     Response to "Comment on 'Exploring the potential energy landscape
     of the Thomson problem via Newton homotopies'".  
     *The Journal of Chemical Physics 143, 247102* (2015)  
     [ [link](http://dx.doi.org/10.1063/1.4939011) ]
-    [ [bibtex](research/papers/mehta_response_2015.bib) ].
+    [ [bibtex](research/papers/mehta_response_2015.bib) ]. -->
 
--   **Tianran Chen** and Tien-Yien Li.  
+<!-- -   **Tianran Chen** and Tien-Yien Li.  
     "Homotopy continuation method for solving systems of
     nonlinear and polynomial equations".  
     *Communications in Information and Systems 15(2):119--307* (2015).  
     [ [link](http://dx.doi.org/10.4310/CIS.2015.v15.n2.a1) ]
-    [ [bibtex](research/papers/chen_homotopy_2015.bib) ].
+    [ [bibtex](research/papers/chen_homotopy_2015.bib) ]. -->
 
--   Dhagash Mehta, **Tianran Chen**, David Wales, and John Morgan.  
+<!-- -   Dhagash Mehta, **Tianran Chen**, David Wales, and John Morgan.  
     "Exploring the potential energy landscape of the Thomson problem via Newton homotopies".  
     *The Journal of Chemical Physics 142 194113* (2015)  
     [ [link](http://dx.doi.org/10.1063/1.4921163) ]
-    [ [bibtex](research/papers/mehta_exploring_2015.bib) ].
+    [ [bibtex](research/papers/mehta_exploring_2015.bib) ]. -->
 
--   **Tianran Chen**, Tien-Yien Li, and Xiaoshen Wang.  
+<!-- -   **Tianran Chen**, Tien-Yien Li, and Xiaoshen Wang.  
     "Theoretical aspects of mixed volume computation via mixed subdivision".  
     *Communications in Information and Systems* (2014)  
     [ [pdf](research/papers/mvol.pdf) ]
     [ [link](http://dx.doi.org/10.4310/CIS.2014.v14.n4.a1) ]
-    [ [bibtex](research/papers/chen_theoretical_2014.bib) ].
+    [ [bibtex](research/papers/chen_theoretical_2014.bib) ]. -->
 
--   Dhagash Mehta, **Tianran Chen**, Jonathan Hauenstein, and David Wales.  
+<!-- -   Dhagash Mehta, **Tianran Chen**, Jonathan Hauenstein, and David Wales.  
     "Newton homotopies for sampling stationary points of potential energy landscapes".  
     *The Journal of Chemical Physics 141 (12), 121104* (2014)  
     (Selected for a Journal of Chemical Physics Editors' Choice for 2014)  
     [ [arXiv](http://arxiv.org/abs/1412.3810) ]
     [ [link](http://dx.doi.org/10.1063/1.4896657) ]
-    [ [bibtex](research/papers/mehta_newton_2014.bib) ].
+    [ [bibtex](research/papers/mehta_newton_2014.bib) ]. -->
 
 -   **Tianran Chen** and Tien-Yien Li.  
     "Solutions to systems of binomial equations".  

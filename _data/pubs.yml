@@ -123,3 +123,165 @@
     volume = {79, Part 3},
     year = {2017}
     }
+
+- nickname: landscape-response
+  title: >
+    Response to "Comment on 'Exploring the potential energy landscape
+    of the Thomson problem via Newton homotopies'"
+  journal: The Journal of Chemical Physics 143, 247102
+  coauthors: Dhagash Mehta, John Morgan, and David Wales
+  link: http://dx.doi.org/10.1063/1.4939011
+  abstract: >
+    The comment notes that the Newton homotopy (NH) and Newton trajectory (NT)
+    methods are related.
+    By describing recent implementations of the NH method, we clarify the
+    similarities and differences between the two approaches.
+    The possible synergy between NH, NT and other flow methods could suggest
+    further developments in mathematics and chemistry.
+  bibtex: |
+    @article{mehta_response_2015,
+    author = {Mehta, Dhagash and Chen, Tianran and Morgan, John W. R. and Wales, David J.},
+    doi = {10.1063/1.4939011},
+    issn = {0021-9606, 1089-7690},
+    journal = {The Journal of Chemical Physics},
+    keywords = {Bifurcations,Difference equations,Flow instabilities,Flow simulations,Folder - LogEval,Folder - Unmixing,Singularity theory},
+    month = {dec},
+    number = {24},
+    pages = {247102},
+    title = {{Response to “Comment on ‘Exploring the potential energy landscape of the Thomson problem via Newton homotopies”' [J. Chem. Phys. 143, 247101 (2015)]}},
+    url = {http://scitation.aip.org/content/aip/journal/jcp/143/24/10.1063/1.4939011 http://scitation.aip.org/deliver/fulltext/aip/journal/jcp/143/24/1.4939011.pdf;jsessionid=23ev3700uj07.x-aip-live-03?itemId=/content/aip/journal/jcp/143/24/10.1063/1.4939011{\&}mimeTyp},
+    volume = {143},
+    year = {2015}
+    }
+
+- nickname: survey
+  title: >
+    Homotopy continuation method for solving
+    systems of nonlinear and polynomial equations
+  journal: Communications in Information and Systems 15(2):119--307 (2015)
+  coauthors: Tien-Yien Li
+  link: http://dx.doi.org/10.4310/CIS.2015.v15.n2.a1
+  abstract: >
+    This survey provides an overview of the homotopy continuation method
+    for solving systems of nonlinear and polynomial equations including
+    its theoretical background, numerical stability analysis,
+    and implementation issues.
+  bibtex: |
+    @article{chen_homotopy_2015,
+    author = {Chen, Tianran and Li, Tien-Yien},
+    doi = {10.4310/CIS.2015.v15.n2.a1},
+    issn = {15267555, 21634548},
+    journal = {Commun. Inf. Syst.},
+    number = {2},
+    pages = {119--307},
+    title = {Homotopy continuation method for solving systems of nonlinear and polynomial equations},
+    volume = {15},
+    year = {2015}
+    }
+
+- nickname: landscape
+  title: Exploring the potential energy landscape of the Thomson problem via Newton homotopies
+  journal: The Journal of Chemical Physics 142 194113 (2015)
+  coauthors: Dhagash Mehta, David Wales, and John Morgan
+  link: http://dx.doi.org/10.1063/1.4921163
+  abstract: >
+    Locating the stationary points of a real-valued multivariate potential
+    energy function is an important problem in many areas of science.
+    This task generally amounts to solving simultaneous nonlinear systems
+    of equations.
+    While there are several numerical methods that can find many or
+    all stationary points, they each exhibit characteristic problems.
+    Moreover, traditional methods tend to perform poorly near degenerate
+    stationary points with additional zero Hessian eigenvalues.
+    We propose an efficient and robust implementation of the
+    Newton homotopy method, which is capable of quickly sampling
+    a large number of stationary points of a wide range of indices,
+    as well as degenerate stationary points.
+    We demonstrate our approach by applying it to the Thomson problem.
+    We also briefly discuss a possible connection between the present work
+    and Smale's 7th problem.
+  bibtex: |
+    @article{mehta_exploring_2015,
+    author = {Mehta, Dhagash and Chen, Tianran and Morgan, John W. R. and Wales, David J.},
+    doi = {10.1063/1.4921163},
+    issn = {0021-9606, 1089-7690},
+    journal = {The Journal of Chemical Physics},
+    keywords = {Eigenvalues,Folder - Finished - NewtonHomotopyReply,Folder - Finished - Solving survey,Folder - LogEval,Folder - Power flow,Folder - Unmixing,Newton Raphson method,Nonlinear dynamics,Numerical solutions,Potential energy surfaces},
+    month = {may},
+    number = {19},
+    pages = {194113},
+    title = {{Exploring the potential energy landscape of the Thomson problem via Newton homotopies}},
+    url = {http://scitation.aip.org/content/aip/journal/jcp/142/19/10.1063/1.4921163},
+    volume = {142},
+    year = {2015}
+    }
+
+- nickname: mixvol-theoretical
+  title: Theoretical aspects of mixed volume computation via mixed subdivision
+  journal: Communications in Information and Systems (2014)
+  year: 2014
+  coauthors: Tien-Yien Li and Xiaoshen Wang
+  pdf: mvol.pdf
+  link: http://dx.doi.org/10.4310/CIS.2014.v14.n4.a1
+  abstract: >
+    We analyze the computation of mixed volume of tuples of polytopes via
+    fine mixed subdivisions.
+    This method expresses the mixed volume as a sum of easily computable
+    standard volumes of polytopes called mixed cells.
+    Mixed cells play a critically important role in
+    polyhedral homotopy continuation method, which in turn is a
+    particularly efficient numerical method for the solution of systems
+    of polynomial equations.
+    We provide a complete and self-contained account of the underlying
+    computational convexity techniques, assuming no background in
+    algebraic geometry.
+  bibtex: |
+    @article{chen_theoretical_2014,
+    author = {Chen, Tianran and Li, Tien-Yien and Wang, Xiaoshen},
+    doi = {10.4310/CIS.2014.v14.n4.a1},
+    issn = {15267555, 21634548},
+    journal = {Communications in Information and Systems},
+    number = {4},
+    pages = {213--242},
+    title = {Theoretical aspects of mixed volume computation via mixed subdivision},
+    url = {http://www.intlpress.com/site/pub/pages/journals/items/cis/content/vols/0014/0004/a001/},
+    volume = {14},
+    year = {2014}
+    }
+
+- nickname: newton-homotopy
+  title: Newton homotopies for sampling stationary points of potential energy landscapes
+  journal: The Journal of Chemical Physics 141 (12), 121104 (2014)
+  year: 2014
+  coauthors: Dhagash Mehta, Jonathan Hauenstein, and David Wales
+  link: http://dx.doi.org/10.1063/1.4896657
+  arxiv: http://arxiv.org/abs/1412.3810
+  note: Selected for a Journal of Chemical Physics Editors' Choice for 2014
+  abstract: >
+    One of the most challenging and frequently arising problems in many areas
+    of science is to find solutions of a system of multivariate nonlinear equations.
+    There are several numerical methods that can find many (or all if the system
+    is small enough) solutions but they all exhibit characteristic problems.
+    Moreover, traditional methods can break down if the system contains
+    singular solutions.
+    Here, we propose an efficient implementation of Newton homotopies, which
+    can sample a large number of the stationary points of complicated
+    many-body potentials.
+    We demonstrate how the procedure works by applying it to the nearest-neighbor
+    ϕ4 model and atomic clusters.
+  bibtex: |
+    @article{mehta_newton_2014,
+    author = {Mehta, Dhagash and Chen, Tianran and Hauenstein, Jonathan D and Wales, David J},
+    doi = {10.1063/1.4896657},
+    issn = {0021-9606, 1089-7690},
+    journal = {The Journal of Chemical Physics},
+    keywords = {Atomic and molecular clusters,Biomolecular structure,Nonlinear differential equations,Numerical modeling,Numerical solutions,real homotopy},
+    month = {sep},
+    number = {12},
+    pages = {121104},
+    shorttitle = {Communication},
+    title = {Newton homotopies for sampling stationary points of potential energy landscapes},
+    url = {http://scitation.aip.org/content/aip/journal/jcp/141/12/10.1063/1.4896657},
+    volume = {141},
+    year = {2014}
+    }
