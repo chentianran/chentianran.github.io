@@ -1,3 +1,26 @@
+- nickname: freesum
+  title: >
+    A Product Formula for the Normalized Volume of
+    Free Sums of Lattice Polytopes
+  coauthors: Robert Davis
+  arxiv: https://arxiv.org/abs/1711.11130
+  abstract: >
+    The free sum is a basic geometric operation among convex polytopes.
+    This note focuses on the relationship between the normalized volume
+    of the free sum and that of the summands.
+    In particular, we show that the normalized volume of the free sum
+    of full dimensional polytopes is precisely the product of the
+    normalized volumes of the summands.
+  bibtex: |
+    @article{chen_product_2017,
+        author = {Chen, Tianran and Davis, Robert},
+        month = {nov},
+        title = {A Product Formula for the Normalized Volume of Free Sums of Lattice Polytopes},
+        journal = {Advances in Algebra: Research from the Southern Regional Algebra Conference 2017},
+        pages = {(To appear)},
+        year = {2017}
+    }
+
 - nickname: belief
   title: >
     Fixed points of belief propagation --
@@ -26,7 +49,7 @@
 
 - nickname: powerflow-bkk
   title: On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations
-  journal: IEEE Transactions on Power Systems
+  journal: IEEE Transactions on Power Systems (2018)
   coauthors: Dhagash Mehta
   pdf: powerflow-bkk.pdf
   link: https://doi.org/10.1109/TPWRS.2017.2724030
@@ -47,12 +70,18 @@
     @article{chen_network_2017,
     author = {Chen, Tianran and Mehta, Dhagash},
     doi = {10.1109/TPWRS.2017.2724030},
-    issn = {0885-8950},
+    archivePrefix = {arXiv},
+    arxivId = {1512.04987},
+    eprint = {1512.04987},
+    issn = {08858950},
     journal = {IEEE Transactions on Power Systems},
-    pages = {1--1},
+    keywords = {Power systems,load flow,power system analysis computing,power system control},
     title = {On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations},
     url = {http://ieeexplore.ieee.org/document/7971956/},
-    year = {2017}
+    number = {2},
+    pages = {1451--1460},
+    volume = {33},
+    year = {2018}
     }
 
 - nickname: hom4ps3-mvol
@@ -91,7 +120,7 @@
 
 - nickname: parallel-degree
   title: Parallel degree computation for binomial systems
-  journal: Journal of Symbolic Computation (2017), pp. 535-558
+  journal: Journal of Symbolic Computation (2017)
   coauthors: Dhagash Mehta
   link: http://dx.doi.org/10.1016/j.jsc.2016.07.018
   abstract: >
