@@ -3,7 +3,7 @@ layout: default
 title: MATH-1610
 ---
 
-# MATH-1610A (CRN 3394) Summer 2017 Course Syllabus
+# MATH-1610A (CRN 3031) Summer 2018 Course Syllabus
 
 ### When, where, and who
 
@@ -93,9 +93,10 @@ Projects are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
 They are a major part of your course grade.
 
-### Daily quizzes
-There will be a short quiz at the beginning of __every__ class meeting
-to test our understanding of the material discussed in the previous meetings.
+### Weekly quizzes
+There will be a short quiz __every Monday__
+to test our understanding of the material discussed in the previous weeks.
+Quizzes will be a major part of your course grade.
 Since the solutions will be released on the same day,
 __no makeup quiz will be offered__.
 However, a missing quiz may be excused if valid reasons
@@ -105,16 +106,20 @@ religious holidays, or extreme weather conditions)
 and _proper documentation_ are provided (preferably _in advance_).
 Otherwise, a missing quiz receives a score of _zero_.
 
-### Final exam
+### In-class worksheets
+Practice in problem solving is an important part of this course.
+Problems will be assigned during each class meeting in the form of worksheets.
+These worksheets will be collected and graded and will be a major component
+in your course grade.
+Worksheets must be completed in class,
+and thus __no makeup worksheets will be offered__.
+However, a missing worksheet may be excused if valid reasons
+(official university events, illness or medical emergencies,
+death of immediate family, military orders, jury duty,
+religious holidays, or extreme weather conditions)
+and _proper documentation_ are provided (preferably _in advance_).
+Otherwise, a missing worksheet receives a score of _zero_.
 
-The mandatory final exam is scheduled on the last day of class.
-It constitutes a major part of your course grade.
-The final exam consists of two parts:
-
-- The _core part_ tests basic understanding of fundamental concepts.
-  In order to earn a passing grade (D or higher) one must achieve
-  80% or higher on this part.
-- The _other part_ is just the regular type of comprehensive exam.
 
 ### Grade composition
 
@@ -124,9 +129,9 @@ and is calculated according to the following weights:
 
 | Component  | Points |
 |------------|--------|
-| Quizzes    |  400   |
-| Final Exam |   60   |
-| Projects   |   40   |
+| Quizzes    |  500   |
+| Worksheets |  440   |
+| Projects   |   60   |
 
 ### Grading scale
 
@@ -134,7 +139,7 @@ and is calculated according to the following weights:
 * B: 80% - 89.9%
 * C: 70% - 79.9%
 * D: 60% - 69.9%
-* F: below 60% or fail to achieve 80% on the "core" part of the final exam
+* F: below 60%
 
 Borderline grades are determined by in-class participation
 (in discussions and activities) as well as attendance.
