@@ -6,18 +6,18 @@ title: Teaching
 Teaching
 ========
 
-## Spring 2018
+## Summer 2018
 
-- [MATH-2630](calc3/)  (Multivariable Calculus),
-- [MATH-2660](linalg/) (Linear algebra).
-- [CSCI-1210](matlab/) (Introduction to computer programming).
 
+- [MATH-1610](calc1/)  (Calculus I),
+- [MATH-1620](calc2/)  (Calculus II),
 
 
 ## Previous courses
 
-- [MATH-1610](calc1/)  (Calculus I),
-- [MATH-1620](calc2/)  (Calculus II),
+- [MATH-2630](calc3/)  (Multivariable Calculus),
+- [MATH-2660](linalg/) (Linear algebra).
+- [CSCI-1210](matlab/) (Introduction to computer programming).
 - [MATH-2630](calc3/)  (Multivariable Calculus),
 - [MATH-4320](alg2/)   (Modern Algebra II).
 - [MATH-4400](modsim/) (Math Models and Simulations).

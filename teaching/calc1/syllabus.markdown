@@ -3,12 +3,12 @@ layout: default
 title: MATH-1610
 ---
 
-# MATH-1610A (CRN 3031) Summer 2018 Course Syllabus
+# MATH-1610B (CRN 3037) Summer 2018 Course Syllabus
 
 ### When, where, and who
 
-* Time: Mon, Tue, Wed 10:15am -- 12:20pm
-* Room: 318 Goodwyn Hall
+* Time: Mon, Tue, Wed 3:15pm -- 5:20pm
+* Room: 222 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/calc1/>
@@ -43,14 +43,15 @@ These prerequisite can be satisfied by any one of the following:
 
 ### Textbook
 
-- [Required] _Calculus: Early Transcendentals_ (any edition) by Larson & Edwards
+- _Calculus: Early Transcendentals_ (any edition) by Larson & Edwards
   (6th edition ISBN: 978-1285774770)
-- [Optional] _Calculus_ by Gilbert Strang (PDF version is _free_!)
-    * [One single big PDF file](http://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf)
-    * [PDF files by chapters](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/)
+- _OpenSTAX Calculus Volume 1_ (__free!__)
+    * [Online view](https://openstax.org/details/books/calculus-volume-1)
+    * [PDF direct link](https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume1-OP.pdf)
     * [A few great video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
 
-Reading assignment and homework problems will be assigned from the required textbook.
+Reading assignment and homework problems will be assigned from these textbook.
+(Either one is fine)
 
 ### Attendance and participation
 
@@ -88,12 +89,30 @@ are not allowed on any of the quizzes and exams.
 Practice is an important part of learning process.
 Homework problem will be assigned every week.
 
-### Projects
-Projects are more complicated mathematical problems that will
-guide you to gain deeper understanding of the material we learn in class.
-They are a major part of your course grade.
+### Reading tests
 
-### Weekly quizzes
+After reading the textbook, you need to complete a short reading test
+through the Blackboard system.
+__No late submission will be accepted__.
+However, a missing reading test may be excused if valid reasons
+(military assignments, medical issues, family emergency, etc)
+and _proper documentation_ are provided _in advance_.
+Otherwise, a missing reading test receives a score of zero.
+It is recommended that you finish the reading test at least a few days
+before the due date.
+
+Each reading test allows multiple attempts.
+Please see the test descriptions on the Blackboard system for detail.
+
+### Concept tests
+
+You will complete short online tests on the Blackboard system
+that are designed to test your overall understanding of the subject.
+All concepts tests are due on the last day of classes,
+and __no late submission will be accepted__.
+However, it is strongly recommended that you complete them as early as possible.
+
+### In-class quizzes
 There will be a short quiz __every Monday__
 to test our understanding of the material discussed in the previous weeks.
 Quizzes will be a major part of your course grade.
@@ -120,18 +139,19 @@ religious holidays, or extreme weather conditions)
 and _proper documentation_ are provided (preferably _in advance_).
 Otherwise, a missing worksheet receives a score of _zero_.
 
-
 ### Grade composition
 
 Your final grade is determined according to your overall performance of
 homework, projects, quizzes, and the final exam,
 and is calculated according to the following weights:
 
-| Component  | Points |
-|------------|--------|
-| Quizzes    |  500   |
-| Worksheets |  440   |
-| Projects   |   60   |
+| Component     | Points |
+|---------------|--------|
+| Reading tests |  200   |
+| Concept tests |  200   |
+| Worksheets    |  100   |
+| Quizzes       |  400   |
+| Final Exam    |  100   |
 
 ### Grading scale
 
@@ -143,44 +163,6 @@ and is calculated according to the following weights:
 
 Borderline grades are determined by in-class participation
 (in discussions and activities) as well as attendance.
-
-### Suggested homework problems
-
-Practice is a crucial component in the learning process.
-The following is a list of good exercise problems.
-They will not be collected or graded.
-However, since all exams are very similar to questions from homework,
-doing the homework problems regularly is crucial for our success in this course.
-
-(Ignore questions or parts that requires advanced graphing programs)
-
-* Section 1.3: # 1 – 39; 43 – 71 all odd
-* Section 1.5: # 1 – 15; 27 – 33; 71 - 77 all odd
-* Section 1.6: # 1 – 37; 53 – 71; 81 – 109 all odd
-* Section 2.1: # 5, 6, 7
-* Section 2.2: # 1 – 29 all odd
-* Section 2.3: # 5 – 79 all odd
-* Section 2.4: # 1 – 59 all odd
-* Section 2.5: # 1 – 53 all odd
-* Section 3.1: # 1 – 23; 33 – 37; 65 – 79 all odd
-* Section 3.2: # 1 – 51; 57 – 69 all odd
-* Section 3.3: # 1 – 57; 75 – 85; 97 – 113 all odd
-* Section 3.4: # 1 – 33; 43 – 151 all odd
-* Section 3.5: # 1 – 75 all odd
-* Section 3.6: # 1 – 55 all odd
-* Section 3.8: # 5 – 15 all odd
-* Section 4.1: # 1 – 43 all odd
-* Section 4.2: # 9 – 21; 39 - 51 all odd
-* Section 4.3: # 3 - 63 all odd
-* Section 4.4: # 1 – 57 all odd
-* Section 4.5: # 1 – 5; 13 - 41 all odd
-* Section 4.6: # 1 – 33; 41 - 45 all odd
-* Section 4.7: # 3 – 37 all odd
-* Section 4.8: # 7 – 35 all odd
-* Section 5.1: # 1 – 41; 61 - 67 all odd
-* Section 5.2: # 1 – 41; 45 - 59 all odd
-* Section 5.3: # 1 – 55; 67 - 71 all odd
-* Section 5.4: # 1 – 59; 79 - 97 all odd
 
 ### Other policies
 

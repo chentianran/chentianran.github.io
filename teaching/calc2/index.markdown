@@ -3,26 +3,11 @@ layout: default
 title: MATH-1620
 ---
 
-# MATH-1620 Summer 2017
+# MATH-1620 Summer 2018
 
 * [Course syllabus](syllabus/)
 * [Informal syllabus summary](summary/)
 
-## Projects
-
-There will be several projects that will guide you to explore some deeper
-topics in this course.
-You can find a list of problems [here](projects/).
-Each project contains several questions or versions,
-and depending on the difficulty levels they carry different type of points:
-
-* "++" points: You can earn "++" points by exploring deeper questions.
-  You can earn up to 60 "++" points.
-* "\*\*" points: Certain questions that are beyond Calc-2 level may carry
-  "\*\*" points. There is no limit on how many "\*\*" you can earn.
-
-Due days will be announced in class.
-You _must_ type your solutions.
 
 ## How to survive this course?
 

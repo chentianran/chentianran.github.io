@@ -3,12 +3,12 @@ layout: default
 title: MATH-1620
 ---
 
-# MATH-1620A (CRN 3401) Summer 2017 Course Syllabus
+# MATH-1620A (CRN 3035) Summer 2018 Course Syllabus
 
 ### When, where, and who
 
-* Time: Tue, Thu 1:00pm -- 3:05pm
-* Room: 318 Goodwyn Hall
+* Time: Mon, Tue, Wed 1:00pm -- 3:05pm
+* Room: 218 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/calc2/>
@@ -62,12 +62,13 @@ or an appropriate score in the AUM Math Placement Test.
 
 - [Required] _Calculus: Early Transcendentals_ (any edition) by Larson & Edwards
   (6th edition ISBN: 978-1285774770)
-- [Optional] _Calculus_ by Gilbert Strang (PDF version is _free_!)
-    * [One single big PDF file](http://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf)
-    * [PDF files by chapters](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/)
+- [Optional] _OpenSTAX Calculus Volume 2_ (__free!__)
+    * [Online view](https://openstax.org/details/books/calculus-volume-2)
+    * [PDF direct link](https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume2-OP.pdf)
     * [A few great video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
 
 Reading assignment and homework problems will be assigned from these textbook.
+(Either one is fine)
 
 ### Attendance and participation
 
@@ -97,13 +98,36 @@ students are required to have a graphing calculator
 (TI-84 is recommended).
 The use of such calculators may be required for certain homework problems
 or in-class activities.
-However, all the quizzes and exams are designed so that no calculator will be needed.
+However, all in-class quizzes and exams are designed so that no calculator will be needed.
 Therefore calculators or any smart devices with Internet capabilities
 are not allowed on any of the quizzes and exams.
 
-### Daily quizzes
+### Daily reading tests
 
-There will be a short quiz at the beginning of _every_ class meeting to test
+After reading the textbook, you need to complete a short reading test
+through the Blackboard system.
+__No late submission will be accepted__.
+However, a missing reading test may be excused if valid reasons
+(military assignments, medical issues, family emergency, etc)
+and _proper documentation_ are provided _in advance_.
+Otherwise, a missing reading test receives a score of zero.
+It is recommended that you finish the reading test at least a few days
+before the due date.
+
+Each reading test allows multiple attempts.
+Please see the test descriptions on the Blackboard system for detail.
+
+### Concept tests
+
+You will complete short online tests on the Blackboard system
+that are designed to test your overall understanding of the subject.
+All concepts tests are due on the last day of classes,
+and __no late submission will be accepted__.
+However, it is strongly recommended that you complete them as early as possible.
+
+### In-class quizzes
+
+There will be a short quiz most of the weeks.
 our understanding of the material discussed in the previous meeting.
 __No makeup quiz will be offered__.
 However, a missing quiz may be excused if valid reasons
@@ -111,13 +135,18 @@ However, a missing quiz may be excused if valid reasons
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero.
 
+### In-class worksheets
+
+In-class practice is a crucially important component of the learning process.
+Your in-class worksheets will be _collected and graded_.
+
 ### Projects
 Projects are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
 They are a major part of your course grade.
 
 ### Final exam
-The mandatory final exam will take place in the last day of class.
+The final exam will take place in the last day of class.
 It constitutes a major part of your course grade.
 
 ### Grade composition
@@ -125,11 +154,13 @@ Your final grade is determined according to your overall performance of quizzes,
 the in-class worksheets, projects, and the final exam,
 and is calculated according to the following weights.
 
-| Component  | Points |
-|------------|--------|
-| Quizzes    |  400   |
-| Projects   |   40   |
-| Final Exam |   60   |
+| Component     | Points |
+|---------------|--------|
+| Reading tests |  200   |
+| Concept tests |  200   |
+| Worksheets    |  100   |
+| Quizzes       |  400   |
+| Final Exam    |  100   |
 
 ### Grading scale
 
