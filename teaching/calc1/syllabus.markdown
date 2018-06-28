@@ -112,10 +112,11 @@ All concepts tests are due on the last day of classes,
 and __no late submission will be accepted__.
 However, it is strongly recommended that you complete them as early as possible.
 
-### In-class quizzes
-There will be a short quiz __every Monday__
+### In-class and online quizzes
+Short in-class quizzes are designed
 to test our understanding of the material discussed in the previous weeks.
-Quizzes will be a major part of your course grade.
+Slightly longer online quizzes (via Blackboard system) serve a similar purpose.
+These quizzes will be a major part of your course grade.
 Since the solutions will be released on the same day,
 __no makeup quiz will be offered__.
 However, a missing quiz may be excused if valid reasons
@@ -147,10 +148,10 @@ and is calculated according to the following weights:
 
 | Component     | Points |
 |---------------|--------|
-| Reading tests |  200   |
-| Concept tests |  200   |
+| Reading tests |   50   |
+| Concept tests |  300   |
 | Worksheets    |  100   |
-| Quizzes       |  400   |
+| Quizzes       |  450   |
 | Final Exam    |  100   |
 
 ### Grading scale

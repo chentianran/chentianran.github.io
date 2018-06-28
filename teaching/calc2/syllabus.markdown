@@ -125,7 +125,7 @@ All concepts tests are due on the last day of classes,
 and __no late submission will be accepted__.
 However, it is strongly recommended that you complete them as early as possible.
 
-### In-class quizzes
+### In-class and online quizzes
 
 There will be a short quiz most of the weeks.
 our understanding of the material discussed in the previous meeting.
