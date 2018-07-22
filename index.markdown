@@ -14,9 +14,9 @@ My current research focuses on _numerical algebraic geometry_.
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Spring Semester of 2018 I am teaching
-[MATH-2630](teaching/calc3/)  (Multivariable Calculus),
-[MATH-2660](teaching/linalg/) (Linear Algebra).
+In the Summer Semester of 2018 I am teaching
+[MATH-1610](teaching/calc1/) (Calculus I),
+[MATH-1620](teaching/calc2/) (Calculus II).
 
 {% include hours.markdown %}
 
@@ -30,17 +30,33 @@ I am also the advisor for the [AUM Math Club](teaching/mathclub/).
 News
 ----
 
-I am one of the organizers for the
-[Southern Regional Algebra Conference 2018 ](http://www.srac2018.org/).
+Conferences and seminars I am going to:
 
+- ICMS 2018
+- ICERM 2018 semester program on nonlinear algebra 
 
 Research Interests
 ------------------
+
 - Numerical analysis, scientific computing, high performance computing
 - Application of numerical methods in physics, chemistry, and engineering
 - Systems of polynomial equations
 - Homotopy continuation methods
 - Numerical algebraic geometry
+
+Scientific Software
+-------------------
+
+- [__libtropicon__](/tropicon/)
+    A library for computing intersection points of generic tropical hypersurfaces.
+
+- [__Hom4PS-3__](http://www.hom4ps3.org):
+    A parallel numerical solver for systems of polynomial equations based on the Polyhedral Homotopy Method.
+- __MixedVol-3__:
+    A parallel software package for computing mixed volume, BKK bound,
+    and fine mixed subdivisions (now a part of [Hom4PS-3](http://www.hom4ps3.org)).
+- [__libtropicana__](https://github.com/chentianran/libtropicana):
+    A library designed to find regular simplicial subdivision of lattice convex polytopes and also compute normalized volume as a byproduct. It is written completely in C++ with optional interface for leveraging spBLAS (Sparse BLAS) routines. It is open source software. Users may freely distribute its source under the terms of the LGPLv3 license.
 
 Preprints
 ---------
@@ -51,14 +67,3 @@ Publications
 ------------
 
 {% include publications.markdown %}
-
-Scientific Software
--------------------
-
--   [__Hom4PS-3__](http://www.hom4ps3.org):
-    A parallel numerical solver for systems of polynomial equations based on the Polyhedral Homotopy Method.
--   __MixedVol-3__:
-    A parallel software package for computing mixed volume, BKK bound,
-    and fine mixed subdivisions (now a part of [Hom4PS-3](http://www.hom4ps3.org)).
--   [__libtropicana__](https://github.com/chentianran/libtropicana):
-    A library designed to find regular simplicial subdivision of lattice convex polytopes and also compute normalized volume as a byproduct. It is written completely in C++ with optional interface for leveraging spBLAS (Sparse BLAS) routines. It is open source software. Users may freely distribute its source under the terms of the LGPLv3 license.
