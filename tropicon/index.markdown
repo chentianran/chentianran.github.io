@@ -27,7 +27,7 @@ For now, following experimental versions ("alpha" versions) are available:
     carrying out parallel computation.
     It will still run on systems without Intel TBB,
     but it will only run in serial mode in that case.
-    - Ubuntu 16.04 [ [DEB](tropicon-v0.3.deb) ]
+    - Ubuntu 16.04 [ [DEB](tropicon-0.3.0-Linux.deb) ]
 
 What does it compute?
 -------------------------------------------------------------------------------
