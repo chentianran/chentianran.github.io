@@ -14,9 +14,9 @@ My current research focuses on _numerical algebraic geometry_.
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Summer Semester of 2018 I am teaching
+In the Fall Semester of 2018 I am teaching
 [MATH-1610](teaching/calc1/) (Calculus I),
-[MATH-1620](teaching/calc2/) (Calculus II).
+[MATH-4310](teaching/alg1/) (Modern Algebra I).
 
 {% include hours.markdown %}
 

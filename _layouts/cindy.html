@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include head.html %}
+    <script type="text/javascript" src="https://cindyjs.org/dist/latest/Cindy.js"></script>
+    <link rel="stylesheet" href="https://cindyjs.org/dist/latest/CindyJS.css">
+
+</head>
+
+<body>
+    
+    {% include header.html %}
+    
+    <div id="ww">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    
+                    {{ content }}
+                    
+                </div><!-- /col-lg-8 -->
+            </div><!-- /row -->
+        </div> <!-- /container -->
+    </div>
+    
+	{% include footer.html %}
+    
+</body>
+</html>

@@ -3,12 +3,12 @@ layout: default
 title: MATH-1610
 ---
 
-# MATH-1610B (CRN 3037) Summer 2018 Course Syllabus
+# MATH-1610A (CRN 1269) Fall 2018 Course Syllabus
 
 ### When, where, and who
 
-* Time: Mon, Tue, Wed 3:15pm -- 5:20pm
-* Room: 222 Goodwyn Hall
+* Time: Mon, Wed 10:50am -- 12:30pm
+* Room: 218 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/calc1/>
@@ -79,15 +79,10 @@ doing homework problems.
 According to AUM Mathematics Department Calculator Policy,
 students are required to have a graphing calculator
 (TI-84 is recommended).
-The use of such calculators may be required for certain homework problems
-or in-class activities.
+The use of such calculators may be required for certain homework problems.
 However, all the quizzes and exams are designed so that no calculator will be needed.
 Therefore calculators or any smart devices with Internet capabilities
 are not allowed on any of the quizzes and exams.
-
-### Homework
-Practice is an important part of learning process.
-Homework problem will be assigned every week.
 
 ### Reading tests
 
@@ -113,6 +108,7 @@ and __no late submission will be accepted__.
 However, it is strongly recommended that you complete them as early as possible.
 
 ### In-class and online quizzes
+
 Short in-class quizzes are designed
 to test our understanding of the material discussed in the previous weeks.
 Slightly longer online quizzes (via Blackboard system) serve a similar purpose.
@@ -126,13 +122,18 @@ religious holidays, or extreme weather conditions)
 and _proper documentation_ are provided (preferably _in advance_).
 Otherwise, a missing quiz receives a score of _zero_.
 
-### In-class worksheets
+### Homework
+
 Practice in problem solving is an important part of this course.
-Problems will be assigned during each class meeting in the form of worksheets.
-These worksheets will be collected and graded and will be a major component
+Problems will be assigned on the _Blackboard system_.
+These problems will be graded and will be a major component
 in your course grade.
-Worksheets must be completed in class,
-and thus __no makeup worksheets will be offered__.
+
+### Worksheets
+
+Worksheet problems will also be assigned in class.
+Since these must be completed in class,
+__no makeup worksheets will be offered__.
 However, a missing worksheet may be excused if valid reasons
 (official university events, illness or medical emergencies,
 death of immediate family, military orders, jury duty,
@@ -146,13 +147,14 @@ Your final grade is determined according to your overall performance of
 homework, projects, quizzes, and the final exam,
 and is calculated according to the following weights:
 
-| Component     | Points |
-|---------------|--------|
-| Reading tests |   50   |
-| Concept tests |  300   |
-| Worksheets    |  100   |
-| Quizzes       |  450   |
-| Final Exam    |  100   |
+| Component        | Points | Where      |
+|------------------|--------|------------|
+| Reading tests    |  10%   | Blackboard |
+| Homework         |  10%   | Blackboard |
+| Worksheets       |  10%   | In-class   |
+| Concept tests    |  30%   | Blackboard |
+| Online quizzes   |  20%   | Blackboard |
+| In-class quizzes |  20%   | In-class   |
 
 ### Grading scale
 
