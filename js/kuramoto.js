@@ -9,15 +9,15 @@ function setup() {
     canvas.parent('sketch-holder');
     var b_reset  = createButton ('Reset');
     var b_couple = createButton ('Coupling');
+    strength = createSlider(0, 40, 10);
 
-    b_reset.position (20, 15);
+    b_reset.parent('sketch-control');
+    b_couple.parent('sketch-control');
+    strength.parent('sketch-control');
+
     b_reset.mousePressed (reset);
-
-    b_couple.position (80, 15);
     b_couple.mousePressed (coupling);
 
-    strength = createSlider(0, 20, 10);
-    strength.position (160, 15);
     reset();
 }
 
