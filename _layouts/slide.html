@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/css/reveal.css">
+		<link rel="stylesheet" href="/css/reveal-chen.css">
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+            inlineMath:  [ ['$','$'] ],
+            displayMath: [ ["\\[","\\]"] ],
+            processEscapes: true
+            },
+            "HTML-CSS": { fonts: ["TeX"] }
+        });
+        </script>
+        <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+	</head>
+	<body>
+        <div class="reveal">
+			<div class="slides">
+                {{ content }}
+			</div>
+		</div>
+		<script src="/js/reveal.js"></script>
+		<script>
+			Reveal.initialize();
+		</script>
+	</body>
+</html>
