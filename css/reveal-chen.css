@@ -144,7 +144,9 @@ body {
   display: inline-block; }
 
 .reveal q {
-  font-style: italic; }
+  font-style: italic; 
+  margin-bottom: 20px auto;
+}
 
 .reveal pre {
   display: block;
