@@ -6,19 +6,11 @@ title: Mixed volume
 What is mixed volume
 ====================
 
-The short answer is: _I honestly do not know_.  
-After spending many years with this concept, I can manipulate and compute mixed volumes
-with my eyes closed.  However, I must confess that it is still not completely clear to 
-me what it is supposed to measure and what it is supposed to mean.
-Here, let me just list what I do know.
-
-
 Minkowski sums of convex bodies
 -------------------------------
 
 The Minkowski sum of a curve and a two dimensional shape is fairly easy
 to understand in an intuitive sense.
-
 
 Mixed volume: the definition
 ----------------------------
