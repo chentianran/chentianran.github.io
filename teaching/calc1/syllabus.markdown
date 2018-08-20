@@ -151,8 +151,8 @@ and is calculated according to the following weights:
 |------------------|--------|------------|
 | Reading tests    |  10%   | Blackboard |
 | Homework         |  10%   | Blackboard |
-| Worksheets       |  10%   | In-class   |
-| Concept tests    |  30%   | Blackboard |
+| Worksheets       |  20%   | In-class   |
+| Concept tests    |  20%   | Blackboard |
 | Online quizzes   |  20%   | Blackboard |
 | In-class quizzes |  20%   | In-class   |
 
