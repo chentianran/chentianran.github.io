@@ -3,7 +3,7 @@ layout: default
 title: MATH-4310A
 ---
 
-# MATH-4320A (CRN 1348) Fall 2018 Course Syllabus
+# MATH-4310A (CRN 1348) Fall 2018 Course Syllabus
 
 ### When, where, and who
 
