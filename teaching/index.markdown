@@ -6,15 +6,14 @@ title: Teaching
 Teaching
 ========
 
-## Summer 2018
-
+## Fall 2018
 
 - [MATH-1610](calc1/)  (Calculus I),
-- [MATH-1620](calc2/)  (Calculus II),
-
+- [MATH-4310](alg1/)   (Modern Algebra I).
 
 ## Previous courses
 
+- [MATH-1620](calc2/)  (Calculus II),
 - [MATH-2630](calc3/)  (Multivariable Calculus),
 - [MATH-2660](linalg/) (Linear algebra).
 - [CSCI-1210](matlab/) (Introduction to computer programming).
