@@ -1,6 +1,7 @@
 {% for paper in site.data.prep %}
 -   {% if paper.coauthors %}(with {{ paper.coauthors }})  {% endif %}
     "{{ paper.title }}"  
+    {% if paper.pdf %} [ <a href="research/papers/{{ paper.pdf }}">pdf</a> ] {% endif %}
     [ [arXiv]({{ paper.arxiv }}) ]
     [
         <a data-toggle="collapse"

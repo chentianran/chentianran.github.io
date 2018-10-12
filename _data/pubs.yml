@@ -4,7 +4,7 @@
     birationally invariant intersection index
   coauthors: Robert Davis and Dhagash Mehta
   pdf: kuramoto-biii.pdf
-  journal: SIAM Journal on Applied Algebra and Geometry
+  journal: SIAM Journal on Applied Algebra and Geometry (accepted)
   arxiv: http://arxiv.org/abs/1708.09246
   abstract: >
     Synchronization in networks of interconnected oscillators is a
@@ -19,7 +19,7 @@
     birationally invariant intersection index of a
     system of rational functions on a toric variety.
   bibtex: |
-    @article{chen_counting_2017,
+    @article{ChenDavisMehta2017,
         archivePrefix = {arXiv},
         arxivId = {1708.09246},
         author = {Chen, Tianran and Davis, Robert and Mehta, Dhagash},
