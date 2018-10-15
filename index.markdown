@@ -20,7 +20,10 @@ In the Fall Semester of 2018 I am teaching
 
 {% include hours.markdown %}
 
-I am also the advisor for the [AUM Math Club](teaching/mathclub/).
+I am the advisor for the [AUM Math Club](teaching/mathclub/).
+
+I am the advisor for pre-engineering students.
+Click here to [make an advising appointment](https://doodle.com/poll/fa8tubrh7ka8tbqu).
 
 <!-- Schedule
 --------
@@ -32,7 +35,7 @@ News
 
 Conferences and seminars I am going to:
 
-- ICMS 2018
+- [AMS Fall Southeastern Sectional Meeting](http://www.ams.org/meetings/sectional/2260_program.html)
 - ICERM 2018 semester program on nonlinear algebra 
 
 Research Interests

@@ -53,7 +53,7 @@
     A network topology dependent upper bound
     on the number of equilibria of the Kuramoto model
   coauthors: Dhagash Mehta and Matthew Niemerg
-  arxiv: http://arxiv.org/abs/1512.04987
+  arxiv: http://arxiv.org/abs/1603.05905
   abstract: >
     We begin with formulating the stationary equations of the Kuramoto model
     as a system of polynomial equations in a novel way.
@@ -75,7 +75,7 @@
     author = {Chen, Tianran and Mehta, Dhagash and Niemerg, Matthew},
     eprint = {1603.05905},
     month = {mar},
-    title = {{A Network Topology Dependent Upper Bound on the Number of Equilibria of the Kuramoto Model}},
+    title = {A network topology dependent upper bound on the number of equilibria of the {Kuramoto} model},
     url = {http://arxiv.org/abs/1603.05905},
     year = {2016}
     }
