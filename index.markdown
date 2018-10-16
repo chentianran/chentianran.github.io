@@ -22,8 +22,17 @@ In the Fall Semester of 2018 I am teaching
 
 I am the advisor for the [AUM Math Club](teaching/mathclub/).
 
-I am the advisor for pre-engineering students.
-Click here to [make an advising appointment](https://doodle.com/poll/fa8tubrh7ka8tbqu).
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+
+I am an advisor for pre-engineering students.
+<a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/advising');return false;">Schedule an advising appointment with me</a>
+<!-- Calendly link widget end -->
+<!-- Calendly inline widget begin -->
+<!-- <div class="calendly-inline-widget" data-url="https://calendly.com/chentianran/advising" style="min-width:320px;height:500px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script> -->
+<!-- Calendly inline widget end -->
+<!-- Click here to [make an advising appointment](https://doodle.com/poll/fa8tubrh7ka8tbqu). -->
 
 <!-- Schedule
 --------
@@ -35,8 +44,8 @@ News
 
 Conferences and seminars I am going to:
 
-- [AMS Fall Southeastern Sectional Meeting](http://www.ams.org/meetings/sectional/2260_program.html)
-- ICERM 2018 semester program on nonlinear algebra 
+- [AMS 2018 Fall Southeastern Sectional Meeting](http://www.ams.org/meetings/sectional/2260_program.html)
+- [ICERM 2018 semester program on nonlinear algebra](https://icerm.brown.edu/programs/sp-f18/w1/)
 
 Research Interests
 ------------------
