@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="/css/reveal.css">
-		<link rel="stylesheet" href="/css/reveal-chen.css">
+		<link rel="stylesheet" href="/css/reveal-serif.css">
         <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             extensions: ["tex2jax.js"],
@@ -26,7 +26,11 @@
 		</div>
 		<script src="/js/reveal.js"></script>
 		<script>
-			Reveal.initialize();
+			Reveal.initialize({
+                history: true,
+                transition: 'slide',
+                transitionSpeed: 'fast'
+            });
 		</script>
 	</body>
 </html>

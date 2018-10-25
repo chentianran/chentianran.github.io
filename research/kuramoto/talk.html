@@ -7,10 +7,13 @@ title: DAG decomposition
     <H1>Direct acyclic decomposition of Kuramoto equations</H1>
 
     <p>Tianran Chen</p>
-    <p>Department of Mathematics and Computer Science</p>
-    <p>Auburn University at Montgomery</p>
+    <p>
+        Department of Mathematics and Computer Science<br>
+        Auburn University at Montgomery
+    </p>
 </section>
 <section>
+    <h4>Kuramoto model</h4>
     <img src="../kuramoto.png" border=5 class="stretch">
     <p>
     \[
@@ -18,8 +21,15 @@ title: DAG decomposition
     \]
     </p>
 
+    <p>A simple model with many applications.</p>
+
 </section>
 <section>
+    <p>
+    \[
+        \dot{\theta} = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
+    \]
+    </p>
     <div id="sketch-holder">  </div>
     <div id="sketch-control"> </div>
 
@@ -28,9 +38,7 @@ title: DAG decomposition
     <script language="javascript" type="text/javascript" src="/js/kuramoto.js"></script>
 </section>
 <section>
-    <p>
-    Frequency synchronization configuration:
-    </p>
+    <h4> Frequency synchronization configuration </h4>
     <p>
     $\dot{\theta}_i$ are all identical.
     </p>
@@ -38,6 +46,7 @@ title: DAG decomposition
     \[
         c = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
     \]
+    <br>
     </p>
 
     <p class="fragment">
@@ -45,6 +54,22 @@ title: DAG decomposition
     \[
         0 = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
     \]
+    using a rotational frame of reference.
+    </p>
+</section>
+<section>
+    <img src="../kuramoto.png" border=5 class="stretch">
+    <p>
+        \[
+        \begin{aligned}
+            \omega_0 &= k_{01} \sin(\theta_0 - \theta_1) + k_{02} \sin(\theta_0 - \theta_2) \\
+            \omega_1 &= k_{10} \sin(\theta_1 - \theta_0) + k_{13} \sin(\theta_1 - \theta_3) \\
+            \omega_2 &= k_{20} \sin(\theta_2 - \theta_0) + k_{23} \sin(\theta_2 - \theta_3) \\
+            \omega_3 &= k_{31} \sin(\theta_3 - \theta_1) + k_{32} \sin(\theta_3 - \theta_2)
+        \end{aligned}
+        \]
+
+
     </p>
 </section>
 <section>
@@ -62,8 +87,8 @@ title: DAG decomposition
         \[
             x_i = e^{\mathbf{i} z_i} = e^{r_i + \mathbf{i}\,\theta_i}
         \]
+        <br>
     </p>
-    <p></p>
     <p class="fragment">
         \[
             \sin(z_i - z_j) = \frac{
@@ -75,6 +100,7 @@ title: DAG decomposition
                 \frac{x_i}{x_j} - \frac{x_j}{x_i}
             \right)
         \]
+        <br>
     </p>
     <p class="fragment">
         transcendental term ---> algebraic term
@@ -101,7 +127,7 @@ title: DAG decomposition
     <p class="fragment fade-in">
     becomes the Algebraic Kuramoto Equations<br/>
     \[
-        0 = \omega_i - \sum_{j=1}^n \frac{k_{ij}}{2\mathbf{i}} 
+        0 = \omega_i - \sum_{j=1}^n a_{ij}' 
         \left(
             \frac{x_i}{x_j} - \frac{x_j}{x_i}
         \right)
@@ -110,10 +136,23 @@ title: DAG decomposition
 
 </section>
 <section>
+    <img src="../kuramoto.png" border=5 class="stretch">
+    <p>
+        \[
+        \begin{aligned}
+            \omega_0 &= a_{01}' (x_0 / x_1 - x_1 / x_0) + a_{02}' (x_0 / x_2 - x_2 / x_0) \\
+            \omega_1 &= a_{10}' (x_1 / x_0 - x_0 / x_1) + a_{13}' (x_1 / x_3 - x_3 / x_1) \\
+            \omega_2 &= a_{20}' (x_2 / x_0 - x_0 / x_2) + a_{23}' (x_2 / x_3 - x_3 / x_2) \\
+            \omega_3 &= a_{31}' (x_3 / x_1 - x_1 / x_3) + a_{32}' (x_3 / x_2 - x_2 / x_3)
+        \end{aligned}
+        \]
+    </p>
+</section>
+<section>
     <p>Algebraic Kuramoto Equations:</p>
-    <p></p>
+    <p>
     \[
-        0 = \omega_i - \sum_{j=1}^n \frac{k_{ij}}{2\mathbf{i}} 
+        0 = \omega_i - \sum_{j=1}^n a_{ij}'
         \left(
             \frac{x_i}{x_j} - \frac{x_j}{x_i}
         \right)
@@ -128,14 +167,63 @@ title: DAG decomposition
 
 </section>
 <section>
-    <p class="highlight-red">
-        Direct Acyclic Decomposition
+    <div class="theorem">
+        <h4>Definition: Adjacency polytope</h4>
+        <p>
+            For a graph $G$ with nodes $\{0,1,\ldots,N-1\}$, 
+        </p>
+        <p>
+            <br>
+            \[
+                P(G) \;:=\;
+                \text{conv} \{ \mathbf{e}_i - \mathbf{e}_j \mid \{i,j\} \in \mathcal{E}(G) \}
+            \]
+            where $\mathbf{e}_0 = \mathbf{0}$.
+        </p>
+    </div>
+    <img class="stretch" src="../cycle-3-ap.png">
+</section>
+<section>
+    <p>
+        Adjacency polytopes provide combinatorial proxy for
+        studying Kuramoto equations.
+        <br>
     </p>
+    <div class="theorem">
+        <h4>Theorem (C., Davis, Mehta 2017)</h4>
+        <p>
+            For a cycle graph $C_N$ of $N$ nodes,
+            the corresponding Kuramoto equations with generic (complex coefficients)
+            has
+            \[
+                (N-1)! \, \text{Vol}(P(C_N)) =
+                N \, \binom{N-1}{\lfloor (N-1) / 2 \rfloor}
+            \]
+            complex solutions.
+        </p>
+    </div>
+</section>
+<section>
+    <h3>Directed edges</h3>
+    <p>
+    \[
+        0 = \omega_i - \sum_{j=1}^n a_{ij}'
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    <br/>
+    </p>
+    <img width="500" src="../dir-edges.png">
+
+</section>
+<section>
+    <h3>Kuramoto equations with directed edges</h3>
     <img width="350" src="../cycle3.png">
     <img width="350" src="../dag3.png">
 
     <p class="fragment">
-        Generalized synchronization equations:
+        Generalized Kuramoto equations:
         \[
             c_i - \sum_{(i,j) \in \mathcal{E}(G)} 
             a_{ij} \frac{x_i}{x_j}
@@ -143,16 +231,68 @@ title: DAG decomposition
     </p>
 </section>
 <section>
+    <h3>Directed acyclic decomposition</h3>
     <img class="stretch" src="../dac-cycle3.png">
     <p>
-        A network of 3 oscillators has at most 6 synchronization configurations.
+        A network of 3 oscillators has at most <b>6</b> synchronization configurations.
     </p>
+</section>
+<section>
+    <img width=500 src="../dac-cycle3.png">
+    <p>Facets of the adjacency polytope give rise to subnetworks.</p>
+    <img width=700 src="../cycle-3-ap.png">
+</section>
+<section>
+    <h3>Facet subsystem</h3>
+    <p>
+        For each facet $F$ of the adjacency polytope $P(C_N)$,
+    </p>
+    <p>
+        \[
+            c_k - \sum_{(i,j) \in F} a_{kij} 
+            \left(
+                \frac{x_i}{x_j}
+            \right)
+            \quad\text{for } k = 0, \ldots, N-1 
+        \]
+        where $c_k$'s and $a_{kij}$'s are generic coefficients.
+    </p>
+    <img width="340" src="../cycle-3-facet1.png">
+    <img width="380" src="../cycle-3-dac1.png">
+</section>
+<section>
+    <h4>Deformation into facet subsystems</h4>
 </section>
 <section>
     <img class="stretch" src="../dac-cycle.png">
     <p>
-        A cycle of 5 oscillators has at most 30 synchronization configurations.
+        A cycle of 5 oscillators has 30 subnetworks.
     </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Proposition (Topology of facet subnetworks)</h4>
+        <p>
+        The underlying directed graph of a facet subnetwork 
+        has the following properties:
+        <ul>
+            <li>it is <b>acyclic</b>;</li>
+            <li>it contains all the nodes;</li>
+            <li>all paths between a pair of nodes have the same length;</li>
+            <li>each paths contains no more than half of the edges of any undirected cycle in the original graph.</li>
+        </ul>
+        </p>
+    </div>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Definition (Primitive subnetwork)</h4>
+        <p>
+            A subnetwork is called <b>primitive</b> 
+            if the underlying graph is a connected, acyclic,
+            and has $N-1$ directed edges.
+        </p>
+    </div>
 </section>
 <section>
     <p>
