@@ -2,6 +2,7 @@
   title: The loss surface of deep linear networks viewed through the algebraic geometry lens
   coauthors: Dhagash Mehta, Tingting Tang and Jonathan D. Hauenstein
   pdf: deep-linear.pdf
+  arxiv: http://arxiv.org/abs/1810.07716
   abstract: >
     By using the viewpoint of modern computational algebraic geometry,
     we explore properties of the optimization landscapes of the deep linear neural network models. 
@@ -15,6 +16,19 @@
     We show that in the presence of the non-zero regularization, 
     deep linear networks indeed possess local minima which are not the global minima. 
     Our computational results further clarify certain aspects of the loss surfaces of deep linear networks and provides novel insights.
+  bibtex: |
+    @article{Mehta2018,
+    archivePrefix = {arXiv},
+    arxivId = {1810.07716},
+    author = {Mehta, Dhagash and Chen, Tianran and Tang, Tingting and Hauenstein, Jonathan D.},
+    eprint = {1810.07716},
+    month = {oct},
+    title = {The loss surface of deep linear networks viewed through the algebraic geometry lens},
+    url = {http://arxiv.org/abs/1810.07716},
+    year = {2018}
+    }
+
+
 
 - nickname: kcycle-homotopy
   title: A toric deformation method for solving Kuramoto equations
