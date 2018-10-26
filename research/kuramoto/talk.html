@@ -13,7 +13,7 @@ title: DAG decomposition
     </p>
 </section>
 <section>
-    <h4>Kuramoto model</h4>
+    <h3>Kuramoto model (Y. Kuramoto 1975)</h3>
     <img src="../kuramoto.png" border=5 class="stretch">
     <p>
     \[
@@ -23,6 +23,23 @@ title: DAG decomposition
 
     <p>A simple model with many applications.</p>
 
+</section>
+<section>
+    <h3>Kuramoto model: applications</h3>
+    <p>
+        <br>
+        <ul>
+            <li>Chemical oscillators</li>
+            <li>Power grid analysis</li>
+            <li>Neuroscience</li>
+            <li>Biological locomotion</li>
+            <li>Flocking behavior</li>
+        </ul>
+        <br>
+    </p>
+    <p class="fragment">
+        Balance between simple formulation and complex behavior
+    </p>
 </section>
 <section>
     <p>
@@ -261,7 +278,160 @@ title: DAG decomposition
     <img width="380" src="../cycle-3-dac1.png">
 </section>
 <section>
-    <h4>Deformation into facet subsystems</h4>
+    <h3>Deformation into facet subsystems</h3>
+
+    <img src="../cycle3.png" width="340">
+    <p>
+        \[
+        \begin{aligned}
+        \omega_0 - \left[
+            a_{01}' (x_0 x_1^{-1} - x_0^{-1} x_1) +
+            a_{02}' (x_0 x_2^{-1} - x_0^{-1} x_2)
+        \right]
+        &= 0 \\
+        \omega_1 - \left[
+            a_{10}' (x_1 x_0^{-1} - x_1^{-1} x_0) +
+            a_{12}' (x_1 x_2^{-1} - x_1^{-1} x_2)
+        \right]
+        &= 0 \\
+        \omega_2 - \left[
+            a_{21}' (x_2 x_1^{-1} - x_2^{-1} x_1) +
+            a_{20}' (x_2 x_0^{-1} - x_2^{-1} x_0) 
+        \right]
+        &= 0
+        \end{aligned}
+        \]
+    </p>
+    <p><br>There exists a continuous deformation to the facet subsystem</p>
+    <p></p>
+</section>
+<section>
+    <!-- <p>
+        \[
+        \begin{aligned}
+        \omega_0 &- \left[
+            a_{01}' (x_0 x_1^{-1} - x_0^{-1} x_1) +
+            a_{02}' (x_0 x_2^{-1} - x_0^{-1} x_2)
+        \right]
+        \\
+        \omega_1 &- \left[
+            a_{10}' (x_1 x_0^{-1} - x_1^{-1} x_0) +
+            a_{12}' (x_1 x_2^{-1} - x_1^{-1} x_2)
+        \right]
+        \\
+        \omega_2 &- \left[
+            a_{21}' (x_2 x_1^{-1} - x_2^{-1} x_1) +
+            a_{20}' (x_2 x_0^{-1} - x_2^{-1} x_0) 
+        \right]
+        \end{aligned}
+        \]
+    </p> -->
+    <div class="theorem">
+        <h4>Deformation</h4>
+    <p>
+        We define $H(x_0,x_1,x_2,t)=(h_0,h_1,h_2)$ given by
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        h_0 &=
+        \frac{\omega_0}{t} - \left[
+            a_{01}' \left(\frac{x_0}{x_1} - \frac{x_1}{x_0}\right) +
+            a_{02}' \left(\frac{x_0}{x_2} - \frac{x_2}{x_0}\right)
+        \right]
+        \\
+        h_1 &=
+        \frac{\omega_1}{t} - \left[
+            a_{10}' \left(\frac{x_1}{x_0} - \frac{x_0}{x_1}\right) +
+            a_{12}' \left(\frac{x_1}{x_2} - \frac{x_2}{x_1}\right)
+        \right]
+        \\
+        h_2 &=
+        \frac{\omega_2}{t} - \left[
+            a_{21}' \left(\frac{x_2}{x_1} - \frac{x_1}{x_2}\right) +
+            a_{20}' \left(\frac{x_2}{x_0} - \frac{x_0}{x_2}\right) 
+        \right]
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        which is a continuous deformation of the original system
+    </p>
+    </div>
+    <p class="fragment">
+        <br>At $t=1$, $H$ is the original system.
+    </p>
+    <p class="fragment">
+        At $t=0$, $H$ becomes undefined.
+    </p>
+</section>
+<section>
+    <p>As $t \to 0$, the solutions escape $(\mathbb{C}^*)^3 = (\mathbb{C} \setminus \{0\})^3$.</p>
+    <p class="fragment">
+        <br>
+        ...and approach limit set at $t=0$ defined by
+    </p>
+    <p class="fragment">
+        \[
+            \begin{aligned}
+                \omega_1 &= a_{110} x_1 / x_0 + a_{120} x_2 / x_0 \\
+                \omega_2 &= a_{210} x_1 / x_0 + a_{220} x_2 / x_0
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment">
+        <img src="../cycle-3-dac1.png" width="350">
+    </p>
+</section>
+<section>
+    <h3>Deformation to facets</h3>
+    <p>Kuramoto equations ---> adjacency polytopes</p>
+    <p>
+        \[
+        \begin{aligned}
+        h_0 &=
+        \frac{\omega_0}{t} - \left[
+            a_{01}' \left(\frac{x_0}{x_1} - \frac{x_1}{x_0}\right) +
+            a_{02}' \left(\frac{x_0}{x_2} - \frac{x_2}{x_0}\right)
+        \right]
+        \\
+        h_1 &=
+        \frac{\omega_1}{t} - \left[
+            a_{10}' \left(\frac{x_1}{x_0} - \frac{x_0}{x_1}\right) +
+            a_{12}' \left(\frac{x_1}{x_2} - \frac{x_2}{x_1}\right)
+        \right]
+        \\
+        h_2 &=
+        \frac{\omega_2}{t} - \left[
+            a_{21}' \left(\frac{x_2}{x_1} - \frac{x_1}{x_2}\right) +
+            a_{20}' \left(\frac{x_2}{x_0} - \frac{x_0}{x_2}\right) 
+        \right]
+        \end{aligned}
+        \]
+    </p>
+    <p><br>as $t \to 0$ the solution set deform into limit sets at "infinity"</p>
+    <p>...defined by each <b>facet subsystems</b></p>
+</section>
+<section>
+    <h3>General construction</h3>
+    <p class="fragment fade-in">
+    <br>For the algebraic Kuramoto equations<br/>
+    \[
+        0 = \omega_i - \sum_{j=1}^n a_{ij}' 
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    </p>
+    <p class="fragment fade-in">
+    <br>we form the deformation<br/>
+    \[
+        h_i(\theta_1,\ldots,\theta_{N-1},t) = \frac{\omega_i}{t} - \sum_{j=1}^n a_{ij}' 
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    </p>
 </section>
 <section>
     <img class="stretch" src="../dac-cycle.png">
@@ -293,14 +463,73 @@ title: DAG decomposition
             and has $N-1$ directed edges.
         </p>
     </div>
+    <img class="fragment" src="../cycle-5-dag1.png" width=300>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>
+                Proposition
+            </h4>
+            <p>
+                The facet subsystem corresponding to a <b>primitive</b> subnetwork
+                defines a <b>irreducible toric variety</b>.
+            </p>
+        </div>
+    </div>
 </section>
 <section>
-    <p>
-        Direct acyclic decomposition:
+    <h3>Primitive subnetworks</h3>
+    <p><br/>Primitive subnetworks give rise to "nice" solution sets</p>
+    <p class="fragment">
+        When will a facet subnetwork be primitive?
+        <br/>
     </p>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>Theorem</h4>
+            <p>
+                For a <b>tree</b> graph, 
+                <b>all</b> facet subnetworks are primitive.
+            </p>
+        </div>
+    </div>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>Theorem</h4>
+            <p>
+                For a <b>cycle</b> graph $C_N$, if $N$ is odd then
+                <b>all</b> facet subnetworks are primitive.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>
+        Direct acyclic decomposition:
+    </h3>
     <ul>
-        <li class="fragment">Synchronization equations</li>
-        <li class="fragment">Adjacency polytopes</li>
-        <li class="fragment">Direct acyclic subnetworks</li>
+        <li class="fragment">Deform a Kuramoto equations</li>
+        <li class="fragment">...onto the facets of its adjacency polytope</li>
+        <li class="fragment">...leads to facet subsystems</li>
+        <li class="fragment">...and direct acyclic subnetworks</li>
     </ul>
+</section>
+<section>
+    <h3>The dictionary</h3>
+    <table>
+        <tr>
+            <th>Kuramoto network</th>
+            <th>Kuramot equations</th>
+            <th>Adjacency polytope</th>
+        </tr>
+        <tr>
+            <td>Facet subnetworks</td>
+            <td>Facet subsystems</td>
+            <td>Facet</td>
+        </tr>
+        <tr>
+            <td>Primitive subnetworks</td>
+            <td>Irreducible toric variety</td>
+            <td>Simplicial facet</td>
+        </tr>
+    </table>
 </section>
