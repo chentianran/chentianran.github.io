@@ -207,11 +207,10 @@ title: DAG decomposition
         <br>
     </p>
     <div class="theorem">
-        <h4>Theorem (C., Davis, Mehta 2017)</h4>
+        <h4>Theorem (C., Davis, Mehta 2017) [arXiv:1708.09246]</h4>
         <p>
-            For a cycle graph $C_N$ of $N$ nodes,
-            the corresponding Kuramoto equations with generic (complex coefficients)
-            has
+            For a <b>cycle</b> graph $C_N$ of $N$ nodes,
+            the corresponding Kuramoto equations with generic coefficients has
             \[
                 (N-1)! \, \text{Vol}(P(C_N)) =
                 N \, \binom{N-1}{\lfloor (N-1) / 2 \rfloor}
@@ -284,25 +283,24 @@ title: DAG decomposition
     <p>
         \[
         \begin{aligned}
-        \omega_0 - \left[
+        \omega_0 &= \left[
             a_{01}' (x_0 x_1^{-1} - x_0^{-1} x_1) +
             a_{02}' (x_0 x_2^{-1} - x_0^{-1} x_2)
         \right]
-        &= 0 \\
-        \omega_1 - \left[
+        \\
+        \omega_1 &= \left[
             a_{10}' (x_1 x_0^{-1} - x_1^{-1} x_0) +
             a_{12}' (x_1 x_2^{-1} - x_1^{-1} x_2)
         \right]
-        &= 0 \\
-        \omega_2 - \left[
+        \\
+        \omega_2 &= \left[
             a_{21}' (x_2 x_1^{-1} - x_2^{-1} x_1) +
             a_{20}' (x_2 x_0^{-1} - x_2^{-1} x_0) 
         \right]
-        &= 0
         \end{aligned}
         \]
     </p>
-    <p><br>There exists a continuous deformation to the facet subsystem</p>
+    <p><br>There exists a continuous deformation to facet subsystems</p>
     <p></p>
 </section>
 <section>
@@ -327,7 +325,7 @@ title: DAG decomposition
         \]
     </p> -->
     <div class="theorem">
-        <h4>Deformation</h4>
+        <h4>Deformation (adjacency polytope homotopy)</h4>
     <p>
         We define $H(x_0,x_1,x_2,t)=(h_0,h_1,h_2)$ given by
     </p>
@@ -381,6 +379,9 @@ title: DAG decomposition
     </p>
     <p class="fragment">
         <img src="../cycle-3-dac1.png" width="350">
+    </p>
+    <p class="fragment">
+        One of the <b>facet subsystem</b>
     </p>
 </section>
 <section>
@@ -518,7 +519,7 @@ title: DAG decomposition
     <table>
         <tr>
             <th>Kuramoto network</th>
-            <th>Kuramot equations</th>
+            <th>Kuramoto equations</th>
             <th>Adjacency polytope</th>
         </tr>
         <tr>
@@ -532,4 +533,169 @@ title: DAG decomposition
             <td>Simplicial facet</td>
         </tr>
     </table>
+</section>
+<section>
+    <h3>Tropical connections</h3>
+    <div class="theorem">
+        <h4>Problem</h4>
+        <p>
+            For a given Kuramoto system with generic coefficients, 
+            what is the <b>tropical variety</b> it defines?
+        </p>
+    </div>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>Weaker problem</h4>
+            <p>
+                For a given Kuramoto system with generic coefficients, 
+                what is the <b>tropical stable intersection</b> of this system?
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Tropical semi-ring</h4>
+        <p>
+            \[
+                \mathbb{T} = (\; \mathbb{R} \cup \{ \infty \} \;,\; \oplus \;,\; \odot \;)
+            \]
+            with
+            \[
+            \begin{aligned}
+                a \oplus b &= \min \,\{\, a\,,\, b\, \}
+                &
+                a \odot b &= a + b
+            \end{aligned}
+            \]
+
+        </p>
+        <p class="fragment">
+            Neutral elements:
+            \[
+                \begin{aligned}
+                    a \oplus \infty &= \min(a,\infty) = a &
+                    a \odot  0      &= a + 0          = a
+                \end{aligned}
+            \]
+        </p>
+    </div>
+    <p class="fragment">
+        To form a <b>tropicalization</b> of a polynomial
+        <ul>
+            <li class="fragment">replace $+$ with $\min$</li>
+            <li class="fragment">replace $\cdot$ with $+$</li>
+            <li class="fragment">replace coefficients with their "valuation"</li>
+        </ul>
+    </p>
+    <p class="fragment">
+        <br/>
+        \[
+            \text{Trop}( c \cdot x^2 y^3 )
+            \quad\longrightarrow\quad
+            \text{val}(c) + 2x + 3y
+        \]
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Tropical zero set</h4>
+        <p>
+            \[
+                \mathbb{V}( \text{Trop} (f))
+            \]
+            is points where $\text{Trop}(f)$ is not differentiable.
+        </p>
+    </div>
+    <p class="fragment">
+    \[
+        c_1 x^2 z^4 + c_2 xy + c_3 z^3 
+        \mapsto
+        \min
+        \begin{cases}
+        \text{val}(c_1) + 2x + 4z \\
+        \text{val}(c_2) + 1x + 1y \\
+        \text{val}(c_3) + 3x
+        \end{cases}
+    \]
+    </p>
+    <p class="fragment">
+        Zero set : points in $\mathbb{R}^3$ where the
+        function is not differentiable.
+    </p>
+    <p class="fragment">
+        I.e. points where the minimum is attained at least twice.
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Tropical stable intersection</h4>
+        <p>
+            For polynomials $f_1,\dots,f_n$, the limit set
+            \[
+                \lim_{\epsilon \to 0} \bigcap_{i=1}^n [ \mathbb{V}(\text{Trop}(f_i)) + \epsilon \mathbf{v}_i ]
+            \]
+            for generic vectors $\mathbf{v}_1,\ldots,\mathbf{v}_n$ is well defined, 
+            and is called the <b>stable intersection</b>.
+        </p>
+    </div>
+    <p>
+        <br/>
+        Given a Kuramoto system, can we compute the <b>tropical stable intersection</b>?
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Theorem (C., Davis 2018) [arXiv:1810.05690]</h4>
+        <p>
+            For a cycle graph $C_N$ with <b>odd</b> number of nodes,
+            with valuation
+            \[
+                \text{val}(k_{ij}) = 0
+                \quad\text{ and }\quad
+                \text{val}(\omega_i) = -1,
+            \]
+            the tropical stable intersection of the system
+            consists of isolated points each of <b>multiplicity one</b>.
+        </p>
+    </div>
+    <p class="fragment">
+        <br/>
+        Indeed, explicit formula of the stable intersection points were derived.
+    </p>
+</section>
+<section>
+    <h3>More equivalence</h3>
+    <table>
+        <tr>
+            <th>Kuramoto network</th>
+            <th>Kuramoto equations</th>
+            <th>Adjacency polytope</th>
+            <th>Tropical intersection</th>
+        </tr>
+        <tr>
+            <td>Facet subnetworks</td>
+            <td>Facet subsystems</td>
+            <td>Facet</td>
+            <td>Stable intersection</td>
+        </tr>
+        <tr>
+            <td>Primitive subnetworks</td>
+            <td>Irreducible toric variety</td>
+            <td>Simplicial facet</td>
+            <td>Isolated intersection of multiplicity one</td>
+        </tr>
+    </table>
+    <p class="fragment">
+        <br/>
+        There are many open problems in this table.
+    </p>
+</section>
+<section>
+    <h1>Thank you!</h1>
+    <p>
+        <br/><br/><br/>
+        arXiv:1708.09246<br/>
+        arXiv:1810.05690
+    </p>
 </section>
