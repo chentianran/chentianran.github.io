@@ -290,3 +290,12 @@ body {
 @media print {
   .backgrounds {
     background-color: #F0F1EB; } }
+
+/*** Tianran Chen ***/
+.reveal .footnote {
+  font-size: 0.6em;
+  color: #8b7c69;
+}
+.reveal .alert {
+  color: #b46600;
+}

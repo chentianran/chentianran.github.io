@@ -11,9 +11,9 @@ title: DAG decomposition
         Department of Mathematics and Computer Science<br>
         Auburn University at Montgomery
     </p>
-    <p>
+    <p class="footnote">
         November 3, 2018<br/>
-        AMS 2018 Fall Southeastern Sectional Meeting
+        AMS Fall Southeastern Sectional Meeting
     </p>
 </section>
 <section>
@@ -24,14 +24,12 @@ title: DAG decomposition
         \dot{\theta} = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
     \]
     </p>
-
-    <p>A simple model with many applications.</p>
+    <!-- <p>A simple model with many applications.</p> -->
 
 </section>
 <section>
-    <h3>Kuramoto model: applications</h3>
+    <h3>Many applications</h3>
     <p>
-        <br>
         <ul>
             <li>Chemical oscillators</li>
             <li>Power grid analysis</li>
@@ -42,7 +40,7 @@ title: DAG decomposition
         <br>
     </p>
     <p class="fragment">
-        Balance between simple formulation and complex behavior
+        A balance between simple formulation and complex behavior
     </p>
 </section>
 <section>
@@ -189,12 +187,11 @@ title: DAG decomposition
 </section>
 <section>
     <div class="theorem">
-        <h4>Definition: Adjacency polytope</h4>
+        <h4>Definition: <b class="alert">Adjacency polytope</b></h4>
         <p>
             For a graph $G$ with nodes $\{0,1,\ldots,N-1\}$, 
         </p>
         <p>
-            <br>
             \[
                 P(G) \;:=\;
                 \text{conv} \{ \mathbf{e}_i - \mathbf{e}_j \mid \{i,j\} \in \mathcal{E}(G) \}
@@ -205,21 +202,19 @@ title: DAG decomposition
     <img class="stretch" src="cycle-3-ap.png">
 </section>
 <section>
-    <p>
-        Adjacency polytopes provide combinatorial proxy for
-        studying Kuramoto equations.
-        <br>
-    </p>
     <div class="theorem">
         <h4>Theorem (C. 2017) [	arXiv:1703.01684]</h4>
         <p>
             For a <b>cycle</b> graph $C_N$ of $N$ nodes,
-            the corresponding Kuramoto equations with generic coefficients has
+            the corresponding Kuramoto equations with generic coefficients 
+            the total number of complex solutions it has is exactly
+        </p>
+        <p>
             \[
                 (N-1)! \, \text{Vol}(P(C_N))
             \]
-            complex solutions.
         </p>
+        <p class="footnote">(normalized volume of the adjacency polytope)</p>
     </div>
 </section>
 <section>
@@ -237,9 +232,9 @@ title: DAG decomposition
 
 </section>
 <section>
-    <h3>Kuramoto equations with directed edges</h3>
-    <img width="350" src="cycle3.png">
-    <img width="350" src="dag3.png">
+    <h3>Directed Kuramoto equations</h3>
+    <img width="330" src="cycle3.png">
+    <img width="330" src="dag3.png">
 
     <p class="fragment">
         Generalized Kuramoto equations:
@@ -253,16 +248,17 @@ title: DAG decomposition
     <h3>Directed acyclic decomposition</h3>
     <img class="stretch" src="dac-cycle3.png">
     <p>
-        A network of 3 oscillators has at most <b>6</b> synchronization configurations.
+        3 oscillators has at most <b>6</b> synchronization configurations.
     </p>
 </section>
 <section>
+    <h4>Subnetworks and adjacency polytope</h4>
     <img width=500 src="dac-cycle3.png">
-    <p>Facets of the adjacency polytope give rise to subnetworks.</p>
     <img width=700 src="cycle-3-ap.png">
 </section>
 <section>
-    <h3>Facet subsystem</h3>
+    <h4>Subnetworks and adjacency polytope</h4>
+    <!-- <h3>Facet subsystem</h3>
     <p>
         For each facet $F$ of the adjacency polytope $P(C_N)$,
     </p>
@@ -275,7 +271,7 @@ title: DAG decomposition
             \quad\text{for } k = 0, \ldots, N-1 
         \]
         where $c_k$'s and $a_{kij}$'s are generic coefficients.
-    </p>
+    </p> -->
     <img width="340" src="cycle-3-facet1.png">
     <img width="380" src="cycle-3-dac1.png">
 </section>
@@ -380,15 +376,15 @@ title: DAG decomposition
         \]
     </p>
     <p class="fragment">
-        <img src="cycle-3-dac1.png" width="350">
+        <img src="cycle-3-dac1.png" width="330">
     </p>
-    <p class="fragment">
+    <!-- <p class="fragment">
         One of the <b>facet subsystem</b>
-    </p>
+    </p> -->
 </section>
 <section>
     <h3>Deformation to facets</h3>
-    <p>Kuramoto equations ---> adjacency polytopes</p>
+    <!-- <p>Kuramoto equations -> adjacency polytopes</p> -->
     <p>
         \[
         \begin{aligned}
@@ -412,8 +408,8 @@ title: DAG decomposition
         \end{aligned}
         \]
     </p>
-    <p><br>as $t \to 0$ the solution set deform into limit sets at "infinity"</p>
-    <p>...defined by each <b>facet subsystems</b></p>
+    <p>as $t \to 0$ the solution set deform into limit sets at "infinity"</p>
+    <p>...defined by each <b class="alert">facet subsystems</b></p>
 </section>
 <section>
     <h3>General construction</h3>
@@ -427,7 +423,7 @@ title: DAG decomposition
     \]
     </p>
     <p class="fragment fade-in">
-    <br>we form the deformation<br/>
+    we form the deformation<br/>
     \[
         h_i(\theta_1,\ldots,\theta_{N-1},t) = \frac{\omega_i}{t} - \sum_{j=1}^n a_{ij}' 
         \left(
@@ -516,7 +512,7 @@ title: DAG decomposition
         <li class="fragment">...and direct acyclic subnetworks</li>
     </ul>
 </section>
-<section>
+<!-- <section>
     <h3>The dictionary</h3>
     <table>
         <tr>
@@ -535,7 +531,7 @@ title: DAG decomposition
             <td>Simplicial facet</td>
         </tr>
     </table>
-</section>
+</section> -->
 <section>
     <h3>Tropical connections</h3>
     <div class="theorem">
@@ -582,7 +578,9 @@ title: DAG decomposition
             \]
         </p>
     </div>
-    <p class="fragment">
+</section>
+<section>
+    <p>
         To form a <b>tropicalization</b> of a polynomial
         <ul>
             <li class="fragment">replace $+$ with $\min$</li>
@@ -622,8 +620,8 @@ title: DAG decomposition
     \]
     </p>
     <p class="fragment">
-        Zero set : points in $\mathbb{R}^3$ where the
-        function is not differentiable.
+        Zero set : points in $\mathbb{R}^3$ where this
+        is not differentiable.
     </p>
     <p class="fragment">
         I.e. points where the minimum is attained at least twice.
@@ -646,7 +644,7 @@ title: DAG decomposition
         Given a Kuramoto system, can we compute the <b>tropical stable intersection</b>?
     </p>
 </section>
-<section>
+<!-- <section>
     <div class="theorem">
         <h4>Theorem (C., Davis 2018) [arXiv:1810.05690]</h4>
         <p>
@@ -665,9 +663,9 @@ title: DAG decomposition
         <br/>
         Indeed, explicit formula of the stable intersection points were derived.
     </p>
-</section>
+</section> -->
 <section>
-    <h3>More equivalence</h3>
+    <h3>The equivalence</h3>
     <table>
         <tr>
             <th>Kuramoto network</th>
