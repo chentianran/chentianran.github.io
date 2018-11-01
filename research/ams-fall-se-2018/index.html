@@ -1,0 +1,703 @@
+---
+layout: slide
+title: DAG decomposition
+---
+
+<section>
+    <h2>Direct acyclic decomposition of Kuramoto equations</h2>
+
+    <p>Tianran Chen</p>
+    <p>
+        Department of Mathematics and Computer Science<br>
+        Auburn University at Montgomery
+    </p>
+    <p>
+        November 3, 2018<br/>
+        AMS 2018 Fall Southeastern Sectional Meeting
+    </p>
+</section>
+<section>
+    <h3>Kuramoto model (Y. Kuramoto 1975)</h3>
+    <img src="kuramoto.png" border=5 class="stretch">
+    <p>
+    \[
+        \dot{\theta} = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
+    \]
+    </p>
+
+    <p>A simple model with many applications.</p>
+
+</section>
+<section>
+    <h3>Kuramoto model: applications</h3>
+    <p>
+        <br>
+        <ul>
+            <li>Chemical oscillators</li>
+            <li>Power grid analysis</li>
+            <li>Neuroscience</li>
+            <li>Biological locomotion</li>
+            <li>Flocking behavior</li>
+        </ul>
+        <br>
+    </p>
+    <p class="fragment">
+        Balance between simple formulation and complex behavior
+    </p>
+</section>
+<section>
+    <p>
+    \[
+        \dot{\theta} = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
+    \]
+    </p>
+    <div id="sketch-holder">  </div>
+    <div id="sketch-control"> </div>
+
+    <script language="javascript" type="text/javascript" src="/js/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/p5.dom.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/kuramoto.js"></script>
+</section>
+<section>
+    <h4> Frequency synchronization configuration </h4>
+    <p>
+    $\dot{\theta}_i$ are all identical.
+    </p>
+    <p class="fragment">
+    \[
+        c = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
+    \]
+    <br>
+    </p>
+
+    <p class="fragment">
+        ... they are equivalent to critical points defined by
+    \[
+        0 = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
+    \]
+    using a rotational frame of reference.
+    </p>
+</section>
+<section>
+    <img src="kuramoto.png" border=5 class="stretch">
+    <p>
+        \[
+        \begin{aligned}
+            \omega_0 &= k_{01} \sin(\theta_0 - \theta_1) + k_{02} \sin(\theta_0 - \theta_2) \\
+            \omega_1 &= k_{10} \sin(\theta_1 - \theta_0) + k_{13} \sin(\theta_1 - \theta_3) \\
+            \omega_2 &= k_{20} \sin(\theta_2 - \theta_0) + k_{23} \sin(\theta_2 - \theta_3) \\
+            \omega_3 &= k_{31} \sin(\theta_3 - \theta_1) + k_{32} \sin(\theta_3 - \theta_2)
+        \end{aligned}
+        \]
+
+
+    </p>
+</section>
+<section>
+    <p>Consider complex phase angles</p>
+    
+    <p>
+    \[
+        \theta_i \;\mapsto\;
+        z_i = \theta_i - \mathbf{i}\, r_i
+    \]
+    </p>
+
+    <p class="fragment">
+        and the change of variables
+        \[
+            x_i = e^{\mathbf{i} z_i} = e^{r_i + \mathbf{i}\,\theta_i}
+        \]
+        <br>
+    </p>
+    <p class="fragment">
+        \[
+            \sin(z_i - z_j) = \frac{
+                e^{\mathbf{i}z_i - \mathbf{i}z_j} -
+                e^{\mathbf{i}z_j - \mathbf{i}z_i}
+            }{2\mathbf{i}}
+            =
+            \frac{1}{2\mathbf{i}} \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+        \]
+        <br>
+    </p>
+    <p class="fragment">
+        transcendental term ---> algebraic term
+    </p>
+</section>
+<section>
+    <p>
+    \[
+        \theta_i 
+        \;\longrightarrow\;
+        z_i = \theta_i - \mathbf{i}\, r_i
+        \;\longrightarrow\;
+        x_i = e^{\mathbf{i} z_i}
+    \]
+    <br/>
+    </p>
+    <p class="fragment fade-in-then-semi-out">
+    The synchronization equations<br/>
+    \[
+        0 = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
+    \]
+    <br/>
+    </p>
+    <p class="fragment fade-in">
+    becomes the Algebraic Kuramoto Equations<br/>
+    \[
+        0 = \omega_i - \sum_{j=1}^n a_{ij}' 
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    </p>
+
+</section>
+<section>
+    <img src="kuramoto.png" border=5 class="stretch">
+    <p>
+        \[
+        \begin{aligned}
+            \omega_0 &= a_{01}' (x_0 / x_1 - x_1 / x_0) + a_{02}' (x_0 / x_2 - x_2 / x_0) \\
+            \omega_1 &= a_{10}' (x_1 / x_0 - x_0 / x_1) + a_{13}' (x_1 / x_3 - x_3 / x_1) \\
+            \omega_2 &= a_{20}' (x_2 / x_0 - x_0 / x_2) + a_{23}' (x_2 / x_3 - x_3 / x_2) \\
+            \omega_3 &= a_{31}' (x_3 / x_1 - x_1 / x_3) + a_{32}' (x_3 / x_2 - x_2 / x_3)
+        \end{aligned}
+        \]
+    </p>
+</section>
+<section>
+    <p>Algebraic Kuramoto Equations:</p>
+    <p>
+    \[
+        0 = \omega_i - \sum_{j=1}^n a_{ij}'
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    <br/>
+    </p>
+    <ul>
+        <li class="fragment">How many solutions?</li>
+        <li class="fragment">How to find all solutions?</li>
+        <li class="fragment">Will network topology help?</li>
+    </ul>
+
+</section>
+<section>
+    <div class="theorem">
+        <h4>Definition: Adjacency polytope</h4>
+        <p>
+            For a graph $G$ with nodes $\{0,1,\ldots,N-1\}$, 
+        </p>
+        <p>
+            <br>
+            \[
+                P(G) \;:=\;
+                \text{conv} \{ \mathbf{e}_i - \mathbf{e}_j \mid \{i,j\} \in \mathcal{E}(G) \}
+            \]
+            where $\mathbf{e}_0 = \mathbf{0}$.
+        </p>
+    </div>
+    <img class="stretch" src="cycle-3-ap.png">
+</section>
+<section>
+    <p>
+        Adjacency polytopes provide combinatorial proxy for
+        studying Kuramoto equations.
+        <br>
+    </p>
+    <div class="theorem">
+        <h4>Theorem (C. 2017) [	arXiv:1703.01684]</h4>
+        <p>
+            For a <b>cycle</b> graph $C_N$ of $N$ nodes,
+            the corresponding Kuramoto equations with generic coefficients has
+            \[
+                (N-1)! \, \text{Vol}(P(C_N))
+            \]
+            complex solutions.
+        </p>
+    </div>
+</section>
+<section>
+    <h3>Directed edges</h3>
+    <p>
+    \[
+        0 = \omega_i - \sum_{j=1}^n a_{ij}'
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    <br/>
+    </p>
+    <img width="500" src="dir-edges.png">
+
+</section>
+<section>
+    <h3>Kuramoto equations with directed edges</h3>
+    <img width="350" src="cycle3.png">
+    <img width="350" src="dag3.png">
+
+    <p class="fragment">
+        Generalized Kuramoto equations:
+        \[
+            c_i - \sum_{(i,j) \in \mathcal{E}(G)} 
+            a_{ij} \frac{x_i}{x_j}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Directed acyclic decomposition</h3>
+    <img class="stretch" src="dac-cycle3.png">
+    <p>
+        A network of 3 oscillators has at most <b>6</b> synchronization configurations.
+    </p>
+</section>
+<section>
+    <img width=500 src="dac-cycle3.png">
+    <p>Facets of the adjacency polytope give rise to subnetworks.</p>
+    <img width=700 src="cycle-3-ap.png">
+</section>
+<section>
+    <h3>Facet subsystem</h3>
+    <p>
+        For each facet $F$ of the adjacency polytope $P(C_N)$,
+    </p>
+    <p>
+        \[
+            c_k - \sum_{(i,j) \in F} a_{kij} 
+            \left(
+                \frac{x_i}{x_j}
+            \right)
+            \quad\text{for } k = 0, \ldots, N-1 
+        \]
+        where $c_k$'s and $a_{kij}$'s are generic coefficients.
+    </p>
+    <img width="340" src="cycle-3-facet1.png">
+    <img width="380" src="cycle-3-dac1.png">
+</section>
+<section>
+    <h3>Deformation into facet subsystems</h3>
+
+    <img src="cycle3.png" width="340">
+    <p>
+        \[
+        \begin{aligned}
+        \omega_0 &= \left[
+            a_{01}' (x_0 x_1^{-1} - x_0^{-1} x_1) +
+            a_{02}' (x_0 x_2^{-1} - x_0^{-1} x_2)
+        \right]
+        \\
+        \omega_1 &= \left[
+            a_{10}' (x_1 x_0^{-1} - x_1^{-1} x_0) +
+            a_{12}' (x_1 x_2^{-1} - x_1^{-1} x_2)
+        \right]
+        \\
+        \omega_2 &= \left[
+            a_{21}' (x_2 x_1^{-1} - x_2^{-1} x_1) +
+            a_{20}' (x_2 x_0^{-1} - x_2^{-1} x_0) 
+        \right]
+        \end{aligned}
+        \]
+    </p>
+    <p><br>There exists a continuous deformation to facet subsystems</p>
+    <p></p>
+</section>
+<section>
+    <!-- <p>
+        \[
+        \begin{aligned}
+        \omega_0 &- \left[
+            a_{01}' (x_0 x_1^{-1} - x_0^{-1} x_1) +
+            a_{02}' (x_0 x_2^{-1} - x_0^{-1} x_2)
+        \right]
+        \\
+        \omega_1 &- \left[
+            a_{10}' (x_1 x_0^{-1} - x_1^{-1} x_0) +
+            a_{12}' (x_1 x_2^{-1} - x_1^{-1} x_2)
+        \right]
+        \\
+        \omega_2 &- \left[
+            a_{21}' (x_2 x_1^{-1} - x_2^{-1} x_1) +
+            a_{20}' (x_2 x_0^{-1} - x_2^{-1} x_0) 
+        \right]
+        \end{aligned}
+        \]
+    </p> -->
+    <div class="theorem">
+        <h4>Deformation (adjacency polytope homotopy)</h4>
+    <p>
+        We define $H(x_0,x_1,x_2,t)=(h_0,h_1,h_2)$ given by
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        h_0 &=
+        \frac{\omega_0}{t} - \left[
+            a_{01}' \left(\frac{x_0}{x_1} - \frac{x_1}{x_0}\right) +
+            a_{02}' \left(\frac{x_0}{x_2} - \frac{x_2}{x_0}\right)
+        \right]
+        \\
+        h_1 &=
+        \frac{\omega_1}{t} - \left[
+            a_{10}' \left(\frac{x_1}{x_0} - \frac{x_0}{x_1}\right) +
+            a_{12}' \left(\frac{x_1}{x_2} - \frac{x_2}{x_1}\right)
+        \right]
+        \\
+        h_2 &=
+        \frac{\omega_2}{t} - \left[
+            a_{21}' \left(\frac{x_2}{x_1} - \frac{x_1}{x_2}\right) +
+            a_{20}' \left(\frac{x_2}{x_0} - \frac{x_0}{x_2}\right) 
+        \right]
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        which is a continuous deformation of the original system
+    </p>
+    </div>
+    <!-- <p class="fragment">
+        <br>At $t=1$, $H$ is the original system.
+    </p>
+    <p class="fragment">
+        At $t=0$, $H$ becomes undefined.
+    </p> -->
+</section>
+<section>
+    <p>As $t \to 0$, the solutions escape $(\mathbb{C}^*)^3 = (\mathbb{C} \setminus \{0\})^3$.</p>
+    <p class="fragment">
+        ...and approach limit set at $t=0$ defined by
+    </p>
+    <p class="fragment">
+        \[
+            \begin{aligned}
+                \omega_1 &= a_{110} x_1 / x_0 + a_{120} x_2 / x_0 \\
+                \omega_2 &= a_{210} x_1 / x_0 + a_{220} x_2 / x_0
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment">
+        <img src="cycle-3-dac1.png" width="350">
+    </p>
+    <p class="fragment">
+        One of the <b>facet subsystem</b>
+    </p>
+</section>
+<section>
+    <h3>Deformation to facets</h3>
+    <p>Kuramoto equations ---> adjacency polytopes</p>
+    <p>
+        \[
+        \begin{aligned}
+        h_0 &=
+        \frac{\omega_0}{t} - \left[
+            a_{01}' \left(\frac{x_0}{x_1} - \frac{x_1}{x_0}\right) +
+            a_{02}' \left(\frac{x_0}{x_2} - \frac{x_2}{x_0}\right)
+        \right]
+        \\
+        h_1 &=
+        \frac{\omega_1}{t} - \left[
+            a_{10}' \left(\frac{x_1}{x_0} - \frac{x_0}{x_1}\right) +
+            a_{12}' \left(\frac{x_1}{x_2} - \frac{x_2}{x_1}\right)
+        \right]
+        \\
+        h_2 &=
+        \frac{\omega_2}{t} - \left[
+            a_{21}' \left(\frac{x_2}{x_1} - \frac{x_1}{x_2}\right) +
+            a_{20}' \left(\frac{x_2}{x_0} - \frac{x_0}{x_2}\right) 
+        \right]
+        \end{aligned}
+        \]
+    </p>
+    <p><br>as $t \to 0$ the solution set deform into limit sets at "infinity"</p>
+    <p>...defined by each <b>facet subsystems</b></p>
+</section>
+<section>
+    <h3>General construction</h3>
+    <p class="fragment fade-in">
+    <br>For the algebraic Kuramoto equations<br/>
+    \[
+        0 = \omega_i - \sum_{j=1}^n a_{ij}' 
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    </p>
+    <p class="fragment fade-in">
+    <br>we form the deformation<br/>
+    \[
+        h_i(\theta_1,\ldots,\theta_{N-1},t) = \frac{\omega_i}{t} - \sum_{j=1}^n a_{ij}' 
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    </p>
+</section>
+<section>
+    <img class="stretch" src="dac-cycle.png">
+    <p>
+        A cycle of 5 oscillators has 30 subnetworks.
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Proposition (Topology of facet subnetworks)</h4>
+        <p>
+        The underlying directed graph of a facet subnetwork 
+        has the following properties:
+        <ul>
+            <li>it is <b>acyclic</b>;</li>
+            <li>it contains all the nodes;</li>
+            <li>all paths between a pair of nodes have the same length;</li>
+            <li>each paths contains no more than half of the edges of any undirected cycle in the original graph.</li>
+        </ul>
+        </p>
+    </div>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Definition (Primitive subnetwork)</h4>
+        <p>
+            A subnetwork is called <b>primitive</b> 
+            if the underlying graph is a connected, acyclic,
+            and has $N-1$ directed edges.
+        </p>
+    </div>
+    <img class="fragment" src="cycle-5-dag1.png" width=200>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>
+                Proposition
+            </h4>
+            <p>
+                The facet subsystem corresponding to a <b>primitive</b> subnetwork
+                defines a <b>irreducible toric variety</b>.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Primitive subnetworks</h3>
+    <p><br/>Primitive subnetworks give rise to "nice" solution sets</p>
+    <p class="fragment">
+        When will a facet subnetwork be primitive?
+        <br/>
+    </p>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>Theorem</h4>
+            <p>
+                For a <b>tree</b> graph, 
+                <b>all</b> facet subnetworks are primitive.
+            </p>
+        </div>
+    </div>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>Theorem</h4>
+            <p>
+                For a <b>cycle</b> graph $C_N$, if $N$ is odd then
+                <b>all</b> facet subnetworks are primitive.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>
+        Direct acyclic decomposition:
+    </h3>
+    <ul>
+        <li class="fragment">Deform a Kuramoto equations</li>
+        <li class="fragment">...onto the facets of its adjacency polytope</li>
+        <li class="fragment">...leads to facet subsystems</li>
+        <li class="fragment">...and direct acyclic subnetworks</li>
+    </ul>
+</section>
+<section>
+    <h3>The dictionary</h3>
+    <table>
+        <tr>
+            <th>Kuramoto network</th>
+            <th>Kuramoto equations</th>
+            <th>Adjacency polytope</th>
+        </tr>
+        <tr>
+            <td>Facet subnetworks</td>
+            <td>Facet subsystems</td>
+            <td>Facet</td>
+        </tr>
+        <tr>
+            <td>Primitive subnetworks</td>
+            <td>Irreducible toric variety</td>
+            <td>Simplicial facet</td>
+        </tr>
+    </table>
+</section>
+<section>
+    <h3>Tropical connections</h3>
+    <div class="theorem">
+        <h4>Problem</h4>
+        <p>
+            For a given Kuramoto system with generic coefficients, 
+            what is the <b>tropical variety</b> it defines?
+        </p>
+    </div>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>Weaker problem</h4>
+            <p>
+                For a given Kuramoto system with generic coefficients, 
+                what is the <b>tropical stable intersection</b> of this system?
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Tropical semi-ring</h4>
+        <p>
+            \[
+                \mathbb{T} = (\; \mathbb{R} \cup \{ \infty \} \;,\; \oplus \;,\; \odot \;)
+            \]
+            with
+            \[
+            \begin{aligned}
+                a \oplus b &= \min \,\{\, a\,,\, b\, \}
+                &
+                a \odot b &= a + b
+            \end{aligned}
+            \]
+
+        </p>
+        <p class="fragment">
+            Neutral elements:
+            \[
+                \begin{aligned}
+                    a \oplus \infty &= \min(a,\infty) = a &
+                    a \odot  0      &= a + 0          = a
+                \end{aligned}
+            \]
+        </p>
+    </div>
+    <p class="fragment">
+        To form a <b>tropicalization</b> of a polynomial
+        <ul>
+            <li class="fragment">replace $+$ with $\min$</li>
+            <li class="fragment">replace $\cdot$ with $+$</li>
+            <li class="fragment">replace coefficients with their "valuation"</li>
+        </ul>
+    </p>
+    <p class="fragment">
+        <br/>
+        \[
+            \text{Trop}( c \cdot x^2 y^3 )
+            \quad\longrightarrow\quad
+            \text{val}(c) + 2x + 3y
+        \]
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Tropical zero set</h4>
+        <p>
+            \[
+                \mathbb{V}( \text{Trop} (f))
+            \]
+            is points where $\text{Trop}(f)$ is not differentiable.
+        </p>
+    </div>
+    <p class="fragment">
+    \[
+        c_1 x^2 z^4 + c_2 xy + c_3 z^3 
+        \mapsto
+        \min
+        \begin{cases}
+        \text{val}(c_1) + 2x + 4z \\
+        \text{val}(c_2) + 1x + 1y \\
+        \text{val}(c_3) + 3x
+        \end{cases}
+    \]
+    </p>
+    <p class="fragment">
+        Zero set : points in $\mathbb{R}^3$ where the
+        function is not differentiable.
+    </p>
+    <p class="fragment">
+        I.e. points where the minimum is attained at least twice.
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Tropical stable intersection</h4>
+        <p>
+            For polynomials $f_1,\dots,f_n$, the limit set
+            \[
+                \lim_{\epsilon \to 0} \bigcap_{i=1}^n [ \mathbb{V}(\text{Trop}(f_i)) + \epsilon \mathbf{v}_i ]
+            \]
+            for generic vectors $\mathbf{v}_1,\ldots,\mathbf{v}_n$ is well defined, 
+            and is called the <b>stable intersection</b>.
+        </p>
+    </div>
+    <p>
+        <br/>
+        Given a Kuramoto system, can we compute the <b>tropical stable intersection</b>?
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Theorem (C., Davis 2018) [arXiv:1810.05690]</h4>
+        <p>
+            For a cycle graph $C_N$ with <b>odd</b> number of nodes,
+            with valuation
+            \[
+                \text{val}(k_{ij}) = 0
+                \quad\text{ and }\quad
+                \text{val}(\omega_i) = -1,
+            \]
+            the tropical stable intersection of the system
+            consists of isolated points each of <b>multiplicity one</b>.
+        </p>
+    </div>
+    <p class="fragment">
+        <br/>
+        Indeed, explicit formula of the stable intersection points were derived.
+    </p>
+</section>
+<section>
+    <h3>More equivalence</h3>
+    <table>
+        <tr>
+            <th>Kuramoto network</th>
+            <th>Kuramoto equations</th>
+            <th>Adjacency polytope</th>
+            <th>Tropical intersection</th>
+        </tr>
+        <tr>
+            <td>Facet subnetworks</td>
+            <td>Facet subsystems</td>
+            <td>Facet</td>
+            <td>Stable intersection</td>
+        </tr>
+        <tr>
+            <td>Primitive subnetworks</td>
+            <td>Irreducible toric variety</td>
+            <td>Simplicial facet</td>
+            <td>Isolated intersection of multiplicity one</td>
+        </tr>
+    </table>
+    <p class="fragment">
+        <br/>
+        There are many open problems in this table.
+    </p>
+</section>
+<section>
+    <h1>Thank you!</h1>
+    <p>
+        <br/><br/><br/>
+        arXiv:1708.09246<br/>
+        arXiv:1810.05690
+    </p>
+</section>
