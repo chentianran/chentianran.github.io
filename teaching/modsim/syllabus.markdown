@@ -3,12 +3,12 @@ layout: default
 title: MATH-4400A
 ---
 
-# MATH-4400A (CRN 1759) Fall 2017 Course Syllabus
+# MATH-4400A (CRN 2246) Spring 2019 Course Syllabus
 
 ### When, where, and who
 
-* Time: TR 10:50am -- 12:05pm (75 min)
-* Room: 204 Goodwyn Hall
+* Time: MW 6:20am -- 7:35pm (75 min)
+* Room: 222 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/modsim/>
@@ -24,6 +24,12 @@ alternative meeting time may be arranged
 ### What we will learn
 
 Use of mathematical models and computer simulations for solving real world problems.
+Along the way, we will also learn how to use some of the basic mathematical tools.
+
+### Official course description
+Use of models and simulation for solving problems in applied mathematics.
+Techniques of setting up, solving and interpreting
+models as well as an introduction of selected standard models.
 
 ### Prerequisite
 
@@ -31,14 +37,14 @@ Use of mathematical models and computer simulations for solving real world probl
 
 ### Textbook
 
-_No textbook is required._ However, the following books will be used as references:
-
-- _A first course in mathematical modeling_ (4th edition)
-  by F. Giordano, W. Fox, S. Horton, and M. Weir
-  ISBN: 978-0-495-01159-0
-- _An introduction to mathematical modeling_
+- [Required] _An introduction to mathematical modeling_
   by E. Bender
   ISBN: 978-0-486-41180-4
+  (This is a very old book, and many topics in this book is outdated. We will only use this book for the fundamental topics.)
+
+- [Recommended, but _not_ required] _A first course in mathematical modeling_ (4th edition)
+  by F. Giordano, W. Fox, S. Horton, and M. Weir
+  ISBN: 978-0-495-01159-0
 
 ### Attendance and participation
 
@@ -87,29 +93,77 @@ _not required but strongly recommended_:
 - Matlab / Octave
 - C / C++
 - Python / Ruby
+- Julia
 - Javascript
 
+### Reading assignments
+
+After reading the textbook, you need to complete a short reading test
+through the Blackboard system.
+__No late submission will be accepted__.
+However, a missing reading test may be excused if valid reasons
+(military assignments, medical issues, family emergency, etc)
+and _proper documentation_ are provided _in advance_.
+Otherwise, a missing reading test receives a score of zero.
+It is recommended that you finish the reading test at least a few days
+before the due date.
+
+Each reading test allows multiple attempts (2 attempts).
+Please see the test descriptions on the Blackboard system for detail.
+
+### Concept tests
+
+You will complete short online tests on the Blackboard system
+that are designed to test your overall understanding of the subject.
+All concepts tests are due on the last week of classes,
+and __no late submission will be accepted__.
+However, it is strongly recommended that you complete them as early as possible.
+
+### Worksheets
+
+Worksheet problems will also be assigned in class.
+Since these must be completed in class,
+__no makeup worksheets will be offered__.
+However, a missing worksheet may be excused if valid reasons
+(official university events, illness or medical emergencies,
+death of immediate family, military orders, jury duty,
+religious holidays, or extreme weather conditions)
+and _proper documentation_ are provided (preferably _in advance_).
+Otherwise, a missing worksheet receives a score of _zero_.
+
+### Homework assignments
+
+Practice in problem solving is an important part of this course.
+Problems will be assigned on the _Blackboard system_.
+These problems will be graded and will be a major component
+in your course grade.
+You can discuss with others about these assignments,
+however, you must submit your own solutions.
+
 ### Projects
-This course is largely based on projects.
-You are expected to spent much of your time in (team) projects.
+
+This course is largely based on projects which are longer open-ended problems.
+You are expected to spent much of your time in these projects.
+You can discuss with others about these projects,
+however, you must submit your own solutions.
 
 ### Discussions
-Participation in in-class and online discussions will an important component
-of the learning process as well as your scores.
 
-### Final exam
-The mandatory final exam is scheduled at 11:00am -- 12:00pm Dec. 5.
+Participation in in-class and online discussions will an important component
+of the learning process.
 
 ### Grade composition
 Your final course grade is determined according to your overall performance in
 (team) projects, in-class and online discussions, and the final exam.
 It is calculated according to the following weights.
 
-| Component        | Points |
-|------------------|--------|
-| Projects         |  800   |
-| Discussions      |  150   |
-| Final Exam       |   50   |
+| Component        | Points | Where      |
+|------------------|--------|------------|
+| Reading tests    | 10%    | Blackboard |
+| Worksheets       | 10%    | In-class   |
+| Homework         | 20%    | Blackboard |
+| Projects         | 50%    | Blackboard |
+| Concept tests    | 10%    | Blackboard |
 
 ### Grading scale
 
@@ -125,8 +179,7 @@ It is calculated according to the following weights.
 
 ### <a name="schedule"></a> Schedule
 
-* Day 0 : Overview and motivations
-* Day 1 : Basic languages of mathematics
+* Day 1  : Basic languages of mathematics
     - The language of calculus
         * limits, derivatives, integrals
         * critical points
@@ -135,16 +188,12 @@ It is calculated according to the following weights.
     - The language of linear algebra
         * vectors and matrices
         * products of vectors and matrices
-* Day 2 : Case study: electrons on a sphere
-* Day 3 : Case study: the diet problem
-* Day 4 : Discussion: What is mathematical modeling?
-* Day 5 : Project milestone I: Problem statements
-    - What problem do you want to solve?
-    - What are the assumptions?
-    - What are the constraints?
-    - How can you know if your solution is correct?
-* Day 6 : Case study: bunnies and foxes
-* Day 7  : Mathematical tools: system of linear equations
+* Day 2  : Case study: the diet problem
+* Day 3  : Discussion: What is mathematical modeling? (HW-1 due)
+* Day 4  : A few simple problems
+* Day 5  : Case study: bunnies and foxes (HW-2 due)
+* Day 6  : Mathematical tools: How to solve an equation?
+* Day 7  : Mathematical tools: system of linear equations (HW-3 due)
     - What is a linear system?
     - What kind of solution sets could we have?
     - How to solve them?
@@ -152,43 +201,21 @@ It is calculated according to the following weights.
     - What is a linear programming problem?
     - What kind of solutions could we have?
     - How to solve them?
-* Day 9  : Project milestone II: mathematical description
-    - How to translate your problem statement into a mathematical question?
-    - What kind of assumptions do you have to make?
-    - What are the variables involved?
-    - What kind of mathematical problem are you trying to solve?
-* Day 10 : Mathematical tools: Nonlinear equations
-    - What is a nonlinear equation in one variable?
-    - How to solve such an equation?
-    - What kind of solutions could we have?
-* Day 11 : Mathematical tools: Systems of nonlinear equations
-    - What is a nonlinear system?
-    - How to solve such a system?
-    - What kind of solution set could we have?
-* Day 12 : Project milestone III: initial approach
-    - How do you plan to solve your problem?
-    - What are the method you have tried?
-    - Did those work?
-    - What are the difficulties and how do you plan to overcome them?
-* Day 13 : Mathematical tools: differential equations
-    - What is a differential equation?
-    - How many types of differential equations are there?
-    - How to solve a differential equation?
+* Day 9  : A few more simple problems (HW-4 due)
+* Day 10 : Mathematical tools: Nonlinear equations and nonlinear systems
+* Day 11 : Case study: coupled oscillators (HW-5 due)
+* Day 12 : Mathematical tools: differential equations
+* Day 13 : Advanced topics: optimization (Project 1 due)
 * Day 14 : Differential equation again
-* Day 15 : Discussion: mathematical tools
-* Day 16 : Project milestone IV: progress presentation
-* Day 17 : Discussion: computer simulation
-    - What does simulation mean ?
-    - How are they used?
-* Day 18 : Project milestone I: ideas
-    - What phenomenon do you want to simulate?
-    - Any plans?
-* Day 19 : Mathematical tools: continuation method
+* Day 15 : Case study: colliding balls (HW revisions due)
+* Day 16 : Discussions: Network science
+* Day 17 : Discussions: Hot topics (HW-6 due)
+* Day 18 : Simulation: basic ideas (Project 2 due)
+* Day 19 : Cutting edge mathematical tools: continuation method
 * Day 20 : Case study: head, shoulders, knees, and toes
-* Day 21 : Mathematical tools: Monte Carlo methods
-* Day 22 : Mathematical tools: genetic algorithms
-* Day 23 : Mathematical tools: neural networks
-* Day 24 : Project milestone II: initial approaches
-* Day 25 : (optional) Case study: swarm behavior
-* Day 26 : Case study: simultaneous synchronization
-* Day 27 : Project milestone III: progress report
+* Day 21 : Project 3 discussions
+* Day 23 : Advanced topics: partial differential equations (Project 3 due)
+* Day 24 : Case study: Turing patterns
+* Day 25 : Case study: swarm behavior (Project 4 due)
+* Day 26 : Project discussions
+* Day 27 : Project discussions
