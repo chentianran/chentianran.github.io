@@ -3,12 +3,12 @@ layout: default
 title: MATH-4320A
 ---
 
-# MATH-4320A (CRN 1734) Fall 2017 Course Syllabus
+# MATH-4320A (CRN 2243) Spring 2019 Course Syllabus
 
 ### When, where, and who
 
-* Time: TR 9:25 -- 10:40 am
-* Room: 318 Goodwyn Hall
+* Time: MW 3:35 -- 4:50 pm 
+* Room: 204 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/alg2/>
@@ -43,7 +43,6 @@ Reading assignment and homework problems will be assigned from these textbook.
 
 Participation in in-class discussions and activities is an important part
 of the learning process.
-Therefore class attendance is expected and will be recorded.
 
 ### Code of conduct
 
@@ -89,9 +88,9 @@ It is calculated according to the following weights.
 
 | Component     | Points |
 |---------------|--------|
-| Homework      |  400   |
-| Discussion    |  400   |
-| Mid-term Exam |  100   |
+| Reading tests |  200
+| Discussion    |  100   |
+| Homework      |  600   |
 | Final Exam    |  100   |
 
 ### Grading scale
@@ -108,29 +107,27 @@ It is calculated according to the following weights.
 
 ### <a name="schedule"></a> Schedule
 
-* Day 1: Introduction and motivations
-* Day 2: Definition of rings
-* Day 3: Homomorphism and isomorphism of rings
-* Day 4: Ideals
-* Day 5: Quotient rings
-* Day 6: Different kinds of ideals: maximal ideals and prime ideals
-* Day 7: Case study: ring of integers
-* Day 8: Case study: polynomial rings
-* Day 9: Case study: complex numbers
-* Day 10: Case study: formal and convergent power series
-* Day 11: Different kinds of rings: UFD and PID
-* Day 12: Euclidean domains
-* Day 13: Case study: Gauss integers
+* Day 1: Introduction and reviews
+* Day 2: Definition of rings, homomorphism, isomorphism, ideals, and quotient rings
+* Day 3: Different kinds of ideals: maximal ideals and prime ideals
+* Day 4: Case study: ring of integers
+* Day 5: Case study: polynomial rings and power series rings
+* Day 6: Case study: complex numbers
+* Day 7: Different kinds of rings: UFD and PID
+* Day 8: Euclidean domains
+* Day 9: Case study: Gauss integers
+* Day 10: Definition of fields and fields of fractions
+* Day 11: Case study: rational numbers, real number, complex numbers, and Laurent power series
+* Day 12: Baby steps in algebraic geometry
+* Day 13: Applications of algebraic geometry
 * Day 14: Modules
-* Day 15: (Optional) Module over PID
-* Day 16: Definition of fields
-* Day 17: Field of fractions
-* Day 18: Case study: rational numbers, real number, complex numbers, and Laurent power series
-* Day 19: Algebraic and transcendental elements
-* Day 20: Field extensions
-* Day 21: Algebraically close fields
-* Day 22: Case study: complex numbers
-* Day 23: Case study: finite fields
-* Day 24: Case study: Puiseux series
-* Day 25: (Optional) An invitation to algebraic geometry
-* Day 26: Galois theory
+* Day 15: Module over PID
+* Day 16: Discussions
+* Day 17: Algebraic and transcendental elements
+* Day 18: Field extensions
+* Day 19: Algebraically close fields
+* Day 20: Case study: complex numbers
+* Day 21: Case study: finite fields
+* Day 22: Case study: Puiseux series
+* Day 23: Nullstensatz
+* Day 24: Discussions
