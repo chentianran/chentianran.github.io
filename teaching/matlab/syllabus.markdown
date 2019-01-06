@@ -3,11 +3,11 @@ layout: default
 title: CSCI-1210
 ---
 
-# CSCI-1210 A (CRN 2130) Spring 2018 Course Syllabus
+# CSCI-1210 A (CRN 3156) Spring 2019 Course Syllabus
 
 ### When, where, and who
 
-* Time: MW 10:50pm -- 12:05pm
+* Time: MW 2:10pm -- 3:25pm
 * Room: 205 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
@@ -48,11 +48,9 @@ Course objectives:
 
 __MATH-1150__ (Precalculus and trigonometry)
 
-
 ### Textbook
 
-- [Required] _Matlab: A practival introduction to programming and problem solving_
-  (any edition) by Stormy Attaway (4th Ed. ISBN: 978-0-12-804525-1).
+[Required] [Matlab documentation](https://www.mathworks.com/help/matlab/ (__free__).
 
 ### Attendance and participation
 
@@ -90,7 +88,7 @@ Reading assignments, i.e., sections (from the required textbook) are listed
 on the Blackboard system.
 The reading assignments are to be completed _before_ each class meeting.
 
-### Daily reading tests
+### Reading tests
 
 After reading the textbook, you need to complete a short reading test
 through the Blackboard system.
@@ -119,11 +117,10 @@ In-class practice is a crucially important component of the learning process
 since this course focuses on actual programming skills.
 Your in-class worksheets will be _collected and graded_.
 
-### Weekly homework assignments
+### Homework assignments
 
-Homework problems are more complicated mathematical problems that will
+Homework problems are more complicated problems that will
 guide you to gain deeper understanding of the material we learn in class.
-They will be a major part of your course grade.
 Homework problems are listed on our Blackboard system.
 The submission procedures are outlined in the listings.
 __No late homework submission will be accepted__
@@ -132,8 +129,8 @@ However, a missing homework assignment may be excused if valid reasons
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing homework assignment receives a score of zero.
 
-### Final exam
-The final exam is scheduled at 10:45am -- 12:00pm May 2nd.
+<!-- ### Final exam
+The final exam is scheduled at 10:45am -- 12:00pm May 2nd. -->
 
 ###  <a name="grade"></a> Grade composition
 Your final grade is determined according to the following
@@ -141,11 +138,10 @@ weighted average.
 
 | Component     | Points | Where      |
 |---------------|--------|------------|
-| Concept tests | 200    | Blackboard |
-| Reading tests | 140    | Blackboard |
-| Homework      | 360    | Blackboard |
-| Worksheets    | 200    | In-class   |
-| Final exam    | 100    | In-class   |
+| Reading tests | 15%    | Blackboard |
+| Concept tests | 15%    | Blackboard |
+| Homework      | 20%    | Blackboard |
+| Worksheets    | 50%    | In-class   |
 
 ### Grading scale
 
