@@ -4,7 +4,8 @@
     birationally invariant intersection index
   coauthors: Robert Davis and Dhagash Mehta
   pdf: kuramoto-biii.pdf
-  journal: SIAM Journal on Applied Algebra and Geometry (accepted)
+  journal: SIAM Journal on Applied Algebra and Geometry, 2018, Vol. 2, No. 4 pp. 489-507
+  link: https://doi.org/10.1137/17M1145665
   arxiv: http://arxiv.org/abs/1708.09246
   abstract: >
     Synchronization in networks of interconnected oscillators is a
@@ -20,14 +21,17 @@
     system of rational functions on a toric variety.
   bibtex: |
     @article{ChenDavisMehta2017,
-        archivePrefix = {arXiv},
-        arxivId = {1708.09246},
-        author = {Chen, Tianran and Davis, Robert and Mehta, Dhagash},
-        eprint = {1708.09246},
-        month = {aug},
-        title = {{Counting equilibria of the Kuramoto model using birationally invariant intersection index}},
-        url = {http://arxiv.org/abs/1708.09246},
-        year = {2017}
+      author = {Chen, Tianran and Davis, Robert and Mehta, Dhagash},
+      doi = {10.1137/17M1145665},
+      issn = {2470-6566},
+      journal = {SIAM Journal on Applied Algebra and Geometry},
+      month = {jan},
+      number = {4},
+      pages = {489--507},
+      title = {{Counting equilibria of the Kuramoto model using birationally invariant intersection index}},
+      url = {https://epubs.siam.org/doi/10.1137/17M1145665},
+      volume = {2},
+      year = {2018}
     }
 
 - nickname: tropicon-abs
@@ -55,7 +59,7 @@
     This library also includes interface layers that allows it to be tightly integrated into the 
     existing ecosystem of software in computational algebraic geometry.
   bibtex: |
-    @InProceedings{10.1007/978-3-319-96418-8_13,
+    @InProceedings{Chen2018Libtropicon
       author="Chen, Tianran",
       editor="Davenport, James H. and Kauers, Manuel and Labahn, George and Urban, Josef",
       title="libtropicon: A Scalable Library for Computing Intersection Points of Generic Tropical Hyper-surfaces",
