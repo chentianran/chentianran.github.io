@@ -5,6 +5,12 @@ title: MATH-4400A
 
 # MATH-4400A (CRN 2246) Spring 2019 Course Syllabus
 
+## Mathematical Models and Simulations
+
+Use of models and simulation for solving problems in applied mathematics.
+Techniques of setting up, solving and interpreting
+models as well as an introduction of selected standard models.
+
 ### When, where, and who
 
 * Time: MW 6:20am -- 7:35pm (75 min)
@@ -25,11 +31,6 @@ alternative meeting time may be arranged
 
 Use of mathematical models and computer simulations for solving real world problems.
 Along the way, we will also learn how to use some of the basic mathematical tools.
-
-### Official course description
-Use of models and simulation for solving problems in applied mathematics.
-Techniques of setting up, solving and interpreting
-models as well as an introduction of selected standard models.
 
 ### Prerequisite
 
