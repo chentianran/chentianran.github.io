@@ -1,3 +1,31 @@
+- nickname: bkk-biii
+  title: On the equality of BKK bound and birationally invariant intersection index
+  pdf: bkk-biii.pdf
+  arxiv: http://arxiv.org/abs/1812.05408
+  abstract: > 
+    The Bernshtein-Kushnirenko-Khovanskii theorem provides a generic root count
+    for system of Laurent polynomials in terms of the mixed volume of their Newton polytopes
+    which has since been known as the BKK bound.
+    A recent and far-reaching generalization of this theorem is the study of
+    birationally invariant intersection index by Kaveh and Khovanskii.
+    In this paper we generalize the BKK bound
+    in the direction of the birationally invariant intersection index,
+    and the main result allows the application of BKK bound to 
+    Laurent polynomial systems that has algebraic relations among the coefficients.
+    Applying this result, we establish the birationally invariant intersection index
+    for a well-studied algebraic Kuramoto equations.
+  bibtex: |
+    @article{Chen2018,
+      archivePrefix = {arXiv},
+      arxivId = {1812.05408},
+      author = {Chen, Tianran},
+      eprint = {1812.05408},
+      month = {dec},
+      title = {{On the equality of BKK bound and birationally invariant intersection index}},
+      url = {http://arxiv.org/abs/1812.05408},
+      year = {2018}
+    }
+
 - nickname: deep-linear
   title: The loss surface of deep linear networks viewed through the algebraic geometry lens
   coauthors: Dhagash Mehta, Tingting Tang and Jonathan D. Hauenstein
@@ -27,8 +55,6 @@
     url = {http://arxiv.org/abs/1810.07716},
     year = {2018}
     }
-
-
 
 - nickname: kcycle-homotopy
   title: A toric deformation method for solving Kuramoto equations

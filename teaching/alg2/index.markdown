@@ -3,7 +3,7 @@ layout: default
 title: MATH-4320A
 ---
 
-# MATH-4320A (CRN 1734) Fall 2017
+# MATH-4320
 
 This is an undergraduate level course on abstract algebra
 that follows Modern Algebra I.

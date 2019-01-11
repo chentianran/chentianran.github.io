@@ -45,7 +45,7 @@ h2 {
 }
 
 table {
-    margine: 10px;
+    margin: 10px;
 }
 
 th, td {
@@ -71,7 +71,7 @@ ul {
 
 ul li {
     padding: 2px;
-    font-size: 15px;
+    /* font-size: 15px; */
 }
 
 .centered {

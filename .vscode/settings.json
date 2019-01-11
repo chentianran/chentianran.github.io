@@ -4,5 +4,8 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/**": true,
         "**/vendor/**" : true
-    }
+    },
+    "cSpell.words": [
+        "libtropicon"
+    ]
 }

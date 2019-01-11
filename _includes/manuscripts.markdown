@@ -1,8 +1,15 @@
+<ul>
 {% for paper in site.data.prep %}
--   {% if paper.coauthors %}(with {{ paper.coauthors }})  {% endif %}
-    "{{ paper.title }}"  
-    {% if paper.pdf %} [ <a href="research/papers/{{ paper.pdf }}">pdf</a> ] {% endif %}
-    [ [arXiv]({{ paper.arxiv }}) ]
+  <li>
+    <p>
+    {% if paper.coauthors %}(with {{ paper.coauthors }}) <br />{% endif %}
+    "{{ paper.title }}" <br />
+    {% if paper.pdf   %}
+      [ <a href="research/papers/{{ paper.pdf }}">pdf</a> ]
+    {% endif %}
+    {% if paper.arxiv %}
+      [ <a href="{{ paper.arxiv }}">arXiv</a> ]
+    {% endif %}
     [
         <a data-toggle="collapse"
         href="#abs-{{ paper.nickname }}"
@@ -19,6 +26,7 @@
             bibtex
         </a>
     ]
+    </p>
     <div class="collapse" id="abs-{{ paper.nickname }}">
         <div class="panel panel-default">
             <div class="panel-body">
@@ -31,4 +39,6 @@
             <pre><code>{{ paper.bibtex }}</code></pre>
         </div>
     </div>
+  </li>
 {% endfor %}
+</ul>
