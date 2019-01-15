@@ -67,31 +67,20 @@ Practice is a crucial component in the learning process.
 Certain exercise problems will be assigned weekly.
 Each homework assignment is due the next Monday.
 
-### Reading assignments
-You are expected to read the book in preparation of each class meetings.
-Reading assignments, i.e., sections (from the required textbook) are listed
-in the course schedule below.
-The reading assignments are to be completed _before_ each class meeting.
-
 ### In-class discussion
 Participation in in-class discussion is an important component of the learning process.
 Your participation will be recorded.
-
-### Final exam
-The mandatory final exam is scheduled at 9:30am--10:30am Dec. 7.
-It constitutes a major part of your course grade.
 
 ### Grade composition
 Your final grade is determined according to your overall performance on
 homework assignments, in-class discussions mid-term exam, and final exam.
 It is calculated according to the following weights.
 
-| Component     | Points |
+| Component     | Weight |
 |---------------|--------|
-| Reading tests |  200
-| Discussion    |  100   |
-| Homework      |  600   |
-| Final Exam    |  100   |
+| Discussion    |  15%   |
+| Worksheets    |  25%   |
+| Homework      |  60%   |
 
 ### Grading scale
 
