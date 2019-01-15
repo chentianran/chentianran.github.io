@@ -50,7 +50,8 @@ __MATH-1150__ (Precalculus and trigonometry)
 
 ### Textbook
 
-[Required] [Matlab documentation](https://www.mathworks.com/help/matlab/ (__free__).
+- [Required] [Matlab documentation](https://www.mathworks.com/help/matlab/ (__free__).
+- [Recommended] MATLAB: A Practical Introduction to Programming and Problem Solving 5th Edition by _Stormy Attaway_ (ISBN-13: 978-0128154793)
 
 ### Attendance and participation
 
