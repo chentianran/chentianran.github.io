@@ -89,6 +89,7 @@
 
 - nickname: unmixing
   title: Unmixing the mixed volume computation
+  pdf: unmixing.pdf
   arxiv: http://arxiv.org/abs/1703.01684
   abstract: >
     Computing mixed volume of convex polytopes is an important problem

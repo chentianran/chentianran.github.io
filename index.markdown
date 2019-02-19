@@ -14,9 +14,11 @@ My current research focuses on _numerical algebraic geometry_.
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Fall Semester of 2018 I am teaching
-[MATH-1610](teaching/calc1/) (Calculus I),
-[MATH-4310](teaching/alg1/) (Modern Algebra I).
+In the Spring Semester of 2019 I am teaching
+- [MATH-4320](alg2/)   (Modern Algebra II).
+- [MATH-4400](modsim/) (Math Models and Simulations).
+- [CSCI-1210](matlab/) (Introduction to computer programming).
+
 
 {% include hours.markdown %}
 
@@ -44,8 +46,15 @@ News
 
 Conferences and seminars I am going to:
 
-- [AMS 2018 Fall Southeastern Sectional Meeting](http://www.ams.org/meetings/sectional/2260_program.html)
-- [ICERM 2018 semester program on nonlinear algebra](https://icerm.brown.edu/programs/sp-f18/w1/)
+- [AMS 2019 Spring Southeastern Sectional Meeting](http://www.ams.org/meetings/sectional/2261_program.html)  
+  March 15-17, 2019 (Friday - Sunday)  
+  Auburn University, Auburn, AL USA  
+  [Special Session on Applications of Algebraic Geometry](http://www.ams.org/meetings/sectional/2261_program_ss25.html#title)
+  organized by Greg Blekherman, Michael Burr, and I
+- [MAAG 2019: Meeting on Applied Algebraic Geometry](https://sites.google.com/view/maag2019/home)
+  April 13-14, 2019,  
+  Georgia Tech, Atlanta, GA USA.  
+  Organized by Greg Blekherman, Anton Leykin, and Josephine Yu
 
 Research Interests
 ------------------
