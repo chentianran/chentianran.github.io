@@ -87,38 +87,6 @@
     year = {2018}
     }
 
-- nickname: unmixing
-  title: Unmixing the mixed volume computation
-  pdf: unmixing.pdf
-  arxiv: http://arxiv.org/abs/1703.01684
-  abstract: >
-    Computing mixed volume of convex polytopes is an important problem
-    in computational algebraic geometry.
-    This paper establishes sufficient conditions under which the mixed volume
-    of several convex polytopes exactly equals the normalized volume of the
-    convex hull of their union.
-    Under these conditions the problem of computing mixed volume of
-    several polytopes can be transformed into a volume computation problem
-    for a single polytope in the same dimension.
-    We demonstrate through problems from real world applications that
-    substantial reduction in computational costs can be achieved via
-    this transformation in situations where the convex hull of the union
-    of the polytopes has less complex geometry than the original polytopes.
-    We also discuss the important implications of this result in the
-    polyhedral homotopy method for solving polynomial systems.
-  bibtex: |
-    @article{chen_unmixing_2017,
-    author = {Chen, Tianran},
-    journal = {arXiv:1703.01684 [math]},
-    keywords = {52B55- 65H10- 65H20,Mathematics - Algebraic Geometry},
-    archivePrefix = {arXiv},
-    arxivId = {1703.01684},
-    month = {mar},
-    title = {Unmixing the mixed volume computation},
-    url = {http://arxiv.org/abs/1703.01684},
-    year = {2017}
-    }
-
 - nickname: kuramoto-bkk
   title: >
     A network topology dependent upper bound
