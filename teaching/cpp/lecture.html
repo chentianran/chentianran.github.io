@@ -1,0 +1,159 @@
+---
+layout: slide
+title: Pointers
+---
+
+<section>
+    <H1>Pointers</H1>
+
+</section>
+<section>
+    <h3>What is a point?</h3>
+    <p>
+        "...a variable that contains the address of a variable."
+    </p>
+
+    <pre>
+        <code>
+            char  x = 3;    // x contains 3
+            char *p = &x;   // p contains the address of 3
+        </code>
+    </pre>
+
+    <ul>
+        <li>A pointer is declared using the <code>*</code> symbol</li>
+        <li>Pointers also have types</li>
+        <li>The address of a variable is obtained <code>&</code></li>
+        <li><code>&</code> is the "address-of" operator</li>
+    </ul>
+</section>
+<section>
+    <h3>Be careful!</h3>
+
+    <p>
+        Be very careful when defining variables and pointers together
+        in the same line.
+    </p>
+
+    <pre><code>
+        int* i, j, *k;
+    </code></pre>
+
+    <p>which ones are pointers?</p>
+</section>
+<section>
+    <h3>Better style</h3>
+
+    <p>
+        A much better style is to place <code>*</code>
+        right against the variable (rather than the type).
+    </p>
+    <pre><code>
+        int j, *i, *k;
+    </code></pre>
+
+</section>
+<section>
+    <h3>Using pointers</h3>
+
+    <ul>
+        <li>Use <code>&</code> to get the address of an variable</li>
+        <li>Use <code>*</code> to "dereference" a pointer</li>
+    </ul>
+
+    <pre><code>
+        int i = 2;
+        int *j = &i;
+        int x = *j;
+    </code></pre>
+</section>
+<section>
+    <h3>Confusing ways of using pointers</h3>
+
+    <pre><code>
+        int i = 2;
+        int *j = &i;
+
+        *j = 5;
+    </code></pre>
+</section>
+<section>
+    <h3>Be careful!</h3>
+
+    <pre><code>
+        int i, *j;
+
+        i = 3
+        *j = 4;
+    </code></pre>
+
+    <p>What will happen?</p>
+</section>
+<section>
+    <h3>Always initialize your pointers</h3>
+
+    <pre><code>
+        int i, *j = NULL;
+    </code></pre>
+
+    <p>This way, accessing <code>*j</code> will cause your program to crash in a predictable way.</p>
+</section>
+<section>
+    <h3>Pass by reference</h3>
+    <p>When a variable is passed to a function,
+        it is always passed by value.
+        That is, the variable is copied to the formal parameter of the function argument list.
+    </p>
+    <pre><code>
+        void swap (int x, int y)
+        {
+            int tmp = x;
+            x = y;
+            y = tmp;
+        }
+
+        // ... later in the code ...
+        int a = 3;
+        int b = 4;
+        swap(a,b);
+    </code></pre>
+    <p>What will happen?</p>
+</section>
+<section>
+    <p>
+        The correct way to implement this is to use
+        "pass by reference",
+        i.e., passing the address.
+    </p>
+    <pre><code>
+        void swap (int *x, int *y)
+        {
+            int tmp = *x;
+            *x = *y;
+            *y = tmp;
+        }
+
+        // ... later in the code ...
+        int a = 3;
+        int b = 4;
+        swap(&a, &b);
+    </code></pre>
+    <p>Do you see the difference?</p>
+</section>
+<section>
+    <h3>Pointers and arrays</h3>
+    <p>
+        Pointers and arrays are strongly related.
+    </p>
+    <p>
+        In a sense, arrays are pointers.
+    </p>
+    <p>
+        Also, pointers can be used as arrays.
+    </p>
+    <pre><code>
+        int  A[100];
+        int *x = A;
+        int *y = A + 5;
+    </code></pre>
+</section>
