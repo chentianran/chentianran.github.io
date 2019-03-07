@@ -172,7 +172,27 @@ title: Pointers
         p1[3] = 7
         *(A  + 3) = 7;
         *(p1 + 3) = 7;
-
     </code></pre>
-    
+</section>
+<section>
+    <p>Some important differences</p>
+    <ul>
+        <li>An array is not a variable!</li>
+        <li>An array name always point to the beginning of a region of allocated memory.</li>
+        <li>The size of an array is the number of bytes the array occupies,
+            while the size of a pointer is just the size of the pointer variable.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Pointer arithmetic</h3>
+    <pre><code>
+        double  A [100];
+        double *p = A;
+        double *p2 = p + 1
+        double *p3 = p + 2;
+        double *p4 = p3 - 1;
+        int d = p3 - p;
+    </code></pre>
+    <p>Note that operations are only for pointers to elements of the same array.</p>
 </section>
