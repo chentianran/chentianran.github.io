@@ -8,7 +8,7 @@ title: Pointers
 
 </section>
 <section>
-    <h3>What is a point?</h3>
+    <h3>What is a pointer?</h3>
     <p>
         "...a variable that contains the address of a variable."
     </p>
@@ -156,4 +156,23 @@ title: Pointers
         int *x = A;
         int *y = A + 5;
     </code></pre>
+</section>
+<section>
+    <p>An array is just a pointer to its first element.</p>
+    <pre><code>
+        int A [100];
+
+        /* These are all equivalent */
+        int *p1 = A;
+        int *p2 = &A;
+        int *p3 = &A[0];
+
+        /* These are all equivalent */
+        A [3] = 7;
+        p1[3] = 7
+        *(A  + 3) = 7;
+        *(p1 + 3) = 7;
+
+    </code></pre>
+    
 </section>
