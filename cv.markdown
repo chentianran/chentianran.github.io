@@ -15,8 +15,10 @@ title: CV
 
 ### Education
 
-- 2012 Ph.D. Applied Mathematics, Michigan State University, (MI USA).
-- 2005 B.A. Computer Science, Western Connecticut State University, (CT USA).
+- 2012 : Ph.D. Applied Mathematics, Michigan State University, (MI USA).  
+  Advisor: Tien-Yien Li
+- 2005 : B.A. Computer Science, Western Connecticut State University, (CT USA).  
+  Secondary major in Mathematics
 
 ### Honors & Awards
 
@@ -47,13 +49,19 @@ title: CV
 
 |              |                                              |
 |--------------|----------------------------------------------|
-| 2016 to 2017 | Multivariable Calculus, Modern Algebra II, Mathematical modeling and simulation |
-| 2016 to 2017 | Pre-calculus, Calculus I,II |
+| 2016 to 2019 | Linear Algebra, Modern Algebra I, Modern Algebra II |
+|              | Mathematical modeling and simulation |
+|              | Pre-calculus, Calculus I,II, Multivariable Calculus |
 | 2012 to 2016 | Calculus sequence, Linear Algebra, Transition to Advanced Mathematics, Abstract algebra. |
 | 2006 to 2012 | Teaching Assistant for Calculus sequence |
 
 ### Professional Services
-- (2018) Organizer for the
+- (2019) Co-organizer for the Special Session on 
+  _Applications of Algebraic Geometry_
+  at 2019 AMS Spring Southeastern Sectional Meeting
+  (March 15-17, 2019) 
+  Auburn University, Auburn, AL USA  
+- (2018) Co-organizer for the
   [Southern Regional Algebra Conference 2018 ](http://www.srac2018.org/).
 - (2017) Organizer for the Special Session on
   _Algorithms and Implementation in Numerical Algebraic Geometry_

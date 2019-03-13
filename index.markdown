@@ -8,6 +8,8 @@ Hi, I am Tianran Chen
 
 I am an Assistant Professor at [Auburn University at Montgomery](http://www.aum.edu)
 in the Department of Mathematics and Computer Science.
+I studied under the guidance of Tien-Yien Li
+and received my Ph.D. in Applied Mathematics from Michigan State University.
 My main research interests are numerical analysis and scientific computing
 as well as their applications in physics, chemistry, biology, and engineering.
 My current research focuses on _numerical algebraic geometry_.
