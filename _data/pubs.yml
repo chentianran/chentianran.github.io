@@ -111,6 +111,7 @@
   journal: "Advances in Algebra: Research from the Southern Regional Algebra Conference 2017"
   coauthors: Robert Davis
   arxiv: https://arxiv.org/abs/1711.11130
+  link: https://doi.org/10.1007/978-3-030-11521-0_6
   abstract: >
     The free sum is a basic geometric operation among convex polytopes.
     This note focuses on the relationship between the normalized volume
@@ -119,13 +120,16 @@
     of full dimensional polytopes is precisely the product of the
     normalized volumes of the summands.
   bibtex: |
-    @article{chen_product_2017,
-        author = {Chen, Tianran and Davis, Robert},
-        month = {nov},
-        title = {A Product Formula for the Normalized Volume of Free Sums of Lattice Polytopes},
-        journal = {Advances in Algebra: Research from the Southern Regional Algebra Conference 2017},
-        pages = {(To appear)},
-        year = {2017}
+    @InProceedings{ChenDavis2019Product,
+      author="Chen, Tianran and Davis, Robert",
+      editor="Feldvoss, J{\"o}rg and Grimley, Lauren and Lewis, Drew and Pavelescu, Andrei and Pillen, Cornelius",
+      title="A Product Formula for the Normalized Volume of Free Sums of Lattice Polytopes",
+      booktitle="Advances in Algebra",
+      year="2019",
+      publisher="Springer International Publishing",
+      address="Cham",
+      pages="111--119",
+      isbn="978-3-030-11521-0"
     }
 
 - nickname: belief
