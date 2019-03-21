@@ -2,6 +2,7 @@
   title: Unmixing the mixed volume computation
   pdf: unmixing.pdf
   journal: Discrete & Computational Geometry
+  link: https://rdcu.be/br37V
   arxiv: http://arxiv.org/abs/1703.01684
   abstract: >
     Computing mixed volume of convex polytopes is an important problem
@@ -19,16 +20,16 @@
     We also discuss the important implications of this result in the
     polyhedral homotopy method for solving polynomial systems.
   bibtex: |
-    @article{Chen2017Unmixing,
-    author = {Chen, Tianran},
-    journal = {arXiv:1703.01684 [math]},
-    keywords = {52B55- 65H10- 65H20,Mathematics - Algebraic Geometry},
-    archivePrefix = {arXiv},
-    arxivId = {1703.01684},
-    month = {mar},
-    title = {Unmixing the mixed volume computation},
-    url = {http://arxiv.org/abs/1703.01684},
-    year = {2017}
+    @article{Chen2019Unmixing,
+      author="Chen, Tianran",
+      title="Unmixing the Mixed Volume Computation",
+      journal="Discrete {\&} Computational Geometry",
+      year="2019",
+      month="Mar",
+      day="20",
+      issn="1432-0444",
+      doi="10.1007/s00454-019-00078-x",
+      url="https://doi.org/10.1007/s00454-019-00078-x"
     }
 
 - nickname: kuramoto-biii
