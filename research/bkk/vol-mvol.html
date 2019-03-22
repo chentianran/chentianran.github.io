@@ -8,14 +8,21 @@ rect {
 }
 
 .hull {
-  fill: steelblue;
-  stroke: steelblue;
+  fill: orange;
+  stroke: darkgray;
   stroke-width: 10px;
   stroke-linejoin: round;
 }
 
 .outline {
   fill: none;
+  stroke: black;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.area {
+  fill: olive;
   stroke: black;
   stroke-width: 3px;
   stroke-linejoin: round;
@@ -30,6 +37,11 @@ circle {
 </style>
 <body>
     <input type="range" min="80" max="180" value="80" id="scale">
+    <label class="switch">
+        <input type="checkbox" id="showarea">
+        Show area
+        <!-- <span class="slider"></span> -->
+    </label>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -37,9 +49,11 @@ var width = 960;
 var height = 600;
 var orig_x = 20;
 var orig_y = height - 20;
+var showarea = false;
 
 
-d3.select("#scale").on("input", function() { update(+this.value); });
+d3.select("#scale")   .on("input", function() { update(+this.value); });
+d3.select("#showarea").on("input", function() { showarea = this.checked; redraw(); });
 
 var A = [
     [200,   0],
@@ -73,9 +87,12 @@ svg.append("rect")
 var hull = svg.append("path").attr("class", "hull");
 var A_outline = svg.append("path").attr("class", "outline");
 var B_outline = svg.append("path").attr("class", "outline");
+var area1     = svg.append("path").attr("class", "area");
+var area2     = svg.append("path").attr("class", "area");
+var area3     = svg.append("path").attr("class", "area");
+var area4     = svg.append("path").attr("class", "area");
 
 var circle = svg.selectAll("circle");
-
 
 update(80);
 redraw();
@@ -93,6 +110,25 @@ function update (scale) {
 
 function redraw() {
     hull.datum(d3.geom.hull(pts)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+    if (showarea) {
+        area1.datum([pts[0],pts[5],pts[2]])
+            .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+            .style("opacity",1);
+        area2.datum([pts[0],pts[4],pts[2]])
+            .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+            .style("opacity",1);
+        area3.datum([pts[1],pts[4],pts[2]])
+            .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+            .style("opacity",1);
+        area4.datum([pts[1],pts[3],pts[2]])
+            .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+            .style("opacity",1);
+    } else {
+        area1.style("opacity",0);
+        area2.style("opacity",0);
+        area3.style("opacity",0);
+        area4.style("opacity",0);
+    }
     A_outline.datum(pts.slice(2,6)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
     B_outline.datum(pts.slice(0,3)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
     circle = circle.data(pts);
