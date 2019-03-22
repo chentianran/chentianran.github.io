@@ -14,6 +14,13 @@ rect {
   stroke-linejoin: round;
 }
 
+.outline {
+  fill: none;
+  stroke: black;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
 circle {
   fill: white;
   stroke: black;
@@ -22,7 +29,7 @@ circle {
 
 </style>
 <body>
-    <input type="range" min="70" max="200" value="80" id="scale">
+    <input type="range" min="80" max="180" value="80" id="scale">
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -36,14 +43,14 @@ d3.select("#scale").on("input", function() { update(+this.value); });
 
 var A = [
     [200,   0],
-    [  0, 200],
-    [200, 200] 
+    [200, 200],
+    [  0, 200]
 ]
 
 var B = [
-    [0,0],
     [100,200],
-    [200,100]
+    [200,100],
+    [0,0],
 ]
 
 var pts = [
@@ -63,10 +70,12 @@ svg.append("rect")
     .attr("width", width)
     .attr("height", height);
 
-var hull = svg.append("path")
-    .attr("class", "hull");
+var hull = svg.append("path").attr("class", "hull");
+var A_outline = svg.append("path").attr("class", "outline");
+var B_outline = svg.append("path").attr("class", "outline");
 
 var circle = svg.selectAll("circle");
+
 
 update(80);
 redraw();
@@ -84,6 +93,8 @@ function update (scale) {
 
 function redraw() {
     hull.datum(d3.geom.hull(pts)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+    A_outline.datum(pts.slice(2,6)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+    B_outline.datum(pts.slice(0,3)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
     circle = circle.data(pts);
     circle.enter().append("circle").attr("r", 3);
     circle.attr("transform", function(d) { return "translate(" + d + ")"; });
