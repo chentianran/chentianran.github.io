@@ -1,0 +1,201 @@
+---
+layout: slide
+title: Pointers
+---
+
+<section>
+    <H1>Functions</H1>
+</section>
+<section>
+    <h3>What is a function? (in MATLAB)</h3>
+    <ul>
+        <li class="fragment">...allow us to reuse code</li>
+        <li class="fragment">...more flexible than scripts</li>
+        <li class="fragment">...can take in arguments</li>
+        <li class="fragment">...and return value</li>
+    </ul>
+</section>
+<section>
+    <h3>Create functions in files</h3>
+    <p>
+        A function can be stored in a file.
+    </p>
+    <pre><code>
+        function f = fact(n)
+            f = prod(1:n);
+        end
+    </code></pre>
+
+    <p class="fragment">
+        The file name should be the same as the function name.
+    </p>
+</section>
+<section>
+    <h3>New practice</h3>
+    <p>
+        Now they can also be included at the end of scripts.
+    </p>
+    <pre class="fragment"><code>
+        x = 3;
+        y = 2;
+        z = perm(x,y)
+        
+        function p = perm(n,r)
+            p = fact(n)*fact(n-r);
+        end
+        
+        function f = fact(n)
+            f = prod(1:n);
+        end
+    </code></pre>
+</section>
+<section>
+    <h3>Understanding the syntax</h3>
+    <pre><code>
+        function f = fact(n)
+            f = prod(1:n);
+        end
+    </code></pre>
+    <p class="fragment">
+        The first line of function definition:
+    </p>
+    <ul>
+        <li class="fragment">...must start with "function" keyword</li>
+        <li class="fragment">...contains a function name</li>
+        <li class="fragment">...an optional list of output arguments</li>
+        <li class="fragment">...an optional list of input arguments</li>
+    </ul>
+</section>
+<section>
+    <h3>Output arguments</h3>
+    <ul>
+        <li class="fragment">
+            <p>Specify the out name after "function"</p>
+            <pre><code>function myOuput = myFunction(x)</code></pre>
+        </li>
+        <li class="fragment">
+            <p>For more than one output, enclose them in brackets</p>
+            <pre><code>function [one,two,three] = myFunction(x)</code></pre>
+        </li>
+        <li class="fragment">
+            <p>If there is no output, you can omit it</p>
+            <pre><code>function myFunction(x)</code></pre>
+        </li>
+        <li class="fragment">
+            <p>Or you can use empty square brackets</p>
+            <pre><code>function [] = myFunction(x)</code></pre>
+        </li>
+    </ul>
+
+</section>
+<section>
+    <h3>Function name</h3>
+
+    <p class="fragment">Function names follow the same rules as variable names:</p>
+    <ul>
+        <li class="fragment">...must start with a letter</li>
+        <li class="fragment">...can contain letters, digits, or underscores</li>
+        <li class="fragment">...and nothing else</li>
+    </ul>
+</section>
+<section>
+    <h3>Input arguments</h3>
+
+    <p>If the function accepts any input arguments...</p>
+    <ul>
+        <li class="fragment">...enclose them in ( ) after function name</li>
+        <li class="fragment">...separate them with commas</li>
+    </ul>
+    <pre class="fragment"><code>function y = myFunction(one,two,three)</code></pre>
+
+    <p class="fragment">
+        If no input, then ( ) can also be omitted.
+    </p>
+</section>
+<section>
+    <h3>Contents of function definitions</h3>
+    <p>The body of a function can include valid MATLAB expressions, control flow statements, comments, blank lines, and nested functions. Any variables that you create within a function are stored within a workspace specific to that function, which is separate from the base workspace.
+        </p>
+
+    <ul>
+        <li class="fragment">Variables created in functions are local</li>
+        <li class="fragment">They are invisible outside that function</li>
+        <li class="fragment">It is however possible to define "global variables"</li>
+    </ul>
+</section>
+<section>
+    <h3>End of function definition</h3>
+    <p>
+        Functions end with either an end statement, the end of the file, or the definition line for a local function, whichever comes first.
+    </p>
+    <ul>
+        <li class="fragment">Usually we end a function with "end"</li>
+        <li class="fragment">The end of file also terminates a function (bad)</li>
+        <li class="fragment">"end" is required if you have nested functions</li>
+    </ul>
+</section>
+<section>
+    <h3>What's wrong?</h3>
+    <pre><code>
+define x = find-zero [f;x1;x2]
+    y = f(x2);
+    while abs(y) > 1e-10
+        x  = x2-y*(x2-x1)/(y-f(x1));
+        x1 = x2;
+        x2 = x;
+        y  = f(x2);
+    end
+end
+    </code></pre>
+</section>
+<section>
+    <h3>What's wrong?</h3>
+    <pre><code>
+function x <- find zero(f,x1,x2)
+    y = f(x2);
+    while abs(y) > 1e-10
+        x  = x2-y*(x2-x1)/(y-f(x1));
+        x1 = x2;
+        x2 = x;
+        y  = f(x2);
+    end
+end
+    </code></pre>
+</section>
+<section>
+    <h3>What's wrong?</h3>
+    <pre><code>
+function x = (f,x1,x2)
+    y = f(x2);
+    while abs(y) > 1e-10
+        x  = x2-y*(x2-x1)/(y-f(x1));
+        x1 = x2;
+        x2 = x;
+        y  = f(x2);
+    end
+end
+    </code></pre>
+</section>
+<section>
+    <h3>What's wrong?</h3>
+    <pre><code>
+x = find_zero(f,x1,x2)
+    y = f(x2);
+    while abs(y) > 1e-10
+        x  = x2-y*(x2-x1)/(y-f(x1));
+        x1 = x2;
+        x2 = x;
+        y  = f(x2);
+    end
+end
+    </code></pre>
+</section>
+<section>
+    <h3>Try this</h3>
+    <ul>
+        <li>Define a function called "myAvg"</li>
+        <li>...that takes one 3x3 array as input argument</li>
+        <li>...and returns a number as output</li>
+        <li>...the output is simply the average of the array</li>
+    </ul>
+</section>
