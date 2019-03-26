@@ -9,13 +9,27 @@ rect {
 
 .hull {
   fill: orange;
-  stroke: darkgray;
-  stroke-width: 10px;
+  stroke: black;
+  stroke-width: 3px;
   stroke-linejoin: round;
 }
 
 .outline {
   fill: none;
+  stroke: black;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.A {
+  fill: olive;
+  stroke: black;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.B {
+  fill: violet;
   stroke: black;
   stroke-width: 3px;
   stroke-linejoin: round;
@@ -37,9 +51,9 @@ circle {
 </style>
 <body>
     <label>lambda_1</label>
-    <input type="range" min="80" max="180" value="80" id="scale1">
+    <input type="range" min="30" max="120" value="80" id="scale1">
     <label>lambda_2</label>
-    <input type="range" min="80" max="180" value="80" id="scale2">
+    <input type="range" min="30" max="100" value="80" id="scale2">
     <label class="switch">
         <input type="checkbox" id="showarea">
         Show area
@@ -72,16 +86,9 @@ var B = [
     [0,0],
 ]
 
-var pts = [
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0],
-    [0,0]
-]
-
-let shift_A = [ 20, 20];
+let tA = [  10, 10];  // translation for A
+let tB = [ 280, 10];  // translation for B
+let tM = [ 520, 10];  // translation for A+B
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -91,36 +98,39 @@ svg.append("rect")
     .attr("width", width)
     .attr("height", height);
 
-let sA = A;
-let sB = B;
+let sA  = undefined;   // scaled and shifted version of A
+let sB  = undefined;   // scaled and shifted version of B
+let sM  = undefined;   // scaled and shifted version of A+B
+let sMA = undefined;
+let sMB = undefined;
 
 // var hull = svg.append("path").attr("class", "hull");
-let A_outline = svg.append("path").attr("class", "outline");  // scaled version of A
-let B_outline = svg.append("path").attr("class", "outline");  // scaled version of B
-let M_outline = svg.append("path").attr("class", "outline");  // Minkowski sum of the two
+let oA = svg.append("path").attr("class", "A");  // outline of A
+let oB = svg.append("path").attr("class", "B");  // outline of B
+let oM = svg.append("path").attr("class", "hull");  // outline of A+B
+let oMA = svg.append("path").attr("class", "A");  // outline of A
+let oMB = svg.append("path").attr("class", "B");  // outline of A
 
-// var area1     = svg.append("path").attr("class", "area");
-// var area2     = svg.append("path").attr("class", "area");
-// var area3     = svg.append("path").attr("class", "area");
-// var area4     = svg.append("path").attr("class", "area");
-
-// var circle = svg.selectAll("circle");
 
 update();
 redraw();
 
 function update () {
-  let s1 = d3.select("#scale1")[0][0].value;
-  let s2 = d3.select("#scale2")[0][0].value;
-    let v1 = s1 / 100;
-    let v2 = s2 / 100;
-    sA = A.map( function(x) { return [shift_A[0] + v1*x[0], height - shift_A[1] - v1*x[1] ]; });
-    // console.log(sA);
-    redraw();
+  let s1 = d3.select("#scale1").property("value");
+  let s2 = d3.select("#scale2").property("value");
+  let v1 = s1 / 100;
+  let v2 = s2 / 100;
+  let vA = A.map( x => [ v1*x[0], v1*x[1] ]);
+  let vB = B.map( x => [ v2*x[0], v2*x[1] ]);
+  sA  = vA.map( x => [ tA[0]+x[0], height-x[1]-tA[1] ] );
+  sB  = vB.map( x => [ tB[0]+x[0], height-x[1]-tB[1] ] );
+  sM  = vA.map( a => vB.map( b => ([ tM[0]+a[0]+b[0], height-tM[1]-a[1]-b[1]]))).flat();
+  sMA = vA.map( a => [ tM[0]+a[0], height-tM[1]-a[1] ]);
+  sMB = vB.map( b => [ tM[0]+b[0]+vA[2][1], height-tM[1]-b[1]-vA[2][1] ]);
+  redraw();
 }
 
 function redraw() {
-    // hull.datum(d3.geom.hull(pts)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
     // if (showarea) {
     //     area1.datum([pts[0],pts[5],pts[2]])
     //         .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
@@ -140,11 +150,16 @@ function redraw() {
     //     area3.style("opacity",0);
     //     area4.style("opacity",0);
     // }
-    A_outline.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-    // B_outline.datum(pts.slice(0,3)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-    // circle = circle.data(pts);
-    // circle.enter().append("circle").attr("r", 3);
-    // circle.attr("transform", function(d) { return "translate(" + d + ")"; });
+    oA.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+    oB.datum(sB).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+    oM.datum(d3.geom.hull(sM)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+    if (showarea) {
+      oMA.datum(sMA).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
+      oMB.datum(sMB).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
+    } else {
+      oMA.style("opacity",0);
+      oMB.style("opacity",0);
+    }
 }
 
 </script>
