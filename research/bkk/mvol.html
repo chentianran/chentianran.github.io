@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Convex Hull</title>
+<style>
+
+rect {
+  fill: none;
+}
+
+.hull {
+  fill: orange;
+  stroke: darkgray;
+  stroke-width: 10px;
+  stroke-linejoin: round;
+}
+
+.outline {
+  fill: none;
+  stroke: black;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.area {
+  fill: olive;
+  stroke: black;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+circle {
+  fill: white;
+  stroke: black;
+  stroke-width: 1.5px;
+}
+
+</style>
+<body>
+    <label>lambda_1</label>
+    <input type="range" min="80" max="180" value="80" id="scale1">
+    <label>lambda_2</label>
+    <input type="range" min="80" max="180" value="80" id="scale2">
+    <label class="switch">
+        <input type="checkbox" id="showarea">
+        Show area
+        <!-- <span class="slider"></span> -->
+    </label>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = 960;
+var height = 600;
+var orig_x = 20;
+var orig_y = height - 20;
+var showarea = false;
+
+
+d3.select("#scale1")   .on("input", function() { update(); });
+d3.select("#scale2")   .on("input", function() { update(); });
+d3.select("#showarea").on("input", function() { showarea = this.checked; redraw(); });
+
+var A = [
+    [  0,   0],
+    [200,   0],
+    [200, 200],
+    [  0, 200]
+]
+
+var B = [
+    [100,200],
+    [200,100],
+    [0,0],
+]
+
+var pts = [
+    [0,0],
+    [0,0],
+    [0,0],
+    [0,0],
+    [0,0],
+    [0,0]
+]
+
+let shift_A = [ 20, 20];
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.append("rect")
+    .attr("width", width)
+    .attr("height", height);
+
+let sA = A;
+let sB = B;
+
+// var hull = svg.append("path").attr("class", "hull");
+let A_outline = svg.append("path").attr("class", "outline");  // scaled version of A
+let B_outline = svg.append("path").attr("class", "outline");  // scaled version of B
+let M_outline = svg.append("path").attr("class", "outline");  // Minkowski sum of the two
+
+// var area1     = svg.append("path").attr("class", "area");
+// var area2     = svg.append("path").attr("class", "area");
+// var area3     = svg.append("path").attr("class", "area");
+// var area4     = svg.append("path").attr("class", "area");
+
+// var circle = svg.selectAll("circle");
+
+update();
+redraw();
+
+function update () {
+  let s1 = d3.select("#scale1")[0][0].value;
+  let s2 = d3.select("#scale2")[0][0].value;
+    let v1 = s1 / 100;
+    let v2 = s2 / 100;
+    sA = A.map( function(x) { return [shift_A[0] + v1*x[0], height - shift_A[1] - v1*x[1] ]; });
+    // console.log(sA);
+    redraw();
+}
+
+function redraw() {
+    // hull.datum(d3.geom.hull(pts)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+    // if (showarea) {
+    //     area1.datum([pts[0],pts[5],pts[2]])
+    //         .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+    //         .style("opacity",1);
+    //     area2.datum([pts[0],pts[4],pts[2]])
+    //         .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+    //         .style("opacity",1);
+    //     area3.datum([pts[1],pts[4],pts[2]])
+    //         .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+    //         .style("opacity",1);
+    //     area4.datum([pts[1],pts[3],pts[2]])
+    //         .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
+    //         .style("opacity",1);
+    // } else {
+    //     area1.style("opacity",0);
+    //     area2.style("opacity",0);
+    //     area3.style("opacity",0);
+    //     area4.style("opacity",0);
+    // }
+    A_outline.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+    // B_outline.datum(pts.slice(0,3)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+    // circle = circle.data(pts);
+    // circle.enter().append("circle").attr("r", 3);
+    // circle.attr("transform", function(d) { return "translate(" + d + ")"; });
+}
+
+</script>
