@@ -1,55 +1,37 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Convex Hull</title>
+<title>Mixed volume</title>
 <style>
 
 rect {
-  fill: none;
+  fill: white;
 }
 
 .hull {
   fill: orange;
   stroke: black;
   stroke-width: 3px;
-  stroke-linejoin: round;
-}
-
-.outline {
-  fill: none;
-  stroke: black;
-  stroke-width: 3px;
-  stroke-linejoin: round;
+  /* stroke-linejoin: round; */
 }
 
 .A {
   fill: olive;
   stroke: black;
   stroke-width: 3px;
-  stroke-linejoin: round;
+  /* stroke-linejoin: round; */
 }
 
 .B {
   fill: violet;
   stroke: black;
   stroke-width: 3px;
-  stroke-linejoin: round;
-}
-
-.area {
-  fill: olive;
-  stroke: black;
-  stroke-width: 3px;
-  stroke-linejoin: round;
-}
-
-circle {
-  fill: white;
-  stroke: black;
-  stroke-width: 1.5px;
+  /* stroke-linejoin: round; */
 }
 
 </style>
 <body>
+    <svg width="960" height="500" id="canvas"></svg>
+    <br/>
     <label>lambda_1</label>
     <input type="range" min="30" max="120" value="80" id="scale1">
     <label>lambda_2</label>
@@ -62,40 +44,33 @@ circle {
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-var width = 960;
-var height = 600;
-var orig_x = 20;
-var orig_y = height - 20;
-var showarea = false;
 
+d3.select("#scale1")  .on("input", function() { update(); });
+d3.select("#scale2")  .on("input", function() { update(); });
+d3.select("#showarea").on("input", function() { showarea = this.checked; update(); });
 
-d3.select("#scale1")   .on("input", function() { update(); });
-d3.select("#scale2")   .on("input", function() { update(); });
-d3.select("#showarea").on("input", function() { showarea = this.checked; redraw(); });
-
-var A = [
+let showarea = false;
+let A = [
     [  0,   0],
     [200,   0],
     [200, 200],
     [  0, 200]
-]
-
-var B = [
+];
+let B = [
     [100,200],
     [200,100],
     [0,0],
-]
-
+];
 let tA = [  10, 10];  // translation for A
 let tB = [ 280, 10];  // translation for B
 let tM = [ 520, 10];  // translation for A+B
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+let svg    = d3.select("#canvas");
+let width  = svg.attr("width");
+let height = svg.attr("height");
 
 svg.append("rect")
-    .attr("width", width)
+    .attr("width",  width)
     .attr("height", height);
 
 let sA  = undefined;   // scaled and shifted version of A
@@ -104,16 +79,13 @@ let sM  = undefined;   // scaled and shifted version of A+B
 let sMA = undefined;
 let sMB = undefined;
 
-// var hull = svg.append("path").attr("class", "hull");
-let oA = svg.append("path").attr("class", "A");  // outline of A
-let oB = svg.append("path").attr("class", "B");  // outline of B
-let oM = svg.append("path").attr("class", "hull");  // outline of A+B
-let oMA = svg.append("path").attr("class", "A");  // outline of A
-let oMB = svg.append("path").attr("class", "B");  // outline of A
-
+let oA  = svg.append("path").attr("class", "A");    // outline of A
+let oB  = svg.append("path").attr("class", "B");    // outline of B
+let oMA = svg.append("path").attr("class", "A");    // outline of A in A+B
+let oMB = svg.append("path").attr("class", "B");    // outline of B in A+B
+let oM  = svg.append("path").attr("class", "hull"); // outline of A+B
 
 update();
-redraw();
 
 function update () {
   let s1 = d3.select("#scale1").property("value");
@@ -127,39 +99,17 @@ function update () {
   sM  = vA.map( a => vB.map( b => ([ tM[0]+a[0]+b[0], height-tM[1]-a[1]-b[1]]))).flat();
   sMA = vA.map( a => [ tM[0]+a[0], height-tM[1]-a[1] ]);
   sMB = vB.map( b => [ tM[0]+b[0]+vA[2][1], height-tM[1]-b[1]-vA[2][1] ]);
-  redraw();
-}
 
-function redraw() {
-    // if (showarea) {
-    //     area1.datum([pts[0],pts[5],pts[2]])
-    //         .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
-    //         .style("opacity",1);
-    //     area2.datum([pts[0],pts[4],pts[2]])
-    //         .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
-    //         .style("opacity",1);
-    //     area3.datum([pts[1],pts[4],pts[2]])
-    //         .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
-    //         .style("opacity",1);
-    //     area4.datum([pts[1],pts[3],pts[2]])
-    //         .attr("d", function(d) { return "M" + d.join("L") + "Z"; })
-    //         .style("opacity",1);
-    // } else {
-    //     area1.style("opacity",0);
-    //     area2.style("opacity",0);
-    //     area3.style("opacity",0);
-    //     area4.style("opacity",0);
-    // }
-    oA.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-    oB.datum(sB).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-    oM.datum(d3.geom.hull(sM)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-    if (showarea) {
-      oMA.datum(sMA).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
-      oMB.datum(sMB).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
-    } else {
-      oMA.style("opacity",0);
-      oMB.style("opacity",0);
-    }
+  oA.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+  oB.datum(sB).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+  oM.datum(d3.geom.hull(sM)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+  if (showarea) {
+    oMA.datum(sMA).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
+    oMB.datum(sMB).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
+  } else {
+    oMA.style("opacity",0);
+    oMB.style("opacity",0);
+  }
 }
 
 </script>
