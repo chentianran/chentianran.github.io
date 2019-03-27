@@ -199,3 +199,48 @@ end
         <li>...the output is simply the average of the array</li>
     </ul>
 </section>
+<section>
+    <h3>Let's try this</h3>
+    <ul>
+        <li>Define a function called "applyKernel"</li>
+        <li>...that takes two input argument $A$ and $K$</li>
+        <li>...both A and K are 3x3 matrices</li>
+        <li>...and the return value is the weighted sum of entries in $A$ using corresponding entries in $K$ as weights </li>
+        <li>...i.e., $A_{11}K_{11} + A_{12}K_{12} + A_{13}K_{13}\ldots$</li>
+    </ul>
+</section>
+<section>
+    <h3>Use "kernel" for image processing</h3>
+    <p>Now let's use the "applyKernel" function to create new images</p>
+    <ul>
+        <li>Load a grayscale image into array $X$</li>
+        <li>Create a new array $Y$ of the same size</li>
+        <li>...so that $Y_{ij}$ is the value of applyKernel(A,K)</li>
+        <li>...where $A$ is a 3x3 block in $X$ centered at the $(i,j)$ entry</li>
+        <li>...and $K$ is the following matrix</li>
+    </ul>
+    <p>
+        \[
+        K =
+        \begin{bmatrix}
+            1/9 & 1/9 & 1/9 \\
+            1/9 & 1/9 & 1/9 \\
+            1/9 & 1/9 & 1/9
+        \end{bmatrix}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Another kernel</h3>
+    <p>Now let's use</p>
+    <p>
+        \[
+        K =
+        \begin{bmatrix}
+            -1 & -1 & -1 \\
+            -1 &  8 & -1 \\
+            -1 & -1 & -1
+        \end{bmatrix}
+        \]
+    </p>
+</section>
