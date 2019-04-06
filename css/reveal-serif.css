@@ -54,6 +54,30 @@ body {
     padding: 4px 10px;
 }
 
+.title {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    background: #b46600;
+    color: white;
+    transition: 0.3s;
+    text-align: center;
+    margin: 19px 19px 30px 30px;
+    border-radius: 25px;
+}
+
+.framed {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background: white;
+    /* transition: 0.3s; */
+    border-style: dashed;
+    text-align: center;
+    margin: 12px 12px 12px 12px;
+    padding: 5px;
+    border-radius: 25px;
+    border-width: 2px;
+}
+
 /*********************************************
  * HEADERS
  *********************************************/
@@ -88,6 +112,10 @@ body {
 .reveal h1 {
   text-shadow: none; }
 
+h2.title {
+  color: white;
+  text-shadow: 2px 2px #383D3D;
+}
 /*********************************************
  * OTHER
  *********************************************/
@@ -295,6 +323,10 @@ body {
 .reveal .footnote {
   font-size: 0.6em;
   color: #8b7c69;
+}
+.reveal .footnote2 {
+  font-size: 0.7em;
+  color: #747474;
 }
 .reveal .alert {
   color: #b46600;
