@@ -70,10 +70,10 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background: white;
     /* transition: 0.3s; */
-    border-style: dashed;
-    text-align: center;
+    /* border-style: dashed; */
+    /* text-align: center; */
     margin: 12px 12px 12px 12px;
-    padding: 5px;
+    /* padding: 5px; */
     border-radius: 25px;
     border-width: 2px;
 }
