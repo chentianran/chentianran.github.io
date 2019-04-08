@@ -331,3 +331,13 @@ h2.title {
 .reveal .alert {
   color: #b46600;
 }
+
+.mcols {
+  display: flex;
+}
+
+.col6 { width: 50.0%; }
+.col5 { width: 41.6%; }
+.col4 { width: 33.3%; }
+.col3 { width: 25.0%; }
+.col2 { width: 16.6%; }
