@@ -110,10 +110,10 @@ function update() {
 
   oH.datum(d3.geom.hull(sH)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
   if (showarea) {
-    area1.datum([sA[0],sA[1],sB[1]]).attr("d", lineto);
-    area2.datum([sA[0],sA[2],sB[1]]).attr("d", lineto);
-    area3.datum([sA[0],sA[2],sB[0]]).attr("d", lineto);
-    area4.datum([sA[0],sA[3],sB[0]]).attr("d", lineto);
+    area1.datum([sA[0],sA[3],sB[0]]).attr("d", lineto);
+    area2.datum([sA[1],sA[2],sB[1]]).attr("d", lineto);
+    // area3.datum([sA[0],sA[2],sB[0]]).attr("d", lineto);
+    // area4.datum([sA[0],sA[3],sB[0]]).attr("d", lineto);
     d3.selectAll(".area").style("opacity",1);
   } else {
     d3.selectAll(".area").style("opacity",0);
