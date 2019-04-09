@@ -426,35 +426,33 @@ title: DAG decomposition
             \]
         </p>
     </div>
+    
+    <svg width="700" height="250">
+        <g transform="scale(1,-1) translate(0,-220)">
+            <polygon class="shape1"
+                points="0,0 200,0 200,200 0,200" />
+        </g>
+        <g transform="scale(1,-1) translate(250,-220)">
+            <polygon class="shape2"
+                points="0,0 200,100 100,200" />
+        </g>
+        <g transform="scale(1,-1) translate(500,-220)">
+            <polygon class="shape1"
+                points="0,0 200,0 200,200 0,200" />
+            <polygon class="shape2"
+                points="0,0 200,100 100,200" />
+        </g>
+        <g transform="translate(120,250) scale(0.6,0.6)">
+            <text x="0" y="0" fill="black"> Mixed volume: 8</text>
+        </g>
+        <g transform="translate(505,250) scale(0.6,0.6)">
+            <text x="0" y="0" fill="black"> Normalized vol. = 8</text>
+    </svg>
 </section>
 <section>
-    <div class="theorem">
-        <p>
-            Given nonempty finite sets $S_1,\dots,S_n \subset \mathbb{Z}^n$,
-            let $\tilde{S} = S_1 \cup \cdots \cup S_n$.
-            If every positive dimensional face $F$ of $\text{conv}(\tilde{S})$ satisfies
-            one of the following conditions:
-        </p>
-        <ol>
-            <li>$F \cap S_i \ne \varnothing$ for all $i \in \{1,\dots,n\}$;</li>
-            <li>$F \cap S_i$ is a singleton for some $i \in \{1,\dots,n\}$;</li>
-            <li>
-                For each $i \in I := \{ i \mid F \cap S_i \ne \varnothing \}$,
-                $F \cap S_i$ is contained in a $|I|$-dimensional 
-                coordinate subspace in which 
-                and its projection of dimension less than $|I|$;
-            </li>
-        </ol>
-        <p>
-            then
-            \[
-                \text{MVol} (\text{conv}(S_1), \dots, \text{conv}(S_n)) = 
-                \text{Vol}_n (\text{conv}(\tilde{S})).
-            \]
-        </p>
-    </div>
-</section>
-<section>
+    <p>
+        Mixed volume $\longrightarrow$ normalized volume
+    </p>
     <svg width="420" height="400" id="vmvol_canvas"></svg>
     <div class="mcols">
         <div class="col5">
@@ -543,6 +541,31 @@ title: DAG decomposition
 </section>
 <section>
     <div class="theorem">
+        <p>
+            For $\varnothing \ne S_1,\dots,S_n \subset \mathbb{Z}^n$,
+            let $\tilde{S} = S_1 \cup \cdots \cup S_n$.
+            If every positive dimensional face $F$ of $\text{conv}(\tilde{S})$ satisfies
+            <ol>
+                <li>$F \cap S_i \ne \varnothing$ for all $i \in \{1,\dots,n\}$; or</li>
+                <li>$F \cap S_i$ is a singleton for some $i \in \{1,\dots,n\}$; or</li>
+                <li>
+                    For each $i \in I := \{ i \mid F \cap S_i \ne \varnothing \}$,
+                    $F \cap S_i$ is contained in a $|I|$-dimensional 
+                    coordinate subspace in which 
+                    and its projection of dimension less than $|I|$ then
+                </li>
+            </ol>
+        </p>
+        <p>
+            \[
+                \text{MVol} (\text{conv}(S_1), \dots, \text{conv}(S_n)) = 
+                \text{Vol}_n (\text{conv}(\tilde{S})).
+            \]
+        </p>
+    </div>
+</section>
+<section>
+    <div class="theorem">
         <h4>Definition: <b class="alert">Adjacency polytope</b></h4>
         <p>
             For a graph $G$ with nodes $\{0,1,\ldots,N-1\}$, 
@@ -550,12 +573,45 @@ title: DAG decomposition
         <p>
             \[
                 \nabla_G \;:=\;
-                \text{conv} \{ \pm(\mathbf{e}_i - \mathbf{e}_j) \mid \{i,j\} \in \mathcal{E}(G) \}
+                \text{conv} \{ \pm(\mathbf{e}_i - \mathbf{e}_j) \mid \{i,j\} \in E(G) \}
             \]
             where $\mathbf{e}_0 = \mathbf{0}$.
         </p>
     </div>
-    <img class="stretch" src="cycle-3-ap.png">
+    <div class="mcols">
+        <div class="col3">
+            <svg width="300" height="200">
+                <path fill="none" stroke="black" d="M 100 50 L 20 150 L 180 150 Z"></path>
+                <g transform="translate(100,50)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">0</text>
+                </g>
+                <g transform="translate(20,150)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">1</text>
+                </g>
+                <g transform="translate(180,150)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">2</text>
+                </g>
+            </svg>
+        </div>
+        <div class="col3">
+            <table class="fragment">
+                <tr>
+                    <td>$\pm(\mathbf{e}_0 - \mathbf{e}_1)$</td>
+                </tr>
+                <tr>
+                    <td>$\pm(\mathbf{e}_1 - \mathbf{e}_2)$</td>
+                </tr>
+                <tr>
+                    <td>$\pm(\mathbf{e}_2 - \mathbf{e}_0)$</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col3"></div>
+
+    </div>
 </section>
 <section>
     <div class="theorem">
