@@ -209,68 +209,11 @@ title: DAG decomposition
     <p></p>
 </section>
 <section>
-    <style>
-        .slider {
-        -webkit-appearance: none;
-        width: 80%;
-        height: 15px;
-        border-radius: 5px;   
-        background: #d3d3d3;
-        outline: none;
-        opacity: 0.7;
-        -webkit-transition: .2s;
-        transition: opacity .2s;
-        }
-
-        .slider:hover {
-        opacity: 1; /* Fully shown on mouse-over */
-        }
-
-        .slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%; 
-        background: #4CAF50;
-        cursor: pointer;
-        }
-
-        .slider::-moz-range-thumb {
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background: #4CAF50;
-        cursor: pointer;
-        }
-
-        .hull {
-        fill: orange;
-        stroke: black;
-        stroke-width: 3px;
-        /* stroke-linejoin: round; */
-        }
-
-        .A {
-        fill: olive;
-        stroke: black;
-        stroke-width: 3px;
-        stroke-linejoin: round;
-        }
-
-        .B {
-        fill: violet;
-        stroke: black;
-        stroke-width: 3px;
-        stroke-linejoin: round;
-        }
-    </style>
     <svg width="960" height="460" id="canvas">
         <text x="250" y="390">+</text>
         <text x="480" y="390">=</text>
     </svg>
     
-    <!-- <br/> -->
     <div class="mcols">
         <div class="col5">
             <label>$\lambda_1$</label>
@@ -319,11 +262,11 @@ title: DAG decomposition
         let sMA = undefined;
         let sMB = undefined;
 
-        let oA  = svg.append("path").attr("class", "A");    // outline of A
-        let oB  = svg.append("path").attr("class", "B");    // outline of B
-        let oM  = svg.append("path").attr("class", "hull"); // outline of A+B
-        let oMA = svg.append("path").attr("class", "A");    // outline of A in A+B
-        let oMB = svg.append("path").attr("class", "B");    // outline of B in A+B
+        let oA  = svg.append("path").attr("class", "shape1");   // outline of A
+        let oB  = svg.append("path").attr("class", "shape2");   // outline of B
+        let oM  = svg.append("path").attr("class", "shape3");   // outline of A+B
+        let oMA = svg.append("path").attr("class", "shape1");   // outline of A in A+B
+        let oMB = svg.append("path").attr("class", "shape2");   // outline of B in A+B
 
         update();
 
@@ -355,8 +298,26 @@ title: DAG decomposition
 
 </section>
 <section>
-    <h3>Birationally invariant intersection index</h3>
-    <p></p>
+    <!-- <h3>Birationally invariant intersection index</h3> -->
+    <div class="theorem">
+        <h4>Birationally invariant intersection index</h4>
+        <p>
+            Given an irreducible $n$-dimensional toric variety $X$
+            and finite dimensional vector spaces of rational functions 
+            $L_1,\dots,L_n$ on $X$,
+            the number of common zeros of $(f_1,\dots,f_n)$ in $X$
+            for generic choices of $f_1 \in L_1$, $\ldots$, $f_n \in L_n$
+            is the <b class="alert">birationally invariant intersection index</b>
+        </p>
+        <p>
+            \[
+                [\;L_1 \,,\, \ldots\,,\, L_n\;]
+            \]
+        </p>
+    </div>
+    <p class="fragment">
+        (Generalization of the BKK bound)
+    </p>
 </section>
 <section>
     <p>
@@ -393,28 +354,18 @@ title: DAG decomposition
         \end{aligned}
         \]
     </p>
-    <svg class="framed" width="600" height="300" viewbox="-150 -150 600 300">
+    <svg width="600" height="300" viewbox="-150 -150 600 300">
         <g transform="scale(1,-1) translate(0,0)">
-            <polygon 
-                points="100,0 100,-100 -100,0 -100,100"
-                fill="#AA5050" 
-                stroke="#383838" 
-                stroke-width="1" />
+            <polygon class="shape1"
+                points="100,0 100,-100 -100,0 -100,100" />
             <path d="M 100 0 L -100 0 M 100 -100 L -100 100"
-                class="fragment"
-                stroke="#ff8d23"
-                stroke-width="4" />
+                class="shape2 fragment" />
         </g>
         <g transform="scale(1,-1) translate(270,0)">
-            <polygon 
-                points="0,100 -100,100 0,-100 100,-100" 
-                fill="#AA5050" 
-                stroke="#383838"
-                stroke-width="1" />
+            <polygon class="shape1"
+                points="0,100 -100,100 0,-100 100,-100" />
             <path d="M 0 100 L 0 -100 M 100 -100 L -100 100"
-                class="fragment"
-                stroke="#ff8d23"
-                stroke-width="4" />
+                class="shape2 fragment" />
         </g>
     </svg>
 </section>
@@ -444,118 +395,150 @@ title: DAG decomposition
     </table>
 </section>
 <section>
-    <style>
+    <table>
+        <tr>
+            <td>b.i.i.i.</td>
+            <td>$\to$</td>
+            <td>BKK bound</td>
+            <td>$\to$</td>
+            <td>Volume?</td>
+        </tr>
+        <tr class="fragment">
+            <td>Mixed volume of N.O bodies</td>
+            <td></td>
+            <td>Mixed volume of Newton polytopes</td>
+            <td></td>
+            <td>Volume of a single polytope</td>
+        </tr>
+    </table>
 
-    rect {
-    fill: none;
-    }
-
-    .hull {
-    fill: #fc7343;
-    stroke: #367f84;
-    stroke-width: 10px;
-    stroke-linejoin: round;
-    }
-
-    .outline {
-    fill: none;
-    stroke: white;
-    stroke-width: 3px;
-    stroke-linejoin: round;
-    }
-
-    .area {
-    fill: #ba95eb;
-    stroke: white;
-    stroke-width: 3px;
-    stroke-linejoin: round;
-    }
-
-    </style>
-    <svg width="960" height="500" id="canvas-vol-mvol"></svg>
-    <label>lambda_1</label>
-    <div class="slidercontainer">
-      <input type="range" min="50" max="180" value="100" class="slider" id="scale1">
+</section>
+<section>
+    <div class="theorem">
+        <h4>Theorem</h4>
+        <p>
+            If $A$ and $B$ "touch" all the edges of
+            $\text{conv}(A \cup B)$, then
+        </p>
+        <p>
+            \[
+                \text{MVol}(A,B) \;=\; \text{Vol}_2( \text{conv} (A \cup B) )
+            \]
+        </p>
     </div>
-    <label>lambda_2</label>
-    <div class="slidercontainer">
-      <input type="range" min="50" max="180" value="80" class="slider" id="scale2">
+</section>
+<section>
+    <div class="theorem">
+        <p>
+            Given nonempty finite sets $S_1,\dots,S_n \subset \mathbb{Z}^n$,
+            let $\tilde{S} = S_1 \cup \cdots \cup S_n$.
+            If every positive dimensional face $F$ of $\text{conv}(\tilde{S})$ satisfies
+            one of the following conditions:
+        </p>
+        <ol>
+            <li>$F \cap S_i \ne \varnothing$ for all $i \in \{1,\dots,n\}$;</li>
+            <li>$F \cap S_i$ is a singleton for some $i \in \{1,\dots,n\}$;</li>
+            <li>
+                For each $i \in I := \{ i \mid F \cap S_i \ne \varnothing \}$,
+                $F \cap S_i$ is contained in a $|I|$-dimensional 
+                coordinate subspace in which 
+                and its projection of dimension less than $|I|$;
+            </li>
+        </ol>
+        <p>
+            then
+            \[
+                \text{MVol} (\text{conv}(S_1), \dots, \text{conv}(S_n)) = 
+                \text{Vol}_n (\text{conv}(\tilde{S})).
+            \]
+        </p>
     </div>
-    <!-- <input type="range" min="80" max="180" value="80" id="scale"> -->
-    <label class="switch">
-        <input type="checkbox" id="showarea">
-        Show area
-    </label>
+</section>
+<section>
+    <svg width="420" height="400" id="vmvol_canvas"></svg>
+    <div class="mcols">
+        <div class="col5">
+            <label>$\lambda_1$</label>
+            <input type="range" min="70" max="200" value="120" class="slider" id="vmvol_scale1">
+        </div>
+        <div class="col5">
+            <label>$\lambda_2$</label>
+            <input type="range" min="70" max="180" value="120"  class="slider" id="vmvol_scale2">
+        </div>
+        <div class="col2">
+            <label class="switch">
+                <input type="checkbox" id="vmvol_showarea">
+                Area
+            </label>
+        </div>
+    </div>
     <script src="//d3js.org/d3.v3.min.js"></script>
     <script>
+        var vmvol_showarea = false;
 
-        var showarea = false;
+        d3.select("#vmvol_scale1")  .on("input", function() { vmvol_update(); });
+        d3.select("#vmvol_scale2")  .on("input", function() { vmvol_update(); });
+        d3.select("#vmvol_showarea").on("input", function() { vmvol_showarea = this.checked; vmvol_update(); });
 
-        d3.select("#scale1")  .on("input", function() { vol_mvol_update(); });
-        d3.select("#scale2")  .on("input", function() { vol_mvol_update(); });
-        d3.select("#showarea").on("input", function() { showarea = this.checked; vol_mvol_update(); });
-
-        console.log("I'm here!");
-
-        let svg    = d3.select("#canvas-vol-mvol");
-        let width  = svg.attr("width");
-        let height = svg.attr("height");
+        let vmvol_svg    = d3.select("#vmvol_canvas");
+        let vmvol_width  = vmvol_svg.attr("width");
+        let vmvol_height = vmvol_svg.attr("height");
 
         var orig_x = 20;
         var orig_y = 20;
 
-        var A = [
+        var vmvol_A = [
             [  0,   0],
             [200,   0],
             [200, 200],
             [  0, 200]
         ]
 
-        var B = [
+        var vmvol_B = [
             [100,200],
             [200,100],
             [0,0],
         ]
 
-        let sA = undefined;   // scaled version of A
-        let sB = undefined;   // scaled version of B
-        let sH = undefined;   // conv( sA U tB )
+        let vmvol_sA = undefined;   // scaled version of A
+        let vmvol_sB = undefined;   // scaled version of B
+        let vmvol_sH = undefined;   // conv( sA U tB )
 
-        var oH    = svg.append("path").attr("class", "hull");
-        var oA    = svg.append("path").attr("class", "outline");
-        var oB    = svg.append("path").attr("class", "outline");
-        var area1 = svg.append("path").attr("class", "area");
-        var area2 = svg.append("path").attr("class", "area");
-        var area3 = svg.append("path").attr("class", "area");
-        var area4 = svg.append("path").attr("class", "area");
+        var vmvol_oH    = vmvol_svg.append("path").attr("class", "shape3");
+        var vmvol_oA    = vmvol_svg.append("path").attr("class", "shape4");
+        var vmvol_oB    = vmvol_svg.append("path").attr("class", "shape4");
+        var vmvol_area1 = vmvol_svg.append("path").attr("class", "shape1");
+        var vmvol_area2 = vmvol_svg.append("path").attr("class", "shape1");
+        var vmvol_area3 = vmvol_svg.append("path").attr("class", "shape1");
+        var vmvol_area4 = vmvol_svg.append("path").attr("class", "shape1");
 
-        vol_mvol_update();
+        vmvol_update();
 
-        function vol_mvol_update() {
-        let lineto = (d => "M" + d.join("L") + "Z");
-        let s1 = +d3.select("#scale1").property("value");
-        let s2 = +d3.select("#scale2").property("value");
-        let v1 = s1 / 100;
-        let v2 = s2 / 100;
-        console.log(s1,s2)
-        let sA = A.map( x => [ orig_x + v1*x[0], height - orig_y - v1*x[1] ]);
-        let sB = B.map( x => [ orig_x + v2*x[0], height - orig_y - v2*x[1] ]);
-        let sH = sA.concat(sB);
+        function vmvol_update() {
+            let lineto = (d => "M" + d.join("L") + "Z");
+            let s1 = +d3.select("#vmvol_scale1").property("value");
+            let s2 = +d3.select("#vmvol_scale2").property("value");
+            let v1 = s1 / 100;
+            let v2 = s2 / 100;
+            let sA = A.map( x => [ orig_x + v1*x[0], vmvol_height - orig_y - v1*x[1] ]);
+            let sB = B.map( x => [ orig_x + v2*x[0], vmvol_height - orig_y - v2*x[1] ]);
+            let sH = sA.concat(sB);
 
-        oH.datum(d3.geom.hull(sH)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-        if (showarea) {
-            area1.datum([sA[0],sA[1],sB[1]]).attr("d", lineto);
-            area2.datum([sA[0],sA[2],sB[1]]).attr("d", lineto);
-            area3.datum([sA[0],sA[2],sB[0]]).attr("d", lineto);
-            area4.datum([sA[0],sA[3],sB[0]]).attr("d", lineto);
-            d3.selectAll(".area").style("opacity",1);
-        } else {
-            d3.selectAll(".area").style("opacity",0);
+            vmvol_oH.datum(d3.geom.hull(sH)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+            if (vmvol_showarea) {
+                vmvol_area1.datum([sA[0],sA[1],sB[1]]).attr("d", lineto).style("opacity",1);
+                vmvol_area2.datum([sA[0],sA[2],sB[1]]).attr("d", lineto).style("opacity",1);
+                vmvol_area3.datum([sA[0],sA[2],sB[0]]).attr("d", lineto).style("opacity",1);
+                vmvol_area4.datum([sA[0],sA[3],sB[0]]).attr("d", lineto).style("opacity",1);
+            } else {
+                vmvol_area1.style("opacity",0);
+                vmvol_area2.style("opacity",0);
+                vmvol_area3.style("opacity",0);
+                vmvol_area4.style("opacity",0);
+            }
+            vmvol_oA.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+            vmvol_oB.datum(sB).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
         }
-        oA.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-        oB.datum(sB).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
-        }
-
     </script>
 </section>
 <section>
