@@ -1,0 +1,107 @@
+---
+layout: slide
+title: Cell arrays
+---
+
+<section>
+    <H1>Advanced data structures</H1>
+</section>
+<section>
+    <h3>What is a cell array?</h3>
+    <p>
+        A cell array is a data type with indexed data containers called "cells"
+        where each cell can contain any type of data.
+    </p>
+    <ul>
+        <li class="fragment">...allow mixing data types</li>
+        <li class="fragment">...its like an array of containers</li>
+    </ul>
+</section>
+<section>
+    <h3>Creation</h3>
+    <p>
+        Use { } operator to create cell arrays:
+    </p>
+    <pre><code>
+        C = { 1, 2, 3, 'Hello', {11;22;33} };
+    </code></pre>
+
+    <p class="fragment">
+        Use { } for empty cell arrays:
+        <pre><code>
+            C = {};
+        </code></pre>
+    </p>
+
+    <p class="fragment">
+        The "cell" function can create array of any size.
+    </p>
+</section>
+<section>
+    <h3>Accessing cell array</h3>
+    <p>
+        You can access cells in a cell array using two operators.
+    </p>
+    <ul>
+        <li class="fragment">
+            "( )" refer to sets of cells
+        </li>
+        <li class="fragment">
+            "{ }" refer to content of the cells
+        </li>
+    </ul>
+    <p class="fragment">
+        Syntax for indexing expressions are the same as that for arrays.
+    </p>
+</section>
+<section>
+    <h3>What is a structure array</h3>
+    <p>
+        A structure array is a data type that
+        groups related data using data containers called fields.
+    </p>
+    <ul class="fragment">
+        <li>Fields have names</li>
+        <li>Each field can contain data of any type</li>
+        <li>We use "." notation for fields</li>
+    </ul>
+    <pre class="fragment"><code>
+        s.width  = 100;
+        s.height = 200;
+    </code></pre>
+    <p class="fragment">
+        Compare these concepts: Arrays, Cell arrays, Structure arrays.
+    </p>
+</section>
+<section>
+    <h3>Example</h3>
+    <pre><code>
+    data.x = linspace(0,2*pi);
+    data.y = sin(data.x);
+    data.title = 'y = sin(x)'
+    </code></pre>
+
+    <p class="fragment">
+        Structured array is a nice to group related data together.
+    </p>
+
+    <p class="fragment">
+        The <code>structure</code>
+        can create structures of any size.
+    </p>
+</section>
+<section>
+    <h3>Example: Importing text data</h3>
+
+    <p>
+        Download the "data.txt" file from "Resources" section
+        and load the data into MATLAB
+    </p>
+    <pre class="fragment"><code>
+        A = importdata('data.txt', ' ', 1)
+    </code></pre>
+
+    <p class="fragment">
+        What's inside A ? Can you plot the data?
+    </p>
+</section>

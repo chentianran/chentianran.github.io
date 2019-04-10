@@ -7,7 +7,7 @@
     <em>{{ paper.journal }}</em><br />
     [ <a href="{{ paper.link }}">link</a> ]
     {% if paper.pdf   %}
-      [ <a href="research/papers/{{ paper.pdf }}">pdf</a> ]
+      [ <a href="/research/papers/{{ paper.pdf }}">pdf</a> ]
     {% endif %}
     {% if paper.arxiv %}
       [ <a href="{{ paper.arxiv }}">arXiv</a> ]
