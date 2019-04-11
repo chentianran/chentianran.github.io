@@ -370,6 +370,14 @@ h2.title {
   stroke-linejoin: round;
 }
 
+span.emph {
+  font-style: italic;
+}
+
+.gray {
+  color: #585858;
+}
+
 .slider {
 -webkit-appearance: none;
 width: 80%;
