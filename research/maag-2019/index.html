@@ -14,6 +14,9 @@ title: DAG decomposition
         April 13, 2019<br/>
         MAAG 2019 Georgia Tech
     </p>
+    <p class="footnote2">
+        Joint work with Robert Davis and Dhagash Mehta
+    </p>
 </section>
 <section>
     <p>
@@ -46,7 +49,7 @@ title: DAG decomposition
     <h3>Kuramoto model (Y. Kuramoto 1975)</h3>
     <p>
     \[
-        \dot{\theta} = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
+        \dot{\theta}_i = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
     \]
     </p>
     <p class="fragment">
@@ -70,7 +73,7 @@ title: DAG decomposition
     \[
         0 = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
     \]
-    using a rotational frame of reference.
+    <!-- using a rotational frame of reference. -->
     </p>
 </section>
 <section>
@@ -118,9 +121,19 @@ title: DAG decomposition
         \]
         <br>
     </p>
-    <p class="fragment">
-        transcendental term ---> algebraic term
-    </p>
+    <table class="fragment">
+        <tr>
+            <td>
+                Transcendental terms
+            </td>
+            <td>
+                $\longrightarrow$
+            </td>
+            <td>
+                Algebraic term
+            </td>
+        </tr>
+    </table>
 </section>
 <section>
     <p>
@@ -178,7 +191,7 @@ title: DAG decomposition
     <ul>
         <li class="fragment">How many solutions?</li>
         <li class="fragment">How to find all solutions?</li>
-        <li class="fragment">What about positive dimensional solutions?</li>
+        <li class="fragment">What can network topology tell us?</li>
     </ul>
 </section>
 <section>
@@ -300,7 +313,7 @@ title: DAG decomposition
 <section>
     <!-- <h3>Birationally invariant intersection index</h3> -->
     <div class="theorem">
-        <h4>Birationally invariant intersection index</h4>
+        <h4>Intersection index (Kaveh & Khovanskii)</h4>
         <p>
             Given an irreducible $n$-dimensional toric variety $X$
             and finite dimensional vector spaces of rational functions 
@@ -397,18 +410,18 @@ title: DAG decomposition
 <section>
     <table>
         <tr>
-            <td>b.i.i.i.</td>
+            <td>B.i.i.i.</td>
             <td>$\to$</td>
             <td>BKK bound</td>
-            <td>$\to$</td>
-            <td>Volume?</td>
+            <td class="fragment" data-fragment-index="2">$\to$</td>
+            <td class="fragment" data-fragment-index="2">Volume?</td>
         </tr>
-        <tr class="fragment">
-            <td>Mixed volume of N.O bodies</td>
+        <tr class="fragment" data-fragment-index="1">
+            <td>Mixed volume of N.O. bodies</td>
             <td></td>
             <td>Mixed volume of Newton polytopes</td>
             <td></td>
-            <td>Volume of a single polytope</td>
+            <td class="fragment" data-fragment-index="2">Volume of a single polytope</td>
         </tr>
     </table>
 
@@ -624,6 +637,30 @@ title: DAG decomposition
         </p>
 </section>
 <section>
+    <div class="theorem">
+        <h4>Theorem</h4>
+        <p>
+            For a <b>cycle</b> graph $C_N$ of $N$ nodes,
+            the corresponding Kuramoto equations with generic coefficients 
+            the total number of complex solutions it has is exactly
+        </p>
+        <p>
+            \[
+                \text{Vol}_{N-1}(\nabla_{C_N})
+            \]
+        </p>
+        <p class="footnote">(normalized volume of the adjacency polytope)</p>
+    </div>
+</section>
+<section>
+    <h3>Generalizations</h3>
+    <ul>
+        <li>Trees</li>
+        <li>Complete graphs</li>
+        <li>Cycles glued together along an single edge</li>
+    </ul>
+</section>
+<section>
     <table>
         <tr>
             <td>
@@ -648,22 +685,6 @@ title: DAG decomposition
         Delucchi & Hoessly
         <span class="emph gray"> 2019 </span>
     </p>
-</section>
-<section>
-    <div class="theorem">
-        <h4>Theorem (C. 2017)</h4>
-        <p>
-            For a <b>cycle</b> graph $C_N$ of $N$ nodes,
-            the corresponding Kuramoto equations with generic coefficients 
-            the total number of complex solutions it has is exactly
-        </p>
-        <p>
-            \[
-                (N-1)! \, \text{Vol}(P(C_N))
-            \]
-        </p>
-        <p class="footnote">(normalized volume of the adjacency polytope)</p>
-    </div>
 </section>
 <section>
     <h3>Directed edges</h3>
@@ -905,21 +926,29 @@ title: DAG decomposition
     <div class="theorem">
         <h4>Definition (Primitive subnetwork)</h4>
         <p>
-            A subnetwork is called <b>primitive</b> 
+            A subnetwork is called <b class="alert">primitive</b> 
             if the underlying graph is a connected, acyclic,
             and has $N-1$ directed edges.
         </p>
     </div>
-    <img class="fragment" src="cycle-5-dag1.png" width=200>
-    <div class="fragment">
-        <div class="theorem">
-            <h4>
-                Proposition
-            </h4>
-            <p>
-                The facet subsystem corresponding to a <b>primitive</b> subnetwork
-                defines a <b>irreducible toric variety</b>.
-            </p>
+    <br/>
+    <div class="mcols">
+        <div class="col4">
+            <img class="fragment" src="cycle-5-dag1.png" width=210>
+        </div>
+        <div class="col8">
+            <div class="fragment">
+                <div class="theorem">
+                    <h4>
+                        Proposition
+                    </h4>
+                    <p>
+                        The facet subsystem corresponding to a <b>primitive</b> subnetwork
+                        defines a <b>irreducible toric variety</b>.
+                    </p>
+                </div>
+            </div>
+    
         </div>
     </div>
 </section>
@@ -1114,7 +1143,7 @@ title: DAG decomposition
 </section> -->
 <section>
     <h3>The equivalence</h3>
-    <table>
+    <table class="booktab">
         <tr>
             <th>Kuramoto network</th>
             <th>Kuramoto equations</th>
