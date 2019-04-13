@@ -49,7 +49,7 @@ title: DAG decomposition
     <h3>Kuramoto model (Y. Kuramoto 1975)</h3>
     <p>
     \[
-        \dot{\theta}_i = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
+        \dot{\theta}_i = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
     \]
     </p>
     <p class="fragment">
@@ -57,38 +57,63 @@ title: DAG decomposition
     </p>
 </section>
 <section>
-    <h3> Frequency synchronization configuration </h3>
-    <p>
-    $\dot{\theta}_i$ are all identical.
-    </p>
-    <p class="fragment">
-    \[
-        c = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
-    \]
-    <br>
-    </p>
+    <div class="theorem">
+        <h4>
+            Frequency synchronization configuration
+        </h4>
+        <p>
+            Configurations of $(\theta_1,\dots,\theta_n)$
+            for which $\dot{\theta}_i$ are the same:
+        </p>
+        <p class="fragment">
+            \[
+            c = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+            \]
+        </p>
+    </div>
 
     <p class="fragment">
         ... they are equivalent to critical points defined by
-    \[
-        0 = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
-    \]
-    <!-- using a rotational frame of reference. -->
+        \[
+            0 = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+        \]
     </p>
+</section>
+<section>
+    <p align="left">Algebraic geometry approaches to this problem:</p>
+    <br>
+    <ul>
+        <li>
+            J. Baillieul and C. Byrnes <br>
+            <span class="footnote">
+                Geometric Critical Point Analysis of Lossless Power System Models
+            </span><br>
+        </li>
+        <li>
+            D. Mehta, N. Daleo, F. Dörfler, and J. Hauenstein <br>
+            <span class="footnote">
+                Algebraic geometrization of the Kuramoto model: Equilibria and stability analysis
+            </span><br>
+        </li>
+        <li>
+            O. Coss, J. Hauenstein, H. Hong, and D. Molzahn <br>
+            <span class="footnote">
+                Locating and Counting Equilibria of the Kuramoto Model with Rank-One Coupling
+            </span><br>
+        </li>
+    </ul>
 </section>
 <section>
     <img src="kuramoto.png" border=5 class="stretch">
     <p>
         \[
-        \begin{aligned}
-            \omega_0 &= k_{01} \sin(\theta_0 - \theta_1) + k_{02} \sin(\theta_0 - \theta_2) \\
-            \omega_1 &= k_{10} \sin(\theta_1 - \theta_0) + k_{13} \sin(\theta_1 - \theta_3) \\
-            \omega_2 &= k_{20} \sin(\theta_2 - \theta_0) + k_{23} \sin(\theta_2 - \theta_3) \\
-            \omega_3 &= k_{31} \sin(\theta_3 - \theta_1) + k_{32} \sin(\theta_3 - \theta_2)
-        \end{aligned}
+            \begin{aligned}
+                \omega_0 &= k_{01} \sin(\theta_0 - \theta_1) + k_{02} \sin(\theta_0 - \theta_2) \\
+                \omega_1 &= k_{10} \sin(\theta_1 - \theta_0) + k_{13} \sin(\theta_1 - \theta_3) \\
+                \omega_2 &= k_{20} \sin(\theta_2 - \theta_0) + k_{23} \sin(\theta_2 - \theta_3) \\
+                \omega_3 &= k_{31} \sin(\theta_3 - \theta_1) + k_{32} \sin(\theta_3 - \theta_2)
+            \end{aligned}
         \]
-
-
     </p>
 </section>
 <section>
@@ -215,11 +240,41 @@ title: DAG decomposition
 </section>
 <section>
     <h3>BKK bound</h3>
-    <p></p>
+    <div class="theorem">
+        <h4>Theorem (Bernshtein-Kushnirenko-Khovanskii)</h4>
+        <p>
+            Given a system of Laurent polynomials
+            $f_1,\dots,f_n$ in $(x_1,\dots,x_n)$
+            with <span class="emph">generic</span> coefficients,
+            the number of isolated common roots in
+            $(\mathbb{C}^*)^n$ is bounded by
+        </p>
+        <p>
+            \[ \text{MVol}(\text{Newt}(f_1),\dots,\text{Newt}(f_n)) \]
+        </p>
+    </div>
 </section>
 <section>
-    <h3>Mixed volume</h3>
-    <p></p>
+    <!-- <h3>Mixed volume</h3> -->
+
+    <p>
+        \[
+            \text{Minkowski sum: }
+            A + B := \{ a + b \mid a \in A, b \in B \}
+        \]
+    </p>
+    <div class="theorem fragment">
+        <h4>Mixed volume (Minkowski)</h4>
+        <p>
+            For convex polytopes $P_1,\dots,P_n$ in $\mathbb{R}^n$,
+            the <b class="alert">mixed volume</b>
+            $\text{MVol}(P_1,\dots,P_n)$
+            is the coefficient of $\lambda_1 \cdots \lambda_n$ in
+            \[
+                \text{vol}(\lambda_1 P_1 + \cdots + \lambda_n P_n)
+            \]
+        </p>
+    </div>
 </section>
 <section>
     <svg width="960" height="460" id="canvas">
@@ -308,7 +363,23 @@ title: DAG decomposition
         }
         }
     </script>
-
+</section>
+<section>
+    <p>
+        Root count for the Algebraic Kuramoto equations
+    </p>
+    <p>
+        \[
+            0 = \omega_i - \sum_{j=0}^n a'_{ij} 
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+        \]
+    </p>
+    <p>
+        can be computed as the BKK bound
+        <b class="alert fragment">???</b>
+    </p>
 </section>
 <section>
     <!-- <h3>Birationally invariant intersection index</h3> -->
@@ -328,8 +399,11 @@ title: DAG decomposition
             \]
         </p>
     </div>
+    <p class="fragment footnote">
+        Generalization of the BKK bound
+    </p>
     <p class="fragment">
-        (Generalization of the BKK bound)
+        (Mixed volume of Newton-Okounkov bodies)
     </p>
 </section>
 <section>
@@ -691,17 +765,24 @@ title: DAG decomposition
     <div class="theorem">
         <h4>Theorem</h4>
         <p>
-
+            For tree networks of $N$ oscillators,
+            the algebraic Kuramoto system has
+            at most $2^{N-1}$ isolated complex solutions.
         </p>
     </div>
     <div class="theorem">
         <h4>Theorem</h4>
         <p>
-
+            For cycle networks of $N$ oscillators,
+            the algebraic Kuramoto system has
+            at most $???$ isolated complex solutions.
         </p>
     </div>
 </section>
 <section>
+    <p>
+        Adjacency polytope
+    </p>
     <table>
         <tr class="fragment">
             <td>Volume</td>
@@ -711,7 +792,7 @@ title: DAG decomposition
         <tr class="fragment">
             <td>Facets</td>
             <td>$\longrightarrow$</td>
-            <td>Subnetworks</td>
+            <td>Directed subnetworks</td>
         </tr>
     </table>
 </section>
@@ -752,7 +833,48 @@ title: DAG decomposition
 <section>
     <h4>Subnetworks and adjacency polytope</h4>
     <img width=500 src="dac-cycle3.png">
-    <img width=700 src="cycle-3-ap.png">
+    <!-- <img width=700 src="cycle-3-ap.png"> -->
+    <div class="mcols">
+        <div class="col4">
+            <svg width="300" height="200">
+                <path fill="none" stroke="black" d="M 100 50 L 20 150 L 180 150 Z"></path>
+                <g transform="translate(100,50)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">0</text>
+                </g>
+                <g transform="translate(20,150)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">1</text>
+                </g>
+                <g transform="translate(180,150)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">2</text>
+                </g>
+            </svg>
+        </div>
+        <div class="col4">
+            <table class="fragment">
+                <tr>
+                    <td>$\pm(\mathbf{e}_0 - \mathbf{e}_1)$</td>
+                </tr>
+                <tr>
+                    <td>$\pm(\mathbf{e}_1 - \mathbf{e}_2)$</td>
+                </tr>
+                <tr>
+                    <td>$\pm(\mathbf{e}_2 - \mathbf{e}_0)$</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col4">
+            <svg width="240" height="240" class="fragment">
+                <g transform="scale(0.8,-0.8) translate(105,-105)">
+                    <polygon 
+                        points="-100,0 0,-100 100,-100 100,0 0,100 -100,100"
+                        class="shape2" />
+                </g>
+            </svg>
+        </div>
+    </div>
 </section>
 <section>
     <h4>Subnetworks and adjacency polytope</h4>
