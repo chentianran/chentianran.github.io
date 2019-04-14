@@ -11,7 +11,7 @@ title: DAG decomposition
         Auburn University at Montgomery
     </p>
     <p class="footnote">
-        April 13, 2019<br/>
+        April 14, 2019<br/>
         MAAG 2019 Georgia Tech
     </p>
     <p class="footnote2">
@@ -65,7 +65,7 @@ title: DAG decomposition
             Configurations of $(\theta_1,\dots,\theta_n)$
             for which $\dot{\theta}_i$ are the same:
         </p>
-        <p class="fragment">
+        <p>
             \[
             c = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
             \]
@@ -146,19 +146,6 @@ title: DAG decomposition
         \]
         <br>
     </p>
-    <table class="fragment">
-        <tr>
-            <td>
-                Transcendental terms
-            </td>
-            <td>
-                $\longrightarrow$
-            </td>
-            <td>
-                Algebraic term
-            </td>
-        </tr>
-    </table>
 </section>
 <section>
     <p>
@@ -174,20 +161,19 @@ title: DAG decomposition
     <p class="fragment fade-in-then-semi-out">
     The synchronization equations<br/>
     \[
-        0 = \omega_i - \sum_{j=1}^n k_{ij} \sin(\theta_i - \theta_j)
+        0 = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
     \]
     <br/>
     </p>
     <p class="fragment fade-in">
     becomes the Algebraic Kuramoto Equations<br/>
     \[
-        0 = \omega_i - \sum_{j=1}^n a_{ij}' 
+        0 = \omega_i - \sum_{j=0}^n a_{ij}' 
         \left(
             \frac{x_i}{x_j} - \frac{x_j}{x_i}
         \right)
     \]
     </p>
-
 </section>
 <section>
     <img src="kuramoto.png" border=5 class="stretch">
@@ -217,6 +203,7 @@ title: DAG decomposition
         <li class="fragment">How many solutions?</li>
         <li class="fragment">How to find all solutions?</li>
         <li class="fragment">What can network topology tell us?</li>
+        <li class="fragment">Can we decompose large networks?</li>
     </ul>
 </section>
 <section>
@@ -255,8 +242,6 @@ title: DAG decomposition
     </div>
 </section>
 <section>
-    <!-- <h3>Mixed volume</h3> -->
-
     <p>
         \[
             \text{Minkowski sum: }
@@ -363,6 +348,11 @@ title: DAG decomposition
         }
         }
     </script>
+    <p>
+        $\text{MVol}(A,B) = \text{Coef. of } \lambda_1 \lambda2 
+        \text{ in }
+        (\lambda_1 A + \lambda_2 B)$
+    </p>
 </section>
 <section>
     <p>
@@ -399,7 +389,7 @@ title: DAG decomposition
             \]
         </p>
     </div>
-    <p class="fragment footnote">
+    <p class="footnote">
         Generalization of the BKK bound
     </p>
     <p class="fragment">
@@ -409,11 +399,11 @@ title: DAG decomposition
 <section>
     <p>
         Is is possible to have
-        $\text{B.I.I.I} \equiv \text{BKK bound}$ ?
+        $\text{B.I.I.I.} \equiv \text{BKK bound}$ ?
         <br>
     </p>
     <div class="theorem fragment">
-        <h4>Theorem</h4>
+        <h4>Theorem (C.)</h4>
         <p>
             Suppose each $L_i = \text{span}_{\mathbb{C}}\{P_{ij}\}$
             for some Laurent polynomials $P_{ij}$'s.
@@ -473,13 +463,6 @@ title: DAG decomposition
             is exactly the BKK bound.
         </p>
     </div>
-    <table>
-        <tr class="fragment">
-            <td>b.i.i.i.</td>
-            <td>$\to$</td>
-            <td>BKK bound</td>
-        </tr>
-    </table>
 </section>
 <section>
     <table>
@@ -502,7 +485,7 @@ title: DAG decomposition
 </section>
 <section>
     <div class="theorem">
-        <h4>Theorem</h4>
+        <h4>Theorem (C.)</h4>
         <p>
             If $A$ and $B$ "touch" all the edges of
             $\text{conv}(A \cup B)$, then
@@ -652,10 +635,29 @@ title: DAG decomposition
     </div>
 </section>
 <section>
+    <p>
+        Much more general equivalence results exist for
+        mixed volume and semi-mixed volume.<br/>
+    </p>
+
+    <ul>
+        <li>
+            C. 
+            <span class="footnote">"Unmixing the mixed volume computation"</span>
+        </li>
+        <li>
+            B. Frederic & I. Soprunov 
+            <span class="footnote">
+                "Criteria for Strict Monotonicity of the Mixed Volume of Convex Polytopes"
+            </span>
+        </li>
+    </ul>
+</section>
+<section>
     <div class="theorem">
         <h4>Definition: <b class="alert">Adjacency polytope</b></h4>
         <p>
-            For a graph $G$ with nodes $\{0,1,\ldots,N-1\}$, 
+            For a graph $G$ with nodes $\{0,1,\ldots,n\}$, 
         </p>
         <p>
             \[
@@ -667,7 +669,7 @@ title: DAG decomposition
     </div>
     <div class="mcols">
         <div class="col4">
-            <svg width="300" height="200">
+            <svg width="300" height="200" class="fragment">
                 <path fill="none" stroke="black" d="M 100 50 L 20 150 L 180 150 Z"></path>
                 <g transform="translate(100,50)">
                     <circle cx="0" cy="0" r="20" class="shape1" />
@@ -697,7 +699,7 @@ title: DAG decomposition
             </table>
         </div>
         <div class="col4">
-            <svg width="240" height="240" class="fragment">
+            <svg width="240" height="200" class="fragment">
                 <g transform="scale(0.8,-0.8) translate(105,-105)">
                     <polygon 
                         points="-100,0 0,-100 100,-100 100,0 0,100 -100,100"
@@ -712,7 +714,7 @@ title: DAG decomposition
 </section>
 <section>
     <div class="theorem">
-        <h4>Theorem</h4>
+        <h4>Theorem (C.)</h4>
         <p>
             For a <b>cycle</b> graph $C_N$ of $N$ nodes,
             the corresponding Kuramoto equations with generic coefficients 
@@ -763,21 +765,27 @@ title: DAG decomposition
 </section>
 <section>
     <div class="theorem">
-        <h4>Theorem</h4>
+        <h4>Theorem (C., R. Davis, D. Mehta)</h4>
         <p>
             For tree networks of $N$ oscillators,
             the algebraic Kuramoto system has
             at most $2^{N-1}$ isolated complex solutions.
         </p>
-    </div>
-    <div class="theorem">
-        <h4>Theorem</h4>
         <p>
             For cycle networks of $N$ oscillators,
-            the algebraic Kuramoto system has
-            at most $???$ isolated complex solutions.
+            the algebraic Kuramoto system has at most 
+            $N\binom{N-1}{\lfloor (N-1)/2 \rfloor}$ 
+            isolated complex solutions.
         </p>
     </div>
+    <p class="fragment">
+        These bound may be attained by just
+        <b class="alert">real solutions</b>:
+        (Zachariah, Charles, Boston, Lesieutre 2018)
+        <!-- <span class="footnote">
+            Distributions of the Number of Solutions to the Network Power Flow Equations.
+        </span> -->
+    </p>
 </section>
 <section>
     <p>
@@ -815,12 +823,20 @@ title: DAG decomposition
     <img width="330" src="cycle3.png">
     <img width="330" src="dag3.png">
 
-    <p class="fragment">
+    <p>
         Generalized Kuramoto equations:
         \[
             c_i - \sum_{(i,j) \in \mathcal{E}(G)} 
             a_{ij} \frac{x_i}{x_j}
         \]
+    </p>
+
+    <p class="footnote">
+        Similar approach:
+        Delabays, Jacquod & Dörfler
+        <span class="emph">
+            The Kuramoto model on oriented and signed graphs
+        </span>
     </p>
 </section>
 <section>
@@ -829,52 +845,6 @@ title: DAG decomposition
     <p>
         3 oscillators has at most <b>6</b> synchronization configurations.
     </p>
-</section>
-<section>
-    <h4>Subnetworks and adjacency polytope</h4>
-    <img width=500 src="dac-cycle3.png">
-    <!-- <img width=700 src="cycle-3-ap.png"> -->
-    <div class="mcols">
-        <div class="col4">
-            <svg width="300" height="200">
-                <path fill="none" stroke="black" d="M 100 50 L 20 150 L 180 150 Z"></path>
-                <g transform="translate(100,50)">
-                    <circle cx="0" cy="0" r="20" class="shape1" />
-                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">0</text>
-                </g>
-                <g transform="translate(20,150)">
-                    <circle cx="0" cy="0" r="20" class="shape1" />
-                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">1</text>
-                </g>
-                <g transform="translate(180,150)">
-                    <circle cx="0" cy="0" r="20" class="shape1" />
-                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">2</text>
-                </g>
-            </svg>
-        </div>
-        <div class="col4">
-            <table class="fragment">
-                <tr>
-                    <td>$\pm(\mathbf{e}_0 - \mathbf{e}_1)$</td>
-                </tr>
-                <tr>
-                    <td>$\pm(\mathbf{e}_1 - \mathbf{e}_2)$</td>
-                </tr>
-                <tr>
-                    <td>$\pm(\mathbf{e}_2 - \mathbf{e}_0)$</td>
-                </tr>
-            </table>
-        </div>
-        <div class="col4">
-            <svg width="240" height="240" class="fragment">
-                <g transform="scale(0.8,-0.8) translate(105,-105)">
-                    <polygon 
-                        points="-100,0 0,-100 100,-100 100,0 0,100 -100,100"
-                        class="shape2" />
-                </g>
-            </svg>
-        </div>
-    </div>
 </section>
 <section>
     <h4>Subnetworks and adjacency polytope</h4>
@@ -894,33 +864,6 @@ title: DAG decomposition
     </p> -->
     <img width="340" src="cycle-3-facet1.png">
     <img width="380" src="cycle-3-dac1.png">
-</section>
-<section>
-    <h3>Deformation into facet subsystems</h3>
-
-    <img src="cycle3.png" width="340">
-    <p>
-        \[
-        \begin{aligned}
-        \omega_0 &= \left[
-            a_{01}' (x_0 x_1^{-1} - x_0^{-1} x_1) +
-            a_{02}' (x_0 x_2^{-1} - x_0^{-1} x_2)
-        \right]
-        \\
-        \omega_1 &= \left[
-            a_{10}' (x_1 x_0^{-1} - x_1^{-1} x_0) +
-            a_{12}' (x_1 x_2^{-1} - x_1^{-1} x_2)
-        \right]
-        \\
-        \omega_2 &= \left[
-            a_{21}' (x_2 x_1^{-1} - x_2^{-1} x_1) +
-            a_{20}' (x_2 x_0^{-1} - x_2^{-1} x_0) 
-        \right]
-        \end{aligned}
-        \]
-    </p>
-    <p><br>There exists a continuous deformation to facet subsystems</p>
-    <p></p>
 </section>
 <section>
     <!-- <p>
@@ -1032,31 +975,38 @@ title: DAG decomposition
     <p>...defined by each <b class="alert">facet subsystems</b></p>
 </section>
 <section>
-    <h3>General construction</h3>
-    <p class="fragment fade-in">
-    <br>For the algebraic Kuramoto equations<br/>
+    <p align="left">
+    General construction: 
     \[
-        0 = \omega_i - \sum_{j=1}^n a_{ij}' 
+        h_i(\theta_1,\ldots,\theta_{n},t) = \frac{\omega_i}{t} - \sum_{j=0}^n a_{ij}' 
         \left(
             \frac{x_i}{x_j} - \frac{x_j}{x_i}
         \right)
     \]
     </p>
-    <p class="fragment fade-in">
-    we form the deformation<br/>
-    \[
-        h_i(\theta_1,\ldots,\theta_{N-1},t) = \frac{\omega_i}{t} - \sum_{j=1}^n a_{ij}' 
-        \left(
-            \frac{x_i}{x_j} - \frac{x_j}{x_i}
-        \right)
-    \]
-    </p>
+    <div class="fragment">
+        <p align="left">
+            Advantages over polyhedral homotopy:
+        </p>
+        <ul>
+            <li>Skips mixed volume computation step</li>
+            <li>Structure preserving</li>
+            <li>Starting systems have "meanings"</li>
+            <li>Involving 0-1 liftings only</li>
+        </ul>
+    </div>
 </section>
 <section>
-    <img class="stretch" src="dac-cycle.png">
-    <p>
-        A cycle of 5 oscillators has 30 subnetworks.
-    </p>
+    <div class="mcols">
+        <div class="col4">
+            <p>
+                A cycle of 5 oscillators has 30 subnetworks.
+            </p>
+        </div>
+        <div class="col8">
+            <img width="500" src="dac-cycle.png">
+        </div>
+    </div>
 </section>
 <section>
     <div class="theorem">
@@ -1104,8 +1054,7 @@ title: DAG decomposition
     </div>
 </section>
 <section>
-    <h3>Primitive subnetworks</h3>
-    <p><br/>Primitive subnetworks give rise to "nice" solution sets</p>
+    <p>Primitive subnetworks give rise to "simple" solution sets</p>
     <p class="fragment">
         When will a facet subnetwork be primitive?
         <br/>
@@ -1181,7 +1130,7 @@ title: DAG decomposition
 </section>
 <section>
     <div class="theorem">
-        <h4>Tropical semi-ring</h4>
+        <h4>Tropical semi-field</h4>
         <p>
             \[
                 \mathbb{T} = (\; \mathbb{R} \cup \{ \infty \} \;,\; \oplus \;,\; \odot \;)
@@ -1194,66 +1143,19 @@ title: DAG decomposition
                 a \odot b &= a + b
             \end{aligned}
             \]
-
-        </p>
-        <p class="fragment">
-            Neutral elements:
-            \[
-                \begin{aligned}
-                    a \oplus \infty &= \min(a,\infty) = a &
-                    a \odot  0      &= a + 0          = a
-                \end{aligned}
-            \]
         </p>
     </div>
-</section>
-<section>
-    <p>
-        To form a <b>tropicalization</b> of a polynomial
-        <ul>
-            <li class="fragment">replace $+$ with $\min$</li>
-            <li class="fragment">replace $\cdot$ with $+$</li>
-            <li class="fragment">replace coefficients with their "valuation"</li>
-        </ul>
-    </p>
-    <p class="fragment">
-        <br/>
-        \[
-            \text{Trop}( c \cdot x^2 y^3 )
-            \quad\longrightarrow\quad
-            \text{val}(c) + 2x + 3y
-        \]
-    </p>
-</section>
-<section>
     <div class="theorem">
         <h4>Tropical zero set</h4>
         <p>
             \[
                 \mathbb{V}( \text{Trop} (f))
             \]
-            is points where $\text{Trop}(f)$ is not differentiable.
+        </p>
+        <p>
+            is the set of points where $\text{Trop}(f)$ is not differentiable.
         </p>
     </div>
-    <p class="fragment">
-    \[
-        c_1 x^2 z^4 + c_2 xy + c_3 z^3 
-        \mapsto
-        \min
-        \begin{cases}
-        \text{val}(c_1) + 2x + 4z \\
-        \text{val}(c_2) + 1x + 1y \\
-        \text{val}(c_3) + 3x
-        \end{cases}
-    \]
-    </p>
-    <p class="fragment">
-        Zero set : points in $\mathbb{R}^3$ where this
-        is not differentiable.
-    </p>
-    <p class="fragment">
-        I.e. points where the minimum is attained at least twice.
-    </p>
 </section>
 <section>
     <div class="theorem">
@@ -1293,7 +1195,7 @@ title: DAG decomposition
     </p>
 </section> -->
 <section>
-    <h3>The equivalence</h3>
+    <h3>The dictionary</h3>
     <table class="booktab">
         <tr>
             <th>Kuramoto network</th>
@@ -1314,16 +1216,44 @@ title: DAG decomposition
             <td>Isolated intersection of multiplicity one</td>
         </tr>
     </table>
-    <p class="fragment">
-        <br/>
-        There are many open problems in this table.
-    </p>
 </section>
 <section>
     <h1>Thank you!</h1>
-    <p>
-        <br/><br/><br/>
-        arXiv:1708.09246<br/>
-        arXiv:1810.05690
-    </p>
+    <ul>
+        <li>
+            Chen 
+            <span class="alert">arXiv:1703.01684</span>
+            <span class="emph footnote">
+                "Unmixing the mixed volume computation" 
+            </span>
+        </li>
+        <li>
+            Chen, Davis, Mehta
+            <span class="alert">arXiv:1708.09246</span>
+            <span class="emph footnote">
+                "Counting equilibria of the Kuramoto model using birationally invariant intersection index " 
+            </span>
+        </li>
+        <li>
+            Chen, Davis
+            <span class="alert">arXiv:1810.05690</span>
+            <span class="emph footnote">
+                "A toric deformation method for solving Kuramoto equations" 
+            </span>
+        </li>
+        <li>
+            Chen
+            <span class="alert">arXiv:1812.05408</span>
+            <span class="emph footnote">
+                "On the equality of BKK bound and birationally invariant intersection index" 
+            </span>
+        </li>
+        <li>
+            Chen
+            <span class="alert">arXiv:1903.04492</span>
+            <span class="emph footnote">
+                "Directed acyclic decomposition of Kuramoto equations"
+            </span>
+        </li>
+    </ul>
 </section>
