@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Convex Hull</title>
+<style>
+
+rect {
+  fill: none;
+}
+
+.hull {
+  fill: #fc7343;
+  stroke: #367f84;
+  stroke-width: 10px;
+  stroke-linejoin: round;
+}
+
+.outline {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.area {
+  fill: #ba95eb;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+</style>
+<head>
+</head>
+<body>
+    <svg width="960" height="500" id="canvas"></svg>
+    <br/>
+    <label>lambda_1</label>
+    <div class="slidercontainer">
+      <input type="range" min="50" max="180" value="100" class="slider" id="scale1">
+    </div>
+    <label>lambda_2</label>
+    <div class="slidercontainer">
+      <input type="range" min="50" max="180" value="80" class="slider" id="scale2">
+    </div>
+    <!-- <input type="range" min="80" max="180" value="80" id="scale"> -->
+    <label class="switch">
+        <input type="checkbox" id="showarea">
+        Show area
+    </label>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var showarea = false;
+
+
+d3.select("#scale1")  .on("input", function() { update(); });
+d3.select("#scale2")  .on("input", function() { update(); });
+d3.select("#showarea").on("input", function() { showarea = this.checked; update(); });
+
+let svg    = d3.select("#canvas");
+let width  = svg.attr("width");
+let height = svg.attr("height");
+
+var orig_x = 20;
+var orig_y = 20;
+
+var A = [
+    [  0,   0],
+    [200,   0],
+    [200, 200],
+    [  0, 200]
+]
+
+var B = [
+    [100,200],
+    [200,100],
+    [0,0],
+]
+
+svg.append("rect")
+    .attr("width", width)
+    .attr("height", height);
+
+let sA = undefined;   // scaled version of A
+let sB = undefined;   // scaled version of B
+let sH = undefined;   // conv( sA U tB )
+
+var oH    = svg.append("path").attr("class", "hull");
+var oA    = svg.append("path").attr("class", "outline");
+var oB    = svg.append("path").attr("class", "outline");
+var area1 = svg.append("path").attr("class", "area");
+var area2 = svg.append("path").attr("class", "area");
+var area3 = svg.append("path").attr("class", "area");
+var area4 = svg.append("path").attr("class", "area");
+
+// var circle = svg.selectAll("circle");
+
+update();
+
+function update() {
+  let lineto = (d => "M" + d.join("L") + "Z");
+  let s1 = +d3.select("#scale1").property("value");
+  let s2 = +d3.select("#scale2").property("value");
+  let v1 = s1 / 100;
+  let v2 = s2 / 100;
+  console.log(s1,s2)
+  let sA = A.map( x => [ orig_x + v1*x[0], height - orig_y - v1*x[1] ]);
+  let sB = B.map( x => [ orig_x + v2*x[0], height - orig_y - v2*x[1] ]);
+  let sH = sA.concat(sB);
+
+  oH.datum(d3.geom.hull(sH)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+  if (showarea) {
+    area1.datum([sA[0],sA[3],sB[0]]).attr("d", lineto);
+    area2.datum([sA[1],sA[2],sB[1]]).attr("d", lineto);
+    // area3.datum([sA[0],sA[2],sB[0]]).attr("d", lineto);
+    // area4.datum([sA[0],sA[3],sB[0]]).attr("d", lineto);
+    d3.selectAll(".area").style("opacity",1);
+  } else {
+    d3.selectAll(".area").style("opacity",0);
+  }
+  oA.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+  oB.datum(sB).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+}
+
+</script>

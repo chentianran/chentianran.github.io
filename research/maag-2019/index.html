@@ -1,0 +1,1259 @@
+---
+layout: slide
+title: DAG decomposition
+---
+
+<section>
+    <h2 class="title">Root counting, tropical intersection, homotopy, and networks of oscillators</h2>
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics and Computer Science<br>
+        Auburn University at Montgomery
+    </p>
+    <p class="footnote">
+        April 14, 2019<br/>
+        MAAG 2019 Georgia Tech
+    </p>
+    <p class="footnote2">
+        Joint work with Robert Davis and Dhagash Mehta
+    </p>
+</section>
+<section>
+    <p>
+        <span class="alert">Oscillator:</span>
+        an object varying between two states.
+    </p>
+    <ul class="fragment">
+        <li>heart cells</li>
+        <li>neurons</li>
+        <li>chemical oscillators</li>
+        <li>AC generators</li>
+        <li>...</li>
+    </ul>
+</section>
+<section>
+
+    <div id="sketch-control"> </div>
+    <div id="sketch-holder" class="framed">  </div>
+
+    <script language="javascript" type="text/javascript" src="/js/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/p5.dom.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/kuramoto.js"></script>
+
+    <p >
+        <span class="alert">Coupled</span>
+        oscillators
+    </p>
+</section>
+<section>
+    <h3>Kuramoto model (Y. Kuramoto 1975)</h3>
+    <p>
+    \[
+        \dot{\theta}_i = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+    \]
+    </p>
+    <p class="fragment">
+        A balance between simple formulation and complex behavior
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>
+            Frequency synchronization configuration
+        </h4>
+        <p>
+            Configurations of $(\theta_1,\dots,\theta_n)$
+            for which $\dot{\theta}_i$ are the same:
+        </p>
+        <p>
+            \[
+            c = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+            \]
+        </p>
+    </div>
+
+    <p class="fragment">
+        ... they are equivalent to critical points defined by
+        \[
+            0 = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+        \]
+    </p>
+</section>
+<section>
+    <p align="left">Algebraic geometry approaches to this problem:</p>
+    <br>
+    <ul>
+        <li>
+            J. Baillieul and C. Byrnes <br>
+            <span class="footnote">
+                Geometric Critical Point Analysis of Lossless Power System Models
+            </span><br>
+        </li>
+        <li>
+            D. Mehta, N. Daleo, F. Dörfler, and J. Hauenstein <br>
+            <span class="footnote">
+                Algebraic geometrization of the Kuramoto model: Equilibria and stability analysis
+            </span><br>
+        </li>
+        <li>
+            O. Coss, J. Hauenstein, H. Hong, and D. Molzahn <br>
+            <span class="footnote">
+                Locating and Counting Equilibria of the Kuramoto Model with Rank-One Coupling
+            </span><br>
+        </li>
+    </ul>
+</section>
+<section>
+    <img src="kuramoto.png" border=5 class="stretch">
+    <p>
+        \[
+            \begin{aligned}
+                \omega_0 &= k_{01} \sin(\theta_0 - \theta_1) + k_{02} \sin(\theta_0 - \theta_2) \\
+                \omega_1 &= k_{10} \sin(\theta_1 - \theta_0) + k_{13} \sin(\theta_1 - \theta_3) \\
+                \omega_2 &= k_{20} \sin(\theta_2 - \theta_0) + k_{23} \sin(\theta_2 - \theta_3) \\
+                \omega_3 &= k_{31} \sin(\theta_3 - \theta_1) + k_{32} \sin(\theta_3 - \theta_2)
+            \end{aligned}
+        \]
+    </p>
+</section>
+<section>
+    <p>Consider complex phase angles</p>
+    
+    <p>
+    \[
+        \theta_i \;\mapsto\;
+        z_i = \theta_i - \mathbf{i}\, r_i
+    \]
+    </p>
+
+    <p class="fragment">
+        and the change of variables
+        \[
+            x_i = e^{\mathbf{i} z_i} = e^{r_i + \mathbf{i}\,\theta_i}
+        \]
+        <br>
+    </p>
+    <p class="fragment">
+        \[
+            \sin(z_i - z_j) = \frac{
+                e^{\mathbf{i}z_i - \mathbf{i}z_j} -
+                e^{\mathbf{i}z_j - \mathbf{i}z_i}
+            }{2\mathbf{i}}
+            =
+            \frac{1}{2\mathbf{i}} \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+        \]
+        <br>
+    </p>
+</section>
+<section>
+    <p>
+    \[
+        \theta_i 
+        \;\longrightarrow\;
+        z_i = \theta_i - \mathbf{i}\, r_i
+        \;\longrightarrow\;
+        x_i = e^{\mathbf{i} z_i}
+    \]
+    <br/>
+    </p>
+    <p class="fragment fade-in-then-semi-out">
+    The synchronization equations<br/>
+    \[
+        0 = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+    \]
+    <br/>
+    </p>
+    <p class="fragment fade-in">
+    becomes the Algebraic Kuramoto Equations<br/>
+    \[
+        0 = \omega_i - \sum_{j=0}^n a_{ij}' 
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    </p>
+</section>
+<section>
+    <img src="kuramoto.png" border=5 class="stretch">
+    <p>
+        \[
+        \begin{aligned}
+            \omega_0 &= a_{01}' (x_0 / x_1 - x_1 / x_0) + a_{02}' (x_0 / x_2 - x_2 / x_0) \\
+            \omega_1 &= a_{10}' (x_1 / x_0 - x_0 / x_1) + a_{13}' (x_1 / x_3 - x_3 / x_1) \\
+            \omega_2 &= a_{20}' (x_2 / x_0 - x_0 / x_2) + a_{23}' (x_2 / x_3 - x_3 / x_2) \\
+            \omega_3 &= a_{31}' (x_3 / x_1 - x_1 / x_3) + a_{32}' (x_3 / x_2 - x_2 / x_3)
+        \end{aligned}
+        \]
+    </p>
+</section>
+<section>
+    <p>Algebraic Kuramoto Equations:</p>
+    <p>
+    \[
+        0 = \omega_i - \sum_{j=1}^n a_{ij}'
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    <br/>
+    </p>
+    <ul>
+        <li class="fragment">How many solutions?</li>
+        <li class="fragment">How to find all solutions?</li>
+        <li class="fragment">What can network topology tell us?</li>
+        <li class="fragment">Can we decompose large networks?</li>
+    </ul>
+</section>
+<section>
+    <h3>Root counting</h3>
+    <p>
+        \[
+        \begin{aligned}
+            \omega_1 &= a_{10}' (x_1 / x_0 - x_0 / x_1) + a_{13}' (x_1 / x_3 - x_3 / x_1) \\
+            \omega_2 &= a_{20}' (x_2 / x_0 - x_0 / x_2) + a_{23}' (x_2 / x_3 - x_3 / x_2) \\
+            \omega_3 &= a_{31}' (x_3 / x_1 - x_1 / x_3) + a_{32}' (x_3 / x_2 - x_2 / x_3)
+        \end{aligned}
+        \]
+    </p>
+    <ul class="fragment">
+        <li>Bezout number</li>
+        <li>Bi-homogeneous Bezout number</li>
+        <li>BKK bound</li>
+        <li>Intersection of tropical hypersurfaces</li>
+        <li>Birationally invariant intersection index</li>
+    </ul>
+</section>
+<section>
+    <h3>BKK bound</h3>
+    <div class="theorem">
+        <h4>Theorem (Bernshtein-Kushnirenko-Khovanskii)</h4>
+        <p>
+            Given a system of Laurent polynomials
+            $f_1,\dots,f_n$ in $(x_1,\dots,x_n)$
+            with <span class="emph">generic</span> coefficients,
+            the number of isolated common roots in
+            $(\mathbb{C}^*)^n$ is bounded by
+        </p>
+        <p>
+            \[ \text{MVol}(\text{Newt}(f_1),\dots,\text{Newt}(f_n)) \]
+        </p>
+    </div>
+</section>
+<section>
+    <p>
+        \[
+            \text{Minkowski sum: }
+            A + B := \{ a + b \mid a \in A, b \in B \}
+        \]
+    </p>
+    <div class="theorem fragment">
+        <h4>Mixed volume (Minkowski)</h4>
+        <p>
+            For convex polytopes $P_1,\dots,P_n$ in $\mathbb{R}^n$,
+            the <b class="alert">mixed volume</b>
+            $\text{MVol}(P_1,\dots,P_n)$
+            is the coefficient of $\lambda_1 \cdots \lambda_n$ in
+            \[
+                \text{vol}(\lambda_1 P_1 + \cdots + \lambda_n P_n)
+            \]
+        </p>
+    </div>
+</section>
+<section>
+    <svg width="960" height="460" id="canvas">
+        <text x="250" y="390">+</text>
+        <text x="480" y="390">=</text>
+    </svg>
+    
+    <div class="mcols">
+        <div class="col5">
+            <label>$\lambda_1$</label>
+            <input type="range" min="30" max="120" value="100" class="slider" id="scale1">
+        </div>
+        <div class="col5">
+            <label>$\lambda_2$</label>
+            <input type="range" min="30" max="100" value="80" class="slider" id="scale2">
+        </div>
+        <div class="col2">
+            <label class="switch">
+                <input type="checkbox" id="showarea">
+                Area
+            </label>
+        </div>
+    </div>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script>
+        d3.select("#scale1")  .on("input", function() { update(); });
+        d3.select("#scale2")  .on("input", function() { update(); });
+        d3.select("#showarea").on("input", function() { showarea = this.checked; update(); });
+
+        let showarea = false;
+        let A = [
+            [  0,   0],
+            [200,   0],
+            [200, 200],
+            [  0, 200]
+        ];
+        let B = [
+            [100,200],
+            [200,100],
+            [0,0],
+        ];
+        let tA = [  10, 10];  // translation for A
+        let tB = [ 280, 10];  // translation for B
+        let tM = [ 520, 10];  // translation for A+B
+
+        let svg    = d3.select("#canvas");
+        let width  = svg.attr("width");
+        let height = svg.attr("height");
+
+        let sA  = undefined;   // scaled and shifted version of A
+        let sB  = undefined;   // scaled and shifted version of B
+        let sM  = undefined;   // scaled and shifted version of A+B
+        let sMA = undefined;
+        let sMB = undefined;
+
+        let oA  = svg.append("path").attr("class", "shape1");   // outline of A
+        let oB  = svg.append("path").attr("class", "shape2");   // outline of B
+        let oM  = svg.append("path").attr("class", "shape3");   // outline of A+B
+        let oMA = svg.append("path").attr("class", "shape1");   // outline of A in A+B
+        let oMB = svg.append("path").attr("class", "shape2");   // outline of B in A+B
+
+        update();
+
+        function update () {
+        let s1 = d3.select("#scale1").property("value");
+        let s2 = d3.select("#scale2").property("value");
+        let v1 = s1 / 100;
+        let v2 = s2 / 100;
+        let vA = A.map( x => [ v1*x[0], v1*x[1] ]);
+        let vB = B.map( x => [ v2*x[0], v2*x[1] ]);
+        sA  = vA.map( x => [ tA[0]+x[0], height-x[1]-tA[1] ] );
+        sB  = vB.map( x => [ tB[0]+x[0], height-x[1]-tB[1] ] );
+        sM  = vA.map( a => vB.map( b => ([ tM[0]+a[0]+b[0], height-tM[1]-a[1]-b[1]]))).flat();
+        sMA = vA.map( a => [ tM[0]+a[0], height-tM[1]-a[1] ]);
+        sMB = vB.map( b => [ tM[0]+b[0]+vA[2][1], height-tM[1]-b[1]-vA[2][1] ]);
+
+        oA.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+        oB.datum(sB).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+        oM.datum(d3.geom.hull(sM)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+        if (showarea) {
+            oMA.datum(sMA).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
+            oMB.datum(sMB).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
+        } else {
+            oMA.style("opacity",0);
+            oMB.style("opacity",0);
+        }
+        }
+    </script>
+    <p>
+        $\text{MVol}(A,B) = \text{Coef. of } \lambda_1 \lambda2 
+        \text{ in }
+        (\lambda_1 A + \lambda_2 B)$
+    </p>
+</section>
+<section>
+    <p>
+        Root count for the Algebraic Kuramoto equations
+    </p>
+    <p>
+        \[
+            0 = \omega_i - \sum_{j=0}^n a'_{ij} 
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+        \]
+    </p>
+    <p>
+        can be computed as the BKK bound
+        <b class="alert fragment">???</b>
+    </p>
+</section>
+<section>
+    <!-- <h3>Birationally invariant intersection index</h3> -->
+    <div class="theorem">
+        <h4>Intersection index (Kaveh & Khovanskii)</h4>
+        <p>
+            Given an irreducible $n$-dimensional toric variety $X$
+            and finite dimensional vector spaces of rational functions 
+            $L_1,\dots,L_n$ on $X$,
+            the number of common zeros of $(f_1,\dots,f_n)$ in $X$
+            for generic choices of $f_1 \in L_1$, $\ldots$, $f_n \in L_n$
+            is the <b class="alert">birationally invariant intersection index</b>
+        </p>
+        <p>
+            \[
+                [\;L_1 \,,\, \ldots\,,\, L_n\;]
+            \]
+        </p>
+    </div>
+    <p class="footnote">
+        Generalization of the BKK bound
+    </p>
+    <p class="fragment">
+        (Mixed volume of Newton-Okounkov bodies)
+    </p>
+</section>
+<section>
+    <p>
+        Is is possible to have
+        $\text{B.I.I.I.} \equiv \text{BKK bound}$ ?
+        <br>
+    </p>
+    <div class="theorem fragment">
+        <h4>Theorem (C.)</h4>
+        <p>
+            Suppose each $L_i = \text{span}_{\mathbb{C}}\{P_{ij}\}$
+            for some Laurent polynomials $P_{ij}$'s.
+            If each $\text{Newt}(L_i)$ is full dimensional and 
+            every positive-dimensional proper faces of it 
+            intersects $\text{Newt}(P_{ij})$
+            at no more than one point, then
+        </p>
+        <p>
+            \[
+                [ L_1, . . . , L_n ] \;=\; 
+                \text{MVol} ( \text{Newt}(L_1), . . . , \text{Newt}(L_n) ).
+            \]
+            <br>
+        </p>
+    </div>
+</section>
+<section>
+    <p>Consider the algebraic Kuramoto equations</p>
+    <p>
+        \[
+        \begin{aligned}
+            -\omega_1 + a_{10}' (x_1 / x_0 - x_0 / x_1) + a_{12}' (x_1 / x_2 - x_2 / x_1) \\
+            -\omega_2 + a_{20}' (x_2 / x_0 - x_0 / x_2) + a_{21}' (x_2 / x_1 - x_1 / x_2) \\
+        \end{aligned}
+        \]
+    </p>
+    <svg width="600" height="300" viewbox="-150 -150 600 300">
+        <g transform="scale(1,-1) translate(0,0)">
+            <polygon class="shape1"
+                points="100,0 100,-100 -100,0 -100,100" />
+            <path d="M 100 0 L -100 0 M 100 -100 L -100 100"
+                class="shape2 fragment" />
+        </g>
+        <g transform="scale(1,-1) translate(270,0)">
+            <polygon class="shape1"
+                points="0,100 -100,100 0,-100 100,-100" />
+            <path d="M 0 100 L 0 -100 M 100 -100 L -100 100"
+                class="shape2 fragment" />
+        </g>
+    </svg>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Proposition</h4>
+        <p>
+            Given a complete graph,
+            for generic choices of the coefficients,
+            the complex root count (b.i.i.i.) of 
+            algebraic Kuramoto equations
+            \[
+                0 = \omega_i - \sum_{j=1}^n a_{ij}'
+                \left(
+                    \frac{x_i}{x_j} - \frac{x_j}{x_i}
+                \right)
+            \]
+            is exactly the BKK bound.
+        </p>
+    </div>
+</section>
+<section>
+    <table>
+        <tr>
+            <td>B.i.i.i.</td>
+            <td>$\to$</td>
+            <td>BKK bound</td>
+            <td class="fragment" data-fragment-index="2">$\to$</td>
+            <td class="fragment" data-fragment-index="2">Volume?</td>
+        </tr>
+        <tr class="fragment" data-fragment-index="1">
+            <td>Mixed volume of N.O. bodies</td>
+            <td></td>
+            <td>Mixed volume of Newton polytopes</td>
+            <td></td>
+            <td class="fragment" data-fragment-index="2">Volume of a single polytope</td>
+        </tr>
+    </table>
+
+</section>
+<section>
+    <div class="theorem">
+        <h4>Theorem (C.)</h4>
+        <p>
+            If $A$ and $B$ "touch" all the edges of
+            $\text{conv}(A \cup B)$, then
+        </p>
+        <p>
+            \[
+                \text{MVol}(A,B) \;=\; \text{Vol}_2( \text{conv} (A \cup B) )
+            \]
+        </p>
+    </div>
+    
+    <svg width="700" height="250">
+        <g transform="scale(1,-1) translate(0,-220)">
+            <polygon class="shape1"
+                points="0,0 200,0 200,200 0,200" />
+        </g>
+        <g transform="scale(1,-1) translate(250,-220)">
+            <polygon class="shape2"
+                points="0,0 200,100 100,200" />
+        </g>
+        <g transform="scale(1,-1) translate(500,-220)">
+            <polygon class="shape1"
+                points="0,0 200,0 200,200 0,200" />
+            <polygon class="shape2"
+                points="0,0 200,100 100,200" />
+        </g>
+        <g transform="translate(120,250) scale(0.6,0.6)">
+            <text x="0" y="0" fill="black"> Mixed volume: 8</text>
+        </g>
+        <g transform="translate(505,250) scale(0.6,0.6)">
+            <text x="0" y="0" fill="black"> Normalized vol. = 8</text>
+    </svg>
+</section>
+<section>
+    <p>
+        Mixed volume $\longrightarrow$ normalized volume
+    </p>
+    <svg width="420" height="400" id="vmvol_canvas"></svg>
+    <div class="mcols">
+        <div class="col5">
+            <label>$\lambda_1$</label>
+            <input type="range" min="70" max="200" value="120" class="slider" id="vmvol_scale1">
+        </div>
+        <div class="col5">
+            <label>$\lambda_2$</label>
+            <input type="range" min="70" max="180" value="120"  class="slider" id="vmvol_scale2">
+        </div>
+        <div class="col2">
+            <label class="switch">
+                <input type="checkbox" id="vmvol_showarea">
+                Area
+            </label>
+        </div>
+    </div>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script>
+        var vmvol_showarea = false;
+
+        d3.select("#vmvol_scale1")  .on("input", function() { vmvol_update(); });
+        d3.select("#vmvol_scale2")  .on("input", function() { vmvol_update(); });
+        d3.select("#vmvol_showarea").on("input", function() { vmvol_showarea = this.checked; vmvol_update(); });
+
+        let vmvol_svg    = d3.select("#vmvol_canvas");
+        let vmvol_width  = vmvol_svg.attr("width");
+        let vmvol_height = vmvol_svg.attr("height");
+
+        var orig_x = 20;
+        var orig_y = 20;
+
+        var vmvol_A = [
+            [  0,   0],
+            [200,   0],
+            [200, 200],
+            [  0, 200]
+        ]
+
+        var vmvol_B = [
+            [100,200],
+            [200,100],
+            [0,0],
+        ]
+
+        let vmvol_sA = undefined;   // scaled version of A
+        let vmvol_sB = undefined;   // scaled version of B
+        let vmvol_sH = undefined;   // conv( sA U tB )
+
+        var vmvol_oH    = vmvol_svg.append("path").attr("class", "shape3");
+        var vmvol_oA    = vmvol_svg.append("path").attr("class", "shape4");
+        var vmvol_oB    = vmvol_svg.append("path").attr("class", "shape4");
+        var vmvol_area1 = vmvol_svg.append("path").attr("class", "shape1");
+        var vmvol_area2 = vmvol_svg.append("path").attr("class", "shape1");
+        var vmvol_area3 = vmvol_svg.append("path").attr("class", "shape1");
+        var vmvol_area4 = vmvol_svg.append("path").attr("class", "shape1");
+
+        vmvol_update();
+
+        function vmvol_update() {
+            let lineto = (d => "M" + d.join("L") + "Z");
+            let s1 = +d3.select("#vmvol_scale1").property("value");
+            let s2 = +d3.select("#vmvol_scale2").property("value");
+            let v1 = s1 / 100;
+            let v2 = s2 / 100;
+            let sA = A.map( x => [ orig_x + v1*x[0], vmvol_height - orig_y - v1*x[1] ]);
+            let sB = B.map( x => [ orig_x + v2*x[0], vmvol_height - orig_y - v2*x[1] ]);
+            let sH = sA.concat(sB);
+
+            vmvol_oH.datum(d3.geom.hull(sH)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+            if (vmvol_showarea) {
+                vmvol_area1.datum([sA[0],sA[1],sB[1]]).attr("d", lineto).style("opacity",1);
+                vmvol_area2.datum([sA[0],sA[2],sB[1]]).attr("d", lineto).style("opacity",1);
+                vmvol_area3.datum([sA[0],sA[2],sB[0]]).attr("d", lineto).style("opacity",1);
+                vmvol_area4.datum([sA[0],sA[3],sB[0]]).attr("d", lineto).style("opacity",1);
+            } else {
+                vmvol_area1.style("opacity",0);
+                vmvol_area2.style("opacity",0);
+                vmvol_area3.style("opacity",0);
+                vmvol_area4.style("opacity",0);
+            }
+            vmvol_oA.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+            vmvol_oB.datum(sB).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+        }
+    </script>
+</section>
+<section>
+    <div class="theorem">
+        <p>
+            For $\varnothing \ne S_1,\dots,S_n \subset \mathbb{Z}^n$,
+            let $\tilde{S} = S_1 \cup \cdots \cup S_n$.
+            If every positive dimensional face $F$ of $\text{conv}(\tilde{S})$ satisfies
+            <ol>
+                <li>$F \cap S_i \ne \varnothing$ for all $i \in \{1,\dots,n\}$; or</li>
+                <li>$F \cap S_i$ is a singleton for some $i \in \{1,\dots,n\}$; or</li>
+                <li>
+                    For each $i \in I := \{ i \mid F \cap S_i \ne \varnothing \}$,
+                    $F \cap S_i$ is contained in a $|I|$-dimensional 
+                    coordinate subspace in which 
+                    and its projection of dimension less than $|I|$ then
+                </li>
+            </ol>
+        </p>
+        <p>
+            \[
+                \text{MVol} (\text{conv}(S_1), \dots, \text{conv}(S_n)) = 
+                \text{Vol}_n (\text{conv}(\tilde{S})).
+            \]
+        </p>
+    </div>
+</section>
+<section>
+    <p>
+        Much more general equivalence results exist for
+        mixed volume and semi-mixed volume.<br/>
+    </p>
+
+    <ul>
+        <li>
+            C. 
+            <span class="footnote">"Unmixing the mixed volume computation"</span>
+        </li>
+        <li>
+            B. Frederic & I. Soprunov 
+            <span class="footnote">
+                "Criteria for Strict Monotonicity of the Mixed Volume of Convex Polytopes"
+            </span>
+        </li>
+    </ul>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Definition: <b class="alert">Adjacency polytope</b></h4>
+        <p>
+            For a graph $G$ with nodes $\{0,1,\ldots,n\}$, 
+        </p>
+        <p>
+            \[
+                \nabla_G \;:=\;
+                \text{conv} \{ \pm(\mathbf{e}_i - \mathbf{e}_j) \mid \{i,j\} \in E(G) \}
+            \]
+            where $\mathbf{e}_0 = \mathbf{0}$.
+        </p>
+    </div>
+    <div class="mcols">
+        <div class="col4">
+            <svg width="300" height="200" class="fragment">
+                <path fill="none" stroke="black" d="M 100 50 L 20 150 L 180 150 Z"></path>
+                <g transform="translate(100,50)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">0</text>
+                </g>
+                <g transform="translate(20,150)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">1</text>
+                </g>
+                <g transform="translate(180,150)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">2</text>
+                </g>
+            </svg>
+        </div>
+        <div class="col4">
+            <table class="fragment">
+                <tr>
+                    <td>$\pm(\mathbf{e}_0 - \mathbf{e}_1)$</td>
+                </tr>
+                <tr>
+                    <td>$\pm(\mathbf{e}_1 - \mathbf{e}_2)$</td>
+                </tr>
+                <tr>
+                    <td>$\pm(\mathbf{e}_2 - \mathbf{e}_0)$</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col4">
+            <svg width="240" height="200" class="fragment">
+                <g transform="scale(0.8,-0.8) translate(105,-105)">
+                    <polygon 
+                        points="-100,0 0,-100 100,-100 100,0 0,100 -100,100"
+                        class="shape2" />
+                </g>
+            </svg>
+        </div>
+    </div>
+        <p class="fragment">
+            Convex hull of the union of the Newton polytopes
+        </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Theorem (C.)</h4>
+        <p>
+            For a <b>cycle</b> graph $C_N$ of $N$ nodes,
+            the corresponding Kuramoto equations with generic coefficients 
+            the total number of complex solutions it has is exactly
+        </p>
+        <p>
+            \[
+                \text{Vol}_{N-1}(\nabla_{C_N})
+            \]
+        </p>
+        <p class="footnote">(normalized volume of the adjacency polytope)</p>
+    </div>
+</section>
+<section>
+    <h3>Generalizations</h3>
+    <ul>
+        <li>Trees</li>
+        <li>Complete graphs</li>
+        <li>Cycles glued together along an single edge</li>
+    </ul>
+</section>
+<section>
+    <table>
+        <tr>
+            <td>
+            Adjacency polytopes<br>
+            for complete graphs
+            </td>
+            <td>
+                $\longrightarrow$
+            </td>
+            <td>
+                Root system<br> 
+                polytopes
+            </td>
+        </tr>
+    </table>
+    <p>
+        <b class="alert">Symmetric edge polytope</b>:
+        Matsui, Higashitani, Nagazawa, Ohsugi, Hibi. 
+        <span class="emph gray"> 2011 </span>
+    </p>
+    <p>
+        <b class="alert">Fundamental polytope</b>:
+        Delucchi & Hoessly
+        <span class="emph gray"> 2019 </span>
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Theorem (C., R. Davis, D. Mehta)</h4>
+        <p>
+            For tree networks of $N$ oscillators,
+            the algebraic Kuramoto system has
+            at most $2^{N-1}$ isolated complex solutions.
+        </p>
+        <p>
+            For cycle networks of $N$ oscillators,
+            the algebraic Kuramoto system has at most 
+            $N\binom{N-1}{\lfloor (N-1)/2 \rfloor}$ 
+            isolated complex solutions.
+        </p>
+    </div>
+    <p class="fragment">
+        These bound may be attained by just
+        <b class="alert">real solutions</b>:
+        (Zachariah, Charles, Boston, Lesieutre 2018)
+        <!-- <span class="footnote">
+            Distributions of the Number of Solutions to the Network Power Flow Equations.
+        </span> -->
+    </p>
+</section>
+<section>
+    <p>
+        Adjacency polytope
+    </p>
+    <table>
+        <tr class="fragment">
+            <td>Volume</td>
+            <td>$\longrightarrow$</td>
+            <td>Root count</td>
+        </tr>
+        <tr class="fragment">
+            <td>Facets</td>
+            <td>$\longrightarrow$</td>
+            <td>Directed subnetworks</td>
+        </tr>
+    </table>
+</section>
+<section>
+    <h3>Directed edges</h3>
+    <p>
+    \[
+        0 = \omega_i - \sum_{j=1}^n a_{ij}'
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    <br/>
+    </p>
+    <img width="500" src="dir-edges.png">
+
+</section>
+<section>
+    <h3>Directed Kuramoto equations</h3>
+    <img width="330" src="cycle3.png">
+    <img width="330" src="dag3.png">
+
+    <p>
+        Generalized Kuramoto equations:
+        \[
+            c_i - \sum_{(i,j) \in \mathcal{E}(G)} 
+            a_{ij} \frac{x_i}{x_j}
+        \]
+    </p>
+
+    <p class="footnote">
+        Similar approach:
+        Delabays, Jacquod & Dörfler
+        <span class="emph">
+            The Kuramoto model on oriented and signed graphs
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Directed acyclic decomposition</h3>
+    <img class="stretch" src="dac-cycle3.png">
+    <p>
+        3 oscillators has at most <b>6</b> synchronization configurations.
+    </p>
+</section>
+<section>
+    <h4>Subnetworks and adjacency polytope</h4>
+    <!-- <h3>Facet subsystem</h3>
+    <p>
+        For each facet $F$ of the adjacency polytope $P(C_N)$,
+    </p>
+    <p>
+        \[
+            c_k - \sum_{(i,j) \in F} a_{kij} 
+            \left(
+                \frac{x_i}{x_j}
+            \right)
+            \quad\text{for } k = 0, \ldots, N-1 
+        \]
+        where $c_k$'s and $a_{kij}$'s are generic coefficients.
+    </p> -->
+    <img width="340" src="cycle-3-facet1.png">
+    <img width="380" src="cycle-3-dac1.png">
+</section>
+<section>
+    <!-- <p>
+        \[
+        \begin{aligned}
+        \omega_0 &- \left[
+            a_{01}' (x_0 x_1^{-1} - x_0^{-1} x_1) +
+            a_{02}' (x_0 x_2^{-1} - x_0^{-1} x_2)
+        \right]
+        \\
+        \omega_1 &- \left[
+            a_{10}' (x_1 x_0^{-1} - x_1^{-1} x_0) +
+            a_{12}' (x_1 x_2^{-1} - x_1^{-1} x_2)
+        \right]
+        \\
+        \omega_2 &- \left[
+            a_{21}' (x_2 x_1^{-1} - x_2^{-1} x_1) +
+            a_{20}' (x_2 x_0^{-1} - x_2^{-1} x_0) 
+        \right]
+        \end{aligned}
+        \]
+    </p> -->
+    <div class="theorem">
+        <h4>Deformation (adjacency polytope homotopy)</h4>
+    <p>
+        We define $H(x_0,x_1,x_2,t)=(h_0,h_1,h_2)$ given by
+    </p>
+    <p>
+        \[
+        \begin{aligned}
+        h_0 &=
+        \frac{\omega_0}{t} - \left[
+            a_{01}' \left(\frac{x_0}{x_1} - \frac{x_1}{x_0}\right) +
+            a_{02}' \left(\frac{x_0}{x_2} - \frac{x_2}{x_0}\right)
+        \right]
+        \\
+        h_1 &=
+        \frac{\omega_1}{t} - \left[
+            a_{10}' \left(\frac{x_1}{x_0} - \frac{x_0}{x_1}\right) +
+            a_{12}' \left(\frac{x_1}{x_2} - \frac{x_2}{x_1}\right)
+        \right]
+        \\
+        h_2 &=
+        \frac{\omega_2}{t} - \left[
+            a_{21}' \left(\frac{x_2}{x_1} - \frac{x_1}{x_2}\right) +
+            a_{20}' \left(\frac{x_2}{x_0} - \frac{x_0}{x_2}\right) 
+        \right]
+        \end{aligned}
+        \]
+    </p>
+    <p>
+        which is a continuous deformation of the original system
+    </p>
+    </div>
+    <!-- <p class="fragment">
+        <br>At $t=1$, $H$ is the original system.
+    </p>
+    <p class="fragment">
+        At $t=0$, $H$ becomes undefined.
+    </p> -->
+</section>
+<section>
+    <p>As $t \to 0$, the solutions escape $(\mathbb{C}^*)^3 = (\mathbb{C} \setminus \{0\})^3$.</p>
+    <p class="fragment">
+        ...and approach limit set at $t=0$ defined by
+    </p>
+    <p class="fragment">
+        \[
+            \begin{aligned}
+                \omega_1 &= a_{110} x_1 / x_0 + a_{120} x_2 / x_0 \\
+                \omega_2 &= a_{210} x_1 / x_0 + a_{220} x_2 / x_0
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment">
+        <img src="cycle-3-dac1.png" width="330">
+    </p>
+    <!-- <p class="fragment">
+        One of the <b>facet subsystem</b>
+    </p> -->
+</section>
+<section>
+    <h3>Deformation to facets</h3>
+    <!-- <p>Kuramoto equations -> adjacency polytopes</p> -->
+    <p>
+        \[
+        \begin{aligned}
+        h_0 &=
+        \frac{\omega_0}{t} - \left[
+            a_{01}' \left(\frac{x_0}{x_1} - \frac{x_1}{x_0}\right) +
+            a_{02}' \left(\frac{x_0}{x_2} - \frac{x_2}{x_0}\right)
+        \right]
+        \\
+        h_1 &=
+        \frac{\omega_1}{t} - \left[
+            a_{10}' \left(\frac{x_1}{x_0} - \frac{x_0}{x_1}\right) +
+            a_{12}' \left(\frac{x_1}{x_2} - \frac{x_2}{x_1}\right)
+        \right]
+        \\
+        h_2 &=
+        \frac{\omega_2}{t} - \left[
+            a_{21}' \left(\frac{x_2}{x_1} - \frac{x_1}{x_2}\right) +
+            a_{20}' \left(\frac{x_2}{x_0} - \frac{x_0}{x_2}\right) 
+        \right]
+        \end{aligned}
+        \]
+    </p>
+    <p>as $t \to 0$ the solution set deform into limit sets at "infinity"</p>
+    <p>...defined by each <b class="alert">facet subsystems</b></p>
+</section>
+<section>
+    <p align="left">
+    General construction: 
+    \[
+        h_i(\theta_1,\ldots,\theta_{n},t) = \frac{\omega_i}{t} - \sum_{j=0}^n a_{ij}' 
+        \left(
+            \frac{x_i}{x_j} - \frac{x_j}{x_i}
+        \right)
+    \]
+    </p>
+    <div class="fragment">
+        <p align="left">
+            Advantages over polyhedral homotopy:
+        </p>
+        <ul>
+            <li>Skips mixed volume computation step</li>
+            <li>Structure preserving</li>
+            <li>Starting systems have "meanings"</li>
+            <li>Involving 0-1 liftings only</li>
+        </ul>
+    </div>
+</section>
+<section>
+    <div class="mcols">
+        <div class="col4">
+            <p>
+                A cycle of 5 oscillators has 30 subnetworks.
+            </p>
+        </div>
+        <div class="col8">
+            <img width="500" src="dac-cycle.png">
+        </div>
+    </div>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Proposition (Topology of facet subnetworks)</h4>
+        <p>
+        The underlying directed graph of a facet subnetwork 
+        has the following properties:
+        <ul>
+            <li>it is <b>acyclic</b>;</li>
+            <li>it contains all the nodes;</li>
+            <li>all paths between a pair of nodes have the same length;</li>
+            <li>each paths contains no more than half of the edges of any undirected cycle in the original graph.</li>
+        </ul>
+        </p>
+    </div>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Definition (Primitive subnetwork)</h4>
+        <p>
+            A subnetwork is called <b class="alert">primitive</b> 
+            if the underlying graph is a connected, acyclic,
+            and has $N-1$ directed edges.
+        </p>
+    </div>
+    <br/>
+    <div class="mcols">
+        <div class="col4">
+            <img class="fragment" src="cycle-5-dag1.png" width=210>
+        </div>
+        <div class="col8">
+            <div class="fragment">
+                <div class="theorem">
+                    <h4>
+                        Proposition
+                    </h4>
+                    <p>
+                        The facet subsystem corresponding to a <b>primitive</b> subnetwork
+                        defines a <b>irreducible toric variety</b>.
+                    </p>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</section>
+<section>
+    <p>Primitive subnetworks give rise to "simple" solution sets</p>
+    <p class="fragment">
+        When will a facet subnetwork be primitive?
+        <br/>
+    </p>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>Theorem</h4>
+            <p>
+                For a <b>tree</b> graph, 
+                <b>all</b> facet subnetworks are primitive.
+            </p>
+        </div>
+    </div>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>Theorem</h4>
+            <p>
+                For a <b>cycle</b> graph $C_N$, if $N$ is odd then
+                <b>all</b> facet subnetworks are primitive.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>
+        Direct acyclic decomposition:
+    </h3>
+    <ul>
+        <li class="fragment">Deform a Kuramoto equations</li>
+        <li class="fragment">...onto the facets of its adjacency polytope</li>
+        <li class="fragment">...leads to facet subsystems</li>
+        <li class="fragment">...and direct acyclic subnetworks</li>
+    </ul>
+</section>
+<!-- <section>
+    <h3>The dictionary</h3>
+    <table>
+        <tr>
+            <th>Kuramoto network</th>
+            <th>Kuramoto equations</th>
+            <th>Adjacency polytope</th>
+        </tr>
+        <tr>
+            <td>Facet subnetworks</td>
+            <td>Facet subsystems</td>
+            <td>Facet</td>
+        </tr>
+        <tr>
+            <td>Primitive subnetworks</td>
+            <td>Irreducible toric variety</td>
+            <td>Simplicial facet</td>
+        </tr>
+    </table>
+</section> -->
+<section>
+    <h3>Tropical connections</h3>
+    <div class="theorem">
+        <h4>Problem</h4>
+        <p>
+            For a given Kuramoto system with generic coefficients, 
+            what is the <b>tropical variety</b> it defines?
+        </p>
+    </div>
+    <div class="fragment">
+        <div class="theorem">
+            <h4>Weaker problem</h4>
+            <p>
+                For a given Kuramoto system with generic coefficients, 
+                what is the <b>tropical stable intersection</b> of this system?
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Tropical semi-field</h4>
+        <p>
+            \[
+                \mathbb{T} = (\; \mathbb{R} \cup \{ \infty \} \;,\; \oplus \;,\; \odot \;)
+            \]
+            with
+            \[
+            \begin{aligned}
+                a \oplus b &= \min \,\{\, a\,,\, b\, \}
+                &
+                a \odot b &= a + b
+            \end{aligned}
+            \]
+        </p>
+    </div>
+    <div class="theorem">
+        <h4>Tropical zero set</h4>
+        <p>
+            \[
+                \mathbb{V}( \text{Trop} (f))
+            \]
+        </p>
+        <p>
+            is the set of points where $\text{Trop}(f)$ is not differentiable.
+        </p>
+    </div>
+</section>
+<section>
+    <div class="theorem">
+        <h4>Tropical stable intersection</h4>
+        <p>
+            For polynomials $f_1,\dots,f_n$, the limit set
+            \[
+                \lim_{\epsilon \to 0} \bigcap_{i=1}^n [ \mathbb{V}(\text{Trop}(f_i)) + \epsilon \mathbf{v}_i ]
+            \]
+            for generic vectors $\mathbf{v}_1,\ldots,\mathbf{v}_n$ is well defined, 
+            and is called the <b>stable intersection</b>.
+        </p>
+    </div>
+    <p>
+        <br/>
+        Given a Kuramoto system, can we compute the <b>tropical stable intersection</b>?
+    </p>
+</section>
+<!-- <section>
+    <div class="theorem">
+        <h4>Theorem (C., Davis 2018) [arXiv:1810.05690]</h4>
+        <p>
+            For a cycle graph $C_N$ with <b>odd</b> number of nodes,
+            with valuation
+            \[
+                \text{val}(k_{ij}) = 0
+                \quad\text{ and }\quad
+                \text{val}(\omega_i) = -1,
+            \]
+            the tropical stable intersection of the system
+            consists of isolated points each of <b>multiplicity one</b>.
+        </p>
+    </div>
+    <p class="fragment">
+        <br/>
+        Indeed, explicit formula of the stable intersection points were derived.
+    </p>
+</section> -->
+<section>
+    <h3>The dictionary</h3>
+    <table class="booktab">
+        <tr>
+            <th>Kuramoto network</th>
+            <th>Kuramoto equations</th>
+            <th>Adjacency polytope</th>
+            <th>Tropical intersection</th>
+        </tr>
+        <tr>
+            <td>Facet subnetworks</td>
+            <td>Facet subsystems</td>
+            <td>Facet</td>
+            <td>Stable intersection</td>
+        </tr>
+        <tr>
+            <td>Primitive subnetworks</td>
+            <td>Irreducible toric variety</td>
+            <td>Simplicial facet</td>
+            <td>Isolated intersection of multiplicity one</td>
+        </tr>
+    </table>
+</section>
+<section>
+    <h1>Thank you!</h1>
+    <ul>
+        <li>
+            Chen 
+            <span class="alert">arXiv:1703.01684</span>
+            <span class="emph footnote">
+                "Unmixing the mixed volume computation" 
+            </span>
+        </li>
+        <li>
+            Chen, Davis, Mehta
+            <span class="alert">arXiv:1708.09246</span>
+            <span class="emph footnote">
+                "Counting equilibria of the Kuramoto model using birationally invariant intersection index " 
+            </span>
+        </li>
+        <li>
+            Chen, Davis
+            <span class="alert">arXiv:1810.05690</span>
+            <span class="emph footnote">
+                "A toric deformation method for solving Kuramoto equations" 
+            </span>
+        </li>
+        <li>
+            Chen
+            <span class="alert">arXiv:1812.05408</span>
+            <span class="emph footnote">
+                "On the equality of BKK bound and birationally invariant intersection index" 
+            </span>
+        </li>
+        <li>
+            Chen
+            <span class="alert">arXiv:1903.04492</span>
+            <span class="emph footnote">
+                "Directed acyclic decomposition of Kuramoto equations"
+            </span>
+        </li>
+    </ul>
+</section>

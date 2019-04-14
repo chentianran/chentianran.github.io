@@ -5,11 +5,12 @@ var coupled = false;
 var strength;
 
 function setup() {
-    var canvas = createCanvas(600,500);
+    var canvas = createCanvas(960,460);
     canvas.parent('sketch-holder');
     var b_reset  = createButton ('Reset');
     var b_couple = createButton ('Coupling');
     strength = createSlider(0, 40, 10);
+    frameRate(30);
 
     b_reset.parent('sketch-control');
     b_couple.parent('sketch-control');
@@ -24,6 +25,8 @@ function setup() {
 function draw() {
     background(255);
     translate (width/2, height/2);
+    // text(width,10,10);
+    // text(height,10,40);
 
     noFill();
     stroke (128, 128, 128);

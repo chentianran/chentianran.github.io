@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Mixed volume</title>
+<style>
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;   
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+rect {
+  fill: white;
+}
+
+.hull {
+  fill: orange;
+  stroke: black;
+  stroke-width: 3px;
+  /* stroke-linejoin: round; */
+}
+
+.A {
+  fill: olive;
+  stroke: black;
+  stroke-width: 3px;
+  /* stroke-linejoin: round; */
+}
+
+.B {
+  fill: violet;
+  stroke: black;
+  stroke-width: 3px;
+  /* stroke-linejoin: round; */
+}
+
+</style>
+<body>
+    <svg width="960" height="500" id="canvas"></svg>
+    <br/>
+    <label>lambda_1</label>
+    <div class="slidercontainer">
+      <input type="range" min="30" max="120" value="100" class="slider" id="scale1">
+    </div>
+    <label>lambda_2</label>
+    <div class="slidercontainer">
+      <input type="range" min="30" max="100" value="80" class="slider" id="scale2">
+    </div>
+    <label class="switch">
+        <input type="checkbox" id="showarea">
+        Show area
+        <!-- <span class="slider"></span> -->
+    </label>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+
+d3.select("#scale1")  .on("input", function() { update(); });
+d3.select("#scale2")  .on("input", function() { update(); });
+d3.select("#showarea").on("input", function() { showarea = this.checked; update(); });
+
+let showarea = false;
+let A = [
+    [  0,   0],
+    [200,   0],
+    [200, 200],
+    [  0, 200]
+];
+let B = [
+    [100,200],
+    [200,100],
+    [0,0],
+];
+let tA = [  10, 10];  // translation for A
+let tB = [ 280, 10];  // translation for B
+let tM = [ 520, 10];  // translation for A+B
+
+let svg    = d3.select("#canvas");
+let width  = svg.attr("width");
+let height = svg.attr("height");
+
+svg.append("rect")
+    .attr("width",  width)
+    .attr("height", height);
+
+let sA  = undefined;   // scaled and shifted version of A
+let sB  = undefined;   // scaled and shifted version of B
+let sM  = undefined;   // scaled and shifted version of A+B
+let sMA = undefined;
+let sMB = undefined;
+
+let oA  = svg.append("path").attr("class", "A");    // outline of A
+let oB  = svg.append("path").attr("class", "B");    // outline of B
+let oM  = svg.append("path").attr("class", "hull"); // outline of A+B
+let oMA = svg.append("path").attr("class", "A");    // outline of A in A+B
+let oMB = svg.append("path").attr("class", "B");    // outline of B in A+B
+
+update();
+
+function update () {
+  let s1 = d3.select("#scale1").property("value");
+  let s2 = d3.select("#scale2").property("value");
+  let v1 = s1 / 100;
+  let v2 = s2 / 100;
+  let vA = A.map( x => [ v1*x[0], v1*x[1] ]);
+  let vB = B.map( x => [ v2*x[0], v2*x[1] ]);
+  sA  = vA.map( x => [ tA[0]+x[0], height-x[1]-tA[1] ] );
+  sB  = vB.map( x => [ tB[0]+x[0], height-x[1]-tB[1] ] );
+  sM  = vA.map( a => vB.map( b => ([ tM[0]+a[0]+b[0], height-tM[1]-a[1]-b[1]]))).flat();
+  sMA = vA.map( a => [ tM[0]+a[0], height-tM[1]-a[1] ]);
+  sMB = vB.map( b => [ tM[0]+b[0]+vA[2][1], height-tM[1]-b[1]-vA[2][1] ]);
+
+  oA.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+  oB.datum(sB).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+  oM.datum(d3.geom.hull(sM)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+  if (showarea) {
+    oMA.datum(sMA).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
+    oMB.datum(sMB).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
+  } else {
+    oMA.style("opacity",0);
+    oMB.style("opacity",0);
+  }
+}
+
+</script>
