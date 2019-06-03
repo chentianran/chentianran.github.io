@@ -1,73 +1,60 @@
 ---
 layout: default
-title: MATH-1050
+title: MATH-1120
 ---
 
-# MATH-1050 B (CRN 3334) Summer 2019 Syllabus
+# MATH-1120 A (CRN 3325) Summer 2019 Course Syllabus
 
-This class is primarily for students who require a college level mathematics course but will not continue on to calculus; however, it can be used a prerequisite for Finite Math (MATH 1100), Pre-Calculus Algebra (MATH 1120), Pre-Calculus Algebra with Trigonometry (MATH 1150), or Trigonometry (MATH 1550), with a minimum grade of C in MATH 1050. Review topics include graphing basic functions, and linear, quadratic & rational expressions and equations.  Main topics include polynomial, rational, inverse, exponential, and logarithmic functions and their applications in business and science, inequalities, and systems of equations.
+This course is primarily designed for students who intend to continue to MATH 1150
+or do not require calculus.
+Topics include polynomial, rational, exponential, and logarithmic functions;
+systems of equations and inequalities; quadratic inequalities; and the Binomial Theorem.
 
 ### When, where, and who
 
-* Time: Tue, Thu 1:00pm--3:05pm
-* Room: 318 Goodwyn Hall
+* Time: Mon, Wed 1:00pm--3:05pm
+* Room: 222 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
-* Course page: <http://www.tianranchen.org/teaching/math-1050/>
+* Course page: <http://www.tianranchen.org/teaching/math-1120/>
 {% include hours.markdown %}
 
 My job is to help you to succeed in this class.
-I will be happy to discuss issues related to this course
+I will be happy to discuss issues related to this course 
 (or anything mathematical) in person or via email.
 In addition to the normal office hours listed above,
 alternative meeting time may be arranged
 (please give me at least 48hr advanced notice).
 
-### Prerequisite
+### Prerequisites
 
-Grade of C# or better in MATH 0800 or an equivalent course,
-a score of 20 on ACT, a score of 480 on the SAT, or a level 4
-or better score on the AUM Mathematics Placement Test.
+MATH-0800/0801 (Intermediate Algebra) OR an equivalent course OR 
+an appropriate score on the AUM Mathematics Placement Test, ACT, or SAT.
 
 ### Textbook
 
-* [Required]
-    _College Algebra Essentials_ __5th Edition__
-    by Robert F. Blitzer, Pearson, 2018 
-    ISBN: 978-0-13-446929-4
+_Precalculus_ (10th Edition 2018) by Ron Larson (ISBN: 9781337271073)
 
-Students who violate these rules will be asked to leave the classroom
-and will not be allowed to return until they have spoken privately with me.
+Reading assignment and homework problems will be assigned from the textbook.
 
-### Course objectives
+### What we will learn
 
-Upon successful completion of this course the student will demonstrate an understanding of and ability to apply each of the following topics (time permitting):
-
-* Solve/Graph/Apply Linear, Rational, and Quadratic equations, including for Linear Inequalities
-* Graph basic functions (Quadratic, Absolute Value, Square Root) and their transformations
-* Perform algebraic operations of functions and composition of functions
-* Find inverse functions and their graphs
-* Solve applications of Polynomial and Rational Functions
-* Solve Systems of Linear Equations in two and three variables and their applications
-* Exponential & Logarithmic Functions/Equations (graphing, solving, applying, properties)
+Selected topics from chapters 1, 2, 3, and 7.
+Upon successful completion of this course you will gain an understanding of 
+and ability to apply each of the following topics.
+* Functions and Inverse Functions 
+* Solving Equations and Inequalities
+* Polynomial, Rational, Exponential and Logarithmic Functions
+* Function Properties and Graphs
+* Systems of Equations
 
 ### Attendance and participation
 
-Participation in in-class discussions and activities is an important part
+Participation in in-class discussions and activities is an important part 
 of the learning process.
-Therefore class attendance is expected.
+Therefore class attendance is expected and recorded.
 _Students missing 6 or more classes without an approved excuse
 will receive an F grade_.
-<!-- The AUM Attendance Policy is as follows.
-Absences must be justified with an official written excuse.
-
-1. official university events with excuses provided in advance by the head of the University unit involved (e.g. for intercollegiate athletic matches, required academic events/academic travel)
-2. student illness/medical emergency or medical emergency for member of student’s immediate family
-3. death of a member of student’s immediate family
-4. military orders (notification should occur prior to the absence)
-5. jury duty or court subpoena (notification should occur prior to the absence)
-6. religious holiday (notification should occur prior to the absence)
-7. weather emergencies or perilous driving conditions (with notification if feasible) -->
 
 ### Code of conduct
 
@@ -83,15 +70,15 @@ In particular, please...
 ### Policy for calculators and smart devices
 
 Scientific calculators or equivalent software programs can be helpful in
-doing homework problems.
-Essentially you only need a basic calculator that is capable of performing arithmetic and exponent calculation.
-A graphing calculator such as the TI-84 (TI-83) is acceptable.
-However, calculators with CAS capability such as TI-89 or higher or similar 
-(Typically with a QUERTY keyboard) are __prohibited__ in all exams and quizzes.
-Please bring the calculator to all class meetings and exams.
-You may use the calculator for each test, but you will be required to show all work on tests.
-If no work is shown, you will receive zero credit.
-You are here to learn mathematics and a calculator should be used as a learning tool.
+doing homework problems. 
+According to AUM Mathematics Department Calculator Policy,
+students are required to have a graphing calculator
+(TI-84 is recommended).
+The use of such calculators may be required for certain homework problems
+or in-class activities.
+However, all the quizzes and exams are designed so that no calculator will be needed.
+Therefore calculators or any smart devices with internet capabilities
+are not allowed on any of the quizzes and exams.
 
 ### Reading assignments
 
@@ -126,7 +113,7 @@ However, it is strongly recommended that you complete them as early as possible.
 ### Quizzes
 
 Short in-class quizzes, designed to test our understanding of the material,
-will be given at beginning of each class meetings.
+will be given at _beginning_ of class meetings.
 These quizzes will be a major part of your course grade.
 Since the solutions will be released on the same day,
 __no makeup quiz will be offered__.
