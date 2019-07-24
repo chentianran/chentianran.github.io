@@ -158,10 +158,10 @@ weighted average.
 
 | Component     | Points | Where      |
 |---------------|--------|------------|
-| Reading tests | 26%    | Blackboard |
-| Concept tests |  5%    | Blackboard |
-| Quizzes       | 45%    | In-class   |
-| Worksheets    | 14%    | In-class   |
+| Reading tests | 20%    | Blackboard |
+| Concept tests | 10%    | Blackboard |
+| Quizzes       | 44%    | In-class   |
+| Worksheets    | 16%    | In-class   |
 | Final         | 10%    | In-class   |
 
 ### Grading scale
