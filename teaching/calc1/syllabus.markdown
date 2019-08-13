@@ -3,11 +3,11 @@ layout: default
 title: MATH-1610
 ---
 
-# MATH-1610A (CRN 1269) Fall 2018 Course Syllabus
+# MATH-1610 C (CRN 1115) Fall 2019 Course Syllabus
 
 ### When, where, and who
 
-* Time: Mon, Wed 10:50am -- 12:30pm
+* Time: Tue. \& Thu. 10:50am -- 12:30pm
 * Room: 218 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
@@ -141,6 +141,11 @@ religious holidays, or extreme weather conditions)
 and _proper documentation_ are provided (preferably _in advance_).
 Otherwise, a missing worksheet receives a score of _zero_.
 
+### Final exam
+
+Final exam, designed to test your overall understanding of the core concepts, 
+is scheduled at _10:45am -- 1:15pm December 5th_.
+
 ### Grade composition
 
 Your final grade is determined according to your overall performance of
@@ -151,10 +156,12 @@ and is calculated according to the following weights:
 |------------------|--------|------------|
 | Reading tests    |  10%   | Blackboard |
 | Homework         |  10%   | Blackboard |
-| Worksheets       |  20%   | In-class   |
-| Concept tests    |  20%   | Blackboard |
-| Online quizzes   |  20%   | Blackboard |
-| In-class quizzes |  20%   | In-class   |
+| Concept tests    |  10%   | Blackboard |
+| Online quizzes   |  12%   | Blackboard |
+| In-class quizzes |  38%   | In-class   |
+| Worksheets       |  10%   | In-class   |
+| Final            |  10%   | In-class   |
+| Participation    |   1%   | In-class   |
 
 ### Grading scale
 
@@ -164,7 +171,7 @@ and is calculated according to the following weights:
 * D: 60% - 69.9%
 * F: below 60%
 
-Borderline grades are determined by in-class participation
+Border line grades are determined by in-class participation
 (in discussions and activities) as well as attendance.
 
 ### Other policies

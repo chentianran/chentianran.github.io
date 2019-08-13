@@ -20,8 +20,11 @@ title: CV
 - 2005 : B.A. Computer Science, Western Connecticut State University, (CT USA).  
   Secondary major in Mathematics
 
-### Honors & Awards
+### Grants & Awards
 
+- 2019--2012 NSF research grant DMS-1923099 
+  _AMPS: Collaborative Research: A Convex Geometry and Homotopy Approach for Power-Flow Equations_
+  \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
 - 2016 AMS-Simons Travel Grant
 - 2014 A paper selected for Journal of Chemical Physics Editors’ Choice for 2014
 - 2010 Dr. Paul & Wilma Dressel endowed scholarship award
@@ -51,7 +54,8 @@ title: CV
 |--------------|----------------------------------------------|
 | 2016 to 2019 | Linear Algebra, Modern Algebra I, Modern Algebra II |
 |              | Mathematical modeling and simulation |
-|              | Pre-calculus, Calculus I,II, Multivariable Calculus |
+|              | Pre-calculus, Calculus I,II, Multivariable calculus |
+|              | Differential equations, Numerical analysis |
 | 2012 to 2016 | Calculus sequence, Linear Algebra, Transition to Advanced Mathematics, Abstract algebra. |
 | 2006 to 2012 | Teaching Assistant for Calculus sequence |
 
