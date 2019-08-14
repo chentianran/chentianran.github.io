@@ -178,10 +178,3 @@ Border line grades are determined by in-class participation
 ### Other policies
 
 {% include syllabus_policy.markdown %}
-
-### Calendar
-Below is the tentative schedule, and it may not reflect changes announced in class.
-The instructor reserves the right to adjust the policies outlined in this course syllabus.
-All changes will be clearly communicated to the students in class.
-
-<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=1200&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=do4jkapu6fe5n1vf28d9f4cdf4%40group.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="800" height="1200" frameborder="0" scrolling="no"></iframe>
