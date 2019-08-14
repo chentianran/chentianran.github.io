@@ -17,10 +17,13 @@ You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
 In the Fall Semester of 2019 I am teaching
-- [MATH-1610](teaching/calc1/) Calculus I
-- [MATH-3690](teaching/ode/)   Differential equations
-- [MATH-4600](teaching/num/)   Numerical analysis
 
+- [MATH-1610](teaching/calc1/) Calculus I
+- [MATH-3690](teaching/ode/) Differential equations
+- [MATH-4600](teaching/num/) Numerical analysis
+
+Office and office hours
+-----------------------
 
 {% include hours.markdown %}
 
@@ -77,11 +80,10 @@ Research Interests
 Active grants
 -------------
 
-- 2019--2012 NSF research grant DMS-1923099 
+- 2019--2012 NSF research grant DMS-1923099
   _AMPS: Collaborative Research: A Convex Geometry and Homotopy Approach for Power-Flow Equations_
   \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
 - 2016--2019 AMS-Simons Travel Grant
-
 
 Scientific Software
 -------------------

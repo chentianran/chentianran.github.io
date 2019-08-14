@@ -1,29 +1,3 @@
-- nickname: ap-kuramoto
-  title: Directed acyclic decomposition of Kuramoto equations
-  pdf: ap-kuramoto.pdf
-  arxiv: http://arxiv.org/abs/1903.04492
-  abstract: >
-    The Kuramoto model is one of the most widely studied model for describing
-    synchronization behaviors in a network of coupled oscillators, and it has found
-    a wide range of applications. Finding all possible frequency synchronization
-    configurations in a general non-uniform heterogeneous sparse network is an
-    important yet difficult problem due to the complicated nonlinear interactions.
-    In this paper, we develop a general framework for decomposing a Kuramoto
-    network into smaller directed acyclic subnetworks that will form the foundation
-    of a divide-and-conquer approach for studying the frequency synchronization
-    configurations of large Kuramoto networks.
-  bibtex: |
-    @article{Chen2018Directed,
-      archivePrefix = {arXiv},
-      arxivId = {1903.04492},
-      author = {Chen, Tianran},
-      eprint = {1903.04492},
-      month = {mar},
-      title = {{Directed acyclic decomposition of Kuramoto equations}},
-      url = {http://arxiv.org/abs/1903.04492},
-      year = {2019}
-    }
-
 - nickname: bkk-biii
   title: On the equality of BKK bound and birationally invariant intersection index
   pdf: bkk-biii.pdf
