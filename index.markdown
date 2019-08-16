@@ -46,12 +46,10 @@ I am an advisor for pre-engineering students.
 
 <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=700&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=k7cas66vp4vba2cruqhh4cila8%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FChicago" style="border-width:0" width="700" height="300" frameborder="0" scrolling="no"></iframe> -->
 
-Upcoming conferences
---------------------
-
+<!-- Upcoming conferences
 - [SIAM AG 2019](https://mathsites.unibe.ch/siamag19/)  
   July 9--13, 2019  
-  Bern, Switzerland
+  Bern, Switzerland -->
   
 <!-- - [AMS 2019 Spring Southeastern Sectional Meeting](http://www.ams.org/meetings/sectional/2261_program.html)  
   March 15-17, 2019 (Friday - Sunday)  
@@ -68,19 +66,11 @@ Recent talks
   Organized by Greg Blekherman, Anton Leykin, and Josephine Yu  
   [ [talk slides](/research/maag-2019/) ]
 
-Research Interests
-------------------
-
-- Numerical analysis, scientific computing, high performance computing
-- Application of numerical methods in physics, chemistry, and engineering
-- Systems of polynomial equations
-- Homotopy continuation methods
-- Numerical algebraic geometry
-
-Active grants
+Grants
 -------------
 
-- 2019--2012 NSF research grant DMS-1923099
+- 2019--2012 NSF research grant 
+  [DMS-1923099](https://nsf.gov/awardsearch/showAward?AWD_ID=1923099)
   _AMPS: Collaborative Research: A Convex Geometry and Homotopy Approach for Power-Flow Equations_
   \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
 - 2016--2019 AMS-Simons Travel Grant
@@ -90,7 +80,6 @@ Scientific Software
 
 - [__libtropicon__](/tropicon/)
     A library for computing intersection points of generic tropical hypersurfaces.
-
 - [__Hom4PS-3__](http://www.hom4ps3.org):
     A parallel numerical solver for systems of polynomial equations based on the Polyhedral Homotopy Method.
 - __MixedVol-3__:
