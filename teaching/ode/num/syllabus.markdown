@@ -3,15 +3,15 @@ layout: default
 title: MATH-3690
 ---
 
-# MATH-3690 A (CRN 1120) Fall 2019 Course Syllabus
+# MATH 4600-A (CRN 1122) Numerical Analysis I Fall 2019 Course Syllabus
 
 ### When, where, and who
 
-* Time: Tue. & Thu. 12:45pm -- 2:00pm
+* Time: Tue. & Thu. 2:10pm -- 3:25pm
 * Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
-* Course page: <http://www.tianranchen.org/teaching/ode/>
+* Course page: <http://www.tianranchen.org/teaching/num/>
 {% include hours.markdown %}
 
 My job is to help you to succeed in this class.
@@ -23,27 +23,26 @@ alternative meeting time may be arranged
 
 ### What we will learn
 
-This course will cover selected topics from _Ordinary Differential Equations_. 
+This course will cover selected topics in _numerical analsis_. 
 Upon successful completion of this course the you will have 
 an understanding of and ability to apply each of the following topics:
 
-* First-order differential equations
-* Higher-order (especially second-order) differential equations
-* Linear differential equations
-* Nonlinear differential equations
-* Infinite series solutions
-* Laplace transforms
-* Systems of linear differential equations
-* Boundary-value problems (optional)
-* Various applications (optional)
+* Theory of floating point numbers
+* Numerical Newton's method for solving nonlinear equations
+* Concept of numerical stability
+* Numerical methods for solving linear systems
+* Numerical differentiation methods
+* Numerical integration methods
+* Solving linear least square problems (optional)
+* Numerical methods for solving nonlinear systems (optional)
 
 ### Prerequisite
 
-In order to succeed in this class, certain basic mathematical skills are necessary.
-In particular, we need to feel comfortable with basic calculus concepts and techniques.
+We need to feel comfortable with basic concepts and techniques
+in calculus and linear algebra.
 These prerequisite can be satisfied by:
 
-* MATH-1620 (Calculus II) or equivalent courses
+* MATH-2660 (Linear algebra) or equivalent courses
 
 Multivariable calculus is not required.
 But certain more advanced topics will involve discussions
@@ -51,14 +50,12 @@ relating to partial derivatives.
 
 ### Textbook
 
-* [Required] _Differential Equations and Their Applications: An Introduction to Applied Mathematics_
-  by Martin Braun (any edition would be fine)
-  (4th edition ​ISBN: 978-0387978949)
-* [Optional] _Differential Equations with Boundary Value Problems_
-  by Dennis Zill & Warren Wright (any edition would be fine)
+* _Numerical Analysis_ by Timothy Sauer 
+  (any edition would be fine)
+  (3rd edition ​ISBN: 978-0134696454)
 
 Reading assignment and homework problems will be assigned from 
-the _required_ textbook.
+the this textbook.
 
 ### Attendance and participation
 
@@ -108,7 +105,7 @@ All concepts tests are due on the last day of classes
 and __no late submission will be accepted__.
 However, it is strongly recommended that you complete them as early as possible.
 
-### In-class quizzes
+<!-- ### In-class quizzes
 
 Short in-class quizzes are designed
 to test our understanding of the material discussed.
@@ -123,7 +120,7 @@ But Problem 6 -- 20 can be chosen only after you
 _received perfect scores on all previous problems_.
 For example, in order to choose Problem 8 on a quiz,
 you need to first receive _perfect_ scores on
-Problem 1,2,...,6,7.
+Problem 1,2,...,6,7. -->
 
 ### Homework
 
@@ -144,10 +141,10 @@ religious holidays, or extreme weather conditions)
 and _proper documentation_ are provided (preferably _in advance_).
 Otherwise, a missing worksheet receives a score of _zero_. -->
 
-### Final exam
+<!-- ### Final exam
 
 Final exam, designed to test your overall understanding of the core concepts,
-is scheduled at __10:45am -- 12:00pm__ on __Tuesday, Dec. 10__.
+is scheduled at __10:45am -- 12:00pm__ on __Tuesday, Dec. 10__. -->
 
 ### Grade composition
 
@@ -157,12 +154,10 @@ and is calculated according to the following weights:
 
 | Component        | Points | Where      |
 |------------------|--------|------------|
-| Concept tests    |  10%   | Blackboard |
+| Concept tests    |  20%   | Blackboard |
 | Reading tests    |  20%   | Blackboard |
-| Homework         |  30%   | Blackboard |
-| 20 problems      |  30%   | In-class   |
-| Final            |  10%   | In-class   |
-| Participation    |   2%   | In-class   |
+| Homework         |  50%   | Blackboard |
+| Participation    |  10%   | In-class   |
 
 ### Grading scale
 
