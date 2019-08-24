@@ -20,14 +20,14 @@ In the Fall Semester of 2019 I am teaching
 
 - [MATH-1610](teaching/calc1/) Calculus I
 - [MATH-3690](teaching/ode/) Differential equations
-- [MATH-4600](teaching/num/) Numerical analysis
 
-Office and office hours
------------------------
+Office hours
+------------
 
 {% include hours.markdown %}
 
-I am the advisor for the [AUM Math Club](teaching/mathclub/).
+Advising
+--------
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>

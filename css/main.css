@@ -8,15 +8,16 @@
  */
 
 /*@import url('https://fonts.googleapis.com/css?family=Oswald:700|Ubuntu:300&subset=greek,greek-ext,latin-ext');*/
-@import url('https://fonts.googleapis.com/css?family=Oswald:700|Raleway&subset=latin-ext');
+/* @import url('https://fonts.googleapis.com/css?family=Oswald:700|Raleway&subset=latin-ext'); */
 /* @import url(http://fonts.googleapis.com/css?family=Cardo:400,700|Merriweather+Sans:400,800); */
 /* @import url(http://fonts.googleapis.com/css?family=Cardo); */
 /* @import url(http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy);   */
 /* @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700); */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i|Oswald&display=swap');
 
 body {
     background-color: #ffffff;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #555;
@@ -183,7 +184,7 @@ hr {
 
 
 #footer {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Oswald', sans-serif;
     background-color: #2f2f2f;
     padding-top: 20px;
     padding-bottom: 60px;
