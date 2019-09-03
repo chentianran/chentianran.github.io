@@ -1,7 +1,8 @@
 - nickname: ap-kuramoto
   title: Directed acyclic decomposition of Kuramoto equations
   pdf: ap-kuramoto.pdf
-  journal: "Chaos: An Interdisciplinary Journal of Nonlinear Science"
+  journal: Chaos: An Interdisciplinary Journal of Nonlinear Science, Vol.29, Issue 9 2019
+  link: https://doi.org/10.1063/1.5097826
   arxiv: http://arxiv.org/abs/1903.04492
   abstract: >
     The Kuramoto model is one of the most widely studied model for describing
@@ -15,20 +16,25 @@
     configurations of large Kuramoto networks.
   bibtex: |
     @article{Chen2019Directed,
-      archivePrefix = {arXiv},
-      arxivId = {1903.04492},
       author = {Chen, Tianran},
-      eprint = {1903.04492},
-      month = {mar},
+      doi = {10.1063/1.5097826},
+      issn = {1054-1500},
+      journal = {Chaos: An Interdisciplinary Journal of Nonlinear Science},
+      month = {Sep},
+      number = {9},
+      pages = {093101},
+      publisher = {AIP Publishing LLC},
       title = {{Directed acyclic decomposition of Kuramoto equations}},
-      url = {http://arxiv.org/abs/1903.04492},
+      url = {http://aip.scitation.org/doi/10.1063/1.5097826},
+      volume = {29},
       year = {2019}
     }
+
 
 - nickname: unmixing
   title: Unmixing the mixed volume computation
   pdf: unmixing.pdf
-  journal: Discrete & Computational Geometry
+  journal: Discrete & Computational Geometry (2019) 62:55–86
   link: https://rdcu.be/br37V
   arxiv: http://arxiv.org/abs/1703.01684
   abstract: >
