@@ -1,3 +1,53 @@
+- nickname: k-uniform-cycles
+  title: On the root count of algebraic Kuramoto equations in cycle networks with uniform coupling
+  coauthors: Evgeniia Korchevskaia
+  pdf: k-uniform-cycles.pdf
+  abstract: >
+    The Kuramoto model is a classical model used in the study of
+    spontaneous synchronizations in networks of coupled oscillators.
+    In this model, frequency synchronization configurations can be formulated
+    as complex solutions to a system of algebraic equations.
+    Recently, upper bounds to the number of frequency synchronization configurations 
+    in cycle networks of N oscillators  were calculated 
+    under the assumption of generic non-uniform coupling.
+    In this paper, we refine these results for the special cases of uniform coupling.
+    In particular, we show that when, and only when, N is divisible by 4,
+    the upper bound for the number of synchronization configurations
+    in the uniform coupling cases is significantly less than 
+    the bound in the non-uniform coupling cases.
+    This result also establishes an explicit formula for the gap between
+    the birationally invariant intersection index and the 
+    Bernshtein-Kushnirenko-Khovanskii bound
+    for the underlying algebraic equations.
+
+- nickname: edge-contraction
+  title: Graph edge contraction and adjacency polytopes
+  coauthors: Evgeniia Korchevskaia
+  pdf: edge-contraction.pdf
+  arxiv: https://arxiv.org/abs/1912.02841
+  abstract: >
+    Adjacency polytopes, a.k.a. symmetric edge polytopes, associated with undirected graphs 
+    have been proposed and studied in several seemingly independent areas ranging from 
+    number theory to discrete geometry and the study of Kuramoto models. 
+    Regular subdivisions of adjacency polytopes are of particular importance in 
+    solving certain algebraic systems of equations. 
+    This paper explores the connection between the regular subdivisions of an adjacency polytope 
+    and the contraction of the underlying graph along an edge. 
+    The main result is the construction of a special regular subdivision 
+    whose cells are in one-to-one correspondence with facets of adjacency polytope 
+    associated with an edge-contraction of the original graph.
+  bibtex: |
+    @article{ChenKorchevskaia2019Graph,
+      archivePrefix = {arXiv},
+      arxivId = {},
+      author = {Chen, Tianran and Korchevskaia, Evgeniia},
+      eprint = {1912.02841},
+      month = {dec},
+      title = {{Graph edge contraction and adjacency polytopes}},
+      url = {http://arxiv.org/abs/1912.02841},
+      year = {2019}
+    }
+
 - nickname: bkk-biii
   title: On the equality of BKK bound and birationally invariant intersection index
   pdf: bkk-biii.pdf
