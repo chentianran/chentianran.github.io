@@ -2,6 +2,7 @@
   title: On the root count of algebraic Kuramoto equations in cycle networks with uniform coupling
   coauthors: Evgeniia Korchevskaia
   pdf: k-uniform-cycles.pdf
+  arxiv: http://arxiv.org/abs/1912.06241
   abstract: >
     The Kuramoto model is a classical model used in the study of
     spontaneous synchronizations in networks of coupled oscillators.
@@ -19,6 +20,17 @@
     the birationally invariant intersection index and the 
     Bernshtein-Kushnirenko-Khovanskii bound
     for the underlying algebraic equations.
+  bibtex: |
+    @article{ChenKorchevskaia2019Root,
+      archivePrefix = {arXiv},
+      arxivId = {1912.06241},
+      author = {Chen, Tianran and Korchevskaia, Evgeniia},
+      eprint = {1912.06241},
+      month = {dec},
+      title = {{On the root count of algebraic Kuramoto equations in cycle networks with uniform coupling}},
+      url = {http://arxiv.org/abs/1912.06241},
+      year = {2019}
+    }
 
 - nickname: edge-contraction
   title: Graph edge contraction and adjacency polytopes
@@ -39,7 +51,7 @@
   bibtex: |
     @article{ChenKorchevskaia2019Graph,
       archivePrefix = {arXiv},
-      arxivId = {},
+      arxivId = {1912.02841},
       author = {Chen, Tianran and Korchevskaia, Evgeniia},
       eprint = {1912.02841},
       month = {dec},
