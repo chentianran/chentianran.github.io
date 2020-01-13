@@ -1,5 +1,5 @@
 - Office: 310A Goodwyn Hall
 - Office hour:
-    * Tue., & Thu 3:30pm -- 4:30pm
-    * Wed. 1:30pm -- 4:30pm
+    * Mon. & Wed. 3:30pm -- 4:50pm
+    * Tue. & Thu. 2:00pm -- 3:30pm
     * ...and by appointment

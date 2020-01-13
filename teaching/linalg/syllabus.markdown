@@ -3,11 +3,11 @@ layout: default
 title: MATH-2630
 ---
 
-# MATH-2660 A (CRN 2396) Spring 2018 Course Syllabus
+# MATH-2660 A (CRN 3001) Spring 2020 Course Syllabus
 
 ### When, where, and who
 
-* Time: TR 2:10pm --- 3:25pm
+* Time: MW 2:10pm --- 3:25pm
 * Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
@@ -25,7 +25,7 @@ alternative meeting time may be arranged
 
 Linear algebra is the fundamental language for manipulating high-dimensional data.
 It is also the gateway to higher level mathematics.
-In this semester, We will cover...
+In this semester, we will cover...
 
 * Theory of systems of linear equations
 * Theory of determinant
@@ -34,10 +34,9 @@ In this semester, We will cover...
 * Matrix determinant
 * LU and QR decompositions
 * Eigenvalue and eigenvectors
-* Singular values
-* Abstract vector spaces
 * Linear transformations
-* Inner product space
+* (Optional) Inner product space
+* (Optional) Singular values
 
 ### Prerequisite
 
@@ -50,10 +49,16 @@ The ability to write formal proofs is also required.
 
 ### Textbook
 
-- [Required] _Linear Algebra and Its Applications_
+The following textbooks are recommended.
+
+* _Linear algebra_
+  by __Jim Hefferon__
+  (ISBN 978-1944325039)
+  Free PDF version is available.
+* _Linear Algebra and Its Applications_
   by __David C. Lay, Steven R. Lay, and Judi J. McDonald__
   (ISBN 978-0-13-427919-0)
-- [Optional] _Linear Algebra Done Right_
+* _Linear Algebra Done Right_
   by __Sheldon Axler__
   (ISBN 978-3-319-30765-7)
 
@@ -84,29 +89,85 @@ Scientific calculators or equivalent software programs can be helpful in
 doing homework problems.
 However, all the quizzes and exams are designed so that no calculator will be needed.
 Therefore calculators or any smart devices with Internet capabilities
-are not allowed on any of the quizzes and exams.
+are _not_ allowed on any of the quizzes and exams.
 
-### Reading assignments
+<!-- ### Reading assignments
 
 You are expected to read the book in preparation of each class meetings.
 Reading assignments, i.e., sections (from the required textbook) are listed
 on the Blackboard system.
-The reading assignments are to be completed _before_ each class meeting.
+The reading assignments are to be completed _before_ each class meeting. -->
 
-### Daily reading tests
+### Daily quizzes and the progression system
 
-After reading the textbook, you need to complete a short reading test
-through the Blackboard system.
-__No late submission will be accepted__.
-However, a missing reading test may be excused if valid reasons
-(military assignments, medical issues, family emergency, etc)
-and _proper documentation_ are provided _in advance_.
-Otherwise, a missing reading test receives a score of zero.
-It is recommended that you finish the reading test at least a few days
-before the due date.
+Short quizzes will be given in class meetings to test
+your understanding of the material.
+You can repeat each quiz as many times as you like, but
+__you can only take a quiz after receiving full scores on all previous quizzes__.
+For example, you can only take quiz (level) 5
+after you received _full scores_ on quizzes 1 through 4.
+If you missed a chance to take quiz for valid reasons
+(military assignments, medical issues, family emergency, etc),
+please provide _proper documentation_,
+and you will be given an additional chance to take the quizzes
+during the final week.
 
-Each reading test allows multiple attempts.
-Please see the test descriptions on the Blackboard system for detail.
+For each full score you earn on a new quiz,
+you will increase your "level" by one.
+Your course grade is determined by the level you are in
+at the end of the semester (the last day of the final week)
+according to the following table
+
+| Level | Grade | Quiz topics                             |
+|-------|-------|-----------------------------------------|
+| 1     |       | 2x2 linear systems                      |
+| 2     |       | Vector addition and scaling             |
+| 3     |       | Dot product                             |
+| 4     |       | Linear combinations                     |
+| 5     |       | Larger linear systems                   |
+| 6     |       | Matrix addition, scaling, and transpose |
+| 7     |       | Matrix products                         |
+| 8     |       | Matrix inverse                          |
+| 9     |       | Matrix determinants                     |
+| 10    | D     | Matrix inversion                        |
+| 11    | D     | Solution sets of linear systems         |
+| 12    | D     | Linear independence                     |
+| 13    | C     | Matrix rank                             |
+| 14    | C     | Dimension of subspaces                  |
+| 15    | C     | Null space                              |
+| 16    | B     | Injection, surjection, bijection        |
+| 17    | B     | Eigenvalues                             |
+| 18    | B     | Eigenvectors                            |
+| 19    | A     | Eigenvalue decompositions               |
+| 20    | A(+)  | Orthogonal / QR decompositions          |
+| 21    | A(+)  | Singular value decomposition            |
+
+For example, after receiving full scores on quiz 1 -- 13,
+you become a "Level 13" student,
+and your course grade will be at least C.
+
+### Additional levels
+
+In addition to the daily quizzes,
+you can earn additional levels by completing
+concept tests, homework assignments, and final exam,
+as well as participating in in-class discussions.
+
+| Component     | Points |
+|---------------|--------|
+| Concept tests | 100    |
+| Homework      | 120    |
+| Participation |  20    |
+
+The number of additional levels you will earn
+is determined by the number of points you received
+in the components listed in the table above.
+
+| Points      | Additional levels |
+|-------------|-------------------|
+| 120 or more | +1 level          |
+| 180 or more | +2 levels         |
+| 200 or more | +3 levels         |
 
 ### Concept tests
 
@@ -116,39 +177,25 @@ All concepts tests are due on the last day of classes,
 and __no late submission will be accepted__.
 However, it is strongly recommended that you complete them as early as possible.
 
-### In-class quizzes
-
-Short quizzes will be given in class meetings to test
-your understanding of the material.
-__No makeup quiz will be offered__.
-However, a missing quiz may be excused if valid reasons
-(military assignments, medical issues, family emergency, etc)
-and _proper documentation_ are provided _in advance_.
-Otherwise, a missing quiz receives a score of zero.
-Quiz schedule will be announced in class meetings.
-
-### In-class worksheets
-
-In-class practice is a crucially important component of the learning process.
-Your in-class worksheets will be _collected and graded_.
-
-### Weekly homework assignments
+### Homework assignments
 
 Homework problems are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
-They will be a major part of your course grade.
-Homework problems are listed on our Blackboard system,
+These problems are listed on our Blackboard system,
 and _they must be submitted via the Blackboard system_.
-__No late homework submission will be accepted__
-However, a missing homework assignment may be excused if valid reasons
-(military assignments, medical issues, family emergency, etc)
+Submission must be in __PDF__ format.
+__Late homework submission will receive lower scores__
+unless valid reasons
+(military assignments, medical issues, family emergency
+and other reasons approved by AUM)
 and _proper documentation_ are provided _in advance_.
-Otherwise, a missing homework assignment receives a score of zero.
+Otherwise, the factor of score scaling is $(0.8)^t$
+where $t$ is the number of days after the due date.
 
-### Final exam
-The final exam is scheduled at 1:30pm -- 3:00pm May 1st.
+<!-- ### Final exam -->
+<!-- The final exam is scheduled at 1:30pm -- 3:00pm May 1st. -->
 
-###  <a name="grade"></a> Grade composition
+<!-- ###  <a name="grade"></a> Grade composition
 Your final grade is determined according to the following
 weighted average.
 
@@ -159,15 +206,15 @@ weighted average.
 | Homework      | 300    | Blackboard |
 | Quizzes       | 150    | In-class   |
 | Worksheets    | 100    | In-class   |
-| Final exam    | 100    | In-class   |
+| Final exam    | 100    | In-class   | -->
 
-### Grading scale
+<!-- ### Grading scale
 
 * A: 90% - 100%
 * B: 80% - 89.9%
 * C: 70% - 79.9%
 * D: 60% - 69.9%
-* F: below 60%
+* F: below 60% -->
 
 ### Other policies
 

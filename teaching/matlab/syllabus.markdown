@@ -3,11 +3,11 @@ layout: default
 title: CSCI-1210
 ---
 
-# CSCI-1210 A (CRN 3156) Spring 2019 Course Syllabus
+# CSCI-1210 A Spring 2020 Course Syllabus
 
 ### When, where, and who
 
-* Time: MW 2:10pm -- 3:25pm
+* Time: MW 9:25am -- 10:40am
 * Room: 205 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
@@ -116,7 +116,7 @@ However, it is strongly recommended that you complete them as early as possible.
 
 In-class practice is a crucially important component of the learning process
 since this course focuses on actual programming skills.
-Your in-class worksheets will be _collected and graded_.
+Your in-class worksheets will be _graded_.
 
 ### Homework assignments
 
