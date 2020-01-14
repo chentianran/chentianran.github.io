@@ -13,7 +13,7 @@ This is an undergraduate level introductory course to Complex Analysis.
 * Room: 317 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
-* Course page: <http://www.tianranchen.org/teaching/linalg/>
+* Course page: <http://www.tianranchen.org/teaching/complex/>
 {% include hours.markdown %}
 
 My job is to help you to succeed in this class.
