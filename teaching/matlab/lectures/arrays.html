@@ -1,0 +1,83 @@
+---
+layout: slide
+title: Matrices and arrays
+---
+
+<section>
+
+    <H1>Working with arrays</H1>
+</section>
+<section>
+    <h3>Review questions</h3>
+    <ul>
+        <li class="fragment">What is an array?</li>
+        <li class="fragment">If <code>A</code> is an array, what is <code>A(3,4)</code>?</li>
+        <li class="fragment">If <code>A</code> is an array, how to access its third row?</li>
+    </ul>
+</section>
+<section>
+    <h3>Arrays</h3>
+    <p>We already studied the concept of arrays/matrices.</p>
+    <ul>
+        <li class="fragment">Arrays are the fundamental representation of data.</li>
+        <li class="fragment">Arrays can contain numerical data and data of other types, but we cannot mix data types in a single array directly.</li>
+        <li class="fragment">Arrays can organize multidimensional data.</li>
+        <li class="fragment">The size of an array can be changed dynamically.</li>
+        <li class="fragment">Indices for arrays are "1-based".</li>
+</section>
+<section>
+    <h3>Creating arrays</h3>
+    <p>
+        A 1-dimensional array can be created by listing the entries within a pair of square brackets:
+    </p>
+
+    <pre><code>
+        a = [1 2 3 4]
+    </code></pre>
+
+
+    <p class="fragment">
+        A 2-dimensional array can be created in a similar way with semi-colon
+        used as row separator (line break is fine too).
+    </p>
+    <pre class="fragment"><code>
+        a = [1 2 3; 4 5 6; 7 8 9]
+    </code></pre>
+</section>
+<section>
+    <h3>Other ways</h3>
+    <ul>
+        <li class="fragment">Range: <code>a = 3:9</code></li>
+        <li class="fragment">Range with steps: <code>a = 3:0.5:9</code></li>
+        <li class="fragment">Zeros: <code>a = zeros(3,4)</code></li>
+        <li class="fragment">Ones:  <code>a = ones(3,4)</code></li>
+        <li class="fragment">Random numbers:  <code>a = rand(3,4)</code></li>
+        <li class="fragment">Logical 1s:  <code>a = true(3,4)</code></li>
+        <li class="fragment">Logical 0s:  <code>a = false(3,4)</code></li>
+    </ul>
+</section>
+<section>
+    <h3>Creating grids</h3>
+    <p>Equally space points are often useful in applications.</p>
+    <ul>
+        <li class="fragment"><code>a = linspace(0,10,30)</code></li>
+        <li class="fragment"><code>a = logspace(0,3,30)</code></li>
+        <li class="fragment"><code>[X,Y] = meshgrid(x,y)</code></li>
+    </ul>
+</section>
+<section>
+    <h3>Determining size/shape</h3>
+    <ul>
+        <li class="fragment">Length (largest dimension) <code>length(A)</code></li>
+        <li class="fragment">Array size <code>size(A)</code></li>
+        <li class="fragment">Number of dimensions <code>ndims(A)</code></li>
+    </ul>
+</section>
+<section>
+    <h3>Array indexing</h3>
+    <ul>
+        <li class="fragment"><code>A(3,:)</code></li>
+        <li class="fragment"><code>A(:,3)</code></li>
+        <li class="fragment"><code>A(1:3,2)</code></li>
+    </ul>
+</section>
