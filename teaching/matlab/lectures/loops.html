@@ -1,0 +1,94 @@
+---
+layout: slide
+title: Matrices and arrays
+---
+
+<section>
+
+    <H1>Loops</H1>
+</section>
+<section>
+    <h3>Review questions</h3>
+    <ul>
+        <li class="fragment">If <code>A</code> is an array, what is <code>A(2:5,3)</code>?</li>
+        <li class="fragment">If <code>A</code> is an array, what is <code>A(2,1:4)</code>?</li>
+    </ul>
+</section>
+<section>
+    <h3>Control statements</h3>
+    <p>Control statements controls the flow of execution of your code.
+        There are different types of control statements:
+    </p>
+    <ul>
+        <li class="fragment">Loops.</li>
+        <li class="fragment">Conditionals.</li>
+        <li class="fragment">Exception handling.</li>
+        <li class="fragment">Break statements.</li>
+        <li class="fragment">Parallel execution.</li>
+</section>
+<section>
+    <h3>Loops</h3>
+    <p>
+
+        A loop control statement allows a block of code
+        to be executed repeatedly.
+        There are two basic forms
+    </p>
+    <ul>
+        <li class="fragment">"for" loop</li>
+        <li class="fragment">"while" loop</li>
+    </ul>
+
+</section>
+<section>
+    <h3>An example</h3>
+    <pre><code>
+        A = ones(1,5)
+        for i = 1:4
+            A(i) = 2*i;
+        end
+    </code></pre>
+    <ul>
+        <li class="fragment">A "for" loop starts with a "for" statement</li>
+        <li class="fragment">An assignment state after "for" specifies the range that will be iterated as well as variable to be used.</li>
+        <li class="fragment">It ends with the keyword "end"</li>
+        <li class="fragment">Many statements can be included in the block between "for" and "end"</li>
+    </ul>
+</section>
+<section>
+    <h3>Nested for loop</h3>
+    <p>A loop can contain another loop.</p>
+    <pre><code>
+        A = ones(8,8)
+        for i = 1:5
+            for j = 2:7
+                A(i,j) = i+j;
+            end
+        end
+    </code></pre>
+    <ul>
+        <li class="fragment">Each loop requires its own "end" keyword.</li>
+        <li class="fragment">Indentation usually improves readability.</li>
+</section>
+<section>
+    <h3></h3>
+</section>
+<section>
+    <h3>Breaking statements</h3>
+    <p>
+        Execution of statements inside a loop can be interrupted or diverted.
+    </p>
+    <ul>
+        <li class="fragment">the "break" statement exit a loop</li>
+        <li class="fragment">the "continue" statement skips to the next iteration of the loop</li>
+    </ul>
+</section>
+<section>
+    <h3>Worksheet tasks</h3>
+    <p>For today's exercise, complete the following tasks using "for" loops</p>
+    <ul>
+        <li>Create the array [1 2 3 ... 10]</li>
+        <li>Create the two dimensional array whose i-j entry is i+j</li>
+        <li>Create the gradient effect on this image</li>
+    </ul>
+</section>
