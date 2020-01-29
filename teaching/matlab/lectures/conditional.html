@@ -1,0 +1,115 @@
+---
+layout: slide
+title: Conditional statements
+---
+
+<!-- <section>
+    <h3>Review</h3>
+    <ul>
+        <li class="fragment">If <code>A</code> is an array, what is <code>A(2:5,3)</code>?</li>
+        <li class="fragment">If <code>A</code> is an array, what is <code>A(2,1:4)</code>?</li>
+    </ul>
+</section> -->
+<section>
+
+    <H1>Conditional statements</H1>
+</section>
+<section>
+    <h3>Conditional statements</h3>
+    <p>
+        Conditional statements are examples of "branching behavior",
+        and they allow your code to perform different tasks
+        depending on certain conditions.
+    </p>
+    <p class="fragment">
+        There are a few different forms:
+    </p>
+    <ul>
+        <li class="fragment">if</li>
+        <li class="fragment">if-else/elseif</li>
+        <li class="fragment">switch-case</li>
+</section>
+<section>
+    <h3>"if"</h3>
+    <p>
+        An <code>if</code> statement allows a block of code
+        to be executed only when certain conditions hold.
+    </p>
+    <pre><code>
+        if a < 10
+            b = 1
+        end
+    </code></pre>
+    <ul>
+        <li class="fragment">An <code>if</code> statement starts with the "<code>if</code>" keyword.</li>
+        <li class="fragment">A condition follows <code>if</code>.</li>
+        <li class="fragment">It ends with the keyword "<code>end</code>"</li>
+        <li class="fragment">Any list of statements can be included in between.</li>
+        <li class="fragment">Indentations improve readability.</li>
+    </ul>
+</section>
+<section>
+    <h3>if-else</h3>
+    <p>An <code>if</code> block can include alternate choices.</p>
+    <pre><code>
+        if a < 10
+            b = 1
+        else
+            b = 2
+        end
+    </code></pre>
+</section>
+<section>
+<h3>if-else/elseif</h3>
+    <p>An <code>if</code> block can include multiple choices.</p>
+    <pre><code>
+        if a < 10
+            b = 1
+        elseif a < 20
+            b = 2
+        else
+            b = 3
+        end
+    </code></pre>
+</section>
+<section>
+    <h3>Logical operators</h3>
+    <p>Multiple logical expressions can be combined together using logical operators.</p>
+    <ul>
+        <li class="fragment">Logical AND (with short-circuit): <code>&&</code></li>
+        <li class="fragment">Logical OR  (with short-circuit): <code>||</code></li>
+        <li class="fragment">Logical NOT <code>~</code> </li>
+    </ul>
+    <pre class="fragment"><code>
+        if (a > 3) && (a < 10)
+            b = 1
+        end
+    </code></pre>
+</section>
+<section>
+    <h3>Let's try</h3>
+    <p>Read the following code and explain what it does.</p>
+    <pre><code>
+        M = magic(5);
+        for i = 1:5
+            for j = 1:5
+                if M(i,j) < 4
+                    M(i,j) = 0;
+                elseif M(i,j) < 6
+                    M(i,j) = 1;
+                else
+                    M(i,j) = 2;
+                end
+            end
+        end
+    </code>
+</pre>
+</section>
+<section>
+    <!-- <h3>Worksheet tasks ("for" and "if-else/elseif")</h3> -->
+    <ul>
+        <li>Count the number of entries in <code>magic(5)</code> that are less    than 10 / greater than 20.</li>
+        <li>Recreate the following image</li>
+    </ul>
+    <img src="../marilyn-twotone.jpg" alt="" width="400">
+</section>
