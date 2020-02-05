@@ -1,0 +1,9 @@
+---
+layout: default
+title: Congrats!
+---
+
+## Congratulations!
+
+You found the first clue.
+Second clue coming soon!
