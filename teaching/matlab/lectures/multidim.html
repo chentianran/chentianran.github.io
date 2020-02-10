@@ -18,51 +18,47 @@ title: Multidimensional arrays
         <li class="fragment">Dimension can also be changed dynamically.</li>
 </section>
 <section>
+    <h3>3D arrays</h3>
     <p>
-        A 1-dimensional array can be created by listing the entries within a pair of square brackets:
+        A 3-dimensional (3D) array consists of several "pages".
+        Each page is a 2D array (matrix).
     </p>
-
-    <pre><code>
-        a = [1 2 3 4]
-    </code></pre>
-
-
     <p class="fragment">
-        A 2-dimensional array can be created in a similar way with semi-colon
-        used as row separator (line break is fine too).
+        An entry in a 3D array requires 3 subscripts to be located.
+    </p>
+    <p class="fragment">
+        We usually create a 2D array first,
+        and then extend it by adding pages.
     </p>
     <pre class="fragment"><code>
-        a = [1 2 3; 4 5 6; 7 8 9]
+        A = [ 1 2 ; 3 4 ]
+        A(:,:,2) = [ 5 6 ; 7 8 ]
     </code></pre>
 </section>
 <section>
     <h3>Other ways</h3>
+    <p>
+        We can also create 3D arrays 
+        (or multidimensional arrays in general)
+        using the these functions:
+    </p>
     <ul>
-        <li class="fragment">Range: <code>a = 3:9</code></li>
-        <li class="fragment">Range with steps: <code>a = 3:0.5:9</code></li>
-        <li class="fragment">Zeros: <code>a = zeros(3,4)</code></li>
-        <li class="fragment">Ones:  <code>a = ones(3,4)</code></li>
-        <li class="fragment">Random numbers:  <code>a = rand(3,4)</code></li>
-        <li class="fragment">Logical 1s:  <code>a = true(3,4)</code></li>
-        <li class="fragment">Logical 0s:  <code>a = false(3,4)</code></li>
+        <li class="fragment"><code>cat</code></li>
+        <li class="fragment"><code>reshape</code></li>
+        <li class="fragment"><code>repmat</code></li>
+        <li class="fragment"><code>meshgrid</code></li>
     </ul>
 </section>
 <section>
-    <h3>Creating grids</h3>
-    <p>Equally space points are often useful in applications.</p>
+    <h3>Shape and size</h3>
+    <p>We often need to get the dimension and size of a 3D array.</p>
     <ul>
-        <li class="fragment"><code>a = linspace(0,10,30)</code></li>
-        <li class="fragment"><code>a = logspace(0,3,30)</code></li>
-        <li class="fragment"><code>[X,Y] = meshgrid(x,y)</code></li>
+        <li class="fragment"><code>size</code></li>
+        <li class="fragment"><code>ndims</code></li>
+        <li class="fragment"><code>numel</code></li>
     </ul>
 </section>
 <section>
-    <h3>Determining size/shape</h3>
-    <ul>
-        <li class="fragment">Length (largest dimension) <code>length(A)</code></li>
-        <li class="fragment">Array size <code>size(A)</code></li>
-        <li class="fragment">Number of dimensions <code>ndims(A)</code></li>
-    </ul>
 </section>
 <section>
     <h3>Array indexing</h3>
