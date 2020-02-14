@@ -1,13 +1,14 @@
 // set up SVG for D3
-const width  = 720;
-const height = 480;
+const width  = 400;
+const height = 400;
 const colors = d3.scaleOrdinal(d3.schemeCategory10);
 
-const svg = d3.select('body')
-  .append('svg')
-  .on('contextmenu', () => { d3.event.preventDefault(); })
-  .attr('width',  width)
-  .attr('height', height);
+let svg = d3.select("#netedit");
+// const svg = d3.select('body')
+  // .append('svg')
+svg.on('contextmenu', () => { d3.event.preventDefault(); })
+  // .attr('width',  width)
+  // .attr('height', height);
 
 // set up initial nodes and links
 //  - nodes are known by 'id', not by index in array.
@@ -119,6 +120,7 @@ const force = d3.forceSimulation()
   .force('charge', d3.forceManyBody().strength(-500))
   .force('x', d3.forceX(width / 2))
   .force('y', d3.forceY(height / 2))
+  .velocityDecay(0.6)
   .on('tick', tick);
 
 // init D3 drag support
@@ -260,16 +262,16 @@ function restart(reheat = true) {
     .style('fill', (d) => (d === selectedNode) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
     .style('stroke', (d) => d3.rgb(colors(d.id)).darker().toString())
     .classed('reflexive', (d) => d.reflexive)
-    .on('mouseover', function (d) {
-      if (!mousedownNode || d === mousedownNode) return;
-      // enlarge target node
-      d3.select(this).attr('transform', 'scale(1.1)');
-    })
-    .on('mouseout', function (d) {
-      if (!mousedownNode || d === mousedownNode) return;
-      // unenlarge target node
-      d3.select(this).attr('transform', '');
-    })
+    // .on('mouseover', function (d) {
+    //   if (!mousedownNode || d === mousedownNode) return;
+    //   // enlarge target node
+    //   d3.select(this).attr('transform', 'scale(1.1)');
+    // })
+    // .on('mouseout', function (d) {
+    //   if (!mousedownNode || d === mousedownNode) return;
+    //   // unenlarge target node
+    //   d3.select(this).attr('transform', '');
+    // })
     .on('mousedown', (d) => {
       if (d3.event.ctrlKey) return;
 
@@ -314,7 +316,7 @@ function restart(reheat = true) {
       if (link) {
         link[isRight ? 'right' : 'left'] = true;
       } else {
-        links.push({ source, target, left: !isRight, right: isRight });
+        links.push({ source, target, left: false, right: false });
       }
 
       // select new link
@@ -437,9 +439,15 @@ function keydown() {
         // toggle node reflexivity
         selectedNode.reflexive = !selectedNode.reflexive;
       } else if (selectedLink) {
-        // set link direction to right only
-        selectedLink.left = false;
-        selectedLink.right = true;
+        if (selectedLink.left && selectedLink.right) {
+          selectedLink.left  = false;
+          selectedLink.right = false;
+        } else {
+          selectedLink.left  = true;
+          selectedLink.right = true;
+        }
+        // selectedLink.left = false;
+        // selectedLink.right = true;
       }
       restart();
       break;

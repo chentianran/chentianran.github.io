@@ -8,11 +8,24 @@
   </head>
 
   <body>
-    <button type="button" onclick="onCompute()">Compute</button>
-    <select id="netlist" size=12 style="width: 100px" onchange="onSelectNet(value)">
-    </select>
-    <textarea id="netdesc" cols="30" rows="10"></textarea>
-    <svg id="netview" width=500 height=600></svg>
+    <div id="parent">
+      <div>
+        <button type="button" onclick="onCompute()">Compute</button>
+      </div>
+      <div>
+        <svg id="netedit" width=400 height=400></svg>
+
+      </div>
+      <div>
+        <select id="netlist" size=20 style="width: 120px" onchange="onSelectNet(value)">
+        </select>
+        <br>
+        <textarea id="netdesc" cols="30" rows="10"></textarea>
+      </div>
+      <div>
+        <svg id="netview" width=400 height=400></svg>
+      </div>
+    </div>
   </body>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
