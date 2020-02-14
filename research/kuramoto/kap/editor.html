@@ -9,8 +9,10 @@
 
   <body>
     <button type="button" onclick="onCompute()">Compute</button>
-    <select id="netlist" size=12 style="width: 100px">
+    <select id="netlist" size=12 style="width: 100px" onchange="onSelectNet(value)">
     </select>
+    <textarea id="netdesc" cols="30" rows="10"></textarea>
+    <svg id="netview" width=500 height=600></svg>
   </body>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>

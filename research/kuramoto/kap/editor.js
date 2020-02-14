@@ -1,12 +1,12 @@
 // set up SVG for D3
-const width = 960;
-const height = 500;
+const width  = 720;
+const height = 480;
 const colors = d3.scaleOrdinal(d3.schemeCategory10);
 
 const svg = d3.select('body')
   .append('svg')
   .on('contextmenu', () => { d3.event.preventDefault(); })
-  .attr('width', width)
+  .attr('width',  width)
   .attr('height', height);
 
 // set up initial nodes and links
@@ -15,18 +15,19 @@ const svg = d3.select('body')
 //  - links are always source < target; edge directions are set by 'left' and 'right'.
 const nodes = [
   { id: 0, reflexive: false },
-  { id: 1, reflexive: true },
+  { id: 1, reflexive: false },
   { id: 2, reflexive: false }
 ];
 let lastNodeId = 2;
-const links = [
-  { source: nodes[0], target: nodes[1], left: false, right: true },
-  { source: nodes[1], target: nodes[2], left: false, right: true }
+let links = [
+  { source: nodes[0], target: nodes[1], left: false, right: false },
+  { source: nodes[1], target: nodes[2], left: false, right: false },
+  { source: nodes[2], target: nodes[0], left: false, right: false }
 ];
 
 //--- API call ---
 const api_fnets = "http://127.0.0.1:5000/fnets";
-let   netlist   = d3.select("#netlist");
+let   subnets   = [];
 
 function onCompute() {
   let V = nodes.map ( n => { return { name: n.id}; } );
@@ -44,6 +45,7 @@ function onCompute() {
   fetch (api_fnets, param)
     .then( data => { return data.json() } )
     .then( res  => { 
+      subnets = res;
       let nlist = d3.select("#netlist");
       nlist.html('');
       console.log(res);
@@ -53,8 +55,62 @@ function onCompute() {
           return "Subnetwork " + i.toString();
         }
       )
+      .attr('value', (d, i) => i);
     } )
     .catch( err => { console.log(err) } );
+}
+
+function onSelectNet(value) {
+  let net = subnets[value];
+  let tt  = d3.select("#netdesc");
+  tt.text(JSON.stringify(net.graph));
+  let E = net.graph.links.map( 
+    e => {
+      return { 
+        source : nodes[e.source],
+        target : nodes[e.target],
+        left   : false,
+        right  : true
+      }
+    }
+  );
+  // restart(false);
+
+  d3.selectAll("#netview > *").remove();
+
+  let netview  = d3.select("#netview");
+  let subnodes = netview.append('svg:g').selectAll('g');
+  let sublinks = netview.append('svg:g').selectAll('path');
+
+  subnodes.data(nodes, (d) => d.id)
+    .enter().append('svg:circle')
+    .attr('class', 'node')
+    .attr('r', 12)
+    .attr('cx', (d) => d.x)
+    .attr('cy', (d) => d.y)
+    .style('fill', (d) => colors(d.id))
+    .style('stroke', (d) => d3.rgb(colors(d.id)).darker().toString())
+    .classed('reflexive', (d) => d.reflexive)
+
+  sublinks.data(E)
+    .enter().append('svg:path')
+    .attr('class', 'link')
+    .style('marker-start', (d) => d.left  ? 'url(#start-arrow)' : '')
+    .style('marker-end',   (d) => d.right ? 'url(#end-arrow)'   : '')
+    .attr('d', (d) => {
+      const deltaX = d.target.x - d.source.x;
+      const deltaY = d.target.y - d.source.y;
+      const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+      const normX = deltaX / dist;
+      const normY = deltaY / dist;
+      const sourcePadding = d.left  ? 17 : 12;
+      const targetPadding = d.right ? 17 : 12;
+      const sourceX = d.source.x + (sourcePadding * normX);
+      const sourceY = d.source.y + (sourcePadding * normY);
+      const targetX = d.target.x - (targetPadding * normX);
+      const targetY = d.target.y - (targetPadding * normY);
+      return `M${sourceX},${sourceY}L${targetX},${targetY}`;
+    });
 }
 
 // init D3 force layout
@@ -140,7 +196,7 @@ function tick() {
     const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
     const normX = deltaX / dist;
     const normY = deltaY / dist;
-    const sourcePadding = d.left ? 17 : 12;
+    const sourcePadding = d.left  ? 17 : 12;
     const targetPadding = d.right ? 17 : 12;
     const sourceX = d.source.x + (sourcePadding * normX);
     const sourceY = d.source.y + (sourcePadding * normY);
@@ -154,7 +210,7 @@ function tick() {
 }
 
 // update graph (called when needed)
-function restart() {
+function restart(reheat = true) {
   // path (link) group
   path = path.data(links);
 
@@ -169,9 +225,9 @@ function restart() {
   // add new links
   path = path.enter().append('svg:path')
     .attr('class', 'link')
-    .classed('selected', (d) => d === selectedLink)
+    .classed('selected',   (d) => d === selectedLink)
     .style('marker-start', (d) => d.left ? 'url(#start-arrow)' : '')
-    .style('marker-end', (d) => d.right ? 'url(#end-arrow)' : '')
+    .style('marker-end',   (d) => d.right ? 'url(#end-arrow)' : '')
     .on('mousedown', (d) => {
       if (d3.event.ctrlKey) return;
 
@@ -281,7 +337,9 @@ function restart() {
     .nodes(nodes)
     .force('link').links(links);
 
-  force.alphaTarget(0.3).restart();
+  if (reheat) {
+    force.alphaTarget(0.3).restart();
+  }
 }
 
 function mousedown() {
