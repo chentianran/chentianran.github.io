@@ -27,12 +27,26 @@ let links = [
 ];
 
 //--- API call ---
-const api_fnets = "http://127.0.0.1:5000/fnets";
+const api_url = "http://100.25.180.176:5000/";
+const api_sel = d3.select("#apiname");
 let   subnets   = [];
 
 function onCompute() {
-  let V = nodes.map ( n => { return { name: n.id}; } );
-  let E = links.map ( e => { return { source: e.source.id, target: e.target.id }; } );
+  let api_addr = api_url + api_sel.node().value;
+  console.log(api_addr);
+  let V = nodes.map ( 
+    n => { 
+      return { name: n.id};
+    } 
+  );
+  let E = links.map ( 
+    e => { 
+      if (e.left && e.right)
+        return { source: e.source.id, target: e.target.id, contract: 1 }; 
+      else
+        return { source: e.source.id, target: e.target.id }; 
+    } 
+  );
   let param = {
     headers: {
       "Content-Type":"application/json; charset=UTF-8"
@@ -43,7 +57,7 @@ function onCompute() {
     }),
     method:"POST"
   };
-  fetch (api_fnets, param)
+  fetch (api_addr, param)
     .then( data => { return data.json() } )
     .then( res  => { 
       subnets = res;
