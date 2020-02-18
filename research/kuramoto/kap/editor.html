@@ -15,26 +15,42 @@
   <body>
     <div id="container">
       <div class="row">
-        <div class="column">
-          <h2>Kuramoto Adjacency Polytope Computation</h2>
+        <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+          <h1>Kuramoto subnetworks computation</h1>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 col-md-4 col-md-offset-1 col-lg-3 col-lg-offset-2">
+          <h3>Usage</h3>
+          <ul>
+            <li>Use "+" and "-" buttons to add or remove nodes</li>
+            <li>Drag from one node to another to create an edge</li>
+            <li>An edge can be selected by clicking</li>
+            <li>Once an edge is selected, pressing "r" will toggle edge contraction</li>
+          </ul>
           <label for="apiname">Decomposition</label>
           <select id="apiname">
             <option value="fnets">Facet decomposition</option>
             <option value="contract">Edge contraction</option>
           </select>
-          <button type="button" onclick="onCompute()">Compute</button>
+          <div class="button-group">
+            <button type="button" onclick="onClrNode()">Reset</button>
+            <button type="button" onclick="onAddNode()">+</button>
+            <button type="button" onclick="onDelNode()">-</button>
+            <button type="button" onclick="onCompute()" class="primary">Compute</button>
+          </div>
+          <div id="waiting" style="display:none">
+            <span class="spinner"></span>
+            Computing...
+          </div>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-8 col-md-6 col-lg-5">
           <svg id="netedit" width=400 height=400></svg>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-4">
-          <table class="striped" id="netlist">
+        <div class="col-sm-4 col-md-4 col-md-offset-1 col-lg-3 col-lg-offset-2">
+          <table class="striped hoverable" id="netlist">
             <caption>Subnetworks</caption>
             <thead>
               <tr>
@@ -44,19 +60,10 @@
               </tr>
             </thead>
             <tbody>
-              <!-- <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr> -->
             </tbody>
           </table>
-          <!-- <select id="netlist" onchange="onSelectNet(value)">
-          </select> -->
-          <!-- <br> -->
-          <textarea id="netdesc"></textarea>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-8 col-md-6 col-lg-5">
           <svg id="netview" width=400 height=400></svg>
         </div>
       </div>

@@ -1,57 +1,65 @@
-// set up SVG for D3
 const width  = 400;
 const height = 400;
 const colors = d3.scaleOrdinal(d3.schemeCategory10);
-
-let svg = d3.select("#netedit");
-// const svg = d3.select('body')
-  // .append('svg')
-svg.on('contextmenu', () => { d3.event.preventDefault(); })
-  // .attr('width',  width)
-  // .attr('height', height);
-
-// set up initial nodes and links
-//  - nodes are known by 'id', not by index in array.
-//  - reflexive edges are indicated on the node (as a bold black circle).
-//  - links are always source < target; edge directions are set by 'left' and 'right'.
-const nodes = [
-  { id: 0, reflexive: false },
-  { id: 1, reflexive: false }
-  // { id: 2, reflexive: false }
-];
-let lastNodeId = 2;
-let links = [
-  { source: nodes[0], target: nodes[1], left: false, right: false }
-  // { source: nodes[1], target: nodes[2], left: false, right: false },
-  // { source: nodes[2], target: nodes[0], left: false, right: false }
-];
-
-//--- API call ---
-const api_url = "http://100.25.180.176:5000/";
-const api_sel = d3.select("#apiname");
-let   subnets   = [];
 
 let center_x = width  / 2;
 let center_y = height / 2;
 let radius   = 0.8 * Math.min(center_x,center_y);
 
-function addNode() {
-  nodes.push( {
-    id: lastNodeId,
-    reflexive: false
-  });
-  lastNodeId ++;
 
-  const theta = Math.PI*2.0 / nodes.length;
+let svg = d3.select("#netedit");
+svg.on('contextmenu', () => { d3.event.preventDefault(); })
+
+// set up initial nodes and links
+//  - nodes are known by 'id', not by index in array.
+//  - reflexive edges are indicated on the node (as a bold black circle).
+//  - links are always source < target; edge directions are set by 'left' and 'right'.
+let nodes = [
+  { id: 0, reflexive: false },
+  { id: 1, reflexive: false }
+];
+let links = [
+  { source: nodes[0], target: nodes[1], left: false, right: false }
+];
+let subnets   = [];
+
+//--- API call ---
+const api_url = "http://100.25.180.176:5000/";
+const api_sel = d3.select("#apiname");
+
+function updateLayout() {
+  const t = Math.PI*2.0 / nodes.length;
   nodes.forEach( 
     (e,i) => {
-      e.x = center_x + radius*Math.sin(i*theta);
-      e.y = center_y - radius*Math.cos(i*theta);
+      e.x = center_x + radius*Math.sin(i*t);
+      e.y = center_y - radius*Math.cos(i*t);
     }
   );
 }
 
-addNode();
+function onAddNode() {
+  const nextid = nodes.length;
+  nodes.push( {
+    id: nextid,
+    reflexive: false
+  });
+
+  updateLayout();
+  restart();
+}
+
+function onClrNode() {
+  nodes = [
+    { id: 0, reflexive: false },
+    { id: 1, reflexive: false }
+  ];
+  links = [
+    { source: nodes[0], target: nodes[1], left: false, right: false }
+  ];
+
+  updateLayout();
+  restart();
+}
 
 function onCompute() {
   let api_addr = api_url + api_sel.node().value;
@@ -79,6 +87,7 @@ function onCompute() {
     }),
     method:"POST"
   };
+  d3.select("#waiting").style('display','block');
   fetch (api_addr, param)
     .then( data => { return data.json() } )
     .then( res  => { 
@@ -92,14 +101,17 @@ function onCompute() {
         .text( (d, i) => i.toString() )
         .on('click', (d,i) => { onSelectNet(i); } );
       opts.exit().remove();
+      d3.select("#waiting").style('display','none');
     } )
-    .catch( err => { console.log(err) } );
+    .catch( 
+      err => { 
+        d3.select("#waiting").style('display','none');
+        console.log(err) 
+      } );
 }
 
 function onSelectNet(value) {
   let net = subnets[value];
-  let tt  = d3.select("#netdesc");
-  tt.text(JSON.stringify(net.graph));
   let E = net.graph.links.map( 
     e => {
       return { 
@@ -110,7 +122,6 @@ function onSelectNet(value) {
       }
     }
   );
-  // restart(false);
 
   d3.selectAll("#netview > *").remove();
 
@@ -305,15 +316,14 @@ function mousedown() {
 
   if (mousedownNode || mousedownLink) return;
 
-  addNode();
-
-  restart();
+  // addNode();
+  // restart();
 }
 
 function mousemove() {
-  if (!mousedownNode) return;
+  if (!mousedownNode) 
+    return;
 
-  // update drag line
   dragLine.attr('d', `M${mousedownNode.x},${mousedownNode.y}L${d3.mouse(this)[0]},${d3.mouse(this)[1]}`);
 }
 
@@ -352,39 +362,7 @@ function keydown() {
     return;
 
   switch (d3.event.keyCode) {
-    // case 8: // backspace
-    // case 46: // delete
-    //   if (selectedNode) {
-    //     nodes.splice(nodes.indexOf(selectedNode), 1);
-    //     spliceLinksForNode(selectedNode);
-    //   } else if (selectedLink) {
-    //     links.splice(links.indexOf(selectedLink), 1);
-    //   }
-    //   selectedLink = null;
-    //   selectedNode = null;
-    //   restart();
-    //   break;
-    // case 66: // B
-    //   if (selectedLink) {
-    //     // set link direction to both left and right
-    //     selectedLink.left = true;
-    //     selectedLink.right = true;
-    //   }
-    //   restart();
-    //   break;
-    // case 76: // L
-    //   if (selectedLink) {
-    //     // set link direction to left only
-    //     selectedLink.left = true;
-    //     selectedLink.right = false;
-    //   }
-    //   restart();
-    //   break;
     case 82: // R
-      // if (selectedNode) {
-        // toggle node reflexivity
-        // selectedNode.reflexive = !selectedNode.reflexive;
-      // } else 
       if (selectedLink) {
         if (selectedLink.left && selectedLink.right) {
           selectedLink.left  = false;
@@ -393,8 +371,6 @@ function keydown() {
           selectedLink.left  = true;
           selectedLink.right = true;
         }
-        // selectedLink.left = false;
-        // selectedLink.right = true;
       }
       restart();
       break;
@@ -403,12 +379,11 @@ function keydown() {
 
 function keyup() {
   lastKeyDown = -1;
-
   // ctrl
-  if (d3.event.keyCode === 17) {
-    circle.on('.drag', null);
-    svg.classed('ctrl', false);
-  }
+  // if (d3.event.keyCode === 17) {
+  //   circle.on('.drag', null);
+  //   svg.classed('ctrl', false);
+  // }
 }
 
 // app starts here
@@ -418,4 +393,6 @@ svg.on('mousedown', mousedown)
 d3.select(window)
   .on('keydown', keydown)
   .on('keyup', keyup);
+
+updateLayout();
 restart();
