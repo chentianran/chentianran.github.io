@@ -16,20 +16,42 @@ svg.on('contextmenu', () => { d3.event.preventDefault(); })
 //  - links are always source < target; edge directions are set by 'left' and 'right'.
 const nodes = [
   { id: 0, reflexive: false },
-  { id: 1, reflexive: false },
-  { id: 2, reflexive: false }
+  { id: 1, reflexive: false }
+  // { id: 2, reflexive: false }
 ];
 let lastNodeId = 2;
 let links = [
-  { source: nodes[0], target: nodes[1], left: false, right: false },
-  { source: nodes[1], target: nodes[2], left: false, right: false },
-  { source: nodes[2], target: nodes[0], left: false, right: false }
+  { source: nodes[0], target: nodes[1], left: false, right: false }
+  // { source: nodes[1], target: nodes[2], left: false, right: false },
+  // { source: nodes[2], target: nodes[0], left: false, right: false }
 ];
 
 //--- API call ---
 const api_url = "http://100.25.180.176:5000/";
 const api_sel = d3.select("#apiname");
 let   subnets   = [];
+
+let center_x = width  / 2;
+let center_y = height / 2;
+let radius   = 0.8 * Math.min(center_x,center_y);
+
+function addNode() {
+  nodes.push( {
+    id: lastNodeId,
+    reflexive: false
+  });
+  lastNodeId ++;
+
+  const theta = Math.PI*2.0 / nodes.length;
+  nodes.forEach( 
+    (e,i) => {
+      e.x = center_x + radius*Math.sin(i*theta);
+      e.y = center_y - radius*Math.cos(i*theta);
+    }
+  );
+}
+
+addNode();
 
 function onCompute() {
   let api_addr = api_url + api_sel.node().value;
@@ -62,15 +84,14 @@ function onCompute() {
     .then( res  => { 
       subnets = res;
       let nlist = d3.select("#netlist");
-      nlist.html('');
-      console.log(res);
-      let opts = d3.select("#netlist").selectAll('option').data(res).enter();
-      opts.append('option').text(
-        (d, i) => {
-          return "Subnetwork " + i.toString();
-        }
-      )
-      .attr('value', (d, i) => i);
+      // nlist.html('');
+      // console.log(res);
+      let opts = d3.select("#netlist").select("tbody").selectAll('tr').data(res);
+      let rows = opts.enter().append('tr');
+      rows.append('td')
+        .text( (d, i) => i.toString() )
+        .on('click', (d,i) => { onSelectNet(i); } );
+      opts.exit().remove();
     } )
     .catch( err => { console.log(err) } );
 }
@@ -101,11 +122,10 @@ function onSelectNet(value) {
     .enter().append('svg:circle')
     .attr('class', 'node')
     .attr('r', 12)
-    .attr('cx', (d) => d.x)
-    .attr('cy', (d) => d.y)
+    .attr('cx', (d,i) => d.x)
+    .attr('cy', (d,i) => d.y)
     .style('fill', (d) => colors(d.id))
-    .style('stroke', (d) => d3.rgb(colors(d.id)).darker().toString())
-    .classed('reflexive', (d) => d.reflexive)
+    .style('stroke', (d) => d3.rgb(colors(d.id)).darker().toString());
 
   sublinks.data(E)
     .enter().append('svg:path')
@@ -127,36 +147,6 @@ function onSelectNet(value) {
       return `M${sourceX},${sourceY}L${targetX},${targetY}`;
     });
 }
-
-// init D3 force layout
-const force = d3.forceSimulation()
-  .force('link', d3.forceLink().id((d) => d.id).distance(150))
-  .force('charge', d3.forceManyBody().strength(-500))
-  .force('x', d3.forceX(width / 2))
-  .force('y', d3.forceY(height / 2))
-  .velocityDecay(0.6)
-  .on('tick', tick);
-
-// init D3 drag support
-const drag = d3.drag()
-  // Mac Firefox doesn't distinguish between left/right click when Ctrl is held... 
-  .filter(() => d3.event.button === 0 || d3.event.button === 2)
-  .on('start', (d) => {
-    if (!d3.event.active) force.alphaTarget(0.3).restart();
-
-    d.fx = d.x;
-    d.fy = d.y;
-  })
-  .on('drag', (d) => {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
-  })
-  .on('end', (d) => {
-    if (!d3.event.active) force.alphaTarget(0);
-
-    d.fx = null;
-    d.fy = null;
-  });
 
 // define arrow markers for graph links
 svg.append('svg:defs').append('svg:marker')
@@ -188,10 +178,10 @@ const dragLine = svg.append('svg:path')
 
 // handles to link and node element groups
 let path = svg.append('svg:g').selectAll('path');
-let circle = svg.append('svg:g').selectAll('g');
+let node_g = svg.append('svg:g');
+// let path_g = svg.append('svg:g');
 
 // mouse event vars
-let selectedNode = null;
 let selectedLink = null;
 let mousedownLink = null;
 let mousedownNode = null;
@@ -201,28 +191,6 @@ function resetMouseVars() {
   mousedownNode = null;
   mouseupNode = null;
   mousedownLink = null;
-}
-
-// update force layout (called automatically each iteration)
-function tick() {
-  // draw directed edges with proper padding from node centers
-  path.attr('d', (d) => {
-    const deltaX = d.target.x - d.source.x;
-    const deltaY = d.target.y - d.source.y;
-    const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-    const normX = deltaX / dist;
-    const normY = deltaY / dist;
-    const sourcePadding = d.left  ? 17 : 12;
-    const targetPadding = d.right ? 17 : 12;
-    const sourceX = d.source.x + (sourcePadding * normX);
-    const sourceY = d.source.y + (sourcePadding * normY);
-    const targetX = d.target.x - (targetPadding * normX);
-    const targetY = d.target.y - (targetPadding * normY);
-
-    return `M${sourceX},${sourceY}L${targetX},${targetY}`;
-  });
-
-  circle.attr('transform', (d) => `translate(${d.x},${d.y})`);
 }
 
 // update graph (called when needed)
@@ -245,67 +213,56 @@ function restart(reheat = true) {
     .style('marker-start', (d) => d.left ? 'url(#start-arrow)' : '')
     .style('marker-end',   (d) => d.right ? 'url(#end-arrow)' : '')
     .on('mousedown', (d) => {
-      if (d3.event.ctrlKey) return;
-
-      // select link
       mousedownLink = d;
       selectedLink = (mousedownLink === selectedLink) ? null : mousedownLink;
-      selectedNode = null;
       restart();
     })
     .merge(path);
 
+    path.attr('d', (d) => {
+      const deltaX = d.target.x - d.source.x;
+      const deltaY = d.target.y - d.source.y;
+      const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+      const normX = deltaX / dist;
+      const normY = deltaY / dist;
+      const sourcePadding = d.left  ? 17 : 12;
+      const targetPadding = d.right ? 17 : 12;
+      const sourceX = d.source.x + (sourcePadding * normX);
+      const sourceY = d.source.y + (sourcePadding * normY);
+      const targetX = d.target.x - (targetPadding * normX);
+      const targetY = d.target.y - (targetPadding * normY);
+  
+      return `M${sourceX},${sourceY}L${targetX},${targetY}`;
+    });
+
   // circle (node) group
   // NB: the function arg is crucial here! nodes are known by id, not by index!
-  circle = circle.data(nodes, (d) => d.id);
-
-  // update existing nodes (reflexive & selected visual states)
-  circle.selectAll('circle')
-    .style('fill', (d) => (d === selectedNode) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
-    .classed('reflexive', (d) => d.reflexive);
+  let circles = node_g.selectAll('g').data(nodes, (d) => d.id);
 
   // remove old nodes
-  circle.exit().remove();
+  circles.exit().remove();
 
   // add new nodes
-  const g = circle.enter().append('svg:g');
+  const g = circles.enter().append('svg:g');
 
   g.append('svg:circle')
     .attr('class', 'node')
     .attr('r', 12)
-    .style('fill', (d) => (d === selectedNode) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id))
+    .style('fill', (d) => colors(d.id))
     .style('stroke', (d) => d3.rgb(colors(d.id)).darker().toString())
-    .classed('reflexive', (d) => d.reflexive)
-    // .on('mouseover', function (d) {
-    //   if (!mousedownNode || d === mousedownNode) return;
-    //   // enlarge target node
-    //   d3.select(this).attr('transform', 'scale(1.1)');
-    // })
-    // .on('mouseout', function (d) {
-    //   if (!mousedownNode || d === mousedownNode) return;
-    //   // unenlarge target node
-    //   d3.select(this).attr('transform', '');
-    // })
     .on('mousedown', (d) => {
-      if (d3.event.ctrlKey) return;
-
-      // select node
       mousedownNode = d;
-      selectedNode = (mousedownNode === selectedNode) ? null : mousedownNode;
       selectedLink = null;
-
-      // reposition drag line
       dragLine
         .style('marker-end', 'url(#end-arrow)')
         .classed('hidden', false)
         .attr('d', `M${mousedownNode.x},${mousedownNode.y}L${mousedownNode.x},${mousedownNode.y}`);
-
       restart();
     })
     .on('mouseup', function (d) {
-      if (!mousedownNode) return;
+      if (!mousedownNode) 
+        return;
 
-      // needed by FF
       dragLine
         .classed('hidden', true)
         .style('marker-end', '');
@@ -317,25 +274,17 @@ function restart(reheat = true) {
         return;
       }
 
-      // unenlarge target node
-      d3.select(this).attr('transform', '');
-
-      // add link to graph (update if exists)
-      // NB: links are strictly source < target; arrows separately specified by booleans
-      const isRight = mousedownNode.id < mouseupNode.id;
-      const source = isRight ? mousedownNode : mouseupNode;
-      const target = isRight ? mouseupNode : mousedownNode;
+      const source = mousedownNode;
+      const target = mouseupNode;
 
       const link = links.filter((l) => l.source === source && l.target === target)[0];
-      if (link) {
-        link[isRight ? 'right' : 'left'] = true;
-      } else {
+      if (! link) {
         links.push({ source, target, left: false, right: false });
       }
 
       // select new link
-      selectedLink = link;
-      selectedNode = null;
+      // selectedLink = link;
+      // selectedNode = null;
       restart();
     });
 
@@ -346,28 +295,17 @@ function restart(reheat = true) {
     .attr('class', 'id')
     .text((d) => d.id);
 
-  circle = g.merge(circle);
-
-  // set the graph in motion
-  force
-    .nodes(nodes)
-    .force('link').links(links);
-
-  if (reheat) {
-    force.alphaTarget(0.3).restart();
-  }
+  circles = g.merge(circles);
+  circles.attr('transform', (d) => `translate(${d.x},${d.y})`);
 }
 
 function mousedown() {
   // because :active only works in WebKit?
   svg.classed('active', true);
 
-  if (d3.event.ctrlKey || mousedownNode || mousedownLink) return;
+  if (mousedownNode || mousedownLink) return;
 
-  // insert new node at point
-  const point = d3.mouse(this);
-  const node = { id: ++lastNodeId, reflexive: false, x: point[0], y: point[1] };
-  nodes.push(node);
+  addNode();
 
   restart();
 }
@@ -410,49 +348,44 @@ function keydown() {
   if (lastKeyDown !== -1) return;
   lastKeyDown = d3.event.keyCode;
 
-  // ctrl
-  if (d3.event.keyCode === 17) {
-    circle.call(drag);
-    svg.classed('ctrl', true);
+  if (! selectedLink) 
     return;
-  }
-
-  if (!selectedNode && !selectedLink) return;
 
   switch (d3.event.keyCode) {
-    case 8: // backspace
-    case 46: // delete
-      if (selectedNode) {
-        nodes.splice(nodes.indexOf(selectedNode), 1);
-        spliceLinksForNode(selectedNode);
-      } else if (selectedLink) {
-        links.splice(links.indexOf(selectedLink), 1);
-      }
-      selectedLink = null;
-      selectedNode = null;
-      restart();
-      break;
-    case 66: // B
-      if (selectedLink) {
-        // set link direction to both left and right
-        selectedLink.left = true;
-        selectedLink.right = true;
-      }
-      restart();
-      break;
-    case 76: // L
-      if (selectedLink) {
-        // set link direction to left only
-        selectedLink.left = true;
-        selectedLink.right = false;
-      }
-      restart();
-      break;
+    // case 8: // backspace
+    // case 46: // delete
+    //   if (selectedNode) {
+    //     nodes.splice(nodes.indexOf(selectedNode), 1);
+    //     spliceLinksForNode(selectedNode);
+    //   } else if (selectedLink) {
+    //     links.splice(links.indexOf(selectedLink), 1);
+    //   }
+    //   selectedLink = null;
+    //   selectedNode = null;
+    //   restart();
+    //   break;
+    // case 66: // B
+    //   if (selectedLink) {
+    //     // set link direction to both left and right
+    //     selectedLink.left = true;
+    //     selectedLink.right = true;
+    //   }
+    //   restart();
+    //   break;
+    // case 76: // L
+    //   if (selectedLink) {
+    //     // set link direction to left only
+    //     selectedLink.left = true;
+    //     selectedLink.right = false;
+    //   }
+    //   restart();
+    //   break;
     case 82: // R
-      if (selectedNode) {
+      // if (selectedNode) {
         // toggle node reflexivity
-        selectedNode.reflexive = !selectedNode.reflexive;
-      } else if (selectedLink) {
+        // selectedNode.reflexive = !selectedNode.reflexive;
+      // } else 
+      if (selectedLink) {
         if (selectedLink.left && selectedLink.right) {
           selectedLink.left  = false;
           selectedLink.right = false;
