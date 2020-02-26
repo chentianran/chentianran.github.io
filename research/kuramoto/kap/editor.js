@@ -25,6 +25,7 @@ let subnets   = [];
 
 //--- API call ---
 const api_url = "http://100.25.180.176:5000/";
+// const api_url = "http://127.0.0.1:5000/";
 const api_sel = d3.select("#apiname");
 
 function updateLayout() {
@@ -91,17 +92,24 @@ function onCompute() {
   fetch (api_addr, param)
     .then( data => { return data.json() } )
     .then( res  => { 
-      subnets = res;
-      let nlist = d3.select("#netlist");
-      // nlist.html('');
-      // console.log(res);
-      let opts = d3.select("#netlist").select("tbody").selectAll('tr').data(res);
-      let rows = opts.enter().append('tr');
-      rows.append('td')
-        .text( (d, i) => i.toString() )
-        .on('click', (d,i) => { onSelectNet(i); } );
-      opts.exit().remove();
       d3.select("#waiting").style('display','none');
+      if (res.success) {
+        subnets = res.data;
+        let opts = d3.select("#netlist").select("tbody").selectAll('tr').data(subnets);
+        let rows = opts.enter().append('tr');
+        rows.append('td')
+          .text( (d, i) => i.toString() )
+          .on('click', (d,i) => { onSelectNet(i); } );
+        rows.append('td')
+          .text( (d, i) => d.size.toString() );
+        rows.append('td')
+          .text( (d, i) => d.corank.toString() );
+        rows.append('td')
+          .text( (d, i) => JSON.stringify(d.volume) );
+        rows.append('td')
+          .text( (d, i) => JSON.stringify(d.signature) );
+        opts.exit().remove();
+      }
     } )
     .catch( 
       err => { 
@@ -288,7 +296,11 @@ function restart(reheat = true) {
       const source = mousedownNode;
       const target = mouseupNode;
 
-      const link = links.filter((l) => l.source === source && l.target === target)[0];
+      const link = links.filter(
+        (l) => 
+          (l.source === source && l.target === target) ||
+          (l.target === source && l.source === target)
+        )[0];
       if (! link) {
         links.push({ source, target, left: false, right: false });
       }
