@@ -1,6 +1,6 @@
 ---
 layout: default
-title: MATH-2630
+title: MATH-4230
 ---
 
 # MATH-4230 Spring 2020

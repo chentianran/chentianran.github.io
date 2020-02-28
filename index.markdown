@@ -16,10 +16,11 @@ My current research focuses on _numerical algebraic geometry_.
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Fall Semester of 2019 I am teaching
+In the Spring Semester of 2020 I am teaching
 
-- [MATH-1610](teaching/calc1/) Calculus I
-- [MATH-3690](teaching/ode/) Differential equations
+- [CSCI-1210](matlab/)    (Introduction to computer programming)
+- [MATH-2660](linalg/)    (Linear algebra)
+- [MATH-4230](complex/)   (Complex variable)
 
 Office hours
 ------------
@@ -57,15 +58,6 @@ I am an advisor for pre-engineering students.
   [Special Session on Applications of Algebraic Geometry](http://www.ams.org/meetings/sectional/2261_program_ss25.html#title)
   organized by Greg Blekherman, Michael Burr, and I -->
 
-Recent talks
-------------
-
-- [MAAG 2019: Meeting on Applied Algebraic Geometry](https://sites.google.com/view/maag2019/home)
-  April 13-14, 2019,  
-  Georgia Tech, Atlanta, GA USA.  
-  Organized by Greg Blekherman, Anton Leykin, and Josephine Yu  
-  [ [talk slides](/research/maag-2019/) ]
-
 Grants
 -------------
 
@@ -74,6 +66,15 @@ Grants
   _AMPS: Collaborative Research: A Convex Geometry and Homotopy Approach for Power-Flow Equations_
   \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
 - 2016--2019 AMS-Simons Travel Grant
+
+Recent talks
+------------
+
+- [MAAG 2019: Meeting on Applied Algebraic Geometry](https://sites.google.com/view/maag2019/home)
+  April 13-14, 2019,  
+  Georgia Tech, Atlanta, GA USA.  
+  Organized by Greg Blekherman, Anton Leykin, and Josephine Yu  
+  [ [talk slides](/research/maag-2019/) ]
 
 Scientific Software
 -------------------
