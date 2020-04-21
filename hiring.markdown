@@ -17,9 +17,9 @@ computational and applied mathematics.
   You should have a solid understanding of linear algebra,
   multi-variable calculus, ordinary differential equation.
 - Compensation:
-  \$11 per hour is the base hourly rate.
+  11 dollars per hour is the base hourly rate.
   Assistants with stronger mathematical background
-  and research experience will get higher pay, up to \$16 per hour.
+  and research experience will get higher pay, up to 16 dollars per hour.
 - Perks:
   Travel funds for conferences for computation and applied mathematics.
 
@@ -34,9 +34,9 @@ as well as machine learning.
   You should be a good C/C++ programmer.
   You need to be familiar with NVidia's CUDA and/or AMD's ROCm.
 - Compensation:
-  \$11 per hour is the base hourly rate.
+  11 dollars per hour is the base hourly rate.
   Assistants with stronger programming background and experience get higher pay.
   Good programmer who can take on CUDA/ROCm programming/testing tasks
-  can get up to \$20 per hour.
+  can get up to 20 dollars per hour.
 - Perks:
   Travel funds for conferences for computation and applied mathematics.
