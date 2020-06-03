@@ -1,3 +1,26 @@
+- nickname: kuramoto3
+  title: Three formulations of the Kuramoto model as a system of polynomial equations
+  coauthors: Jakub Mareček, Dhagash Mehta, and Matthew Niemerg
+  journal: 2019 57th Annual Allerton Conference on Communication, Control, and Computing (Allerton), Monticello, IL, USA, 2019, pp. 810-815
+  link: https://doi.org/10.1109/ALLERTON.2019.8919934
+  arxiv: https://arxiv.org/abs/1603.05905
+  abstract: >
+    We compare three formulations of stationary equations of the Kuramoto model 
+    as systems of polynomial equations. 
+    In the comparison, we present bounds on the numbers of real equilibria 
+    based on the work of Bernstein, Kushnirenko, and Khovanskii, 
+    and performance of methods for the optimisation over the set of equilibria 
+    based on the work of Lasserre, both of which could be of independent interest.
+  bibtex: |
+    @INPROCEEDINGS{ChenMarecekMehtaNiemerg2019Three,
+      author={Chen, Tianran and Mareček, Jakub and Mehta, Dhagash and Niemerg, Matthew},
+      booktitle={2019 57th Annual Allerton Conference on Communication, Control, and Computing (Allerton)}, 
+      title={Three Formulations of the Kuramoto Model as a System of Polynomial Equations}, 
+      year={2019},
+      volume={},
+      number={},
+      pages={810-815},}
+
 - nickname: ap-kuramoto
   title: Directed acyclic decomposition of Kuramoto equations
   pdf: ap-kuramoto.pdf

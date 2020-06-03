@@ -149,38 +149,6 @@
     year = {2018}
     }
 
-- nickname: kuramoto-bkk
-  title: >
-    A network topology dependent upper bound
-    on the number of equilibria of the Kuramoto model
-  coauthors: Dhagash Mehta and Matthew Niemerg
-  arxiv: http://arxiv.org/abs/1603.05905
-  abstract: >
-    We begin with formulating the stationary equations of the Kuramoto model
-    as a system of polynomial equations in a novel way.
-    Then, based on an algebraic geometric root count, we give a prescription
-    of computing an upper bound on the number of equilibria of the
-    Kuramoto model for the most general case, i.e., defined on an
-    arbitrary graph and having generic values of natural frequencies
-    and inhomogeneous couplings.
-    We demonstrate with computational experiments utilizing the
-    numerical polynomial homotopy continuation method that
-    our bound is tight for the number of complex equilibria
-    for the Kuramoto model in the most general case.
-    We then discuss the implications or our results in relation to
-    finding all the real equilibria of the Kuramoto model.
-  bibtex: |
-    @article{chen_network_2016,
-    archivePrefix = {arXiv},
-    arxivId = {1603.05905},
-    author = {Chen, Tianran and Mehta, Dhagash and Niemerg, Matthew},
-    eprint = {1603.05905},
-    month = {mar},
-    title = {A network topology dependent upper bound on the number of equilibria of the {Kuramoto} model},
-    url = {http://arxiv.org/abs/1603.05905},
-    year = {2016}
-    }
-
 - nickname: index-resolved
   title: An index-resolved fixed-point homotopy and potential energy landscapes
   coauthors: Dhagash Mehta

@@ -7,8 +7,8 @@ title: CV
 
 ### Employment
 
-- 2017 – present Assistant Professor, Auburn University Montgomery.
-- 2016 – 2017 Lecturer, Auburn University Montgomery.
+- 2016 – present Assistant Professor, Auburn University Montgomery.
+- 2016/8–12 Lecturer, Auburn University Montgomery.
 - 2012 – 2016 Research Instructor, Michigan State University.
 - 2006 – 2012 Research and Teaching Assistant, Michigan State University.
 - 2003 – 2005 Research Assistant, Western Connecticut State University.
@@ -20,12 +20,17 @@ title: CV
 - 2005 : B.A. Computer Science, Western Connecticut State University, (CT USA).  
   Secondary major in Mathematics
 
-### Grants & Awards
+### Grants
 
 - 2019--2012 NSF research grant DMS-1923099 
   _AMPS: Collaborative Research: A Convex Geometry and Homotopy Approach for Power-Flow Equations_
   \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
 - 2016 AMS-Simons Travel Grant
+
+### Awards
+
+- 2020 Outstanding faculty award
+  (Department of Mathematics, Auburn University Montgomery)
 - 2014 A paper selected for Journal of Chemical Physics Editors’ Choice for 2014
 - 2010 Dr. Paul & Wilma Dressel endowed scholarship award
   (Michigan State University)
