@@ -12,7 +12,8 @@ I studied under the guidance of Tien-Yien Li
 and received my Ph.D. in Applied Mathematics from Michigan State University.
 My main research interests are numerical analysis and scientific computing
 as well as their applications in physics, chemistry, biology, and engineering.
-My current research focuses on _numerical algebraic geometry_.
+My current research focuses on _numerical algebraic geometry_
+and is supported by NSF grant DMS-1923099.
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
@@ -61,7 +62,7 @@ I am an advisor for pre-engineering students.
 Grants
 -------------
 
-- 2019--2012 NSF research grant 
+- 2019--2021 NSF research grant 
   [DMS-1923099](https://nsf.gov/awardsearch/showAward?AWD_ID=1923099)
   _AMPS: Collaborative Research: A Convex Geometry and Homotopy Approach for Power-Flow Equations_
   \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
