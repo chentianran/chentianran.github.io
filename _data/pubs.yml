@@ -89,7 +89,7 @@
     }
 
 - nickname: kuramoto-biii
-  title: >
+  title: >-
     Counting equilibria of the Kuramoto model using
     birationally invariant intersection index
   coauthors: Robert Davis and Dhagash Mehta
@@ -125,7 +125,7 @@
     }
 
 - nickname: tropicon-abs
-  title: >
+  title: >-
     libtropicon: A Scalable Library for Computing 
     Intersection Points of Generic Tropical Hyper-surfaces
   journal: Mathematical Software -- ICMS 2018
@@ -162,7 +162,7 @@
     }
 
 - nickname: freesum
-  title: >
+  title: >-
     A Product Formula for the Normalized Volume of
     Free Sums of Lattice Polytopes
   journal: "Advances in Algebra: Research from the Southern Regional Algebra Conference 2017"
@@ -190,13 +190,14 @@
     }
 
 - nickname: belief
-  title: >
+  title: >-
     Fixed points of belief propagation --
     An analysis via polynomial homotopy continuation
   journal: IEEE Transactions on Pattern Analysis and Machine Intelligence
   coauthors: Christian Knoll, Dhagash Mehta, and Franz Pernkopf
   link:  https://doi.org/10.1109/TPAMI.2017.2749575
   arxiv: https://arxiv.org/abs/1605.06451
+  pdf: belief-propagation.pdf
   abstract: >
     Belief propagation (BP) is an iterative method to perform approximate
     inference on arbitrary graphical models.
@@ -257,6 +258,7 @@
   journal: Journal of Symbolic Computation (2017), pp. 516-534
   coauthors: Tsung-Lin Lee and Tien-Yien Li
   link: http://dx.doi.org/10.1016/j.jsc.2016.07.017
+  pdf: mcells-h3.pdf
   abstract: >
     This article presents recent efforts in improving the efficiency
     and scalability of the mixed cell computation step in the context of
@@ -291,6 +293,7 @@
   journal: Journal of Symbolic Computation (2017)
   coauthors: Dhagash Mehta
   link: http://dx.doi.org/10.1016/j.jsc.2016.07.018
+  pdf: parallel-degree.pdf
   abstract: >
     Solution sets of systems of binomial equations are of great interest
     in applied mathematics. For both theoretic and applied purposes,
@@ -322,7 +325,7 @@
     }
 
 - nickname: landscape-response
-  title: >
+  title: >-
     Response to "Comment on 'Exploring the potential energy landscape
     of the Thomson problem via Newton homotopies'"
   journal: The Journal of Chemical Physics 143, 247102
@@ -352,12 +355,13 @@
     }
 
 - nickname: survey
-  title: >
+  title: >-
     Homotopy continuation method for solving
     systems of nonlinear and polynomial equations
   journal: Communications in Information and Systems 15(2):119--307 (2015)
   coauthors: Tien-Yien Li
   link: http://dx.doi.org/10.4310/CIS.2015.v15.n2.a1
+  pdf: 
   abstract: >
     This survey provides an overview of the homotopy continuation method
     for solving systems of nonlinear and polynomial equations including
@@ -379,8 +383,9 @@
 - nickname: landscape
   title: Exploring the potential energy landscape of the Thomson problem via Newton homotopies
   journal: The Journal of Chemical Physics 142 194113 (2015)
-  coauthors: Dhagash Mehta, David Wales, and John Morgan
+  coauthors: Dhagash Mehta, John Morgan, and David Wales
   link: http://dx.doi.org/10.1063/1.4921163
+  pdf: thomson.pdf
   abstract: >
     Locating the stationary points of a real-valued multivariate potential
     energy function is an important problem in many areas of science.
@@ -453,6 +458,7 @@
   coauthors: Dhagash Mehta, Jonathan Hauenstein, and David Wales
   link: http://dx.doi.org/10.1063/1.4896657
   arxiv: http://arxiv.org/abs/1412.3810
+  pdf: newton-homotopy.pdf
   note: Selected for a Journal of Chemical Physics Editors' Choice for 2014
   abstract: >
     One of the most challenging and frequently arising problems in many areas
@@ -489,6 +495,7 @@
   year: 2014
   coauthors: Tien-Yien Li
   link: http://www.sbc.org.pl/Content/129017/007-034.pdf
+  pdf: binomial.pdf
   abstract: >
     This paper provides an overview on the geometry of solutions to binomial
     equations (equations that have exactly two terms) as well as the numerical
@@ -550,6 +557,7 @@
   year: 2014
   coauthors: Tsung-Lin Lee and Tien-Yien Li
   link: http://dx.doi.org/10.11650/tjm.18.2014.3276
+  pdf: mvol-para.pdf
   abstract: >
     Efficient algorithms for computing mixed volumes, via the computation of
     mixed cells, have been implemented in DEMiCs and MixedVol-2.0.
@@ -583,6 +591,7 @@
   year: 2012
   coauthors: Tien-Yien Li
   link: http://dx.doi.org/10.4310/CIS.2012.v12.n3.a2
+  pdf: spherical.pdf
   abstract: >
     Solving systems of polynomial equations is an important problem in
     mathematics with a wide range of applications in many fields.
