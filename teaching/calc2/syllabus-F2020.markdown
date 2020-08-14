@@ -7,12 +7,16 @@ title: MATH-1620
 
 ### When, where, and who
 
-* Time: Mon, Wed 10:50am -- 12:30pm
+* Title: Calculus II
+* Time:
+  * Monday: 10:50am -- 12:30pm (Zoom only)
+  * Wednesday: 10:50am -- 12:30pm (In-person only)
 * Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/calc2/>
 {% include hours.markdown %}
+{% include appointments.markdown %}
 
 <!-- My job is to help you to succeed in this class.
 I will be happy to discuss issues related to this course. -->

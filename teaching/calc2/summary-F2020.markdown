@@ -60,3 +60,5 @@ Please read <http://www.aum.edu/coronavirus-update-student-faq> carefully.
 
 If you have questions about the syllabus and how this course will run,
 just ask!  I will add answers to this section.
+
+{% include covid-faq.markdown %}

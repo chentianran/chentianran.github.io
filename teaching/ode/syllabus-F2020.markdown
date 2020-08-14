@@ -8,12 +8,15 @@ title: MATH-3690
 ### When, where, and who
 
 * Title: Ordinary Differential Equations
-* Time: Tue, Thu, 2:10pm -- 3:25pm
+* Time:
+  * Tue: 2:10pm -- 3:25pm (Zoom only)
+  * Thu: 2:10pm -- 3:25pm (In-person only)
 * Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/ode/>
 {% include hours.markdown %}
+{% include appointments.markdown %}
 
 <!-- My job is to help you to succeed in this class.
 I will be happy to discuss issues related to this course. -->

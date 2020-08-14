@@ -13,7 +13,7 @@ and received my Ph.D. in Applied Mathematics from Michigan State University.
 My main research interests are numerical analysis and scientific computing
 as well as their applications in physics, chemistry, biology, and engineering.
 My current research focuses on _numerical algebraic geometry_
-and is supported by NSF grant DMS-1923099.
+and is supported by [NSF grant DMS-1923099](https://nsf.gov/awardsearch/showAward?AWD_ID=1923099).
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
@@ -27,26 +27,17 @@ Office hours
 ------------
 
 {% include hours.markdown %}
+{% include appointments.markdown %}
 
-Advising
---------
+Appointments
+------------
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 
-I am an advisor for pre-engineering students.
-<a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/advising');return false;">Schedule an advising appointment with me</a>
-<!-- Calendly link widget end -->
-<!-- Calendly inline widget begin -->
-<!-- <div class="calendly-inline-widget" data-url="https://calendly.com/chentianran/advising" style="min-width:320px;height:500px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script> -->
-<!-- Calendly inline widget end -->
-<!-- Click here to [make an advising appointment](https://doodle.com/poll/fa8tubrh7ka8tbqu). -->
-
-<!-- Schedule
---------
-
-<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=700&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=k7cas66vp4vba2cruqhh4cila8%40group.calendar.google.com&amp;color=%235F6B02&amp;ctz=America%2FChicago" style="border-width:0" width="700" height="300" frameborder="0" scrolling="no"></iframe> -->
+- <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/advising');return false;">Schedule an advising appointment with me</a>
+- <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/one-on-one');return false;">Schedule an one-on-one meeting with me</a>
+- <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/office');return false;">Schedule an office hour meeting with me</a>
 
 <!-- Upcoming conferences
 - [SIAM AG 2019](https://mathsites.unibe.ch/siamag19/)  

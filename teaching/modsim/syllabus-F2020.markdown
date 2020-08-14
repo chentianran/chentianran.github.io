@@ -7,12 +7,16 @@ title: MATH-4400
 
 ### When, where, and who
 
-* Time: Tue, Thu 3:35pm -- 4:50pm
+* Title: Mathematical modeling and simulations
+* Time:
+  * Tue: 3:35pm -- 4:50pm (Zoom only)
+  * Thu: 3:35pm -- 4:50pm (In-person only)
 * Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/modsim/>
 {% include hours.markdown %}
+{% include appointments.markdown %}
 
 ### What we will learn
 
