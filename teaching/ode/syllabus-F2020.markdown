@@ -185,16 +185,6 @@ Note that you will receive slightly different versions of the same problem in ea
 <!-- In-class practice is a crucially important component of the learning process.
 Your in-class worksheets will be _collected and graded_. -->
 
-### Homework assignments
-
-Homework assignments can be found on the Blackboard system.
-All homework assignment are open-book & open-internet assignments.
-However, you must complete the assignment independently.
-__Late submission will receive lower scores__
-unless valid reasons
-(military assignments, medical issues, family emergency, etc)
-and _proper documentation_ are provided, preferably _in advance_.
-
 <!-- ### Projects
 Projects are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
