@@ -3,7 +3,7 @@ layout: default
 title: Teaching
 ---
 
-#Teaching
+# Teaching
 
 ## Fall 2020
 
