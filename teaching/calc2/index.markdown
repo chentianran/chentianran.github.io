@@ -3,13 +3,12 @@ layout: default
 title: MATH-1620
 ---
 
-# MATH-1620 Summer 2018
+# MATH-1620 Fall 2020
 
-* [Course syllabus](syllabus/)
-* [Informal syllabus summary](summary/)
+* [Course syllabus](syllabus-F2020/)
+* [Informal summary for syllabus](summary-F2020/)
 
-
-## How to survive this course?
+<!-- ## How to survive this course
 
 * Read before class
   - Reading is an important component in our learning process.
@@ -26,7 +25,7 @@ title: MATH-1620
 * Tell yourself that it is okay to not know the correct answer
   - ...well, as long as you are actively trying to figure out the answers
   - the process of the trying to figure out the answer is the important part.
-    The only important part!
+    The only important part! -->
 
 ## Additional material
 

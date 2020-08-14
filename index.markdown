@@ -8,7 +8,7 @@ Hi, I am Tianran Chen
 
 I am an Assistant Professor at [Auburn University at Montgomery](http://www.aum.edu)
 in the Department of Mathematics and Computer Science.
-I studied under the guidance of Tien-Yien Li
+I studied under the guidance of [Tien-Yien Li](https://sites.google.com/view/tienyienli)
 and received my Ph.D. in Applied Mathematics from Michigan State University.
 My main research interests are numerical analysis and scientific computing
 as well as their applications in physics, chemistry, biology, and engineering.
@@ -17,11 +17,11 @@ and is supported by NSF grant DMS-1923099.
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Spring Semester of 2020 I am teaching
+In the Fall semester of 2020 I am teaching
 
-- [CSCI-1210](matlab/)    (Introduction to computer programming)
-- [MATH-2660](linalg/)    (Linear algebra)
-- [MATH-4230](complex/)   (Complex variable)
+- [MATH-1620](calc2/)     (Calculus II)
+- [MATH-3690](ode/)       (Differential equations)
+- [MATH-4400](modsim/)    (Math Models and Simulations)
 
 Office hours
 ------------
