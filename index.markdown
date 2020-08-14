@@ -19,9 +19,9 @@ For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
 In the Fall semester of 2020 I am teaching
 
-- [MATH-1620](calc2/)     (Calculus II)
-- [MATH-3690](ode/)       (Differential equations)
-- [MATH-4400](modsim/)    (Math Models and Simulations)
+- [MATH-1620](teaching/calc2/)     (Calculus II)
+- [MATH-3690](teaching/ode/)       (Differential equations)
+- [MATH-4400](teaching/modsim/)    (Math Models and Simulations)
 
 Office hours
 ------------

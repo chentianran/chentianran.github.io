@@ -3,8 +3,7 @@ layout: default
 title: Teaching
 ---
 
-Teaching
-========
+#Teaching
 
 ## Fall 2020
 
@@ -24,6 +23,12 @@ Teaching
 - [MATH-4320](alg2/)      (Modern Algebra II)
 - [MATH-4600](num/)       (Numerical analysis)
 - [CSCI-1210](matlab/)    (Introduction to computer programming)
+
+## Topic courses
+
+- Summer 2019 Applied nonlinear algebra
+
+## Office hours
 
 {% include hours.markdown %}
 
