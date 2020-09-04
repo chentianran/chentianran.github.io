@@ -174,7 +174,7 @@ Your attendance in each meeting worth 0.333...% of your course grade.
 
 In in-person or virtual problem sessions,
 you will be given worksheets that contain short problems for you to complete.
-There are 20 worksheets in total, you can try to complete each worksheet multiple times,
+There are 23 worksheets in total, you can try to complete each worksheet multiple times,
 although you will only have at most one attempt on any worksheet in each problem session.
 In each attempt, you can...
 

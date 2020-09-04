@@ -138,7 +138,7 @@ Your attendance in each meeting worth 0.333...% of your course grade.
 
 In in-person or virtual problem sessions,
 you will be given worksheets that contain short problems for you to complete.
-There are 20 worksheets in total, you can try to complete each worksheet multiple times,
+There are 10 worksheets in total, you can try to complete each worksheet multiple times,
 although you will only have at most one attempt on any worksheet in each problem session.
 In each attempt, you can...
 
@@ -152,7 +152,7 @@ Note that you will receive slightly different versions of the same problem in ea
 <!-- In-class practice is a crucially important component of the learning process.
 Your in-class worksheets will be _collected and graded_. -->
 
-### Homework assignments
+### Homework assignments and projects
 
 Homework assignments can be found on the Blackboard system.
 All homework assignment are open-book & open-internet assignments.
