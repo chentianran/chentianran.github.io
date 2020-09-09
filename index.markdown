@@ -37,7 +37,6 @@ Appointments
 
 - <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/advising');return false;">Schedule an advising appointment with me</a>
 - <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/one-on-one');return false;">Schedule an one-on-one meeting with me</a>
-- <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/office');return false;">Schedule an office hour meeting with me</a>
 
 <!-- Upcoming conferences
 - [SIAM AG 2019](https://mathsites.unibe.ch/siamag19/)  
