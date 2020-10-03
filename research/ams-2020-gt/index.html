@@ -21,7 +21,8 @@ title: Power-flow equations and tropical intersections
 <section>
     <p>
         <span class="alert">Power networks</span>
-        carry (AC) electric power and make modern life possible.
+        carry alternating current (AC) electric power 
+        and make modern life possible.
     </p>
     <p class="fragment">
         <span class="alert">Power-flow equations</span>
@@ -126,8 +127,13 @@ title: Power-flow equations and tropical intersections
         wind turbine farm operations and other applications.
     </p>
     <p class="fragment">
-        Closely related to Kuramoto equations.
+        Closely related to Kuramoto equations,
+        reactive power balancing equations for solar farms,
+        and bilinear TL-type consensus network equations.
     </p>
+    <!-- <p class="fragment">
+        An example of nonlinear equations on networks.
+    </p> -->
 </section>
 <section>
     <!-- <h3>Power-flow equations</h3> -->
@@ -154,26 +160,213 @@ title: Power-flow equations and tropical intersections
     </ul>
 </section>
 <section>
-    <p align="left">Algebraic geometry approaches to this problem:</p>
-    <br>
+    <p>Algebraic geometry approaches to PQ-type power-flow:</p>
+    <br/>
     <ul>
         <li>
-            J. Baillieul and C. Byrnes <br>
+            J. Baillieul and C. Byrnes 
             <span class="footnote">
-                Geometric Critical Point Analysis of Lossless Power System Models
-            </span><br>
+                Geometric Critical Point Analysis of Lossless Power System Models. (1982)
+                IEEE Transactions on Circuits and Systems
+            </span>
         </li>
         <li>
-            D. Mehta, N. Daleo, F. Dörfler, and J. Hauenstein <br>
+            T.-Y. Li, T. Sauer, and J. Yorke
             <span class="footnote">
-                Algebraic geometrization of the Kuramoto model: Equilibria and stability analysis
-            </span><br>
+                Numerical Solution of a Class of Deficient Polynomial Systems
+                SIAM Journal of Numerical Analysis (1987)
+            </span>
         </li>
-        <li>
-            O. Coss, J. Hauenstein, H. Hong, and D. Molzahn <br>
+        <li class="fragment">
+            (Recent survey) D. Mehta, D. Molzahn and K. Turitsyn 
             <span class="footnote">
-                Locating and Counting Equilibria of the Kuramoto Model with Rank-One Coupling
-            </span><br>
+                "Recent advances in computational methods for the power flow equations", 
+                2016 American Control Conference.
+            </span>
+        </li>
+        <li class="fragment">
+            (Many related works on the PV-type power-flow)
         </li>
     </ul>
 </section>
+<section>
+    <h3>Solution count</h3>
+    <p>
+        \[
+            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
+            \quad\text{for } i = 2,\dots,N
+        \]
+    </p>
+    <p>
+        How many 
+        <span class="alert">
+            nonzero complex solutions
+        </span>
+        can there be?
+    </p>
+    <p class="fragment">
+        J. Baillieul and C. Byrnes (1982)
+        <span class="footnote">
+            Geometric Critical Point Analysis of Lossless Power System Models
+        </span><br>
+
+        T.-Y. Li, T. Sauer, and J. Yorke (1987)
+        <span class="footnote">
+        Numerical Solution of a Class of Deficient Polynomial Systems
+        <!-- SIAM J. Numer. Anal. -->
+        </span><br>
+
+        <ul>
+            <li class="fragment">
+                There can be more than one solutions.
+            </li>
+            <li class="fragment">
+                There can be at most $\binom{2(N-1)}{N-1}$ solutions.
+            </li>
+            <li class="fragment">
+                This upper bound is attainable.
+            </li>
+        </ul>
+    </p>
+</section>
+<section>
+    <p>
+        PQ-type power-flow equations:
+        Upper bound on the number of complex solutions
+        is $\binom{2(N-1)}{N-1}$
+    </p>
+    <p></p>
+    <ul>
+        <li class="fragment">
+            This bound is only attained for dense power networks.
+        </li>
+        <li class="fragment alert">
+            What about sparse networks?
+            <span class="fragment">
+                The bound should be lower.
+            </span>
+        </li>
+        <ul>
+            <li class="fragment">
+                S. Guo and F. Salam, 
+                <span class="footnote">
+                    The number of (equilibrium) steady-state solutions of models of power systems. 
+                    (1994) IEEE Transactions on Circuits and Systems I.
+                    <!-- : Fundamental Theory and Applications , vol. 41, no. 9, pp. 584-600, . -->
+                </span>
+            </li>
+            <li class="fragment">
+                D. Molzahn, D. Mehta, M. Niemerg, 
+                <span class="footnote">
+                    Toward topologically based upper bounds on the number of power flow solutions. 
+                    (2016) American Control Conference.
+                </span>
+            </li>
+            <li class="fragment">
+                T. Chen, D. Mehta
+                <span class="footnote">
+                    On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations.
+                    (2018) IEEE Transactions on Power Systems.
+                </span>
+            </li>
+            <li class="fragment">
+                T. Chen
+                <span class="footnote">
+                    (2019) Unmixing the mixed volume computation.
+                    Discrete & Computational Geometry
+                </span>
+            </li>
+        </ul>
+    </ul>
+</section>
+<section>
+    <h3>Solution count for sparse networks</h3>
+    <p>
+        For sparse networks the upper bound for the number of power-flow solutions
+        depends on network topology.
+    </p>
+    <ul>
+        <li class="fragment">
+            <span class="alert">
+                Guo and Salam:<br/>
+            </span>
+            Cut-vertex decomposition
+        </li>
+        <li class="fragment">
+            <span class="alert">
+                Molzahn, Mehta, and Niemerg:<br/>
+            </span>
+            Algebraic geometry approach to very sparse networks.
+        </li>
+        <li class="fragment">
+            <span class="alert">
+                Chen and Mehta:
+            </span><br/>
+            the bound is mixed volume of $N-1$ polytopes
+        </li>
+        <li class="fragment">
+            <span class="alert">
+                Chen:
+            </span>
+            the bound is the volume of "adjacency polytope"
+        </li>
+        <li class="fragment">
+            (Many related results for PV-type formulation)
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Our recent/current works</h3>
+    <p>
+        We focused on an algebraic/convex/tropical geometry approach 
+        to certain aspects of this problem.
+    </p>
+    <br/>
+    <ul>
+        <li class="fragment">The solution count problem should be a purely <span class="alert">combinatorial problem</span>.</li>
+        <li class="fragment">Can we turn the power-flow equations into <span class="alert">linear</span> system?</li>
+        <li class="fragment">How to sample power-flow solutions quickly?</li>
+    </ul>
+</section>
+<section>
+    <div class="theorem">
+        <p>
+            <b>Theorem.</b> (R. Davis and Chen, 2020)
+        </p>
+        <p>
+            Given a network $G$,
+            the maximum number of power-flow solutions on this network
+            is bounded above by the number of
+            <span class="alert">$D(G)$-draconian sequences</span>.
+        </p>
+    </div>
+
+    <div class="fragment theorem">
+        <p>
+            <b>Definition.</b>
+            For a network/graph $G$ with vertices $1,\dots,N$.
+            We call $(a_1,\dots,a_N) \in \mathbb{Z}_{\geq 0}^N$ a 
+            <span class="alert">$D(G)$-draconian sequence</span>
+            if $\sum a_i = N-1$ and, for any $1 \leq i_1 < \cdots < i_k \leq N$,
+            \[
+                a_{i_1} + \cdots + a_{i_k} < 
+                \left|\{i_1,\dots,i_k\} \cup \left(\bigcup_{j=1}^k \mathcal{N}_G(i_j)\right)\right|
+            \]
+        </p>
+    </div>
+</section>
+<!-- <section>
+    <h3>Make power-flow algebraic</h3>
+    <p>
+        \[
+            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
+            \quad\text{for } i = 2,\dots,N
+        \]
+    </p>
+    <p class="fragment">
+        Not linear, not polynomial, not holomorphic.
+    </p>
+    <p class="fragment">
+    </p>
+    <p class="fragment"></p>
+</section> -->
