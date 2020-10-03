@@ -1,0 +1,179 @@
+---
+layout: slide2
+title: Power-flow equations and tropical intersections
+---
+
+<section class="titlepage">
+    <h2 class="title">Power-flow equations and tropical intersections</h2>
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+    <p class="footnote">
+        Oct. 4, 2020<br/>
+        AMS Fall Eastern Virtual Sectional Meeting
+    </p>
+    <p class="footnote2">
+        Joint work with Robert Davis (Colgate University)
+    </p>
+</section>
+<section>
+    <p>
+        <span class="alert">Power networks</span>
+        carry (AC) electric power and make modern life possible.
+    </p>
+    <p class="fragment">
+        <span class="alert">Power-flow equations</span>
+        describes the intricate
+        balancing conditions on "buses" of a AC power network
+        derived from Kirchhoff's circuit laws.
+    </p>
+    <p class="fragment">
+        Their solutions, i.e. 
+        <span class="alert">"power-flow solutions"</span>,
+        corresponds power network's state of operation<br/>
+        (including physically impossible states).
+    </p>
+</section>
+<section>
+    <h3>Different buses</h3>
+    <p class="fragment">
+        We can model an AC power network as graph $G$
+        whose vertices represent "buses"
+        and   edges    represent junctions.
+    </p>
+    <p class="fragment">
+        Three basic types of buses
+    </p>
+    <ul>
+        <li class="fragment">
+            <span class="alert">PV-buses</span>
+            are generator buses.
+        </li>
+        <li class="fragment">
+            <span class="alert">PQ-buses</span>
+            are load buses.
+        </li>
+        <li class="fragment">
+            <span class="alert">Reference buses</span>
+            provide references relative to which
+            all other buses are measured.
+        </li>
+    </ul>
+    <p class="fragment">
+        PV and PQ buses result in very different formulations.
+    </p>
+</section>
+<section>
+    <h3>Lossless PQ-type formulation</h3>
+    <p>
+        Here we only focus on a much simplified formulation in which 
+        <b>all non-reference buses are modeled as PQ buses</b>,
+        and no electric energy is lost in the network.
+    </p>
+    <ul>
+        <li class="fragment">These assumptions are not realistic.</li>
+        <li class="fragment">
+            Such formulations are studied in engineering context.
+        </li>
+        <li class="fragment">
+            More realistic formulations involve a mixture of PV and PQ 
+            (and reference) buses as well as power loss.
+        </li>
+        <li class="fragment">
+            Realistic formulation can be obtained from this formulation
+            by removing equations and adding constraints.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Power-flow equations</h3>
+    <p class="fragment">
+        Derived from Kirchhoff's circuit laws,
+        the power-flow equations for power network $G$
+        consisting of $N$ buses is a system of $N-1$ equations
+    </p>
+    <p class="fragment">
+        \[
+            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
+            \quad\text{for } i = 2,\dots,N
+        \]
+    </p>
+    <p class="fragment">
+        in the $N-1$ <span class="alert">complex variables</span> 
+        $v_2, \dots, v_N$ with $v_1 = 1$
+        <span class="fragment">
+            , where $\overline{v}_j$ denotes the
+            <span class="alert">complex conjugate</span> of $v_j$
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Power-flow equations</h3>
+    <p>
+        \[
+            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
+            \quad\text{for } i = 2,\dots,N
+        \]
+    </p>
+    <p class="fragment">
+        One of the central object in "power-flow study"
+        in the analysis of power networks.
+    </p>
+    <p class="fragment">
+        Similar systems also appear in the study of
+        wind turbine farm operations and other applications.
+    </p>
+    <p class="fragment">
+        Closely related to Kuramoto equations.
+    </p>
+</section>
+<section>
+    <!-- <h3>Power-flow equations</h3> -->
+    <p>
+        \[
+            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
+            \quad\text{for } i = 2,\dots,N
+        \]
+    </p>
+    <ul>
+        <li class="fragment">Is there a solution?</li>
+        <li class="fragment">How to find one solution?</li>
+        <li class="fragment alert">How many solutions are there?</li>
+        <li class="fragment alert">How to find all/many solutions?</li>
+    </ul>
+    <p class="fragment">
+        Despite the simplicity,
+        these questions are not trivial.
+    </p>
+    <ul>
+        <li class="fragment">Not linear</li>
+        <li class="fragment">Not polynomial</li>
+        <li class="fragment">Not holomorphic / complex differentiable</li>
+    </ul>
+</section>
+<section>
+    <p align="left">Algebraic geometry approaches to this problem:</p>
+    <br>
+    <ul>
+        <li>
+            J. Baillieul and C. Byrnes <br>
+            <span class="footnote">
+                Geometric Critical Point Analysis of Lossless Power System Models
+            </span><br>
+        </li>
+        <li>
+            D. Mehta, N. Daleo, F. Dörfler, and J. Hauenstein <br>
+            <span class="footnote">
+                Algebraic geometrization of the Kuramoto model: Equilibria and stability analysis
+            </span><br>
+        </li>
+        <li>
+            O. Coss, J. Hauenstein, H. Hong, and D. Molzahn <br>
+            <span class="footnote">
+                Locating and Counting Equilibria of the Kuramoto Model with Rank-One Coupling
+            </span><br>
+        </li>
+    </ul>
+</section>
