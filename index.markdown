@@ -61,6 +61,12 @@ Grants
 Recent talks
 ------------
 
+- [AMS Fall 2020 Eastern Virtual Sectional Meeting](https://www.ams.org/meetings/sectional/2278_program.html)
+  October 3-4, 2020,  
+  (formerly at Pennsylvania State University)  
+  Special Session on Nonlinear Scientific Computing and Applications,
+  organized by Wenrui Hao  
+  [ [talk slides](/research/ams-2020-gt/) ]
 - [MAAG 2019: Meeting on Applied Algebraic Geometry](https://sites.google.com/view/maag2019/home)
   April 13-14, 2019,  
   Georgia Tech, Atlanta, GA USA.  
