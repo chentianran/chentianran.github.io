@@ -92,7 +92,7 @@ title: Power-flow equations and tropical intersections
     <h3>Power-flow equations</h3>
     <p class="fragment">
         Derived from Kirchhoff's circuit laws,
-        the power-flow equations for power network $G$
+        the PQ-type power-flow equations for power network $G$
         consisting of $N$ buses is a system of $N-1$ equations
     </p>
     <p class="fragment">
@@ -331,29 +331,249 @@ title: Power-flow equations and tropical intersections
 <section>
     <div class="theorem">
         <p>
-            <b>Theorem.</b> (R. Davis and Chen, 2020)
-        </p>
-        <p>
+            <b>Theorem.</b> 
+            (R. Davis and Chen, 2020)
+            <span class="alert">arXiv:2007.11051</span>
+            <br/>
             Given a network $G$,
             the maximum number of power-flow solutions on this network
             is bounded above by the number of
-            <span class="alert">$D(G)$-draconian sequences</span>.
+            <span class="alert">$D(G)$-draconian sequences</span>
+            derived from $G$.
         </p>
     </div>
-
-    <div class="fragment theorem">
-        <p>
+    <div class="r-stack">
+        <div class="fragment fade-in-then-out theorem">
+            <p>
+                <b>Definition.</b>
+                For a network/graph $G$ with vertices $1,\dots,N$.
+                We call $(a_1,\dots,a_N) \in \mathbb{Z}_{\geq 0}^N$ a 
+                <span class="alert">$D(G)$-draconian sequence</span>
+                if $\sum a_i = N-1$ and, for any $1 \leq i_1 < \cdots < i_k \leq N$,
+                \[
+                    a_{i_1} + \cdots + a_{i_k} < 
+                    \left|\{i_1,\dots,i_k\} \cup \left(\bigcup_{j=1}^k \mathcal{N}_G(i_j)\right)\right|
+                \]
+            </p>
+        </div>
+        <div class="fragment">
+            <p>What's the point?</p>
+            <ul>
+                <li class="fragment">
+                    We transformed this question about a nonlinear system 
+                    into a well-studied question in
+                    <span class="alert">combinatorics</span>.
+                </li>
+                <li class="fragment">
+                    Many answers are already known
+                    (e.g. cycles, outer-planar, certain wheel, 
+                    complete bipartite graphs) 
+                </li>
+                <li class="fragment">
+                    Large networks can be decomposed into smaller graphs.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Power-flow: a tropical view</h3>
+    <p>
+        Another direction of our project is to study
+        power-flow equations from a new "tropical" point of view.
+    </p>
+    <ul>
+        <li class="fragment">
+            Turn one complicated nonlinear problem
+            into a family of simple linear problems.
+        </li>
+        <li class="fragment">
+            Each linear component is easy to solve and understand.
+        </li>
+        <li class="fragment">
+            The linear components encodes network topology.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>What is a tropical intersection?</h3>
+    <p>
+        Tropical geometry studies polynomials by
+        turning them into piece-wise linear functions.
+    </p>
+    <p class="fragment">
+        \[
+            \operatorname{Trop}( a x^3 + b x^4 y^5 )
+            =
+            \min \{ A + 3x \,,\, B+4x+5y \, \}
+        \]
+        where $A$ and $B$ are the "valuation" of $a$ and $b$.
+    </p>
+    <ul>
+        <li class="fragment">Turns $+$ into $\min$</li>
+        <li class="fragment">Turns $\cdot$ into $+$</li>
+        <li class="fragment">Turns power into $\cdot$</li>
+        <li class="fragment">Turns polynomial into piecewise-linear functions</li>
+    </ul>
+</section>
+<section>
+    <h3>Tropical hypersurfaces, generalized</h3>
+    <div class="r-stack">
+        <div class="theorem fragment fade-in-then-out">
+            <p>
             <b>Definition.</b>
-            For a network/graph $G$ with vertices $1,\dots,N$.
-            We call $(a_1,\dots,a_N) \in \mathbb{Z}_{\geq 0}^N$ a 
-            <span class="alert">$D(G)$-draconian sequence</span>
-            if $\sum a_i = N-1$ and, for any $1 \leq i_1 < \cdots < i_k \leq N$,
+            The <span class="alert">tropical hypersurface</span>
+            defined by a tropical polynomial 
+            $\operatorname{Trop}(f)(x_1,\dots,x_n)$ 
+            is the set of all points in $\mathbb{R}^n$
+            such that the minimum in $\operatorname{Trop}(f)(x_1,\dots,x_n)$ 
+            is attained
+            <span class="alert">at least twice</span>.
+            </p>
+        </div>
+        <div class="fragment fade-in-then-out">
+            <p>
+                This is the widely used definition,
+                but it is not sufficient in our study.
+                Motivated by the PQ-type power-flow equations,
+                we define the concept of
+                <span class="alert">
+                    generalized tropical hypersurface
+                </span>.
+            </p>
+        </div>
+        <div class="theorem fragment">
+            <p>
+                <b>Definition.</b> The 
+                <span class="alert">
+                    <b>tropical hypersurface
+                    of type $t$</b>
+                </span>
+                defined by a tropical polynomial 
+                $\operatorname{Trop}(f)(x_1,\dots,x_n)$ 
+                is the set of all points in $\mathbb{R}^n$
+                such that the minimum in $\operatorname{Trop}(f)(x_1,\dots,x_n)$ 
+                is attained
+                <span class="alert"><b>at least $t+1$ times</b></span>.
+            </p>
+        </div>
+    </div>
+
+    <p class="fragment">
+        The original definition of a tropical hypersurface 
+        is a special case of this definition with type $t=1$.
+    </p>
+
+    <p class="fragment">
+        <span class="alert">
+        <b>Generalized</b> intersection of $n$ tropical hypersurfaces
+        </span>
+        $(H_1,\dots,H_N)$ of type $(t_1,\dots,t_N)$
+        is their set-theoretic intersection in $\mathbb{R}^N$.
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <p>
+            <b>Theorem. (T. Chen & R. Davis)</b>
+            Counting multiplicity, the power-flow solutions
+            are in one-to-one correspondence 
+            with a subset of the generalized intersections of
+            tropical hypersurfaces defined by $L_i$
+            of all possible types $(t_1,\dots,t_N) \in \mathbb{Z}_0^N$ 
+            with $\sum_{i=1}^N t_i = N$,
+            where
             \[
-                a_{i_1} + \cdots + a_{i_k} < 
-                \left|\{i_1,\dots,i_k\} \cup \left(\bigcup_{j=1}^k \mathcal{N}_G(i_j)\right)\right|
+                L_{i}(z_1,\dots,z_N) = 
+                z_i + \sum_{j \in \mathcal{N}_(i)} c_{ij} \, z_j.
             \]
         </p>
     </div>
+    <ul>
+        <li class="fragment">
+            Power-flow solutions can be studied through 
+            generalized tropical hypersurfaces defined by linear polynomials $L_i$'s.
+        </li>
+        <li class="fragment">
+            $L_i$'s encodes the sparsity in the power network.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Summary</h3>
+    <p class="fragment">
+        We focused on the PQ-type power-flow equations
+        \[
+            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
+            \quad\text{for } i = 2,\dots,N
+        \]
+    </p>
+    <ul>
+        <li class="fragment">
+            Turned the problem of bounding the number of power-flow solutions
+            into a well-studied combinatorics problem.
+            <ul>
+                <li class="fragment">Many existing results can be utilized.</li>
+                <li class="fragment">Potentially faster to compute (complexity unknown)</li>
+            </ul>
+        </li>
+        <li class="fragment">
+            Mapped power-flow solutions to
+            "generalized intersections of tropical hypersurfaces"
+            of <span class="alert">linear polynomials</span>.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Future directions / open problems</h3>
+    <ul>
+        <li class="fragment">
+            The complexity of all the problems involved
+            in computing the upper bound of the power-flow solutions
+            (mostly unknown, other than no worse than #P).
+        </li>
+        <li class="fragment">
+            Scalable parallel implementations (GPU-accelerated).
+        </li>
+        <li class="fragment">
+            Can these techniques be applied to other nonlinear systems
+            derived from other types networks?
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Acknowledgement</h3>
+    <p>
+        My collaborators on this and related projects:
+        Rob Davis, Evgeniia Korchevskaia, Wuwei Li, 
+        Jakub Marecek, Dhagash Mehta, Dan Molzahn, Matthew Niemerg.
+    </p>
+    <p>
+        My advisor Tien-Yien Li (1945-2020).
+    </p>
+    <p>
+        This research is supported, in part, by NSF 
+        and AUM grant-in-aid program
+    </p>
+    <img width="150" src="nsf.png">
+    <img width="150" src="aum.jpg">
+</section>
+<section class="titlepage center">
+    <h2>Thank You!</h2>
+
+    <p class="footnote">
+        ti@nranchen.org<br/>
+        http://www.tianranchen.org/
+    </p>
+    <!-- <div class="r-stack">
+        <div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+    </div> -->
 </section>
 <!-- <section>
     <h3>Make power-flow algebraic</h3>
