@@ -13,11 +13,11 @@ title: Improper integrals
 </section>
 <section>
     <h3>The "wrong" kind of integrals</h3>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="audio/1-1.mp3">
         By now, we should have a solid understanding of definite integrals
         $\int_a^b f(x) dx$.
         We defined this rigorously via Riemann sum.
-        The focus of today the "wrong" kind of integrals like
+        The focus of today is the "wrong" kind of integrals like
         \[
             \int_1^\infty \frac{1}{x} dx \quad
             \int_1^\infty \frac{1}{x^2} dx \quad
@@ -27,10 +27,49 @@ title: Improper integrals
         It is not even clear they make any sense at all.
         Our goal is to make sense of them and determine their value rigorously.
     </p>
+    <aside class="notes">
+        <p>
+            Hello everyone!
+            Welcome back to another calculus lesson!
+            The topic today is improper integrals:
+            It's all about doing integrals, but doing it wrong.
+            Yet, we will develop a mathematical solution that will help us
+            to make sense of these wrong kind of integrals.
+        </p>
+        <p>
+            By now, you should have a solid understanding of definite integrals
+            of the form $\int_a^b f(x) dx$ which gives us the total signed area
+            bounded by the graph of the function $y=f(x)$ and the $x$-axis
+            from $x = a$ to $x=b$.
+            We defined this rigorously via Riemann sum (this is Riemann integral).
+            The focus of today's discussion is the ``wrong'' kind of integrals like
+            these ones.
+        </p>
+        <p>
+            By the way, can you see what's wrong with the last one?
+            Pay close attention to where the integral starts.
+        </p>
+        <p>
+            It is not even clear they make any sense at all.
+            Think about it,
+            does it really make sense to compute the area of an infinitely long shape?
+            Or infinitely tall shape?
+            Our goal is to make sense of this type of integrals
+            and determine their values rigorously.
+        </p>
+        <p>
+            Integrals of this kind are quite common in applications.
+            Probably more than you think.
+            For example, in probability theory, continuous probability distributions
+            and expected values are defined in terms of integrals to infinity.
+            In control theory or signal processing, the Laplace transform is
+            also defined in terms of such integrals to infinity.
+        </p>
+    </aside>
 </section>
 <section>
     <h3>Integration over infinite intervals</h3>
-    <p>
+    <p class="fragment" data-audio-src="audio/2-1.mp3">
         The first kind of integrals we are going to look at 
         involve interval that are infinitely long.
         E.g.
@@ -43,17 +82,42 @@ title: Improper integrals
         \]
         They are known as <b>improper integrals</b>.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="audio/2-2.mp3">
         These integrals cannot be understood from the view point of Riemann sums:
         the intervals are infinitely long.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="audio/2-3.mp3">
         The right approach is to define them in terms of limits.
     </p>
+    <aside class="notes">
+        <p>
+            The first kind of integrals we are going to look at is the kind 
+            in which the interval of integration is infinitely long,
+            like these ones.
+            They are integrals from somewhere to infinity,
+            or from negative infinity to somewhere,
+            or from negative infinity to positive infinity,
+            which is essentially over the entire real line.
+        </p>
+        <p>
+            Integrals of these forms
+            are known as improper integrals.
+        </p>
+        <p>
+            It is important to see that these integrals
+            cannot be understood from the view point of Riemann sums.
+            Can you see why?
+            So to make sense of these,
+            we will need something else.
+            In typical calculus fashion,
+            the right approach is to define them in terms of limits.
+        </p>
+    </aside>
 </section>
 <section>
     <div class="theorem">
-        <p>
+        <b>Definition. (Improper integral)</b>
+        <p class="fragment" data-audio-src="audio/3-1.mp3">
             For a <em>continuous</em> function $f(x)$, 
             we define
             \[
@@ -66,20 +130,63 @@ title: Improper integrals
             (or is <b>divergent</b>).
         </p>
     </div>
-    <p class="fragment">
+    <aside class="notes">
+        <p>
+            For a continuous function $f(x)$, we define
+            the integral from $a$ to infinity 
+            as the limit of of the integral from $a$ to $t$
+            as $t$ goes to infinity,
+            IF this limit exists.
+            And that's a big IF, of course.
+            As you probably know by now,
+            there are many situations in which limits can fail to exist.
+            So that's a very big IF.
+            But IF the limit does exist,
+            we say the improper integral CONVERGES
+            (or the integral is CONVERGENT).
+            Otherwise, we say it <b>diverges</b>
+            (or is <b>divergent</b>).
+        </p>
+        <p>
+            A side note here: 
+            For consistency, we do not consider $\infty$ or $-\infty$
+            to be valid limits in this part of the discussion.
+            Since infinity is not a real number.
+            We will, however, discuss more the general concept of ``infinite limits'' 
+            in later discussions.
+        </p>
+        <p>
+            You can see this is really the classic calculus solution
+            to everything problem we have:
+            IF we cannot know what happens AT infinity,
+            we take the limit as we go toward infinity.
+        </p>
+        <p>
+            If we understand that,
+            we can certainly go the other direction.
+            We can define the integral from negative infinity to $b$
+            to be the limit of the integral from $t$ to $b$
+            as $t$ goes to negative infinity,
+            IF this limit exists.
+            Again, if the limit exists,
+            we say the improper integral converges.
+            Otherwise, we say the it diverges.
+        </p>
+    </aside>
+    <p class="fragment" data-audio-src="audio/3-2.mp3">
         Following the exact same recipe, we define
         \[
             \int_{-\infty}^b f(x) dx = \lim_{t \to -\infty} \int_t^b f(x) dx.
         \]
     </p>
 </section>
-<section>
+<section data-audio-src="audio/4-1.mp3">
     <p>
         Based on these, we can make sense of 
         integrals from $-\infty$ to $\infty$
         by splitting it into two separate integrals.
     </p>
-    <div class="theorem fragment">
+    <div class="theorem fragment" data-audio-src="audio/4-2.mp3">
         <p>
             For a function $f(x)$ <em>continuous </em> on $(-\infty,\infty)$, 
             we define
@@ -94,18 +201,38 @@ title: Improper integrals
             Otherwise, we say this integral is <b>divergent</b>.
         </p>
     </div>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="audio/4-3.mp3">
         Note that the choice of $a$ here is arbitrary,
         and we can make any choice to make the calculation easier.
     </p>
+    <aside class="notes">
+        <p>
+            For a function f(x) that is continuous on the entire real line, 
+            we define the improper integral of f(x) from negative infinity to positive infinity
+            to be the sum of the two improper integrals,
+            one from negative infinity to a number a,
+            and the other one from a to infinity,
+            if both of these integrals on the right hand side are convergent.
+            If either of these integrals diverge,
+            then we say the original integral also diverge.
+
+
+        </p>
+        <p>
+            Here, A is an arbitrary choice of number.
+            It can be shown that the above definition is actually
+            independent from the value of a,
+            and you can pick any number you like to make the calculation easier.
+        </p>
+    </aside>
 </section>
 <section>
     <h3>Example 1</h3>
-    <p>
+    <p class="fragment" data-audio-src="audio/5-1.mp3">
         Determine if the improper integral $\int_1^\infty \frac{1}{x} \, dx$
         is convergent. If it is, compute its value.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="audio/5-2.mp3">
         Using the definition given above,
         \begin{align*}
             \int_1^\infty \frac{1}{x}  \, dx
@@ -121,11 +248,11 @@ title: Improper integrals
 </section>
 <section>
     <h3>Example 2</h3>
-    <p>
+    <p class="fragment" data-audio-src="audio/6-1.mp3">
         Determine if the improper integral $\int_1^\infty \frac{1}{x^2} \, dx$
         is convergent. If it is, compute its value.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="audio/6-2.mp3">
         Using the definition given above,
         \begin{align*}
             \int_1^\infty \frac{1}{x^2}  \, dx
@@ -140,7 +267,7 @@ title: Improper integrals
 </section>
 <section>
     <h3>Exercise</h3>
-    <p>
+    <p class="fragment" data-audio-src="audio/7-1.mp3">
         For any given rational (or real) number $p>0$, 
         determine if 
         \[
@@ -152,7 +279,7 @@ title: Improper integrals
 </section>
 <section>
     <h3>Integrating over discontinuities</h3>
-    <p>
+    <p class="fragment" data-audio-src="audio/8-1.mp3">
         The second kind of improper integrals involves discontinuities.
         For example, even though 
         \[ \int_0^1 \frac{1}{\sqrt{x}} \, dx \]
@@ -160,12 +287,12 @@ title: Improper integrals
         the integrand $1 / \sqrt{x}$ ``goes to infinity'' as $x \to 0$
         and hence not defined (or finite) over the entire interval $[0,1]$.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="audio/8-2.mp3">
         It is still meaningful to compute this type of integrals,
         and "limits" is going to get us out of this trouble, again.
     </p>
 </section>
-<section>
+<section data-audio-src="audio/9-1.mp3">
     <div class="theorem">
         <p>
         If $f(x)$ is continuous in $[a,b)$, then
@@ -184,6 +311,27 @@ title: Improper integrals
     </div>
 </section>
 <section>
+    <h3>Example 3</h3>
+    <p class="fragment" data-audio-src="audio/10-1.mp3">
+        Determine if the integral $\int_0^1 1 / \sqrt{x} \, dx$ is convergent,
+        and compute its value if it is convergent.
+
+    </p>
+    <p class="fragment" data-audio-src="audio/10-2.mp3">
+        The integrand $1 / \sqrt{x}$ is continuous on $(0,1]$
+        but grows unboundedly as $x \to 0^+$.
+        By the definition given above,
+        \begin{align*}
+            \int_0^1 \frac{1}{\sqrt{x}} \, dx
+            &= \lim_{t \to 0+} \int_t^1 \frac{1}{\sqrt{x}} \, dx \\
+            &= \lim_{t \to 0+} [2 \sqrt{x} ]_t^1
+            = \lim_{t \to 0+} [2 - 2\sqrt{t} ]
+            = 2.
+        \end{align*}
+        Therefore, this improper integral converges to 2.
+    </p>
+</section>
+<section data-audio-src="audio/11-1.mp3">
     <p>
         The same idea applies to integrals for which
         the integrand has a discontinuity in the middle of the interval.
@@ -200,27 +348,29 @@ title: Improper integrals
     </div>
 </section>
 <section>
-    <h3>Example 1</h3>
-    <p>
-        Determine if the integral $\int_0^1 1 / \sqrt{x} \, dx$ is convergent,
+    <h3>Example 4</h3>
+    <p class="fragment" data-audio-src="audio/12-1.mp3">
+        Determine if the integral $\int_{-1}^1 1 / x \, dx$ is convergent,
         and compute its value if it is convergent.
-
     </p>
-    <p class="fragment">
-        The integrand $1 / \sqrt{x}$ is continuous on $(0,1]$
-        but grows unboundedly as $x \to 0^+$.
-        By the definition given above,
+    <p class="fragment" data-audio-src="audio/12-2.mp3">
+        The integrand $1 / x$ has a vertical asymptote at $x=0$,
+        and hence not continuous on $[-1,1]$.
+        By the definition above,
         \begin{align*}
-            \int_0^1 \frac{1}{\sqrt{x}} \, dx
-            &= \lim_{t \to 0+} \int_t^1 \frac{1}{\sqrt{x}} \, dx \\
-            &= \lim_{t \to 0+} [2 \sqrt{x} ]_t^1
-            = \lim_{t \to 0+} [2 - 2\sqrt{t} ]
-            = 2.
+            \int_{-1}^1 \frac{1}{x} \, dx
+            &= \int_{-1}^0 \frac{1}{x} \, dx 
+             + \int_0^1    \frac{1}{x} \, dx \\
+            &= \lim_{t \to 0^-} \int_{-1}^t \frac{1}{x} \, dx
+             + \lim_{t \to 0^+} \int_{t}^1  \frac{1}{x} \, dx \\
+            &= \lim_{t \to 0^-} [ \ln|t| - \ln 1]
+             + \lim_{t \to 0^+} [ \ln 1 - \ln|t|].
         \end{align*}
-        Therefore, this improper integral converges to 2.
+        Both limits do not exist.
+        Therefore this integral is divergent.
     </p>
 </section>
-<section>
+<section data-audio-src="audio/13-1.mp3">
     <h3>Exercise</h3>
     <p>
         For any given rational (or real) number $p>0$, 
@@ -230,3 +380,112 @@ title: Improper integrals
         and compute its value if it is convergent.
     </p>
 </section>
+
+<!-- 
+
+    It is important to distinguish the concept of \emph{divergent} 
+    from \emph{infinite}.
+    They do not mean the same thing.
+    For example, we will show $\int_0^\infty \sin(x) \, dx$ is diverge
+    even though no one will consider the graph of $y=\sin(x)$ will bound
+    infinite total signed area due to the cancellation of 
+    positive area and negative area.
+
+    \begin{problem}
+        Determine if the improper integral $\int_1^\infty \frac{1}{x} \, dx$
+        is convergent. If it is, compute its value.
+    \end{problem}
+    \begin{soln}
+        Using the definition given above,
+        \begin{align*}
+            \int_1^\infty \frac{1}{x}  \, dx
+            &= \lim_{t \to \infty} \int_1^t \frac{1}{x} \, dx
+            = \lim_{t \to \infty} [ \ln|x| ]_1^t
+            = \lim_{t \to \infty} [ \ln |t| - \ln 1 ]
+            = \lim_{t \to \infty} \ln |t| 
+        \end{align*}
+        which does not exist
+        {\color{gray}(You can also say the limit is $+\infty$)}.
+        Therefore, the improper integral $\int_1^\infty \frac{1}{x} \, dx$
+        is divergent.
+    \end{soln}
+
+    \begin{problem}
+        Determine if the improper integral $\int_1^\infty \frac{1}{x^2} \, dx$
+        is convergent. If it is, compute its value.
+    \end{problem}
+    \begin{soln}
+        Using the definition given above,
+        \begin{align*}
+            \int_1^\infty \frac{1}{x^2}  \, dx
+            &= \lim_{t \to \infty} \int_1^t \frac{1}{x^2} \, dx
+            = \lim_{t \to \infty} \left[ -\frac{1}{x} \right]_1^t
+            = \lim_{t \to \infty} -\frac{1}{t} + 1 
+            = 1.
+        \end{align*}
+        Therefore, the improper integral $\int_1^\infty \frac{1}{x} \, dx$
+        is convergent, and its value is 1.
+    \end{soln}
+
+    \begin{problem}
+        For any given rational (or real) number $p>0$, 
+        determine if $\int_1^\infty 1 / x^p \, dx$ is convergent.
+    \end{problem}
+
+    %--------------------------------------------------------------------------
+    \subsection*{Improper integrals: integrating over discontinuities}
+
+    The second kind of improper integrals involves discontinuities
+    of the integrand.
+    For example, even though $\int_0^1 1 / \sqrt{x} \, dx$ 
+    only involves a finite interval,
+    the integrand $1 / \sqrt{x}$ ``goes to infinity'' as $x \to 0$
+    and hence not defined (or finite) over the entire interval $[0,1]$.
+    It is still meaningful to compute this type of integrals.
+    Again, in the typical calculus fashion, ``limits'' is going to
+    get us out of this trouble.
+    
+    \begin{tcolorbox}[boxsep=0pt]
+        If $f(x)$ is continuous in $[a,b)$, then
+        \[
+            \int_a^b f(x) dx = \lim_{t \to b^-} \int_a^t f(x) dx
+            \quad\text{if this limit exists}.
+        \]
+        If $f(x)$ is continuous in $(a,b]$, then
+        \[
+            \int_a^b f(x) dx = \lim_{t \to a^+} \int_t^b f(x) dx.
+            \quad\text{if this limit exists}.
+        \]
+        In both cases, if the limits exist, we say the integral \term{converge}.
+        Otherwise we say the integral \term{diverge}.
+        \vspace{0.8ex}
+
+        If $f(x)$ is continuous in $[a,c)$ and $(c,b]$, then
+        \[
+            \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx
+        \]
+        if both of the integrals on the right hand side converge.
+    \end{tcolorbox}
+
+    \begin{problem}
+        Compute $\int_0^1 1 / \sqrt{x} \, dx$.
+    \end{problem}
+    \begin{soln}
+        Notice that the integrand $1 / \sqrt{x}$ is continuous on $(0,1]$
+        but grows unboundedly as $x \to 0^+$.
+        By the definition given above,
+        \begin{align*}
+            \int_0^1 \frac{1}{\sqrt{x}} \, dx
+            &= \lim_{t \to 0+} \int_t^1 \frac{1}{\sqrt{x}} \, dx
+            = \lim_{t \to 0+} [2 \sqrt{x} ]_t^1
+            = \lim_{t \to 0+} [2 - 2\sqrt{t} ]
+            = 2.
+        \end{align*}
+    \end{soln}
+    \begin{problem}
+        For any given rational (or real) number $p>0$, 
+        determine if $\int_0^1 1 / x^p \, dx$ is convergent.
+    \end{problem}
+
+
+ -->
