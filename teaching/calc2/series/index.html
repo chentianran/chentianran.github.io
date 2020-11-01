@@ -1,0 +1,411 @@
+---
+layout: lecture
+title: Series
+---
+
+<section class="titlepage">
+    <h2 class="title">Series</h2>
+    <p class="footnote2">
+        Infinite sum done right
+    </p>
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+</section>
+<section data-audio-src="1-1.mp3">
+    <h3>Series</h3>
+    <p>
+        Today, we aim to gain a clear understanding of "series".
+    </p>
+    <ul>
+        <li>What it is?</li>
+        <li>How to make sense of this concept?</li>
+        <li>What does "convergence" mean?</li>
+        <li>How to evaluate a series?</li>
+    </ul>
+    <p class="fragment" data-audio-src="1-2.mp3"></p>
+        But before that, we have to review the concept of infinite sequence.
+    </p>
+</section>
+<section data-audio-src="2-1.mp3">
+    <h3>Review: Sequences</h3>
+
+    <p>
+        A <b>sequence</b> is simply a (possibly infinite) 
+        <em>ordered</em> the list of numbers.
+        We are mainly interested in sequence of real numbers.
+        E.g., $1,2,3,4,\dots$.
+    </p>
+    <p class="fragment" data-audio-src="2-2.mp3">
+        We use notations $( a_n )_{n=1}^\infty$,
+        or simply $( a_n )$ (or $\{ a_n \}$)
+        together with the formula for each $a_n$.
+        (Not to be confused with sets)
+    </p>
+    <!-- Of course, there is no significance to the choice of the symbol $a$,
+    the index $n$, and the starting index 1.
+    You could use any symbol and any index you want
+    and start from anywhere. -->
+    <p class="fragment" data-audio-src="2-3.mp3">
+        For example, the sequence of all positive odd numbers
+        can be represent by the sequence $( b_k )_{k=0}^{\infty}$ given by
+        \[ b_k = 2k + 1. \]
+    </p>
+</section>
+<section data-audio-src="3-1.mp3">
+    <h3>Sequence as functions</h3>
+    <p>
+        Alternatively, we also consider sequences as 
+        <em>functions that maps integers to real numbers</em>.
+        E.g., the function
+        \[
+            f(n) = 2n + 1,
+        \]
+        when restricted to the domain of nonnegative integers,
+        also produce the sequence of odd numbers.
+    </p>
+    <p class="fragment" data-audio-src="3-2.mp3">
+        In general, the sequence $(a_n)_{n=1}^\infty$
+        is equivalent to the function
+        \[
+            f(n) = a_n
+        \]
+        that is defined on the set of natural numbers.
+    </p>
+</section>
+<section data-audio-src="4-1.mp3">
+    <h3>Limits of sequences</h3>
+    <p>
+        The most important operation is computing limits of sequences.
+    </p>
+    <div class="theorem">
+        <p><b>Definition.</b>
+            We say $L$ is the <b>limit</b> of a sequence $(a_n)$
+            (or  $(a_n)$ <b>converges to</b> $L$)
+            if for any $\epsilon > 0$, there exists a natural number $N$
+            such that 
+            \begin{align*}
+                n &\ge N
+                &&\text{implies} &
+                |a_n - L | &< \epsilon.
+            \end{align*}
+            In this case, we say the sequence $(a_n)$ is <b>convergent</b>.
+            Otherwise, we say the sequence is <b>divergent</b>.
+        </p>
+    </div>
+    <p class="fragment" data-audio-src="4-2.mp3">
+        The skill and intuitions about limits of functions you acquired still work here
+        (e.g. the squeeze/sandwich theorem).
+    </p>
+</section>
+<section data-audio-src="5-1.mp3">
+    <h3>Series</h3>
+
+    <p>
+        A series is a "formal" sum of <em>infinitely</em> many objects.
+        <!-- In particular, it can be consider as a sum of an infinite sequence. -->
+        <!-- Here, ``formal'' means -->
+        <!-- ``there is no guarantee that it actually makes sense''. -->
+        For the series with the terms $a_1,a_2,\dots$, we use both notations
+        \[
+            \sum_{k=1}^\infty a_k = a_1 + a_2 + a_3 + a_4 + \cdots
+        \]
+        <!-- Again, there is no significance to the symbols $a$ and $k$ -->
+        <!-- or the starting index $k=1$. -->
+        <!-- We could use any symbols we like and start from any where we like. -->
+    </p>
+    <p class="fragment" data-audio-src="5-2.mp3">
+        For example, the series
+        \[
+            \sum_{k=1}^\infty \frac{1}{2^k} =
+            \frac{1}{2} + 
+            \frac{1}{4} + 
+            \frac{1}{8} + 
+            \frac{1}{16} + 
+            \cdots
+        \]
+        is an infinite sum of all positive integral powers of $\frac{1}{2}$.
+    </p>
+</section>
+<section data-audio-src="6-1.mp3">
+    <h3>Does it make sense?</h3>
+
+    <p class="fragment" data-audio-src="6-2.mp3">
+        We should not take the concept of infinite sum for granted.
+    </p>
+    <!-- For one thing, it may not even make sense: -->
+    <p class="fragment" data-audio-src="6-3.mp3">
+        Consider  the series
+        \[ 1 + (-1) + 1 + (-1) + 1 + (-1) + \cdots \]
+    </p>
+    <p class="fragment" data-audio-src="6-4.mp3">
+        We can group the consecutive terms and get
+        \[
+            [1 + (-1)] + [1 + (-1)] + [1 + (-1)] + \cdots
+            =
+            0 + 0 + 0 + \cdots
+        \]
+        which must be 0 under any reasonable interpretation.
+    </p>
+    <p class="fragment" data-audio-src="6-5.mp3">
+        However, the same series can be grouped in a different way:
+        \[
+            1 + [(-1) + 1] + [(-1) + 1] + \cdots
+            =
+            1 + 0 + 0 + \cdots
+        \]
+        which appears to be 1.
+        This does not make sense!
+    </p>
+</section>
+<section data-audio-src="7-1.mp3">
+    <h3>Shouldn't infinite sum just be infinity?</h3>
+    <p>
+        If we add up infinitely many terms together,
+        shouldn't we just get $\infty$?
+    </p>
+    <p class="fragment" data-audio-src="7-2.mp3">
+        Consider the series
+        \begin{align*} 
+            1 + 1 + 1 &+ \cdots
+            &&\text{or} &
+            1 + 2 + 3 &+ \cdots
+        \end{align*}
+        There is no reason to think they can add up to any
+        <em>finite</em> value.
+    </p>
+    <p class="fragment" data-audio-src="7-3.mp3">
+        But the series
+        \[
+            \frac{1}{2} +
+            \frac{1}{4} +
+            \frac{1}{8} +
+            \frac{1}{16} +
+            \cdots
+        \]
+        will indeed produce a finite value.
+        Can you see what should that value be?
+    </p>
+</section>
+<section>
+    <h3>Convergence property</h3>
+
+    To distinguish the kind of series that actually make sense 
+    and add up to finite value from the rest,
+    we use the concept of "partial sums".
+
+    <div class="theorem fragment">
+        <p>
+            For a series $\sum_{k=1}^\infty a_k$,
+            we define its <b>$n$-th partial sum</b> to be
+            $ S_n = \sum_{k=1}^n a_k $,
+            i.e., the sum of the first $n$ terms.
+            If
+            \[
+                L = \lim_{n \to \infty} S_n = \lim_{n \to \infty} \sum_{k=1}^n a_k
+            \]
+            exists (and finite),
+            then this series <b>converges to</b> $L$ (is <b>convergent</b>).
+            Otherwise, this series <b>diverges</b>.
+            (is <b>divergent</b>).
+        </p>
+    </div>
+
+    <p class="fragment">
+        The "partial sum" is essentially a running total 
+        as we go through the terms in a series one by one.
+        The series converge if this running total converge.
+    </p>
+
+</section>
+<section>
+    <h3>Case study: Geometric series</h3>
+
+    <div class="theorem"><p>
+        A <b>geometric series</b> is a series of the form
+        \[
+            a + ar + ar^2 + ar^3 + \cdots =
+            \sum_{k=0}^\infty a r^k
+        \]
+        for some real numbers
+        $a \ne 0$ and $|r| \ne 0, 1$.
+    </p></div>
+
+    <p class="fragment">
+        This series show up in many area of mathematics.
+        One early appearance is in
+        Archimedes' solution to the problem of area bounded by a parabola.
+    </p>
+
+    <div class="fragment">
+        <p>
+            <b>Problem.</b>
+        </p>
+        <ol>
+            <li>Determine the convergence property of this series</li>
+            <li>Evaluate the series if it is convergent</li>
+        </ol>
+    </div>
+</section>
+<section>
+    <p><b>Solution.</b>
+        We will start with $n$-th partial sum $S_n$ and $r$ times $S_n$
+        \begin{align*}
+            S_n &= a + ar + ar^2 + ar^3 + \cdots + ar^{n-1} \\
+            rS_n &= \hspace{3.6ex} ar + ar^2 + ar^2 + \cdots + ar^{n-1} + ar^n.
+        \end{align*}
+    </p>
+    <p class="fragment">
+        The two have many common terms, so
+        <!-- So in the difference $S_n - rS_n$, most of the terms will cancel: -->
+        \[
+            S_n - rS_n = a - ar^n = a (1-r^n), 
+            \quad\text{i.e.,}\quad
+            (1 - r)S_n = a(1 - r^n).
+        \]
+    </p>
+    <p class="fragment">
+        Since we assumed $r \ne 1$.
+        Therefore,
+        \begin{align*}
+            S_n &= \frac{a(1 - r^n)}{1-r}, &
+            &\text{and} &
+            \lim_{n \to \infty} S_n 
+            &= \lim_{n \to \infty} \frac{a(1 - r^n)}{1-r}
+            % &= \frac{a(1 - \lim_{n \to \infty}(r^n))}{1-r}
+            = \frac{a}{1-r}
+        \end{align*}
+        <em>if and only if</em> $|r| < 1$.
+        Otherwise the limit does not exist.
+    </p>
+    <div class="theorem fragment"><p>
+        The geometric series
+        $a + ar + ar^2 + ar^3 + \cdots$
+        converges to $\frac{a}{1-r}$
+        if and only if $|r| < 1$.
+        Otherwise, this series diverges.
+    </p></div>
+</section>
+<section>
+    <h3>Case study: Telescoping series</h3>
+
+    <p><b>Problem.</b>
+        Consider the series
+        $\sum_{k=1}^\infty \frac{1}{k(k+1)}$.
+        Determine its convergence property
+        and evaluate this series if it converges.
+    </p>
+    <p><b>Solution.</b>
+        A useful observation is that,
+        via <em>partial fraction decomposition</em>,
+        we can see $\frac{1}{k(k+1)} = \frac{1}{k} - \frac{1}{k+1}$.
+        With this, the partial sum becomes
+        \begin{align*}
+            &\sum_{k=1}^{n} \left( \frac{1}{k} - \frac{1}{k+1} \right) \\
+            &= \left[ \left( \frac{1}{1} - \frac{1}{2} \right) + \left( \frac{1}{2} - \frac{1}{3} \right) + \left( \frac{1}{3} - \frac{1}{4} \right) + \cdots+ \left( \frac{1}{n} - \frac{1}{n+1} \right) \right]\\
+            &= \left[ \frac{1}{1} + \left( - \frac{1}{2} + \frac{1}{2} \right) - \left( \frac{1}{3} + \frac{1}{3} \right) + \cdots+ \left( -\frac{1}{n} + \frac{1}{n} \right) - \frac{1}{n+1} \right]\\
+            &= \left[ \frac{1}{1} - \frac{1}{n+1} \right]
+        \end{align*}
+    </p>
+</section>
+<section>
+    <p>
+        We have computed that the partial sum is
+        \[
+            S_n = 1 - \frac{1}{n+1}
+        \]
+    </p>
+    <p class="fragment">
+        So
+        \[
+            \lim_{n \to \infty} S_n = \lim_{n \to \infty} \left[ \frac{1}{1} - \frac{1}{n+1} \right]
+            = 1 - \lim_{n \to \infty} \frac{1}{n+1} 
+            = 1
+        \]
+    </p>
+    <p class="fragment">
+        Therefore, we can conclude that the series 
+        $\sum_{k=1}^\infty \frac{1}{k(k+1)}$ converges to 1.
+    </p>
+    <p class="fragment">
+        Such a series is called a <b>telescoping series</b> because
+        its partial sum collapse due to cancellation of 
+        consecutive terms leaving only a few terms.
+    </p>
+    <div class="fragment">
+        <p>In general, the idea is to</p>
+        <ol>
+            <li>Decompose each term in to several terms;</li>
+            <li>Regroup and cancel some of the terms;</li>
+            <li>Reduce the partial sum into just a finite number of terms.</li>
+        </ol>
+    </div>
+</section>
+<section>
+    <h3>Case study: Grandi's</h3>
+    <p>
+        We come back to the series
+        \[
+            \sum_{k=0}^\infty (-1)^k = 1 + (-1) +1 + (-1) + \cdots.
+        \]
+        Is it convergent? Is it meaningful to talk about its value?
+    </p>
+    <p class="fragment">
+        \[
+            S_n = \sum_{k=0}^n (-1)^k =
+            \begin{cases}
+                0 & \text{if $n$ is even} \\
+                1 & \text{if $n$ is odd}
+            \end{cases}
+            \quad\text{so}
+            \lim_{n \to \infty} S_n 
+            \text{ does not exist}.
+        \]
+    </p>
+    <p class="fragment">
+        Therefore the series $\sum_{k=0}^\infty (-1)^k$
+        is <em>divergent</em>.
+    </p>
+</section>
+<section>
+    <h3>Case study: Harmonic series</h3>
+
+    <div class="theorem"><p>
+        The <b>harmonic series</b> is the series
+        \[
+            \sum_{k=1}^\infty \frac{1}{k} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \cdots.
+        \]
+    </p></div>
+    <p class="fragment">
+        <b>Exercise</b>
+        Use the fact that
+        \begin{align*}
+               &1+\frac{1}{2}+\frac{1}{3}            + \frac{1}{4} + \frac{1}{5}            + \frac{1}{6}            +\frac{1}{7}            +\frac{1}{8} +   \cdots \\
+            >\;&1+\frac{1}{2}+\frac{1}{\color{red}4} + \frac{1}{4} + \frac{1}{\color{red}8} + \frac{1}{\color{red}8} +\frac{1}{\color{red}8} +\frac{1}{8} +   \cdots
+        \end{align*}
+        to show the harmonic series diverges.
+    </p>
+    <p class="fragment">
+        It is useful benchmark case
+        to which other series can be compared.
+    </p>
+</section>
+<section>
+    <h3>Summary</h3>
+    <ul>
+        <li>Series: they look like infinite sums (but it's more complicated than that);</li>
+        <li>Convergent vs. divergent series;</li>
+        <li>
+            A few classes of series:
+            <ul>
+                <li>Geometric series $\sum_{k=0}^\infty a r^k$</li>
+                <li>Telescoping series</li>
+                <li>Grandi's series $\sum_{k=0}^\infty (-1)^\infty$</li>
+                <li>Harmonic series $\sum_{k=1}^\infty \frac{1}{k}$</li>
+            </ul>
+            We will learn more about these series soon.
+        </li>
+    </ul>
+</section>
