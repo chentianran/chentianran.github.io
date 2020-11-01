@@ -2,7 +2,7 @@
     <head>
         <link rel="stylesheet" href="/css/reset.css">
         <link rel="stylesheet" href="/css/reveal-v4.css">
-        <link rel="stylesheet" href="/css/reveal-v4-chen.css">
+        <link rel="stylesheet" href="/css/reveal-v4-lecture.css">
 	</head>
 	<body>
         <div class="reveal">
@@ -28,7 +28,12 @@
                     displayMath: [ ["\\[","\\]"] ],
                     processEscapes: true
                     },
-                    "HTML-CSS": { fonts: ["TeX"] }
+                    "HTML-CSS": { 
+                        fonts: ["TeX"],
+                        styles: {
+                            ".MathJax_Display": {margin: "0.4em"}
+                        } 
+                    }
                 },
                 audio: {
                     prefix: 'audio/', 	// audio files are stored in the "audio" folder
