@@ -1,0 +1,167 @@
+---
+layout: lecture
+title: More on geometric series
+---
+
+<section class="titlepage">
+    <h2 class="title">More on geometric series</h2>
+    <!-- <p class="footnote2">
+        Infinite sum done right
+    </p> -->
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>Review: geometric series</h3>
+
+    <p>
+        Last time we learned that the geometric series
+        $a + ar + ar^2 + ar^3 + \cdots$ (with $a \ne 0, |r| \ne 0,1$)
+        converges to 
+        \[ \frac{a}{1-r} \]
+        if $|r| < 1$.
+        Otherwise, it diverges.
+    </p>
+    <p class="fragment">
+        For example,
+        \[
+            1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \cdots = 
+            \sum_{k=0}^\infty \left( \frac{1}{2} \right)^k
+            = \frac{1}{ 1 - \frac{1}{2} }
+            = \frac{1}{ \frac{1}{2} }
+            = 2.
+        \]
+    </p>
+</section>
+<section>
+    <h3>What if we don't start at $k=0$?</h3>
+
+    <p>
+        For example,
+        \[
+            \frac{1}{2} + \frac{1}{4}  + \frac{1}{8}  + \frac{1}{16} + \cdots 
+            = \sum_{\color{red}{k=1}}^\infty \left( \frac{1}{2} \right)^k 
+            
+        \]
+    </p>
+    <p class="fragment">
+        We can simply factor out $\frac{1}{2}$ from each term and get
+        \[
+            \frac{1}{2} \cdot 1 + \frac{1}{2} \frac{1}{2} + \frac{1}{2} \frac{1}{4} + \frac{1}{2} \frac{1}{8} + \cdots
+            = \sum_{\color{red}{k=0}}^\infty \frac{1}{2} \left( \frac{1}{2} \right)^k 
+            =  \frac{\frac{1}{2}}{ 1 - \frac{1}{2} }
+            = 1.
+        \]
+    </p>
+</section>
+<section>
+    <h3>The general case</h3>
+    <div class="theorem">
+        <p>
+            For any real number $a \ne 0$ and integer $k_0$, the series
+            \[ ar^{k_0} + ar^{k_0+1} + ar^{k_0+2} + ar^{k_0+3} + \cdots \]
+            converges to \[ \frac{a \, r^{k_0} }{ 1-r } \]
+            if $|r| < 1$.
+            Otherwise, this series diverges.
+        </p>
+    </div>
+    <p class="fragment">
+        For example,
+        \[
+            \sum_{k=3} 4 \left( \frac{2}{3} \right)^k
+            = \frac{ 4 \cdot \left( \frac{2}{3} \right)^3 }{ 1 - \frac{2}{3} }
+            = \frac{ 4 \cdot \left( \frac{8}{27} \right) }{ \frac{1}{3} }
+            = \frac{32}{9}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Something doesn't look like a geometric series</h3>
+
+    <p>
+        What can we say about the series
+        \[ \sum_{k=0}^\infty \frac{ 2^{k+2} }{ 3^{k-1} } ? \]
+    </p>
+    <p class="fragment">
+        Even though it does not look a geometric series,
+        with some algebraic manipulation, we can turn it into one.
+        \[
+            \sum_{k=0}^\infty \frac{ 2^{k+2} }{ 3^{k-1} } =
+            \sum_{k=0}^\infty \frac{ 2^2 \cdot 2^{k} }{ 3^{-1} \cdot 3^{k} } =
+            \sum_{k=0}^\infty 2^2 \cdot 3 \cdot \frac{ 2^{k} }{ 3^{k} } =
+            \sum_{k=0}^\infty 12 \left( \frac{ 2 }{ 3 } \right)^k.
+        \]
+        We can see it is a geometric series of the form $\sum_{k=0}^\infty a r^k$
+        with $a=12$ and $r = 2/3$.
+        Since $|r| < 1$, we can conclude that this series converges.
+    </p>
+
+</section>
+<section>
+    <h3>Repeating decimal</h3>
+
+    <p>
+        You have already used geometric series in elementary school: 
+        Every time you write down a repeating decimal, 
+        you are actually using a series.
+        \[
+            0.9999\cdots = 0.9 + 0.09 + 0.009 + 0.0009 + \cdots = \sum_{k=1}^\infty 9 (0.1)^{k}
+        \]
+    </p>
+    <p class="fragment">
+        Using the formula given above, we can compute that
+        \[
+            0.9999\cdots = \sum_{k=1}^\infty 9 (0.1)^{k}
+            = \frac{ 9 \cdot (0.1)^1 }{ 1 - 0.1 }
+            = \frac{ 0.9 }{ 0.9 }
+            = 1.
+        \]
+        This provides a rigorous answers to the question we probably all had:
+        $0.9999\cdot$ is indeed <em>exactly</em> 1 (not just an approximation).
+    </p>
+</section>
+<section>
+    <p>
+        <b>Problem.</b>
+        Which fraction is equivalent to $0.222\cdots$?
+
+    </p>
+    <p>
+        <b>Solution.</b>
+        Note that
+        \[
+            0.222\cdots = 0.2 + 0.02 + 0.002 + \cdots = \sum_{k=1}^\infty 2 (0.1)^{k}.
+        \]
+        Using the formula given above, we can easily calculate that
+        \[
+            0.222\cdots = \sum_{k=1}^\infty 2 (0.1)^{k} 
+            = \frac{2 \cdot 0.1}{1 - 0.1}
+            = \frac{0.2}{0.9}
+            = \frac{2}{9}.
+        \]
+    </p>
+</section>
+<section>
+    <p><b>Problem.</b>
+        Which fraction is equivalent to $0.123123123\cdots$?
+    </p>
+    <p><b>Solution.</b>
+        Note that
+        \[
+            0.\overline{123} = 0.123 + 0.000123 \cdots 
+            = \sum_{k=1}^\infty 123 (0.001)^{k} .
+        \]
+        Using the formula given above, we can easily calculate that
+        \[
+            0.\overline{123} 
+            = \sum_{k=1}^\infty 123 (0.001)^{k} 
+            = \frac{123 \cdot 0.001}{1 - 0.001}
+            = \frac{0.123}{0.999}
+            = \frac{123}{999}.
+        \]
+    </p>
+</section>
