@@ -1,0 +1,200 @@
+---
+layout: lecture
+title: Convergence test
+---
+
+<section class="titlepage">
+    <h2 class="title">Convergence tests</h2>
+    <!-- <p class="footnote2">
+        Infinite sum done right
+    </p> -->
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>Tests for convergence/divergence</h3>
+    <p>
+    We learned how to determine if a series converges
+    by computing limits of partial sums.
+    Unfortunately, such direct computation can be quite difficult in many cases.
+    In those case, we often prefer to indirect convergence/divergence tests
+    which we will outline in the following.
+    <!-- {\footnotesize\color{gray}
+        (These tests are theorems established based on the definition we saw,
+        and they do not give any new meaning to the words convergence or divergence.)
+    } -->
+    </p>
+</section>
+<section>
+    <h3>Divergence test / $n$-th term test</h3>
+    <div class="theorem">
+    <p>
+        If $\lim_{k \to \infty} a_k \ne 0$ (or does not exist),
+        then $\sum_{k=1}^\infty a_k$ diverges.
+    </p>
+    </div>
+
+    <p>
+        This is a fairly straightforward consequence of how we defined convergence/divergence
+        in terms of the limit of the partial sums.
+    </p>
+    
+    <p>
+    It is super important to understand that 
+    the converse of the above statement is not true:
+    Having $\lim_{k \to \infty} a_k = 0$ does <b>not</b> tell us 
+    that $\sum_{k=1}^\infty a_k$ converges (e.g., the Harmonic series).
+    </p>
+
+</section>
+<section>
+    <p><b>Problem.</b>
+        Determine if $\sum_{k=1}^\infty \cos( 1 / k )$ converges/diverges.
+    </p>
+    <p class="fragment">
+        <b>Solution.</b>
+        We can see that, since $\cos$ is a continuous function,
+        \[
+            \lim_{k \to \infty} \cos( 1 / k )
+            = \cos (\lim_{k \to \infty} 1 / k )
+            = \cos (0)
+            = 1.
+        \]
+        Therefore, by the divergence test,
+        we can conclude that this series diverge. 
+    </p>
+</section>
+<section>
+    <h3>Integral test</h3>
+    <p>
+        This test turns the problem of determining the convergence property of a series
+        into the problem of determining the convergence property of an improper integral
+        for which we have more advanced tools.
+    </p>
+    <div class="theorem">
+        <p>
+            If $\sum_{k=1}^\infty a_k$ is a series
+            and $f$ is a <em>continuous and decreasing</em> function
+            such that $f(k) = a_k > 0$ for any positive integer $k$,
+            then
+            \[
+                \sum_{k=1}^\infty a_k
+                \quad\text{and}\quad
+                \int_1^\infty f(x) dx
+                \quad\text{both converge or both diverge}.
+            \]
+        </p>
+    </div>
+    <p class="fragment">
+        It is important to understand that the integral test
+        is tests for convergence.
+        In general, it cannot tell you if what value a series converges to.
+    </p>
+</section>
+<section>
+    <p><b>Problem.</b>
+        Determine if $\sum_{k=1}^\infty 3 / \sqrt{2k + 4}$
+        is convergent or divergent.
+    </p>
+    <p class="fragment">
+        <b>Solution.</b>
+        To determine if this series is convergent using integral test,
+        we can compute the improper integral
+        \[
+            \int_1^\infty \frac{3}{ \sqrt{2x + 4} } dx
+            = \lim_{t \to \infty} \int_1^t \frac{3}{ \sqrt{2x + 4} } dx
+            = \lim_{t \to \infty} \left. 3 \sqrt{2x+4} \, \right|_1^t
+        \]
+        which diverges (goes to $\infty$).
+        By the integral test,
+        we can conclude that the series 
+        $\sum_{k=1}^\infty 3 / \sqrt{2k + 4}$
+        is also divergent.
+    </p>
+</section>
+<section>
+    <p><b>Problem.</b>
+        For a positive real number $p \ne 1$,
+        determine if the series $\sum_{k=1}^\infty 1 / k^p$ 
+        is convergent or divergent.
+    </p>
+    <p class="fragment">
+        <b>Solution.</b>
+        We can compute the improper integral
+        \[
+            \int_1^\infty \frac{1}{ x^p } dx
+            = \lim_{t \to \infty} \frac{1}{ x^p } dx
+            = \lim_{t \to \infty} \left. \frac{x^{1-p}}{ (1-p) } \right|_1^t
+            = \lim_{t \to \infty} \frac{t^{1-p}}{ (1-p) }  - \frac{1}{1-p}
+        \]
+        which converge if $p > 1$
+        and   diverge  if $p < 1$.
+        By the integral test,
+        \[
+            \sum_{k=1}^\infty 1 / k^p
+            \quad
+            \begin{cases}
+                \text{converge if} & p > 1 \\
+                \text{diverge  if} & p < 1
+            \end{cases}
+        \]
+    </p>
+</section>
+<section>
+    <h3>$p$-series</h3>
+    <p>
+        The solution to the last problem is particularly useful
+        and thus deserves its own test.
+        Series of the form $\sum_{k=1}^\infty 1 / k^p$ for some real number $p$
+        appear very frequently and earned the nickname $p$<b>-series</b>.
+    </p>
+    <!-- {\footnotesize\color{gray}
+        (No one will understand you 
+        if you call the series $\sum_{k=1}^\infty 1 / k^2$ a ``2-series''.
+        Instead, we call that a $p$-series with $p=2$.)
+    } -->
+
+    <div class="theorem">
+        <p>
+            \[
+                \sum_{k=1}^\infty \frac{1}{k^p}
+                \quad
+                \begin{cases}
+                    \text{converges if }p > 1 \\
+                    \text{diverges if }p \le 1.
+                \end{cases}
+            \]
+        </p>
+    </div>
+
+    <p class="fragment">
+        Note that the special case of $p=1$ is exactly the
+        <em>harmonic series</em>,
+        which we know is divergent.
+    </p>
+</section>
+<section>
+    <h3>It's all about the tail</h3>
+    <p>
+        The tests stated above are about series of the form $\sum_{k=1}^\infty a_k$.
+        However, it is important to understand that the starting index does not matter.
+        Indeed, one could ignore a finite number of terms.
+    </p>
+        <!-- For example, you can ignore the first one billion terms of a series,
+        and they will not change how you determine its convergence property. -->
+    <div class="theorem">
+        <p>
+            For any positive integer $N$, the two series
+            \begin{align*}
+                &\sum_{k=1}^\infty a_k
+                &&\text{and} &
+                &\sum_{k=N}^\infty a_k
+                &&\text{both converge or both diverge}.
+            \end{align*}
+        </p>
+    </div>
+</section>
