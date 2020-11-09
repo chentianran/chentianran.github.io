@@ -1,13 +1,15 @@
 ---
 layout: lecture
-title: Convergence test
+title: A few convergence test
 ---
 
 <section class="titlepage">
-    <h2 class="title">Convergence tests</h2>
-    <!-- <p class="footnote2">
-        Infinite sum done right
-    </p> -->
+    <h2 class="title">A few convergence tests</h2>
+    <p class="footnote2">
+        In this lecture we will see a few basic tests
+        that can help us to determine if a series converge or diverge
+        without explicitly computing the limits of the partial sums.
+    </p>
     <p>Tianran Chen</p>
     <p class="footnote2">
         Department of Mathematics<br>
@@ -15,13 +17,13 @@ title: Convergence test
     </p>
 </section>
 <!-- <section data-audio-src="1-1.mp3"> </section> -->
-<section>
+<section data-audio-src="1-1.mp3">
     <h3>Tests for convergence/divergence</h3>
     <p>
     We learned how to determine if a series converges
     by computing limits of partial sums.
     Unfortunately, such direct computation can be quite difficult in many cases.
-    In those case, we often prefer to indirect convergence/divergence tests
+    In those case, we often prefer to use indirect convergence/divergence tests
     which we will outline in the following.
     <!-- {\footnotesize\color{gray}
         (These tests are theorems established based on the definition we saw,
@@ -29,7 +31,7 @@ title: Convergence test
     } -->
     </p>
 </section>
-<section>
+<section data-audio-src="2-1.mp3">
     <h3>Divergence test / $n$-th term test</h3>
     <div class="theorem">
     <p>
@@ -42,25 +44,27 @@ title: Convergence test
         This is a fairly straightforward consequence of how we defined convergence/divergence
         in terms of the limit of the partial sums.
     </p>
-    
-    <p>
-    It is super important to understand that 
-    the converse of the above statement is not true:
-    Having $\lim_{k \to \infty} a_k = 0$ does <b>not</b> tell us 
-    that $\sum_{k=1}^\infty a_k$ converges (e.g., the Harmonic series).
+    <p class="fragment" data-audio-src="2-2.mp3">
+        It is super important to understand that 
+        the converse of the above statement is not true:
+        Having $\lim_{k \to \infty} a_k = 0$ does <b>not</b> tell us 
+        that $\sum_{k=1}^\infty a_k$ converges 
+        (e.g., the Harmonic series $\sum_{k=1}^\infty 1 / k$).
     </p>
 
 </section>
-<section>
+<section data-audio-src="3-1.mp3">
+    <h3>Divergence test: An example</h3>
+
     <p><b>Problem.</b>
         Determine if $\sum_{k=1}^\infty \cos( 1 / k )$ converges/diverges.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="3-2.mp3">
         <b>Solution.</b>
         We can see that, since $\cos$ is a continuous function,
         \[
             \lim_{k \to \infty} \cos( 1 / k )
-            = \cos (\lim_{k \to \infty} 1 / k )
+            = \cos \left( \lim_{k \to \infty} 1 / k \right)
             = \cos (0)
             = 1.
         \]
@@ -68,14 +72,41 @@ title: Convergence test
         we can conclude that this series diverge. 
     </p>
 </section>
-<section>
+<section data-audio-src="4-1.mp3">
+    <h3>Divergence test: An nonexample</h3>
+
+    <p>
+        What about the series $\sum_{k=1}^\infty \sin( 1 / k )$ ?
+    </p>
+    <p>
+        <em>This is an example in which the divergence test <b>tells us nothing</b>.</em>
+    </p>
+    <p>
+        It is important to understand that even though 
+        \[
+            \lim_{k \to \infty} \sin \left( \frac{1}{k} \right)
+            = \sin \left( \lim_{k \to \infty} \frac{1}{k} \right)
+            = \sin (0)
+            = 0,
+        \]
+        we cannot conclude that the series is therefore convergent
+        (the divergent test can help us to confirm a series is divergent,
+        it cannot, however, tell us if a series is convergent.
+    </p>
+    <p class="fragment" data-audio-src="4-2.mp3">
+        In other words, having the limit of the terms be zero
+        is a <em>necessary</em> condition for convergence,
+        but that is not an <em>sufficient</em> condition.
+    </p>
+</section>
+<section data-audio-src="5-1.mp3">
     <h3>Integral test</h3>
     <p>
         This test turns the problem of determining the convergence property of a series
         into the problem of determining the convergence property of an improper integral
         for which we have more advanced tools.
     </p>
-    <div class="theorem">
+    <div class="theorem fragment" data-audio-src="5-2.mp3">
         <p>
             If $\sum_{k=1}^\infty a_k$ is a series
             and $f$ is a <em>continuous and decreasing</em> function
@@ -88,19 +119,19 @@ title: Convergence test
                 \quad\text{both converge or both diverge}.
             \]
         </p>
+        <p>
+            It is important to understand that the integral test
+            is tests for convergence.
+            In general, it cannot tell you which value a series converges to.
+        </p>
     </div>
-    <p class="fragment">
-        It is important to understand that the integral test
-        is tests for convergence.
-        In general, it cannot tell you if what value a series converges to.
-    </p>
 </section>
-<section>
+<section data-audio-src="6-1.mp3">
     <p><b>Problem.</b>
-        Determine if $\sum_{k=1}^\infty 3 / \sqrt{2k + 4}$
+        Determine if $\sum_{k=1}^\infty \frac{3}{\sqrt{2k + 4}}$
         is convergent or divergent.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="6-2.mp3">
         <b>Solution.</b>
         To determine if this series is convergent using integral test,
         we can compute the improper integral
@@ -112,22 +143,22 @@ title: Convergence test
         which diverges (goes to $\infty$).
         By the integral test,
         we can conclude that the series 
-        $\sum_{k=1}^\infty 3 / \sqrt{2k + 4}$
+        $\sum_{k=1}^\infty \frac{3}{\sqrt{2k + 4}}$
         is also divergent.
     </p>
 </section>
-<section>
+<section data-audio-src="7-1.mp3">
     <p><b>Problem.</b>
         For a positive real number $p \ne 1$,
         determine if the series $\sum_{k=1}^\infty 1 / k^p$ 
         is convergent or divergent.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="7-2.mp3">
         <b>Solution.</b>
         We can compute the improper integral
+        $\int_1^\infty \frac{1}{ x^p } dx$, which turns into
         \[
-            \int_1^\infty \frac{1}{ x^p } dx
-            = \lim_{t \to \infty} \frac{1}{ x^p } dx
+            \lim_{t \to \infty} \int_1^\infty \frac{1}{ x^p } dx
             = \lim_{t \to \infty} \left. \frac{x^{1-p}}{ (1-p) } \right|_1^t
             = \lim_{t \to \infty} \frac{t^{1-p}}{ (1-p) }  - \frac{1}{1-p}
         \]
@@ -135,7 +166,7 @@ title: Convergence test
         and   diverge  if $p < 1$.
         By the integral test,
         \[
-            \sum_{k=1}^\infty 1 / k^p
+            \sum_{k=1}^\infty \frac{1}{k^p}
             \quad
             \begin{cases}
                 \text{converge if} & p > 1 \\
@@ -144,12 +175,12 @@ title: Convergence test
         \]
     </p>
 </section>
-<section>
+<section data-audio-src="8-1.mp3">
     <h3>$p$-series</h3>
     <p>
         The solution to the last problem is particularly useful
         and thus deserves its own test.
-        Series of the form $\sum_{k=1}^\infty 1 / k^p$ for some real number $p$
+        Series of the form $\sum_{k=1}^\infty 1 / k^p$ for some positive real number $p$
         appear very frequently and earned the nickname $p$<b>-series</b>.
     </p>
     <!-- {\footnotesize\color{gray}
@@ -171,13 +202,13 @@ title: Convergence test
         </p>
     </div>
 
-    <p class="fragment">
+    <p class="fragment" data-audio-src="8-2.mp3">
         Note that the special case of $p=1$ is exactly the
         <em>harmonic series</em>,
         which we know is divergent.
     </p>
 </section>
-<section>
+<section data-audio-src="9-1.mp3">
     <h3>It's all about the tail</h3>
     <p>
         The tests stated above are about series of the form $\sum_{k=1}^\infty a_k$.
