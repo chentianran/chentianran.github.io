@@ -1,0 +1,114 @@
+---
+layout: lecture
+title: Comparison tests
+---
+
+<section class="titlepage">
+    <h2 class="title">Comparison tests for series</h2>
+    <p class="footnote2">
+        We studied several family of series in detail.
+        We also learned quite a few tests that can tell us if a series converge or diverge
+        indirectly without computing partial sum.
+        We can also compare one series to another series
+        whose convergence/divergence property is known.
+    </p>
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>Direct comparison test</h3>
+    <p>
+        This test work by comparing two series term by term directly.
+        For this to work nice we have to restrict ourselves to
+        series of <em>nonnegative terms</em>.
+    </p>
+    <div class="theorem"><p>
+        If $0 \le a_k \le c_k$ for all positive integer $k$,
+        and $\sum_{k=1}^\infty c_k$ converges, 
+        then $\sum_{k=1}^\infty a_k$ also converges.
+    </p></div>
+    <p>
+        Since the terms are nonnegative, 
+        terms must shrink to 0 quickly enough for the series to converge;
+        If each term is bounded by the corresponding term in a series
+        whose terms are known to shrink to 0 sufficiently quickly,
+        then we can conclude the original series also converge.
+    </p>
+</section>
+<section>
+    <p>
+        Since
+        \[
+            \frac{1}{k^2 + 1} \quad < \quad \frac{1}{k^2}
+        \]
+    </p>
+    we can conclude that
+    <p>
+        \[
+            \sum_{k=1}^\infty \frac{1}{k^2 + 1} \text{ converges} 
+            \quad \Longleftarrow \quad 
+            \sum_{k=1}^\infty \frac{1}{k^2} \text{ converges}
+        \]
+    </p>
+</section>
+<section>
+    <p>
+        Similarly, we can determine if a series is divergent by comparing it to a divergent series.
+    </p>
+    <div class="theorem"><p>
+        If $a_k \ge d_k \ge 0$ for all positive integer $k$,
+        and $\sum_{k=1}^\infty d_k$ diverges, 
+        then $\sum_{k=1}^\infty a_k$ also diverges.
+    </p></div>
+    <!-- <p>
+        Again, we can always remove any finite list of terms from a series
+        without changing its convergence property.
+        Therefore the phrase ``for all positive integer $k$''
+        in both of the tests above can be replace by
+        ``for all $k \ge N$'' for some fixed positive integer $N$.
+    </p> -->
+</section>
+<section>
+    <h3>Examples</h3>
+
+</section>
+<section>
+    <h3>Limit comparison test</h3>
+    <p>
+        The direct comparison test stated above is quite easy to use 
+        <em>if</em> we can find reference series that satisfy the hypothesis,
+        which is not always easy.
+        The ``limit comparison test'' replaces such direct comparisons
+        with comparisons using limits, which can be much more forgiving.
+    </p>
+</section>
+<section>
+    <div class="theorem">
+        <p>
+            Let $\sum_{k=1}^\infty a_k$ and $\sum_{k=1}^\infty b_k$ be two series
+            with $a_k, b_k \ge 0$.
+        </p>
+        <ul>
+            <li>
+                If $\lim_{k \to \infty} \frac{a_k}{b_k}$ is <em>finite</em> and <em>nonzero</em>,
+                then $\sum_{k=1}^\infty a_k$ and $\sum_{k=1}^\infty b_k$
+                either <em>both converge or both diverge</em>.
+            </li>
+            <li>
+                If $\lim_{k \to \infty} \frac{a_k}{b_k} = 0$
+                and $\sum_{k=1}^\infty b_k$ converges,
+                then $\sum_{k=1}^\infty a_k$ also converges.
+            </li>
+            <li>
+                If $\lim_{k \to \infty} \frac{a_k}{b_k} = \infty$
+                (i.e., $\frac{a_k}{b_k}$ grows unboundedly)
+                and $\sum_{k=1}^\infty b_k$ diverges,
+                then $\sum_{k=1}^\infty a_k$ also diverges.
+            </li>
+        </ul>
+    </div>
+</section>
