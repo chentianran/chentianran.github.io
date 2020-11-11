@@ -1,0 +1,117 @@
+---
+layout: lecture
+title: Alternating series and absolute convergence
+---
+
+<section class="titlepage">
+    <h2 class="title">Alternating series and absolute convergence</h2>
+    <p class="footnote2">
+        So far, most of the series we studied consists of positive terms.
+        In this lecture, we will consider more complicated situations
+        where a series contain positive and negative terms.
+        We will focus on the special case of alternating series
+        whose convergence properties can be determined easily.
+        We will see convergent alternating series converge
+        in a very weak way which leads many strange behaviors.
+        To distinguish this type of convergence and the stronger types of convergence,
+        we introduce the concept of "absolute convergence".
+    </p>
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>Alternating series</h3>
+    <p>
+        So far, most of the series we studied consists of positive terms.
+        Such series converge or diverge in simple ways:
+        If the terms shrink to 0 sufficiently quickly,
+        the partial sums will have a finite limit and the series converges.
+        Otherwise the series diverge.
+        We will consider more complicated situations
+        where a series contain positive and negative terms.
+        We will focus on the special case of alternating series.
+    </p>
+    <div class="theorem"><p>
+        <b>Definition.</b>
+        An <b>alternating series</b> is a series
+        whose terms have alternating signs.
+        It can be written in the form
+        \[
+            \sum_{k=1}^\infty (-1)^k c_k
+            \quad\text{or}\quad
+            \sum_{k=1}^\infty (-1)^{k+1} c_k
+            \quad
+            \text{for <em>positive</em> } c_1,c_2,\ldots.
+        \]
+        for some <em>positive</em> numbers $c_1,c_2,\ldots$.
+    </p></div>
+    <!-- <p>
+    Here $(-1)^k$ and $(-1)^{k+1}$ are the standard ways to express
+    alternating signs (depending on if you start with $-1$ or $+1$).
+    </p> -->
+</section>
+<section>
+    <div class="theorem"><p>
+        <b>Alternating series test.</b>
+        An alternating series of the form
+        \[
+            \sum_{k=1}^\infty (-1)^k c_k
+            \quad\text{or}\quad
+            \sum_{k=1}^\infty (-1)^{k+1} c_k
+            \quad
+            \text{for <em>positive</em> } c_1,c_2,\ldots
+        \]
+        converges if $c_k \ge c_{k+1}$
+        and $\lim_{k \to c_k} c_k = 0$.
+    </p></div>
+    <!-- <p>
+    \noindent
+    It is important to remember this test is only valid for alternating series
+    and is not to be confused with the ``divergence test''.
+    </p> -->
+    <p>
+        By this test, we can confirm the <b>alternating harmonic series</b>
+        \[
+            \sum_{k=1}^\infty \frac{(-1)^{k+1}}{k}
+            = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} + \cdots
+        \]
+        is convergent
+        (even though the harmonic series diverges).
+    </p>
+    <p>
+        Its convergence depends on the intricate cancellation between 
+        positive and negative terms
+        We will see the detail in later discussions.
+        Indeed, it converges to $\ln 2$ (we will see why).
+    </p>
+</section>
+<section>
+    <h3>Absolute convergence</h3>
+    <p>
+        We can see the convergence of the alternating harmonic series
+        is a very weak form of convergence --- it converges only because
+        of the cancellation between positive and negative terms.
+        Convergence of this form can be very strange.
+        To further distinguish this and the more robust form of converges,
+        we have the concept of ``absolute convergence''.
+    </p>
+    <div class="theorem"><p>
+        We say a series $\sum_{k=1}^\infty a_k$ <b>converges absolutely</b>
+        (or it exhibits <b>absolute convergence</b>)
+        if $\sum_{k=1}^\infty |a_k|$ converges.
+        On the other hand, if $\sum_{k=1}^\infty a_k$ converges
+        but $\sum_{k=1}^\infty |a_k|$ diverges,
+        we say the series <b>converges conditionally</b>
+        (or it exhibits <b>conditional convergence</b>).
+    </p></div>
+    <p>
+        The alternating harmonic series is a classical example of a series
+        that exhibits conditional convergence ---
+        $\sum_{k=1}^\infty (-1)^{k+1} / k$ converges,
+        but $\sum_{k=1}^\infty 1 / k$ diverges.
+    </p>
+</section>
