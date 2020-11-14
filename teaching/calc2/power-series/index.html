@@ -1,0 +1,195 @@
+---
+layout: lecture
+title: Power series
+---
+
+<section class="titlepage">
+    <h2 class="title">Power series</h2>
+    <p class="footnote2">
+        So far we studied series of numbers.
+        The question we will be answering today is:
+        Can we get some variables involved and use series to represent functions?
+    </p>
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+</section>
+<section>
+    <h3>Motivations</h3>
+    <p>
+        We studied geometric series of the form
+        \[
+            \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + r^4 + \cdots
+        \]
+        and we now know exactly for which $r$ this series will converge.
+    </p>
+    <p class="fragment">
+        A natural question to ask is then:
+        Can we treat $r$ as a variable?
+        And will that produce a function?
+        This is what power series is all about.
+    </p>
+</section>
+<section>
+    <h3>Power series</h3>
+
+    <p>
+        They are expressions that look like
+        polynomials with <em>infinite </em> number of terms.
+    </p>
+    <p class="fragment">
+        A <b>power series centered at $x=0$</b> (or about $x=0$)
+        is an expression of the form
+        \[
+            \sum_{k=0}^\infty c_k x^k =
+            c_0 + c_1 x + c_2 x^2 + c_3 x^3 + \cdots
+        \]
+        where $c_0,c_1,c_2,\ldots$ are real constants known as <b>coefficients</b>.
+    </p>
+</section>
+<section>
+
+    <p>
+    In general, a <b>power series centered at</b> 
+    $x = a$ is an expression
+    \[
+        \sum_{k=0}^\infty c_k (x-a)^k
+        = c_0 + c_1 (x-a) + c_2 (x-a)^2 + c_3 (x-a)^3 + \cdots
+    \]
+    for some real constants (the coefficients)
+    $c_0,c_1,c_2,\ldots$.
+    </p>
+    <p class="fragment">
+        Simply put, a power series is an infinite series
+        in which each term has a <em>nonnegative</em> power of an variable.
+    </p>
+</section>
+<section>
+    <h3>Does a power series define a function?</h3>
+    <p>
+        Keep in mind that we may <em>not</em> be able to 
+        assign meaningful value to it once we ``plug in'' a value for $x$
+        --- as we know by now, not all series have meaningful values.
+        This is the question of <em>convergence</em>.
+    </p>
+    <p class="fragment">
+        It is clear that a power series $\sum_{k=1}^\infty c_k(x-a)^k$ 
+        always converges at its center $x=a$:
+        If we "plug in" $x=a$, we get
+        \[
+            c_0 + c_1 (a-a) + c_2 (a-a)^2 + \cdots
+            = c_0 + 0 + 0 + \cdots
+            = c_0.
+        \]
+    </p>
+    <p class="fragment">
+        An important question we need to study is that
+        given a power series centered at $x=a$,
+        are there any other value we can plug in for $x$
+        and get a convergent series (and hence a meaningful value)?
+    </p>
+</section>
+<section>
+    <h3>Radius of convergence</h3>
+    <p>
+        Each power series centered at $x=a$
+        has a <em>radius of convergence</em> such that
+        for any $x$ within this radius around its center,
+        the series <em>converges</em>.
+    </p>
+    <div class="theorem"><p>
+        A power series $\sum_{k=0}^\infty c_k (x-a)^k$
+        has three possibilities:
+        <ol>
+            <li> 
+                This series converges only at $x=a$ and diverges for all other $x$ values.
+                In this case, we say this series has a <b>radius of converges</b> of 0.
+            </li>
+            <li> 
+                This series converges for all $x$ values.
+                In this case, we say this series has a <b>radius of converges</b> of $\infty$.
+            </li>
+            <li>
+                There exists a real $R > 0$ such that this series\ldots
+                <ul>
+                    <li> converges for all $x$ such that $|x - a| < R$, and</li>
+                    <li> diverges  for all $x$ such that $|x - a| > R$.
+                </ul>
+                We call $R$ the <b>radius of converges</b> of this series.
+            </li>
+        </ol>
+    </p></div>
+</section>
+<section>
+    <p>
+        In these cases, the set of real numbers for which
+        the series converge form a interval,
+        and it is called the <b>interval of convergence</b> of the power series.
+    </p>
+    <p>
+        Within this interval of convergence,
+        power series having the same center <em>can be manipulated algebraically</em>,
+        e.g., the can be added, and multiplied.
+    </p>
+    <p class="fragment">
+        For example,
+        \begin{align*}
+            \sum_{k=0} b_k (x-a)^k
+            +
+            \sum_{k=0} c_k (x-a)^k
+            &=
+            \sum_{k=0} (b_k + c_k) (x-a)^k \\
+            b \cdot \sum_{k=0} c_k (x-a)^k
+            &=
+            \sum_{k=0} b c_k (x-a)^k
+        \end{align*}
+    </p>
+
+</section>
+<section>
+    <h3>Power series as functions</h3>
+    <p>
+        When the interval of convergence consists of more than one number,
+        within this interval,
+        the power series defines a function that is continuous and differentiable.
+        Indeed, we can show that all derivatives
+        of this function exists and are continuous in that interval.
+    </p>
+    <p class="fragment">
+        This also means, within their interval of convergence,
+        power series can be differentiated and integrated <em>term by term</em>.
+        \[
+            \frac{d}{dx} \sum_{k=0}^\infty c_k (x-a)^k
+            =
+            \sum_{k=0}^\infty \frac{d}{dx} \left[ c_k (x-a)^k \right]
+            =
+            \sum_{k=1}^\infty c_k k (x-a)^{k-1}
+        \]
+    </p>
+
+</section>
+<section>
+    <h3>Analytic functions</h3>
+
+    <p>
+        Functions given by power series are called are called <b>analytic functions</b>.
+    </p>
+    <p class="fragment">
+        Many familiar functions in calculus are analytic. For Example,
+        \begin{align*}
+            e^t &= \sum_{k=0}^\infty \frac{t^k}{k!} &
+            \ln(1+t) &= \sum_{k=1}^\infty \frac{ (-1)^{k-1} }{k} t^k &
+            \\
+            \cos(t) &= \sum_{k=0}^\infty \frac{(-1)^k t^{2k}}{(2k)!} &
+            \sin(t) &= \sum_{k=0}^\infty \frac{(-1)^k t^{2k+1}}{(2k+1)!}
+        \end{align*}
+    </p>
+    <p class="fragment">
+        Historically, power series are the main weapons for mathematicians for a long time.
+        It is likely that mathematicians thought that all "reasonable" functions are analytic.
+        This assumption turn out to be quite wrong.
+        Nonetheless, power series remain extremely useful in applied mathematics.
+    </p>
+</section>
