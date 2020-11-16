@@ -1,0 +1,128 @@
+---
+layout: lecture
+title: Taylor series
+---
+
+<section class="titlepage">
+    <h2 class="title">Taylor series and Maclaurin series</h2>
+    <p class="footnote2">
+        The discussion above shows that within its interval of convergence,
+        a power series represents a function 
+        (a very nice function as far as doing calculus is concerned).
+        It is then reasonable to ask:
+        Given a function, can we find a power series that represents the function?
+        This is the main question we want to answer in this lecture.
+    </p>
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+</section>
+<section>
+    <h3>Taylor and Maclaurin series</h3>
+    <p>
+        The discussion above shows that within its interval of convergence,
+        a power series represents a function 
+        (a very nice function as far as doing calculus is concerned).
+        It is then reasonable to ask:
+        Given a function, can we find a power series that represents the function?
+    </p>
+    <p>
+    <div class="theorem"><p>
+        <b>Definition.</b>
+        Let $f$ be a function whose derivatives of all orders are defined
+        (and finite) in an open interval around $x=a$.
+        The <b>Taylor series</b> of the function $f$ (centered) at $x=a$ is the series
+        \[
+            \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!} \, (x-a)^k
+            = f(a) + f'(a) (x-a) + \frac{f''(a)}{2} (x-a)^2 + \cdots
+        \]
+    </p></div>
+    <!-- <p>
+        Here $f^{(k)}$ denotes the $k$-th derivative of $f$,
+        and $k!$ denotes the factorial of $k$.
+    </p> -->
+    <p>
+        The special case of Taylor series of a function $f$ centered at $x=0$
+        is called the <b>Maclaurin series</b> of $f$.
+    </p>
+</section>
+<section>
+    <h3>What's the point?</h3>
+
+    <p>
+        The importance of Taylor series lies in its unique ability to represent
+        a function using information from a single point.
+    </p>
+    <div class="theorem"><p>
+        <b>Theorem.</b>
+        Let $f$ be a function defined on an open interval containing $x=a$.
+        If there is a power series centered at $x=a$ that converges to $f$
+        on this interval, then this series must be the Taylor series of $f$ at $x=a$.
+    </p></div>
+    <p>
+        The ``if'' part of the above theorem may not always hold.
+        There are functions that does not agree with any power series on an open interval.
+    </p>
+    <p><b>Problem.</b>
+        Compute the Taylor series of the following functions of $x$ centered at $x=0$.
+        \begin{align*}
+            & e^x &
+            & \sin(x) &
+            & \cos(x) &
+            & \sinh(x) &
+            & \ln(1+x) &
+            & \frac{1}{1-x}
+        \end{align*}
+    </p>
+    
+</section>
+<section>
+    <h3>Taylor Polynomials</h3>
+    <p>
+        In many applications, a full Taylor series is often not necessary,
+        and a partial sum may be sufficient.
+        A partial sum of a Taylor series is called a <b>Taylor polynomial</b>.
+    </p>
+    <p>
+        For examples, for a function $f(x)$,
+        \begin{align*}
+            p_0(x) &= f(a) \\
+            p_1(x) &= f(a) + f'(a)(x-a) \\
+            p_2(x) &= f(a) + f'(a)(x-a) + \frac{f''(a)}{2} (x-a)^2 \\
+            p_3(x) &= f(a) + f'(a)(x-a) + \frac{f''(a)}{2} (x-a)^2 + \frac{f'''(a)}{6} (x-a)^3
+        \end{align*}
+        are Taylor polynomials for $f$ at $a$ of degree 0, 1, 2, and 3 respectively.
+    </p>
+    <p>
+        Taylor polynomial of a function centered at $x=0$
+        is known as a <b>Maclaurin polynomial</b>.
+    </p>
+    
+</section>
+<section>
+    <h3>Taylor Remainder Theorem</h3>
+    <p>
+        Taylor polynomials are finite approximations of Taylor series.
+        Whether or not this approximation is good depends on the function itself,
+        and the following theorem quantifies how good this approximation can be.
+    </p>
+    <div class="theorem"><p>
+        <b>Taylor's Remainder Theorem.</b>
+        For a function $f$ that is at least $n+1$ times differentiable 
+        on an open interval that contains $a$,
+        Let $p_n$ be its degree $n$ Taylor polynomial.
+        Then for any $x$ in this interval, 
+        there exists a real number $c$ between $a$ and $x$ such that
+        \[
+            f(x) - p_n(x) = \frac{f^{(n+1)} (c)}{(n+1)!} (x - a)^{n+1}.
+        \]
+    </p></div>
+    <p>
+        Here $R_n(x) = f(x) - p_n(x)$ is called the <b>$n$-th remainder</b>.
+        The above theorem states that if we can control the magitude of the
+        $n+1$ order derivative of $f$, we can control the remainder $R_n$.
+    </p>
+    
+</section>
