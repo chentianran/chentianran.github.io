@@ -37,16 +37,39 @@ title: Power series
 
     <p>
         They are expressions that look like
-        polynomials with <em>infinite </em> number of terms.
+        polynomials with <em>infinitely</em> many terms.
     </p>
     <p class="fragment">
         A <b>power series centered at $x=0$</b> (or about $x=0$)
-        is an expression of the form
+        is an expression 
         \[
             \sum_{k=0}^\infty c_k x^k =
             c_0 + c_1 x + c_2 x^2 + c_3 x^3 + \cdots
         \]
         where $c_0,c_1,c_2,\ldots$ are real constants known as <b>coefficients</b>.
+    </p>
+    <p class="fragment">
+        For example, the following expressions are power series (about $x=0$):
+        \begin{align*}
+            &1 + x + x^2 + x^3 + x^4 + \cdots \\
+            &1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24} + \cdots \\
+            &1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720} + \cdots
+        \end{align*}
+    </p>
+</section>
+<section>
+    <h3>Nonexamples</h3>
+    <p>
+        In a power series in the variable $x$ (about $x=0$),
+        we only allow terms to have <em>nonnegative integer powers</em> of $x$.
+    </p>
+    <p>
+        Therefore the following expressions are <b>not</b> series (about $x=0$):
+        \begin{align*}
+            &\frac{1}{x} + 1 + x + x^2 + x^3 + x^4 + \cdots \\
+            &1 + \sqrt{x} + \frac{x}{2} + \frac{\sqrt{x^3}}{6} + \frac{x^2}{24} + \cdots \\
+            &1 - \ln x + 2 \ln x - 3 \ln x + \cdots
+        \end{align*}
     </p>
 </section>
 <section>
@@ -63,15 +86,23 @@ title: Power series
     </p>
     <p class="fragment">
         Simply put, a power series is an infinite series
-        in which each term has a <em>nonnegative</em> power of an variable.
+        in which each term has a <em>nonnegative</em> power of an variable
+        (or a variable minus a number).
+    </p>
+    <p class="fragment">
+        For example, the expression
+        \[
+            1 + (x - 3) + (x-3)^2 + (x-3)^3 + (x-3)^4 + \cdots
+        \]
+        is a power series centered at $x=3$.
     </p>
 </section>
 <section>
     <h3>Does a power series define a function?</h3>
     <p>
         Keep in mind that we may <em>not</em> be able to 
-        assign meaningful value to it once we ``plug in'' a value for $x$
-        --- as we know by now, not all series have meaningful values.
+        assign meaningful value to it once we "plug in" a value for $x$.
+        <!-- --- as we know by now, not all series have meaningful values. -->
         This is the question of <em>convergence</em>.
     </p>
     <p class="fragment">
@@ -100,18 +131,19 @@ title: Power series
         the series <em>converges</em>.
     </p>
     <div class="theorem"><p>
+        <b>Theorem.</b>
         A power series $\sum_{k=0}^\infty c_k (x-a)^k$
         has three possibilities:
         <ol>
-            <li> 
+            <li class="fragment"> 
                 This series converges only at $x=a$ and diverges for all other $x$ values.
                 In this case, we say this series has a <b>radius of converges</b> of 0.
             </li>
-            <li> 
+            <li class="fragment"> 
                 This series converges for all $x$ values.
                 In this case, we say this series has a <b>radius of converges</b> of $\infty$.
             </li>
-            <li>
+            <li class="fragment">
                 There exists a real $R > 0$ such that this series\ldots
                 <ul>
                     <li> converges for all $x$ such that $|x - a| < R$, and</li>
@@ -123,12 +155,79 @@ title: Power series
     </p></div>
 </section>
 <section>
+    <h3>An example</h3>
     <p>
-        In these cases, the set of real numbers for which
+        Consider the power series
+        \[
+            1+ x+ x^2 + x^3 + x^4 + x^5 + \cdots
+        \]
+        centered at $x=0$.
+    </p>
+    <p class="fragment">
+        From what we know about geometric series,
+        we can see this series converges if and only if $|x| < 1$.
+        Since the center is $x=0$,
+        we can conclude that the radius of convergence is 1.
+    </p>
+</section>
+<section>
+    <h3>Another example</h3>
+    <p>
+        Consider the power series
+        \[
+            \sum_{k=0}^\infty \frac{2^k(x-1)^k}{3} = \frac{1}{3} + \frac{2(x-1)}{3} + \frac{2^2(x-1)^2}{3} + \frac{2^3(x-1)^3}{3} + \cdots
+        \]
+        centered at $x=1$.
+    </p>
+    <p class="fragment">
+        This is a geometric series 
+        $\sum_{k=0}^\infty a r^k$
+        with $a = \frac{1}{3}$ and $r = 2(x-1)$.
+    </p>
+    <p class="fragment">
+        We know such a series converges if and only if $|r| < 1$,
+        i.e., $|2(x-1)| < 1$.
+        This is equivalent to
+        \[
+            |x-1| < 1/2.
+        \]
+        Since the center is $x=-1$,
+        this inequality states that the radius of convergence is $1/2$.
+    </p>
+</section>
+<section>
+    <h3>Yet another example</h3>
+    <p>
+        Consider the power series
+        \[
+            \sum_{k=0}^\infty \frac{x^k}{k!} = 1 + \frac{x}{1} + \frac{x^2}{2} + \frac{x^3}{6} + \cdots
+        \]
+        centered at $x=0$.
+    </p>
+    <p class="fragment">
+        We will apply the <em>ratio test</em> here
+        by computing the limit of the ratio between two consecutive terms:
+        \[
+            \lim_{k \to \infty} \frac{ \frac{x^{k+1}}{(k+1)!} }{ \frac{x^k}{k!} }
+            = \lim_{k \to \infty} \frac{ \frac{x}{(k+1)!} }{ \frac{1}{k!} }
+            = \lim_{k \to \infty} \frac{ x }{ k }
+            = 0
+        \]
+        for any given $x$.
+    </p>
+    <p class="fragment">
+        By the ratio test,
+        we can conclude that this series converges for any given $x$ value.
+        Therefore the radius of convergence is $\infty$.
+    </p>
+</section>
+<section>
+    <p>
+        The set of real numbers for which
         the series converge form a interval,
         and it is called the <b>interval of convergence</b> of the power series.
     </p>
-    <p>
+    <p class="fragment">
         Within this interval of convergence,
         power series having the same center <em>can be manipulated algebraically</em>,
         e.g., the can be added, and multiplied.
@@ -160,6 +259,8 @@ title: Power series
     <p class="fragment">
         This also means, within their interval of convergence,
         power series can be differentiated and integrated <em>term by term</em>.
+    </p>
+    <p class="fragment">
         \[
             \frac{d}{dx} \sum_{k=0}^\infty c_k (x-a)^k
             =
@@ -168,6 +269,16 @@ title: Power series
             \sum_{k=1}^\infty c_k k (x-a)^{k-1}
         \]
     </p>
+    <p class="fragment">
+        \[
+            \int \sum_{k=0}^\infty c_k (x-a)^k
+            =
+            \sum_{k=0}^\infty \int \left[ c_k (x-a)^k \right]
+            =
+            \sum_{k=0}^\infty c_k \frac{(x-a)^{k+1}}{k+1}
+        \]
+    </p>
+    <p></p>
 
 </section>
 <section>
