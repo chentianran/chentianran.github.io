@@ -1,0 +1,105 @@
+---
+layout: lecture
+title: Ratio and root tests
+---
+
+
+<section class="titlepage">
+    <h2 class="title">Ratio and root tests</h2>
+    <p class="footnote2">
+        In the previous lecture, we learned the concept of
+        "absolute convergence", which is a stronger type of convergence
+        that guarantees many nice properties.
+        Based on the observations on geometric series,
+        we have two tests that can test for absolute convergence.
+    </p>
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+</section>
+<section>
+    <h3>Ratio and root tests</h3>
+    <p>
+        Both of these tests can identify series that can be
+        approximated sufficiently well by geometric series,
+        which we now fully understand.
+    </p>
+</section>
+<section>
+    <h3>Ratio test</h3>
+    <div class="theorem">
+        <p>
+            Let $\sum_{k=1}^\infty a_k$ be a series with $a_k \ne 0$
+            and $r = \lim_{k \to \infty} | \frac{a_{n+1}}{a_n} |$.
+        </p>    
+        <ul>
+            <li>
+                If $0 \le r \le 1$, then $\sum_{k=1}^\infty a_k$ converges <em>absolutely</em>.
+            </li>
+            <li> 
+                If $r > 1$ or is infinite, then $\sum_{k=1}^\infty a_k$ diverges.
+            </li>   
+        </ul>
+        <p>
+            (If $r = 1$, then this test is inconclusive.)
+        </p>
+    </div>
+</section>
+<section>
+    <h3>Root test</h3>
+    <p>
+        The ``root test'' works in a slight different way,
+        but the two essentially detect the same thing:
+        whether or not a series can be approximated by a geometric series sufficiently well.
+    </p>
+    <div class="theorem">
+        <p>
+            Let $\sum_{k=1}^\infty a_k$ be a series
+            and $r = \lim_{k \to \infty} \sqrt[k]{ | a_k | }$.
+        </p>
+        <ul>
+            <li> 
+                If $0 \le r \le 1$, then $\sum_{k=1}^\infty a_k$ converges <em>absolutely</em>.
+            </li>
+            <li> 
+                If $r > 1$ or is infinite, then $\sum_{k=1}^\infty a_k$ diverges.
+            </li>
+        </ul>
+        <p>
+            (Again, if $r = 1$, then this test is inconclusive.)
+        </p>
+    </p></div>
+    <p>
+        Note the structural similarity between the two tests.
+        This is expected as the two are designed to detect the same property.
+    </p>
+    
+    
+    
+</section>
+<section>
+    <h3>Exercises</h3>
+    <p>
+        Using ratio and root tests,
+        determine which of the following series is/are absolutely convergent
+    </p>
+    <ol>
+        <li>
+            \[ \sum_{k=1}^\infty \frac{3}{k!} \]
+        </li>
+        <li>
+            \[ \sum_{k=2}^\infty ??? \]
+        </li>
+        <li>
+            \[ \sum_{k=2}^\infty ??? \]
+        </li>
+        <li>
+            \[ \sum_{k=2}^\infty ??? \]
+        </li>
+        <li>
+            \[ \sum_{k=2}^\infty ??? \]
+        </li>
+    </ol>
+</section>
