@@ -6,9 +6,8 @@ title: Taylor series
 <section class="titlepage">
     <h2 class="title">Taylor series and Maclaurin series</h2>
     <p class="footnote2">
-        The discussion above shows that within its interval of convergence,
-        a power series represents a function 
-        (a very nice function as far as doing calculus is concerned).
+        In the last lecture, we learned that within its interval of convergence,
+        a power series represents a function.
         It is then reasonable to ask:
         Given a function, can we find a power series that represents the function?
         This is the main question we want to answer in this lecture.
@@ -22,12 +21,73 @@ title: Taylor series
 <section>
     <h3>Taylor and Maclaurin series</h3>
     <p>
-        The discussion above shows that within its interval of convergence,
+        The discussion in the previous lecture shows that 
+        within its interval of convergence,
         a power series represents a function 
         (a very nice function as far as doing calculus is concerned).
         It is then reasonable to ask:
-        Given a function, can we find a power series that represents the function?
+        <em>
+            Given a function, can we find a power series that represents the function?
+            This is the main question we want to answer in this lecture.
+        </em>
     </p>
+    <p class="fragment">
+        Another closely related question is:
+        <em>
+            What's the best way to approximate a function
+            with a polynomial?
+        </em>
+    </p>
+</section>
+<section>
+    <h3>The motivating question</h3>
+    <p>
+        Can we approximate $y=e^x$ with a polynomial near $x=0$?
+    </p>
+    <div class="r-stack">
+        <img class="fragment" src="exp-1deg.png" alt="">
+        <img class="fragment" src="exp-2deg.png" alt="">
+        <img class="fragment" src="exp-3deg.png" alt="">
+    </div>
+</section>
+<section>
+    <!-- <p>Polynomial approximations of $y=e^x$ near $x=0$:</p> -->
+    <p>
+        Best linear (1st degree) approximation of $y=e^x$ near $x=0$ is
+        \[
+            y = 1 + x
+        \]
+        It has the same function value and derivative at $x=0$
+        as $y=e^x$.
+    </p>
+    <p class="fragment">
+        Best quadratic (2nd degree) approximation
+        \[
+            y = 1 + x + \frac{x^2}{2}
+        \]
+        It has the same function value, same derivative,
+        and same second derivative at $x=0$ as the original function $y=e^x$
+    </p>
+    <p class="fragment">
+        Best cubic (3rd degree) approximation
+        \[
+            y = 1 + x + \frac{x^2}{2} + \frac{x^3}{6}
+        \]
+        It has the same function value, same derivative,
+        and same second derivative at $x=0$ as the original function $y=e^x$.
+    </p>
+</section>
+<section>
+    <p>
+        We can continue this pattern and reach the formula
+        \[
+            e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24}
+            + \cdots + \frac{x^k}{k!} + \cdots
+        \]
+    </p>
+</section>
+<section>
+    <h3>Taylor and Maclaurin series</h3>
     <p>
     <div class="theorem"><p>
         <b>Definition.</b>
