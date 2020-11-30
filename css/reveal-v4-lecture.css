@@ -91,6 +91,19 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
     padding: 4px 10px;
 }
 
+.equation {
+  display: flex; /* or inline-flex */
+  justify-content: center;
+  align-items: center;
+}
+
+.aligned {
+  display: flex; /* or inline-flex */
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
 .title {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
