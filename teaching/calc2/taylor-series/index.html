@@ -103,10 +103,94 @@ title: Taylor series
         Here $f^{(k)}$ denotes the $k$-th derivative of $f$,
         and $k!$ denotes the factorial of $k$.
     </p> -->
-    <p>
+    <p class="fragment">
         The special case of Taylor series of a function $f$ centered at $x=0$
         is called the <b>Maclaurin series</b> of $f$.
     </p>
+    <p class="fragment">
+        Recall that the notation $f^{(k)}$ denotes the $k$-th derivative of
+        the function $f$.
+    </p>
+</section>
+<section>
+    <h3>Example</h3>
+    <p>
+        Let's apply the formula of Taylor series 
+        \[
+            f(a) + 
+            f'(a) (x-a) + 
+            \frac{f'' (a)}{2} (x-a)^2 + 
+            \frac{f'''(a)}{6} (x-a)^3 + \cdots
+        \]
+        to the function $f(x) = e^x$, centered at $x=0$.
+    </p>
+    <p class="fragment">
+        To do that, we need to compute <em>all</em>
+        derivatives of $f(x) = e^x$.
+        Fortunately, this is easy to do for this particular function since
+        \[
+            f^{(k)} (x) = \frac{d^k}{dx^k} (e^x) = e^x
+            \quad \text{and} \quad e^0 = 1,
+        \]
+    </p>
+    <p class="fragment">
+        which means $f^{(k)}(0) = 1$ for any $k$ in this case.
+        Therefore
+        \[
+            e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{24}
+            + \cdots + \frac{x^k}{k!} + \cdots
+        \]
+    </p>
+</section>
+<section>
+    <h3>Another example</h3>
+    <p>
+        Let's apply the formula 
+        $ f(a) + f'(a) (x-a) + \frac{f'' (a)}{2} (x-a)^2 + \cdots$
+        to the function $f(x) = \frac{1}{x}$, centered at $x=1$.
+    </p>
+    <p class="fragment">
+        Again, to do this, we will need to compute <em>all</em>
+        the derivatives of the function $f(x) = \frac{1}{x} = x^{-1}$
+        via repeated applications of the "power rule".
+    </p>
+    <div class="aligned">
+        <p class="fragment">
+            $f'(x) = - x^{-2}$
+        </p>
+        <p class="fragment">
+            $f''(x) = -(-2) x^{-3} = 2x^{-3}$
+        </p>
+    </div>
+    <div class="aligned">
+        <p class="fragment">
+            $f'''(x) = (-3) 2 x^{-4} = -6x^{-4}$
+        </p>
+        <p class="fragment">
+            $f^{(4)}(x) = (-4)(-6)x^{-5} = 24x^{-5}$
+        </p>
+    </div>
+    <div class="fragment">
+        <p>
+            After computing a few of these,
+            we can see that
+        </p>
+        <div class="aligned">
+            <p>$f^{(k)}(x) = (-1)^k \, k! \, x^{-k-1}$</p>
+            <!-- <p>and therefore,</p> -->
+            <p class="fragment">$f^{(k)}(1) = (-1)^k \, k!$ </p>
+        </div>
+    </div>
+    <div class="fragment">
+        <p>
+            The Taylor series of $f(x) = \frac{1}{x}$ centered at $x=1$ is therefore
+        </p>
+        <div class="equation">
+            <p>$\sum_{k=0}^\infty \frac{f^{(k)}(1)}{k!} (x-1)^k$</p>
+            <p class="fragment">$= \sum_{k=0}^\infty \frac{(-1)^k \, k!}{k!} (x-1)^k$ </p>
+            <p class="fragment">$= \sum_{k=0}^\infty (-1)^k (x-1)^k$ </p>
+        </div>
+    </div>
 </section>
 <section>
     <h3>What's the point?</h3>
@@ -115,18 +199,19 @@ title: Taylor series
         The importance of Taylor series lies in its unique ability to represent
         a function using information from a single point.
     </p>
-    <div class="theorem"><p>
+    <div class="theorem fragment"><p>
         <b>Theorem.</b>
         Let $f$ be a function defined on an open interval containing $x=a$.
         If there is a power series centered at $x=a$ that converges to $f$
         on this interval, then this series must be the Taylor series of $f$ at $x=a$.
     </p></div>
-    <p>
-        The ``if'' part of the above theorem may not always hold.
+    <p class="fragment">
+        The "if" part of the above theorem may not always hold.
         There are functions that does not agree with any power series on an open interval.
     </p>
-    <p><b>Problem.</b>
-        Compute the Taylor series of the following functions of $x$ centered at $x=0$.
+    <p class="fragment"><b>Exercise.</b>
+        Compute the Taylor series of the following functions of $x$ centered at $x=0$,
+        and see if the function agrees with the series.
         \begin{align*}
             & e^x &
             & \sin(x) &
@@ -136,16 +221,15 @@ title: Taylor series
             & \frac{1}{1-x}
         \end{align*}
     </p>
-    
 </section>
 <section>
     <h3>Taylor Polynomials</h3>
     <p>
         In many applications, a full Taylor series is often not necessary,
         and a partial sum may be sufficient.
-        A partial sum of a Taylor series is called a <b>Taylor polynomial</b>.
+        Such a partial sum is called a <b>Taylor polynomial</b>.
     </p>
-    <p>
+    <p class="fragment">
         For examples, for a function $f(x)$,
         \begin{align*}
             p_0(x) &= f(a) \\
@@ -155,11 +239,39 @@ title: Taylor series
         \end{align*}
         are Taylor polynomials for $f$ at $a$ of degree 0, 1, 2, and 3 respectively.
     </p>
-    <p>
-        Taylor polynomial of a function centered at $x=0$
-        is known as a <b>Maclaurin polynomial</b>.
+    <p class="fragment">
+        Taylor polynomial of a function centered at 0
+        is a <b>Maclaurin polynomial</b>.
     </p>
-    
+</section>
+<section>
+    <h3>Revisiting $e^x$</h3>
+    <p>
+        As we saw earlier,
+        we can approximate the function $f(x) = e^x$
+        using polynomials near $x=0$.
+        Those are indeed Taylor polynomials.
+    </p>
+    <div class="r-stack">
+        <div class="fragment fade-in-then-out">
+            <p>
+                Degree 1 Taylor polynomial $p(x) = 1 + x$:
+            </p>
+            <img src="exp-1deg.png" alt="">
+        </div>
+        <div class="fragment fade-in-then-out">
+            <p>
+                Degree 2 Taylor polynomial $p(x) = 1 + x + \frac{x^2}{2}$:
+            </p>
+            <img src="exp-2deg.png" alt="">
+        </div>
+        <div class="fragment fade-in-then-out">
+            <p>
+                Degree 3 Taylor polynomial $p(x) = 1 + x + \frac{x^2}{2} + \frac{x^3}{6}$:
+            </p>
+            <img src="exp-2deg.png" alt="">
+        </div>
+    </div>
 </section>
 <section>
     <h3>Taylor Remainder Theorem</h3>
@@ -168,7 +280,7 @@ title: Taylor series
         Whether or not this approximation is good depends on the function itself,
         and the following theorem quantifies how good this approximation can be.
     </p>
-    <div class="theorem"><p>
+    <div class="theorem fragment"><p>
         <b>Taylor's Remainder Theorem.</b>
         For a function $f$ that is at least $n+1$ times differentiable 
         on an open interval that contains $a$,
@@ -179,10 +291,9 @@ title: Taylor series
             f(x) - p_n(x) = \frac{f^{(n+1)} (c)}{(n+1)!} (x - a)^{n+1}.
         \]
     </p></div>
-    <p>
+    <p class="fragment">
         Here $R_n(x) = f(x) - p_n(x)$ is called the <b>$n$-th remainder</b>.
         The above theorem states that if we can control the magitude of the
         $n+1$ order derivative of $f$, we can control the remainder $R_n$.
     </p>
-    
 </section>
