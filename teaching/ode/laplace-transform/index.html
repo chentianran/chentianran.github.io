@@ -1,0 +1,414 @@
+---
+layout: lecture
+title: Laplace transform
+---
+
+<section class="titlepage">
+    <h2 class="title">Laplace transform</h2>
+    <p class="footnote2">
+        Named after Pierre-Simon Laplace,
+        the <em>Laplace transform</em> is an "integral transform"
+        that transforms a function of time to a function of complex frequency.
+        It is an important tool in mathematics, physics, and engineering.
+        In the context of ordinary differential equations,
+        it is an extremely useful tool for solving initial value problems.
+    </p>
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+</section>
+<section>
+    <h3>Laplace transform</h3>
+    <p>
+        Named after Pierre-Simon Laplace,
+        the <em>Laplace transform</em> is an "integral transform"
+        that transforms a function of time to a function of complex frequency.
+        It is an important tool in mathematics, physics, and engineering.
+    </p>
+    <p class="fragment">
+        In the context of ordinary differential equations,
+        it is an extremely useful tool for solving initial value problems.
+    </p>
+    <p class="fragment">
+        For example, difficult initial value problems like
+        \[
+            y'' + 4y = e^{-3t} \sin(2t),
+            \quad y(0) = 0,
+            \quad y'(0) = 1
+        \]
+        can be solved relatively easily through Laplace transform.
+    </p>
+</section>
+<section>
+    <h3>Review: Improper integrals</h3>
+    <p>
+        In order to make sense of the following discussion,
+        a clear understanding of <em>improper integrals</em>
+        of the form $\int_0^\infty f(t) dt$ is necessary.
+    </p>
+    <p class="fragment">
+        It is defined to be
+        \[
+            \int_0^\infty f(t) dt = \lim_{h \to \infty} \int_0^h f(t) dt
+        \]
+        if this limit exists (and is finite).
+        In this case, we say the improper integral <em>converges</em>.
+        Otherwise, we say it <em>diverges</em>.
+    </p>
+</section>
+<section>
+    <h3>Laplace transform</h3>
+    <div class="theorem"><p>
+        For a function $f(t)$ that is defined for all $t \ge 0$,
+        its <b>Laplace transform</b> is the function $F(s)$
+        in a complex variable $s$ given by
+        \[
+            F(s) = \mathcal{L}\{f(t)\} =
+            \int_0^\infty e^{-s t} \, f(t) \, dt
+        \]
+        if this improper integral <em>converges</em>.
+    </p></div>
+    <p class="fragment">
+        In this definition, we allow $s$ to be <em>complex</em>
+        even when starting with real functions,
+        and $s$ is often known as the <b>complex frequency</b> parameter.
+    </p>
+    <p class="fragment">
+        <b>Example.</b>
+        Let's compute the Laplace transform
+        of $f(t) = 1$:
+    </p>
+    <div class="equation">
+        <span class="fragment">
+            $\displaystyle \mathcal{L}\{ 1 \} = \int_0^\infty e^{-st} 1 \, dt$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \lim_{x \to \infty} \int_0^x e^{-st} 1 \, dt$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \lim_{x \to \infty} -\frac{e^{-sx}}{s} + \frac{1}{s}$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \frac{1}{s}$
+        </span>
+    </div>
+    <p class="fragment">
+        which is valid for $s > 0$.
+        <span class="fragment">
+            Since we allow $s$ to be complex,
+            this result is actually valid for any $s$ with a positive real part.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Another example</h3>
+    <p>
+        Let's compute the Laplace transform of the function
+        $f(t) = e^{at}$ for a nonzero constant $a$.
+    </p>
+    <div class="equation">
+        <span class="fragment">
+            $\displaystyle \mathcal{L}\{ e^{at} \} = \lim_{x \to \infty} \int_0^x e^{-st} e^{at} \, dt$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \lim_{x \to \infty} \int_0^x e^{(a-s)t} dt$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \lim_{x \to \infty} \left[ \frac{e^{(a-s)t}}{a-s} \right]_0^x$
+        </span>
+    </div>
+    <div class="equation">
+        <span class="fragment">
+            $\displaystyle = \lim_{x \to \infty} \frac{e^{(a-s)x}}{a-s} - \frac{1}{a-s}$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \frac{1}{s-a}$
+        </span>
+    </div>
+    <p class="fragment">
+        which is valid if the real part of $s-a$ is positive.
+    </p>
+    <p class="fragment">
+        Therefore, we can conclude that
+        \[
+            \mathcal{L}\{ e^{at} \} = \frac{1}{s-a}
+        \]
+        which is defined for any $s$ for which
+        the real part of $s-a$ is positive.
+    </p>
+</section>
+<section>
+    <h3>The $\mathcal{L}$ operator</h3>
+    <p>
+        In this definition,
+        \[
+            \mathcal{L}\{f(t)\} =
+            \int_0^\infty e^{-s t} \, f(t) \, dt,
+        \]
+    </p>
+    <p>
+        $\mathcal{L}$ is considered as an <em>operator</em>
+        in the sense that it takes in a function 
+        and returns another function as output.
+        Notice that the input and output functions do not have the same variable.
+        That is, it also transform the $t$-domain (time domain)
+        to the $s$-domain (complex frequency domain).
+    </p>
+</section>
+<section>
+    <h3>Caveat: a Laplace transform may not exist</h3>
+    <p>
+        Not all functions have Laplace transforms.
+        Indeed, for the Laplace transform $\mathcal{L}\{ f(t) \}to make sense,
+        we require $f(t)$ to be...
+    </p>
+    <ul>
+        <li> 
+            continuous for $t > 0$ except at a finite number of jump discontinuities;
+        </li>
+        <li> 
+            of at most "exponential order",
+            i.e., $|f(t)|$ can be bounded by $M e^{ct}$ 
+            for some sufficiently large real number $M$;
+        </li>
+    </ul>
+    <p class="fragment">
+        Intuitively speaking,
+        functions that have "too many" discontinuities,
+        "strange" discontinuities, or grow too fast,
+        may not have Laplace transforms.
+    </p>
+    <p class="fragment">
+        <b>Exercise.</b>
+        Prove that $f(t) = e^{t^2}$ has no Laplace transform.
+    </p>
+</section>
+<section>
+    <h3>Laplace transform is a linear operator</h3>
+    <p>
+        It is easy to verify that $\mathcal{L}\{ 0 \} = 0$.
+        That is, the Laplace transform of the zero function
+        (in $t$) is the zero function (in $s$).
+    </p>
+    <p class="fragment">
+        Moreover, 
+        for functions $f_1(t)$ and $f_2(t)$ whose 
+        Laplace transforms are defined
+        and (complex) constants $c_1,c_2$,
+        \[
+            \mathcal{L} \{ c_1 f_1 + c_2 f_2 \} =
+            c_1 \, \mathcal{L} \{ f_1 \} + 
+            c_2 \, \mathcal{L} \{ f_2 \}.
+        \]
+    </p>
+    <p class="fragment">
+        This property is called <em>linearity</em>,
+        and we say $\mathcal{L}$ is a linear operator.
+    </p>
+</section>
+<section>
+    <h3>Exercise problems</h3>
+    <p>
+        Computing Laplace transform can be difficult.
+        We only look at simple ones.
+    </p>
+    <p>
+        <b>Problem.</b>
+        Compute the Laplace transforms of 
+        \begin{align*}
+            f(t) &= 1 &
+            g(t) &= e^{at} &
+            h(t) &= t &
+            \ell(t) &= \sin(t)
+        \end{align*}
+    </p>
+</section>
+<section>
+    <h3>Laplace transform is almost invertible</h3>
+    <p>
+        The hope is, knowing the Laplace transform $F(s)$ of a function $f(t)$,
+        we can recover $f(t)$.
+        This is the key in solving certain differential equations.
+    </p>
+    <p class="fragment">
+        It turns out $\mathcal{L}$ is not one-to-one,
+        i.e., multiple functions can produce the same Laplace transform.
+        Inverting $\mathcal{L}$ is thus not possible in general.
+    </p>
+    <p class="fragment">
+        However, if restricted to continuous functions,
+        $\mathcal{L}$ is indeed one-to-one.
+        I.e., there is a unique <em>continuous</em> function $f(t)$
+        for which $F(s) = \mathcal{L} \{ f(t) \}$.
+    </p>
+    <p class="fragment">
+        Under this assumption,
+        we write \[ f(t) = \mathcal{L}^{-1} \{ F(s) \} \]
+        and call this the <b>inverse Laplace transform</b>.
+    </p>
+</section>
+<section>
+    <h3>Laplace transform of derivatives</h3>
+    <p>
+        For solving differential equations,
+        the most important property of Laplace transform
+        is how it interact with derivatives.
+    </p>
+    <div class="theorem"><p>
+        If the involved Laplace transforms are defined,
+        \begin{align*}
+            \mathcal{L} \{ y'\,\, \}
+                &=
+                s \mathcal{L} \{ y \}
+                - y(0) ,
+                \\
+            \mathcal{L} \{ y'' \, \}
+                &=
+                s^2 \mathcal{L} \{ y \}
+                - sy (0)
+                -  y'(0) ,\\
+            \mathcal{L} 
+                \{ 
+                    y'''
+                \}
+                &=
+                s^3 \mathcal{L} \{ y \}
+                - s^2 y  (0)
+                - s   y' (0) 
+                -     y''(0)
+                \\
+                &\vdots \\
+            \mathcal{L} \left\{ y^{(n)} \right\}
+                &=
+                s^n \mathcal{L} \{ y \}
+                - \sum_{k=1}^n s^{n-k} y^{(k-1)}(0).
+        \end{align*}
+    </p></div>
+    <p class="fragment">
+        An important observation: $\mathcal{L}$ turns 
+        derivatives of $y$ into algebraic expressions 
+        in $\mathcal{L}\{y\}$, $s$, and the initial values.
+    </p>
+</section>
+<section>
+    <h3>Solving differential equations: an example</h3>
+    <p>
+        For a differential equation in $y(t)$,
+        we can apply $\mathcal{L}$ to the entire equation,
+        which will transform the <em>differential</em> equation 
+        into a new <em>algebraic</em> equation involving $Y(s)$ and $s$.
+    </p>
+    <p class="fragment">
+        We can then solve the $Y(s)$
+        and then apply the inverse Laplace transform
+        $\mathcal{L}^{-1}$ to find the original function $y$.
+        This is the main idea.
+    </p>
+</section>
+<section>
+    <h3>A simple example</h3>
+    <p>
+        <b>Problem.</b>
+        Find a solution $y(t)$ to the DE
+        \[
+            y'' = -y + e^{-2t}
+            \quad
+            \text{with }
+            \quad
+            y(0) = y'(0) = 0.
+        \]
+    </p>
+    <p class="fragment">
+        <b>Solution.</b>
+        Applying Laplace transform, we get
+        \[
+            \mathcal{L} \{ y'' \} = -\mathcal{L} \{y\} + \mathcal{L} \{ e^{-2t}\}.
+        \]
+    </p>
+    <p class="fragment">
+        Using the table above, this turns into
+        \[
+            s^2 Y - sy(0) - y'(0) = -Y + \frac{1}{s + 2}.
+        \]
+    </p>
+    <p class="fragment">
+        Then using the initial conditions, this simplifies to
+        \[
+            s^2 Y = -Y + \frac{1}{s + 2}
+            \quad\text{i.e.,}\quad
+            Y = \frac{1}{(s^2+1)(s+2)} 
+        \]
+        Can you recognize what $y = \mathcal{L}^{-1} \{ Y \}$ is?
+    </p>
+    
+</section>
+<!-- <section>
+    <h3>Commonly used Laplace transforms</h3>
+    <p>
+    \begin{center}
+        \vspace{0.5ex}
+        \begin{tabular}{ccc}
+            $f(t)$ & $\mathcal{L}\{f(t)\}$ & Region of convergence \\
+            \toprule
+            % $\delta(t)$ & $1$   & all $s \in \mathcal{C}$\\ \midrule
+            % $H_c(t)$    & $\frac{e^{-cs}}{s}$ & $\re(s) > 0$\\ \midrule
+            $1$ & $\frac{1}{s}$ & $\re(s) > 0$ \\ \midrule
+            $t$         & $\frac{1}{s^2}$ & $\re(s) > 0$ \\ \midrule
+            $t^n$       & $\frac{n!}{s^{n+1}}$ & $\re(s) > 0, n \in \mathbb{Z}^+$ \\ \midrule
+            $e^{at}$    & $\frac{1}{s-a}$ & $\re(s) > \re{a}$ \\ \midrule
+            $\sin(at)$  & $\frac{a}{s^2 + a^2}$ & $\re(s) > 0$ \\ \midrule
+            $\cos(at)$  & $\frac{s}{s^2 + a^2}$ & $\re(s) > 0$ \\ \midrule
+            $e^{at} \sin(bt)$  & $\frac{b  }{(s-a)^2 + b^2}$ & $\re(s) > a$ \\ \midrule
+            $e^{at} \cos(bt)$  & $\frac{s-a}{(s-a)^2 + b^2}$ & $\re(s) > a$ \\ \midrule
+            \bottomrule
+            
+        \end{tabular}
+    \end{center}
+    </p>
+</section>
+<section>
+    <h3>Review: Laplace transform</h3>
+    <p>
+    </p>
+    <p>
+    For a function $f(t)$ defined for $t \ge 0$,
+    its <b>Laplace transform</b> is the function $F(s)$
+    in a complex variable $s$ given by
+    \[
+        F(s) = \mathcal{L}\{f(t)\} =
+        \int_0^\infty e^{-s t} \, f(t) \, dt.
+    \]
+    % if this improper integral converges.
+    </p>
+    <p>
+</section> -->
+<section>
+    <h3>What is Laplace transform?</h3>
+    <p>
+        Recall that given coefficients function $c_k = c(k)$,
+        a power series can be formed as
+        \[
+            \sum_{k=0}^\infty c_k \, x^k \;=\;
+            \sum_{k=0}^\infty x^k \, c(k).
+        \]
+    </p>
+    <p class="fragment">
+        A continuous version of this construction will be
+        \[
+            \int_0^\infty x^t \, c(t) \, dt
+            \;=\;
+            \int_0^\infty e^{(\ln x) t} \, c(t) \, dt.
+        \]
+        Clearly, we need $x < 1$, i.e., $\ln x < 0$
+        for this integral to have any hope of converging.
+        With that in mind, we write $s = -\ln x$,
+        and this produces the Laplace transform
+        $\mathcal{L}\{c(t)\} = \int_0^\infty e^{-st} \, c(t) \, dt.$
+        Therefore, the Laplace transform can be viewed as a
+        continuous version of a power series construction.
+
+    </p>
+    
+</section>
