@@ -1,0 +1,281 @@
+---
+layout: lecture
+title: Basics of differential equations
+---
+    
+<section class="titlepage">
+    <h2 class="title">Basics of differential equations</h2>
+    <p class="footnote2">
+        A differential equation is an equation
+        that involves derivatives or differentials.
+        You can find them almost everywhere in science and engineering
+        since many scientific principles 
+        are naturally formulated as differential equations.
+        In this lecture, we will study the most basic concepts
+        and techniques in differential equations.
+    </p>
+    <p>Tianran Chen</p>
+    <p class="footnote2">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+</section>
+<section>
+    <h3>What is a differential equation?</h3>
+    <p>
+        A <b>differential equation</b> is an equation
+        that involves <em>derivatives</em> or <em>differentials</em>.
+    </p>
+    <p class="fragment">
+        You can find them almost everywhere in science and engineering.
+        E.g., Newton's law of motion is stated as
+        \[
+            F = \frac{d}{dt} \left( m \frac{dy}{dt} \right).
+        \]
+    </p>
+    <p class="fragment">
+        Simple harmonic motion
+        (e.g. metronomes) is described by
+        \[
+            \frac{d^2}{dt^2} y = -\frac{k}{m} y.
+        \]
+    </p>
+    <p class="fragment">
+        These are very simple examples.
+        The differential equations we encounter in applications
+        tend to be much more complicated.
+        The idea of differential equation
+        is an integral part of science and engineering,
+        as many "laws" and "principles" are stated in terms of differential equations.
+    </p>
+</section>
+<section>
+    <h3>Solving a differential equation</h3>
+    <p>
+        <em>To solve a differential equation</em> 
+        means to find such a function that satisfies the equation.
+        This, it turns out is not always possible.
+        Only the simplest differential equations admit solutions
+        that can be written down explicitly.
+        Of course, some differential equations have no solutions at all.
+
+    </p>
+    <p class="fragment">
+        <b>Problem.</b>
+        Can we find a function $y$ of $x$ such that
+        \[ \frac{dy}{dx} = 7 \, ? \]
+        That is, do you know a function $y(x)$ whose derivative is 7?
+    </p>
+    <p class="fragment">
+    <b>Problem.</b>
+        Can we find a function $y$ of $x$ such that
+        \[ \frac{dy}{dx} = x \,? \]
+    </p>
+</section>
+<section>
+    <h3>The first class of differential equations</h3>
+    <p>
+        One of the simplest class of differential equations 
+        are those of the form
+        \[ y' = f(x) \]
+        (or any form that can be rearrange into this form)
+        where the right hand side does <em>not</em> involve $y$.
+    </p>
+    <p class="fragment">
+        It is easy to see that
+        \[
+            y(x) = \int f(x) dx
+        \]
+        will be our answer, 
+        as long as the integral on the right hand side is defined.
+        This is how antiderivative works.
+    </p>
+</section>
+<section>
+    <h3>A "differential" point of view</h3>
+    <p>
+        Alternatively, we can look at the same procedure 
+        from a different viewpoint.
+    </p>
+    <p class="fragment">
+        From
+        \[
+            \frac{dy}{dx} = f(x),
+        \]
+        we can integrate both sides with respect to $x$, and get
+        \begin{align*}
+            \int \frac{dy}{dx} dx = \int f(x) dx \quad
+            &\Rightarrow \quad \int dy = \int f(x) dx \\
+            &\Rightarrow \quad y = \int f(x) dx.
+        \end{align*}
+    </p>
+    <p class="fragment">
+        Keep in mind that the expression $\int f(x) dx$
+        does not represent a single function.
+        It is a whole <em>family of functions</em>.
+    </p>
+    <p class="fragment">
+        <b>Problem.</b>
+        In the above derivation,
+        do you know why we can turn $\frac{dy}{dx} dx$ into $dy$ ?
+        (Hint: it's not <em>not</em> cancellation)
+    </p>
+    
+</section>
+<section>
+    <h3>The general result</h3>
+    <div class="theorem"><p>
+        If $f(x)$ is integrable over an interval,
+        then the solutions to the differential equation
+        \[ y' = f(x) \]
+        are of the form
+        \[
+            y(x) = \int f(x) dx
+        \]
+        over that interval.
+    </p></div>
+    <p class="fragment">
+        Again, it is important to understand that
+        the indefinite integral on the right hand side
+        represents a whole family of equally good solutions.
+    </p>
+    <p class="fragment">
+        In practice, we also have to be careful with
+        the domain and range of the solutions
+        as the original equation or context
+        may imply further restriction of the domain and range.
+    </p>
+</section>
+<section>
+    <h3>The second class of differential equations</h3>
+    <p>
+        Can we find a function $y$ of $x$ such that
+        \[ \frac{dy}{dx} = y \, ? \]
+    </p>
+    <p class="fragment">
+        Just by guessing, it is not hard to see there are at least two solutions:
+        The constant function $y = 0$ and the exponential function $y = e^x$.
+    </p>
+    <p class="fragment">
+        Indeed, $y = Ce^x$ would be a solution
+        for any real number $C$ (including 0).
+        This is a example "separable differential equations".
+    </p>
+    <p class="fragment">
+        Can we find a function $y$ of $x$ such that
+        \[ \frac{dy}{dx} = 2xy \, ? \]
+    </p>
+</section>
+<section>
+    <h3>Separable differential equations</h3>
+    <div class="theorem"><p>
+        <b>Definition.</b>
+        A differential equation in $y(x)$ is <b>separable</b> 
+        if it is of the form
+        \[
+            \frac{dy}{dx} = A(y) B(x)
+        \]
+        where $A(y)$ does not involve $x$
+        and   $B(x)$ does not involve $y$.
+    </p></div>
+    <p class="fragment">
+        Under the assumption that $A(y) \ne 0$,
+        it can be turned into
+        \[
+            \frac{1}{A(y)} \frac{dy}{dx} = B(x).
+        \]
+    </p>
+    <p class="fragment">
+        Integrating both sides with respect to $x$, we get
+        \begin{align*}
+            \int \frac{1}{A(y)} \frac{dy}{dx} dt &= \int B(x) dx &
+            &\text{i.e.,} &
+            \int \frac{1}{A(y)} dy &= \int B(x) dx.
+        \end{align*}
+        <em>If</em> we can compute both integrals,
+        we will have an equation in $y$ without derivatives.
+        Then, by solving the resulting equation,
+        we can obtain the explicit solution $y$.
+    </p>
+</section>
+<section>
+    <p>
+        <b>Example.</b>
+        Find the general solution to the differential equation
+        $ \frac{dy}{dx} = y^2. $
+    </p>
+    <p class="fragment">
+        <b>Solution.</b>
+        First, we can easily verify that $y(t) = 0$ is a solution.
+        Now we will search for non-zero (never zero) solutions.
+    </p>
+    <p class="fragment">
+        Note that this equation is separable as we can write it as
+        \[ \frac{dy}{dx} = y^2 \cdot 1. \]
+    </p>
+    <div class="fragment">
+        <p>
+            Since we already imposed the restriction $y(x) \ne 0$,
+            we can rearrange it into
+        </p>
+        <div class="aligned">
+            <span>
+                $\displaystyle \frac{1}{y^2} \frac{dy}{dx} = 1$
+            </span>
+            <span class="fragment">
+                i.e., $\displaystyle \int \frac{1}{y^2} \frac{dy}{dx} dt = \int 1 dx$
+            </span>
+            <span class="fragment">
+                i.e., $\displaystyle \int \frac{1}{y^2} dy = \int 1 dx$
+            </span>
+        </div>
+
+    </div>
+    <div class="fragment">
+        <p>
+            Integrating the two sides separately, we get
+        </p>
+        <div class="aligned">
+            <span>
+                $\displaystyle \int \frac{1}{y^2} dy = -\frac{1}{y},$
+            </span>
+            <span class="fragment">
+                and $\displaystyle \int 1 \, dx = x + C.$
+            </span>
+        </div>
+    </div>
+    <p class="fragment">
+        Here, we only need a single "$+C$"
+        since such constants will appear on both sides of the equation
+        and can be combined into one.
+    </p>
+    <div class="fragment">
+        <p>
+            Therefore, the equations turn into
+        </p>
+        <div class="aligned">
+            <span>
+                $\displaystyle -\frac{1}{y} = x + C$
+            </span>
+            <span class="fragment">
+                and thus
+                $\displaystyle y = - \frac{1}{x+C}$.
+            </span>
+        </div>
+    </div>
+
+</section>
+<section>
+    <h3>Exercises problems</h3>
+    <p>
+        <b>Problem.</b>
+        Solve the differential equation
+        \[ \frac{dy}{dx} = \frac{x}{y}. \]
+        using the same method.
+    </p>
+    <p>
+    <b>Problem.</b>
+        Solve the differential equation
+        \[ \frac{dy}{dx} = -4y^2 x . \]
+    </p>
+</section>
