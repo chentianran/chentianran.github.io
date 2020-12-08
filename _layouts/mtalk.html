@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/reset.css">
+        <link rel="stylesheet" href="/css/reveal-v4.css">
+        <link rel="stylesheet" href="/css/mtalk.css">
+	</head>
+	<body>
+        <div class="reveal">
+			<div class="slides">
+                {{ content }}
+			</div>
+		</div>
+		<script src="/js/reveal-v4.js"></script>
+        <script src="/js/reveal-v4/math/math.js"></script>
+        <!-- <script src="/js/reveal-v4/notes/notes.js"></script> -->
+        <!-- <script src="/js/reveal-v4/audio-slideshow/plugin.js"></script> -->
+        <script>
+            Reveal.initialize({
+                math: {
+                    mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+                    config: 'TeX-AMS_HTML-full',
+                    // pass other options into `MathJax.Hub.Config()`
+                    // TeX: { Macros: { RR: "{\\bf R}" } }
+                    extensions: ["tex2jax.js"],
+                    jax: ["input/TeX", "output/HTML-CSS"],
+                    tex2jax: {
+                    inlineMath:  [ ['$','$'] ],
+                    displayMath: [ ["\\[","\\]"] ],
+                    processEscapes: true
+                    },
+                    "HTML-CSS": { 
+                        fonts: ["TeX"],
+                        styles: {
+                            ".MathJax_Display": {margin: "0.4em"}
+                        } 
+                    }
+                },
+                plugins: [ RevealMath ],
+                margin: 0.05,
+                controls: false,
+                keyboard: true,
+                history: true,
+                progress: false,
+                center: false,
+                transition: 'slide',
+                transitionSpeed: 'fast',
+                width: 960,
+                height: 700
+            });
+        </script>
+	</body>
+</html>
