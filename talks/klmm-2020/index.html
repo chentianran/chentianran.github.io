@@ -455,10 +455,11 @@ title: Polyhedral homotopy and its applications
             <li>Regeneration homotopy</li>
             <li>Monodromy homotopy</li>
             <li><b>Polyhedral homotopy</b> (n.o. paths: <b>mixed volume</b>)</li>
+            <li>......</li>
         </ul>
     </div>
     <br/>
-    <p>
+    <p class="fragment">
         <b>Example.</b>
         Consider a $2 \times 2$ system
         \begin{align*}
@@ -698,6 +699,7 @@ title: Polyhedral homotopy and its applications
             A + B := \{ a + b \mid a \in A, b \in B \}
         \]
     </p>
+    <br/>
     <div class="center fragment">
         <svg height="140" width="600">
             <g fill="none" stroke="purple" stroke-width="1">
@@ -721,6 +723,73 @@ title: Polyhedral homotopy and its applications
         is the coefficient of $\lambda_1 \cdots \lambda_n$ in
         \[
             \text{vol}(\lambda_1 P_1 + \cdots + \lambda_n P_n)
+        \]
+    </p>
+    <br/>
+    <p class="fragment center small">
+        Many researchers prefer the definition with an additional
+        factor of $\frac{1}{n!}$.
+    </p>
+</section>
+<section>
+    <h3>2-dimensional case</h3>
+    <p class="center">
+        $\text{MVol}(A,B)$
+        is the coefficient of $\lambda_1 \lambda_2$ in
+        $
+            \text{vol}(\lambda_1 A + \lambda_2 B)
+        $
+    </p>
+    <br/>
+    <div class="center fragment">
+        <svg height="350" width="800">
+            <g transform="translate(0,300), scale(0.75,-0.75)">
+                <g>
+                    <polygon 
+                        points="0,0 200,100 100,200"
+                        style="fill:lightsteelblue;stroke:black;stroke-width:1"
+                    />
+                </g>
+                <g transform="translate(300,0)">
+                    <polygon 
+                        points="0,0 200,0 200,200 0,200"
+                        style="fill:coral;stroke:black;stroke-width:1"
+                    />
+                </g>
+                <text x="225" y="120" fill="black"> + </text>
+                <text x="525" y="120" fill="black"> =</text>
+                <g transform="translate(570,0)">
+                    <polygon 
+                        points="0,0 200,0 200,200 0,200"
+                        style="fill:coral;stroke:black;stroke-width:1"
+                    />
+                    <g transform="translate(200,200)">
+                        <polygon 
+                            points="0,0 200,100 100,200"
+                            style="fill:lightsteelblue;stroke:black;stroke-width:1"
+                        />
+                    </g>
+                    <g transform="translate(200,0)">
+                        <polygon 
+                            points="0,0 200,100 200,300 0,200"
+                            style="fill:orchid;stroke:black;stroke-width:1"
+                        />
+                    </g>
+                    <g transform="translate(0,200)">
+                        <polygon 
+                            points="0,0 200,0 300,200 100,200"
+                            style="fill:orchid;stroke:black;stroke-width:1"
+                        />
+                    </g>
+                </g>
+            </g>
+          </svg>
+    </div>
+
+    <p class="fragment">
+        \[
+            \text{MVol}(A,B) =
+            \text{vol}(A+B) - \text{vol}(A) - \text{vol}(B)
         \]
     </p>
 </section>
