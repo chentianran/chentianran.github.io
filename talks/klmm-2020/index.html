@@ -13,7 +13,7 @@ title: Polyhedral homotopy and its applications
         Auburn University at Montgomery
     </p>
     <p class="smaller">
-        December, 2020<br/>
+        December 10, 2020<br/>
         Key Laboratory of Mathematics Mechanization,
         Institute of Systems Science<br/>
         Academy of Mathematics and System Sciences<br/>
@@ -32,15 +32,17 @@ title: Polyhedral homotopy and its applications
             \right.
         \]
     </p>
+    <br/>
     <ul>
         <li>
-            Broad applications;
+            Broad applications 广泛的应用;
         </li>
         <li>
-            A fundamental problem in computational mathematics;
+            A fundamental problem in computational and applied mathematics 
+            计算和应用数学中的一个基本问题;
         </li>
         <li>
-            Give rise to many new field in computation.
+            Give rise to many new field in computation 发展成为若干新领域.
         </li>
     </ul>
 </section>
@@ -121,11 +123,14 @@ title: Polyhedral homotopy and its applications
         \]
     </p>
     <p class="fragment">
-        ... they are equivalent to critical points defined by
+        Equivalent to nonlinear systems defined by 等用于非线性方程组
         \[
             0 = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
             \quad\text{for } i=0,\dots,n
         \]
+    </p>
+    <p class="fragment">
+        Not a polynomial system 并非多项式系统
     </p>
 </section>
 <section>
@@ -169,7 +174,7 @@ title: Polyhedral homotopy and its applications
     </p>
 </section>
 <section>
-    <p>Consider complex phase angles 复数角度</p>
+    <p>Consider complex phase angles 引入复数角度</p>
     
     <p>
     \[
@@ -179,13 +184,13 @@ title: Polyhedral homotopy and its applications
     </p>
 
     <p class="fragment">
-        and the change of variables 变数变换
+        and the change of variables 以及变量变换
         \[
             x_i = e^{\mathbf{i} z_i} = e^{r_i + \mathbf{i}\,\theta_i}
         \]
     </p>
     <p class="fragment">
-        and the transformation
+        and the transformation 和函数变换
         \[
             \sin(z_i - z_j) = \frac{
                 e^{\mathbf{i}z_i - \mathbf{i}z_j} -
@@ -218,7 +223,7 @@ title: Polyhedral homotopy and its applications
         </p>
     </div>
     <p class="fragment">
-        Transcendental system is turned into a polynomial system.
+        Transcendental system is turned into a polynomial system 得多项式系统.
     </p>
 </section>
 <!-- <section>
@@ -236,7 +241,7 @@ title: Polyhedral homotopy and its applications
 </section> -->
 <section>
     <h3>
-        Algebraic synchronization equations
+        Algebraic synchronization equations 代数同步方程
     </h3>
     <p>
         \[
@@ -246,11 +251,12 @@ title: Polyhedral homotopy and its applications
             \right)
         \]
     </p>
+    <br/>
     <ul>
-        <li class="fragment">How many solutions?</li>
-        <li class="fragment">How to find all solutions?</li>
-        <li class="fragment">What can network topology tell us?</li>
-        <li class="fragment">Can we decompose large networks?</li>
+        <li class="fragment">How many solutions? 解的数目?</li>
+        <li class="fragment">How to find all solutions? 如何求解?</li>
+        <li class="fragment">What can network topology tell us? 解集与网络拓扑之间的关系?</li>
+        <li class="fragment">Can we decompose large networks? 能否将大规模网络分解为小网络?</li>
     </ul>
 </section>
 <!-- <section>
@@ -276,8 +282,8 @@ title: Polyhedral homotopy and its applications
     <h3>Power-flow equations (Lossless PQ-formulation)</h3>
     <p>
         <span class="alert">Power networks</span>
-        carry alternating current (AC) electric power 
-        and make modern life possible.
+        carry alternating current (AC) electric power.
+        交流电网
     </p>
     <p class="fragment">
         Derived from Kirchhoff's circuit laws,
@@ -300,13 +306,15 @@ title: Polyhedral homotopy and its applications
     </p>
     <p class="fragment">
         <b>Not a polynomial system.</b>
+        并非多项式系统
     </p>
 </section>
 <section>
-    <h3>Turning into polynomials</h3>
+    <h3>Turning into polynomials 转换成多项式</h3>
     <p>
         Examples of different approaches of turning power-flow equations into
-        polynomial systems:
+        polynomial systems
+        代数化方法众多
     </p>
     <ul>
         <li>
@@ -343,7 +351,7 @@ title: Polyhedral homotopy and its applications
         \]
     </p>
     <p class="fragment">
-        Introducing new variables $u_i = \overline{v}_i$:
+        Introducing new variables 引入复共轭变量 $u_i = \overline{v}_i$:
         \[
             S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i u_j
             \quad\text{for } i = 2,\dots,N
@@ -361,7 +369,7 @@ title: Polyhedral homotopy and its applications
                 \end{aligned}
             \right.
         \]
-        which is a $(2N-2) \times (2N-2)$ polynomial system.
+        which is a $(2N-2) \times (2N-2)$ polynomial system 得多项式系统.
     </p>
 </section>
 <section>
@@ -390,32 +398,34 @@ title: Polyhedral homotopy and its applications
     <br/>
     <div class="center">
         <p class="fragment">
-            How to solve a polynomial system?
+            How to solve a polynomial system? 如何求解多项式系统?
         </p>
         <p class="fragment">
-            (Find <em>all</em> solutions)
+            (Find <em>all</em> solutions 求所有解)
         </p>
     </div>
     <br/>
     <div class="cols fragment">
         <div class="col center">
-            Numerical methods
+            Numerical methods<br/>
+            数值方法
         </div>
         <div class="col center">
-            Symbolic methods
+            Symbolic methods<br/>
+            符号方法
         </div>
     </div>
     <div class="cols fragment">
         <div class="col center">
             <p>$\downarrow$</p>
-            <p>Homotopy method</p>
+            <p>Homotopy method<br>同伦法</p>
         </div>
         <div class="col center">
         </div>
     </div>
 </section>
 <section>
-    <h3>Homotopy method</h3>
+    <h3>Homotopy method 同伦法</h3>
     <p>
         Goal: want to solve polynomial system $P(\mathbf{x}) = 0$
         via a continuous deformation
@@ -446,7 +456,7 @@ title: Polyhedral homotopy and its applications
 </section>
 <section>
     <h3>
-        Many types of homotopy methods
+        Many types of homotopy methods 众多不同的同伦法
     </h3>
     <div class="center">
         <ul>
@@ -454,6 +464,7 @@ title: Polyhedral homotopy and its applications
             <li>$m$-homogeneous homotopy (n.o. paths: $m$-homog. Bezout number)</li>
             <li>Regeneration homotopy</li>
             <li>Monodromy homotopy</li>
+            <li>Cheater's/parameter homotopy</li>
             <li><b>Polyhedral homotopy</b> (n.o. paths: <b>mixed volume</b>)</li>
             <li>......</li>
         </ul>
@@ -495,7 +506,7 @@ title: Polyhedral homotopy and its applications
 </section>
 <section>
     <h3>
-        Polyhedral Homotopy
+        Polyhedral Homotopy 多面体同伦法
     </h3>
     <p>
         Huber & Sturmfels 1995
@@ -533,7 +544,7 @@ title: Polyhedral homotopy and its applications
 </section>
 <section>
     <h3>
-        Modify $H$
+        How to start $H$
     </h3>
     <div class="equgroup small">
         <p>
@@ -671,9 +682,12 @@ title: Polyhedral homotopy and its applications
             Fewer path: faster.
         </li>
     </ul>
+    <p class="fragment small">
+        The situation is much more complicated in terms of complexity.
+    </p>
 </section>
 <section>
-    <h3>Bernshtein-Kushnirenko-Khovanskii bound</h3>
+    <h3>Bernshtein-Kushnirenko-Khovanskii (BKK) bound</h3>
     <p>
         <b>Theorem.</b>
         [Bernshtein, Kushnirenko, Khovanskii]
@@ -688,11 +702,19 @@ title: Polyhedral homotopy and its applications
     </p>
     <p class="fragment">
         Here, $\text{MVol}$ denotes the <b>mixed volume</b> function,
-        and $\text{Newt}{f_i}$ is the Newton polytope of $f_i$.
+        and $\text{Newt}(f_i)$ is the Newton polytope of $f_i$,
+        <span class="fragment">
+            and the Newton polytope is the convex hull of the exponent vectors
+            in $f_i$ as points in $\mathbb{R}^n$.
+        </span>
+    </p>
+    <br/>
+    <p class="fragment">
+        This is the number of paths the polyhedral homotopy has to trace.
     </p>
 </section>
 <section>
-    <h3>Mixed volume</h3>
+    <h3>Mixed volume 混合体积</h3>
     <p>
         \[
             \text{Minkowski sum: }
@@ -785,156 +807,216 @@ title: Polyhedral homotopy and its applications
             </g>
           </svg>
     </div>
-
     <p class="fragment">
         \[
             \text{MVol}(A,B) =
             \text{vol}(A+B) - \text{vol}(A) - \text{vol}(B)
         \]
     </p>
+    <br/>
+    <p class="fragment">
+        This formula can be generalized to higher dimensional,
+        <span class="fragment">
+            but this is <b>not</b> how we compute mixed volume (BKK bound) in practice.
+        </span>
+    </p>
 </section>
-<!-- <section>
-    <p>Consider the algebraic Kuramoto equations</p>
+<section>
+    <h3>Mixed volume computation</h3>
+
     <p>
         \[
-        \begin{aligned}
-            -\omega_1 + a_{10}' (x_1 / x_0 - x_0 / x_1) + a_{12}' (x_1 / x_2 - x_2 / x_1) \\
-            -\omega_2 + a_{20}' (x_2 / x_0 - x_0 / x_2) + a_{21}' (x_2 / x_1 - x_1 / x_2) \\
-        \end{aligned}
+            \text{``Mixed volume''} \;=\; \text{sum of ``mixed cells''}
         \]
     </p>
-    <svg width="600" height="300" viewbox="-150 -150 600 300">
-        <g transform="scale(1,-1) translate(0,0)">
-            <polygon class="shape1"
-                points="100,0 100,-100 -100,0 -100,100" />
-            <path d="M 100 0 L -100 0 M 100 -100 L -100 100"
-                class="shape2 fragment" />
-        </g>
-        <g transform="scale(1,-1) translate(270,0)">
-            <polygon class="shape1"
-                points="0,100 -100,100 0,-100 100,-100" />
-            <path d="M 0 100 L 0 -100 M 100 -100 L -100 100"
-                class="shape2 fragment" />
-        </g>
-    </svg>
-</section> -->
-<!-- <section>
-    <div class="theorem">
-        <h4>Proposition</h4>
-        <p>
-            Given a complete graph,
-            for generic choices of the coefficients,
-            the complex root count (b.i.i.i.) of 
-            algebraic Kuramoto equations
-            \[
-                0 = \omega_i - \sum_{j=1}^n a_{ij}'
-                \left(
-                    \frac{x_i}{x_j} - \frac{x_j}{x_i}
-                \right)
-            \]
-            is exactly the BKK bound.
-        </p>
+    <br/>
+    <div class="fragment">
+        <p>In practice, <em>mixed cells</em> give up two thing</p>
+        <ul>
+            <li>
+                Mixed volume, i.e., generic root count, i.e., number of paths;
+            </li>
+            <li>
+                Starting point of polyhedral homotopies.
+            </li>
+        </ul>
     </div>
-</section> -->
-<!-- <section>
-    <table>
-        <tr>
-            <td>B.i.i.i.</td>
-            <td>$\to$</td>
-            <td>BKK bound</td>
-            <td class="fragment" data-fragment-index="2">$\to$</td>
-            <td class="fragment" data-fragment-index="2">Volume?</td>
-        </tr>
-        <tr class="fragment" data-fragment-index="1">
-            <td>Mixed volume of N.O. bodies</td>
-            <td></td>
-            <td>Mixed volume of Newton polytopes</td>
-            <td></td>
-            <td class="fragment" data-fragment-index="2">Volume of a single polytope</td>
-        </tr>
-    </table>
-
-</section> -->
-<section>
-    <div class="theorem">
-        <h4>Theorem (C.)</h4>
-        <p>
-            If $A$ and $B$ "touch" all the edges of
-            $\text{conv}(A \cup B)$, then
-        </p>
-        <p>
-            \[
-                \text{MVol}(A,B) \;=\; \text{Vol}_2( \text{conv} (A \cup B) )
-            \]
-        </p>
-    </div>
-    
-    <svg width="700" height="250">
-        <g transform="scale(1,-1) translate(0,-220)">
-            <polygon class="shape1"
-                points="0,0 200,0 200,200 0,200" />
-        </g>
-        <g transform="scale(1,-1) translate(250,-220)">
-            <polygon class="shape2"
-                points="0,0 200,100 100,200" />
-        </g>
-        <g transform="scale(1,-1) translate(500,-220)">
-            <polygon class="shape1"
-                points="0,0 200,0 200,200 0,200" />
-            <polygon class="shape2"
-                points="0,0 200,100 100,200" />
-        </g>
-        <g transform="translate(120,250) scale(0.6,0.6)">
-            <text x="0" y="0" fill="black"> Mixed volume: 8</text>
-        </g>
-        <g transform="translate(505,250) scale(0.6,0.6)">
-            <text x="0" y="0" fill="black"> Normalized vol. = 8</text>
-    </svg>
-</section>
-<!-- <section>
-    <div class="theorem">
-        <p>
-            For $\varnothing \ne S_1,\dots,S_n \subset \mathbb{Z}^n$,
-            let $\tilde{S} = S_1 \cup \cdots \cup S_n$.
-            If every positive dimensional face $F$ of $\text{conv}(\tilde{S})$ satisfies
-            <ol>
-                <li>$F \cap S_i \ne \varnothing$ for all $i \in \{1,\dots,n\}$; or</li>
-                <li>$F \cap S_i$ is a singleton for some $i \in \{1,\dots,n\}$; or</li>
-                <li>
-                    For each $i \in I := \{ i \mid F \cap S_i \ne \varnothing \}$,
-                    $F \cap S_i$ is contained in a $|I|$-dimensional 
-                    coordinate subspace in which 
-                    and its projection of dimension less than $|I|$ then
-                </li>
-            </ol>
-        </p>
-        <p>
-            \[
-                \text{MVol} (\text{conv}(S_1), \dots, \text{conv}(S_n)) = 
-                \text{Vol}_n (\text{conv}(\tilde{S})).
-            \]
-        </p>
-    </div>
-</section> -->
-<section>
-    <p>
-        Much more general equivalence results exist for
-        mixed volume and semi-mixed volume.<br/>
+    <p class="fragment">
+        Mixed cells computation component is the most important part 
+        of a polyhedral homotopy implementation.
     </p>
 
+</section>
+<section>
+    <h3>
+        Polyhedral homotopy: Summary
+    </h3>
     <ul>
+        <li class="fragment">
+            A numerical homotopy method for solving (Laurent) polynomial systems;
+        </li>
+        <li class="fragment">
+            Finds all isolated complex solutions (including singular solutions);
+        </li>
+        <li class="fragment">
+            Naturally parallel and highly scalable;
+        </li>
+        <li class="fragment">
+            Generically optimal: it traces the least number of paths
+            for polynomial systems with generic coefficients;
+        </li>
+        <li class="fragment">
+            Takes advantage of the combinatorial structures in the Newton polytopes
+            of a polynomial system;
+        </li>
+        <li class="fragment">
+            It is bootstrapped by mixed cells computation;
+        </li>
+    </ul>
+    <br/>
+    <div class="fragment">
+        <p>Implementations (not a complete list)</p>
+        <ul>
+            <li>PHCPack (J. Verschelde)</li>
+            <li>Hom4PS, Hom4PS-2, Hom4PS-3 (李天岩研究组)</li>
+            <li>PSS5 (G. Malajovich)</li>
+            <li>HomotopyContinuation.jl (P. Breiding, S. Timme)</li>
+            <li>pHom (T. Gunji, S. Kim, M. Kojima, A. Takeda, K. Fujisawa, T. Mizutani)</li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h3>Open problems 尚待解决的问题</h3>
+    <p>Examples of open problems:</p>
+    <ul>
+        <li class="fragment">
+            GPU accelerated implementation 充分利用图形卡加速;
+        </li>
+        <li class="fragment">
+            Polyhedral homotopy without mixed cells;
+        </li>
+        <li class="fragment">
+            Polyhedral homotopy for finding positive dimensional solution sets
+            (irreducible decomposition)
+            利用多面体同伦法计算正维/高维解集(包括解集分解).
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Polyhedral homotopy without mixed cells (current work)</h3>
+
+    <p>
+        Recently, a useful connection between volume and mixed volume is found.
+    </p>
+    <p>
+        <b>Theorem</b> (Chen)
+        If $A$ and $B$ "touch" all the edges of
+        $\text{conv}(A \cup B)$, then
+    </p>
+    <p>
+        \[
+            \text{MVol}(A,B) \;=\; \text{vol}_2( \text{conv} (A \cup B) )
+        \]
+    </p>
+    
+    <div class="fragment center">
+        <svg width="720" height="290">
+            <g transform="scale(1,-1) translate(0,-220)">
+                <polygon 
+                    style="fill:coral;stroke:black;stroke-width:1;"
+                    points="0,0 200,0 200,200 0,200"
+                />
+            </g>
+            <g transform="scale(1,-1) translate(250,-220)">
+                <polygon 
+                    style="fill:lightsteelblue;stroke:black;stroke-width:1;"
+                    points="0,0 200,100 100,200"
+                />
+            </g>
+            <g class="fragment" transform="scale(1,-1) translate(500,-220)">
+                <polygon 
+                    style="fill:coral;stroke:black;stroke-width:1;"
+                    points="0,0 200,0 200,200 0,200" />
+                <polygon
+                    style="fill:lightsteelblue;stroke:black;stroke-width:1;"
+                    points="0,0 200,100 100,200" />
+            </g>
+            <g transform="translate(120,280) scale(1.0,1.0)">
+                <text x="0" y="0" fill="black"> Mixed volume: 8</text>
+            </g>
+            <g class="fragment" transform="translate(480,280)">
+                <text x="0" y="0" fill="black"> Normalized vol: 8</text>
+        </svg>
+    </div>
+    <br/>
+    <p class="fragment">
+        Much more general equivalence results are also developed
+    </p>
+
+    <ul class="fragment">
         <li>
-            C. 
+            Chen 
             <span class="small">"Unmixing the mixed volume computation"</span>
         </li>
         <li>
             F. Bihan & I. Soprunov 
-            <span class="small">
+            <span class="smaller">
                 "Criteria for Strict Monotonicity of the Mixed Volume of Convex Polytopes"
             </span>
         </li>
     </ul>
 </section>
+<!-- <section>
+    <h3>
+        Positive dimensional solutions
+    </h3>
+    <p>
+        <em>Positive dimensional solutions sets</em>
+        are solution sets that are not isolated.
+        [Sommese & Wampler 1996: Numerical algebraic geometry]
+    </p>
+    <p class="fragment">
+        Polyhedral homotopy can find all isolated complex solutions,
+        but, in general, there it cannot sample positive dimensional solution sets.
+    </p>
+</section> -->
+<!-- <section>
+    <h3>
+        Stratified polyhedral homotopy (unmixed case)
+    </h3>
+    <p>
+        To sample the positive dimensional solution sets
+    \[
+        \left\{
+        \begin{aligned}
+            a_0 + a_1 x_1^1 x_2^2 + a_2 x_1^2 x_2^1 &= 0 \\
+            b_0 + b_1 x_1^1 x_2^2 + b_2 x_1^2 x_2^1 &= 0 
+        \end{aligned}
+        \right.
+        \quad \text{in } (\C^*)^2
+        \quad \text{(reduced case)}
+    \]
+
+    </p>
+
+    \pause \vskip 2ex
+
+    Define $H(x_1,x_2,t_0,t_1,t_2)$ given by
+    \[
+        \left\{
+        \begin{aligned}
+            &(a_0 + \alert{t_1\lambda_{11} a_{01}^* + t_2 \lambda_{12} a_{02}^*}) \alert{e^{\omega_0 t_0}}+ 
+             (a_1 + \alert{t_1\lambda_{11} a_{11}^* + t_2 \lambda_{12} a_{12}^*}) \alert{e^{\omega_1 t_0}}x_1^1 x_2^2 \cdots \\
+            &(b_0 + \alert{t_1\lambda_{21} b_{01}^* + t_2 \lambda_{22} b_{02}^*}) \alert{e^{\omega_0't_0}}+ 
+             (b_1 + \alert{t_1\lambda_{21} b_{11}^* + t_2 \lambda_{22} b_{12}^*}) \alert{e^{\omega_1't_0}}x_1^1 x_2^2 \cdots
+        \end{aligned}
+        \right.
+    \]
+    \pause
+
+    Move the parameter $\mathbf{t} = (t_0,t_1,t_2)$ along the path
+</section> -->
+
 <!-- <section>
     <div class="theorem">
         <h4>Definition: <b class="alert">Adjacency polytope</b></h4>
@@ -1083,7 +1165,7 @@ title: Polyhedral homotopy and its applications
         </tr>
     </table>
 </section> -->
-<section>
+<!-- <section>
     <h1>Thank you!</h1>
     <ul>
         <li>
@@ -1122,22 +1204,14 @@ title: Polyhedral homotopy and its applications
             </span>
         </li>
     </ul>
-</section>
+</section> -->
 <section class="titlepage">
-    <!-- <h3>Acknowledgement</h3> -->
-    <!-- <p>
-        My collaborators on this and related projects:
-        Rob Davis, Evgeniia Korchevskaia, Wuwei Li, 
-        Jakub Marecek, Dhagash Mehta, Dan Molzahn, Matthew Niemerg.
-    </p>
-    <p>
-        My advisor Tien-Yien Li (1945-2020).
-    </p> -->
     <div class="cols">
         <div class="col">
             <p>
-                Research supported, in part, by NSF 
-                and Auburn University at Montgomery Grant-In-Aid program
+                Research supported, in part, by National Science Foundation,
+                Auburn University at Montgomery Grant-In-Aid,
+                and AMS-Simons travel grants
             </p>
         </div>
         <div class="col center">
@@ -1147,26 +1221,14 @@ title: Polyhedral homotopy and its applications
     </div>
     <br/>
     <br/>
-<!-- </section> -->
-<!-- <section class="titlepage center"> -->
     <h1>Thank You!</h1>
 
     <p>
         <code>ti@nranchen.org</code>
     </p>
+    <p>
         <code>
         http://www.tianranchen.org/
         </code>
-    <p>
-
     </p>
-    <!-- <div class="r-stack">
-        <div>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-        </div>
-    </div> -->
 </section>
