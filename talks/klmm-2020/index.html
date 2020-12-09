@@ -304,6 +304,10 @@ title: Polyhedral homotopy and its applications
 </section>
 <section>
     <h3>Turning into polynomials</h3>
+    <p>
+        Examples of different approaches of turning power-flow equations into
+        polynomial systems:
+    </p>
     <ul>
         <li>
             J. Baillieul and C. Byrnes 
@@ -319,7 +323,7 @@ title: Polyhedral homotopy and its applications
                 SIAM Journal of Numerical Analysis (1987)
             </span>
         </li>
-        <li class="fragment">
+        <li>
             (Recent survey) D. Mehta, D. Molzahn and K. Turitsyn 
             <span class="small">
                 "Recent advances in computational methods for the power flow equations", 
@@ -327,6 +331,9 @@ title: Polyhedral homotopy and its applications
             </span>
         </li>
     </ul>
+    <p class="smaller">
+        (Not a complete list)
+    </p>
 </section>
 <section>
     <p>
@@ -356,6 +363,56 @@ title: Polyhedral homotopy and its applications
         \]
         which is a $(2N-2) \times (2N-2)$ polynomial system.
     </p>
+</section>
+<section>
+    <h3>Polynomial systems</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                3 applications listed above:
+            </p>
+            <ul>
+                <li>Noonburg's neural network;</li>
+                <li>Algebraic Kuramoto equations;</li>
+                <li>Algebraic power-flow equations;</li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul>
+                <li class="fragment">Tensor eigenvalue problems;</li>
+                <li class="fragment">$N$-body central configurations;</li>
+                <li class="fragment">Computer vision problems;</li>
+                <li class="fragment">Energy landscape problems;</li>
+                <li class="fragment">...... many many more.</li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <div class="center">
+        <p class="fragment">
+            How to solve a polynomial system?
+        </p>
+        <p class="fragment">
+            (Find <em>all</em> solutions)
+        </p>
+    </div>
+    <br/>
+    <div class="cols fragment">
+        <div class="col center">
+            Numerical methods
+        </div>
+        <div class="col center">
+            Symbolic methods
+        </div>
+    </div>
+    <div class="cols fragment">
+        <div class="col center">
+            <p>$\downarrow$</p>
+            <p>Homotopy method</p>
+        </div>
+        <div class="col center">
+        </div>
+    </div>
 </section>
 <section>
     <h3>Homotopy method</h3>
@@ -389,9 +446,56 @@ title: Polyhedral homotopy and its applications
 </section>
 <section>
     <h3>
+        Many types of homotopy methods
+    </h3>
+    <div class="center">
+        <ul>
+            <li>Total degree homotopy (n.o. paths: Bezout number)</li>
+            <li>$m$-homogeneous homotopy (n.o. paths: $m$-homog. Bezout number)</li>
+            <li>Regeneration homotopy</li>
+            <li>Monodromy homotopy</li>
+            <li><b>Polyhedral homotopy</b> (n.o. paths: <b>mixed volume</b>)</li>
+        </ul>
+    </div>
+    <br/>
+    <p>
+        <b>Example.</b>
+        Consider a $2 \times 2$ system
+        \begin{align*}
+            a_0 + a_1 x_1^1 x_2^2 + a_2 x_1^2 x_2^1 &= 0 \\
+            b_0 + b_1 x_1^1 x_2^2 + b_2 x_1^2 x_2^1 &= 0 
+        \end{align*}
+    </p>
+    <ul>
+        <li class="fragment">Total degree homotopy: (Bezout number) <b>9</b> paths</li>
+        <li class="fragment">Polyhedral homotopy: (Mixed volume) <b>3</b> paths</li>
+    </ul>
+</section>
+<section>
+    <h3>
+        Matrix eigenvalue problem
+    </h3>
+    <p>
+        For an $n \times n$ matrix $A$,
+        the matrix eigenvalue problem can be considered as a polynomial system
+        \[
+            P(\mathbf{x},\lambda) = A \mathbf{x} - \lambda \mathbf{x} = 0
+        \]
+    </p>
+    <br/>
+    <ul>
+        <li class="fragment">
+            Total degree homotopy: $2^n$ paths;
+        </li>
+        <li class="fragment">
+            Polyhedral homotopy: $n$ paths;
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>
         Polyhedral Homotopy
     </h3>
-
     <p>
         Huber & Sturmfels 1995
         \[
@@ -491,7 +595,7 @@ title: Polyhedral homotopy and its applications
         </span>
     </p>
     <p class="fragment">
-        <b class="term"> IF </b>
+        <b> IF </b>
         we choose the <em>correct</em> $\alpha$ and $\beta$ then
     </p>
     <div class="r-stack">
@@ -522,117 +626,105 @@ title: Polyhedral homotopy and its applications
     </div>
     <p class="fragment">
         Such <b>binomial</b> systems can be solved easily,
-        <span class="fragment">giving us starting points.</span>
+        <span class="fragment">
+            giving us starting points,
+            and the homotopy can start.
+        </span>
     </p>
-
-    <!-- 
-    \uncover<14->{ Such \alert{bi}nomial systems can be solved easily, }
-    \uncover<15->{ } -->
-
 </section>
-<!-- <section>
-    <h3>BKK bound</h3>
-    <div class="theorem">
-        <h4>Theorem (Bernshtein-Kushnirenko-Khovanskii)</h4>
-        <p>
-            Given a system of Laurent polynomials
-            $f_1,\dots,f_n$ in $(x_1,\dots,x_n)$
-            with <span class="emph">generic</span> coefficients,
-            the number of isolated common roots in
-            $(\mathbb{C}^*)^n$ is bounded by
-        </p>
-        <p>
-            \[ \text{MVol}(\text{Newt}(f_1),\dots,\text{Newt}(f_n)) \]
-        </p>
-    </div>
-</section> -->
-<!-- <section>
+<section>
+    <h3>
+        The key idea
+    </h3>
+    <p>
+        <b>IF</b>
+        we choose the <em>correct </em> $\alpha$ and $\beta$ then
+        \[
+            H^\alpha(y_1,y_2,\color{red}{0}) = 
+            \text{ a ``binomial system''}
+        \]
+        and can be solved.
+    </p>
+    <p class="fragment">
+        In general, such pairs of "correct" $\alpha$ and $\beta$ is not unique.
+    </p>
+    <p class="fragment">
+        The key question: How to find such "correct" $\alpha$ and $\beta$?
+    </p>
+    <p class="fragment">
+        Answer: "Mixed cell computation"  
+        (equivalent to tropical intersection)
+    </p>
+</section>
+<section>
+    <h3>The number of homotopy paths</h3>
+
+    <p>
+        Generally,
+    </p>
+    <ul>
+        <li>
+            More path: slower.
+        </li>
+        <li>
+            Fewer path: faster.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Bernshtein-Kushnirenko-Khovanskii bound</h3>
+    <p>
+        <b>Theorem.</b>
+        [Bernshtein, Kushnirenko, Khovanskii]
+    <!-- </p>
+    <p> -->
+        Given a system of (Laurent) polynomials
+        $f_1,\dots,f_n$ in $(x_1,\dots,x_n)$
+        with <em>generic</em> coefficients,
+        the number of isolated common roots in
+        $(\mathbb{C}^*)^n$ (i.e., $x_i \ne 0$ for each $i$) is 
+        \[ \text{MVol}(\text{Newt}(f_1),\dots,\text{Newt}(f_n)). \]
+    </p>
+    <p class="fragment">
+        Here, $\text{MVol}$ denotes the <b>mixed volume</b> function,
+        and $\text{Newt}{f_i}$ is the Newton polytope of $f_i$.
+    </p>
+</section>
+<section>
+    <h3>Mixed volume</h3>
     <p>
         \[
             \text{Minkowski sum: }
             A + B := \{ a + b \mid a \in A, b \in B \}
         \]
     </p>
-    <div class="theorem fragment">
-        <h4>Mixed volume (Minkowski)</h4>
-        <p>
-            For convex polytopes $P_1,\dots,P_n$ in $\mathbb{R}^n$,
-            the <b class="alert">mixed volume</b>
-            $\text{MVol}(P_1,\dots,P_n)$
-            is the coefficient of $\lambda_1 \cdots \lambda_n$ in
-            \[
-                \text{vol}(\lambda_1 P_1 + \cdots + \lambda_n P_n)
-            \]
-        </p>
+    <div class="center fragment">
+        <svg height="140" width="600">
+            <g fill="none" stroke="purple" stroke-width="1">
+              <path stroke-linecap="round" d="M10 20 l100 100" />
+            </g>
+            <text x="150" y="75" fill="black"> +</text>
+            <text x="320" y="75" fill="black"> =</text>
+            <circle cx="240" cy="70" r="20" stroke="black" stroke-width="1" fill="purple" />
+            <g fill="none" stroke="purple" stroke-width="40">
+              <path stroke-linecap="round" d="M400 20 l100 100" />
+            </g>
+          </svg>
     </div>
-</section> -->
-<!-- <section>
-    <p>
-        Root count for the Algebraic Kuramoto equations
-    </p>
-    <p>
+    <br/>
+    <p class="fragment">
+        <b>Definition.</b>    
+        [H. Minkowski]
+        For convex polytopes $P_1,\dots,P_n$ in $\mathbb{R}^n$,
+        the <b class="alert">mixed volume</b>
+        $\text{MVol}(P_1,\dots,P_n)$
+        is the coefficient of $\lambda_1 \cdots \lambda_n$ in
         \[
-            0 = \omega_i - \sum_{j=0}^n a'_{ij} 
-            \left(
-                \frac{x_i}{x_j} - \frac{x_j}{x_i}
-            \right)
+            \text{vol}(\lambda_1 P_1 + \cdots + \lambda_n P_n)
         \]
     </p>
-    <p>
-        can be computed as the BKK bound
-        <b class="alert fragment">???</b>
-    </p>
-</section> -->
+</section>
 <!-- <section>
-    <div class="theorem">
-        <h4>Intersection index (Kaveh & Khovanskii)</h4>
-        <p>
-            Given an irreducible $n$-dimensional toric variety $X$
-            and finite dimensional vector spaces of rational functions 
-            $L_1,\dots,L_n$ on $X$,
-            the number of common zeros of $(f_1,\dots,f_n)$ in $X$
-            for generic choices of $f_1 \in L_1$, $\ldots$, $f_n \in L_n$
-            is the <b class="alert">birationally invariant intersection index</b>
-        </p>
-        <p>
-            \[
-                [\;L_1 \,,\, \ldots\,,\, L_n\;]
-            \]
-        </p>
-    </div>
-    <p class="footnote">
-        Generalization of the BKK bound
-    </p>
-    <p class="fragment">
-        (Mixed volume of Newton-Okounkov bodies)
-    </p>
-</section> -->
-<!-- <section>
-    <p>
-        Is is possible to have
-        $\text{B.I.I.I.} \equiv \text{BKK bound}$ ?
-        <br>
-    </p>
-    <div class="theorem fragment">
-        <h4>Theorem (C.)</h4>
-        <p>
-            Suppose each $L_i = \text{span}_{\mathbb{C}}\{P_{ij}\}$
-            for some Laurent polynomials $P_{ij}$'s.
-            If each $\text{Newt}(L_i)$ is full dimensional and 
-            every positive-dimensional proper faces of it 
-            intersects $\text{Newt}(P_{ij})$
-            at no more than one point, then
-        </p>
-        <p>
-            \[
-                [ L_1, . . . , L_n ] \;=\; 
-                \text{MVol} ( \text{Newt}(L_1), . . . , \text{Newt}(L_n) ).
-            \]
-            <br>
-        </p>
-    </div>
-</section> -->
-<section>
     <p>Consider the algebraic Kuramoto equations</p>
     <p>
         \[
@@ -656,8 +748,8 @@ title: Polyhedral homotopy and its applications
                 class="shape2 fragment" />
         </g>
     </svg>
-</section>
-<section>
+</section> -->
+<!-- <section>
     <div class="theorem">
         <h4>Proposition</h4>
         <p>
@@ -674,7 +766,7 @@ title: Polyhedral homotopy and its applications
             is exactly the BKK bound.
         </p>
     </div>
-</section>
+</section> -->
 <!-- <section>
     <table>
         <tr>
@@ -730,7 +822,7 @@ title: Polyhedral homotopy and its applications
             <text x="0" y="0" fill="black"> Normalized vol. = 8</text>
     </svg>
 </section>
-<section>
+<!-- <section>
     <div class="theorem">
         <p>
             For $\varnothing \ne S_1,\dots,S_n \subset \mathbb{Z}^n$,
@@ -754,7 +846,7 @@ title: Polyhedral homotopy and its applications
             \]
         </p>
     </div>
-</section>
+</section> -->
 <section>
     <p>
         Much more general equivalence results exist for
@@ -764,17 +856,17 @@ title: Polyhedral homotopy and its applications
     <ul>
         <li>
             C. 
-            <span class="footnote">"Unmixing the mixed volume computation"</span>
+            <span class="small">"Unmixing the mixed volume computation"</span>
         </li>
         <li>
             F. Bihan & I. Soprunov 
-            <span class="footnote">
+            <span class="small">
                 "Criteria for Strict Monotonicity of the Mixed Volume of Convex Polytopes"
             </span>
         </li>
     </ul>
 </section>
-<section>
+<!-- <section>
     <div class="theorem">
         <h4>Definition: <b class="alert">Adjacency polytope</b></h4>
         <p>
@@ -832,8 +924,8 @@ title: Polyhedral homotopy and its applications
         <p class="fragment">
             Convex hull of the union of the Newton polytopes
         </p>
-</section>
-<section>
+</section> -->
+<!-- <section>
     <div class="theorem">
         <h4>Theorem (C.)</h4>
         <p>
@@ -848,16 +940,16 @@ title: Polyhedral homotopy and its applications
         </p>
         <p class="footnote">(normalized volume of the adjacency polytope)</p>
     </div>
-</section>
-<section>
+</section> -->
+<!-- <section>
     <h3>Generalizations</h3>
     <ul>
         <li>Trees</li>
         <li>Complete graphs</li>
         <li>Cycles glued together along an single edge</li>
     </ul>
-</section>
-<section>
+</section> -->
+<!-- <section>
     <table>
         <tr>
             <td>
@@ -883,8 +975,8 @@ title: Polyhedral homotopy and its applications
         Delucchi & Hoessly
         <span class="emph gray"> 2019 </span>
     </p>
-</section>
-<section>
+</section> -->
+<!-- <section>
     <div class="theorem">
         <h4>Theorem (C., R. Davis, D. Mehta)</h4>
         <p>
@@ -903,12 +995,9 @@ title: Polyhedral homotopy and its applications
         These bound may be attained by just
         <b class="alert">real solutions</b>:
         (Zachariah, Charles, Boston, Lesieutre 2018)
-        <!-- <span class="footnote">
-            Distributions of the Number of Solutions to the Network Power Flow Equations.
-        </span> -->
     </p>
-</section>
-<section>
+</section> -->
+<!-- <section>
     <p>
         Adjacency polytope
     </p>
@@ -924,7 +1013,7 @@ title: Polyhedral homotopy and its applications
             <td>Directed subnetworks</td>
         </tr>
     </table>
-</section>
+</section> -->
 <section>
     <h1>Thank you!</h1>
     <ul>
