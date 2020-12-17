@@ -9,4 +9,4 @@ github_username:  chentianran
 # Build settings
 markdown: kramdown
 permalink: pretty
-exclude: [ vendor ]
+exclude: [ vendor, reveal ]
