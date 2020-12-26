@@ -1,0 +1,608 @@
+---
+layout: ilecture2
+title: Linear systems
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Linear systems</h2>
+    </div>
+    <p class="footnote2">
+        Systems of linear equations (or linear systems) 
+        are among the most basic computational problems, 
+        and they appear naturally in many applications. 
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+        <!-- Department of Mathematics<br> -->
+        <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>Linear systems</h3>
+    <p>
+        Systems of linear equations 
+        (or <em>linear systems</em>) 
+        are among the most basic computational problems, 
+        and they appear naturally in many applications. 
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="definition fragment">
+                <!-- <p> -->
+                    <!-- <b>Definition.</b> -->
+                    A <b class="term">linear system</b> 
+                    is a system of simultaneous equations 
+                    involving one or more <strong>unknowns</strong> 
+                    (aka. <strong>variables</strong> / <strong>indeterminates</strong>) 
+                    where each term of each equation is 
+                    either a constant or a product between a constant and an unknown. 
+                <!-- </p> -->
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                For example, 
+                \[
+                    \left\{
+                        \begin{aligned}
+                            3x + 5y &= 6 \\
+                            6x - y  &= 1
+                        \end{aligned}
+                    \right.
+                \]
+                is a system of two linear equations in the two unknowns $x$ and $y$.
+                <span class="fragment">
+                    But
+                    \[
+                        \left\{
+                            \begin{aligned}
+                                3{\color{red}{xy}} + 5y &= 6 \\
+                                6x - y  &= 1
+                            \end{aligned}
+                        \right.
+                    \]
+                    is not a linear system.
+                </span>
+            </p>
+        </div>
+    </div>
+    <ul>
+        <li class="fragment">
+            <b class="term">Coefficients</b>
+            are the numbers (including 1 and 0) multiplied to unknowns.
+        </li>
+        <li class="fragment">
+            <b class="term">Constant terms</b>
+            are the numbers (including 0's) that are by themselves.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Preferred way of writing down linear systems</h3>
+    <p>
+        It is easy to see that the following linear systems are equivalent.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p>
+                \[
+                    \left\{
+                        \begin{aligned}
+                            y + 2x    &= 5 + x \\
+                            x - y - 1 &= 0,
+                        \end{aligned}
+                    \right.
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                \[
+                    \left\{
+                        \begin{aligned}
+                            x + y &= 5 \\
+                            x - y &= 1 .
+                        \end{aligned}
+                    \right.
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        They are <em>equivalent</em> in the sense that
+        you can get one from the other by simply rearranging the terms
+        without changing the solution set.
+    </p>
+    <p class="fragment">
+        For simplicity, we always rearrange and combine like terms
+        before we study such systems.
+        This will be our preferred way of writing down linear systems.
+    </p>
+    <p class="fragment">
+        That is, a linear system of 2 equations in 2 variables $x,y$
+        can always be written as
+        \[
+            \left\{
+                \begin{aligned}
+                    a x + b y &= f_1 \\
+                    c x + d y &= f_2 .
+                \end{aligned}
+            \right.
+        \]
+        for some constants $a,b,c,d,f_1,f_2$.
+    </p>
+</section>
+<section>
+    <p>
+        In general, a <em class="term">linear equation</em> in $n$ unknowns
+        $x_1,\dots,x_n$ can be written as
+        \[
+            a_1 x_1 + a_2 x_2 + \cdots + a_n x_n = c
+        \]
+        for constants $a_1,a_2,\dots,a_n$ and $c$.
+    </p>
+    <p class="fragment">
+        A <em class="term">linear system</em> of $m$ equations in $n$ unknowns
+        can be written as
+        \[
+            \left\{
+                \begin{aligned}
+                    a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n &= c_1 \\
+                    &\vdots \\
+                    a_{m1} x_1 + a_{m2} x_2 + \cdots + a_{mn} x_n &= c_m \\
+                \end{aligned}
+            \right.
+        \]
+        for (constant) <em>coefficients</em> $a_{11},\dots,a_{mn}$ 
+        and <em>constant terms</em> $c_1,\dots,c_m$.
+    </p>
+    <div class="fragment definition">
+        The values for the unknowns that will balance <em>all</em> equations 
+        in a system is a <b class="term">solution</b>, 
+        and the set of <em>all</em> solutions is the 
+        <b class="term">solution set</b>. 
+        <p>
+            To <b class="term">solve</b> a linear system means 
+            to find the set of <em>all</em> solutions.
+        </p>
+    </div>
+</section>
+<section>
+    <h3>Solving linear systems: a 2x2 example</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="example">
+                Find the solution set to 
+                \[
+                    \left\{
+                        \begin{aligned}
+                            2x + y &= 8 \\
+                            x - 2y &= -1 .
+                        \end{aligned}
+                    \right.
+                \]
+            </div>
+        </div>
+        <div class="col fragment">
+            <p>
+                <b>Solution.</b> (Substitution method)
+                One straightforward way to solve this system
+                is to solve one of the equation for one of the variable.
+
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                Focusing on the 1st equation
+                \[
+                    2x + y = 8
+                \]
+                we can solve it for $y$ (and pretend $x$ is just a number),
+                and get
+                \[
+                    y = 8 - 2x.
+                    \tag{A}
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Substituting this into the 2nd equation, we get
+                \[
+                    x - 2(\color{purple}{8 - 2x}) = -1,
+                \]
+            </p>
+            <p class="fragment">
+                which can be simplified into
+                \[
+                    5x - 16 = -1
+                    \quad\text{i.e.,}\quad
+                    x = 3.
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Substituting this result back to (A),
+        we get
+        \[
+            y = 8 - 2\cdot3 = 8 - 6 = 2.
+        \]
+    </p>
+    <p class="fragment">
+        Therefore $x=3,y=2$ is <em>the</em> solution
+        to this linear system.
+    </p>
+</section>
+<section>
+    <h3>Elimination method: a 2x2 example</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="example">
+                Find the solution set to 
+                \[
+                    \left\{
+                        \begin{aligned}
+                            2x + y &= 8 \\
+                            x - 2y &= -1 .
+                        \end{aligned}
+                    \right.
+                \]
+                using the method of "elimination".
+            </div>
+        </div>
+        <div class="col fragment">
+            <p>
+                <b>Solution.</b> (Elimination)
+                We will follow a slightly different scheme,
+                "elimination",
+                that reduces the system into equations
+                we know how to solve by eliminating variables.
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                Starting with the 1st equation
+                and multiply both sides by 2; 
+                we get the <em>equivalent</em> equation
+                \[
+                    4x + 2y = 16.
+                \]
+            </p>
+            <p class="fragment">
+                We can add the entire equation to the second equation
+                and get
+                \[
+                    (x - 2y) + (\color{purple}{4x+2y}) = -1 + \color{purple}{16},
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                which can be simplified into
+                \[
+                    5x = 15,
+                    \quad\text{i.e.,}\quad x=3.
+                \]
+            </p>
+            <p class="fragment">
+                We can substitute this result back
+                to the first equation (either one is fine at this point) and get
+                \[
+                    6 + y = 8
+                \]
+                and thus $y=2$.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Therefore $x=3,y=2$ is <em>the</em> solution
+        to this linear system.
+    </p>
+</section>
+<section>
+    <h3>Three basic operations</h3>
+    <p>
+        Three basic operations can be used to 
+        systematically eliminate unknowns from equations 
+        until we can see the solutions easily.
+    </p>
+    <ol>
+        <li class="fragment">Swapping two equations</li>
+        <li class="fragment">Replacing an equation by a nonzero multiple of itself (both sides)</li>
+        <li class="fragment">Replacing an equation by the sum of itself and a multiple of another</li>
+    </ol>
+    <p class="fragment">
+        These operations do not alter the solution set. 
+        Can you see why? 
+    </p>
+    <p class="fragment">
+        Note that <em>multiplying an equation by 0 is not allowed</em> 
+        as that could change the solution set. 
+        Similarly, <em>adding a multiple of an equation to itself is not allowed</em> in general, 
+        for the same reason.
+    </p>
+    <p class="fragment">
+        These operations are the basis of the 
+        elimination method we saw earlier,
+        and we will soon see how this idea can be extended to
+        larger systems involving more variables very soon.
+    </p>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <p>
+        Using the methods demonstrated above,
+        solve the following linear systems.
+    </p>
+    <div class="problem">
+        Find the solution set to the linear system
+        \[
+            \left\{
+                \begin{aligned}
+                    x + y  &= 3 \\
+                    2x + y &= 7 .
+                \end{aligned}
+            \right.
+        \]
+    </div>
+    <div class="problem">
+        Find the solution set to the linear system
+        \[
+            \left\{
+                \begin{aligned}
+                    x + y &= 3 \\
+                    x - y &= -2 .
+                \end{aligned}
+            \right.
+        \]
+    </div>
+    <div class="problem">
+        Find the solution set to the linear system
+        \[
+            \left\{
+                \begin{aligned}
+                    1x + 2y &= 2 \\
+                    3x + 4y &= 8 .
+                \end{aligned}
+            \right.
+        \]
+    </div>
+</section>
+<section>
+    <h3>Slightly more complicated cases</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="example">
+                Find the solution set to
+                \[
+                    \left\{
+                        \begin{aligned}
+                             x + 2y &= 4 \\
+                            2x + 4y &= 3 .
+                        \end{aligned}
+                    \right.
+                \]
+            </div>
+            <p class="fragment">
+                It is easy to see that the two equations in this system
+                contradict with one another, 
+                and therefore this system no solutions at all, 
+                i.e., the solution set is an <em>empty set</em>.
+                <span class="fragment">
+                    Systems like this are said to be
+                    <em class="term">inconsistent</em>.
+                </span>
+            </p>
+        </div>
+        <div class="col">
+            <div class="example fragment">
+                Find the solution set to
+                \[
+                    \left\{
+                        \begin{aligned}
+                             x + 2y &= 4 \\
+                            2x + 4y &= 8 .
+                        \end{aligned}
+                    \right.
+                \]
+            </div>
+            <p class="fragment">
+                We can see that if a choice of $x$ and $y$ satisfies the first equation,
+                then the second equation is also satisfied.
+                <span class="fragment">
+                    Therefore any $x$ and $y$ such that $x + 2y = 4$
+                    would be a solution. 
+                    There are <em>infinitely many</em> of them.
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            These examples showed three possibilities for
+            the number of solutions.
+        </div>
+        <div class="col">
+            <ul>
+                <li class="fragment">A unique solution</li>
+                <li class="fragment">Infinitely many solutions</li>
+                <li class="fragment">No solutions at all</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Determinant (2x2 case)</h3>
+    <div class="cols">
+        <div class="col">
+            It is easy to distinguish the case of having unique solution
+            and the two other cases (infinitely many solutions or no solutions at all).
+            <p>
+                One thing that can help us to determine if a
+                linear system has a unique solution is
+                <em>"determinant"</em>.
+            </p>
+        </div>
+        <div class="definition col">
+            For the linear system 
+            \[
+                \left\{
+                    \begin{aligned}
+                        a x + b y &= f_1 \\
+                        c x + d y &= f_2
+                    \end{aligned}
+                \right.
+            \]
+            in the unknowns $x$ and $y$, 
+            its <b class="term">determinant</b> 
+            is the value
+            \[
+                ad-bc
+            \]
+        </div>
+    </div>
+    <ul class="fragment">
+        <li>
+            If the determinant is <strong class="highlight">nonzero</strong>
+            then the system has a unique solution.
+        </li>
+        <li>
+            If the determinant is <strong class="highlight">zero</strong>
+            then the system either has infinitely many solutions or no solutions at all
+            (empty solution set).
+        </li>
+    </ul>
+    <p class="fragment lowlight">
+        It is important to note that the value of the determinant 
+        does not directly distinguish between the cases of 
+        infinite and empty solution sets.
+    </p>
+</section>
+<section>
+    <h3>Examples</h3>
+    <ul>
+        <li>
+            Non-zero determinant: the system has a unique solution.
+        </li>
+        <li>
+            Zero determinant: 
+            the system either has infinitely many or no solutions.
+        </li>
+    </ul>
+    <div class="cols">
+        <div class="col">
+            <div class="example fragment">
+                Determine if the linear system
+                \[
+                    \left\{
+                        \begin{aligned}
+                            1x + 2y &= 5 \\
+                            3x + 4y &= 6 .
+                        \end{aligned}
+                    \right.
+                \]
+                has a unique solution.
+            </div>
+            <p class="fragment">
+                The determinant of this system is
+                \[
+                    1 \cdot 4 - 2 \cdot 3 = 4 - 6 = -2.
+                \]
+            </p>
+            <p class="fragment">
+                We can therefore conclude that this system
+                indeed has a unique solution,
+                i.e., there is exactly one solution.
+            </p>
+        </div>
+        <div class="col">
+            <div class="example fragment">
+                Determine if the linear system
+                \[
+                    \left\{
+                        \begin{aligned}
+                            1x + 2y &= 4 \\
+                            2x + 4y &= 3 .
+                        \end{aligned}
+                    \right.
+                \]
+                has a unique solution.
+            </div>
+            <p class="fragment">
+                The determinant of this system is
+                \[
+                    1 \cdot 4 - 2 \cdot 2 = 4 - 4 = 0.
+                \]
+            </p>
+            <p class="fragment">
+                We can conclude that this system
+                does <strong>not</strong> have a unique solution,
+                i.e., it either has no solution at all
+                or it has infinitely many solution.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <div class="problem">
+        Determine if the this linear system has a unique solutions.
+        \[
+            \left\{
+                \begin{aligned}
+                    x + y  &= 3 \\
+                    2x + y &= 7 .
+                \end{aligned}
+            \right.
+        \]
+    </div>
+    <div class="problem">
+        Determine if the this linear system has a unique solutions.
+        \[
+            \left\{
+                \begin{aligned}
+                    x + y &= 3 \\
+                    x - y &= -2 .
+                \end{aligned}
+            \right.
+        \]
+    </div>
+    <div class="problem">
+        Determine if the this linear system has a unique solutions.
+        \[
+            \left\{
+                \begin{aligned}
+                    1x + 2y &= 2 \\
+                    3x + 4y &= 8 .
+                \end{aligned}
+            \right.
+        \]
+    </div>
+</section>
+<section>
+    <h3>Sidenote: the notation</h3>
+    <p>
+        Determinant is an important tool in mathematics.
+        We will see it in several different context
+        in linear algebra.
+        For convenience, we use the notation
+        \[
+            \left|
+            \begin{smallmatrix}
+                a & b \\
+                c & d
+            \end{smallmatrix}
+            \right|
+            \; = \;
+            ad - bc
+        \]
+        for the determinant.
+    </p>
+</section>
