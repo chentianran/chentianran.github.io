@@ -4,6 +4,9 @@
  *
  * This theme is Copyright (C) 2012-2013 Owen Versteeg, http://owenversteeg.com - it is MIT licensed.
  */
+body {
+  counter-reset: example problem; }
+
 .reveal a {
   line-height: 1.2em; }
 
@@ -17,69 +20,75 @@
   text-align: center; }
 
 .reveal .titlebox {
-  box-shadow: 0 4px 8px 0 rgba(172, 165, 165, 0.5);
-  background: #8B3E5D;
+  box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.5);
+  background: #600f16;
   transition: 0.3s;
   margin: 20px 20px;
-  color: #F0E1BF; }
+  padding: 15px 20px;
+  color: #FFFFFF;
+  border-radius: 8px; }
 
 .reveal .title {
-  color: #F0E1BF; }
+  color: #FFFFFF; }
+
+.theorem, .theoremlike, .definition, .example, .problem {
+  box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.5);
+  transition: 0.3s;
+  text-align: left;
+  margin: 15px 2px;
+  border-radius: 8px; }
 
 .theorem {
-  box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.2);
-  background: #F0E1BF;
-  transition: 0.3s;
-  text-align: left;
-  margin: 15px 2px;
+  background: #d6cdd2;
   padding: 5px 15px;
-  color: #412F49; }
+  color: #000000; }
 
 .theoremlike {
-  box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.2);
-  background: #F0E1BF;
-  transition: 0.3s;
-  text-align: left;
-  margin: 15px 2px;
+  background: #d6cdd2;
   padding: 5px 15px;
-  color: #412F49; }
+  color: #000000; }
 
 .definition {
-  box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.2);
-  background: #F0E1BF;
-  transition: 0.3s;
-  text-align: left;
-  margin: 15px 2px;
+  background: #f2e0dc;
   padding: 5px 15px;
-  color: #412F49; }
+  color: #0d0709; }
 
 .example {
-  box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.2);
   background: #EEEEEE;
-  text-align: left;
-  margin: 15px 2px;
   padding: 5px 5px;
-  color: #412F49; }
+  color: #000000; }
+
+.problem {
+  background: #EEEEEE;
+  padding: 5px 5px;
+  color: #000000; }
 
 div.theorem:before {
   content: "Theorem.";
   font-weight: bold;
-  color: #8B3E5D; }
+  color: #600f16; }
 
 div.theoremlike:before {
   content: attr(data-type) ".";
   font-weight: bold;
-  color: #8B3E5D; }
+  color: #600f16; }
 
 div.definition:before {
   content: "Definition.";
   font-weight: bold;
-  color: #8B3E5D; }
+  color: #600f16; }
 
 div.example:before {
-  content: "Example.";
+  counter-increment: example;
+  content: "Example " counter(example) ".";
   font-weight: bold;
-  color: #8B3E5D; }
+  color: #600f16; }
+
+div.problem:before {
+  counter-increment: problem;
+  content: "Problem " counter(problem) ".";
+  font-weight: bold;
+  color: #600f16; }
 
 .small {
   font-size: 85%; }
@@ -91,10 +100,10 @@ div.example:before {
   font-size: 50%; }
 
 .term {
-  color: #8B3E5D; }
+  color: #600f16; }
 
 .highlight {
-  color: #EE8B73; }
+  color: #600f16; }
 
 .lowlight {
   color: #B09090; }
@@ -127,11 +136,11 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --background-color: #FFFFFF;
   --main-font: Palatino Linotype, Book Antiqua, Palatino, FreeSerif, serif;
   --main-font-size: 32px;
-  --main-color: #000;
+  --main-color: #0d0709;
   --block-margin: 10px;
   --heading-margin: 0 0 20px 0;
-  --heading-font: League Gothic, Impact, sans-serif;
-  --heading-color: #8B3E5D;
+  --heading-font: Impact, sans-serif;
+  --heading-color: #600f16;
   --heading-line-height: 1.2;
   --heading-letter-spacing: normal;
   --heading-text-transform: none;
@@ -143,8 +152,8 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --heading3-size: 1.25em;
   --heading4-size: 1em;
   --code-font: monospace;
-  --link-color: #EE8B73;
-  --link-color-hover: #e0421b;
+  --link-color: #600f16;
+  --link-color-hover: #080102;
   --selection-background-color: #412F49;
   --selection-color: #fff; }
 
@@ -156,7 +165,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
   font-size: 32px;
   font-weight: normal;
-  color: #000; }
+  color: #0d0709; }
 
 .reveal ::selection {
   color: #fff;
@@ -183,8 +192,8 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #8B3E5D;
-  font-family: "League Gothic", Impact, sans-serif;
+  color: #600f16;
+  font-family: Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
@@ -359,45 +368,45 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  * LINKS
  *********************************************/
 .reveal a {
-  color: #EE8B73;
+  color: #600f16;
   text-decoration: none;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #e0421b;
+  color: #080102;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #e6522f; }
+  background: #1e0507; }
 
 /*********************************************
  * Frame helper
  *********************************************/
 .reveal .r-frame {
-  border: 4px solid #000;
+  border: 4px solid #0d0709;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal a .r-frame {
   transition: all .15s linear; }
 
 .reveal a:hover .r-frame {
-  border-color: #EE8B73;
+  border-color: #600f16;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #EE8B73; }
+  color: #600f16; }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #EE8B73; }
+  color: #600f16; }
 
 /*********************************************
  * PRINT BACKGROUND
