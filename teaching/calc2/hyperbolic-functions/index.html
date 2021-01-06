@@ -1,0 +1,295 @@
+---
+layout: ilecture2
+title: Hyperbolic functions
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Hyperbolic functions</h2>
+        <p class="small">
+            Coordinate functions for the hyperbola
+        </p>
+    </div>
+    <p>
+        Hyperbolic sine and hyperbolic cosine are the coordinate functions
+        for the standard equilateral hyperbola,
+        and they are the hyperbolic analog of the sine and cosine.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>Hyperbolic functions</h3>
+    <p>
+        Hyperbolic functions are mirror images of the ordinary trigonometric functions
+        constructed using hyperbola (instead of the unit circle).
+        In particular, the "hyperbolic sine" and "hyperbolic cosine" 
+        are the coordinate functions for the standard equilateral hyperbola.
+    </p>
+    <p class="fragment">
+        They appear naturally in the context of
+        hyperbolic geometry, linear differential equations,
+        classical mechanics, and special relativity 
+        (among many other topics).
+        So they are important tools to understand.
+    </p>
+</section>
+<section>
+    <h3>Just like sine and cosine for the unit circle</h3>
+    <div class="cols">
+        <div class="col">
+            The <em class="term">unit circle</em> is a circle of radius 1
+            centered at the origin.
+            It can be expressed as the set of all points $(x,y)$
+            on the plane that satisfy
+            \[ x^2 + y^2 = 1. \]
+
+        </div>
+        <div class="col fragment">
+            Ordinary sine and cosine can be understood as
+            coordinate functions for the unit circle:
+            Every point on a unit circle can be expressed as
+            $(x,y)$ with $x = \cos(t)$ and
+            $y = \sin(t)$.
+        </div>
+    </div>
+    <p class="fragment">
+        If we replace the unit circle by the equilateral hyperbola,
+        the corresponding coordinate functions we get are the
+        <em class="term">"hyperbolic cosine"</em> and
+        <em class="term">"hyperbolic sine"</em>.
+    </p>
+    <p class="fragment">
+        A <strong class="term">hyperbola</strong> is a set of points
+        whose absolute difference of the distances to two fixed points is a constant.
+        The name came from a Greek word that means "excessive"
+        from which we also get the English word hyperbole.
+        In classical Greek mathematics,
+        it is the name of one of the conic sections
+        (the other two are the ellipse and the parabola).
+    </p>
+</section>
+<section>
+    <!-- <h3>Definitions</h3> -->
+    <div class="cols">
+        <div class="col definition">
+            An <em class="term">equilateral hyperbola</em>
+            is a special hyperbola consisting of points $(x,y)$
+            satisfying the equation
+            \[
+            x^2 - y^2 = 1.
+            \]
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Note the similarity to the definition of the unit circle.
+                <!-- This should remind you of the unit circle. -->
+                If we express the coordinates $x$ and $y$
+                as two functions of a variable $t$,
+                we end up with hyperbolic sine and cosine functions.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Without calculators/computers,
+        can you visualize what this curve look like?
+    </p>
+    <div class="cols">
+        <div class="col definition fragment">
+            Given any real number $t$, the value of the
+            <em class="term">hyperbolic sine</em> and
+            <em class="term">hyperbolic cosine</em> are given by
+            \begin{align*}
+            \sinh(t) &= \frac{e^t - e^{-t}}{2} \\
+            \cosh(t) &= \frac{e^t + e^{-t}}{2}
+            \end{align*}
+            respectively.
+        </div>
+        <div class="col fragment">
+            <p>
+                From what we know about the exponential function,
+                it is easy to verify that these two functions are
+            </p>
+            <ul>
+                <li>defined,</li>
+                <li>continuous,</li>
+                <li>differentiable, and</li>
+                <li>Riemann integrable</li>
+            </ul>
+            <p>
+                over any interval.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Equilateral hyperbola</h3>
+    <div class="cols">
+        <div class="col">
+            <img src="hyperbola.png" alt="Hyperbola">
+        </div>
+        <div class="col">
+            <p>
+                This is the standard equilateral hyperbola
+                defined by the equation
+                \[ x^2 - y^2 = 1. \]
+                It is one of the conic sections,
+                and it naturally appear in many applications.
+            </p>
+            <p>
+                In the following discussion,
+                we only focus on the "right half" of this object,
+                which is the subset of the points with positive $x$-coordinates.
+            </p>
+        </div>
+    </div>
+    <p class="fragment lowlight">
+        Hyperbola are of special importance in special relativity:
+        the trajectory of an object with constant proper acceleration
+        can be visualized as a hyperbola on a Minkowki diagram.
+    </p>
+</section>
+<section>
+    <div class="cols">
+        <div class="col">
+            <p>
+                The two functions,
+                \begin{align*}
+                \sinh(t) &= \frac{e^t - e^{-t}}{2} \\
+                \cosh(t) &= \frac{e^t + e^{-t}}{2}
+                \end{align*}
+                are the coordinate functions of the equilateral hyperbola.
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                For any real number $t$,
+                letting $x = \cosh(t)$ and $y = \sinh(t)$ will produce a point
+                $(x,y)$ on the right half of the equilateral hyperbola.
+            </p>
+            <p class="fragment">
+                Conversely, for any point $(x,y)$
+                on the right half of the equilateral hyperbola,
+                we can find a $t$ such that
+                $x = \cosh(x)$ and $y = \sinh(y)$.
+            </p>
+        </div>
+    </div>
+    <div class="problem fragment">
+        Verify that $x = \cosh(t)$ and $y = \sinh(t)$ satisfy
+        \[x^2 - y^2 = 1.\]
+    </div>
+    <div class="problem fragment">
+        Without using calculator/computer, can you visualize
+        what the graphs of these two functions look like?
+    </div>
+</section>
+<section>
+    <h3>Properties</h3>
+    <p>
+        The two functions $\cosh(t)$ and $\sinh(t)$
+        also appear naturally in other context.
+        For instance, we can verify that
+        \[ \cosh(t) + \sinh(t) = e^{t}. \]
+        Indeed $\cosh(t)$ and $\sinh(t)$ are exactly the
+        <em>even part</em> and the <em>odd part</em>
+        of the exponential function $e^t$.
+    </p>
+    <!-- <p></p> -->
+
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                Both $\cosh$ and $\sinh$ are differentiable everywhere.
+            </p>
+            <ul>
+                <li class="fragment">
+                    $\frac{d}{dt} \cosh(t) = \sinh(t)$
+                </li>
+                <li class="fragment">
+                    $\frac{d}{dt} \sinh(t) = \cosh(t)$
+                </li>
+                <li class="fragment">
+                    $\int \sinh(t) dt = \cosh(t)$
+                </li>
+                <li class="fragment">
+                    $\int \cosh(t) dt = \sinh(t)$.
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <div class="problem fragment">
+                Verify that $\cosh(t)$ is an even function and 
+                $\sinh(t)$ is an odd function.
+            </div>
+            <div class="problem fragment">
+                Derive formula for $\sinh(a+b)$ and $\cosh(a+b)$
+                (similar to the sum-to-product formula for sine and cosine)?
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Connections to differential equations</h3>
+
+    <p>
+        From this we can see $\cosh$ and $\sinh$
+        are solutions to the equation 
+        \[ y'' = y, \] 
+        which is an equation that
+        show up naturally in physics and engineering.
+    </p> 
+    <p class="fragment lowlight">
+        Side note: Indeed, $\cosh$ and $\sinh$ are "linear independent"
+        and they form a "fundamental set" of solutions to the
+        differential equation $y''=y$.
+        Moreover, they satisfies the initial conditions
+        \[ y(0) = 1 \quad y'(0) = 0 \]
+        and
+        \[ y(0) = 0 \quad y'(0) = 1 \]
+        respectively.
+        These properties make the especially desirable type of solutions
+        in physics and engineering.
+    </p>
+
+</section>
+<section>
+    <h3>Other hyperbolic functions</h3>
+    <p>
+        Just like how you can define other trigonometric functions
+        in terms of sine and cosine,
+        we can define additional hyperbolic functions
+        in terms of hyperbolic sine and cosine.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="definition fragment">
+                We define the hyperbolic tangent to be
+                \[ \tanh(x) = \frac{\sinh(x)}{\cosh(x)}. \]
+                <p class="fragment">
+                    We define the hyperbolic cotangent to be
+                    \[ \coth(x) = \frac{\cosh(x)}{\sinh(x)} \]
+                </p>
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Following from the quotient rule,
+                we can see that
+                \begin{align*}
+                    \frac{d}{dx} \tanh(x) &= 1 - \tanh^2(x), \\
+                    \frac{d}{dx} \coth(x) &= 1 - \coth^2(x).
+                \end{align*}
+            </p>
+            <p class="fragment lowlight">
+                It is worth noting that $\coth(x)$ is undefined at $x=0$,
+                where it has an vertical asymptote.
+            </p>
+        </div>
+    </div>
+
+</section>
