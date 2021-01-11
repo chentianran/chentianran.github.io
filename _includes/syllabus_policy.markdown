@@ -16,6 +16,42 @@ unless an exemption has been approved by the Dean of Students or the Center for 
 Students who violate these policies will be asked to leave the classroom to
 access the lecture/course materials online and may be referred to the Office of the Dean of Students.
 
+**Course attendance policy**
+Students are expected to attend regular class meetings either
+in-person or virtually.
+After missing 6 class meetings, a student will receive an 'FA' grade.
+However,
+
+* Students who are diagnosed with COVID-19 or
+  who are in self-quarantine at the direction of a health care professional
+  should not attend a face-to-face (in-person) class.
+* Students who have COVID-19 like symptoms
+  should not attend a f2f class until the symptoms are gone and
+  the student is cleared by a health professional that the student is COVID free.
+
+Attendance in those two cases may be excused and arrangement,
+can be made for students to complete missed work.
+Such arrangements must be requested by students,
+
+**Technology equipment expectation**
+Access to computers and stable Internet connection are expected.
+Students who do not have their own equipment can use AUM open labs including labs found in the first floor of the Taylor center and the second floor of the library.
+
+**Syllabus contingency plan**
+Should the Alabama Department of Public Health,
+the Governor, or Chancellor determine the university discontinue
+face-to-face (in-person) instruction in the interest of safety,
+this course would be converted to a virtual-only format.
+If normal class and/or lab activities are disrupted due to
+illness, emergency, or crisis situation (such as a COVID-19 outbreak),
+the syllabus and other course plans and assignments may be
+modified to allow completion of the course.
+If this occurs, an addendum to the syllabus and/or course assignments
+will replace the original materials.
+
+In case the instructor cannot attend due to COVID-related matter,
+a back-up instructor will be arranged by the Department of Mathematics.
+
 **Academic dishonesty:**
 Cheating of any kind will not be tolerated.
 In particular, you cannot copy (totally or partially) someone else's solutions

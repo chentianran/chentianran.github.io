@@ -3,21 +3,13 @@ layout: default
 title: MATH-1620
 ---
 
-# MATH-1620 Fall 2020
+# MATH-1620
 
-* [Course syllabus](syllabus-F2020/)
-* [Informal summary for syllabus](summary-F2020/)
+* [Course syllabus](syllabus-S2021/)
 
-## Tentative schedule
+<!-- ## Tentative schedule
 
-<iframe src="https://calendar.google.com/calendar/embed?height=500&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=cWxzdXJiNWdzbmExaHNsbm9rZXUzOTk2M2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23C0CA33&amp;showTitle=0&amp;mode=AGENDA&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" style="border-width:0" width="600" height="500" frameborder="0" scrolling="no"></iframe>
-
-## Schedule one-on-one meetings
-
-<!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/chentianran/one-on-one" style="min-width:320px;height:630px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
-<!-- Calendly inline widget end -->
+<iframe src="https://calendar.google.com/calendar/embed?height=500&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=cWxzdXJiNWdzbmExaHNsbm9rZXUzOTk2M2dAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23C0CA33&amp;showTitle=0&amp;mode=AGENDA&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" style="border-width:0" width="600" height="500" frameborder="0" scrolling="no"></iframe> -->
 
 <!-- ## How to survive this course
 
@@ -61,11 +53,11 @@ difficult concepts one may encounter in this course.
 - [Polar spiral](polar-spiral/)
 - [Polar rose](polar-rose/)
 
-### Misc.
+<!-- ### Misc.
 
 * Definition: _A __lecture__ is a process in which information passes
   from the notes of the lecturer into the notes of the student
   without passing through the minds of either._
   Funny, but true.
   But it really shouldn't be.
-  Let's make sure our lectures are not like that.
+  Let's make sure our lectures are not like that. -->
