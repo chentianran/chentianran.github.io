@@ -1,0 +1,528 @@
+---
+layout: ilecture2
+title: Integration by parts
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Integration by parts</h2>
+        <p class="small">
+            Reversed product rule
+        </p>
+    </div>
+    <p>
+        "Integration by parts" is another important integration technique.
+        It is essentially the product rule running in reverse.
+        In this lecture, we will learn how it works and why it works.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>Integration by parts</h3>
+    <p>
+        "Integration by parts" is another important integration technique.
+        It is essentially the product rule running in reverse,
+        and it allows us to turn one integral into a potentially easier integral.
+        In this lecture, we will learn how it works and why it works.
+        We will also look at some advanced applications.
+    </p>
+    <p class="fragment">
+        For example, this technique would allow us to compute integrals like
+        \[ \int x e^x dx \quad\quad \int \ln(x) dx \quad\quad \int x^2 \cos(x) dx \ldots \]
+    </p>
+</section>
+<section>
+    <div class="cols">
+        <div class="col">
+            <p>
+                <strong class="highlight">Review.</strong>
+                Suppose $u$ and $v$ are both differentiable functions of $x$,
+                then the product rule tells us that
+                \[ \frac{d}{dx} (uv) = \frac{du}{dx} v + u \frac{dv}{dx}. \]
+                From this, we can easily derive the corresponding integral version.
+            </p>
+            <p class="fragment">
+                Integrating both sides produces
+                \[ uv = \int v \, du + \int u \, dv. \]
+            </p>
+            <p class="fragment">
+                Rearranging the terms, we get
+                \[ \int u \, dv = uv - \int v \, du, \]
+                and this is the basis of this "integration by parts" technique.
+            </p>
+        </div>
+        <div class="col">
+            <div class="theorem fragment">
+                For two functions $u$ and $v$ of $x$,
+                under the assumption of differentiability of $u$ and integrability of $v$,
+                \[ \int u \, dv = uv - \int v \, du.\]
+            </div>
+            <p class="fragment">
+                The idea is that, if we can express an integral as
+                $\int u \, dv$ for some choices of $u$ and $v$,
+                then we can turn that integral into $uv - \int v \, du$
+                with the hope that we make the "right" choices
+                so that the resulting integral is easier to deal with.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>One example</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="example">
+                Compute $\int x e^{x} dx.$
+            </div>
+        </div>
+        <div class="col">
+            <p class="lowlight">
+                We will use
+                $\int u \, dv = uv - \int v \, du.$
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        <b>Solution.</b>
+        First, note that this integral cannot be computed with substitution.
+        To apply integration by parts,
+        we want to choose $u$ and $dv$ so that
+        $\int x e^{3x} dx = \int u \, dv$,
+        yet the integral $\int v \, du$ it produced is simpler.
+    </p>
+    <p class="fragment">
+        Choosing the "right" $u,v$ takes some practice,
+        and we will discuss the strategies soon.
+        For now, let's start with a choice and see how to apply it.
+        <!-- 
+            (We used integration by substitution to compute the
+        resulting integral <span class="math inline">$\int \frac{e^{3x}}{3} dx$</span>)</p> -->
+    </p>
+    <p>
+        <span class="fragment">
+            Let $\color{red}{u = x}$,
+        </span>
+        <span class="fragment">
+            and $\color{blue}{dv = e^{x} dx}$,
+        </span>
+        <span class="fragment">
+            then $\color{red}{du = dx}$,
+        </span>
+        <span class="fragment">
+            and $\color{blue}{v = \int e^{x} dx = e^{x}}$.
+        </span>
+    </p>
+    <p class="fragment small lowlight">
+        Notice that there is no need to include the "$+C$" term in $v$,
+        as it will be hiding inside the integral we are going to produce,
+        and we don’t have to worry about it until the last step.
+    </p>
+    <p class="fragment">
+        Applying integration by parts,
+        the original integral becomes
+        \[
+        \int u \, dv = uv - \int v \, du =
+        x e^{x} - \int e^{x} dx =
+        x e^{x} - e^{x} + C.
+        \]
+    </p>
+</section>
+<section>
+    <h3>Another example</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="example">
+                Compute $\int \frac{\ln x}{x^2} dx$.
+            </div>
+        </div>
+        <div class="col">
+            <p class="lowlight">
+                Again, we use
+                $\int u \, dv = uv - \int v \, du.$
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        <b>Solution.</b>
+        This integral also cannot be computed with substitution.
+        To apply integration by parts,
+        we want to choose $u$ and $dv$ so that
+        $\int \frac{\ln x}{x^2} dx = \int u \, dv$,
+        yet the integral $\int v \, du$ it produced is simpler.
+        Again, start with a choice and only focus on how to apply this technique.
+    </p>
+    <p>
+        <span class="fragment">
+            Let $\color{red}{u = \ln x}$,
+        </span>
+        <span class="fragment">
+            and $\color{blue}{dv = \frac{1}{x^2} dx}$,
+        </span>
+        <span class="fragment">
+            then $\color{red}{du = \frac{1}{x} \, dx}$,
+        </span>
+        <span class="fragment">
+            and $\color{blue}{v = \int \frac{1}{x^2} dx = - \frac{1}{x}}$.
+        </span>
+    </p>
+    <!-- <p class="fragment">
+        \[
+            
+            
+            - \frac{\ln x}{x} - \int - \frac{1}{x^2} dx =
+            - \frac{\ln x}{x} - \frac{1}{x} + C.
+        \]
+    </p> -->
+    <div class="equ">
+        <span class="fragment">
+            $\displaystyle \int \frac{\color{red}{\ln x}}{\color{blue}{x^2}} dx\;$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \int \color{red}{u} \, \color{blue}{dv}\;$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \color{red}{u}\color{blue}{v} - \int \color{blue}{v} \, \color{red}{du};$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \color{blue}{-} \frac{\color{red}{\ln x}}{\color{blue}{x}} - \int \color{blue}{\left(-
+            \frac{1}{x}\right)} \color{red}{\frac{1}{x} dx}$
+        </span>
+    </div>
+    <div class="equ">
+        <span class="fragment">
+            $\displaystyle = \; - \frac{\ln x}{x} - \frac{1}{x} + C$
+        </span>
+    </div>
+</section>
+<section>
+    <h3>How to choose $u$ and $dv$?</h3>
+    <p>
+        A premise to our success in applying integration by parts is
+        picking the "right" $u$ and $dv$.
+    </p>
+    <p>
+        Notice that the roles of $u$ and $dv$ are different.
+        Indeed, in the very next step, we will compute
+        \begin{align*}
+        u &\mapsto du &
+        dv &\mapsto v &
+        &\text{and produce} \quad
+        uv - \int v \, du.
+        \end{align*}
+    </p>
+    <ol>
+        <li class="fragment">
+            Our primary goal is that you know how to compute $\int v \, du$.
+            <em>If that can be done, then your choice is "right".</em>
+        </li>
+        <li class="fragment">
+            If the primary goal is not easy to determine,
+            then we want to make sure $du$ and $v$ are "less complicated"
+            than $u$ and $dv$ that we started with.
+        </li>
+        <li class="fragment">
+            When all else fail,
+            <em>try all the different possibilities!</em>
+            One of them is guaranteed to work,
+            if integration by parts is at all possible.
+            The value of trial and error is underappreciated in our modern mathematical education.
+        </li>
+    </ol>
+</section>
+<section>
+    <h3>Revisiting the first example</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                Let us revisit our very first example
+                \[\int x e^x dx.\]
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                We have two choices:
+            </p>
+            <ol>
+                <li>$u=x$ and $dv = e^x dx$, or</li>
+                <li>$u = e^x$ and $dv=x dx$.</li>
+            </ol>
+        </div>
+    </div>
+    <p class="fragment">
+        \begin{align*}
+        &\text{With} & u=x,\; dv = e^x dx &\longrightarrow
+        \int v du = \color{blue}{ \int e^x dx } \\
+        &\text{whereas} & u = e^x,\; dv = xdx &\longrightarrow
+        \int v du = \color{red}{ \int \frac{x^2}{2} \, e^x \, dx }.
+        \end{align*}
+    </p>
+    <p class="fragment">
+        Clearly, the first choice is preferable.
+        Indeed, the second choice leads to even more complicated integrals.
+        This is why we chose $u = x$ and $dv = e^x \, dx$
+        and not the other way around.
+    </p>
+    <div class="problem fragment">
+        Using the observation listed above
+        to determine the best strategy for computing the integral
+        $\int x \cos(x) dx$.
+    </div>
+</section>
+<section>
+
+    <div class="cols">
+        <div class="col">
+            <div class="example">
+                Compute \[\int \ln x \, dx.\]
+            </div>
+        </div>
+        <div class="col fragment">
+            <p>
+                <b>Solution.</b>
+                We only have two choices:
+            </p>
+            <ol>
+                <li>
+                    letting $u = 1$ and $dv = \ln x \, dx$
+                </li>
+                <li>
+                    letting $u = \ln(x)$ and $dv = dx$.
+                </li>
+            </ol>
+        </div>
+    </div>
+    <p class="fragment">
+        For choice (1), we $u=1$, then $du = 0 dx$.
+        But $v = \int dv = \int \ln x \, dx$,
+        which is exactly what we are asked to compute in the first place.
+        So clearly this is leading to nowhere.
+    </p>
+    <p class="fragment">
+        For choice (2),
+        \begin{align*}
+        &\text{Let } & 
+        \color{red}{u} &= \color{red}{\ln(x)} 
+        &&\text{and} & 
+        \color{blue}{dv} &= \color{blue}{dx} \\
+        &\text{then} & 
+        \color{red}{du} &= \color{red}{\frac{1}{x} dx} 
+        &&\text{and} & 
+        \color{blue}{v} &= \color{blue}{x}.
+        \end{align*}
+    </p>
+    <p class="fragment">
+        Therefore
+        \[
+        \int \color{red}{ \ln x} \, \color{blue}{ dx}
+        =
+        \int \color{red}{ u} \color{blue}{ dv} =
+        \color{red}{u}\color{blue}{v} - \int \color{blue}{v} \color{red}{du} =
+        \color{red}{\ln(x)} \color{blue}{ x} - \int \frac{\color{blue}{x}}{\color{red}{x}} \color{red}{dx} =
+        x \ln x - x + C.
+        \]
+    </p>
+</section>
+<section>
+    <h3>Recursive applications of integration-by-parts</h3>
+    <p>
+        The technique of integration by parts can be
+        combined with other techniques or be applied recursively.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <div class="example">
+                Compute
+                \[ \int x^2 \, \cos x \, dx \]
+            </div>
+        </div>
+        <div class="col fragment">
+            <p>
+                <b>Solution.</b>
+                We apply integration by parts
+            </p>
+            <p>
+                \begin{align*}
+                \text{Let } 
+                u &= x^2, &
+                dv &= \cos x \, dx \\
+                \text{then } du &= 2x \, dx &
+                v &= \sin x
+                \end{align*}
+            </p>
+        </div>
+    </div>
+    <div class="equ">
+        <span class="fragment">
+            $\displaystyle \int x^2 \cos x dx = x^2 \sin x - \int \sin(x) \, 2x \, dx$
+        </span>
+        <span class="fragment">
+            $\displaystyle = x^2 \sin x - 2 \int x \sin x dx$
+        </span>
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                The resulting integral also requires integration by parts:
+            </p>
+        </div>
+        <div class="col fragment">
+            \begin{align*}
+            \text{Let } 
+            u_2 &= x, &
+            dv_2 &= \sin x \, dx \\
+            \text{then } du_2 &= dx &
+            v_2 &= -\cos x
+            \end{align*}
+        </div>
+    </div>
+    <p class="fragment small">
+        Then the original integral is turned into
+        \[
+            x^2 \sin x - 2 \left( - x \cos x - \int - \cos(x) dx \right)
+            = x^2 \sin x + 2 x \cos x - 2 \sin x + C
+        \]
+    </p>
+</section>
+<section>
+    <h3>Going around in circles</h3>
+    <p>
+        Integration by parts may produce integrals that are
+        identical or proportional to the original integral.
+        When this happens, it appears we are running around in circles
+        and won't be able to compute the integral.
+    </p>
+    <p class="fragment">
+        However, very often,
+        we can still compute the integral by collecting all the terms
+        involving the target integral in the resulting equation.
+        We will see how this idea could work in the following example.
+    </p>
+</section>
+<section>
+    <div class="cols">
+        <div class="col example">
+            Compute \[\int e^\theta \cos(\theta) d\theta. \]
+        </div>
+        <div class="col fragment">
+            <p>
+                <b>Solution.</b>
+                We apply integration by parts.
+            </p>
+            <p>
+                \begin{align*}
+                \text{Let}\quad
+                u &= \cos(\theta), &
+                dv &= e^{\theta} d\theta. \\
+                \text{Then}\;
+                du &= -\sin(\theta) d\theta, &
+                v &= e^{\theta}.
+                \end{align*}
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        \[
+        \int e^\theta \cos(\theta) d\theta =
+        \int u dv =
+        uv - \int v \, du =
+        \cos(\theta) e^{\theta} + \int e^\theta \sin(\theta) d\theta.
+        \]
+    </p>
+    <p class="fragment">
+        <!-- The resulting integral $\int e^\theta \sin(\theta) d\theta$  -->
+        <!-- still require integration by parts. -->
+        <!-- This time,  -->
+        Applying integration by parts again with
+        $u = \sin(\theta)$ and $dv = e^\theta d\theta$,
+        we get
+        \[
+        \cos(\theta) e^{\theta} + \int e^\theta \sin(\theta) d\theta =
+        \cos(\theta) e^{\theta} + \left(
+        \sin(\theta) e^\theta -
+        \color{red}{\int e^\theta \cos(\theta) d\theta}
+        \right).
+        \]
+    </p>
+    <p class="fragment">
+        The highlighted part is the original integral.
+        <!-- So it certainly appears as if we were running in circles. -->
+        To find a way out,
+        notice that
+        \[
+        \color{red}{\int e^\theta \cos(\theta) d\theta} =
+        \cos(\theta) e^{\theta} +
+        \sin(\theta) e^\theta -
+        \color{red}{\int e^\theta \cos(\theta) d\theta}.
+        \]
+    </p>
+    <p class="fragment">
+        By moving the highlighted term to the left hand side,
+        we can see that
+        \[
+        \color{red}{\int e^\theta \cos(\theta) d\theta} =
+        \frac{
+        \cos(\theta) e^{\theta} +
+        \sin(\theta) e^\theta
+        }{2} + C.
+        \]
+        <!-- The main takeaway is that even when integration by parts 
+        reproduces the original integral as part of the result,
+        we may still be able to compute the integral by collecting all the terms 
+        involving that integral in the resulting equation. -->
+    </p>
+</section>
+
+<!-- 
+    <p>Use integration by parts to compute <span class="math display">\[\int x \cos(x) dx.\]</span></p>
+    <p>Some times integration by parts must be used several times. This is fine, just be very careful and patient!</p>
+    <p>Use integration by parts to compute <span class="math display">\[\int (t^3 - 2t) e^{-2t} dt.\]</span></p>
+</section>
+<section id="day-6" class="slide level1 unnumbered">
+    <h2 id="the-liate-ilate-rules" class="unnumbered">The “LIATE / ILATE” rules</h2>
+    <p>Many students will learned a rule of thumb known as “LIATE” or “ILATE”, which is designed to give us a hierarchy
+        for choosing <span class="math inline">$u$</span>. The letters stand for functions arranged according to their
+        priority</p>
+    <ul>
+        <li class="fragment">
+            <p>Logarithmic functions</p>
+        </li>
+        <li class="fragment">
+            <p>Inverse trigonometric functions</p>
+        </li>
+        <li class="fragment">
+            <p>Algebraic functions (polynomials/rational functions)</p>
+        </li>
+        <li class="fragment">
+            <p>Trigonometric functions</p>
+        </li>
+        <li class="fragment">
+            <p>Exponential functions</p>
+        </li>
+    </ul>
+    <p>For example, in the integral <span class="math inline">$\int \frac{\ln x}{x^2} dx$</span>, we should choose
+        <span class="math inline">$u = \ln(x)$</span> and <span class="math inline">$dv = \frac{1}{x^2} dx$</span>.
+        However, <em>I do not recommend you spend too much time studying these rules</em>, as they are not very useful
+        in more complicated cases. In particular, this rule will not work well for my own exam questions. E.g., if we
+        want to integrate <span class="math display">\[\int x^5 e^{x^3} dx\]</span> This rule will suggest <span
+            class="math inline">$u = x^5, dv = e^{x^3} dx$</span>. <em>This will not work!</em></p>
+    <p>Compute the indefinite integral <span class="math display">\[\int x^5 e^{x^3} dx.\]</span></p>
+    <p>The right way is to <span class="math display">\[\begin{aligned}
+            &amp;\text{Let} &amp;
+            u &amp;= x^3 &amp;
+            &amp;\text{and} &amp;
+            dv &amp;= x^2 e^{x^3} dx. \\
+            &amp;\text{Then} &amp;
+            du &amp;= 3x^2 dx &amp;
+            &amp;\text{and} &amp;
+            v &amp;= \frac{1}{3} e^{x^3}.
+            \end{aligned}\]</span> Therefore <span class="math display">\[\int x^5 e^{x^3} dx =
+            \int u \, dv =
+            uv - \int v \, du =
+            \frac{x^3 e^{x^3}}{3} - \int x^2 e^{x^3} dx =
+            \frac{x^3 e^{x^3} - e^{x^3}}{3} + C.\]</span></p>
+</section> -->
