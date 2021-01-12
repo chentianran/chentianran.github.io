@@ -3,16 +3,16 @@ layout: default
 title: MATH-2630
 ---
 
-# MATH-2630 A Spring 2018
+# MATH-2630
 
-This course focuses on multivariable calculus
-which is a fundamental pillar for modern science and engineering.
+<!-- This course focuses on multivariable calculus
+which is a fundamental pillar for modern science and engineering. -->
 
-* [Syllabus](syllabus/)
-* [Schedule](syllabus/#schedule)
+* [Syllabus](syllabus-S2021/)
+<!-- * [Schedule](syllabus/#schedule) -->
 
 
-## How to survive this course?
+<!-- ## How to survive this course?
 
 * Read before class
   - Reading is an important component in our learning process.
@@ -27,7 +27,7 @@ which is a fundamental pillar for modern science and engineering.
 * Tell yourself that it is okay to not know the correct answer
   - ...well, as long as you are actively trying to figure out the answers
   - the process of the trying to figure out the answer is the important part.
-    The only important part!
+    The only important part! -->
 
 ## Additional material
 
@@ -39,11 +39,11 @@ which is a fundamental pillar for modern science and engineering.
 * [Matrix determinant](det/)
 * [Contour plots](contour/)
 
-## Misc.
+<!-- ## Misc.
 
 * Definition: _A __lecture__ is a process in which information passes
   from the notes of the lecturer into the notes of the student
   without passing through the minds of either._
   Funny, but true.
   But it really shouldn't be.
-  Let's make sure our lectures are not like that.
+  Let's make sure our lectures are not like that. -->
