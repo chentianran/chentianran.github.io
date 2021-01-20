@@ -1,0 +1,366 @@
+---
+layout: ilecture2
+title: Solution sets of linear system and 2x2 determinant
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Solution sets of linear system and 2x2 determinant</h2>
+    </div>
+    <p class="footnote2">
+        It is possible for a linear system to have no solutions at all
+        or to have infinitely many solutions.
+        In this lecture we will study these slightly more complicated cases
+        and introduce the concept of determinant.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>Slightly more complicated cases</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="example">
+                Find the solution set to
+                \[
+                \left\{
+                \begin{aligned}
+                x + 2y &= 4 \\
+                2x + 4y &= 3 .
+                \end{aligned}
+                \right.
+                \]
+            </div>
+            <p class="fragment">
+                It is easy to see that the two equations in this system
+                contradict with one another,
+                and therefore this system no solutions at all,
+                i.e., the solution set is an <em>empty set</em>.
+                <span class="fragment">
+                    Systems like this are said to be
+                    <em class="term">inconsistent</em>.
+                </span>
+            </p>
+        </div>
+        <div class="col">
+            <div class="example fragment">
+                Find the solution set to
+                \[
+                \left\{
+                \begin{aligned}
+                x + 2y &= 4 \\
+                2x + 4y &= 8 .
+                \end{aligned}
+                \right.
+                \]
+            </div>
+            <p class="fragment">
+                We can see that if a choice of $x$ and $y$ satisfies the first equation,
+                then the second equation is also satisfied.
+                <span class="fragment">
+                    Therefore any $x$ and $y$ such that $x + 2y = 4$
+                    would be a solution.
+                    There are <em>infinitely many</em> of them.
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            These examples showed three possibilities for
+            the number of solutions.
+        </div>
+        <div class="col">
+            <ul>
+                <li class="fragment">A unique solution</li>
+                <li class="fragment">Infinitely many solutions</li>
+                <li class="fragment">No solutions at all</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Determinant (2x2 case)</h3>
+    <div class="cols">
+        <div class="col">
+            It is easy to distinguish the case of having unique solution
+            and the two other cases (infinitely many solutions or no solutions at all).
+            <p>
+                One thing that can help us to determine if a
+                linear system has a unique solution is
+                <em>"determinant"</em>.
+            </p>
+        </div>
+        <div class="definition col">
+            For the linear system
+            \[
+            \left\{
+            \begin{aligned}
+            a x + b y &= f_1 \\
+            c x + d y &= f_2
+            \end{aligned}
+            \right.
+            \]
+            in the unknowns $x$ and $y$,
+            its <b class="term">determinant</b>
+            is the value
+            \[
+            ad-bc
+            \]
+        </div>
+    </div>
+    <ul class="fragment">
+        <li>
+            If the determinant is <strong class="highlight">nonzero</strong>
+            then the system has a unique solution.
+        </li>
+        <li>
+            If the determinant is <strong class="highlight">zero</strong>
+            then the system either has infinitely many solutions or no solutions at all
+            (empty solution set).
+        </li>
+    </ul>
+    <p class="fragment lowlight">
+        It is important to note that the value of the determinant
+        does not directly distinguish between the cases of
+        infinite and empty solution sets.
+    </p>
+</section>
+<section>
+    <h3>Examples</h3>
+    <ul>
+        <li>
+            Non-zero determinant: the system has a unique solution.
+        </li>
+        <li>
+            Zero determinant:
+            the system either has infinitely many or no solutions.
+        </li>
+    </ul>
+    <div class="cols">
+        <div class="col">
+            <div class="example fragment">
+                Determine if the linear system
+                \[
+                \left\{
+                \begin{aligned}
+                1x + 2y &= 5 \\
+                3x + 4y &= 6 .
+                \end{aligned}
+                \right.
+                \]
+                has a unique solution.
+            </div>
+            <p class="fragment">
+                The determinant of this system is
+                \[
+                1 \cdot 4 - 2 \cdot 3 = 4 - 6 = -2.
+                \]
+            </p>
+            <p class="fragment">
+                We can therefore conclude that this system
+                indeed has a unique solution,
+                i.e., there is exactly one solution.
+            </p>
+        </div>
+        <div class="col">
+            <div class="example fragment">
+                Determine if the linear system
+                \[
+                \left\{
+                \begin{aligned}
+                1x + 2y &= 4 \\
+                2x + 4y &= 3 .
+                \end{aligned}
+                \right.
+                \]
+                has a unique solution.
+            </div>
+            <p class="fragment">
+                The determinant of this system is
+                \[
+                1 \cdot 4 - 2 \cdot 2 = 4 - 4 = 0.
+                \]
+            </p>
+            <p class="fragment">
+                We can conclude that this system
+                does <strong>not</strong> have a unique solution,
+                i.e., it either has no solution at all
+                or it has infinitely many solution.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <div class="problem">
+        Determine if the this linear system has a unique solutions.
+        \[
+        \left\{
+        \begin{aligned}
+        x + y &= 3 \\
+        2x + y &= 7 .
+        \end{aligned}
+        \right.
+        \]
+    </div>
+    <div class="problem">
+        Determine if the this linear system has a unique solutions.
+        \[
+        \left\{
+        \begin{aligned}
+        x + y &= 3 \\
+        x - y &= -2 .
+        \end{aligned}
+        \right.
+        \]
+    </div>
+    <div class="problem">
+        Determine if the this linear system has a unique solutions.
+        \[
+        \left\{
+        \begin{aligned}
+        1x + 2y &= 2 \\
+        3x + 4y &= 8 .
+        \end{aligned}
+        \right.
+        \]
+    </div>
+</section>
+<section>
+    <h3>Sidenote: the notation</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                Determinant is an important tool in mathematics.
+                We will use it in several areas in linear algebra.
+            </p>
+            <p>
+                For the linear system
+                \begin{align*}
+                    a x + b y &= f_1 \\
+                    c x + d y &= f_2 
+                \end{align*}
+                in the unknowns $x$ and $y$,
+                we may use the notation
+                \[
+                \left|
+                \begin{smallmatrix}
+                a & b \\
+                c & d
+                \end{smallmatrix}
+                \right|
+                \; = \;
+                ad - bc
+                \]
+                for the determinant.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Even though this notation looks like the absolute value notation,
+                we are <b>not</b> implying it is nonnegative.
+                It is certainly possible for a determinant to be negative.
+            </p>
+            <p class="fragment">
+                We also use the notation
+                \[
+                    \det
+                    \begin{bmatrix}
+                        a & b \\
+                        c & d
+                    \end{bmatrix}
+                    \;=\;
+                    ad - bc
+                \]
+                for the determinant.
+                <span class="lowlight">
+                    This notation will make more sense
+                    once we study this in the context of matrices.
+                </span>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>What does it mean?</h3>
+
+    <div class="cols">
+        <div class="col">
+            <p>
+                It is easy to see the linear system
+                \begin{align*}
+                    a x + b y &= f_1 \\
+                    \color{red}{0} x + \color{red}{0} y &= f_2
+                \end{align*}
+                either has no solution at all
+                or has infinitely many solution.
+            </p>
+            <p class="fragment">
+                Of course, the same applies if the linear system
+                is of the form
+                \begin{align*}
+                    \color{red}{0} x + \color{red}{0} y &= f_1 \\
+                    c x + d y &= f_2 .
+                \end{align*}
+            </p>
+            <p class="fragment">
+                Or a system of the form
+                \begin{align*}
+                    \color{red}{a} x + \color{blue}{b} y &= f_1 \\
+                    \color{red}{a} x + \color{blue}{b} y &= f_2 .
+                \end{align*}
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                We can see the determinant is designed to detect these situations.
+                \[
+                \left|
+                \begin{smallmatrix}
+                a & b \\
+                0 & 0
+                \end{smallmatrix}
+                \right|
+                \; = \;
+                a0 - b0
+                \; = \; 0.
+                \]
+                The 0 determinant signals
+                the system will not have a unique solution.
+            </p>
+            <p class="fragment">
+                The same applies to the second case where the determinant is
+                \[
+                \left|
+                \begin{smallmatrix}
+                0 & 0 \\
+                c & d
+                \end{smallmatrix}
+                \right|
+                \; = \;
+                0d - 0c
+                \; = \; 0,
+                \]
+            </p>
+            <p class="fragment">
+                Similarly, for the third case,
+                \[
+                \left|
+                \begin{smallmatrix}
+                a & b \\
+                a & b
+                \end{smallmatrix}
+                \right|
+                \; = \;
+                ab - ba
+                \; = \; 0.
+                \]
+            </p>
+        </div>
+    </div>
+</section>

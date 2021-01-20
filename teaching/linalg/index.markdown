@@ -20,6 +20,16 @@ This course focuses on linear algebra
 * Take the final exam
 * Participate! (You are not a passive note-taking robot) -->
 
+## Simplified lectures
+
+You can find narrated and simplified lectures
+in the following list of links.
+These lectures cover some basic topics in this course,
+and discussions of deeper parts are not included.
+
+* [Basics of linear systems](linear-systems/)
+* [Solution sets of linear system and 2x2 determinant](det-2x2/)
+
 ## Additional material
 
 * [Vectors](vectors/)
