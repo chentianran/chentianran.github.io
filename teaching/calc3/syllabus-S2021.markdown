@@ -221,9 +221,9 @@ Projects are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
 They are a major part of your course grade. -->
 
-<!-- ### Final exam
-The final exam will take place in the last day of class.
-It constitutes a major part of your course grade. -->
+### Final exam
+
+The final exam will take place in the final week.
 
 ### Grade composition
 
