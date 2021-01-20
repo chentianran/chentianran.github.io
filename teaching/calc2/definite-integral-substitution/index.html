@@ -90,6 +90,26 @@ title: Integration by substitution
     </p>
 </section>
 <section>
+    <h3>The formal statement</h3>
+    <p>
+        We now state the simple procedure illustrated in the previous example more formally.
+    </p>
+    <div class="theorem">
+        Suppose $g$ is a differentiable function over the interval $(a,b)$,
+        and $f$ is continuous over the corresponding image, then
+        \[
+            \int_a^b f(g(x)) \, g'(x) dx = \int_{g(a)}^{g(b)} f(u) du
+        \]
+        as long as the integral is defined.
+    </div>
+    <p class="fragment">
+        As we saw in the previous example,
+        this is nothing but a formal way of saying:
+        When you perform a substitution,
+        you should substitute the limits of integration as well.
+    </p>
+</section>
+<section>
     <h3>An alternative</h3>
     <p>
         In certain situations, 
