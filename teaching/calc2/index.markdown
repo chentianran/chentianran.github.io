@@ -30,6 +30,25 @@ title: MATH-1620
   - the process of the trying to figure out the answer is the important part.
     The only important part! -->
 
+## Lecture slideshows
+
+* [Integration by substitution](integration-by-substitution/)
+* [Integration by substitution for definite integrals](definite-integral-substitution/)
+* [Integration by parts](integration-by-parts/)
+* [Integration by partial fractions](partial-fraction/)
+* [Hyperbolic functions](hyperbolic-functions/)
+* [Trigonometric substitutions](trig-substitution/)
+* [Improper integrals](improper-integrals/)
+* [Infinite series](series/)
+* [Geometric series](geometric-series/)
+* [Convergence tests](convergence-tests/)
+* [Comparison tests](comparison-tests/)
+* [Ratio tests](ratio-test/)
+* [Alternating series](alternating-series/)
+* [Power series](power-series/)
+* [Taylor series](taylor-series/)
+* [Basics of differential equations](ode/)
+
 ## Additional material
 
 I have created the following interactive demonstrations for certain
