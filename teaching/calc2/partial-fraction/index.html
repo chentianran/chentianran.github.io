@@ -1,0 +1,378 @@
+---
+layout: ilecture2
+title: Integration by partial fractions
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Integration by partial fractions</h2>
+        <p class="small">
+            Simplifying integrals of rational functions
+            using partial fraction decomposition
+        </p>
+    </div>
+    <p>
+        Using the algebraic technique known as
+        "partial fraction decomposition"
+        we can simplify an integral of a rational function
+        into a sum of much simpler integrals.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>
+        Integration by partial fractions
+    </h3>
+    <p>
+        Using the algebraic technique known as
+        "partial fraction decomposition"
+        we can simplify an integral of a rational function
+        into a sum of much simpler integrals,
+        which we may be able to compute.
+    </p>
+    <p class="fragment">
+        This technique is really an algebraic technique.
+        If you learned "partial fractions decomposition" 
+        in the context of pre-calculus algebra, 
+        then there is nothing new here.
+        <!-- Of course, it is still helpful to be reminded of this technique.  -->
+        <span class="small lowlight">
+            (If you haven’t heard of this technique,
+            then you may want to learn this in the context of pre-calculus algebra first,
+            before you apply them to integrals.)
+        </span>
+    </p>
+    <p class="fragment">
+        We start with a simple example
+        from which we should be able to see the main point.
+    </p>
+</section>
+<section>
+    <!-- <h3>Starting with an example</h3> -->
+    <div class="cols">
+        <div class="col example">
+            Compute \[\int \frac{1}{x^2 - 1} \, dx.\]
+        </div>
+        <div class="col">
+            <p class="fragment small">
+                <b>Solution.</b>
+                First, it is worth checking if the substitution
+                $u = x^2 - 1$ will work. 
+                In this case, it doesn't, since $du = 2x \, dx$ 
+                doesn't appear here.
+                So some other idea is needed.
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment small">
+                Since $\frac{1}{x^2 - 1} = \frac{1}{(x-1)(x+1)}$, 
+                using partial fractions decomposition we can get
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment small">
+                \[
+                    \frac{1}{(x-1)(x+1)} =
+                    \frac{ \frac{1}{2} }{ x-1 } -
+                    \frac{ \frac{1}{2} }{ x+1 }.
+                \]
+            </p>
+        </div>
+    </div>
+    <div class="equ small">
+        <span class="fragment">
+            Therefore 
+            $\displaystyle
+                \int \frac{1}{x^2 - 1} \, dx =
+                \int \frac{1}{(x-1)(x+1)} \, dx
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle
+                = \int \frac{ \frac{1}{2} }{ x-1 } dx -
+                  \int \frac{ \frac{1}{2} }{ x+1 } dx.
+            $
+        </span>
+    </div>
+    <div class="cols">
+        <div class="col small">
+            <p class="fragment">
+                Both of these can be computed easily: 
+                \[
+                \int \frac{ \frac{1}{2} }{ x-1 } dx =
+                \frac{1}{2} \ln |x-1| + C_1.
+                \]
+            </p>
+
+        </div>
+        <div class="col small">
+            <p class="fragment">
+                Similarly,
+                \[
+                    \int \frac{ \frac{1}{2} }{ x+1 } dx =
+                    \frac{1}{2} \ln |x+1| + C_2.
+                \] 
+            </p>
+        </div>
+    </div>
+    <p class="fragment small">
+        Therefore, 
+        \begin{align*}
+        \int \frac{1}{x^2 - 1} \, dx &=
+        \left( \frac{1}{2} \ln |1-x| + C_1 \right) -
+        \left( \frac{1}{2} \ln |1+x| + C_2 \right) \\
+        &=
+        \frac{ \ln |1-x| - \ln |1+x| }{2} + C.
+        \end{align*}
+    </p>
+</section>
+<section>
+    <h3>The main idea</h3>
+    <p>
+        The previous example illustrate the main idea behind
+        the technique of using partial fractions decomposition
+        in computing integrals:
+        we can write a complex rational function as 
+        sum of much simpler rational functions
+    </p>
+</section>
+<section>
+    <div class="cols">
+        <div class="col example">
+            Compute 
+            \[\int \frac{x+1}{x^3 - 1} \, dx.\]
+        </div>
+        <div class="col">
+            <p class="fragment">
+                <b>Solution.</b>
+                We can factor the denominator into factors:
+                \[ x^3 - 1 = (x-1)(x^2+x+1). \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment small">
+        Through partial fractions decomposition, we get 
+        \[
+        \frac{x+1}{x^3-1} =
+        \frac{x+1}{(x-1)(x^2+x+1)} =
+        \color{red}{  \frac{ \frac{2}{3} }{ x-1 } } -
+        \color{blue}{ \frac{ \frac{2}{3} x + \frac{1}{3} }{ x^2+x+1 } }.
+        \]
+    </p>
+    <p class="fragment small">
+        Therefore, the original integral is equivalent to
+        \[
+        \int \frac{x+1}{x^3 - 1} \, dx =
+        \int
+        \color{red}{  \frac{ \frac{2}{3} }{ x-1 } }-
+        \color{blue}{ \frac{ \frac{2}{3} x + \frac{1}{3} }{ x^2+x+1 } }\, dx =
+        \int \color{red}{  \frac{ \frac{2}{3} }{ x-1 } } \, dx -
+        \int \color{blue}{ \frac{ \frac{2}{3} x+ \frac{1}{3} }{ x^2+x+1 } } \, dx.
+        \] 
+    </p>
+    <p class="fragment small">
+        \[
+            \text{For the 1st one: }
+            \int \frac{ \frac{2}{3} }{ x-1 } \, dx =
+            \frac{2}{3} \int \frac{ 1 }{ x-1 } \, dx =
+            \frac{2}{3} \ln|x-1| + C_1.
+        \] 
+    </p>
+    <p class="fragment small">
+        The other can be computed through the substitution 
+        $u = x^2+x+1$ and $du = 2x + 1$:
+        \[
+            \frac{1}{3} \int \frac{ 2x+ 1 }{ x^2+x+1 } \, dx =
+            \frac{1}{3} \int \frac{ 1 }{ u } \, du =
+            \frac{1}{3} \ln|u| + C_2 =
+            \frac{1}{3} \ln|x^2+x+1| + C_2.
+        \]
+    </p>
+    <p class="fragment small">
+        Therefore, the final answers is 
+        $
+            \frac{2}{3} \ln|x-1| -
+            \frac{1}{3} \ln|x^2+x+1| + C.
+        $
+    </p>
+</section>
+<section>
+    <h3>How to compute partial fraction decomposition?</h3>
+    <p>
+        Most likely you have already learned this algebraic technique somewhere else.
+        If you haven't, it is best to learn this topic systematically 
+        in the purely algebraic context.
+        Here, we will just look at a few simple examples.
+    </p>
+    <div class="cols">
+        <div class="col example fragment">
+            Compute the partial fraction decomposition for
+            \[
+                \frac{1}{(x-1)(x+1)}
+            \]
+        </div>
+        <div class="col">
+            <p class="fragment small">
+                <b>Solution.</b>
+                The goal is to find real numbers $A$ and $B$ such that
+                \[
+                    \frac{1}{(x-1)(x+1)}
+                    =
+                    \frac{A}{x-1} + 
+                    \frac{B}{x+1}
+                \]
+            </p>
+            <p class="fragment small">
+                We'll do this by multiplying everything out.
+            </p>
+        </div>
+    </div>
+    <div class="equ small">
+        <span class="fragment">
+            $\displaystyle
+                \frac{A}{x-1} + 
+                \frac{B}{x+1}
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle
+                =
+                \frac{A\color{red}{(x+1)}}{(x-1)\color{red}{(x+1)}} + 
+                \frac{B\color{blue}{(x-1)}}{\color{blue}{(x-1)}(x+1)}
+            $
+
+        </span>
+        <span class="fragment">
+            $\displaystyle
+                =
+                \frac{A\color{red}{(x+1)} + B\color{blue}{(x-1)}}{(x-1)\color{red}{(x+1)}} 
+            $
+        </span>
+    </div>
+    <p class="fragment">
+        But we want this to be just $ \frac{1}{(x-1)(x+1)} $.
+        Therefore,
+        \[ A\color{red}{(x+1)} + B\color{blue}{(x-1)} = 1. \]
+        Using this, can you figure out the value of $A$ and $B$?
+    </p>
+</section>
+<section>
+    <div class="example">
+            Compute the partial fraction decomposition for
+        \[
+        \frac{x+1}{(x-1)(x^2+x+1)}
+        \]
+        <!-- \color{red}{  \frac{ \frac{2}{3} }{ x-1 } } -
+        \color{blue}{ \frac{ \frac{2}{3} x + \frac{1}{3} }{ x^2+x+1 } }. -->
+    </div>
+    <p class="fragment small">
+        <b>Solution.</b>
+        The goal is to find real numbers $A, B$ and $C$ such that
+        \[
+            \frac{x+1}{(x-1)(x^2+x+1)}
+            =
+            \frac{A}{x-1} + 
+            \frac{Bx+C}{x^2+x+1}
+        \]
+        Here, we need the factor $Bx+C$ because the corresponding 
+        denominator $x^2+x+1$ is an <em>irreducible quadratic</em>.
+    </p>
+    <div class="equ small">
+        <span class="fragment">
+            $\displaystyle
+                \frac{A}{x-1} + 
+                \frac{Bx+C}{x^2+x+1}
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle
+                =
+                \frac{ 
+                    A\color{red}{(x^2+x+1)} + (Bx+C)\color{blue}{ (x-1) } 
+                }{(x-1)(x^2+x+1)}
+            $
+        </span>
+        <!-- <span class="fragment">
+            $\displaystyle
+                =
+                \frac{A\color{red}{(x+1)} + B\color{blue}{(x-1)}}{(x-1)\color{red}{(x+1)}} 
+            $
+        </span> -->
+    </div>
+    <p class="fragment">
+        But we want this to be just $ \frac{x+1}{(x-1)(x^2+x+1)} $.
+        Therefore,
+        \[
+            A\color{red}{(x^2+x+1)} + (Bx+C)\color{blue}{ (x-1) } 
+            =
+            x+1.
+        \]
+        Using this, can you find the correct $A,B,C$?
+    </p>
+</section>
+<!-- <section id="day-9" class="slide level1 unnumbered">
+    <p>
+            Therefore, <span class="math display">\[\begin{aligned}
+            \int \frac{x+1}{x^3 - 1} \, dx &=
+            \left(
+            \frac{2}{3} \ln|x-1| + C_1
+            \right)
+            -
+            \left(
+            \frac{1}{3} \ln|x^2+x+1| + C_2
+            \right)
+            \\&=
+            \frac{2}{3} \ln|x-1| -
+            \frac{1}{3} \ln|x^2+x+1| + C .
+            \end{aligned}\]</span>
+    </p>
+    <h2 id="applications-area-computation" class="unnumbered">Applications: Area computation</h2>
+    <p>As you will see in the homework assignments, integrals have many direct practical applications. In mathematics,
+        I’m sure you still remember why we introduced the concept of integral in the first place — it’s for area
+        computation! Armed with the new tools we have acquired, we can compute the area some nontrivial shapes.</p>
+    <p>Use integral to compute the area of a unit circle <span>(we know the answer already, but we want to see how to
+            compute that with an integral)</span>.</p>
+    <p>Since a unit circle is defined as the set of points <span class="math inline">$(x,y)$</span> such that <span
+            class="math inline">$x^2 + y^2 = 1$</span>, the <em>top half</em> of the circle can be considered as the
+        region trapped between the <span class="math inline">$x$</span>-axis and the graph of the function <span
+            class="math inline">$y = \sqrt{1 - x^2}$</span> as well as <span class="math inline">$x=-1$</span> and
+        <span class="math inline">$x=1$</span>. We can compute this top half as a single integral, and then double the
+        result the get the entire circle.
+    </p>
+    <p>(-2,-2) grid (2,2); (0,0) circle(2) ; (-3,0) – (3,0) node[right] <span><span class="math inline">$y =
+                0$</span></span>; (-2,0) – (2,0) arc(0:180:2); (-2,0) – (2,0) arc(0:180:2); (2,1) node[right]
+        <span><span class="math inline">$y = \sqrt{1-x^2}$</span></span>; (-3,1) node[left] <span><span
+                class="math inline">$\text{Area: } \int_{-1}^1 \sqrt{1-x^2} \, dx$</span></span> – (-0.5,1);
+    </p>
+    <p>We can see that the area of the top half is <span class="math display">\[\int_{-1}^1 \sqrt{1-x^2} \, dx.\]</span>
+        From the discussion on Day 7, we can use trigonometric substitution to get <span
+            class="math display">\[\int_{-1}^1 \sqrt{1-x^2} \, dx =
+            \left[\frac{\sin^{-1}(x)}{2} + \frac{ x \sqrt{1 - x^2} }{2} \right]_{-1}^1
+            = \frac{\pi}{2}\]</span> as expected. Therefore the area of the entire unit circle is <span
+            class="math inline">$\pi$</span>.</p>
+    <p>Compute the <em>area</em> of the region trapped between the parabola <span class="math inline">$y = 2 -
+            x^2/2$</span> and the horizontal line <span class="math inline">$y = 3/2$</span> from <span
+            class="math inline">$x=-2$</span> to <span class="math inline">$x=2$</span></p>
+    <p>plot[smooth,domain=-2:2] (, <span>2-0.5*()^2</span>); (-2,1.5) – (2,1.5) node[right] <span><span
+                class="math inline">$y = 3/2$</span></span>; (2,0) node [right] <span><span class="math inline">$y =
+                2 - x^2/2$</span></span>; ( 2,0) – ( 2,1.5); (-2,0) – (-2,1.5);</p>
+    <p>It is tempting to compute <span class="math inline">$\int_{-2}^2 (2-x^2/2) - 3/2 \, dx$</span>. However, this
+        will not produce the <em>area</em> we want. (Can you see why?) Notice that the two curves intersect at <span
+            class="math inline">$x=-1$</span> and <span class="math inline">$x=1$</span> (which we found by solving
+        the equation <span class="math inline">$3/2 = 2-x^2/2$</span>). Therefore, we must decompose this region into
+        3 parts, and compute <span class="math display">\[\int_{-2}^{-1} \frac{3}{2} - \left( 2 - \frac{x^2}{2}\right)
+            \, dx
+            +
+            \int_{-1}^{1} \left( 2 - \frac{x^2}{2}\right) - \frac{3}{2} \, dx
+            +
+            \int_{1}^{2} \frac{3}{2} - \left( 2 - \frac{x^2}{2} \right) \, dx.\]</span> Notice that we chose the order
+        of subtraction so that each integral produces positive <em>area</em> (rather than signed area). Can you finish
+        this calculation?</p>
+</section> -->
