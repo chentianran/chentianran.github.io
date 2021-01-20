@@ -1,0 +1,191 @@
+---
+layout: ilecture2
+title: Arc-length computation
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Arc-length computation</h2>
+        <p class="small">
+            Computing length of curves using definite integral
+        </p>
+    </div>
+    <p>
+        In applications, we often need to compute the length of a curve.
+        In the context of this course, such problems are known as "arc-length' computation.
+        This can be done using definite integrals.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>Arc-length computation</h3>
+    <p>
+        Finding the length of a straight line segment is easy,
+        thanks to the Pythagorean Theorem.
+    </p>
+    <p>
+        In applications, we often need to compute the length of a curve 
+        that are not straight lines.
+        In the context of this course, such problems are known as "arc-length' computation.
+        This can be done using definite integrals.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                For instance, if we ignore air resistance, 
+                an ball tossed at an angle will trace out a
+                perfect parabola in the air.
+                <em>Can we compute the total distance the ball has traveled?</em> 
+            </p>
+        </div>
+        <div class="col">
+            <img src="parabola.png" alt="Parabola" class="fragment">
+        </div>
+    </div>
+    <p class="fragment">
+        It turns out, as long as the curve can be expressed as the graph of a 
+        continuously differentiable function $y = f(x)$ 
+        (or $x = g(y)$), we can express the arc-length as a definite integral.
+    </p>
+</section>
+<section>
+    <div class="cols">
+        <div class="col theorem">
+            The length of the segment of a curve defined by a continuously differentiable function 
+            $y = f(x)$ for $a \le x \le b$ is given by 
+            \[L = \int_a^b \sqrt{ 1 + \left[ f'(x) \right]^2 } dx.\]
+        </div>
+        <div class="col fragment lowlight">
+            <p>
+                Here, the <em>length of the segment of a curve</em>
+                is simply understood intuitively as the distance between two points
+                along a section of a curve.
+                Defining this concept rigorously is a much deeper problem
+                that you will study in analysis.
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col example fragment">
+            Express the length of the curve defined by $y = 1-x^2$ 
+            between $x=-1$ and $x=1$.
+        </div>
+        <div class="col">
+            <p class="fragment">
+                <b>Solution.</b>
+                The curve is the graph of the continuously differentiable function 
+                $y = f(x) = 1 - x^2$ between $x=-1$ and $x=1$.
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                We can compute that
+                \[f'(x) = \frac{d}{dx} (1 - x^2) = -2x.\]
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Therefore, the arc-length of the curve between
+                $x=-1$ and $x=1$ is
+                \[\int_{-1}^{1} \sqrt{1 + (-2x)^2} dx.\]
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <p>
+        Note that here we require the function $y=f(x)$ 
+        to be not only differentiable but also <em>continuously differentiable</em>,
+        i.e., its derivative is also continuous on the interval we are considering.
+        This is important.
+        Without this condition, this framework may fall apart.
+    </p>
+    <p>
+        To see an example,
+        what do you think is the arc-length of the segment of the graph of 
+        \[
+            f(x) =
+            \begin{cases}
+                \frac{ \sin \left( \frac{1}{x^2} \right) }{x^2} &\text{if } x \ne 0 \\
+                0 &\text{otherwise }
+            \end{cases}
+        \]
+        between $x=-1$ and $x=1$?
+        Note that this function is continuous 
+        but its derivative is not continuous.
+    </p>
+</section>
+
+<!-- <section id="day-11" class="slide level1 unnumbered">
+    <p>
+        </p>
+    <p>To actually compute the resulting integral, we will have to use trigonometric substitution. Please see earlier
+        discussions on this topic (Day 8: the substitution involving <span class="math inline">$\tan \theta$</span>).
+    </p>
+    <h2 id="why-does-it-work-1" class="unnumbered">Why does it work?</h2>
+    <p><span>r</span><span>0.16</span></p>
+    <p>plot[smooth,domain=-2.3:1.3] (, <span>2-0.5*()^2</span>); (-2,0) circle(2pt) – (1,1.5) circle(2pt); (-2,0) – (
+        1,0); ( 1,1.5) – ( 1,0); (-0.5,0) node[below] <span><span class="math inline">$\Delta x$</span></span>;
+        (1,0.75) node[right] <span><span class="math inline">$\Delta y$</span></span>;</p>
+    <p>In the typical calculus fashion, we compute the arc-length by cutting the curve into many many small pieces
+        (indeed, infinitely many “infinitesimal” pieces). Consider a small segment of a curve, as shown in this figure
+        (dashed line). We approximate segment with a straight line segment (blue solid line) joining two points on the
+        curve. If the horizontal and vertical differences are <span class="math inline">$\Delta x$</span> and <span
+            class="math inline">$\Delta y$</span> respectively, then by Pythagorean theorem, the length of this
+        segment is <span class="math display">\[\Delta s = \sqrt{ (\Delta x)^2 + (\Delta y)^2 }.\]</span> Suppose the we
+        divided the original curve into <span class="math inline">$n$</span> segments at points <span
+            class="math inline">$(x_1,y_1),(x_2,y_2),\dots,(x_{n+1},y_{n+1})$</span> on the curve, and we let <span
+            class="math inline">$\Delta x_i$</span> and <span class="math inline">$\Delta y_i$</span> denote the
+        horizontal and vertical differences between consecutive points (i.e., <span class="math inline">$\Delta x_i =
+            x_{i+1} - x_i$</span> and <span class="math inline">$\Delta y_i = y_{i+1} - y_i$</span>). Then the
+        arc-length can be approximated by the sum of the length of the straight line segment connecting consecutive
+        points. That is, <span class="math display">\[s \approx \sum_{i=1}^n \sqrt{ (\Delta x_i)^2 + (\Delta y_i)^2
+            }.\]</span> Here, we assume <span class="math inline">$\Delta x_i$</span> to be nonzero, so this
+        expression can be rewritten as <span class="math display">\[\begin{aligned}
+            s
+            &\approx \sum_{i=1}^n \sqrt{ (\Delta x_i)^2 + (\Delta y_i)^2 } \\
+            &= \sum_{i=1}^n \sqrt{
+            \left[
+            \left( \frac{\Delta x_i}{\Delta x_i} \right)^2 +
+            \left( \frac{\Delta y_i}{\Delta x_i} \right)^2
+            \right] \Delta x_i^2 } \\
+            &= \sum_{i=1}^n \sqrt{
+            1 +
+            \left( \frac{\Delta y_i}{\Delta x_i} \right)^2
+            } \, \Delta x_i.
+            \end{aligned}\]</span> The expression <span class="math inline">$\Delta y_i / \Delta x_i$</span> should
+        look familiar — it is the average rate of change of this function over the <span
+            class="math inline">$i$</span>-th interval (rise over run). By the Mean Value Theorem, for each <span
+            class="math inline">$i=1,\dots,n$</span>, there exists a point <span
+            class="math inline">$\bar{x}_i$</span> in the interval <span class="math inline">$[x_i,x_{i+1}]$</span>
+        where <span class="math inline">$\Delta y_i / \Delta x_i$</span> is exactly the derivative at <span
+            class="math inline">$\bar{x}_i$</span>. Therefore, <span class="math display">\[s \approx \sum_{i=1}^n
+            \sqrt{
+            1 +
+            \left( f&#39;(\bar{x}_i) \right)^2
+            } \, \Delta x_i.\]</span> This is already a useful formula for <em>approximating</em> the arc-length.
+        However, we are not interested in a mere approximation. <em>We want the exact formula</em>. Again, following the
+        general recipe of calculus ideas, we take the limit of the above expression as the length of each segment goes
+        to zero (and the number of segment goes to infinity), which results in the formula <span
+            class="math display">\[L = \int_a^b \sqrt{ 1 + \left[ f&#39;(x) \right]^2 } dx.\]</span></p>
+    <h2 id="the-differential-point-of-view" class="unnumbered">The differential point of view</h2>
+    <p>The resulting formula derived above can be understood as <span class="math display">\[L = \int ds\]</span> where
+        <span class="math inline">$ds$</span> is the expression that represents the length of infinitely small
+        (infinitesimal) segment of the curve. This is a very general idea in many computational problems involving
+        integrals — if you know how to express an infinitesimal version of certain quantity, then this quantity can be
+        computed as an integral of such infinitesimal version.</p>
+    <p><strong>Alternative notation.</strong> In engineering context, people often prefer the notations <span
+            class="math display">\[L = \int ds
+            \quad\text{where}\quad
+            ds = \sqrt{ (dx)^2 + (dy)^2 }.\]</span> These notations, based on manipulations of differentials, are indeed
+        valid, although they are incompatible with how we use differential so far. We will not use them here, but you
+        should be aware of these notations because you will likely see them elsewhere.</p>
+    <p>Can you see the connection between this version of the arc-length formula and the version stated earlier?</p>
+</section> -->
