@@ -21,7 +21,7 @@ title: Integration by substitution
     <!-- </p> -->
 </section>
 <!-- <section data-audio-src="1-1.mp3"> </section> -->
-<section>
+<section data-audio-src="1-1.mp3">
     <h3>Integration by substitution</h3>
     <p>
         "Integration by substitution" is essentially the integral version of the "chain rule".
@@ -33,7 +33,7 @@ title: Integration by substitution
         \]
     </p>
 </section>
-<section>
+<section data-audio-src="2-1.mp3">
     <h3>Preparation</h3>
     <div class="cols">
         <div class="col">
@@ -59,7 +59,7 @@ title: Integration by substitution
                 and you understand what they mean.
             </p>
         </div>
-        <div class="col fragment">
+        <div class="col fragment" data-audio-src="2-2.mp3">
             <p>
                 Moreover, you understand that the names of the variables are 
                 not very important in the sense that they only tell us 
@@ -71,14 +71,14 @@ title: Integration by substitution
             </p>
         </div>
     </div>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="2-3.mp3">
         Make sure you also understand why we cannot directly compute 
         \[
             \int e^{\color{red} u} \, d{\color{red} x}.
         \]
     </p>
 </section>
-<section>
+<section data-audio-src="3-1.mp3">
     <h3>Differentials</h3>
     <p>
         You also need to feel comfortable manipulating <em class="highlight">differentials</em>
@@ -86,7 +86,7 @@ title: Integration by substitution
     </p>
     <div class="cols">
         <div class="col">
-            <p class="fragment">
+            <p class="fragment" data-audio-src="3-2.mp3">
                 Suppose $u$ is a function of $x$, then 
                 \[
                     du = \frac{du}{dx} \, dx.
@@ -96,7 +96,7 @@ title: Integration by substitution
             </p>
         </div>
         <div class="col">
-            <p class="fragment">
+            <p class="fragment" data-audio-src="3-3.mp3">
                 For example, if $u$ is a function of $x$ given by
                 \[
                     u = x^2
@@ -111,7 +111,7 @@ title: Integration by substitution
         </div>
     </div>
 </section>
-<section>
+<section data-audio-src="4-1.mp3">
     <h3>Warm up exercises</h3>
     
     <p>
@@ -121,13 +121,13 @@ title: Integration by substitution
             \int e^{3x} dx?
         \]
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="4-2.mp3">
         A naive guess would be $e^{3x} + C$.
         That’s not a terrible guess, but it is easy to see it is <em>wrong</em>,
         since the derivative of $e^{3x} + C$ would be $3e^{3x}$
         <span class="lowlight">(not $e^{3x}$)</span>.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="4-3.mp3">
         So it is off by a factor of 3.
         To compensate for this, we simply need to multiply our original guess by $\frac{1}{3}$.
         Therefore, $\frac{1}{3} e^{3x} + C$ is our answer, i.e., 
@@ -137,14 +137,14 @@ title: Integration by substitution
     </p>
     <div class="cols">
         <div class="col">
-            <p class="fragment lowlight small">
+            <p class="fragment lowlight small" data-audio-src="4-4.mp3">
                 Side note: Here, we took an educated guess (which turns out to be wrong),
                 and then we checked our answer and made a good correction.
                 This is a completely valid tactic.
             </p>
         </div>
         <div class="col">
-            <div class="problem fragment">
+            <div class="problem fragment" data-audio-src="4-5.mp3">
                 Compute
                 \[
                     \int \cos(10 x) dx.
@@ -153,7 +153,7 @@ title: Integration by substitution
         </div>
     </div>
 </section>
-<section>
+<section data-audio-src="5-1.mp3">
     <h3>Substitution</h3>
 
     <p>
@@ -170,17 +170,17 @@ title: Integration by substitution
         \]
         This simple idea allows us to compute more complicated integrals.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="5-2.mp3">
         From the "chain rule" in differentiation, we know that
         \[
             [ f(g(x)) ]' = f'(g(x)) \, g'(x).
         \]
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="5-3.mp3">
         From this, we can easily derive the antiderivative/integral version.
     </p>
     <div class="cols">
-        <div class="col fragment">
+        <div class="col fragment" data-audio-src="5-4.mp3">
             <div class="theorem">
                 Suppose $f$ is a continuous function
                 and $g$ is a differentiable function,
@@ -190,7 +190,7 @@ title: Integration by substitution
                 \]
             </div>
         </div>
-        <div class="col fragment">
+        <div class="col fragment" data-audio-src="5-5.mp3">
             We are performing a substitution $u = g(x)$,
             i.e., replacing an inner function by a new variable $u$.
             The name is not important, 
@@ -198,7 +198,7 @@ title: Integration by substitution
         </div>
     </div>
 </section>
-<section>
+<section data-audio-src="6-1.mp3">
     <!-- <h3>Examples</h3> -->
     <p>
         We will compute the following integrals using the fact that
@@ -208,16 +208,16 @@ title: Integration by substitution
     </p>
     <div class="cols">
         <div class="col">
-            <div class="example fragment">
+            <div class="example fragment" data-audio-src="6-2.mp3">
                 Compute
                 \[
                     \int \cos(5x) \, 5 \, dx.
                 \]
             </div>
-            <p class="fragment small"><b>Solution.</b>
+            <p class="fragment small" data-audio-src="6-3.mp3"><b>Solution.</b>
                 The "inner" function is $u = g(x) = 5x$
                 (so $g'(x) = 5$), and the "outer" function $f(x) = \cos(x)$.
-                <span class="fragment">
+                <span class="fragment" data-audio-src="6-4.mp3">
                     Thus,
                     \begin{gather*}
                         \int \cos(5x) 5 dx 
@@ -229,16 +229,16 @@ title: Integration by substitution
             </p>
         </div>
         <div class="col">
-            <div class="example fragment">
+            <div class="example fragment" data-audio-src="6-5.mp3">
                 Compute
                 \[
                     \int e^{x^2} \, 2x \, dx.
                 \]
             </div>
-            <p class="fragment small"><b>Solution.</b>
+            <p class="fragment small" data-audio-src="6-6.mp3"><b>Solution.</b>
                 The "inner" function is $u = g(x) = x^2$
                 (so $g'(x) = 2x$), and the "outer" function $f(x) = e^x$.
-                <span class="fragment">
+                <span class="fragment" data-audio-src="6-7.mp3">
                     Thus,
                     \begin{gather*}
                         \int e^{x^2} 2x dx.
@@ -251,13 +251,13 @@ title: Integration by substitution
 
         </div>
     </div>
-    <p class="fragment small lowlight">
+    <p class="fragment small lowlight" data-audio-src="6-8.mp3">
         The notations we used in these examples may be awkward,
         and they are there just to help us to see the connection to chain rule.
         We will see a more natural way of writing.
     </p>
 </section>
-<section>
+<section data-audio-src="7-1.mp3">
     <h3>Substitution in action: a more natural way of writing</h3>
     <div class="cols">
         <div class="col">
@@ -266,18 +266,18 @@ title: Integration by substitution
                 \[ \int \cos( \, 3x \,) dx \]
             </div>
         </div>
-        <div class="col fragment">
+        <div class="col fragment" data-audio-src="7-2.mp3">
             <b>Solution.</b>
             We will now follow a more natural way writing.
-            <p class="fragment">
+            <p class="fragment" data-audio-src="7-3.mp3">
                 Let $u = 3x$ (the "inner" function")
-                <span class="fragment">then $du = \frac{du}{dx} \, dx = 3x \, dx.$</span>
+                <span class="fragment" data-audio-src="7-4.mp3">then $du = \frac{du}{dx} \, dx = 3 \, dx.$</span>
             </p>
         </div>
     </div>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="7-5.mp3">
         That is, $ \color{blue}{\frac{1}{3} du = dx}$.
-        <span class="fragment">
+        <span class="fragment" data-audio-src="7-6.mp3">
             Now we can replace $\color{red}{3x}$ by $\color{red}{u}$
             and replace $\color{blue}{dx}$ by $\color{blue}{\frac{1}{3} du}$:
             \begin{align*}
@@ -288,7 +288,7 @@ title: Integration by substitution
             \end{align*}
             where $C$ is an arbitrary constant.
         </span>
-        <span class="fragment">
+        <span class="fragment" data-audio-src="7-7.mp3">
             Don’t forget that $u$ is a variable we introduced ourselves.
             So we have to substitute everything back and get 
             \[
@@ -298,7 +298,7 @@ title: Integration by substitution
         </span>
     </p>
 </section>
-<section>
+<section data-audio-src="8-1.mp3">
     <h3>One more example</h3>
     <div class="cols">
         <div class="col">
@@ -307,19 +307,19 @@ title: Integration by substitution
                 \[ \int x \sqrt{1 + x^2} dx \]
             </div>
         </div>
-        <div class="col fragment">
+        <div class="col fragment" data-audio-src="8-2.mp3">
             <b>Solution.</b>
             Let $u = 1+x^2$, 
-            <span class="fragment">then, by definition, $du = 2x \, dx.$</span>
-            <span class="fragment">
+            <span class="fragment" data-audio-src="8-3.mp3">then, by definition, $du = 2x \, dx.$</span>
+            <span class="fragment" data-audio-src="8-4.mp3">
                 That is, \[ \color{blue}{\frac{1}{2} du = x \, dx} \]
             </span>
         </div>
     </div>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="8-5.mp3">
         Now we can replace $\color{red}{1+x^2}$ by $\color{red}{u}$
         and replace $\color{blue}{x \, dx}$ by $\frac{1}{2} du$.
-        <span class="fragment">
+        <span class="fragment" data-audio-src="8-6.mp3">
             Therefore,
             \begin{align*}
                 \int \color{blue}{x} \sqrt{\color{red}{1+x^2} } \,\color{blue}{dx}
@@ -329,7 +329,7 @@ title: Integration by substitution
             \end{align*}
             where $C$ is an arbitrary constant.
         </span>
-        <span class="fragment">
+        <span class="fragment" data-audio-src="8-7.mp3">
             Again, $u$ is a variable we introduced ourselves.
             So we have to substitute everything back and get 
             \[
@@ -339,7 +339,7 @@ title: Integration by substitution
         </span>
     </p>
 </section>
-<section>
+<section data-audio-src="9-1.mp3">
     <h3>Integration by substitution</h3>
     <p>
         The above procedure is the essence of 
@@ -347,16 +347,16 @@ title: Integration by substitution
         Simply put, when faced with a complicated integral of the form $\int f(x) dx$,
     </p>
     <ol>
-        <li class="fragment">Identify a part of the integral and replace it by a new variable;</li>
-        <li class="fragment">Also properly replace the differential $dx$;</li>
-        <li class="fragment">Compute the resulting simpler integral if possible;</li>
-        <li class="fragment">Replace everything back.</li>
+        <li class="fragment" data-audio-src="9-2.mp3">Identify a part of the integral and replace it by a new variable;</li>
+        <li class="fragment" data-audio-src="9-3.mp3">Also properly replace the differential $dx$;</li>
+        <li class="fragment" data-audio-src="9-4.mp3">Compute the resulting simpler integral if possible;</li>
+        <li class="fragment" data-audio-src="9-5.mp3">Replace everything back.</li>
     </ol>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="9-6.mp3">
         This is the main idea.
         You will have to practice these on many problems to become proficient in this technique.
     </p>
-    <div class="cols fragment">
+    <div class="cols fragment" data-audio-src="9-7.mp3">
         <div class="col">
             <div class="problem">
                 Compute
@@ -389,7 +389,7 @@ title: Integration by substitution
             = \frac{(3x^2 - 9)^5}{30} + C.\]</span></p>
 <p>Compute the indefinite integral <span class="math display">\[\int \cos(x^2) x dx.\]</span> (Hint: try the substitution <span class="math inline">\(u=x^2\)</span>)</p> -->
 </section>
-<section>
+<section data-audio-src="10-1.mp3">
     <h3>A less obvious example</h3>
     <div class="cols">
         <div class="col example">
@@ -400,25 +400,25 @@ title: Integration by substitution
             Let's first rewrite $\tan(x)$ in terms of $\sin(x)$ and $\cos(x)$: 
         </div>
     </div>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="10-2.mp3">
         \[
             \int \tan(x) dx
             = \int \frac{\sin(x)}{\cos(x)} dx
             = \int \frac{1}{\cos(x)} \, \sin(x) \, dx.
         \] 
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="10-3.mp3">
         Now we can pick $u = \cos(x)$.
-        <span class="fragment">
+        <span class="fragment" data-audio-src="10-4.mp3">
             then $du = -\sin(x) dx$.
         </span>
-        <span class="fragment">
+        <span class="fragment" data-audio-src="10-5.mp3">
             That is, 
             \[
                 (-1) du = \sin(x) dx.
             \]
         </span>
-        <span class="fragment">
+        <span class="fragment" data-audio-src="10-6.mp3">
             Therefore the above integral becomes
             \[
                 \int \frac{1}{\cos(x)} \sin(x) dx
@@ -429,7 +429,7 @@ title: Integration by substitution
         </span>
     </p>
 </section>
-<section>
+<section data-audio-src="11-1.mp3">
     <h3>When substitution doesn't work</h3>
     <p>
         It is very important to understand the limitation of your tools.
@@ -438,7 +438,7 @@ title: Integration by substitution
             \int e^{x^2} dx.
         \]
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="11-2.mp3">
         Can you see why the substitution $u = x^2$ will not work?
     </p>
 </section>
