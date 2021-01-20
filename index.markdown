@@ -17,11 +17,11 @@ and is supported by [NSF grant DMS-1923099](https://nsf.gov/awardsearch/showAwar
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Fall semester of 2020 I am teaching
+In the Spring semester of 2021 I am teaching
 
-- [MATH-1620](teaching/calc2/)     (Calculus II)
-- [MATH-3690](teaching/ode/)       (Differential equations)
-- [MATH-4400](teaching/modsim/)    (Math Models and Simulations)
+- [MATH-1620](calc2/)     (Calculus II)
+- [MATH-2630](calc3/)     (Multivariable Calculus)
+- [MATH-2660](linalg/)    (Linear algebra)
 
 Office hours
 ------------

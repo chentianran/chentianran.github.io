@@ -5,22 +5,22 @@ title: Teaching
 
 # Teaching
 
-## Fall 2020
+## Spring 2021
 
 - [MATH-1620](calc2/)     (Calculus II)
-- [MATH-3690](ode/)       (Differential equations)
-- [MATH-4400](modsim/)    (Math Models and Simulations)
+- [MATH-2630](calc3/)     (Multivariable Calculus)
+- [MATH-2660](linalg/)    (Linear algebra)
 
 ## Previous courses
 
-- [MATH-2660](linalg/)    (Linear algebra)
 - [MATH-1050](math-1050/) (College algebra)
 - [MATH-1120](math-1120/) (Precalculus algebra)
 - [MATH-1610](calc1/)     (Calculus I),
-- [MATH-2630](calc3/)     (Multivariable Calculus)
+- [MATH-3690](ode/)       (Differential equations)
 - [MATH-4230](complex/)   (Complex variable)
 - [MATH-4310](alg1/)      (Modern Algebra I)
 - [MATH-4320](alg2/)      (Modern Algebra II)
+- [MATH-4400](modsim/)    (Math Models and Simulations)
 - [MATH-4600](num/)       (Numerical analysis)
 - [CSCI-1210](matlab/)    (Introduction to computer programming)
 
