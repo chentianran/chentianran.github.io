@@ -10,6 +10,7 @@ title: MATH-1620
 * Title: Calculus II
 * Time: Monday and Wednesday, 12:45pm -- 2:25pm
 * Room: 318 Goodwyn Hall
+* Zoom link: [837 7004 8328](https://auburn.zoom.us/j/83770048328?pwd=YXJlT0V3aktyWnJHWDg5VDhwRmM1QT09) (the passcode is the CRN of this course)
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/calc2/>

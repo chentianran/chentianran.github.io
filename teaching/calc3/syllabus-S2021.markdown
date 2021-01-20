@@ -9,10 +9,11 @@ title: MATH-2630
 
 * Title: Calculus III
 * Time: Tuesday and Thursday, 10:50am -- 12:30pm
-* Room: 318 Goodwyn Hall
+* Room: 318 Goodwyn Hall 
+* Zoom link: [884 6156 8188](https://auburn.zoom.us/j/88461568188?pwd=WXMyMUZtMk9iaFhCa0pxakV4SE9BZz09) (the passcode is the CRN of this course)
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
-* Course page: <http://www.tianranchen.org/teaching/calc2/>
+* Course page: <http://www.tianranchen.org/teaching/calc3/>
 {% include hours.markdown %}
 {% include appointments.markdown %}
 
@@ -50,11 +51,7 @@ These prerequisite can be satisfied by MATH-1610 and MATH-1620
 
 * [Required] _Calculus: Early Transcendentals_ (any edition) by Larson & Edwards
   (6th edition ISBN: 978-1285774770)
-* [Optional] _Calculus_ by Gilbert Strang (PDF version is _free_!)
-  * [One single big PDF file](http://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf)
-  * [PDF files by chapters](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/)
-  * [A few great video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
-* [Optional] _OpenSTAX Calculus Volume 2_ (__free!__)
+* [Optional] _OpenSTAX Calculus Volume 3_ (__free!__)
   * [Online view](https://openstax.org/details/books/calculus-volume-3)
   * [PDF direct link](https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume3-OP.pdf)
 
@@ -94,20 +91,20 @@ However, all in-class quizzes and exams are designed so that no calculator will 
 ### Instruction method
 
 In this semester, we will adopt a "blended flipped" model.
-This means most of the lectures are delivered in pre-recorded digital form.
+This means _some_ of the lectures are delivered in digital form.
 You are expected to watch/read/listen to these lecture and read our textbook.
 
 In addition, you are expected to meet with me either in-person or virtually
 (via Zoom) during regular class meetings.
-In these meetings, I will answer your question, work on problem with you,
-or have other discussions related to this course.
+In these meetings, we will discuss important concepts,
+answer your questions, and work on problems together
+(or have other discussions related to this course).
 <!-- These meetings will be a component of your course grade.
 See detailed explanation below. -->
 
 ### Access to digital course material
 
-Lecture notes (PDF files) and 
-links to narrated lectures (with pre-recorded voice-overs)
+Supplemental lecture notes other digital material
 can be found in the "Content" folder on our Blackboard course page.
 
 ### Reading tests
@@ -118,7 +115,7 @@ __No late submission will be accepted__
 unless valid reasons
 (military assignments, medical issues, family emergency, etc)
 and _proper documentation_ are provided, preferably _in advance_.
-Otherwise, a missing reading test receives a score of zero.
+Otherwise, a missed reading test receives a score of zero.
 It is recommended that you finish each reading test at least a few days
 before the due date.
 
@@ -236,9 +233,9 @@ and is calculated according to the following weights.
 
 | Component          | Percentage | Where/how               |
 |--------------------|------------|-------------------------|
-| Reading tests      |   25%      | Blackboard              |
+| Reading tests      |   20%      | Blackboard              |
 | Concept tests      |   15%      | Blackboard              |
-| Homework           |   10%      | Blackboard              |
+| Homework           |   15%      | Blackboard              |
 | Quizzes            |   45%      | In person or Blackboard |
 | Final exam         |    5%      | In person or Blackboard |
 

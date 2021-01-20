@@ -10,6 +10,7 @@ title: MATH-2660
 * Title: Linear Algebra
 * Time: Tuesday and Thursday, 9:25am -- 10:40pm
 * Room: 318 Goodwyn Hall
+* Zoom link: [847 7834 3808](https://auburn.zoom.us/j/84778343808?pwd=ek5WZnB0UFJFZjBnZEd0cWV3TnFBdz09) (the passcode is the CRN of this course)
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/linalg/>
