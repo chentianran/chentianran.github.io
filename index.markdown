@@ -19,9 +19,9 @@ For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
 In the Spring semester of 2021 I am teaching
 
-- [MATH-1620](calc2/)     (Calculus II)
-- [MATH-2630](calc3/)     (Multivariable Calculus)
-- [MATH-2660](linalg/)    (Linear algebra)
+- [MATH-1620](teaching/calc2/)     (Calculus II)
+- [MATH-2630](teaching/calc3/)     (Multivariable Calculus)
+- [MATH-2660](teaching/linalg/)    (Linear algebra)
 
 Office hours
 ------------
