@@ -20,15 +20,15 @@ title: Integration by substitution
         <!-- Auburn University at Montgomery -->
     <!-- </p> -->
 </section>
-<!-- <section data-audio-src="1-1.mp3"> </section> -->
-<section>
+<!-- <section> </section> -->
+<section data-audio-src="1-1.mp3">
     <h3>Substitution for definite integrals</h3>
     <p>
         We already learned how to use the method of substitution to turn
         seemingly complicated indefinite integrals into 
         simpler ones we can actually compute.
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="1-2.mp3">
         For example, we learned how to compute integrals like these
         \[
             \int e^{x^2} \, 2x \, dx,
@@ -36,20 +36,20 @@ title: Integration by substitution
             \int \frac{3x}{\sqrt{x^2+1}} dx,
         \]
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="1-3.mp3">
         A natural question to ask is: What about definite integral like
         \[
             \int_0^1 \frac{3x}{\sqrt{x^2+1}} dx \, ?
         \]
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="1-4.mp3">
         Thanks to the Fundamental Theorem of Calculus,
         definite integrals can be computed through indefinite integrals,
         so the same applies,
         <em>as long as we also perform the same transformation to the limits of integration</em>.
     </p>
 </section>
-<section>
+<section data-audio-src="2-1.mp3">
     <h3>A simple example</h3>
     <div class="cols">
         <div class="col">
@@ -57,28 +57,28 @@ title: Integration by substitution
                 Compute the definite integral 
                 \[\int_0^2 (x-1)^5 dx.\]
             </div>
-            <p class="fragment">
+            <p class="fragment" data-audio-src="2-2.mp3">
                 <b>Solution.</b>
                 Applying a substitution,
                 we let $u = x-1$ then $du = dx$. 
             </p>
         </div>
         <div class="col">
-            <span class="fragment highlight">
+            <span class="fragment highlight" data-audio-src="2-3.mp3">
                 We also have to pay attention to the limits of integration,
                 because "$\int_0^2$" means from $x=0$ to $x=2$.
                 We have to convert those to the equivalent boundary in terms of $u$.
             </span>
-            <p class="fragment">
+            <p class="fragment" data-audio-src="2-4.mp3">
                 When $x=0$, $u=-1$.
             </p>
-            <p class="fragment">
+            <p class="fragment" data-audio-src="2-5.mp3">
                 When $x=2$, $u=1$.
             </p>
 
         </div>
     </div>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="2-6.mp3">
         Therefore, 
         \[
             \int_0^2 (x-1)^5 dx
@@ -89,7 +89,7 @@ title: Integration by substitution
         \]
     </p>
 </section>
-<section>
+<section data-audio-src="3-1.mp3">
     <h3>The formal statement</h3>
     <p>
         We now state the simple procedure illustrated in the previous example more formally.
@@ -102,14 +102,14 @@ title: Integration by substitution
         \]
         as long as the integral is defined.
     </div>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="3-2.mp3">
         As we saw in the previous example,
         this is nothing but a formal way of saying:
         When you perform a substitution,
         you should substitute the limits of integration as well.
     </p>
 </section>
-<section>
+<section data-audio-src="4-1.mp3">
     <h3>An alternative</h3>
     <p>
         In certain situations, 
@@ -126,18 +126,18 @@ title: Integration by substitution
             </div>
         </div>
         <div class="col">
-            <p class="fragment">
+            <p class="fragment" data-audio-src="4-2.mp3">
                 Applying a substitution,
                 we let $\color{red}{u = \sin(x)}$, 
                 then $\color{blue}{du = \cos(x) dx}$.
-                <span class="fragment">
+                <span class="fragment" data-audio-src="4-3.mp3">
                     So $\int [\color{red}{\sin(x)}]^2 \color{blue}{\cos(x) dx} =
                     \int \color{red}{u}^2 \color{blue}{du}$.
                 </span>
             </p>
         </div>
     </div>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="4-4.mp3">
         So the original integral can be turned into 
         \[ 
             \int_\square^\square u^2 du
@@ -146,7 +146,7 @@ title: Integration by substitution
             = \frac{\sin^3(2) - \sin^3(1)}{3}.
         \]
     </p>
-    <p class="fragment">
+    <p class="fragment" data-audio-src="4-5.mp3">
         Here, we use "$\square$" to indicate that 
         we <em>should</em> compute the new limits of integration 
         with respect to the new variable $u$,
