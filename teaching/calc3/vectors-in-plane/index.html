@@ -1,0 +1,348 @@
+---
+layout: ilecture2
+title: Vectors in the plane
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Vectors in the plane</h2>
+        <p class="small">
+            Mathematics of "directed" quantities
+        </p>
+    </div>
+    <p>
+        In many applications, we need to manipulate quantities
+        that contain not only magnitude (how big) but also direction (which way) information.
+        In mathematics, these are captured by the abstract concept of "vectors".
+    </p>
+    <p>
+        A vectors is a geometric object that has both magnitude and direction.
+        In the plane they can be represented by "directed" line segments.
+        In this lecture, we will learn how to represent and carry out calculations with vectors.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<!-- <section data-audio-src="1-1.mp3"> </section> -->
+<section>
+    <h3>Vectors</h3>
+    <p>
+        In many applications, we need to manipulate quantities
+        that contain not only magnitude (how big) but also direction (which way) information.
+        Familiar examples of such quantities include force, velocity, and acceleration.
+        In mathematics, these are captured by the abstract concept of "vectors".
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <div class="definition">
+                A <b class="term">vectors</b> 
+                is a geometric object that has both 
+                <em class="highlight">magnitude</em> and 
+                <em class="highlight">direction</em>.
+            </div>
+            <p>
+                In the plane, they can be represented by "directed" line segments.
+                We will learn how to represent and carry out calculations with vectors.
+            </p>
+        </div>
+        <div class="col fragment">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 190">
+                <defs>
+                  <marker id="arrowhead" markerWidth="8" markerHeight="5" 
+                  refX="0" refY="2.5" orient="auto">
+                    <polygon points="0 0, 8 2.5, 0 5" />
+                  </marker>
+                </defs>
+                <line x1="10" y1="180" x2="250" y2="50" stroke="#000" 
+                stroke-width="5" marker-end="url(#arrowhead)" />
+            </svg>
+            <p>
+                Vectors are represented as line segments with arrowheads.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="cols">
+        <div class="col">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 190">
+                <defs>
+                  <marker id="arrowhead" markerWidth="8" markerHeight="5" 
+                  refX="0" refY="2.5" orient="auto">
+                    <polygon points="0 0, 8 2.5, 0 5" />
+                  </marker>
+                </defs>
+                <line x1="10" y1="180" x2="250" y2="50" stroke="#000" 
+                stroke-width="5" marker-end="url(#arrowhead)" />
+            </svg>
+        </div>
+        <div class="col">
+            <p>
+                A "<em>directed</em>" line segment is 
+                simply a line segment with an assigned direction.
+                The two end points are called its
+                <b class="term">initial point</b> and
+                <b class="term">terminal point</b>  respectively,
+                and we usually draw an arrowhead from the initial point
+                to the terminal point to indicate the <em class="term">direction</em>.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        The length of the line segment represent the <em class="term">magnitude</em>
+        of the vector.
+    </p>
+    <p class="fragment">
+        In mathematics, it is most common to use lowercase boldface letters
+        for names of vectors (e.g. $\mathbf{v}$ or $\mathbf{u}$).
+        When it is difficult to simulate boldface types,
+        we often use small arrowhead over lowercase letters
+        (e.g. $\vec{v}$ and $\vec{u}$).
+    </p>
+</section>
+<section>
+    <h3>The zero vector</h3>
+
+    <p>
+        In order to be able to carry out computation with vectors,
+        it is also necessary to include a special vector
+        that has zero magnitude --- the "zero vector".
+    </p>
+    <div class="cols">
+        <div class="col definition fragment">
+            The <b class="term">zero vector</b>
+            is the unique vector with zero magnitude and no direction.
+        </div>
+        <div class="col fragment">
+            <p>
+                The zero vector is the only vector that has no assigned direction,
+                and it is usually represent by a single point.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        It is usually denoted by $\mathbf{0}$ (the boldface 0).
+        Alternatively, we can use the notation $\vec{0}$
+        if boldface type is difficult to simulate.
+        Whichever notation we use, we must distinguish it from 0 (the number)
+        as they are very different.
+        <!-- In the plane, we usually represent the zero vector
+        with a single point, when necessary (without arrowhead). -->
+    </p>
+</section>
+<section>
+    <h3>Equivalent vectors</h3>
+    <p>
+        Even though we represent vectors by directed line segment,
+        it is important to understand vectors are not "attached" to points.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <div class="definition">
+                Two vectors are said to be <b class="term">equivalent</b>
+                if they have the same magnitude and direction.
+            </div>
+        </div>
+        <div class="col fragment">
+            <p>
+                In other words, in the representation of a vector,
+                the initial and terminal points are not important.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Only its magnitude (length) and direction are important,
+        and you are free to draw it anywhere you like
+        as long as these two properties are preserved.
+    </p>
+    <p class="fragment">
+        For two equivalent vectors $\mathbf{v}$ and $\mathbf{u}$,
+        we write $\mathbf{v} = \mathbf{u}$.
+    </p>
+</section>
+<section>
+    <h3>Scalars vs. vectors</h3>
+
+    <p>
+        In calculations, vectors often interact with numbers (real numbers),
+        so it crucial to distinguish these two classes of objects.
+    </p>
+    <p class="fragment">
+        In our context, we also call a real number a <b class="term">scalar</b>
+        to emphasize this important distinction.
+        Essentially, a scalar has a magnitude, but no direction.
+    </p>
+    <p class="fragment">
+        For example, the velocity of an object is a vector,
+        but its speed is a scalar.
+    </p>
+    <p class="fragment">
+        We usually use regular (non-boldface) lowercase letters
+        for names scalar quantities 
+        (but the distinction should always be clear from the context).
+    </p>
+</section>
+<section>
+    <h3>Magnitude of vectors and unit vectors</h3>
+
+    <div class="cols">
+        <div class="col">
+            <p>
+                For a vector $\mathbf{v}$ in the plane,
+                its <em class="term">magnitude</em> is denoted by
+                $\| \mathbf{v} \|$,
+                and it is a <em>nonnegative</em> real number.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Indeed, the zero vector $\mathbf{0}$
+                is the only vector with 0 magnitude.
+                All other vectors have positive magnitude.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        In certain context, the magnitude of a vector
+        is also known as its <b class="term">norm</b>.
+    </p>
+    <div class="definition fragment">
+        A <b class="term">unit vector</b> is 
+        a vector whose magnitude is 1.
+    </div>
+    <p class="fragment small lowlight">
+        There are infinitely many unit vectors.
+        Indeed, picking any point on the unit circle (centered at the origin),
+        the directed line segment from origin to this point
+        gives us a unit vector.
+        Of course, there are infinitely many such vectors.
+    </p>
+</section>
+<section>
+    <h3>Working in a coordinate system</h3>
+    <p>
+        When carrying out computation involving vectors in a plane,
+        it is much preferred to work in a coordinate system.
+        There are many coordinate systems.
+        The <em class="term">Cartesian coordinate system</em> 
+        is the most straightforward one,
+        and we will work within this system for most of the lectures in this course.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                Since a vector can be "placed" anywhere,
+                we can always move it so that its initial point is the origin.
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                Once in this position,
+                we can use the $x$ and $y$ coordinates of the terminal point to represent this vector.
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                If a vector has original as its initial point
+                and the point $(x,y)$ as its terminal point,
+                then we can use the pair of number $x,y$ to represent it.
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                We can use a variety of notations
+                \[
+                    (x,y)
+                    \quad\text{or}\quad
+                    \langle x, y \rangle
+                    \quad\text{or}\quad
+                    \begin{bmatrix}
+                        x \\ y
+                    \end{bmatrix}
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Here, $x$ and $y$ are called <b class="term">components</b> of this vector.
+    </p>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="problem">
+                Let $\mathbf{v}$ be the vector with initial point $(2,3)$
+                and terminal point $(6,5)$.
+                Find the components of this vector and express it in the form
+                \[
+                    \begin{bmatrix}
+                        x \\ y
+                    \end{bmatrix}
+                \]
+            </div>
+        </div>
+        <div class="col">
+            <div class="problem">
+                What are the components of the zero vector $\mathbf{0}$?
+            </div>
+            <div class="problem">
+                Do you think it true that two equivalent vectors must have the same components?
+                What about the converse of this statement?
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Vector magnitude in coordinates</h3>
+    <p class="">
+        Using Pythagorean Theorem,
+        we can compute the magnitude of a vector from its components easily.
+    </p>
+    <div class="theorem fragment">
+        In the Cartesian coordinate system,
+        the magnitude of the vector
+        $
+            \mathbf{v} = 
+            \begin{bmatrix}
+                x \\ y
+            \end{bmatrix}
+        $
+        is given by
+        \[
+            \| \mathbf{v} \| = \sqrt{ x^2 + y^2 }.
+        \]
+    </div>
+    <div class="cols">
+        <div class="col">
+            <div class="problem fragment">
+                Find the magnitude of
+                \[
+                    \begin{bmatrix}
+                        1 \\ 1
+                    \end{bmatrix},
+                    \quad
+                    \begin{bmatrix}
+                        3 \\ 4
+                    \end{bmatrix},
+                    \quad
+                    \begin{bmatrix}
+                        2 \\ -3
+                    \end{bmatrix}.
+                \]
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                From this formula,
+                we can also see that the magnitude of a vector
+                must be a nonnegative real number.
+            </p>
+        </div>
+    </div>
+</section>
