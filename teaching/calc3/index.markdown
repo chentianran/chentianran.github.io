@@ -11,6 +11,9 @@ which is a fundamental pillar for modern science and engineering. -->
 * [Syllabus](syllabus-S2021/)
 <!-- * [Schedule](syllabus/#schedule) -->
 
+## Lecture slideshows
+
+* [Vectors in the plane](vectors-in-plane/)
 
 <!-- ## How to survive this course?
 
