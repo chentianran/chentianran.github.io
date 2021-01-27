@@ -1,19 +1,32 @@
 ---
-layout: lecture
+layout: ilecture2
 title: Improper integrals
 ---
 
 <section class="titlepage">
-    <h2 class="title">Improper integrals</h2>
-    <p>Tianran Chen</p>
+    <div class="titlebox">
+        <h2 class="title">Improper integrals</h2>
+        <p class="small">
+            Integrate all the way to infinity
+        </p>
+    </div>
+    <p>
+        An important generalization of definite integral
+        (the Riemann integral) which we have learned in basic calculus
+        is the special kind of integral that involves infinity.
+        As strange as it may sound, it actually has broad applications
+        in real-world problems.
+    </p>
+    
+    <!-- <p>Tianran Chen</p>
     <p class="footnote2">
         Department of Mathematics<br>
         Auburn University at Montgomery
-    </p>
+    </p> -->
 </section>
-<section>
+<section data-audio-src="audio/1-1.mp3">
     <h3>The "wrong" kind of integrals</h3>
-    <p class="fragment" data-audio-src="audio/1-1.mp3">
+    <p>
         By now, we should have a solid understanding of definite integrals
         $\int_a^b f(x) dx$.
         We defined this rigorously via Riemann sum.
@@ -67,9 +80,9 @@ title: Improper integrals
         </p>
     </aside>
 </section>
-<section>
+<section data-audio-src="audio/2-1.mp3">
     <h3>Integration over infinite intervals</h3>
-    <p class="fragment" data-audio-src="audio/2-1.mp3">
+    <p>
         The first kind of integrals we are going to look at 
         involve interval that are infinitely long.
         E.g.
@@ -114,21 +127,20 @@ title: Improper integrals
         </p>
     </aside>
 </section>
-<section>
-    <div class="theorem">
-        <b>Definition. (Improper integral)</b>
-        <p class="fragment" data-audio-src="audio/3-1.mp3">
-            For a <em>continuous</em> function $f(x)$, 
-            we define
-            \[
-                \int_a^{\infty} f(x) dx = \lim_{t \to \infty} \int_a^t f(x) dx
-            \]
-            if the limit exists (and finite), 
-            in which case we say the improper integral <b>converges</b>
-            (or is <b>convergent</b>).
-            Otherwise, we say it <b>diverges</b>
-            (or is <b>divergent</b>).
-        </p>
+<section data-audio-src="audio/3-1.mp3">
+    <h3>Definitions</h3>
+    <div class="definition">
+        <b>(Improper integral)</b>
+        For a <em>continuous</em> function $f(x)$, 
+        we define
+        \[
+            \int_a^{\infty} f(x) dx = \lim_{t \to \infty} \int_a^t f(x) dx
+        \]
+        if the limit exists (and finite), 
+        in which case we say the improper integral <b class="term">converges</b>
+        (or is <b class="term">convergent</b>).
+        Otherwise, we say it <b class="term">diverges</b>
+        (or is <b class="term">divergent</b>).
     </div>
     <aside class="notes">
         <p>
@@ -181,25 +193,24 @@ title: Improper integrals
     </p>
 </section>
 <section data-audio-src="audio/4-1.mp3">
+    <h3>From $-\infty$ to $\infty$</h3>
     <p>
         Based on these, we can make sense of 
         integrals from $-\infty$ to $\infty$
         by splitting it into two separate integrals.
     </p>
-    <div class="theorem fragment" data-audio-src="audio/4-2.mp3">
-        <p>
-            For a function $f(x)$ <em>continuous </em> on $(-\infty,\infty)$, 
-            we define
-            \[
-                \int_{-\infty}^{\infty} f(x) dx = 
-                \int_{-\infty}^a f(x) \, dx +
-                \int_a^{\infty}  f(x) \, dx
-            \]
-            for any (finite) $a$,
-            if both integrals on the right hand side are convergent.
-            In this case, we say the integral is <b>convergent</b>.
-            Otherwise, we say this integral is <b>divergent</b>.
-        </p>
+    <div class="definition fragment" data-audio-src="audio/4-2.mp3">
+        For a function $f(x)$ <em>continuous </em> on $(-\infty,\infty)$, 
+        we define
+        \[
+            \int_{-\infty}^{\infty} f(x) dx = 
+            \int_{-\infty}^a f(x) \, dx +
+            \int_a^{\infty}  f(x) \, dx
+        \]
+        for any (finite) $a$,
+        if both integrals on the right hand side are convergent.
+        In this case, we say the integral is <b class="term">convergent</b>.
+        Otherwise, we say this integral is <b class="term">divergent</b>.
     </div>
     <p class="fragment" data-audio-src="audio/4-3.mp3">
         Note that the choice of $a$ here is arbitrary,
@@ -226,12 +237,11 @@ title: Improper integrals
         </p>
     </aside>
 </section>
-<section>
-    <h3>Example 1</h3>
-    <p class="fragment" data-audio-src="audio/5-1.mp3">
+<section data-audio-src="audio/5-1.mp3">
+    <div class="example">
         Determine if the improper integral $\int_1^\infty \frac{1}{x} \, dx$
         is convergent. If it is, compute its value.
-    </p>
+    </div>
     <p class="fragment" data-audio-src="audio/5-2.mp3">
         Using the definition given above,
         \begin{align*}
@@ -243,15 +253,14 @@ title: Improper integrals
         \end{align*}
         which does not exist.
         Therefore, the improper integral $\int_1^\infty \frac{1}{x} \, dx$
-        is divergent.
+        is <em class="highlight">divergent</em>.
     </p>
 </section>
-<section>
-    <h3>Example 2</h3>
-    <p class="fragment" data-audio-src="audio/6-1.mp3">
+<section data-audio-src="audio/6-1.mp3">
+    <div class="example">
         Determine if the improper integral $\int_1^\infty \frac{1}{x^2} \, dx$
         is convergent. If it is, compute its value.
-    </p>
+    </div>
     <p class="fragment" data-audio-src="audio/6-2.mp3">
         Using the definition given above,
         \begin{align*}
@@ -262,12 +271,11 @@ title: Improper integrals
             = 1.
         \end{align*}
         Therefore, the improper integral $\int_1^\infty \frac{1}{x} \, dx$
-        is convergent, and its value is 1.
+        is <em class="highlight">convergent</em>, and its value is 1.
     </p>
 </section>
-<section>
-    <h3>Exercise</h3>
-    <p class="fragment" data-audio-src="audio/7-1.mp3">
+<section data-audio-src="audio/7-1.mp3">
+    <div class="problem">
         For any given rational (or real) number $p>0$, 
         determine if 
         \[
@@ -275,16 +283,16 @@ title: Improper integrals
         \] 
         is convergent, and compute its value if it is convergent.
         (Hint: the result, of course, depends on $p$)
-    </p>
+    </div>
 </section>
-<section>
+<section data-audio-src="audio/8-1.mp3">
     <h3>Integrating over discontinuities</h3>
-    <p class="fragment" data-audio-src="audio/8-1.mp3">
+    <p>
         The second kind of improper integrals involves discontinuities.
         For example, even though 
         \[ \int_0^1 \frac{1}{\sqrt{x}} \, dx \]
         only involves a finite interval,
-        the integrand $1 / \sqrt{x}$ ``goes to infinity'' as $x \to 0$
+        the integrand $1 / \sqrt{x}$ "goes to infinity" as $x \to 0$
         and hence not defined (or finite) over the entire interval $[0,1]$.
     </p>
     <p class="fragment" data-audio-src="audio/8-2.mp3">
@@ -293,8 +301,7 @@ title: Improper integrals
     </p>
 </section>
 <section data-audio-src="audio/9-1.mp3">
-    <div class="theorem">
-        <p>
+    <div class="definition">
         If $f(x)$ is continuous in $[a,b)$, then
         \[
             \int_a^b f(x) dx = \lim_{t \to b^-} \int_a^t f(x) dx
@@ -307,16 +314,13 @@ title: Improper integrals
         \]
         In both cases, if the limits exist, we say the integrals <b>converge</b>.
         Otherwise we say the integrals <b>diverge</b>.
-        </p>
     </div>
 </section>
-<section>
-    <h3>Example 3</h3>
-    <p class="fragment" data-audio-src="audio/10-1.mp3">
+<section data-audio-src="audio/10-1.mp3">
+    <div class="example">
         Determine if the integral $\int_0^1 1 / \sqrt{x} \, dx$ is convergent,
         and compute its value if it is convergent.
-
-    </p>
+    </div>
     <p class="fragment" data-audio-src="audio/10-2.mp3">
         The integrand $1 / \sqrt{x}$ is continuous on $(0,1]$
         but grows unboundedly as $x \to 0^+$.
@@ -336,23 +340,20 @@ title: Improper integrals
         The same idea applies to integrals for which
         the integrand has a discontinuity in the middle of the interval.
     </p>
-    <div class="theorem">
-        <p>
-            If $f(x)$ is continuous in $[a,c)$ and $(c,b]$, then
-            \[
-                \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx
-            \]
-            if <em>both</em> of the integrals on the right hand side converge.
-            In this case, we say the integral <b>converges</b>.
-        </p>
+    <div class="definition">
+        If $f(x)$ is continuous in $[a,c)$ and $(c,b]$, then
+        \[
+            \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx
+        \]
+        if <em>both</em> of the integrals on the right hand side converge.
+        In this case, we say the integral <b class="term">converges</b>.
     </div>
 </section>
-<section>
-    <h3>Example 4</h3>
-    <p class="fragment" data-audio-src="audio/12-1.mp3">
+<section data-audio-src="audio/12-1.mp3">
+    <div class="example">
         Determine if the integral $\int_{-1}^1 1 / x \, dx$ is convergent,
         and compute its value if it is convergent.
-    </p>
+    </div>
     <p class="fragment" data-audio-src="audio/12-2.mp3">
         The integrand $1 / x$ has a vertical asymptote at $x=0$,
         and hence not continuous on $[-1,1]$.
@@ -371,14 +372,13 @@ title: Improper integrals
     </p>
 </section>
 <section data-audio-src="audio/13-1.mp3">
-    <h3>Exercise</h3>
-    <p>
+    <div class="problem">
         For any given rational (or real) number $p>0$, 
         determine if the improper integral
         \[ \int_0^1 \frac{1}{x^p} \, dx \] 
         is convergent,
         and compute its value if it is convergent.
-    </p>
+    </div>
 </section>
 
 <!-- 
