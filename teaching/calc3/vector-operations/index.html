@@ -1,0 +1,432 @@
+---
+layout: ilecture2
+title: Basic vectors operations
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Basic vector operations</h2>
+        <p class="small">
+            Doing algebra with vectors
+        </p>
+    </div>
+    <p>
+        We can carry out calculations with vectors.
+        In this lecture, we will see how to perform 
+        addition, subtraction, scalar product, and dot product of vectors.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Negative sign</h3>
+    <div class="definition">
+        For a nonzero vector $\mathbf{v}$,
+        $-\mathbf{v}$ has the same magnitude as $\mathbf{v}$ itself
+        and opposite direction.
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                For the zero vector,
+                we follow the convention that $-\mathbf{0} = \mathbf{0}$,
+                which is necessary to make computation with vectors possible.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                As expected, in coordinates,
+                \[
+                    -
+                    \begin{bmatrix}
+                        x \\ y
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        -x \\ -y
+                    \end{bmatrix}.
+                \]
+            </p>
+            <!-- <canvas class="zdog-canvas" width="240" height="240"></canvas> -->
+        </div>
+    </div>
+    <p class="fragment">
+        In the context of linear algebra,
+        $-\mathbf{v}$ is called the <b class="term">additive inverse</b> of $\mathbf{v}$.
+    </p>
+</section>
+<section>
+    <h3>Scalar product</h3>
+    <p>
+        Recall that in the context of this course,
+        a <em class="term">scalar</em> is simply a real number. 
+        We can multiply a vector by a scalar --- the "scalar multiplication".
+    </p>
+    <div class="definition fragment">
+        For a scalar $k$ and a vector $\mathbf{v}$,
+        the <b class="term">scalar multiplication</b> (product)
+        of the two, denoted by $k \, \mathbf{v}$,
+        as the vector whose magnitude is $|k|$ times the magnitude of $\mathbf{v}$ itself
+        and has a direction that is the same as the direction of $\mathbf{v}$ if $k>0$
+        or the opposite direction if $k < 0$.
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                For a positive scalar $k$, the scalar product $k \, \mathbf{v}$ 
+                is simply a stretched or squeezed version of $\mathbf{v}$.
+                E.g., $3 \mathbf{v}$ is exactly 3 times as long as $\mathbf{v}$ itself.
+                By extension, $0 \mathbf{v} = \mathbf{0}$.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                As expected,
+                \[
+                    (-1) \mathbf{v} = -\mathbf{v},
+                \]
+                and for $k < 0$,
+                \[
+                    k \, \mathbf{v} = |k|(-\mathbf{v}).
+                \]
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Scalar product in coordinates</h3>
+    <p>
+        It should come as no surprise that, in coordinate,
+        \[
+            k \,
+            \begin{bmatrix}
+                x \\ y
+            \end{bmatrix}
+            \;=\;
+            \begin{bmatrix}
+                k \, x \\ k \, y
+            \end{bmatrix}
+        \]
+        i.e., we simply need to scale each component by the same scalar.
+    </p>
+    <div class="cols fragment">
+        <div class="col">
+            <div class="problem">
+                Compute the scalar multiplication
+                \[
+                    3 \,
+                    \begin{bmatrix}
+                        2 \\ 1
+                    \end{bmatrix}
+                \]
+            </div>
+        </div>
+        <div class="col">
+            <div class="problem">
+                Compute the scalar multiplication
+                \[
+                    -2 \,
+                    \begin{bmatrix}
+                        4 \\ 0
+                    \end{bmatrix}
+                \]
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Normalization</h3>
+    <p>
+        One important operation defined in terms of scalar product
+        is "normalization", an operation that creates a unit vector.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="theoremlike fragment" data-type="Observation">
+                For a nonzero vector $\mathbf{v}$,
+                the scalar product
+                \[
+                    \frac{1}{\| \mathbf{v} \|}
+                    \, \mathbf{v}
+                \]
+                is a unit vector.
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                This operation that takes in the nonzero vector $\mathbf{v}$
+                and produces $\frac{1}{\|\mathbf{v}\|}$ 
+                is called <b class="term">normalization</b>.
+                The resulting vector has the same direction,
+                but has a magnitude of 1.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Clearly, it does not make sense to normalize the zero vector.
+    </p>
+</section>
+<section>
+    <h3>Sum of vectors</h3>
+    <p>
+        We can also add two vectors together,
+        and the sum is also a vector.
+    </p>
+    <div class="theoremlike fragment" data-type="Parallelogram interpretation">
+        Let $\mathbf{u}$ and $\mathbf{v}$ be two vectors
+        represented by two directed line segments sharing the same initial point.
+        Then the diagonal of the parallelogram spanned by $\mathbf{u}$ and $\mathbf{v}$
+        together with the same initial point represents the sum $\mathbf{u} + \mathbf{v}$.
+    </div>
+    <p class="fragment">
+        Equivalently, we can also place the initial point of $\mathbf{v}$ 
+        at the terminal point of $\mathbf{u}$.
+        Then $\mathbf{u} + \mathbf{v}$ the vector represented by the directed line segment 
+        that goes from the initial point of $\mathbf{u}$ to the terminal point of $\mathbf{v}$.
+    </p>
+</section>
+<section>
+    <h3>Difference of vectors in coordinates</h3>
+    <p>
+        As expected, we can define the difference of two vectors
+        in terms of vector sum and additive inverse.
+    </p>
+    <div class="definition">
+        For two vectors $\mathbf{u}$ and $\mathbf{v}$,
+        we define
+        \[
+            \mathbf{u} - \mathbf{v} =
+            \mathbf{u} + (-\mathbf{v}).
+        \]
+    </div>
+</section>
+<section>
+    <h3>Properties of vector sums/differences</h3>
+    <p>
+        Vectors form a new kind of mathematical object
+        that are different from numbers.
+        Fortunately, some familiar algebraic properties remain true.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                From the geometric interpretation,
+                we can see that
+                \begin{align*}
+                    \mathbf{v} + \mathbf{0} &= \mathbf{v} \\
+                    \mathbf{v} - \mathbf{0} &= \mathbf{v} \\
+                    \mathbf{0} - \mathbf{v} &= -\mathbf{v} \\
+                \end{align*}
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                It is also easy to verify the commutative property
+                \[
+                    \mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}
+                \]
+                still holds.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Vector addition in coordinate</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                Once we understand the geometric interpretation of vector sums,
+                it is easy to see how it works algebraically in coordinates.
+            </p>
+        </div>
+        <div class="col">
+            <div class="definition">
+                \[
+                    \begin{bmatrix} x \\ y \end{bmatrix}
+                    +
+                    \begin{bmatrix} a \\ b \end{bmatrix}
+                    =
+                    \begin{bmatrix} x + a \\ y + b \end{bmatrix}
+                \]
+            </div>
+        </div>
+    </div>
+    <p class="fragment">
+        In other words,
+        in the Cartesian coordinate system,
+        vector addition just reduces to component-wise addition.
+    </p>
+</section>
+<section>
+    <h3>Triangle inequality</h3>
+    <p>
+        From the graphical interpretations of vector sums,
+        it is easy to come up with an upper bound for the
+        magnitude of the sum of two vectors
+        in terms of the magnitude of the two individual vectors.
+    </p>
+    <div class="theorem">
+        For two vectors $\mathbf{u}$ and $\mathbf{v}$,
+        \[
+            \| \mathbf{u} + \mathbf{v} \|
+            \le
+            \| \mathbf{u} \| + \| \mathbf{v} \|.
+        \]
+    </div>
+    <p class="fragment">
+        The above inequality becomes an equality
+        if and only if all three vectors have the same direction
+        (including cases where $\mathbf{u}$ or $\mathbf{v}$ is the zero vector).
+    </p>
+</section>
+<section>
+    <h3>Scalar multiplication and vector addition</h3>
+    <p>
+        From the formula for vector addition in coordinate,
+        it is not hard to verify the following algebraic properties
+        \begin{align*}
+            k (\mathbf{u} + \mathbf{v}) &= (k \, \mathbf{u}) + (k \, \mathbf{v}) \\
+            (k_1 \mathbf{v}) + (k_2 \mathbf{v}) &= (k_1 + k_2) \, \mathbf{v} \\
+            k_1 (k_2 \mathbf{v}) &= (k_1 k_2) \, \mathbf{v} \\
+            0 \, \mathbf{v} &= \mathbf{0} \\
+        \end{align*}
+        for scalars $k,k_1,k_2$ and vectors $\mathbf{u},\mathbf{v}$.
+    </p>
+</section>
+<section>
+    <h3>Dot products in the plane</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                So far, we have learned how to add and subtract vectors
+                as well as how to multiply scalars to vectors.
+                It is then natural to ask if we can multiply vectors.
+                It turns out there are many types of multiplications,
+                and here we focus on one of them.
+            </p>
+        </div>
+        <div class="col fragment">
+            <div class="definition">
+                For vectors
+                \[
+                    \mathbf{u} = \begin{bmatrix} u_1 \\ u_2 \end{bmatrix}
+                    \quad\text{and}\quad
+                    \mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}
+                \]
+                in the plane, we define their <b class="term">dot product</b>
+                to be
+                \[
+                    \mathbf{u} \cdot \mathbf{v} =
+                    u_1 v_1 + u_2 v_2.
+                \]
+            </div>
+        </div>
+    </div>
+    <p class="fragment">
+        One very important observation is that
+        <em class="highlight">the dot product of two vectors is a scalar</em>
+        (not a vector).
+        This is why it is also known as the <b class="term">scalar product</b>.
+        In the context of linear algebra, this is also one example of an
+        <b class="term">inner product</b>.
+    </p>
+</section>
+<section>
+    <h3>Properties of dot product</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                From the definition, we can establish that
+                for any vector $\mathbf{v}$ with components $v_1$ and $v_2$,
+                \[
+                    \mathbf{v} \cdot \mathbf{v} = v_1^2 + v_2^2 = \| \mathbf{v} \|^2.
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                For vectors $\mathbf{u},\mathbf{v},\mathbf{w}$, and scalar $k$,
+                \begin{align*}
+                    \mathbf{u} \cdot \mathbf{v} &= \mathbf{v} \cdot \mathbf{u} \\
+                    \mathbf{u} \cdot (\mathbf{v} + \mathbf{w}) &= \mathbf{u} \cdot \mathbf{v} + \mathbf{u} \cdot \mathbf{w} \\
+                    k (\mathbf{u} \cdot \mathbf{v}) &= (k \, \mathbf{u}) \cdot \mathbf{v} = \mathbf{u} \cdot (k \, \mathbf{v})
+                \end{align*}
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        For any vector $\mathbf{v}$,
+        \[
+            \mathbf{0} \cdot \mathbf{v} = \mathbf{v} \cdot \mathbf{0} = 0.
+        \]
+    </p>
+</section>
+<section>
+    <h3>Geometric interpretation</h3>
+    <p>
+        The dot product of two vectors
+        has a nice geometric interpretation
+    </p>
+    <div class="theorem fragment">
+        For two nonzero vectors $\mathbf{u}$ and $\mathbf{v}$,
+        \[
+            \mathbf{u} \cdot \mathbf{v} = \| \mathbf{u} \| \, \| \mathbf{v} \| \, \cos(\theta)
+        \]
+        where $\theta$ is the angle between the two vector
+        (measured between $0$ and $\pi$).
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                The special case in which $\mathbf{u}$ is a unit vector 
+                will be used very often in this course.
+                In this case, the dot product $\mathbf{u} \cdot \mathbf{v}$
+                measures the 
+                <span class="highlight">
+                    signed length of the projection of $\mathbf{v}$
+                    in the direction of $\mathbf{u}$.
+                </span>
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                Another important observation is that
+                two <em>nonzero</em> vectors $\mathbf{u}$ and $\mathbf{v}$
+                are <b class="term">orthogonal</b> if and only if
+                \[
+                    \mathbf{u} \cdot \mathbf{v} = 0.
+                \]
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+<script>
+    let negV = new Zdog.Illustration({
+        element: '.zdog-canvas',
+    });
+
+    let v = new Zdog.Shape({
+        addTo: negV,
+        path: [
+            { x: 0 }, // start at 1st point
+            { x: 100, y:-50 }, // line to 2nd point
+        ],
+        stroke: 10,
+        color: '#636',
+    });
+    let vhead = new Zdog.Polygon({
+        addTo: v,
+        radius: 10,
+        sides: 3,
+        stroke: 5,
+        color: '#636',
+        fill: true,
+    });
+
+    negV.updateRenderGraph();
+</script> -->
