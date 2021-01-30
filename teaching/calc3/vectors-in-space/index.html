@@ -1,0 +1,201 @@
+---
+layout: ilecture2
+title: Basic vectors operations
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Basic vector operations</h2>
+        <p class="small">
+            Doing algebra with vectors
+        </p>
+    </div>
+    <p>
+        We can carry out calculations with vectors.
+        In this lecture, we will see how to perform 
+        addition, subtraction, scalar product, and dot product of vectors.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Just like the plane, but one more dimension</h3>
+</section>
+<section>
+    <h3>The right-handed coordinate system</h3>
+    <canvas class="zdog-canvas" width="600" height="400"></canvas>
+</section>
+
+<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+<script>
+    let spinning = true;
+    let ax = new Zdog.Illustration({
+        element: '.zdog-canvas',
+        dragRotate: true,
+        onDragStart: function() {
+            spinning = false;
+        },
+    });
+
+    const xcolor = '#D00';
+    const ycolor = '#0D0';
+    const zcolor = '#00D';
+    const thickness = 7;
+
+    let orig = new Zdog.Shape({
+        addTo: ax,
+        stroke: thickness,
+    //   color: '#636',
+    });
+
+    let x = new Zdog.Shape({
+        addTo: ax,
+        path: [
+            { x: 200, y: 0, z: 0 },
+            { x: thickness,   y: 0, z: 0 },
+        ],
+        stroke: thickness,
+        color: xcolor,
+    });
+    let xhead = new Zdog.Polygon({
+        addTo: x,
+        radius: 10,
+        sides: 3,
+        stroke: thickness,
+        color: xcolor,
+        fill: true,
+        translate: { x: 200 },
+        rotate: { z: Zdog.TAU/4 }
+    });
+    let xlabel1 = new Zdog.Shape({
+        addTo: x,
+        path: [
+            { x: -10, y: -10 },
+            { x:  10, y:  10 },
+        ],
+        stroke: 3,
+        color: xcolor,
+        translate: { x: 230 },
+    });
+    let xlabel2 = new Zdog.Shape({
+        addTo: x,
+        path: [
+            { x:  10, y: -10 },
+            { x: -10, y:  10 },
+        ],
+        stroke: 3,
+        color: xcolor,
+        translate: { x: 230 },
+    });
+
+    let y = new Zdog.Shape({
+        addTo: ax,
+        path: [
+            { x: 0, y: -thickness,   z: 0 },
+            { x: 0, y: -150, z: 0 },
+        ],
+        stroke: thickness,
+        color: ycolor,
+    });
+    let yhead = new Zdog.Polygon({
+        addTo: y,
+        radius: 10,
+        sides: 3,
+        stroke: thickness,
+        color: ycolor,
+        fill: true,
+        translate: { y: -150 },
+        // rotate: { z: -Zdog.TAU/4 }
+    });
+    let ylabel1 = new Zdog.Shape({
+        addTo: y,
+        path: [
+            { x: -10, y: -10 },
+            { x:   0, y:   0 },
+            { x:   0, y:  10 },
+        ],
+        closed: false,
+        stroke: 3,
+        color: ycolor,
+        translate: { y: -180 },
+    });
+    let ylabel2 = new Zdog.Shape({
+        addTo: y,
+        path: [
+            { x:  10, y: -10 },
+            { x:   0, y:   0 },
+        ],
+        closed: false,
+        stroke: 3,
+        color: ycolor,
+        translate: { y: -180 },
+    });
+
+    let z = new Zdog.Shape({
+        addTo: ax,
+        path: [
+            { x: 0, y: 0, z: thickness   },
+            { x: 0, y: 0, z: 200 },
+        ],
+        stroke: thickness,
+        color: zcolor,
+    });
+    let zhead = new Zdog.Polygon({
+        addTo: z,
+        radius: 10,
+        sides: 3,
+        stroke: thickness,
+        color: zcolor,
+        fill: true,
+        translate: { z: 200 },
+        rotate: { y: -Zdog.TAU/4, x: -Zdog.TAU/4 }
+    });
+    let zlabel0 = new Zdog.Shape({
+        addTo: z,
+        path: [
+            { y: -10, z:  10 },
+            { y: -10, z: -10 },
+            { y:  10, z:  10 },
+            { y:  10, z: -10 },
+        ],
+        closed: false,
+        stroke: 3,
+        color: zcolor,
+        translate: { z: 230 },
+        // rotate: { y: -Zdog.TAU/4, x: -Zdog.TAU/4 }
+    });
+
+    let box = new Zdog.Box({
+        addTo: ax,
+        width: 60,
+        height: 60,
+        depth: 60,
+        stroke: false,
+        color: '#C25', // default face color
+        leftFace: '#EA0',
+        rightFace: '#E62',
+        topFace: '#ED0',
+        bottomFace: '#636',
+        translate: { x: 60, y : -60, z: 60 },
+    });
+
+    // ax.rotate.y += 0.5;
+    ax.rotate.x -= 0.3;
+    ax.rotate.y += 0.2;
+
+    ax.updateRenderGraph();
+
+    function animate() {
+        if (spinning) {
+            ax.rotate.y += 0.005;
+        }
+        ax.updateRenderGraph();
+        requestAnimationFrame( animate );
+    }
+    // start animation
+    animate();
+</script>
+
