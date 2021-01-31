@@ -1,19 +1,18 @@
 ---
 layout: ilecture2
-title: Basic vectors operations
+title: Vectors in space
 ---
 
 <section class="titlepage">
     <div class="titlebox">
-        <h2 class="title">Basic vector operations</h2>
+        <h2 class="title">Vectors in space</h2>
         <p class="small">
-            Doing algebra with vectors
+            Working with vectors in 3-dimensional space and beyond.
         </p>
     </div>
     <p>
-        We can carry out calculations with vectors.
-        In this lecture, we will see how to perform 
-        addition, subtraction, scalar product, and dot product of vectors.
+        The algebra of vectors in the plane can be easily generalized
+        into the 3-dimensional space and beyond.
     </p>
     <!-- <p>Tianran Chen</p> -->
     <!-- <p class="footnote2"> -->
@@ -23,10 +22,161 @@ title: Basic vectors operations
 </section>
 <section>
     <h3>Just like the plane, but one more dimension</h3>
+    <p>
+        Everything we learned about vectors in the plane
+        have almost verbatim generalizations to higher dimensions.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <div class="definition">
+                A <b class="term">vector</b> 
+                (in space) is a quantity that has both 
+                <em class="highlight">magnitude</em> and 
+                <em class="highlight">direction</em>.
+            </div>
+            <p class="fragment">
+                Here, of course, we allow any direction in the space.
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                They are represented as line segments with arrowheads,
+                and we can write them down in coordinates in the form
+                \[
+                    \begin{bmatrix} a \\ b \\ c \end{bmatrix}
+                    \quad\text{or}\quad
+                    \langle a, b, c \rangle
+                \]
+                with (real number) components $a,b,c$ respectively.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Basic operations</h3>
+    <p>
+        All the basic operations generalize directly to vectors in space.
+        For example, vector sum/difference, scalar multiplication, and vector norm
+        have almost identical definitions/formulas for vectors in space.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                \[
+                    \begin{bmatrix} a_1 \\ b_1 \\ c_1 \end{bmatrix}
+                    +
+                    \begin{bmatrix} a_2 \\ b_2 \\ c_2 \end{bmatrix}
+                    =
+                    \begin{bmatrix} a_1 + a_2 \\ b_1 + b_2 \\ c_1 + c_2 \end{bmatrix}
+                \]
+            </p>
+       </div>
+        <div class="col fragment">
+            <p>
+                \[
+                    \left\| \begin{bmatrix} a \\ b \\ c \end{bmatrix} \right\|
+                    =
+                    \sqrt{ a^2 + b^2 + c^2 }
+                \]
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Dot products</h3>
+    <p>
+        We still use the formulation
+        \[
+            \begin{bmatrix} a_1 \\ b_1 \\ c_1 \end{bmatrix}
+            \cdot
+            \begin{bmatrix} a_2 \\ b_2 \\ c_2 \end{bmatrix}
+            =
+            a_1 a_2 + b_1 b_2 + c_1 c_2
+        \]
+    </p>
+    <p class="fragment">
+        For two nonzero vectors $\mathbf{u}$ and $\mathbf{v}$,
+        the geometric interpretation
+        \[
+            \mathbf{u} \cdot \mathbf{v} = \| \mathbf{u} \| \, \| \mathbf{v} \| \, \cos(\theta)
+        \]
+        where $\theta$ is the angle between the two vector still holds.
+    </p>
 </section>
 <section>
     <h3>The right-handed coordinate system</h3>
-    <canvas class="zdog-canvas" width="600" height="400"></canvas>
+    <div class="cols">
+        <div class="col">
+            <p>
+                The <em class="term">standard rectangular</em> coordinate system
+                for the 3-dimensional space (denoted by $\mathbb{R}^3$)
+                uses three perpendicular axes: the $x$-axis, the $y$-axis, and the $z$-axis.
+            </p>
+            <p class="fragment">
+                We have a very special way of arranging the axes.
+                It is known as the <em class="term">right hand rule</em>.
+            </p>
+        </div>
+        <div class="col">
+            <canvas class="zdog-canvas" width="480" height="380"></canvas>
+        </div>
+    </div>
+    <p class="fragment">
+        Position your <b>right hand</b> so that your fingers align
+        with the $x$-axis, yet they would curl toward the $y$-axis.
+        In this position, your thumb would point in the direction of the
+        $z$-axis.
+        This is known as the <b class="term">right-handed</b> coordinates,
+        which is incompatible with a "left-handed" coordinate system.
+    </p>
+</section>
+<section>
+    <h3>Standard unit vectors</h3>
+    <p>
+        Sometimes it is more convenient to express vectors
+        as combinations of "standard unit vectors".
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="definition fragment">
+                
+                We define
+                \[
+                    \mathbf{i} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix},
+                    \;
+                    \mathbf{j} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix},
+                    \;
+                    \mathbf{k} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+                \]
+                which are <em class="highlight">unit</em> vectors 
+                in the $x$, $y$, and $z$ directions respectively.
+            
+            </div>
+            <p class="fragment">
+                When boldface types are difficult to write,
+                we can also use the notations $\hat{i}$, $\hat{j}$, and $\hat{k}$ instead.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                With these, we can write a vector as a "linear combination"
+                of these standard unit vectors:
+                \[
+                    \begin{bmatrix} a \\ b \\ c \end{bmatrix}
+                    =
+                    a \, \mathbf{i} +
+                    b \, \mathbf{j} +
+                    c \, \mathbf{k}
+                \]
+            </p>
+            <p class="fragment">
+                Even though the notations $\mathbf{i},\mathbf{j},\mathbf{k}$
+                are pretty widely used.
+                In certain context, you may see people use
+                $\mathbf{e}_1, \mathbf{e}_2, \mathbf{e}_3$ instead.
+            </p>
+        </div>
+    </div>
 </section>
 
 <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
