@@ -1,0 +1,393 @@
+---
+layout: ilecture2
+title: The cross product
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">The cross product</h2>
+        <p class="small">
+            The true vector-vector product in 3-dimensional space.
+        </p>
+    </div>
+    <p>
+        The cross product is an important operation that takes in two vectors
+        and produces a third vector that is orthogonal to both of them.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Cross product</h3>
+    <p>
+        The previous lecture introduced the
+        <em class="term">dot product</em> of two vectors,
+        which produces a scalar.
+    </p>
+    <p class="fragment">
+        In this lecture, we will see a completely different kind of
+        vector-vector product what would result in another vector
+        --- the <em class="term">cross product</em>.
+    </p>
+    <p class="fragment">
+        This operation has strong motivation from physics, engineering, and computer graphics
+        (just to name a few areas):
+        We often need to generate a new vector that is orthogonal to
+        a pair of given vectors,
+        and the cross product is a very special way of doing this
+        that also encode additional geometric information.
+    </p>
+</section>
+<section>
+    <h3>Motivation: cross products of unit vectors</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                Starting with the unit vectors $\mathbf{i}$ and $\mathbf{j}$,
+                we expect (demand) the cross product to be an operation
+                that will produce the unit vector $\mathbf{k}$ following the
+                <em>right hand</em> convention.
+                That is, 
+                \[
+                    \mathbf{i} \times \mathbf{j} = \mathbf{k}.
+                \]
+            </p>
+            <p class="fragment">
+                Such an operation will come in handy in many applications.
+            </p>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+    <p class="fragment">
+        Extending on this convention, we are basically requiring that
+        \begin{align*}
+            \mathbf{i} \times \mathbf{j} &= \mathbf{k} &
+            \mathbf{j} \times \mathbf{k} &= \mathbf{i} &
+            \mathbf{k} \times \mathbf{i} &= \mathbf{j} \\
+            \mathbf{j} \times \mathbf{i} &= - \mathbf{k} &
+            \mathbf{k} \times \mathbf{j} &= - \mathbf{i} &
+            \mathbf{i} \times \mathbf{k} &= - \mathbf{j} .
+        \end{align*}
+    </p>
+    <p class="fragment">
+        If we generalize this idea to all vectors in $\mathbf{R}^3$,
+        the resulting operation is the <em class="term">cross product</em>.
+    </p>
+</section>
+<section>
+    <h3>Cross product in coordinate</h3>
+    
+    <div class="definition">
+        For two vectors, we define
+        \[
+            \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}
+            \;\times\;
+            \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}
+            =
+            \begin{bmatrix}
+                  u_2 v_3 - u_3 v_2 \\
+                -(u_1 v_3 - u_3 v_1) \\
+                  u_1 v_2 - u_2 v_1
+            \end{bmatrix}.
+        \]
+    </div>
+    <p class="fragment">
+        In the context of this course, the notation $\times$
+        is <em>only</em> used for cross products,
+        and we will never use it for anything else
+        (neither should you).
+    </p>
+
+    <p class="fragment">
+        We can verify that this definition indeed agrees with our expectation:
+        <div class="equ">
+            <span class="fragment">
+                $\displaystyle \mathbf{i} \times \mathbf{j}\;\;$
+            </span>
+            <span class="fragment">
+                $\displaystyle \;
+                =      \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+                \times \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+                $
+            </span>
+            <span class="fragment">
+                $\displaystyle \;
+                =      \begin{bmatrix} 0 \cdot 0 - 0 \cdot 1 \\ -(1 \cdot 0 - 0 \cdot 0) \\ 1 \cdot 1 - 0 \cdot 0 \end{bmatrix}
+                $
+            </span>
+            <span class="fragment">
+                $\displaystyle \;
+                =      \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+                $
+            </span>
+            <span class="fragment">
+                $\displaystyle
+                = \mathbf{k}
+                $
+            </span>
+        </div>
+    </p>
+    <p class="fragment">
+        Similarly, we can verify all the desired properties we just listed.
+    </p>
+</section>
+<section>
+    <h3>Properties of the cross product</h3>
+    <p>
+        From the definition, we can easily verify the following properties
+        of the cross product:
+        For vectors $\mathbf{u}$, $\mathbf{v}$, $\mathbf{w}$ and scalar $k$,
+        \begin{align*}
+            \mathbf{u} \times \mathbf{v} &= - (\mathbf{v} \times \mathbf{u}) 
+            &
+            \mathbf{u} \times \mathbf{0} &= \mathbf{0} \\
+            \mathbf{u} \times (\mathbf{v} + \mathbf{w}) &= (\mathbf{u} \times \mathbf{v}) + (\mathbf{u} \times \mathbf{w})
+            &
+            \mathbf{0} \times \mathbf{u} &= \mathbf{0} \\
+            k (\mathbf{u} \times \mathbf{v}) &= (k \, \mathbf{u}) \times \mathbf{v} = \mathbf{u} \times (k \, \mathbf{v})
+            &
+            \mathbf{u} \times \mathbf{u} &= \mathbf{0}
+        \end{align*}
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                These properties (except the first and last one),
+                show the cross product interacts with vector sums
+                and scalar multiplication in expected ways.
+            </p>
+        </div>
+        <div class="col fragment">
+            <div class="problem">
+                The last property $\mathbf{u} \times \mathbf{u} = \mathbf{0}$
+                may look a bit strange at first.
+                Can you explain why this must be the case?
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Computing cross product ("middle school" method)</h3>
+    <div class="cols">
+        <div class="col">
+            <p class="small">
+                Recall that, for two vectors, we defined
+                \[
+                    \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}
+                    \times
+                    \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        u_2 v_3 - u_3 v_2 \\
+                        -(u_1 v_3 - u_3 v_1) \\
+                        u_1 v_2 - u_2 v_1
+                    \end{bmatrix}
+                \]
+                This formula may not be particularly easy to remember.
+                <span class="lowlight">
+                    (Although it would be easy if you understand what each coordinate means.)
+                </span>
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                But if you understand the right-hand rule,
+                it shouldn't be too hard to remember/derive
+                \begin{align*}
+                    \mathbf{i} \times \mathbf{j} &= \mathbf{k} &
+                    \mathbf{j} \times \mathbf{i} &= - \mathbf{k} \\
+                    \mathbf{j} \times \mathbf{k} &= \mathbf{i} &
+                    \mathbf{k} \times \mathbf{j} &= - \mathbf{i} \\
+                    \mathbf{k} \times \mathbf{i} &= \mathbf{j} &
+                    \mathbf{i} \times \mathbf{k} &= - \mathbf{j} .
+                \end{align*}
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        With these, we can easy compute a cross product simply by
+        "expanding everything" and simplify according to these identities:
+        <span class="small">
+            \begin{align*}
+                (u_1 \mathbf{i} + u_2 \mathbf{j} + u_3 \mathbf{k})
+                \times
+                (v_1 \mathbf{i} + v_2 \mathbf{j} + v_3 \mathbf{k})
+                &= 
+                u_1 v_1 \mathbf{i} \times \mathbf{i} +
+                u_1 v_2 \mathbf{i} \times \mathbf{j} +
+                u_1 v_3 \mathbf{i} \times \mathbf{k} \\ 
+                &+
+                u_2 v_1 \mathbf{j} \times \mathbf{i} +
+                u_2 v_2 \mathbf{j} \times \mathbf{j} +
+                u_2 v_3 \mathbf{j} \times \mathbf{k} \\
+                &+
+                u_3 v_1 \mathbf{k} \times \mathbf{i} +
+                u_3 v_2 \mathbf{k} \times \mathbf{j} +
+                u_3 v_3 \mathbf{k} \times \mathbf{k}
+            \end{align*}
+        </span>
+        <p class="fragment">
+            Here, we are using the distributive property of the cross product
+            as well as what already know about the cross products of standard unit vectors.
+        </p>
+    </p>
+</section>
+<section>
+    <div class="example small">
+        Let's compute the cross product
+        $
+            (1 \mathbf{i} + 2 \mathbf{j} + 3\mathbf{k})
+            \times
+            (4 \mathbf{i} + 5 \mathbf{j} + 6\mathbf{k}).
+        $
+    </div>
+    <p class="fragment">
+        <b>Solution.</b>
+        Using the distributive property of cross product, 
+        we can expand the above expression into
+        \begin{align*}
+            &\;\;\;
+            1 \cdot 4 (\color{red}{    \mathbf{i} \times \mathbf{i} }) +
+            1 \cdot 5 (\color{blue}{   \mathbf{i} \times \mathbf{j} }) +
+            1 \cdot 6 (\color{olive}{  \mathbf{i} \times \mathbf{k} }) \\ 
+            &+
+            2 \cdot 4 (\color{blue}{   \mathbf{j} \times \mathbf{i} }) +
+            2 \cdot 5 (\color{red}{    \mathbf{j} \times \mathbf{j} }) +
+            2 \cdot 6 (\color{purple}{ \mathbf{j} \times \mathbf{k} }) \\
+            &+
+            3 \cdot 4 (\color{olive}{  \mathbf{k} \times \mathbf{i} }) +
+            3 \cdot 5 (\color{purple}{ \mathbf{k} \times \mathbf{j} }) +
+            3 \cdot 6 (\color{red}{    \mathbf{k} \times \mathbf{k} })
+        \end{align*}
+    </p>
+    <p class="fragment small">
+        From what we know about the cross products of standard unit vectors,
+        this simplifies into
+        \[
+            4 (\color{red}{     \mathbf{0}  }) +
+            5 (\color{blue}{    \mathbf{k}  }) +
+            6 (\color{olive}{  -\mathbf{j}  }) +
+            8 (\color{blue}{   -\mathbf{k}  }) +
+            10 (\color{red}{    \mathbf{0}  }) +
+            12 (\color{purple}{ \mathbf{i}  }) +
+            12 (\color{olive}{  \mathbf{j}  }) +
+            15 (\color{purple}{-\mathbf{i}  }) +
+            18 (\color{red}{    \mathbf{0}  }) 
+        \]
+    </p>
+    <p class="fragment">
+        After removing the zero terms and combining like terms, we get
+        \[
+            (12-15) \color{purple}{ \mathbf{i}  } +
+            (-6+12) \color{olive}{  \mathbf{j}  } +
+            (5-8) \color{blue}{    \mathbf{k}  } 
+        \]
+    </p>
+    <p class="fragment">
+        I.e.,
+        \[
+            -3 \color{purple}{ \mathbf{i}  } 
+            +6 \color{olive}{  \mathbf{j}  }
+            -3 \color{blue}{   \mathbf{k}  }
+        \]
+    </p>
+</section>
+<section>
+    <h3>The determinant method</h3>
+
+    <p class="small">
+        For those who are familiar with $3 \times 3$ determinants,
+        the cross product can be expressed as the more compact expression
+        \[
+            \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}
+            \times
+            \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}
+            =
+            \begin{vmatrix}
+                1 & u_1 & v_1 \\
+                0 & u_2 & v_2 \\
+                0 & u_3 & v_3
+            \end{vmatrix}
+            \mathbf{i}
+            +
+            \begin{vmatrix}
+                0 & u_1 & v_1 \\
+                1 & u_2 & v_2 \\
+                0 & u_3 & v_3
+            \end{vmatrix}
+            \mathbf{j}
+            +
+            \begin{vmatrix}
+                0 & u_1 & v_1 \\
+                0 & u_2 & v_2 \\
+                1 & u_3 & v_3
+            \end{vmatrix}
+            \mathbf{k}
+        \]
+    </p>
+    <p class="fragment small">
+        Some people like to express this in an even more compact
+        (but ultimately incorrect) expression
+        \[
+            \begin{vmatrix}
+                \mathbf{i} & u_1 & v_1 \\
+                \mathbf{j} & u_2 & v_2 \\
+                \mathbf{k} & u_3 & v_3
+            \end{vmatrix}
+        \]
+        Of course, this expression is just a mnemonic device,
+        and it is not to be taken literally (it doesn't even make sense).
+    </p>
+</section>
+<section>
+    <h3>The geometric interpretation</h3>
+    <p>
+        Recall that our original motivation behind cross product
+        is from the geometry side.
+        So naturally our apparently algebraic definition has a nice geometric interpretation.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="theorem fragment">
+                Let $\mathbf{u}$ and $\mathbf{v}$ be two nonzero vectors.
+                If $\mathbf{u} \times \mathbf{v} \ne \mathbf{0}$ 
+                then it is orthogonal to both $\mathbf{u}$ and $\mathbf{v}$,
+                and its direction follows the right hand rule.
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Of course, this interpretation breaks down if
+                $\mathbf{u} \times \mathbf{v} = \mathbf{0}$,
+                since it no longer has a well-defined direction.
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <div class="theorem fragment">
+                Let $\mathbf{u}$ and $\mathbf{v}$ be two nonzero vectors,
+                and let $\theta$ be the angle between them.
+                Then
+                \[
+                    \| \mathbf{u} \times \mathbf{v} \| = 
+                    \| \mathbf{u} \| \, \| \mathbf{v} \| \, |\sin(\theta)|
+                \]
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                This equation should be compared with a similar
+                (but almost opposite)
+                identity for the <em>dot product</em>
+                \[
+                    \mathbf{u} \cdot \mathbf{v} = \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta).
+                \]
+            </p>
+        </div>
+    </div>
+</section>

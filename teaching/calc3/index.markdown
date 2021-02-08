@@ -15,6 +15,8 @@ which is a fundamental pillar for modern science and engineering. -->
 
 * [Vectors in the plane](vectors-in-plane/)
 * [Basic vector operations](vector-operations/)
+* [Vectors in space](vectors-in-space/)
+* [Cross product](cross-product/)
 
 <!-- ## How to survive this course?
 
