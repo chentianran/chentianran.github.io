@@ -1,0 +1,325 @@
+---
+layout: ilecture2
+title: The "TNB" frame
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">The TNB frame</h2>
+        <p class="small">
+            The natural frame of reference for a parametric curve
+        </p>
+    </div>
+    <p>
+        At any point on a curve in space presented in a parametric form,
+        its unit tangent vector, principal unit normal vector, and the unit binormal vector
+        form particular useful coordinate system 
+        that encodes important geometric (and kinematic) information.
+        This is known as the Frenet frame of reference, a.k.a. the "TNB frame".
+        In this lecture, we will gain a geometric understanding of this important construction.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Parametric space curve</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                Throughout this discussion, we will use the notation
+                \[
+                    \mathbf{r}(t) =
+                    \begin{bmatrix}
+                        x(t) \\ y(t) \\ z(t)
+                    \end{bmatrix}
+                \]
+                to represent a vector-value function.
+                For simplicity, we assume it is defined and differentiable for all $t$
+                (over the entire real line).
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                It may be useful to consider $t$ as <em>time</em>
+                and imagine the function $\mathbf{r}(t)$ describe the trajectory
+                of an object moving in space,
+                so that we can talk about the velocity and acceleration vectors.
+            </p>
+            <p class="fragment">
+                From this point of view, we actually consider the function values
+                $\mathbf{r}(t)$ to be points in space,
+                and the image of $\mathbf{r}$ will form a curve.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>The unit tangent vector</h3>
+    <div class="definition">
+        For any given $t$ value such that $\| \mathbf{r}'(t) \| \ne 0$,
+        we define the <em class="term">(principal)</em>
+        <b class="term">unit tangent vector</b> to be
+        \[
+            \mathbf{T}(t) = \frac{\mathbf{r}'(t)}{ \| \mathbf{r}'(t) \| }.
+        \]
+    </div>
+    <p class="fragment">
+        We can see that the unit tangent vector is not defined when
+        $\mathbf{r}'(t)$ is the zero vector.
+        This is a minor issue that we will fix later.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            It means exact what you think it means:
+            it is a unit vector that is tangent to the curve
+            that $\mathbf{r}(t)$ represents.
+        </div>
+        <div class="col fragment">
+            If we consider $\mathbf{r}(t)$ as the trajectory of a moving object,
+            then $\mathbf{T}(t)$ is simply the normalized version of the velocity vector.
+        </div>
+    </div>
+</section>
+<section>
+    <h3>The principal unit normal vector</h3>
+    <div class="definition">
+        For a given $t$ value where the unit tangent vector $\mathbf{T}(t)$
+        is <em>defined</em> and <em>nonzero</em>,
+        the <b class="term">principal unit normal vector</b> at $t$ is
+        \[
+            \mathbf{N}(t) = \frac{ \mathbf{T}'(t) }{ \| \mathbf{T}'(t) \|}.
+        \]
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                By this definition, $\mathbf{N}(t)$ is undefined whenever $\mathbf{T}(t) = \mathbf{0}$.
+                This is indeed intentional, and it's a useful feature rather than a bug.
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>From this construction, it's not hard to verify that</p>
+            <ul>
+                <li>
+                    $\mathbf{N}(t)$ is a unit vector.
+                </li>
+                <li>
+                    $\mathbf{N}(t)$ is orthogonal to $\mathbf{T}(t)$.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>The unit binormal vector</h3>
+    <div class="definition">
+        For a given $t$ value where the unit tangent vector $\mathbf{T}(t)$
+        and the principal unit normal vector $\mathbf{N}(t)$ are both defined,
+        we define the <b class="term">binormal vector</b> at $t$ to be
+        \[
+            \mathbf{B}(t) = \mathbf{T}(t) \times \mathbf{N}(t).
+        \]
+    </div>
+    <p class="fragment">
+        We can see that $\mathbf{B}(t)$ is orthogonal to both
+        $\mathbf{T}(t)$ and $\mathbf{N}(t)$.
+    </p>
+    <p class="fragment">
+        Moreover, since $\mathbf{T}(t)$ and $\mathbf{N}(t)$
+        are both unit vector and they are orthogonal to each other,
+        \[
+            \| \mathbf{B}(t) \| =
+            \| \mathbf{T}(t) \times \mathbf{N}(t) \| =
+            \| \mathbf{T}(t) \| \, \| \mathbf{N}(t) \| \, | \sin \theta | = 1.
+        \]
+        That is, $\mathbf{B}(t)$ is indeed a unit vector,
+        which is why we usually call it the
+        <em class="term">unit binormal vector</em>.
+    </p>
+</section>
+<section>
+    <h3>The "TNB" frame</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                Assuming $\mathbf{r}(t)$ describes a smooth curve,
+                then at any given $t$ value where the vectors
+                $\mathbf{T}(t)$, $\mathbf{N}(t)$, and $\mathbf{B}(t)$ are all defined,
+                these three vector are orthogonal to one another,
+                and they form a natural frame of reference
+                of the 3-dimensional space.
+            </p>
+        </div>
+        <div class="col">
+            <canvas class="zdog-canvas" width="480" height="350"></canvas>
+        </div>
+    </div>
+    <p>
+        This is the <b class="term">Frenet frame of reference</b>,
+        and it is also known as the <b class="term">TNB frame</b>
+        since it is constructed from the vectors 
+        $\mathbf{T}(t)$, $\mathbf{N}(t)$, and $\mathbf{B}(t)$.
+    </p>
+</section>
+
+<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+<script>
+    let spinning = true;
+    let R = 200;
+    let L =  80;
+    let t = 0.0;
+    let ax = new Zdog.Illustration({
+        element: '.zdog-canvas',
+        dragRotate: true,
+        onDragStart: function() {
+            spinning = false;
+        },
+    });
+
+    const xcolor = '#D00';
+    const ycolor = '#0D0';
+    const zcolor = '#00D';
+    const thickness = 7;
+
+    let track = new Zdog.Ellipse({
+        addTo: ax,
+        diameter: 2*R,
+        stroke: 3,
+        color: '#AAA',
+        rotate: { x: Zdog.TAU/4 },
+    });
+
+    let obj = new Zdog.Shape({
+        addTo: ax,
+        stroke: thickness,
+        path: [ {x: 0, y: 0, z:0 } ],
+      color: '#636',
+    });
+
+    let x = new Zdog.Shape({
+        addTo: obj,
+        path: [
+            { x: L, y: 0, z: 0 },
+            { x: thickness,   y: 0, z: 0 },
+        ],
+        stroke: thickness,
+        color: xcolor,
+    });
+    let xhead = new Zdog.Polygon({
+        addTo: x,
+        radius: 10,
+        sides: 3,
+        stroke: thickness,
+        color: xcolor,
+        fill: true,
+        translate: { x: L },
+        rotate: { z: Zdog.TAU/4 }
+    });
+    let xlabel1 = new Zdog.Shape({
+        addTo: x,
+        path: [
+            { x: -10, y: -10 },
+            { x: -10, y:  10 },
+            { x:  10, y: -10 },
+            { x:  10, y:  10 },
+        ],
+        closed: false,
+        stroke: 3,
+        color: xcolor,
+        translate: { x: L + 30 },
+    });
+
+    let y = new Zdog.Shape({
+        addTo: obj,
+        path: [
+            { x: 0, y: -thickness,   z: 0 },
+            { x: 0, y: -L, z: 0 },
+        ],
+        stroke: thickness,
+        color: ycolor,
+    });
+    let yhead = new Zdog.Polygon({
+        addTo: y,
+        radius: 10,
+        sides: 3,
+        stroke: thickness,
+        color: ycolor,
+        fill: true,
+        translate: { y: -L },
+        // rotate: { z: -Zdog.TAU/4 }
+    });
+
+    let z = new Zdog.Shape({
+        addTo: obj,
+        path: [
+            { x: 0, y: 0, z: thickness   },
+            { x: 0, y: 0, z: L },
+        ],
+        stroke: thickness,
+        color: zcolor,
+    });
+    let zhead = new Zdog.Polygon({
+        addTo: z,
+        radius: 10,
+        sides: 3,
+        stroke: thickness,
+        color: zcolor,
+        fill: true,
+        translate: { z: L },
+        rotate: { y: -Zdog.TAU/4, x: -Zdog.TAU/4 }
+    });
+    let zlabel0 = new Zdog.Shape({
+        addTo: z,
+        path: [
+            { y: -10, z:  10 },
+            { y: -10, z: -10 },
+            { y: -10, z:   0 },
+            { y:  10, z:   0 },
+            // { y:  10, z: -10 },
+        ],
+        closed: false,
+        stroke: 3,
+        color: zcolor,
+        translate: { z: L + 30 },
+        // rotate: { y: -Zdog.TAU/4, x: -Zdog.TAU/4 }
+    });
+
+    let box = new Zdog.Box({
+        addTo: ax,
+        width: 60,
+        height: 60,
+        depth: 60,
+        stroke: false,
+        color: '#C25', // default face color
+        leftFace: '#EA0',
+        rightFace: '#E62',
+        topFace: '#ED0',
+        bottomFace: '#636',
+        translate: { x: 0, y : 0, z: 0 },
+    });
+
+    // ax.rotate.y += 0.5;
+    ax.rotate.x -= 0.3;
+    ax.rotate.y += 0.2;
+
+    ax.updateRenderGraph();
+
+    function animate() {
+        if (spinning) {
+            t += 0.01;
+            obj.translate.x = -R * Math.cos(t);
+            obj.translate.z =  R * Math.sin(t);
+            obj.rotate.y = -t;
+            obj.updateGraph();
+            t %= Zdog.TAU;
+            // ax.rotate.y += 0.005;
+        }
+        ax.updateRenderGraph();
+        requestAnimationFrame( animate );
+    }
+    // start animation
+    animate();
+</script>
