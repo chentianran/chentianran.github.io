@@ -121,7 +121,7 @@ title: The cross product
             </span>
             <span class="fragment">
                 $\displaystyle \;
-                =      \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+                =      \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
                 $
             </span>
             <span class="fragment">
@@ -340,7 +340,8 @@ title: The cross product
             \end{vmatrix}
         \]
         Of course, this expression is just a mnemonic device,
-        and it is not to be taken literally (it doesn't even make sense).
+        and it is not to be taken literally
+        (it doesn't even make sense, since we are mixing scalar and vectors).
     </p>
 </section>
 <section>
@@ -391,3 +392,183 @@ title: The cross product
         </div>
     </div>
 </section>
+<section>
+    <h3>Cross product as a directed area</h3>
+    <p>
+        The geometric interpretation goes even deeper.
+        Indeed, the equation
+        \[
+            \| \mathbf{u} \times \mathbf{v} \| = 
+            \| \mathbf{u} \| \, \| \mathbf{v} \| \, |\sin(\theta)|
+        \]
+    </p>
+    <div class="cols">
+        <div class="col">
+            tell us that the magnitude of $\| \mathbf{u} \times \mathbf{v} \|$
+            equals the area of the parallelogram spanned by $\mathbf{u}$ and $\mathbf{v}$.
+            In this sense, we can take a cross product
+            to be a <em>"directed area"</em>
+            (area with directions).
+        </div>
+        <div class="col">
+            <canvas class="zdog-canvas" width="480" height="350"></canvas>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+<script>
+    let spinning = true;
+    let R = 150;
+    // let L =  80;
+    let t = 0.0;
+    let ax = new Zdog.Illustration({
+        element: '.zdog-canvas',
+        dragRotate: true,
+        onDragStart: function() {
+            // spinning = false;
+        },
+    });
+
+    const ucolor = '#D00';
+    const vcolor = '#00D';
+    const ycolor = '#0D0';
+    const thickness = 7;
+
+    let track = new Zdog.Ellipse({
+        addTo: ax,
+        diameter: 2*R,
+        stroke: 3,
+        color: '#AAA',
+        rotate: { x: Zdog.TAU/4 },
+    });
+
+    let orig = new Zdog.Shape({
+        addTo: ax,
+        stroke: thickness,
+        path: [ {x: 0, y: 0, z:0 } ],
+      color: '#636',
+    });
+
+    let u = new Zdog.Shape({
+        addTo: orig,
+        path: [
+            { x: R, y: 0, z: 0 },
+            { x: thickness,   y: 0, z: 0 },
+        ],
+        stroke: thickness,
+        color: ucolor,
+    });
+    let uhead = new Zdog.Polygon({
+        addTo: u,
+        radius: 10,
+        sides: 3,
+        stroke: thickness,
+        color: ucolor,
+        fill: true,
+        translate: { x: R },
+        rotate: { z: Zdog.TAU/4 }
+    });
+    // let xlabel1 = new Zdog.Shape({
+    //     addTo: x,
+    //     path: [
+    //         { x: -10, y: -10 },
+    //         { x: -10, y:  10 },
+    //         { x:  10, y: -10 },
+    //         { x:  10, y:  10 },
+    //     ],
+    //     closed: false,
+    //     stroke: 3,
+    //     color: xcolor,
+    //     translate: { x: L + 30 },
+    // });
+
+    let y = new Zdog.Shape({
+        addTo: orig,
+        path: [
+            { x: 0, y: -thickness,   z: 0 },
+            { x: 0, y: -R, z: 0 },
+        ],
+        stroke: thickness,
+        color: ycolor,
+    });
+    let yhead = new Zdog.Polygon({
+        addTo: y,
+        radius: 10,
+        sides: 3,
+        stroke: thickness,
+        color: ycolor,
+        fill: true,
+        translate: { y: -R },
+        // rotate: { z: -Zdog.TAU/4 }
+    });
+
+    let v = new Zdog.Shape({
+        addTo: orig,
+        path: [
+            { x: 0, y: 0, z: thickness   },
+            { x: 0, y: 0, z: R },
+        ],
+        stroke: thickness,
+        color: vcolor,
+    });
+    let vhead = new Zdog.Polygon({
+        addTo: v,
+        radius: 10,
+        sides: 3,
+        stroke: thickness,
+        color: vcolor,
+        fill: true,
+        translate: { z: R },
+        rotate: { y: -Zdog.TAU/4, x: -Zdog.TAU/4 }
+    });
+    // let zlabel0 = new Zdog.Shape({
+    //     addTo: z,
+    //     path: [
+    //         { y: -10, z:  10 },
+    //         { y: -10, z: -10 },
+    //         { y: -10, z:   0 },
+    //         { y:  10, z:   0 },
+    //     ],
+    //     closed: false,
+    //     stroke: 3,
+    //     color: zcolor,
+    //     translate: { z: L + 30 },
+    //     // rotate: { y: -Zdog.TAU/4, x: -Zdog.TAU/4 }
+    // });
+
+    // let box = new Zdog.Box({
+    //     addTo: ax,
+    //     width: 60,
+    //     height: 60,
+    //     depth: 60,
+    //     stroke: false,
+    //     color: '#C25', // default face color
+    //     leftFace: '#EA0',
+    //     rightFace: '#E62',
+    //     topFace: '#ED0',
+    //     bottomFace: '#636',
+    //     translate: { x: 0, y : 0, z: 0 },
+    // });
+
+    // ax.rotate.y += 0.5;
+    ax.rotate.x -= 0.3;
+    ax.rotate.y += 0.2;
+
+    ax.updateRenderGraph();
+
+    function animate() {
+        if (spinning) {
+            t += 0.01;
+            v.rotate.y = t;
+            // obj.updateGraph();
+            y.scale = { x: 1, y: Math.sin(t + Zdog.TAU/4), z: 1 };
+            t %= Zdog.TAU;
+            // ax.rotate.y += 0.005;
+        }
+        ax.updateRenderGraph();
+        requestAnimationFrame( animate );
+    }
+    // start animation
+    animate();
+</script>
