@@ -1,0 +1,334 @@
+---
+layout: ilecture2
+title: Curvature and torsion
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Curvature and torsion</h2>
+        <p class="small">
+            Characterizing the shape of smooth curves
+        </p>
+    </div>
+    <p>
+        Curvature an torsion are two numbers that can characterize
+        how a smooth curve is turning at a given point.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Parametric space curve</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                As before, throughout this discussion, 
+                we will use the notation
+                \[
+                    \mathbf{r}(t) =
+                    \begin{bmatrix}
+                        x(t) \\ y(t) \\ z(t)
+                    \end{bmatrix}
+                \]
+                to represent a vector-value function.
+                For simplicity, we assume it is defined and differentiable for all $t$
+                (over the entire real line).
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                To appeal to our intuition,
+                it may be useful to consider $t$ as <em>time</em>
+                and imagine the function $\mathbf{r}(t)$ describe the trajectory
+                of an object moving in space.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Review of the TNB frame</h3>
+    
+    <div class="cols">
+        <div class="col">
+            <p>
+                Recall that, for any given $t$ value such that 
+                $\| \mathbf{r}'(t) \| \ne 0$,
+                <em class="term">(principal) unit tangent vector</em> is
+                \[
+                    \mathbf{T}(t) = \frac{\mathbf{r}'(t)}{ \| \mathbf{r}'(t) \| }.
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                If $\mathbf{T}'(t)$ is <em>defined</em> and <em>nonzero</em>
+                at a given $t$-value, the 
+                <em class="term">principal unit normal vector</em> at $t$ is
+                \[
+                    \mathbf{N}(t) = \frac{ \mathbf{T}'(t) }{ \| \mathbf{T}'(t) \|}.
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Furthermore, if $\mathbf{T}(t), \mathbf{N}(t)$ are defined,
+        the <em class="term">binormal vector</em> at $t$ is
+        \[
+            \mathbf{B}(t) = \mathbf{T}(t) \times \mathbf{N}(t).
+        \]
+    </p>
+    <p class="fragment">
+        These three vector are orthogonal to one another,
+        and they form a natural frame of reference
+        of the 3-dimensional space at a given $t$ value.
+        This is the <em class="term">Frenet frame of reference</em>
+        (or simply the <em class="term">TNB frame</em>).
+    </p>
+</section>
+<section>
+    <h3>Curvature</h3>
+    <p>
+        The concept of "curvature" provides a numerical quantity
+        that can measure how sharply a smooth curve turns.
+    </p>
+    <p class="fragment">
+        It agrees with our intuition:
+        a straight line has 0 curvature,
+        and a circle has a constant curvature, 
+        which depends on the radius.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="definition fragment">
+                (Alternative)
+                at a $t$ value where $\mathbf{T}'(t)$ and $\mathbf{r}'(t)$
+                are both defined and $\| \mathbf{r}'(t) \| \ne 0$,
+                the <b class="term">curvature</b> of the curve represented by $\mathbf{r}(t)$
+                is given by
+                \[
+                    \kappa =
+                    \frac{\| \mathbf{T}'(t) \|}{ \| \mathbf{r}'(t) \|}.
+                \]
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                This is really an "alternative" working definition,
+                and it has the problem that it is undefined
+                whenever $\mathbf{r}'(t) = \mathbf{0}$.
+                We will see a more elegant (but less useful)
+                definition of $\kappa$ in term of arc-length parametrization.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Alternative curvature formula as a cross product</h3>
+    <p>
+        Using the properties of the unit tangent vector,
+        we can see that the curvature can also be computed as
+        \[
+            \kappa = 
+            \frac{ \| \mathbf{r}'(t) \times \mathbf{r}''(t) \| }{ \| \mathbf{r}'(t) \|^3 },
+        \]
+        which is usually much easier to compute.
+    </p>
+    <div class="example fragment">
+        Compute the curvature of the curve represented by
+        $\mathbf{r}(t) = a \cos(t) \mathbf{i} + a \sin(t) \mathbf{j} + 0 \mathbf{k}$,
+        for $a > 0$, at any given $t$ value.
+    </div>
+    <p class="small fragment">
+        <b>Solution.</b>
+        We can compute that 
+        \begin{align*}
+            \mathbf{r}'(t) &= -a\sin(t) \mathbf{i} + a\cos(t) \mathbf{j}, &
+            \mathbf{r}''(t) &= - a \cos(t) \mathbf{i} - a \sin(t) \mathbf{j}.
+        \end{align*}
+        <span class="fragment">Therefore, $\| \mathbf{r}'(t) \| = a$.</span>
+        <span class="fragment">
+            Moreover,
+            \[
+                \mathbf{r}'(t) \times \mathbf{r}''(t) =
+                a^2(\sin^2(t) + \cos^2(t)) \mathbf{k} = a^2 \, \mathbf{k},
+            \]
+            and hence $\| \mathbf{r}'(t) \times \mathbf{r}''(t) \| = a^2$.
+            So $\kappa = a^2 / a^3 = 1/a$, which agrees with our intuition
+            (smaller the circle, higher the curvature).
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Curvature of circles and straight lines</h3>
+    <p>
+        Of course, what we just computed generalizes to any circles.
+        In general, a circle of radius $a$ has a constant curvature
+        of $\frac{1}{a}$.
+        <span class="fragment">
+            This agrees with our intuition that 
+            a smaller circle has large curvature,
+            while a large circle has small curvature.
+        </span>
+    </p>
+    <p class="fragment">
+        From our working definition, 
+        $\kappa = \frac{ \| \mathbf{T}'(t) \| }{ \| \mathbf{r}'(t) \| }$,
+        we can also easily verify that all straight lines have
+        zero curvature, as expected.
+    </p>
+
+</section>
+<section>
+    <h3>Osculating circle</h3>
+    <div class="definition">
+        At any given $t$ value, where $\mathbf{T}(t)$ and $\mathbf{N}(t)$
+        are both defined, the plane spanned by these two vectors
+        is known as the <b class="term">osculating plane</b> of 
+        the curve traced out by $\mathbf{r}(t)$.
+        <p class="fragment">
+            In this plane, a circle that is tangent to the curve
+            at $\mathbf{p} = \mathbf{r}(t)$ and has the same curvature is called an 
+            <b class="term">osculating circle</b> of the curve at $\mathbf{p}$.
+        </p>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                Just like the tangent line is the best linear approximation of a curve at a point,
+                the <em class="term">osculating circle</em> is the best circular approximation
+                of a curve at a point.
+            </p>
+        </div>
+        <div class="col fragment">
+            <img src="osculating.png" alt="Osculating circle">
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Decomposition of acceleration vector</h3>
+    <p>
+        Recall that, if we consider $\mathbf{r}(t)$ to represent the
+        trajectory of a moving object,
+        then its acceleration at any point of time
+        can be decomposed into the <em class="term">tangential component</em>
+        and the <em class="term">normal component</em>.
+        Curvature helps us to describe the normal component.
+    </p>
+    <div class="theorem fragment">
+        The acceleration vector $\mathbf{r}''(t)$ of the object,
+        whose trajectory is represented by $\mathbf{r}(t)$, 
+        at a given time $t$ lies in the plane spanned by 
+        the unit tangent vector $\mathbf{T}(t)$ and 
+        the principal unit normal vector $\mathbf{N}(t)$.
+        <span class="fragment">
+            Moreover,
+            <span data-id="ctn">
+                \[
+                    \mathbf{r}''(t) =
+                    v'(t) \mathbf{T} + (v'(t))^2 \, \kappa(t) \, \mathbf{N}(t),
+                \]
+            </span>
+            where $v(t) = \| \mathbf{r}'(t) \|$ is the <em>speed</em> of the object
+            and $\kappa(t)$ is the curvature of the curve traced out by this object
+            at that moment.
+        </span>
+    </div>
+    <p class="smaller lowlight fragment">
+        (Here, we have a slight abuse of notation:
+        We express the curvature $\kappa(t)$ as a function of time $t$
+        since we want to describe how an object moves.
+        But you should keep in mind that $\kappa$ is actually a property
+        of the curve itself.)
+    </p>
+</section>
+<section>
+    <h3>Rotation of the osculating plane</h3>
+    <p>
+        By considering $\mathbf{T}'(t)$,
+        we developed the concept of curvature.
+        Now we will consider $\mathbf{B}'(t)$,
+        which characterizes the rotation of the osculating plane itself,
+        and we will develop the concept of torsion from this.
+    </p>
+    <p class="fragment">
+        Since $\mathbf{B}(t) = \mathbf{T}(t) \times \mathbf{N}(t)$,
+        by the product rule,
+        \[
+            \mathbf{B}'
+            = \mathbf{T}' \times \mathbf{N} + \mathbf{T} \times \mathbf{N}'
+            = \mathbf{T}' \times \frac{\mathbf{T}'}{ \| \mathbf{T}' \| } + \mathbf{T} \times \mathbf{N}'
+            = \mathbf{T} \times \mathbf{N}'.
+        \]
+        <span class="fragment">
+            Therefore, $\mathbf{B}'(t)$ must be orthogonal to $\mathbf{T}(t)$.
+            <span class="smaller lowlight">(That's how cross product works)</span>
+        </span>
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                Also recall that $\mathbf{B}(t)$ is always a unit vector,
+                so its derivative $\mathbf{B}'(t)$ must be orthogonal to $\mathbf{B}(t)$ itself.
+            </p>
+            <p class="fragment">
+                That is, $\mathbf{B}'(t)$ is orthogonal to both
+                $\mathbf{T}(t)$ and $\mathbf{B}(t)$.
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                Therefore, $\mathbf{B}'(t)$ must be parallel to $\mathbf{N}(t)$.
+                That is, $\mathbf{B}'(t)$ must be a multiple of $\mathbf{N}(t)$,
+                and the coefficient describe how fast and in which direction
+                is the osculating plane rotating about the $\mathbf{N}(t)$.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Torsion</h3>
+    <p>
+        So far, through some vector algebra,
+        we understood that $\mathbf{B}'(t)$ must be a multiple of $\mathbf{N}(t)$.
+        We can visualize this coefficient as a description
+        of how fast and in which direction
+        is the osculating plane rotating about the $\mathbf{N}(t)$.
+        This leads to the concept of torsion.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <div class="definition">
+                If $\| \mathbf{r}'(t) \| = 1$,
+                then we define the <b class="term">torsion</b>
+                of the curve represented by $\mathbf{r}$ at a given point to be
+                \[
+                    \tau = - \mathbf{B}'(t) \cdot \mathbf{N}(t).
+                \]
+            </div>
+        </div>
+        <div class="col fragment">
+            <p>
+                In the more general case where $\| \mathbf{r}'(t) \|$ may not be 1,
+                we have the alternative formula
+                \[
+                    \tau =
+                    \frac{ \det [ \mathbf{r}', \mathbf{r}'', \mathbf{r}''' ] }{ \| \mathbf{r}' \times \mathbf{r}'' \|^2 }
+                \]
+                <!-- using scalar triple product. -->
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Comparing the two formula,
+        we can see that the condition $\| \mathbf{r}'(t) \| = 1$
+        produces much more elegant formula.
+        <span class="fragment">
+            This is the benefit of "arc-length parametrization",
+            which we will develop in more rigorous context.
+        </span>
+    </p>
+
+</section>
