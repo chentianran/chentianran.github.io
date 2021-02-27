@@ -18,6 +18,7 @@ which is a fundamental pillar for modern science and engineering. -->
 * [Vectors in space](vectors-in-space/)
 * [Cross product](cross-product/)
 * [The TNB frame](tnb-frame/)
+* [Curvature and torion](curvature-torsion/)
 
 <!-- ## How to survive this course?
 
