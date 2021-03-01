@@ -19,6 +19,7 @@ which is a fundamental pillar for modern science and engineering. -->
 * [Cross product](cross-product/)
 * [The TNB frame](tnb-frame/)
 * [Curvature and torion](curvature-torsion/)
+* [Real-valued functions of several variables](several-variables/)
 
 <!-- ## How to survive this course?
 

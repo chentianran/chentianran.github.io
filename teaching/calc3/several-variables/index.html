@@ -1,0 +1,272 @@
+---
+layout: ilecture2
+title: Real-valued functions of several variables
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Real-valued functions of several variables</h2>
+        <p class="small">
+            Functions that take in several real variables
+            and output a single real number.
+        </p>
+    </div>
+    <p>
+        The definition for functions of more than one variable
+        is quite similar to the definition for functions of one variable
+        that we studied in basic calculus.
+        In this lecture we develop the fundamental concepts and tools
+        for doing calculus with functions of several variables.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Real-valued functions of two variables</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                The definition for functions of two variables
+                is quite similar to the definition for functions of one variable
+                that we already studied.
+            </p>
+            <p class="fragment">
+                These functions can be visualized as mappings between
+                the 2-dimensional plane and the 1-dimensional real line,
+                and they naturally appear in many applications.
+                We have to develop a few new tools 
+                in order to do calculus with these functions.
+            </p>
+        </div>
+        <div class="col">
+            <div class="definition fragment">
+                <p>
+                    Given a subset $D$ of the (real) plane $\mathbb{R}^2$,
+                    a <b class="term">(real-valued) function of two variables</b>
+                    on $D$ maps each ordered pair $(x,y)$ in $D$
+                    to a unique real number $z$.
+                </p>
+                <p class="fragment">
+                    Here $D$ is called the <b class="term">domain</b> of $f$,
+                    and the <b class="term">range</b> of $f$
+                    is the set of all real numbers $z$ 
+                    that has at least one ordered pair $(x,y)$ in $D$
+                    such that $f(x,y) = z$.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="cols">
+        <div class="col">
+            <div class="example">
+                Functions of two variables can be describe by formulas.
+                For example,
+                \[
+                    f(x,y) = x^2 + y^2 + \sin(xy)
+                \]
+                is a function defined on the domain $D = \mathbb{R}^2$.
+                When we plug in a pair of real numbers $(x,y)$,
+                this function produces a real number $z = f(x,y)$ as its output.
+            </div>
+        </div>
+        <div class="col">
+            <div class="example fragment">
+                For any point $(x,y)$ on the plane $\mathbb{R}^2$,
+                let $f(x,y)$ be distance between $(x,y)$ and the origin $(0,0)$,
+                then $f$ is a function in two variables,
+                and its domain is the entire plane $\mathbb{R}^2$.
+                <p class="fragment">
+                    In this case, we can see the range is
+                    the set of all nonnegative real numbers.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Graphs of functions in two variables</h3>
+    <p>
+        For a given function $f(x,y)$ in the two variables $x$ and $y$,
+        the set of points $(x,y,f(x,y))$ with $(x,y)$ in its domain
+        is called the <em class="term">graph</em> of $f$.
+    </p>
+    <div class="cols fragment">
+        <div class="col">
+            <p>
+                In other words, the function value $f(x,y)$ provides the $z$ value
+                of any point in the graph of $f$.
+            </p>
+            <p>
+                For example, the following image shows the surface
+                that is the graph of the function
+                \[
+                    f(x,y) = \frac{x^2}{10} - \frac{y^2}{10} + \sin(xy).
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <img src="surface.png" alt="Surface">
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Contour lines and level curves</h3>
+    <p>
+        Visualizing a surface in space is not always easy.
+        We often have to rely on their 2-dimensional representations
+        similar to topographical maps.
+    </p>
+    <p class="fragment">
+        A topographical map use <em class="term">contour lines</em>
+        to represent terrains that are not flat.
+        They represent points having the exact same elevation.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                In our context, the curves equivalent to <em>contour lines</em>
+                are called <em class="term">level curves</em>.
+            </p>
+            <div class="definition fragment">
+                For a function $f(x,y)$ and a number $c$ in its range,
+                a <b class="term">level curve</b> of $f$
+                at value $c$ is the set of all points $(x,y)$
+                such that $f(x,y) = c$.
+            </div>
+        </div>
+        <div class="col fragment">
+            <img src="cup.png" alt="">
+            <p class="fragment small">
+                It is also the intersection between
+                the graph of $f$ and a plane defined by $z=c$.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>An simple example</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                For the function
+                \[ f(x,y) = \frac{x^2+y^2}{5}, \]
+                and a nonnegative real number $c$,
+                the level curve at value $c$
+                is simply the curve defined by
+                \[ \frac{x^2+y^2}{5} = c. \]
+            </p>
+        </div>
+        <div class="col">
+            <img src="cup-level.png" alt="">
+            <p>
+                We can see the level curves
+                at values $c=1$ and $c=2$.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        In this figure,
+        we can also see that the level curves are projection
+        of points having the same "height"
+        (just like in a topographical map).
+    </p>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="problem">
+                Consider the function
+                \[ f(x,y) = xy. \]
+                Sketch the level curves at values
+                $0,1,2,3,-1,-2,-3$ respectively.
+            </div>
+        </div>
+        <div class="col">
+            <div class="problem">
+                Consider the function
+                \[ f(x,y) = x^2 - y^2. \]
+                Sketch the level curves at values
+                $0,1,2,3,-1,-2,-3$ respectively.
+            </div>
+        </div>
+    </div>
+    <p>
+        While it is easy to sketch these level curves
+        using computer programs (or graphing calculators),
+        you should at least try to do these by hand, at least once.
+    </p>
+</section>
+<section>
+    <h3>Functions of several variables</h3>
+    <p>
+        Everything we just described can be easily generalized to
+        functions of more than two variables.
+    </p>
+    <div class="definition fragment">
+        Given a positive integer $n$ and a subset $D$ of the $\mathbb{R}^n$,
+        a <b class="term">(real-valued) function in $n$ variables</b>
+        on $D$ maps each point $(x_1,\dots,x_n)$ in $D$
+        to a unique real number.
+        <p class="fragment">
+            Here $D$ is called the <b class="term">domain</b> of $f$,
+            and the <b class="term">range</b> of $f$
+            is the set of all real numbers $y$ 
+            that has at least one point $(x_1,\dots,x_n)$ in $D$
+            such that $f(x_1,\dots,x_n) = y$.
+        </p>
+    </div>
+</section>
+<section>
+    <h3>Level surface and level set</h3>
+    <p>
+        We can generalize the concept of level curves
+        to functions in three variables,
+        and the resulting objects are called <em class="term">level surface</em>.
+    </p>
+    <div class="definition fragment">
+        Given a function $f(x,y,z)$ and a real number $c$
+        in the range of $f$,
+        a <b class="term">level surface</b> of $f$
+        is the set of all points satisfying the equation $f(x,y,z) = c$.
+    </div>
+    <p class="fragment">
+        We can generalize this idea much further to
+        functions in $n$ variables,
+        and the equivalent objects will be called <b class="term">level sets</b>.
+    </p>
+    <p class="fragment small">
+        Terms like level <em>curve</em> and level <em>surface</em>
+        are not to be taken literally.
+        It is possible for a level curve to not be a curve at all,
+        and it is possible for a level surface to not be surface
+        in the normal sense of the word.
+        For example, we can see that the level curve of $f(x,y) = x^2 + y^2$
+        defined by $f(x,y) = 0$ consists of a single point.
+    </p>
+</section>
+<section>
+    <div class="problem">
+        For the function
+        \[ f(x,y,z) = x^2 + y^2 + z^2, \]
+        find the range of the $f$
+        and describe the shape of the level surface defined by
+        $f(x,y,z) = c$ for any $c$ in its range.
+    </div>
+    <div class="problem">
+        For the function
+        \[ f(x,y,z) =  z^2 - \sin(x + y), \]
+        describe the shape of the level surface defined by
+        $f(x,y,z) = c$ for any real number $c$ such that $c > 1$.
+    </div>
+    <div class="problem">
+        For the function
+        \[ f(x,y,z) =  x^2 + y^2 - z^2, \]
+        can you describe the shape of its level surfaces?
+    </div>
+</section>
