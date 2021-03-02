@@ -1,0 +1,206 @@
+---
+layout: ilecture2
+title: Limits and continuity
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Limits and continuity</h2>
+        <p class="small">
+            The concept of limits and continuity
+            of real-valued functions in several variables.
+        </p>
+    </div>
+    <p>
+        The concepts of limits and continuity
+        form the foundation of differential calculus.
+        In this lecture, we will develop these concepts
+        in the context of real-valued functions of several variables.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Notations</h3>
+    <p>
+        Much of what we will discuss here apply equally well to
+        2-dimensional, 3-dimensional spaces, or even higher-dimensional spaces.
+        Therefore, we will directly talk about functions of $n$ variables
+        defined on subsets of $\mathbb{R}^n$.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                Throughout our discussions, 
+                we will use the boldface symbol for ordered list of $n$ variables,
+                i.e., we will write
+                \[
+                    \mathbf{x} = (x_1,\dots,x_n).
+                \]
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                We also make frequent use of the <em class="term">distance function</em>
+                for $n$-dimensional spaces,
+                which is given by the familiar distance formula (Pythagorean Theorem).
+            </p>
+        </div>
+    </div>
+            <div class="definition fragment">
+                For any two points
+                $\mathbf{x} = (x_1,\dots,x_n)$ and 
+                $\mathbf{y} = (y_1,\dots,y_n)$ in $\mathbb{R}^n$,
+                we define
+                \[
+                    d(\mathbf{x},\mathbf{y}) =
+                    \sqrt{ (x_1-y_1)^2 + \cdots + (x_n - y_n)^n }.
+                \]
+            </div>
+</section>
+<section>
+    <h3>Limits</h3>
+    <p>
+        With minor modifications,
+        the concept of limits can be directly generalized to
+        functions of several variables.
+    </p>
+    <div class="definition fragment">
+        Suppose $f$ is a real-valued function of $n$ variables.
+        We say the <b class="term">limit</b> of $f$
+        as $\mathbf{x}$ approaches $\mathbf{z}$ is $L$
+        and write
+        \[ \lim_{\mathbf{x} \to \mathbf{z}} f(\mathbf{x}) = L \]
+        if for any real number $\epsilon > 0$, 
+        there exists a real number $\delta >0$ s.t.
+        \[
+            0 < d(\mathbf{x},\mathbf{z}) < \delta
+            \;\text{implies}\;
+            |f(\mathbf{x}) - L| < \epsilon.
+        \]
+    </div>
+    <p class="small lowlight fragment">
+        Here, we are assuming $f$ is defined in an "neighborhood"
+        around $\mathbf{z}$, but it may or may not be defined at $\mathbf{z}$.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                Of course, if no such real number $L$ exists, we say
+                $\lim_{\mathbf{x} \to \mathbf{z}} f(\mathbf{x})$ does not exist
+                (or undefined).
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                When the limit exists, familiar "laws" of limits 
+                we learned earlier remain valid.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>When limits fail to exist</h3>
+    <p>
+        It is important to notice that for $n > 1$,
+        limits of a real-valued function in $n$ variables
+        may fail to exist for some new reasons.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                For $n > 1$, there are actually infinitely many directions
+                from which we can approach a point $\mathbf{z}$ in $\mathbb{R}^n$.
+                If the limit exists, it must be independent from the direction.
+            </p>
+        </div>
+        <div class="col fragment">
+            <div class="problem">
+                Show the limit
+                \[
+                    \lim_{(x,y) \to (0,0)} \frac{ xy }{x^2 + y^2}
+                \]
+                does not exist.
+            </div>
+
+        </div>
+    </div>
+    <p class="lowlight fragment">
+        It may be helpful to plot the graph of this function
+        near the origin $(0,0)$ to see exactly what the problem is.
+    </p>
+</section>
+<section>
+    <h3>Continuity</h3>
+    <p>
+        Just like in the calculus of functions in one variable,
+        we can define the concept of continuity for functions of several variables
+        in terms of limits.
+    </p>
+    <div class="definition fragment">
+        For a real-valued function $f(\mathbf{x})$ of $n$ variables,
+        we say $f$ is <b class="term">continuous</b> at $\mathbf{z}$ if
+        <div>
+            <ol>
+                <li>
+                    $f(\mathbf{z})$ is defined, i.e., $z$ is in the domain of $f$;
+                </li>
+                <li>
+                    $\lim_{\mathbf{x} \to \mathbf{z}} f(\mathbf{x})$ exists (and is finite); and
+                </li>
+                <li>
+                    $\lim_{\mathbf{x} \to \mathbf{z}} f(\mathbf{x}) = f(\mathbf{z})$.
+                </li>
+            </ol>
+        </div>
+    </div>
+    <p class="fragment">
+        In other words, a function being continuous at a point
+        means its function value and limit at this point are both defined
+        and they are the same.
+    </p>
+    <p class="fragment">
+        This concept <em>mostly</em> agrees our intuition:
+        at a point where a function is continuous,
+        the graph of the function has no gaps and holes.
+    </p>
+</section>
+<section>
+    <h3>Properties of continuous functions</h3>
+    <div class="cols">
+        <div class="col">
+            <p>As expected, the</p>
+            <ul>
+                <li>sums,</li>
+                <li>differences,</li>
+                <li>products, and</li>
+                <li>compositions</li>
+            </ul>
+            <p>
+                of continuous functions in several variables
+                are still continuous.
+            </p>
+        </div>
+        <div class="col">
+            <div class="problem fragment">
+                Notice that we did not include quotients of 
+                continuous functions in several variables in this list.
+                In general, the quotient of two continuous functions
+                may not be continuous.
+                <p>
+                    What could go wrong?
+                </p>
+            </div>
+        </div>
+    </div>
+    <p class="fragment">
+        Of course, for function compositions,
+        we need to make sure they actually make sense.
+        That is, if $g$ is a real-valued functions in $n$ variables,
+        the composition $f(g(x_1,\ldots,x_n))$ only makes sense if
+        $f$ is a function in one variable.
+    </p>
+</section>

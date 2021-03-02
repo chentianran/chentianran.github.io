@@ -13,13 +13,17 @@ which is a fundamental pillar for modern science and engineering. -->
 
 ## Lecture slideshows
 
-* [Vectors in the plane](vectors-in-plane/)
-* [Basic vector operations](vector-operations/)
-* [Vectors in space](vectors-in-space/)
-* [Cross product](cross-product/)
-* [The TNB frame](tnb-frame/)
-* [Curvature and torion](curvature-torsion/)
-* [Real-valued functions of several variables](several-variables/)
+* Vector algebra
+  * [Vectors in the plane](vectors-in-plane/)
+  * [Basic vector operations](vector-operations/)
+  * [Vectors in space](vectors-in-space/)
+  * [Cross product](cross-product/)
+* Vector-valued functions
+  * [The TNB frame](tnb-frame/)
+  * [Curvature and torion](curvature-torsion/)
+* Functions of several variables
+  * [Real-valued functions of several variables](several-variables/)
+  * [Limits and continuity](limits/)
 
 <!-- ## How to survive this course?
 
