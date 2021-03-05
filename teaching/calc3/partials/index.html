@@ -1,0 +1,553 @@
+---
+layout: ilecture2
+title: Partial and directional derivatives
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Partial and directional derivatives</h2>
+        <p class="small">
+            Partial and directional derivatives generalizes the concept of derivatives
+            to the context of real-valued functions in several variables.
+        </p>
+    </div>
+    <p>
+        In this lecture, we start the development of the concept of derivatives 
+        for real-valued functions in several variables.
+        Partial and directional derivative are two closely related construction
+        that turns the problem of quantifying the rate of change of a function
+        in several variables into the familiar problem of understanding the rate of change
+        of a function in one variable only.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Review: derivative</h3>
+    <p>
+        Recall that for a function $f$ in one variable,
+        its derivative function is defined to be
+        \[
+            f'(x) = \lim_{h \to 0} \frac{ f(x+h) - f(x) }{ h }
+        \]
+        wherever this limit exists.
+        It give us a tool to measure how fast a function changes,
+        i.e., the instantaneous rate of change of the function.
+    </p>
+    <p class="fragment">
+        We want to generalize this idea to
+        functions in several variables.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <div class="problem">
+                Does the concept of "instantaneous rate of change"
+                make sense for functions of two variables?
+                What about three or even more variables?
+            </div>
+        </div>
+        <div class="col fragment">
+            <p>
+                As usual, we will use the boldface symbol 
+                for ordered list of $n$ variables,
+                i.e., 
+                $
+                    \mathbf{x} = (x_1,\dots,x_n),
+                $
+                whenever we make general statements for any dimension.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Partial derivatives of functions in two variables</h3>
+    <p>
+        For a real-valued function $f$ in two variables,
+        we can gain some understanding of how this function changes its value
+        by looking at the cross sections of the graph of $f$
+        along the $x$ and $y$ directions separately.
+    </p>
+    <div class="definition fragment">
+        Suppose $f$ is a real-valued function of two variables.
+        Then the <b class="term">partial derivative</b> of $f$
+        with respect to $x$, denoted as $\frac{\partial f}{\partial x}$,
+        or $f_x$, is defined to be
+        \[
+            \frac{\partial f}{\partial x} = \lim_{h \to 0} \frac{ f(x+h, y) - f(x, y) }{ h }
+        \]
+        if this limit exists.
+    </div>
+    <p class="fragment">
+        That is, $\frac{\partial f}{\partial x}$ is the derivative of $f$
+        when $y$ is held constant, and $x$ is considered to be the only variable.
+    </p>
+</section>
+<section>
+    <p>
+        From a geometric point of view,
+        $\frac{\partial f}{\partial x}$ describes the slope of the tangent lines
+        of cross sections of the graph of $z = f(x,y)$ along the $x$ direction.
+    </p>
+    <div class="cols">
+        <div class="col"><img src="saddle-cut.png" alt=""></div>
+        <div class="col">
+            <p class="fragment">
+                This figure shows a cross section of the graph of
+                $f(x,y) = \frac{x^2-y^2}{5}+3$
+                with $y$ fixed at $-2$.
+            </p>
+            <p class="fragment">
+                For any $x$ value, $\frac{\partial f}{\partial x} (x,-2)$
+                gives us the slope of the tangent line to this cross section
+                at $(x,-2)$.
+            </p>
+            <p class="fragment">
+                In general, fixing any $y$ value,
+                $\frac{\partial f}{\partial x}$
+                gives us the slopes of the tangent lines to a horizontal cross section.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Basically, $\frac{\partial f}{\partial x}$ gives us a meaningful slope
+        at any point, if we are restricted to move in the $x$ direction only.
+    </p>
+</section>
+<section>
+    <p>
+        We can define the partial derivative of $f$ with respect $y$
+        in a similar way.
+    </p>
+    <div class="definition fragment">
+        Suppose $f$ is a real-valued function of two variables.
+        Then the <b class="term">partial derivative</b> of $f$
+        with respect to $y$, denoted as $\frac{\partial f}{\partial y}$,
+        or $f_y$, is defined to be
+        \[
+            \frac{\partial f}{\partial y} = \lim_{h \to 0} \frac{ f(x, y+h) - f(x, y) }{ h },
+            \quad\text{if exists}.
+        \]
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                That is, $\frac{\partial f}{\partial y}$ is the derivative of $f$
+                when $x$ is held constant, and $y$ is considered to be the only variable.
+            </p>
+            <p class="fragment">
+                We have a similar geometric interpretation:
+                $\frac{\partial f}{\partial y}$ gives us the
+                slopes of the tangent lines to cross sections along the $y$ direction.
+            </p>
+        </div>
+        <div class="col fragment"><img src="saddle-cut-y.png" alt=""></div>
+    </div>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="problem">
+                Compute all the partial derivatives for the function
+                \[ f(x,y) = x^2 - y^2 + \sin(xy) \]
+            </div>
+        </div>
+        <div class="col">
+            <div class="problem">
+                Compute all the partial derivatives for the function
+                \[ f(x,y,z) = x^2y^3z + e^{x^2 + y^2 + z^2} \]
+            </div>
+        </div>
+    </div>
+    <p>
+        When calculating the partial derivative of a function $f$
+        with respect to a variable,
+        we simply have to "pretend" all other variables are numbers.
+    </p>
+    <p class="fragment">
+        All the familiar differentiation techniques still apply here.
+    </p>
+</section>
+<section>
+    <h3>Partial derivative of functions in several variables</h3>
+    <p>
+        What we described can be easily generalized to real-value functions
+        in any number of variables.
+    </p>
+    <div class="definition fragment">
+        Suppose $f$ is a real-valued function of $n$ variables
+        $\mathbf{x} = (x_1,\dots,x_n)$.
+        Then the <b class="term">partial derivative</b> of $f$
+        with respect to $x_i$, denoted as $\frac{\partial f}{\partial x_i}$,
+        or $f_{x_i}$, is defined to be
+        \[
+            \frac{\partial f}{\partial x_i} = \lim_{h \to 0} \frac{ f(\mathbf{x} + h \mathbf{e}_i) - f(\mathbf{x}) }{ h },
+        \]
+        if this limit exists.
+        Here $\mathbf{e}_i$ is the vector with 1 on the $i$-th position and 0 elsewhere.
+    </div>
+    <p class="fragment">
+        This definition agrees with our definitions for the 2-variables cases.
+        If $n=1$, this definition also agrees with the familiar definition of derivatives
+        of functions of a single variable.
+    </p>
+</section>
+<section>
+    <h3>Differentiability: the technical definition</h3>
+    <p>
+        It turns out partial derivatives are rather "weak" concepts 
+        and not sufficient to capture of
+        idea of derivative and differentiability for functions in several variables.
+        <span class="fragment">
+            We will develop a stronger concept.
+        </span>
+    </p>
+    <div class="definition fragment">
+        A function $f$, 
+        in the $n$ variables $\mathbf{x} = (x_1,\dots,x_n)$,
+        is said to be <b class="term">differentiable</b>
+        at a point $\mathbf{x}_0$ (in the interior of its domain)
+        if there exists a linear map $J: \mathbf{R}^n \to \mathbf{R}$ 
+        such that
+        \[
+            \lim_{\mathbf{h} \to \mathbf{0}}
+            \frac{ \| f( \mathbf{x}_0 + \mathbf{h} ) - f( \mathbf{x}_0 ) - J(\mathbf{h}) \| }{ \| \mathbf{h} \| }
+            = 0.
+        \]
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                This is an important but rather complicated concept.
+                We will have a separate discussion on its deeper meaning.
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                For now, we will only take this to mean
+                the condition that the function can be arbitrarily closely approximated
+                by a linear map.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Differentiability is a stronger condition</h3>
+    <p>
+        The concept of differentiability we just defined
+        is a strictly "stronger" condition than the existence of partial derivatives
+        in the sense that being differentiable implies the
+        existence of partial derivatives.
+    </p>
+    <div class="theorem">
+        Let $f$ be a function in the $n$ variables.
+        If $f$ is differentiable,
+        then all its partial derivatives exist.
+    </div>
+    <p class="fragment">
+        The converse is not true:
+        It is possible for a function to have all the partial derivatives
+        at a point, but the function is not differentiable at that point.
+        We will have a better understanding of these points
+        in a separate discussion.
+    </p>
+    <p class="fragment lowlight">
+        At this moment, we will simply take "differentiability"
+        as a nice condition under which we can develop
+        other concepts and tools easily.
+    </p>
+</section>
+<section>
+    <h3>Chain rule</h3>
+    <p>
+        The familiar chain rule also has a nice generalization
+        to the context of functions of several variables.
+        For simplicity, we start with two variables.
+    </p>
+    <div class="theorem fragment">
+        Let $x$ and $y$ be differentiable functions of $t$,
+        and let $z = f(x,y)$ be a <b>differentiable</b> function in $x$ and $y$.
+        Then $z$ is also a differentiable function of $t$ and
+        \[
+            \frac{dz}{dt} =
+            \frac{\partial z}{\partial x} \, \frac{dx}{dt} +
+            \frac{\partial z}{\partial y} \, \frac{dy}{dt}.
+        \]
+    </div>
+    <p class="fragment">
+        Alternatively, we can also write the above equation more compactly as
+        \[
+            [ f(x(t),y(t)) ]'  = f_x x' + f_y y'
+        \]
+        with the points at which the functions are evaluated being implicit.
+    </p>
+    <p class="fragment lowlight small">
+        The proof is fairly complicated,
+        but if you understood how chain rule works,
+        maybe you can see why this one "has to be" true.
+        Can you give it a try?
+    </p>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <div class="problem">
+        Let
+        \begin{align*}
+            z &= x^2 - y^2 &
+            x &= \cos(t) &
+            y &= \sin(t)
+        \end{align*}
+        Compute $\frac{dz}{dt}$.
+    </div>
+    <div class="problem">
+        Let
+        \begin{align*}
+            z &= 3x^2 + 2y^3 &
+            x &= e^{t} &
+            y &= e^{-t}
+        \end{align*}
+        Compute $\frac{dz}{dt}$.
+    </div>
+    <div class="problem">
+        The chain rule states that
+        \[
+            \frac{dz}{dt} =
+            \frac{\partial z}{\partial x} \, \frac{dx}{dt} +
+            \frac{\partial z}{\partial y} \, \frac{dy}{dt}.
+        \]
+        Can you explain why it is true in your own words?
+    </div>
+</section>
+<section>
+    <h3>Slightly more general chain rule</h3>
+    <div class="theorem fragment">
+        Let $x_1,\ldots,x_n$ be differentiable functions of $t$,
+        and let $z = f(x_1,\ldots,x_n)$ be a <b>differentiable</b> function 
+        of $\mathbf{x} = (x_1,\dots,x_n)$.
+        Then $z$ is also a differentiable function of $t$ and
+        \[
+            \frac{dz}{dt} =
+            \frac{\partial z}{\partial x_1} \, \frac{dx_1}{dt}
+            + \cdots +
+            \frac{\partial z}{\partial x_n} \, \frac{dx_n}{dt}.
+        \]
+    </div>
+    <p class="fragment">
+        Notice that the right hand resembles a dot product.
+        Indeed, 
+        \[
+            \frac{dz}{dt} =
+            \begin{bmatrix}
+                \frac{\partial z}{\partial x_1} \\ \vdots \\ 
+                \frac{\partial z}{\partial x_n}  
+            \end{bmatrix}
+            \;\cdot\;
+            \begin{bmatrix}
+                \frac{dx_1}{dt} \\ \vdots \\ \frac{dx_n}{dt}
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        The "factor" on the right is clearly the derivative of 
+        the vector valued function $\mathbf{x}(t)$.
+        <span class="fragment">
+            The "factor" on the left is called the 
+            <em class="term">"gradient vector"</em>.
+            More on that later.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Directional derivatives of functions in two variables</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                Recall that partial derivatives
+                of a function $z = f(x,y)$
+                are essentially the derivatives of $f$
+                in $x$ and $y$ directions only.
+            </p>
+            <p class="fragment">
+                Can we construct a similar "derivative" in any direction?
+            </p>
+            <p class="fragment">
+                The answer is Yes, and the result is called
+                "directional derivative".
+            </p>
+        </div>
+        <div class="col fragment">
+            <img src="saddle-directional.png" alt="">
+        </div>
+    </div>
+    <div class="definition fragment">
+        Let $z=f(x,y)$ be a function in the two variables $x$ and $y$,
+        and let $\mathbf{v} = (v_1,v_2) = v_1 \mathbf{i} + v_2 \mathbf{j}$
+        be a <em>unit</em> vector.
+        Then the <b class="term">directional derivative</b> of $f$
+        in the direction of $\mathbf{v}$ is given by
+        \[
+            D_{\mathbf{v}} f (x,y) = 
+            \lim_{h \to 0}
+            \frac{ f(x + h v_1, y + h v_2) - f(x,y) }{h}
+            \quad \text{if exists}.
+        \]
+    </div>
+</section>
+<section>
+    <h3>A simpler formulation for directional derivatives</h3>
+    <p>
+        The definition is somewhat difficult to use.
+        Using chain rule, we can derive a more friendly formulation.
+    </p>
+    <div class="theorem fragment">
+        Let $f$ be a <b>differentiable</b> function in $x$ and $y$,
+        and let $\mathbf{v} = (v_1,v_2)$ be a <em>unit</em> vector.
+        Then
+        \[
+            D_{\mathbf{v}} f (x,y) = 
+            \frac{\partial f}{\partial x}(x,y) \, v_1 + 
+            \frac{\partial f}{\partial y}(x,y) \, v_2.
+        \]
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                As long as the points at which those functions are evaluated are understood,
+                we can write this in a more compact form as
+                \[
+                    D_{\mathbf{v}} f  = 
+                    v_1 \, \frac{\partial f}{\partial x} + 
+                    v_2 \, \frac{\partial f}{\partial y}.
+                \]
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                It is also a dot product:
+                \[
+                    D_{\mathbf{v}} f  = 
+                    \begin{bmatrix}
+                        \frac{\partial f}{\partial x} \\
+                        \frac{\partial f}{\partial y}
+                    \end{bmatrix}
+                    \cdot
+                    \begin{bmatrix}
+                        v_1 \\
+                        v_2 
+                    \end{bmatrix}
+                \]
+            </p>
+            <p class="fragment small">
+                These results tell us that <em>all</em>
+                directional derivatives of a differentiable function 
+                can be computed easily
+                once the partial derivatives are computed.
+            </p>
+
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <p>
+        For all the functions listed below,
+        compute the directional derivative 
+        $D_{\mathbf{v}}(x,y)$.
+        for any unit vector $\mathbf{v} = (v_1,v_2)$,
+        Can you describe for what choice of $\mathbf{v}$ 
+        will directional derivative reaches its maximum?
+        What about minimum?
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="problem">
+                Consider the function
+                \[
+                    f(x,y) = x + y,
+                \]
+                and the questions listed above.
+            </div>
+        </div>
+        <div class="col">
+            <div class="problem">
+                Consider the function
+                \[
+                    f(x,y) = x^2 + y^2,
+                \]
+                and the questions listed above.
+            </div>
+        </div>
+    </div>
+    <div class="problem">
+        For the function
+        \[
+            f(x,y) = x^2 - y^2,
+        \]
+        compute the directional derivative 
+        $D_{\mathbf{v}}(0,0)$.
+        for any unit vector $\mathbf{v} = (v_1,v_2)$.
+        Can you provide an interpretation of your result?
+    </div>
+</section>
+<section>
+    <h3>More general directional derivatives</h3>
+
+    <div class="definition fragment">
+        Let $z=f(\mathbf{x})$ be a function in the $n$ variables 
+        $\mathbf{x} = (x_1,\dots,x_n)$,
+        and let $\mathbf{v}$ be a <em>unit</em> vector.
+        Then the <b class="term">directional derivative</b> of $f$
+        in the direction of $\mathbf{v}$ is given by
+        \[
+            D_{\mathbf{v}} f (\mathbf{x}) = 
+            \lim_{h \to 0}
+            \frac{ f(\mathbf{x} + h \mathbf{v}) - f(\mathbf{x}) }{h}
+        \]
+        if this limit exists.
+    </div>
+    <p class="fragment small lowlight">
+        The geometric interpretation of taking a cross section
+        remains correct here, though we may not be able to visualize it
+        in the familiar 3-dimensional space.
+    </p>
+    <p class="fragment">
+        Higher order of directional derivatives can be defined,
+        but we don't have a very good notation for them.
+        <span class="lowlight">(We do have several bad ones)</span>
+    </p>
+</section>
+<section>
+    <h3>A warning on non-differentiable functions</h3>
+    <p>
+        The requirement that $f(x,y)$ (or $f(x_1,\ldots,x_n)$ in general)
+        being differentiable is very important.
+        Here we will show what could go wrong
+        if this condition is dropped.
+    </p>
+    <div class="problem fragment">
+        For the function $f(x,y) = \frac{xy}{x^2+y^2}$,
+        compute its partial and directional derivatives
+        at $(0,0)$.
+        Do you notice something strange?
+    </div>
+    <div class="problem fragment">
+        Similarly, for the function $f(x,y) = (x^2 y)^{ \frac{1}{3} }$,
+        compute its partial and directional derivatives
+        at $(0,0)$.
+        Anything strange?
+    </div>
+    <p class="fragment">
+        "Counterexamples" like these highlight the importance of
+        the concept of differentiability.
+        In both cases, the functions in question are not differentiable
+        at the origin, hence the problem.
+    </p>
+    <div class="problem fragment">
+        Check if these results contradict with any textbook
+        or online resources.
+        If they do, what do you make of these?
+    </div>
+</section>
