@@ -1,0 +1,182 @@
+---
+layout: ilecture2
+title: Gradients and differentials
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Gradients and differentials</h2>
+        <p class="small">
+            The gradient vectors and differentials of functions
+            in several variables
+        </p>
+    </div>
+    <p>
+        The gradient vector and differential of a real-valued function
+        in several variables give us more insight into how such functions
+        change in a small neighborhood.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Review: differentiability</h3>
+    <p>
+        Recall that partial and directional derivatives 
+        are rather "weak" concepts for modeling the local changes
+        of a function in several variables.
+        We mentioned a stronger condition called "differentiability".
+    </p>
+    <p class="fragment">
+        A function $f$, 
+        in the $n$ variables $\mathbf{x} = (x_1,\dots,x_n)$,
+        is said to be <b class="term">differentiable</b>
+        at a point $\mathbf{x}_0$ (in the interior of its domain)
+        if there exists a linear map $J: \mathbf{R}^n \to \mathbf{R}$ 
+        such that
+        \[
+            \lim_{\mathbf{h} \to \mathbf{0}}
+            \frac{ |\, f( \mathbf{x}_0 + \mathbf{h} ) - f( \mathbf{x}_0 ) - J(\mathbf{h}) \,| }{ \| \mathbf{h} \| }
+            = 0.
+        \]
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                This is a very important concept.
+                It is a direct generalization
+                of the idea of differentiability for functions in one variables.
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                This condition ensures the function can be approximated,
+                to arbitrary precisions, by a linear function near a point.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Today, we aim to gain a deeper understanding of the linear map $J$.
+    </p>
+</section>
+<section>
+    <h3>The case of two variables</h3>
+    <p class="fragment">
+        In case where $f$ is a function in the two variables $x$ and $y$,
+        the <em class="term">differentiability</em> condition at $(x,y)$ is given by 
+        \[
+            \lim_{ (\Delta x,\Delta y) \to (0,0) }
+            \frac{ | f( x + \Delta x, y + \Delta y ) - f( x, y ) - J(\Delta x,\Delta y) | }{ \sqrt{\Delta x^2 + \Delta y^2 }}
+            = 0.
+        \]
+        where $J: \mathbf{R}^2 \to \mathbf{R}$ is a linear map.
+    </p>
+    <p class="small fragment lowlight">
+        In taking the limit as $(\Delta x,\Delta y) \to (0,0)$
+        we allow $(\Delta x,\Delta y)$ to approach $(0,0)$ from any direction,
+        and the limit must be independent from choices of directions.
+    </p>
+    <p class="fragment">
+        The term <em class="term">linear map</em> has very specific meanings.
+        Indeed the linear map $J: \mathbf{R}^2 \to \mathbf{R}$ must be of the form
+        \[
+            J(\Delta x,\Delta y) = a \Delta x + b \Delta y
+        \]
+        for some real numbers $a$ and $b$.
+        <span class="fragment">This should remind you of a dot product.</span>
+    </p>
+</section>
+<section>
+    <h3>The linear approximation</h3>
+    <p>
+        From the view point of approximation,
+        the condition of differentiability can also be understood as
+        the condition that 
+        \[
+            f( x + \Delta x, y + \Delta y ) 
+            \approx
+            f( x, y ) + J(\Delta x,\Delta y)
+        \]
+        as $\Delta x$ and $\Delta y$ become sufficiently small.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                This approximation should remind you of the
+                "linear approximation" formula for function in one variable
+                \[
+                    f(x + \Delta x) \approx f(x) + f'(x) \Delta x.
+                \]
+            </p>
+            <p class="fragment">
+                So, here, the linear map $J$
+                plays the role of the multiplication by the derivative.
+            </p>
+        </div>
+        <div class="col fragment">
+            <div class="problem">
+                Can visualize that,
+                if we fix $x$ and $y$ and allow $\Delta x$ and $\Delta y$
+                to vary, the function
+                \[
+                    f( x, y ) + J(\Delta x,\Delta y)
+                \]
+                produce a plane in space?
+            </div>
+            <p class="fragment">
+                Indeed, this plane is the <em class="term">tangent plane</em>
+                of the graph of $f$ at $(x,y)$.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>The tangent plane</h3>
+    <div class="cols">
+        <div class="col">
+
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Indeed, the tangent plane at a point
+                is exactly the plane that contains all the tangent lines at that point.
+            </p>
+            <p class="fragment">
+                That is, in any cross section through that point
+                and parallel to the $z$-axis (a vertical cross section),
+                you will see a tangent line.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Differentiability is a stronger condition</h3>
+    <p>
+        The concept of differentiability we just defined
+        is a strictly "stronger" condition than the existence of partial derivatives
+        in the sense that being differentiable implies the
+        existence of partial derivatives.
+    </p>
+    <div class="theorem">
+        Let $f$ be a function in the $n$ variables.
+        If $f$ is differentiable,
+        then all its partial derivatives exist.
+    </div>
+    <p class="fragment">
+        The converse is not true.
+        We have seen non-differentiable functions 
+        that have all partial derivatives.
+        But with the additional condition of continuity of partial derivatives,
+        differentiability can be established.
+    </p>
+    <div class="theorem fragment">
+        Suppose $f$ be a function in $n$ variables $x_1,\dots,x_n$,
+        and $\mathbf{p}_0$ is a point in the interior of its domain.
+        If the partial derivative $\frac{\partial f}{\partial x_i}$
+        exists and is continuous at $\mathbf{p}_0$ for each $i$,
+        then $f$ is differentiable at $\mathbf{p}_0$
+    </div>
+</section>
