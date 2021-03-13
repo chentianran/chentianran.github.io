@@ -25,7 +25,6 @@ which is a fundamental pillar for modern science and engineering. -->
   * [Real-valued functions of several variables](several-variables/)
   * [Limits and continuity](limits/)
   * [Partial and directional derivative](partials/)
-  * [Gradient vectors and differentials](partials/)
 
 <!-- ## How to survive this course?
 
