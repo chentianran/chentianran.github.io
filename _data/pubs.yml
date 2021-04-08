@@ -1,3 +1,37 @@
+- nickname: deep-linear
+  title: The loss surface of deep linear networks viewed through the algebraic geometry lens
+  coauthors: Dhagash Mehta, Tingting Tang and Jonathan D. Hauenstein
+  journal: IEEE Transactions on Pattern Analysis and Machine Intelligence (2021)
+  link: https://doi.org/10.1109/TPAMI.2021.3071289
+  pdf: deep-linear.pdf
+  arxiv: http://arxiv.org/abs/1810.07716
+  abstract: >
+    By using the viewpoint of modern computational algebraic geometry,
+    we explore properties of the optimization landscapes of the deep linear neural network models. 
+    After clarifying on the various definitions of "flat" minima, we show that the geometrically flat minima, 
+    which are merely artifacts of residual continuous symmetries of the deep linear networks, 
+    can be straightforwardly removed by a generalized $L_2$ regularization. 
+    Then, we establish upper bounds on the number of isolated stationary 
+    points of these networks with the help of algebraic geometry. 
+    Using these upper bounds and utilizing a numerical algebraic geometry method, 
+    we find all stationary points for modest depth and matrix size. 
+    We show that in the presence of the non-zero regularization, 
+    deep linear networks indeed possess local minima which are not the global minima. 
+    Our computational results further clarify certain aspects of the loss surfaces of deep linear networks and provides novel insights.
+  bibtex: |
+    @article{MehtaChenTangHauenstein2021,
+    archivePrefix = {arXiv},
+    arxivId = {1810.07716},
+    doi = {10.1109/TPAMI.2021.3071289},
+    journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+    author = {Mehta, Dhagash and Chen, Tianran and Tang, Tingting and Hauenstein, Jonathan D.},
+    eprint = {1810.07716},
+    month = {oct},
+    title = {The loss surface of deep linear networks viewed through the algebraic geometry lens},
+    url = {http://arxiv.org/abs/1810.07716},
+    year = {2021}
+    }
+
 - nickname: kuramoto3
   title: Three formulations of the Kuramoto model as a system of polynomial equations
   coauthors: Jakub Mareček, Dhagash Mehta, and Matthew Niemerg
