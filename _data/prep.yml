@@ -1,3 +1,37 @@
+- nickname: facet-subgraphs
+  title: Facets and facet subgraphs of adjacency polytopes
+  coauthors: Robert Davis and Evgeniia Korchevskaia
+  pdf: facet-subgraphs.pdf
+  arxiv: https://arxiv.org/abs/2107.12315
+  abstract: >
+    Adjacency polytopes, a.k.a. symmetric edge polytopes,
+    associated with undirected graphs have been defined and studied
+    in several seemingly-independent areas including
+    number theory, discrete geometry, and dynamical systems.
+    In particular, the authors are motivated by the study of
+    the algebraic Kuramoto equations of unmixed form
+    whose Newton polytopes are the adjacency polytopes.
+
+    The interplay between the geometric structure of adjacency polytopes
+    and the topological structure of the underlying graphs is a recurring theme
+    in recent studies.
+    In particular, "facet/face subgraphs" emerged as one of the central concepts
+    in describing this symmetry.
+    Continuing along this line of inquiry we provide a complete description of
+    the correspondence between facets/faces of an adjacency polytope
+    and maximal bipartite subgraphs of the underlying connected graph.
+  bibtex: |
+    @article{ChenDavisKorchevskaia2021Facets,
+      archivePrefix = {arXiv},
+      arxivId = {2007.11051},
+      author = {Chen, Tianran and Davis, Robert and Korchevskaia, Evgeniia},
+      eprint = {2107.12315},
+      month = {jul},
+      title = {Facets and facet subgraphs of adjacency polytopes},
+      url = {https://arxiv.org/abs/2107.12315},
+      year = {2021}
+    }
+
 - nickname: draconian
   title: Computing volumes of adjacency polytopes via draconian sequences
   coauthors: Robert Davis
