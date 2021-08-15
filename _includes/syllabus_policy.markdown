@@ -1,4 +1,9 @@
-**Social distancing guidelines**
+**AUM 2021-2022 pandemic plan.**
+Please follow guidelines detailed in the
+[AUM pandemic plan](https://www.aum.edu/backtocampus)
+relating to the COVID-19 pandemic.
+
+<!-- **Social distancing guidelines**
 Following the AUM social distancing and face covering policy,
 all members (faculty and students) in this class must 
 maintain social distancing at all time in an indoor classroom as follows:
@@ -31,13 +36,13 @@ However,
 
 Attendance in those two cases may be excused and arrangement,
 can be made for students to complete missed work.
-Such arrangements must be requested by students,
+Such arrangements must be requested by students, -->
 
-**Technology equipment expectation**
+**Technology equipment expectation.**
 Access to computers and stable Internet connection are expected.
 Students who do not have their own equipment can use AUM open labs including labs found in the first floor of the Taylor center and the second floor of the library.
 
-**Syllabus contingency plan**
+**Syllabus contingency plan.**
 Should the Alabama Department of Public Health,
 the Governor, or Chancellor determine the university discontinue
 face-to-face (in-person) instruction in the interest of safety,
@@ -52,14 +57,14 @@ will replace the original materials.
 In case the instructor cannot attend due to COVID-related matter,
 a back-up instructor will be arranged by the Department of Mathematics.
 
-**Academic dishonesty:**
+**Academic dishonesty.**
 Cheating of any kind will not be tolerated.
 In particular, you cannot copy (totally or partially) someone else's solutions
 or allow someone else to copy your solutions on quizzes or exams.
-You will receive an "F" in the course if you are caught.
+If you do, you will receive an "F" in the course.
 Please consult Student Handbook for additional guidelines.
 
-**Disability accommodations:**
+**Disability accommodations.**
 Students who need accommodations are asked to arrange a meeting
 during office hours to discuss your accommodations.
 If you have a conflict with my office hours, an alternate time can be arranged.
@@ -69,17 +74,17 @@ Center for Disability Services (CDS), but need accommodations,
 make an appointment with CDS, 147 Taylor Center,
 or call 334-244-3631 or e-mail CDS at <cds@aum.edu>
 
-**Academic support:**
+**Academic support.**
 Student Success Advising in the WASC can be scheduled through Advisor Trac,
 email at wasc@aum.edu, or by calling our front desk at 334.244.3230.
-Students can meet through Blackboard Collaborate or face to face.
-Masks are required for face to face meetings.
+<!-- Students can meet through Blackboard Collaborate or face to face.
+Masks are required for face to face meetings. -->
 ISL: Tutoring appointments can be scheduled online by filling out the form at
 <http://www.aum.edu/tutoringapp>.
-Students will have the option of receiving face to face (w/masks and social distancing)
-or Blackboard Collaborate sessions.  Students can “drop in” and schedule an appointment.
-Online tutoring is preferred. Everyone should be prepared to follow signage and socially distance.
-Students are highly encouraged to bring their own laptop to allow for document sharing.
+<!-- Students will have the option of receiving face to face (w/masks and social distancing)
+or Blackboard Collaborate sessions.  Students can “drop in” and schedule an appointment. -->
+<!-- Online tutoring is preferred. Everyone should be prepared to follow signage and socially distance.
+Students are highly encouraged to bring their own laptop to allow for document sharing. -->
 
 <!-- All students have the opportunity to receive free academic support at AUM.
 Visit the Learning Center (LC) in the WASC on second floor Library
@@ -91,7 +96,7 @@ and the ISL may be reached at 244-3265.
 ISL tutoring is first-come-first served.
 Current operating hours can be found at <http://www.aum.edu/learningcenter>. -->
 
-**Student Privacy Policy:**
+**Student privacy policy.**
 The Family Education Rights and Privacy Act of 1974,
 as amended, (FERPA) requires institutions receiving federal monies to protect
 the privacy of students' educational records.
