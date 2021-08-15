@@ -5,7 +5,7 @@ title: MATH-1620
 
 # MATH-1620
 
-* [Course syllabus](syllabus-S2021/)
+* [Course syllabus](syllabus-F2021/)
 
 <!-- ## Tentative schedule
 
@@ -30,7 +30,7 @@ title: MATH-1620
   - the process of the trying to figure out the answer is the important part.
     The only important part! -->
 
-## Lecture slideshows
+## Narrated lecture slideshows
 
 * [Integration by substitution](integration-by-substitution/)
 * [Integration by substitution for definite integrals](definite-integral-substitution/)
