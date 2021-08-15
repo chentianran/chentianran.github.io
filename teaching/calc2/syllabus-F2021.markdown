@@ -212,8 +212,11 @@ They are a major part of your course grade. -->
 
 ### Final exam
 
-The final exam will take place in the final week.
+The final exam is scheduled to take place
+on 12/6 10:45 am -- 12:15 pm.
 It constitutes a major part of your course grade.
+Please see the announcement on the Blackboard system
+for detailed description.
 
 ### Grade composition
 
@@ -221,14 +224,14 @@ Your final grade is determined according to your overall performance of quizzes,
 the in-class worksheets, projects, and the final exam,
 and is calculated according to the following weights.
 
-| Component          | Percentage | Where/how               |
-|--------------------|------------|-------------------------|
-| Surveys            |    3%      | Blackboard              |
-| Reading tests      |   22%      | Blackboard              |
-| Concept tests      |   15%      | Blackboard              |
-| Homework           |   20%      | Blackboard              |
-| Quizzes            |   30%      | In person or Blackboard |
-| Final exam         |   10%      | In person or Blackboard |
+| Component          | Percentage | Where/how  |
+|--------------------|------------|------------|
+| Surveys            |    3%      | Blackboard |
+| Reading tests      |   22%      | Blackboard |
+| Concept tests      |   15%      | Blackboard |
+| Homework           |   20%      | Blackboard |
+| Quizzes            |   30%      | In person  |
+| Final exam         |   10%      | In person  |
 
 {% include letter_grades.markdown %}
 
