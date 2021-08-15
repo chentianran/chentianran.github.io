@@ -6,7 +6,7 @@ title: Tianran Chen
 Hi, I am Tianran Chen
 =====================
 
-I am an Assistant Professor at [Auburn University at Montgomery](http://www.aum.edu)
+I am an Associate Professor at [Auburn University at Montgomery](http://www.aum.edu)
 in the Department of Mathematics and Computer Science.
 I studied under the guidance of [Tien-Yien Li](https://sites.google.com/view/tienyienli)
 and received my Ph.D. in Applied Mathematics from Michigan State University.
