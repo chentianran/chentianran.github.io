@@ -1,18 +1,18 @@
 ---
 layout: default
-title: MATH-1620
+title: MATH-2660
 ---
 
-# MATH-1620A (CRN 1039) Fall 2021 Course Syllabus
+# MATH-2660A (CRN 1158) Fall 2021 Course Syllabus
 
 ## When, where, and who
 
-* Title: Calculus II
-* Time: Monday and Wednesday, 10:50am -- 12:30pm
+* Title: Linear Algebra
+* Time: Tuesday and Thursday, 2:10am -- 3:25pm
 * Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
-* Course page: <http://www.tianranchen.org/teaching/calc2/>
+* Course page: <http://www.tianranchen.org/teaching/linalg/>
 {% include hours.markdown %}
 <!-- {% include appointments.markdown %} -->
 
@@ -24,64 +24,57 @@ alternative meeting time may be arranged
 
 ## What we will learn
 
-This is the second course in the calculus sequence.
-We will discuss more advanced topics in calculus and related areas of mathematics.
-In particular, we will cover...
+Linear algebra is the fundamental language for manipulating high-dimensional data.
+It is also the gateway to higher level mathematics.
+In this semester, we will cover...
 
-* Deeper subjects involving limits
-  - Technical definition of limits
-  - Limits of sequences
-  - Limits of indeterminate form
-* Infinite series
-  - Convergence properties
-  - Rules for testing Convergence
-  - Taylor series expansion of functions
-* Important functions
-  - Exponential functions
-  - Logarithm functions
-  - Inverse trigonometric functions
-  - Hyperbolic functions
-* Simple differential equations
-* Describing curves using parametric equations
-* Integration techniques
-  - Integration by substitution
-  - Integration by parts
-  - Integration involving inverse trigonometric functions
-  - Improper Integrals
-* Applications of Integrals
-  - Computing arc-length
-  - Computing volume
-  - Computing center of mass
+* Theory of systems of linear equations
+* Vector space operations
+* Matrix operations
+* Matrix determinant
+* Gaussian elimination and LU decomposition
+* Linear transformations
+* Eigenvalue and eigenvectors
+* (Optional) Inner product space
+* (Optional) Singular values
 
 ## Prerequisite
 
-In order to succeed in this class, a solid understanding of basic calculus is necessary.
-These prerequisite can be satisfied by MATH-1610
-or an appropriate score in the AUM Math Placement Test.
+__MATH-1620__ (Calculus II) or an equivalent course
 
-## Textbook and supplemental material
+In order to succeed in this class,
+a solid understanding of pre-calculus algebra
+and basic calculus is necessary.
+The ability to write formal proofs is also required.
 
-* [Required] _Calculus: Early Transcendentals_ (any edition) by Larson & Edwards
-  (6th edition ISBN: 978-1285774770)
-* [Optional] _OpenSTAX Calculus Volume 2_ (__free!__)
-    * [Online view](https://openstax.org/details/books/calculus-volume-2)
-    * [PDF direct link](https://d3bxy9euw4e147.cloudfront.net/oscms-prodcms/media/documents/CalculusVolume2-OP.pdf)
-    * [A few great video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
-* [Optional] Lecture notes and links to narrated lectures (with pre-recorded voice-overs)
-  can be found in the "Content" folder on our Blackboard course page.
+## Textbook and lecture notes
 
-<!-- Reading assignment and homework problems will be assigned from these textbook.
-(Either one is fine) -->
+The required textbook is: _Linear Algebra and Its Applications_
+by __David C. Lay, Steven R. Lay, and Judi J. McDonald__
+(ISBN 978-0-13-427919-0)
+
+The following textbooks are recommended (but not required) supplemental textbooks.
+
+* _Linear algebra_
+  by __Jim Hefferon__
+  (ISBN 978-1944325039)
+  Free PDF version is available.
+* (For advanced students) _Linear Algebra Done Right_
+  by __Sheldon Axler__
+  (ISBN 978-3-319-30765-7)
+
+In addition, supplemental lecture notes
+can be found on our course page.
 
 ## Attendance
 
-Participation in in-class discussions
-is an important part of the learning process.
-Therefore, your in-class/virtual attendance is expected.
+Participation in in-class discussions is an important part
+of your learning process.
+Therefore, your attendance is expected.
 
 ## Code of conduct
 
-Please be respectful of other people in the classroom
+Please be respectful of other people in the classroom or in virtual meetings 
 and use common sense.
 In particular, please...
 
@@ -103,22 +96,20 @@ students are required to have a graphing calculator
 (TI-84 is recommended).
 The use of such calculators may be required for certain homework problems
 or in-class activities.
-However, all in-class quizzes and exams are designed so that no calculator will be needed.
+However, all in-class quizzes and exams are designed so that **no** calculator will be needed.
 <!-- Therefore calculators or any smart devices with Internet capabilities -->
 <!-- are not allowed on any of the quizzes and exams. -->
 
 <!-- ### Instruction method
 
 In this semester, we will adopt a "blended flipped" model.
-This means most of the lectures are delivered in pre-recorded digital form.
+This means some of the lectures are delivered in _pre-recorded digital form_.
 You are expected to watch/read/listen to these lecture and read our textbook.
 
 In addition, you are expected to meet with me either in-person or virtually
 (via Zoom) during regular class meetings.
 In these meetings, I will answer your question, work on problem with you,
 or have other discussions related to this course. -->
-<!-- These meetings will be a component of your course grade.
-See detailed explanation below. -->
 
 ## Graded components
 
@@ -128,7 +119,7 @@ Carefully reading relevant sections of the textbook
 (or supplemental lecture notes) **before** each class meeting is
 an important component of your learning process.
 
-After reading the textbook (as well as lecture notes, if available)
+After reading the textbook and/or lecture notes,
 you need to complete a short reading test through the Blackboard system.
 __No late submission will be accepted__
 unless valid reasons
@@ -137,6 +128,9 @@ and _proper documentation_ are provided, preferably _in advance_.
 Otherwise, a missing reading test receives a score of zero.
 It is recommended that you finish each reading test at least a few days
 before the due date.
+
+Please note that, in general, you will be asked to read textbook sections
+and/or lecture notes **before** we discuss them in class.
 
 <!-- Each reading test allows multiple attempts. -->
 <!-- Please see the test descriptions on the Blackboard system for detail. -->
@@ -147,9 +141,17 @@ You will complete short online tests called "concept tests"
 on the Blackboard system
 that are designed to test your overall understanding of the subject.
 Please see the "concept tests" folder on the Blackboard system for detail.
-<!-- All concepts tests are due on the last day of classes, -->
-<!-- and __no late submission will be accepted__. -->
-<!-- However, it is strongly recommended that you complete them as early as possible. -->
+All concepts tests are due on the **last day of classes**,
+and __no late submission will be accepted__.
+However, it is strongly recommended that you complete them as early as possible.
+
+### Worksheets
+
+Working on concrete computational problems is an important component
+of your learning process.
+You will be given exercise problems to work on at the end of each lecture.
+These exercise worksheets will be collected,
+and they will graded mostly based on effort (rather than correctness).
 
 <!-- ### In-class and online quizzes
 
@@ -161,30 +163,60 @@ However, a missing quiz may be excused if valid reasons
 and _proper documentation_ are provided _in advance_.
 Otherwise, a missing quiz receives a score of zero. -->
 
-### Survey
+<!-- ### Weekly survey -->
 
-Every few weeks, you will be asked to complete a short survey.
-It is a way for us to document your learning progress
-and discuss issues and difficulties along the way.
-__Late submissions will receive lower scores__.
+<!-- Each week you will be asked to complete a survey. -->
+<!-- __Late submissions will receive lower scores__. -->
+
+<!-- ### Weekly problem sessions / virtual check-in sessions
+
+Each week, you will be required to...
+
+* either attend an in-person problem session
+  (place and time listed on the top of this document), or...
+* have an one-on-one meeting (virtual check-in session)
+  with me via Zoom.
+  You can find a link to a scheduling system on my course page
+  (and the Blackboard course page)
+  with which you can schedule a weekly meeting.
+
+These meetings will give us opportunities to have one-on-one
+or close to one-on-one discussions
+(in-person problem sessions will not be one-on-one).
+In these meetings, we will...
+
+* answer your questions,
+* go over problems,
+* let you complete worksheets (see below)
+
+Your participation in these meetings (either in-person or virtual)
+will be a component in your course grade.
+Your attendance in each meeting worth 0.333...% of your course grade. -->
+
+### Homework assignments
+
+Homework assignments can be found on the Blackboard system.
+All homework assignment are open-book & open-internet assignments.
+However, you must complete the assignment independently.
+__Late submission will receive lower scores__
+unless valid reasons
+(military assignments, medical issues, family emergency, etc)
+and _proper documentation_ are provided, preferably _in advance_.
 
 ### Quizzes
 
-You will be expected to complete short quizzes during (some of the) class meetings,
-<!-- These quizzes are quizzes with a very strict time limit, -->
-and they will form a major component of your course grade.
-__No makeup quiz will be offered__.
-However, a missing quiz may be replace by additional online quizzes
-if valid reasons
+You will be expected to complete short quizzes during class meetings.
+These quizzes will form a major component of your course grade.
+__No makeup quiz will be offered__ unless valid reasons
 (military assignments, medical issues, family emergency, etc)
-and _proper documentation_ are provided.
-Otherwise, a missing quiz receives a score of zero.
+and _proper documentation_ are provided (ideally _in advance_).
 
-<!-- If you choose to take these quizzes virtually,
-you can find their online versions in the "Content" folder
-on our Blackboard course page.
-You will be required to either scan your solutions
-and type your solutions. -->
+<!-- Each quiz will provide a list of problems,
+**you only need to complete 2 of them**.
+Please clearly mark the problems you selected. -->
+
+<!-- Otherwise, a missing quiz receives a score of zero. -->
+
 <!-- In in-person or virtual problem sessions,
 you will be given worksheets that contain short problems for you to complete.
 There are 20 worksheets in total, you can try to complete each worksheet multiple times,
@@ -201,16 +233,6 @@ In each attempt, you can... -->
 <!-- In-class practice is a crucially important component of the learning process.
 Your in-class worksheets will be _collected and graded_. -->
 
-### Homework assignments
-
-Homework assignments can be found on the Blackboard system.
-All homework assignment are open-book & open-internet assignments.
-However, you must complete the assignment independently.
-__Late submission will receive lower scores__
-unless valid reasons
-(military assignments, medical issues, family emergency, etc)
-and _proper documentation_ are provided, preferably _in advance_.
-
 <!-- ### Projects
 Projects are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
@@ -218,11 +240,8 @@ They are a major part of your course grade. -->
 
 ### Final exam
 
-The final exam is scheduled to take place
-on 12/6 10:45 am -- 12:15 pm.
+The final exam is scheduled to take place on 12/02 at 1:30pm--3:00pm.
 It constitutes a major part of your course grade.
-Please see the announcement on the Blackboard system
-for detailed description.
 
 ### Grade composition
 
@@ -232,16 +251,16 @@ and is calculated according to the following weights.
 
 | Component          | Percentage | Where/how  |
 |--------------------|------------|------------|
-| Surveys            |    3%      | Blackboard |
-| Reading tests      |   22%      | Blackboard |
-| Concept tests      |   15%      | Blackboard |
 | Homework           |   20%      | Blackboard |
+| Reading tests      |   20%      | Blackboard |
+| Concept tests      |   15%      | Blackboard |
+| Worksheets         |    5%      | In person  |
 | Quizzes            |   30%      | In person  |
 | Final exam         |   10%      | In person  |
 
 {% include letter_grades.markdown %}
 
-## Other policies
+### Other policies
 
 {% include syllabus_policy.markdown %}
 
