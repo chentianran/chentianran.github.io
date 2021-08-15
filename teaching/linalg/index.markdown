@@ -8,19 +8,20 @@ title: MATH-2660
 This course focuses on linear algebra
 --- one fundamental language of mathematics, science, and engineering.
 
-* [Syllabus](syllabus-S2021/)
+* [Syllabus](syllabus-F2021/)
+* [Simplified lecture notes](notes/)
 
 <!-- ## How to survive this course?
 
 * Read before class
 * Complete reading tests (twice a week)
-* Complete concept tests (once a week)
-* Complete homework assignments (once a week)
+* Complete concept tests (once a month, on average)
+* Complete homework assignments
 * Take in-class quizzes
 * Take the final exam
 * Participate! (You are not a passive note-taking robot) -->
 
-## Simplified lectures
+<!-- ## Simplified lectures
 
 You can find narrated and simplified lectures
 in the following list of links.
@@ -28,7 +29,7 @@ These lectures cover some basic topics in this course,
 and discussions of deeper parts are not included.
 
 * [Basics of linear systems](linear-systems/)
-* [Solution sets of linear system and 2x2 determinant](det-2x2/)
+* [Solution sets of linear system and 2x2 determinant](det-2x2/) -->
 
 ## Additional material
 
