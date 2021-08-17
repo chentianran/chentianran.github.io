@@ -23,3 +23,6 @@ and is not intend to replace the textbook or lectures themselves.
     - [Computing inverse via row reduction](inverse-computation/)
 - Vector spaces
     - [Span and linear independence](independence/)
+- Fundamental spaces associated with matrices
+    - [Row space, column space, and matrix rank](rank/)
+    - [Subspace of the Euclidean vector spaces](space/)

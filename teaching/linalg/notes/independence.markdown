@@ -13,7 +13,7 @@ $$ a \mathbf{v}_1 + b \mathbf{v}_2 $$
 where $a$ and $b$ are scalars (numbers).
 Expressions like this are also called weighted sums.
 
-This of course can be generalized to any number of vectors.
+This, of course, can be generalized to any number of vectors.
 A *linear combination* of a set $S$ of vectors
 $$\{ \mathbf{v}_1, \dots, \mathbf{v}_n \}$$
 is an expression of the form
@@ -43,13 +43,48 @@ $$  \begin{aligned}
 
 What is the span of the set $$\{ \mathbf{e}_1, \mathbf{e}_2 \}$$?
 
+**Exercise.**
+What about the span of the two vectors
+
+$$  \begin{aligned}
+        \mathbf{v}_1 &=
+        \begin{bmatrix}
+            1 \\ 0
+        \end{bmatrix}
+        &
+        \mathbf{v}_2 &=
+        \begin{bmatrix}
+            1 \\ 1
+        \end{bmatrix}
+    \end{aligned}.$$
+
 Not all spans are created equal.
 The linear combinations of a set of two vectors may not actually fill a
-2-dimensional space.The condition that determines this case is called
+"2-dimensional" space.
+Consider the following exercise.
+
+**Exercise.**
+Can you show the span of the two vectors
+
+$$  \begin{aligned}
+        \mathbf{x}_1 &=
+        \begin{bmatrix}
+            1 \\ 1
+        \end{bmatrix}
+        &
+        \mathbf{v}_2 &=
+        \begin{bmatrix}
+            2 \\ 2
+        \end{bmatrix}
+    \end{aligned}$$
+
+is not the entire space of $\mathbb{R}^2$?
+
+The important property that will help us to distinguish these cases is
 "linear independence" --- the span of two vectors will only fill a
 2-dimensional space if they form a "linearly independent" set.
 
-Linear dependence/independence (set of 2) {#linear-dependenceindependence-set-of-2 .unnumbered}
+Linear dependence/independence (set of 2) {#linear-dependenceindependence-set-of-2}
 -----------------------------------------
 
 A set of *two* vectors is said to be **linearly dependent** if one of
@@ -63,78 +98,88 @@ $S$ is linearly dependent if it is *not* linearly independent.
 
 Intuitively, the span of a set of two vectors can be "2-dimensional" if
 and only if this set is linearly independent. Of course, we are yet to
-define the concept of dimension rigorously. Indeed, "dimension" is
-defined in terms of linear independence.
+define the concept of "dimension" rigorously. Indeed, "dimension" is
+defined in terms of linear independence
+(so this is an chicken and egg problem).
 
-Determine if the following sets are linearly independent or linearly
-dependent. $$\begin{aligned}
-            \left\{
-                \begin{bmatrix}
-                    1 \\ 2 \\ 3
-                \end{bmatrix}
-                ,
-                \begin{bmatrix}
-                    3 \\ 2 \\ 1
-                \end{bmatrix}
-            \right\}
-            &&
-            \left\{
-                \begin{bmatrix}
-                    1 \\ 2 \\ 3
-                \end{bmatrix}
-                ,
-                \begin{bmatrix}
-                    0 \\ 0 \\ 0
-                \end{bmatrix}
-            \right\}
-            &&
-            \left\{
-                \begin{bmatrix}
-                    1 \\ 2 \\ 1
-                \end{bmatrix}
-                ,
-                \begin{bmatrix}
-                    -3 \\ -6 \\ -3
-                \end{bmatrix}
-            \right\}
-            % &&
-        \end{aligned}$$
+**Exercise.**
+Determine if the following sets are linearly independent or linearly dependent.
 
-Linear dependence/independence (general) {#linear-dependenceindependence-general .unnumbered}
+$$  \begin{aligned}
+        \left\{
+            \begin{bmatrix}
+                1 \\ 2 \\ 3
+            \end{bmatrix}
+            ,
+            \begin{bmatrix}
+                3 \\ 2 \\ 1
+            \end{bmatrix}
+        \right\}
+        &&
+        \left\{
+            \begin{bmatrix}
+                1 \\ 2 \\ 3
+            \end{bmatrix}
+            ,
+            \begin{bmatrix}
+                0 \\ 0 \\ 0
+            \end{bmatrix}
+        \right\}
+        &&
+        \left\{
+            \begin{bmatrix}
+                1 \\ 2 \\ 1
+            \end{bmatrix}
+            ,
+            \begin{bmatrix}
+                -3 \\ -6 \\ -3
+            \end{bmatrix}
+        \right\}
+        % &&
+    \end{aligned}$$
+
+Linear dependence/independence (general) {#linear-dependenceindependence-general}
 ----------------------------------------
 
-Algebraically, this is equivalent to the condition that one could select
+<!-- Algebraically, this is equivalent to the condition that one could select
 coefficients, not all zero, so that a linear combination can be the zero
-vector.
+vector. -->
 
 A *nonempty* set of vector $\{ \mathbf{v}_1, \dots, \mathbf{v}_m \}$ is
 said to be **linearly dependent** if there are real numbers
-$c_1,\dots,c_m$, *not all zero*, such that
-$$c_1 \mathbf{v}_1 + \cdots + c_m \mathbf{v}_m
-            = \mathbf{0}.$$
+$$c_1,\dots,c_m$$, *not all zero*, such that
+
+$$c_1 \mathbf{v}_1 + \cdots + c_m \mathbf{v}_m = \mathbf{0}.$$
 
 A set that is not linearly dependent is said to be linearly independent.
 Stated more explicitly:
 
-A set of vector $\{ \mathbf{v}_1, \dots, \mathbf{v}_m \}$ is said to be
-**linearly independent** if the equation
-$$c_1 \mathbf{v}_1 + \cdots + c_m \mathbf{v}_m
-            = \mathbf{0}.$$ for real numbers $c_1,\dots,c_m$ implies
-that $$c_1 = \cdots = c_m = 0.$$
+A set of vector $$\{ \mathbf{v}_1, \dots, \mathbf{v}_m \}$$
+is said to be **linearly independent** if the equation
+
+$$c_1 \mathbf{v}_1 + \cdots + c_m \mathbf{v}_m = \mathbf{0}$$
+
+for real numbers $$c_1,\dots,c_m$$ implies
+that $$c_1 = \cdots = c_m = 0$$.
 
 That is, for a linearly independent set of vectors, the only way to
 create $\mathbf{0}$ as a linear combination of this set is to use *all*
 zero coefficients.
 
-Invariance under linear transformations {#invariance-under-linear-transformations .unnumbered}
+Invariance under linear transformations {#invariance-under-linear-transformations}
 ---------------------------------------
 
-Suppose $\{ \mathbf{v}_1, \dots, \mathbf{v}_m \} \subset \mathbb{R}^n$
-is linearly independent, the for any nonsingular matrix $A$, the set
-$\{ A \mathbf{v}_1, \dots, A \mathbf{v}_m \} \subset \mathbb{R}^n$ is
+It is very important to understand that linear dependence/independence
+are true "geometric properties" in the sense that they are invariant
+under any linear transformations.
+
+Stated more precisely,
+suppose $$\{ \mathbf{v}_1, \dots, \mathbf{v}_m \} \subset \mathbb{R}^n$$
+is linearly independent, the for any nonsingular $n \times n$ matrix $A$, the set
+$$\{ A \mathbf{v}_1, \dots, A \mathbf{v}_m \} \subset \mathbb{R}^n$$ is
 also linearly independent.
 
-The case of the empty set {#the-case-of-the-empty-set .unnumbered}
+The case of the empty set {#the-case-of-the-empty-set}
 -------------------------
 
 In the definition of linear dependence, we specifically required the set
@@ -150,7 +195,7 @@ The empty set $\varnothing = \{\,\}$ is linearly *independent*.
 This is actually consistent with and implied by the definition of linear
 independence stated above.
 
-Determining linear independence (equation) {#determining-linear-independence-equation .unnumbered}
+Determining linear independence (equation) {#determining-linear-independence-equation}
 ------------------------------------------
 
 Following directly from definition of linear independence we have the
@@ -158,55 +203,61 @@ following direct method:
 
 A set of $n$ vectors $S = \{ \mathbf{v}_1, \cdots, \mathbf{v}_n \}$, is
 linearly independent if and only if $x_1 = \cdots = x_n = 0$ is the
-*only* solution to $$x_1 \mathbf{v}_1 + \cdots + x_n \mathbf{v}_n
-            = \mathbf{0}$$
+*only* solution to
 
-Determining linear independence (RREF) {#determining-linear-independence-rref .unnumbered}
+$$x_1 \mathbf{v}_1 + \cdots + x_n \mathbf{v}_n = \mathbf{0}.$$
+
+This becomes a problem of solving homogeneous linear system.
+Please see earlier sections for detailed explanation in that area.
+
+Determining linear independence (RREF) {#determining-linear-independence-rref}
 --------------------------------------
 
-Gauss-Jordan elimination and the resulting RREF also provide a simple
-algorithm.
+A slightly simpler and more efficient method makes use of the
+Gauss-Jordan elimination and the resulting RREF.
 
 Given a set of $n$ column vectors
 $S = \{ \mathbf{v}_1, \cdots, \mathbf{v}_n \}$,
 
-1.  Form the matrix
-    $A = [ \, \mathbf{v}_1 \; \cdots \; \mathbf{v}_n \, ]$.
+1. Form the matrix $$A = [ \, \mathbf{v}_1 \; \cdots \; \mathbf{v}_n \, ]$$.
+2. Compute the RREF of $A$.
+3. If the resulting RREF has $n$ (n.o. columns) leading 1's,
+   then $S$ is linearly independent.
+   Otherwise, $S$ is linearly dependent.
 
-2.  Compute the RREF of $A$.
-
-3.  If the resulting RREF has $n$ (n.o. columns) leading 1's, then $S$
-    is linearly independent.
-
+**Exercise.**
 Determine if the following sets are linearly independent or linearly
-dependent. $$\begin{aligned}
-            \left\{
-                \begin{bmatrix}
-                    0 \\ 1 \\ 2 \\ 3
-                \end{bmatrix}
-                ,
-                \begin{bmatrix}
-                    0 \\ 3 \\ 2 \\ 1
-                \end{bmatrix}
-                ,
-                \begin{bmatrix}
-                    0 \\ 1 \\ 1 \\ 1
-                \end{bmatrix}
-            \right\}
-            &&
-            \left\{
-                \begin{bmatrix}
-                    1 \\ 2 \\ 3 \\ 0
-                \end{bmatrix}
-                ,
-                \begin{bmatrix}
-                    0 \\ 1 \\ 2 \\ 3
-                \end{bmatrix}
-                ,
-                \begin{bmatrix}
-                    3 \\ 0 \\ 1 \\ 2 
-                \end{bmatrix}
-            \right\}
-        \end{aligned}$$
+dependent.
 
-Explain why does this work.
+$$  \begin{aligned}
+        \left\{
+            \begin{bmatrix}
+                0 \\ 1 \\ 2 \\ 3
+            \end{bmatrix}
+            ,
+            \begin{bmatrix}
+                0 \\ 3 \\ 2 \\ 1
+            \end{bmatrix}
+            ,
+            \begin{bmatrix}
+                0 \\ 1 \\ 1 \\ 1
+            \end{bmatrix}
+        \right\}
+        &&
+        \left\{
+            \begin{bmatrix}
+                1 \\ 2 \\ 3 \\ 0
+            \end{bmatrix}
+            ,
+            \begin{bmatrix}
+                0 \\ 1 \\ 2 \\ 3
+            \end{bmatrix}
+            ,
+            \begin{bmatrix}
+                3 \\ 0 \\ 1 \\ 2 
+            \end{bmatrix}
+        \right\}
+    \end{aligned}$$
+
+**Exercise.**
+Explain why the algorithm outlined above work.
