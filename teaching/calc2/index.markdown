@@ -30,6 +30,11 @@ title: MATH-1620
   - the process of the trying to figure out the answer is the important part.
     The only important part! -->
 
+## Lecture slideshows
+
+* [Integration by substitution](slides/integration-by-substitution/)
+* [Integration by parts](slides/integration-by-parts/)
+
 ## Narrated lecture slideshows
 
 * [Integration by substitution](integration-by-substitution/)
