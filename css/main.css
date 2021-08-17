@@ -1,10 +1,11 @@
 /*
- * Author: Carlos Alvarez
- * URL: http://alvarez.is
+ * Original Author: Carlos Alvarez (http://alvarez.is)
  *
  * Project Name: STANLEY - Free Bootstrap 3 Theme
  * Version: 1.0
  * URL: http://blacktie.co
+ *
+ * Adapted by: Keesun Kim & Tianran Chen
  */
 
 /*@import url('https://fonts.googleapis.com/css?family=Oswald:700|Ubuntu:300&subset=greek,greek-ext,latin-ext');*/
@@ -19,7 +20,7 @@ body {
     background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     color: #555;
 
     -webkit-font-smoothing: antialiased;
@@ -60,7 +61,7 @@ th, td {
 p {
     line-height: 28px;
     margin-bottom: 10px;
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 
 /*
