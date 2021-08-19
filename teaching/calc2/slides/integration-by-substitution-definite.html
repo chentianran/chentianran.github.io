@@ -1,0 +1,158 @@
+---
+layout: ilecture_only
+title: Integration by substitution
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Substitution in definite integrals</h2>
+        <p class="small">
+            Integration by substitution applies to definite integrals as well
+        </p>
+    </div>
+    <p>
+        Thanks to the Fundamental Theorem of Calculus,
+        the method of integration by substitution also applies to definite integrals.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+        <!-- Department of Mathematics<br> -->
+        <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<!-- <section> </section> -->
+<section>
+    <h3>Substitution for definite integrals</h3>
+    <p>
+        We already learned how to use the method of substitution to turn
+        seemingly complicated indefinite integrals into 
+        simpler ones we can actually compute.
+    </p>
+    <p class="fragment">
+        For example, we learned how to compute integrals like these
+        \[
+            \int e^{x^2} \, 2x \, dx,
+            \quad\quad\quad
+            \int \frac{3x}{\sqrt{x^2+1}} dx,
+        \]
+    </p>
+    <p class="fragment">
+        A natural question to ask is: What about definite integral like
+        \[
+            \int_0^1 \frac{3x}{\sqrt{x^2+1}} dx \, ?
+        \]
+    </p>
+    <p class="fragment">
+        Thanks to the Fundamental Theorem of Calculus,
+        definite integrals can be computed through indefinite integrals,
+        so the same applies,
+        <em>as long as we also perform the same transformation to the limits of integration</em>.
+    </p>
+</section>
+<section>
+    <h3>A simple example</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="example">
+                Compute the definite integral 
+                \[\int_0^2 (x-1)^5 dx.\]
+            </div>
+            <p class="fragment">
+                <b>Solution.</b>
+                Applying a substitution,
+                we let $u = x-1$ then $du = dx$. 
+            </p>
+        </div>
+        <div class="col">
+            <span class="fragment highlight">
+                We also have to pay attention to the limits of integration,
+                because "$\int_0^2$" means from $x=0$ to $x=2$.
+                We have to convert those to the equivalent boundary in terms of $u$.
+            </span>
+            <p class="fragment">
+                When $x=0$, $u=-1$.
+            </p>
+            <p class="fragment">
+                When $x=2$, $u=1$.
+            </p>
+
+        </div>
+    </div>
+    <p class="fragment">
+        Therefore, 
+        \[
+            \int_0^2 (x-1)^5 dx
+            = \int_{-1}^{1} u^5 du 
+            = \left[ \frac{u^6}{6} \right]_{-1}^1 
+            = \frac{1^6}{6} - \frac{(-1)^6}{6}
+            = \frac{1}{6} - \frac{1}{6} = 0.
+        \]
+    </p>
+</section>
+<section>
+    <h3>The formal statement</h3>
+    <p>
+        We now state the simple procedure illustrated in the previous example more formally.
+    </p>
+    <div class="theorem">
+        Suppose $g$ is a differentiable function over the interval $(a,b)$,
+        and $f$ is continuous over the corresponding image, then
+        \[
+            \int_a^b f(g(x)) \, g'(x) dx = \int_{g(a)}^{g(b)} f(u) du
+        \]
+        as long as the integral is defined.
+    </div>
+    <p class="fragment">
+        As we saw in the previous example,
+        this is nothing but a formal way of saying:
+        When you perform a substitution,
+        you should substitute the limits of integration as well.
+    </p>
+</section>
+<section>
+    <h3>An alternative</h3>
+    <p>
+        In certain situations, 
+        we may not want to compute the new limits of integration 
+        (e.g., the computation maybe cumbersome or inexact).
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="example">
+                Compute
+                \[
+                    \int_1^2 [\sin(x)]^2 \cos(x) \, dx.
+                \]
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Applying a substitution,
+                we let $\color{red}{u = \sin(x)}$, 
+                then $\color{blue}{du = \cos(x) dx}$.
+                <span class="fragment">
+                    So $\int [\color{red}{\sin(x)}]^2 \color{blue}{\cos(x) dx} =
+                    \int \color{red}{u}^2 \color{blue}{du}$.
+                </span>
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        So the original integral can be turned into 
+        \[ 
+            \int_\square^\square u^2 du
+            = \left[\frac{1}{3} u^3 \right]_\square^\square
+            = \left[\frac{1}{3} (\sin x)^3 \right]_1^2
+            = \frac{\sin^3(2) - \sin^3(1)}{3}.
+        \]
+    </p>
+    <p class="fragment">
+        Here, we use "$\square$" to indicate that 
+        we <em>should</em> compute the new limits of integration 
+        with respect to the new variable $u$,
+        but we are just <em>don't want do that</em>.
+        Instead, we will switch back to $x$ in the next step,
+        thus $\square$'s are placeholders for the 
+        limits of integration in the intermediate steps.
+    </p>
+</section>
