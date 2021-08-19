@@ -26,6 +26,7 @@ and is not intend to replace the textbook or lectures themselves.
   - [Row space, column space, and matrix rank](rank/)
   - [Subspace of the Euclidean vector spaces](space/)
   - [Null space](null/)
+  - [Basis and dimension](basis/)
 
 Please note that this collection of notes is intentionally written
 to not follow the typical "definition-lemma-theorem" structure,
