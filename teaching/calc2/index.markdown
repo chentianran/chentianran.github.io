@@ -33,7 +33,7 @@ title: MATH-1620
 ## Lecture slideshows
 
 * [Integration by substitution](slides/integration-by-substitution/)
-* [Integration by substitution](slides/integration-by-substitution-definite/)
+* [Integration by substitution for definite integrals](slides/integration-by-substitution-definite/)
 * [Integration by parts](slides/integration-by-parts/)
 
 ## Narrated lecture slideshows
