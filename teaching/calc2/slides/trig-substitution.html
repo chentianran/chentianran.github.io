@@ -1,0 +1,450 @@
+---
+layout: ilecture_only
+title: Trigonometric substitutions (using sine)
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Trigonometric substitution (sine)</h2>
+        <p class="small">
+            Substitution using sine function to simplify integrals
+        </p>
+    </div>
+    <p>
+        This is a technique where we substitute our integration variable by a trigonometric function.
+        It is particularly useful for simplifying integrals involving radicals.
+        In this lecture we focus on only the sine function.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Trigonometric substitution: the basic idea</h3>
+    <p>
+        This is a technique where we substitute our integration variable
+        by a trigonometric function
+        (the opposite from what we have been using).
+        It is particularly useful for simplifying
+        integrals involving radicals.).
+    </p>
+    <p class="fragment">
+        The foundation of this idea is the Pythagorean theorem:
+        \[
+        (\sin \theta)^2 + (\cos \theta)^2 = 1,
+        \]
+    </p>
+    <p class="fragment">
+        which means
+        \[
+        (\cos \theta)^2 = 1- (\sin \theta)^2.
+        \]
+    </p>
+    <p class="fragment">
+        This is how we get rid of square roots.
+    </p>
+    <p class="fragment">
+        There are, of course, many variations on this theme.
+        We will start with a simple example to illustrate the basic idea.
+        For simplicity, we will only discuss the "substitution" part of this idea.
+        <!-- and the question of how to compute the resulting integrals are covered
+        in other lectures. -->
+    </p>
+</section>
+<section>
+    <div class="cols">
+        <div class="col example small">
+            Compute \[ \int \sqrt{1 - x^2} \, dx.\]
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Notice that since $\sqrt{1-x^2}$ is the integrand,
+                it is necessary that $1 - x^2 \ge 0$,
+                i.e., $-1 \le x \le 1$.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        This happens to be the range of the sine function.
+        Therefore, we do not loose anything if we introduce a new variable
+        $\theta$...
+    </p>
+    <div class="equgroup">
+        <span class="fragment">
+            and let $\displaystyle \color{red}{x = \sin(\theta)}$.
+        </span>
+        <span class="fragment">
+            Then $\displaystyle \theta = \sin^{-1}(x)$
+        </span>
+        <span class="fragment">
+            and $\displaystyle \color{blue}{dx = \cos(\theta) d\theta}$.
+        </span>
+    </div>
+    <p class="fragment">
+        Since $\theta = \sin^{-1}(x)$,
+        we are implicitly requiring $-\pi/2 \le \theta \le \pi/2$.
+    </p>
+    <p class="fragment">
+        With this substitution, we have
+        \[
+        \sqrt{1 - x^2}
+        = \sqrt{1 - (\sin \theta)^2}
+        = \sqrt{ (\cos \theta)^2 }
+        = | \cos \theta |
+        = \cos \theta.
+        \]
+    </p>
+    <p class="fragment">
+        Here, can safely drop the absolute value
+        because $\pi/2 \le \theta \le \pi/2$.
+        <!-- and in that domain $\cos(\theta) \ge 0$. -->
+    </p>
+    <div class="equ fragment">
+        <span>
+            Then
+            $\displaystyle \int \color{purple}{\sqrt{1 - x^2}} \,\, \color{blue}{dx}$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \int \color{purple}{\cos \theta} \, \color{blue}{ \cos(\theta) \, d\theta}$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \int [\cos(\theta)]^2 d\theta$
+        </span>
+    </div>
+    <p class="fragment">
+        which is an integral that we can actually compute.
+        <span class="lowlight">
+            (We have discussed how to compute such integrals in other lectures)
+        </span>
+    </p>
+</section>
+<section>
+    <div class="cols">
+        <div class="col example small">
+            Compute \[ \int \frac{x^2}{ \sqrt{1 - x^2} } dx.\]
+        </div>
+        <div class="col">
+            <p>
+                Just like in the previous example,
+                $\sqrt{1-x^2}$ is in the integrand, so
+                $1 - x^2 \ge 0$,
+                i.e., $-1 \le x \le 1$.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        So, we do not loose anything
+        if we introduce a new variable $\theta$ and...
+    </p>
+    <div class="equgroup">
+        <span class="fragment">
+            let $\displaystyle \color{red}{x = \sin(\theta)}$.
+        </span>
+        <span class="fragment">
+            Then $\displaystyle \theta = \sin^{-1}(x)$
+        </span>
+        <span class="fragment">
+            and $\displaystyle \color{blue}{dx = \cos(\theta) d\theta}$.
+        </span>
+    </div>
+    <p class="fragment">
+        Notice that since $\theta = \sin^{-1}(x)$,
+        we are requiring $-\pi/2 \le \theta \le \pi/2$.
+    </p>
+    <div class="equ">
+        <span class="fragment">
+            Then $\displaystyle \sqrt{1 - \color{red}{x}^2} = \sqrt{1 - (\color{red}{\sin \theta})^2}$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \sqrt{ (\cos \theta)^2 }$
+        </span>
+        <span class="fragment">
+            $\displaystyle = | \cos \theta |$
+
+        </span>
+        <span class="fragment">
+            $\displaystyle = \cos \theta$
+        </span>
+    </div>
+    <p class="fragment">
+        Therefore, the original integral is turned into
+    </p>
+    <div class="equ">
+        <span class="fragment">
+            $\displaystyle
+            \int \frac{ {\color{red}{x} }^2}{ \color{purple}{ \sqrt{1 - x^2} } } { \color{blue}{dx} }
+            = \int \frac{ (\color{red}{\sin \theta})^2}{ \color{purple}{\cos \theta} } \color{blue}{ \cos \theta \, d\theta}
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle
+            \;= \int (\sin \theta)^2 d\theta,
+            $
+        </span>
+    </div>
+        <!-- \[
+        \int \frac{ {\color{red}{x} }^2}{ \color{purple}{ \sqrt{1 - x^2} } } { \color{blue}{dx} }
+        = \int \frac{ (\color{red}{\sin \theta})^2}{ \color{purple}{\cos \theta} } \color{blue}{ \cos \theta \, d\theta}
+        = \int (\sin \theta)^2 d\theta,
+        \] -->
+    <p class="fragment">
+        which is an integral that we can compute.
+    </p>
+    <p class="fragment lowlight">
+        Again, for simplicity, we only focus on the substitution part,
+        and the actual computation of this resulting integral is covered
+        in other lectures.
+    </p>
+    <!-- <p>
+            since <span> <span class="math inline">$\pi/2 \le \theta \le \pi/2$</span>, <span
+                class="math inline">$\cos(\theta)$</span> must be nonnegative, and we can safely drop the absolute
+            value. </span> 
+            Using the double-angle formula, we can compute <span
+            class="math display">\[\int (\sin \theta)^2 d\theta
+            = \int \frac{1 - \cos(2\theta)}{2} d\theta
+            = \int \frac{1}{2} - \frac{\cos(2\theta)}{2} d\theta
+            = \frac{\theta}{2} - \frac{\sin(2\theta)}{4} + C.\]</span> 
+            Don’t forget <span
+            class="math inline">$\theta$</span> is a variable we introduced, so we also need to substitute that back.
+        Using the trigonometric identities reviewed above, we can get <span class="math display">\[\begin{aligned}
+            \frac{\sin^{-1}(x)}{2} - \frac{\sin(2\sin^{-1}(x))}{4} + C
+            &= \frac{\sin^{-1}(x)}{2} - \frac{\sin(\sin^{-1}(x))\cos(\sin^{-1}(x)}{2} + C \\
+            &= \frac{\sin^{-1}(x)}{2} - \frac{ x \sqrt{1 - x^2} }{2} + C.
+                \end{aligned}\]</span></p>  -->
+
+</section>
+<section>
+    <h3>Summary of the main idea</h3>
+    <p>
+        In the two examples on the previous pages,
+        we substitute our integration variable by a sine function.
+        <span class="fragment">
+            This is particularly useful for simplifying integrals involving radicals of the form
+            $\sqrt{1 - x^2}$.
+        </span>
+    </p>
+    <p class="fragment">
+        We used the substitution
+        $\color{red}{x = \sin(\theta)}$ and
+        $\color{blue}{dx = \cos(\theta) \, d\theta}$.
+    </p>
+    <p class="fragment">
+        Then following the <em class="term">Pythagorean theorem</em>
+        $(\sin \theta)^2 + (\cos \theta)^2 = 1$, i.e.,
+        $(\cos \theta)^2 = 1- (\sin \theta)^2$.
+        We can get rid of the square root.
+    </p>
+    <div class="equ">
+        <span class="fragment">
+            $\displaystyle
+                \sqrt{1 - x^2}
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle
+                \; = \sqrt{1 - (\sin \theta)^2}
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle
+                \; = \sqrt{ (\cos \theta)^2 }
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle
+                \; = | \cos \theta |
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle
+                \; = \cos \theta.
+            $
+        </span>
+    </div>
+    <!-- <p class="fragment">
+        In particular,
+        \[
+        \sqrt{1 - x^2}
+        = \sqrt{1 - (\sin \theta)^2}
+        = \sqrt{ (\cos \theta)^2 }
+        = | \cos \theta |
+        = \cos \theta.
+        \]
+    </p> -->
+    <p class="fragment">
+        Therefore,
+        \[
+        \int f \left( \color{purple}{ \sqrt{1-x^2} }, \color{red}{x} \right) \, \color{blue}{dx}
+        =
+        \int f \left( \color{purple}{ \cos(\theta) }, \color{red}{\sin(\theta)} \right) \, \color{blue}{\cos(\theta) \,
+        d\theta}
+        \]
+        for any function $f$.
+        This is the main idea.
+    </p>
+</section>
+<section>
+    <h3>
+        Slightly more general situations
+    </h3>
+    <p>
+        This technique can simplify integrals involving $\sqrt{a - b x^2}$
+        for $a,b > 0$.
+    </p>
+    <div class="cols small">
+        <div class="col fragment example">
+            Compute \[ \int \sqrt{4 - 3x^2} \, dx.\]
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Instead of $1 - x^2$, we have $4-3x^2$ inside the square root,
+                but we can easily compensate for this.
+            </p>
+
+        </div>
+    </div>
+    <div class="equ small fragment">
+        <span>
+            $\displaystyle \int \sqrt{4 - 3x^2} \, dx$
+        </span>
+        <span>
+            $\displaystyle = \int \sqrt{\color{red}{4} \cdot 1 - \color{red}{4} \cdot \frac{3}{4} x^2} \, dx$
+        </span>
+        <span class="fragment">
+            $\displaystyle = \int \sqrt{\color{red}{4} \left( 1 - \frac{3}{4} x^2 \right)} \, dx.$
+        </span>
+    </div>
+    <p class="fragment small">
+        Therefore, we need $x^2$ to be
+        $\frac{4}{3} \sin^2(\theta) = \left( \frac{2}{ \sqrt{3} } \sin \theta \right)^2$.
+    </p>
+    <div class="equgroup small">
+        <span class="fragment">
+            I.e., $\displaystyle \color{red}{x = \frac{2}{ \sqrt{3} } \sin \theta}$,
+        </span>
+        <span class="fragment">
+            then $\displaystyle \theta = \sin^{-1} \frac{\sqrt{3}x}{2}$,
+        </span>
+        <span class="fragment">
+            and $\displaystyle \color{blue}{dx = \frac{2}{\sqrt{3}} \cos \theta \, d\theta}$.
+        </span>
+    </div>
+    <div class="fragment">
+        <p>
+            Then the original integral becomes
+        </p>
+        <div class="equ small">
+            <!-- <span class="fragment">
+                $\displaystyle \int \sqrt{4 - 3x^2} \, dx$
+            </span> -->
+            <span class="fragment">
+                $\displaystyle 
+                    \int 
+                    \sqrt{4 - 3 \left(\color{red}{\frac{2}{ \sqrt{3} } \sin\theta} \right)^2} 
+                    \color{blue}{\frac{2}{\sqrt{3}} \cos \theta \, d\theta}$
+            </span>
+            <span class="fragment">
+                $\displaystyle = \int 2\sqrt{1 - (\sin\theta)^2} \frac{2}{\sqrt{3}} \cos \theta \, d\theta$
+            </span>
+        </div>
+        <div class="equ small">
+            <span class="fragment">
+                $\displaystyle = \int \frac{4}{\sqrt{3}} \sqrt{(\cos \theta)^2} \, \cos\theta \, d\theta$
+            </span>
+            <span class="fragment">
+                $\displaystyle = \int \frac{4}{\sqrt{3}} \cos \theta \, \cos\theta \, d\theta$
+            </span>
+            <span class="fragment">
+                $\displaystyle = \frac{4}{\sqrt{3}} \int (\cos \theta)^2 d\theta$
+            </span>
+        </div>
+
+    </div>
+
+</section>
+<section>
+    <h3>Summary of the general form</h3>
+    <p>
+        In the previous example,
+        we saw how the idea of substitution using the sine function work in general.
+        This can be applied to simplify integrals involving radicals of the form
+        $\sqrt{a - b x^2}$ for any $a,b > 0$.
+    </p>
+    <p class="fragment">
+        We used the substitution
+        $\color{red}{x = \frac{\sqrt{a}}{\sqrt{b}} \sin(\theta)}$ and
+        $\color{blue}{dx = \frac{\sqrt{a}}{\sqrt{b}} \cos(\theta) \, d\theta}$.
+    </p>
+    <p class="fragment">
+        Then following the <em class="term">Pythagorean theorem</em>,
+        we can get rid of the square root.
+    </p>
+    <div class="equ small">
+        <span class="fragment">
+            $\displaystyle
+                \sqrt{a - b \color{red}{x}^2}
+                = \sqrt{a - b \left( \color{red}{ \frac{\sqrt{a}}{\sqrt{b}} \sin \theta} \right)^2}
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle 
+                = \sqrt{a - a (\sin \theta)^2}
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle 
+                = \sqrt{a}\sqrt{1 - (\sin \theta)^2}
+            $
+        </span>
+    </div>
+    <div class="equ small">
+        <span class="fragment">
+            $\displaystyle 
+                = \sqrt{a} \sqrt{ (\cos \theta)^2 }
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle 
+                = \sqrt{a} | \cos \theta |
+            $
+        </span>
+        <span class="fragment">
+            $\displaystyle 
+                = \sqrt{a} \cos \theta.
+            $
+        </span>
+    </div>
+    <p class="fragment">
+        Therefore,
+        \[
+        \int f \left( \color{purple}{ \sqrt{a- bx^2} }, \color{red}{x} \right) \, \color{blue}{dx}
+        =
+        \int f \left( \color{purple}{ \sqrt{a} \cos(\theta) }, \color{red}{\frac{\sqrt{a}}{\sqrt{b}} \sin(\theta)} \right) 
+        \, \color{blue}{\frac{\sqrt{a}}{\sqrt{b}} \cos(\theta) \, d\theta}.
+        \]
+    </p>
+</section>
+
+<!-- 
+    <h2 id="trigonometric-substitution" class="unnumbered">Trigonometric substitution</h2>
+    <p>We need to study this example carefully as all other problems in this note are merely variations of this.</p>
+    <p>After some struggle, you will realize that the substitution technique we learned earlier will not work, and the
+        square root is your problem.</p>
+    <p>
+         It worth noting the key difference between this substitution and the substitution
+        technique we learned earlier — <em>instead of replacing a complicated expression with a new variable, we are
+            replacing the original variable, <span class="math inline">$x$</span>, with a function in the new variable
+            <span class="math inline">$\theta$</span>.</em> 
+
+            using the double-angle formula (see review) Don’t forget <span
+            class="math inline">$\theta$</span> is a variable we introduced, so we also need to substitute that back.
+        Using trigonometric identities reviewed above, we can see the above results is equivalent to <span
+            class="math display">\[\begin{aligned}
+            \frac{\sin^{-1}(x)}{2} + \frac{\sin(2\sin^{-1}(x))}{4} + C
+            &= \frac{\sin^{-1}(x)}{2} + \frac{\sin(\sin^{-1}(x))\cos(\sin^{-1}(x)}{2} + C \\
+            &= \frac{\sin^{-1}(x)}{2} + \frac{ x \sqrt{1 - x^2} }{2} + C.
+            \end{aligned}\]</span></p>
+
+            -->

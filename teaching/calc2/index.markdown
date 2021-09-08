@@ -36,6 +36,7 @@ title: MATH-1620
 * [Integration by substitution for definite integrals](slides/integration-by-substitution-definite/)
 * [Integration by parts](slides/integration-by-parts/)
 * [Hyperbolic functions](slides/hyperbolic/)
+* [Trigonometric substitutions](slides/trig-substitution/)
 
 ## Narrated lecture slideshows
 
