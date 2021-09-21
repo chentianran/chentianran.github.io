@@ -6,7 +6,7 @@ title: Matrix inverse
 Inverse of a matrix {#inverse-of-a-matrix}
 -------------------
 
-For a *square* matrix $$A$$, if there is a matrix $$B$$ of the same size
+For a *square* matrix $A$, if there is a matrix $B$ of the same size
 such that
 
 $$  \begin{aligned}
@@ -15,8 +15,8 @@ $$  \begin{aligned}
         BA &= I
     \end{aligned},$$
 
-then $$B$$ is called an **inverse matrix** of $$A$$
-(or simply an **inverse** of $$A$$).
+then $B$ is called an **inverse matrix** of $A$
+(or simply an **inverse** of $A$).
 It is important to note that some matrix
 may not have an inverse at all.
 
@@ -32,9 +32,12 @@ $$  A =
 has no inverse.
 
 If an inverse of a matrix does exist, then it must be unique.
+This is a nontrivial fact,
+and we will explore the reasoning in other context.
 Therefore we say it is *the* inverse of that matrix.
-For a square matrix $$A$$,
-we use the notation $$A^{-1}$$ for the inverse of $$A$$, if exists.
+
+For a square matrix $A$,
+we use the notation $A^{-1}$ for the inverse of $A$, if exists.
 In this case, we say $A$ is **invertible** (or **nonsingular**).
 The following table shows equivalent terms we use:
 
