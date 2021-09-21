@@ -78,19 +78,19 @@ $$\begin{aligned}
 
 **Exercise.**
 The definition of matrix inverse requires us to check both
-$$AB = I$$ and $$BA = I$$ before we declare $$B$$ to be the inverse of $$A$$.
+$AB = I$ and $BA = I$ before we declare $B$ to be the inverse of $A$.
 Do we have to check both directions?
-Or will $$AB = I$$ automatically imply $$BA = I$$? Explain why.
+Or will $AB = I$ automatically imply $BA = I$? Explain why.
 
 Inverse matrix and inverse function {#inverse-matrix-and-inverse-function}
 -----------------------------------
 
-For an $$n \times n$$ matrix $$A$$,
+For an $n \times n$ matrix $A$,
 we can consider the linear function
-$$f : \mathbb{R}^n \to \mathbb{R}^n$$ given by $$f(\mathbf{x}) = A \mathbf{x}$$.
-If $$A$$ has an inverse $$A^{-1}$$,
+$f : \mathbb{R}^n \to \mathbb{R}^n$ given by $f(\mathbf{x}) = A \mathbf{x}$.
+If $A$ has an inverse $A^{-1}$,
 then it is easy to verify that $f$ also has an inverse *function*,
-and this inverse function is given by $$f^{-1}(\mathbf{x}) = A^{-1} \mathbf{x}$$.
+and this inverse function is given by $f^{-1}(\mathbf{x}) = A^{-1} \mathbf{x}$.
 
 Inverse matrices and linear systems {#inverse-matrices-and-linear-systems}
 -----------------------------------
@@ -102,10 +102,10 @@ equations in $n$ variables (so called "square system") can be written as
 $$A \mathbf{x} = \mathbf{b}$$
 
 where $A$ is an $n \times n$ matrix collecting all the coefficients,
-$$\mathbf{x}$$ contains all the unknowns, and $$\mathbf{b} \in \mathbb{R}^n$$
+$\mathbf{x}$ contains all the unknowns, and $\mathbf{b} \in \mathbb{R}^n$
 represents the constant terms on the right hand side.
 
-In this context, $$A$$ is invertible *if and only if* the linear system
-has a unique solution which is
+In this context, $A$ is invertible *if and only if* the linear system
+has a unique solution, which is
 
 $$\mathbf{x} = A^{-1} \mathbf{b}.$$
