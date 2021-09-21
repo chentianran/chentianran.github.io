@@ -7,8 +7,9 @@ title: CV
 
 ### Employment
 
-- 2016 – present Assistant Professor, Auburn University Montgomery.
-- 2016/8–12 Lecturer, Auburn University Montgomery.
+- 2021 – present Associate Professor, Auburn University Montgomery.
+- 2017/1 – 2021 Assistant Professor, Auburn University Montgomery.
+- 2016/8–2016/12 Lecturer, Auburn University Montgomery.
 - 2012 – 2016 Research Instructor, Michigan State University.
 - 2006 – 2012 Research and Teaching Assistant, Michigan State University.
 - 2003 – 2005 Research Assistant, Western Connecticut State University.
@@ -22,7 +23,7 @@ title: CV
 
 ### Grants
 
-- 2019--2021 NSF research grant DMS-1923099 
+- 2019--2022 NSF research grant DMS-1923099
   _AMPS: Collaborative Research: A Convex Geometry and Homotopy Approach for Power-Flow Equations_
   \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
 - 2016 AMS-Simons Travel Grant
@@ -57,7 +58,7 @@ title: CV
 
 |              |                                              |
 |--------------|----------------------------------------------|
-| 2016 to 2019 | Linear Algebra, Modern Algebra I, Modern Algebra II |
+| 2016 to 2021 | Linear Algebra, Modern Algebra I, Modern Algebra II |
 |              | Mathematical modeling and simulation |
 |              | Pre-calculus, Calculus I,II, Multivariable calculus |
 |              | Differential equations, Numerical analysis |
