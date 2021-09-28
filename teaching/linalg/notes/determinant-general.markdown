@@ -102,7 +102,7 @@ $n \times n$ matrix $C = [C_{i,j}]$ where $C_{i,j}$ is the
 $(i,j)$-cofactor of $A$.
 
 With that, we define the **adjugate matrix** of
-$A$ to be $$\operatorname{adj} A = C^\top.$$
+$A$ to be $\operatorname{adj} A = C^\top.$
 
 Some authors also use the term "adjoint matrix" for this concept,
 although that usage is less common nowadays among mathematicians.
@@ -111,7 +111,7 @@ This construction is particularly useful in providing a compact
 expression for matrix inverse.
 
 For an $n \times n$ matrix $A$, if $\det A \ne 0$, then
-$$A^{-1} = \frac{1}{\det A} \operatorname{adj} A.$$
+$A^{-1} = \frac{1}{\det A} \operatorname{adj} A.$
 
 Note that in practice, this formula is an extremely inefficient way for
 computing the inverse of large matrices. Its value lies more in the
