@@ -15,12 +15,19 @@ Expressions like this are also called weighted sums.
 
 This, of course, can be generalized to any number of vectors.
 A *linear combination* of a set $S$ of vectors
-$$\{ \mathbf{v}_1, \dots, \mathbf{v}_n \}$$
+$\{ \mathbf{v}_1, \dots, \mathbf{v}_n \}$
 is an expression of the form
 
 $$c_1 \, \mathbf{v}_1 + \dots + c_n \, \mathbf{v}_n,$$
 
 where $c_1,\dots,c_n$ are scalars known as coefficients.
+Of course, for this expression to be meaningful,
+we require $\mathbf{v}_1, \ldots, \mathbf{v}_n$
+to be vectors of the same shape
+(i.e., all of them are columns (or all of them are row vectors)
+and they all contain the exact same number of entries).
+Indeed, we will soon learn that this operation only make sense
+when all the vectors are coming from the same "vector space".
 
 ## Span of vectors
 
@@ -41,7 +48,7 @@ $$  \begin{aligned}
         \end{bmatrix}
     \end{aligned}.$$
 
-What is the span of the set $$\{ \mathbf{e}_1, \mathbf{e}_2 \}$$?
+What is the span of the set $\{ \mathbf{e}_1, \mathbf{e}_2 \}$?
 
 **Exercise.**
 What about the span of the two vectors
@@ -84,8 +91,7 @@ The important property that will help us to distinguish these cases is
 "linear independence" --- the span of two vectors will only fill a
 2-dimensional space if they form a "linearly independent" set.
 
-Linear dependence/independence (set of 2) {#linear-dependenceindependence-set-of-2}
------------------------------------------
+## Linear dependence/independence (set of 2) {#linear-dependenceindependence-set-of-2}
 
 A set of *two* vectors is said to be **linearly dependent** if one of
 them is a *scalar multiple* of the other, including the cases where one
@@ -147,14 +153,14 @@ vector. -->
 
 A *nonempty* set of vector $\{ \mathbf{v}_1, \dots, \mathbf{v}_m \}$ is
 said to be **linearly dependent** if there are real numbers
-$$c_1,\dots,c_m$$, *not all zero*, such that
+$c_1,\dots,c_m$, *not all zero*, such that
 
 $$c_1 \mathbf{v}_1 + \cdots + c_m \mathbf{v}_m = \mathbf{0}.$$
 
-A set that is not linearly dependent is said to be linearly independent.
+A set that is not linearly dependent is said to be **linearly independent**.
 Stated more explicitly:
 
-A set of vector $$\{ \mathbf{v}_1, \dots, \mathbf{v}_m \}$$
+A set of vector $\{ \mathbf{v}_1, \dots, \mathbf{v}_m \}$
 is said to be **linearly independent** if the equation
 
 $$c_1 \mathbf{v}_1 + \cdots + c_m \mathbf{v}_m = \mathbf{0}$$
@@ -166,21 +172,22 @@ That is, for a linearly independent set of vectors, the only way to
 create $\mathbf{0}$ as a linear combination of this set is to use *all*
 zero coefficients.
 
-Invariance under linear transformations {#invariance-under-linear-transformations}
----------------------------------------
+## Invariance under linear transformations {#invariance-under-linear-transformations}
 
 It is very important to understand that linear dependence/independence
 are true "geometric properties" in the sense that they are invariant
 under any linear transformations.
 
 Stated more precisely,
-suppose $$\{ \mathbf{v}_1, \dots, \mathbf{v}_m \} \subset \mathbb{R}^n$$
-is linearly independent, the for any nonsingular $n \times n$ matrix $A$, the set
-$$\{ A \mathbf{v}_1, \dots, A \mathbf{v}_m \} \subset \mathbb{R}^n$$ is
-also linearly independent.
+suppose $\{ \mathbf{v}_1, \dots, \mathbf{v}_m \} \subset \mathbb{R}^n$
+is linearly independent, the for any nonsingular $n \times n$ matrix $A$,
+the set
 
-The case of the empty set {#the-case-of-the-empty-set}
--------------------------
+$$\{ A \mathbf{v}_1, \dots, A \mathbf{v}_m \} \subset \mathbb{R}^n$$
+
+is also linearly independent.
+
+## The case of the empty set {#the-case-of-the-empty-set}
 
 In the definition of linear dependence, we specifically required the set
 to be nonempty. So one question remains: "what about $\{ \, \}$?" Should
@@ -195,8 +202,7 @@ The empty set $\varnothing = \{\,\}$ is linearly *independent*.
 This is actually consistent with and implied by the definition of linear
 independence stated above.
 
-Determining linear independence (equation) {#determining-linear-independence-equation}
-------------------------------------------
+## Determining linear independence (via linear systems) {#determining-linear-independence-equation}
 
 Following directly from definition of linear independence we have the
 following direct method:
@@ -210,8 +216,7 @@ $$x_1 \mathbf{v}_1 + \cdots + x_n \mathbf{v}_n = \mathbf{0}.$$
 This becomes a problem of solving homogeneous linear system.
 Please see earlier sections for detailed explanation in that area.
 
-Determining linear independence (RREF) {#determining-linear-independence-rref}
---------------------------------------
+## Determining linear independence (via RREF) {#determining-linear-independence-rref}
 
 A slightly simpler and more efficient method makes use of the
 Gauss-Jordan elimination and the resulting RREF.
@@ -219,7 +224,7 @@ Gauss-Jordan elimination and the resulting RREF.
 Given a set of $n$ column vectors
 $S = \{ \mathbf{v}_1, \cdots, \mathbf{v}_n \}$,
 
-1. Form the matrix $$A = [ \, \mathbf{v}_1 \; \cdots \; \mathbf{v}_n \, ]$$.
+1. Form the matrix $A = [ \, \mathbf{v}_1 \; \cdots \; \mathbf{v}_n \, ]$
 2. Compute the RREF of $A$.
 3. If the resulting RREF has $n$ (n.o. columns) leading 1's,
    then $S$ is linearly independent.
