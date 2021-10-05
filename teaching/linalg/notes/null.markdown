@@ -5,7 +5,7 @@ title: Null space of a matrix
 
 For a given $m \times n$ matrix $A$,
 the set of vectors $\mathbf{x} \in \mathbb{R}^n$ such that
-$$A \mathbf{x} = \mathbf{0}$$
+$A \mathbf{x} = \mathbf{0}$
 is known as the **null space** of $A$.
 
 It is easy to verify that the null space of $A$
@@ -21,13 +21,13 @@ is a subspace of $\mathbb{R}^n$ by showing
 ## Connection to homogeneous linear systems
 
 We can see that, by definition, the elements of the null space of a matrix $A$
-are exactly the solutions to the homogeneous system $$A \mathbf{x} = \mathbf{0}$$.
+are exactly the solutions to the homogeneous system $A \mathbf{x} = \mathbf{0}$.
 So in that sense, this is a familiar object,
 and the problem of describing the null space of a matrix
 is exactly the problem of solving the corresponding homogeneous system.
 
 When we use the term "null space",
-we are emphasizing that the solution set to $$A \mathbf{x} = \mathbf{0}$$
+we are emphasizing that the solution set to $A \mathbf{x} = \mathbf{0}$
 has the additional algebraic structure of a subspace:
 It is closed under the operation of linear combination.
 

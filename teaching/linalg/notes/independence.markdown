@@ -144,8 +144,7 @@ $$  \begin{aligned}
         % &&
     \end{aligned}$$
 
-Linear dependence/independence (general) {#linear-dependenceindependence-general}
-----------------------------------------
+## Linear dependence/independence (general) {#linear-dependenceindependence-general}
 
 <!-- Algebraically, this is equivalent to the condition that one could select
 coefficients, not all zero, so that a linear combination can be the zero
