@@ -164,18 +164,19 @@ is said to be **linearly independent** if the equation
 
 $$c_1 \mathbf{v}_1 + \cdots + c_m \mathbf{v}_m = \mathbf{0}$$
 
-for real numbers $$c_1,\dots,c_m$$ implies
-that $$c_1 = \cdots = c_m = 0$$.
+for real numbers $c_1,\dots,c_m$ implies
+that $c_1 = \cdots = c_m = 0$.
 
 That is, for a linearly independent set of vectors, the only way to
 create $\mathbf{0}$ as a linear combination of this set is to use *all*
 zero coefficients.
 
-## Invariance under linear transformations {#invariance-under-linear-transformations}
+## Invariance under nonsingular linear transformations
 
 It is very important to understand that linear dependence/independence
-are true "geometric properties" in the sense that they are invariant
-under any linear transformations.
+of a set of vectors in $\mathbb{R}^n$ are true "geometric properties"
+in the sense that they are invariant
+under any nonsingular linear transformations of $\mathbb{R}^n$.
 
 Stated more precisely,
 suppose $\{ \mathbf{v}_1, \dots, \mathbf{v}_m \} \subset \mathbb{R}^n$
@@ -258,7 +259,7 @@ $$  \begin{aligned}
             \end{bmatrix}
             ,
             \begin{bmatrix}
-                3 \\ 0 \\ 1 \\ 2 
+                3 \\ 0 \\ 1 \\ 2
             \end{bmatrix}
         \right\}
     \end{aligned}$$
