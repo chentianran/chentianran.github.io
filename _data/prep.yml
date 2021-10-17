@@ -11,7 +11,7 @@
     @article{Chen2021Volume,
       archivePrefix = {arXiv},
       arxivId = {2108.12875},
-      author = {Chen, Tianran and Davis, Robert and Korchevskaia, Evgeniia},
+      author = {Chen, Tianran},
       eprint = {2108.12875},
       month = {aug},
       title = {Volume of convex polytopes equals mixed volume of simplices},
