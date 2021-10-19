@@ -122,13 +122,19 @@ We start with the easy task of finding a basis for the subspace spanned
 by a given set of vectors.
 
 Suppose we have a subset
-$\{ \mathbf{v}_1, \dots, \mathbf{v}_\ell \} \subset \mathbb{R}^n$,
+
+$$\{ \mathbf{v}_1, \dots, \mathbf{v}_\ell \} \subset \mathbb{R}^n,$$
+
 and we want to find a basis for the subspace
-$V = \operatorname{span} \{ \mathbf{v}_1, \dots, \mathbf{v}_\ell \}$.
-Since we already know that $\{ \mathbf{v}_1, \dots, \mathbf{v}_\ell \}$ spans $V$
-(by assumption), half of the work is ready done.
+
+$$V = \operatorname{span} \{ \mathbf{v}_1, \dots, \mathbf{v}_\ell \}.$$
+
+Since we already know the vector $\mathbf{v}_1,\ldots,\mathbf{v}_l$
+spans $V$ (by assumption), half of the work is ready done.
 We simply need to select a linear independent subset from
-$\{ \mathbf{v}_1, \dots, \mathbf{v}_\ell \}$.
+
+$$\{ \mathbf{v}_1, \dots, \mathbf{v}_\ell \}.$$
+
 Not surprisingly, this can be done by computing the RREF of a certain matrix.
 
 Let
