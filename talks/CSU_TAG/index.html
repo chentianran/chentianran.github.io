@@ -1,0 +1,1479 @@
+---
+layout: mtalk
+title: Fireflies, power plants, and convex polytopes
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h1 class="title">Fireflies, power plants, and convex polytopes</h1>
+    </div>
+    <p>Tianran Chen</p>
+    <p class="small">
+        Department of Mathematics and Computer Science<br>
+        Auburn University at Montgomery
+    </p>
+    <p class="smaller">
+        November 12, 2021<br/>
+        Department of Mathematics and Statistics<br/>
+        Cleveland State University<br/>
+        (Virtual) Topology, Algebra, and Geometry Seminar
+    </p>
+</section>
+<section> <!-- Undirected Adjacency Polytope --------------------------------->
+    <h3>Adjacency polytopes</h3>
+    <p>
+        Given a graph $G$,
+        represented by its adjacency/edge list $A$
+        (list of edges and loops),
+        we consider a function
+        \[
+            f : A \to \mathcal{P}^n
+        \]
+        where $\mathcal{P}^n$ is the set of convex (lattice) polytopes
+        in $\mathbb{R}^n$.
+    </p>
+    <p class="fragment">
+        The <b class="highlight">adjacency polytope</b> of $G$,
+        induced by $f$, is the (lattice) polytope
+        \[
+            P = 
+            \operatorname{conv}
+            \left(
+                \{ \mathbf{0} \}
+                \cup
+                \bigcup_{ \{i,j\} \in A } f(\{i,j\})
+            \right)
+            \; \subset \;
+            \mathbb{R}^n
+        \]
+    </p>
+    <p class="fragment">
+        We only care about the properties that are invariant
+        under unimodular transformations.
+    </p>
+</section>
+<section> <!-- First example ------------------------------------------------->
+    <p>
+        <b>Example.</b>
+        Consider the complete graph with 3 nodes:
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="center">
+                <svg height="120" width="200">
+                    <line x1="100" y1="20"  x2="160" y2="100" stroke="#583d72" stroke-width="2"/>
+                    <line x1="100" y1="20"  x2="40"  y2="100" stroke="#583d72" stroke-width="2"/>
+                    <line x1="40"  y1="100" x2="160" y2="100" stroke="#583d72" stroke-width="2"/>
+                    <g transform="translate(100,20)">
+                        <circle cx="0" cy="0" r="20" stroke-width="0" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            0
+                        </text>
+                    </g>
+                    <g transform="translate(160,100)">
+                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            1
+                        </text>
+                    </g>
+                    <g transform="translate(40,100)">
+                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            2
+                        </text>
+                    </g>
+                </svg>
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                \begin{align*}
+                    A &= \{\; \{0,1\}, \{1,2\}, \{2,0\} \;\} \\
+                    f(i,j) &= \operatorname{conv} \{
+                        \mathbf{e}_i - \mathbf{e}_j,
+                        \mathbf{e}_j - \mathbf{e}_i
+                    \}
+                \end{align*}
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        The adjacency polytope is the convex hull
+        \[
+            P =
+            \operatorname{conv}
+            \{
+                \mathbf{e}_0 - \mathbf{e}_1,
+                \mathbf{e}_1 - \mathbf{e}_0,
+                \mathbf{e}_1 - \mathbf{e}_2,
+                \mathbf{e}_2 - \mathbf{e}_1,
+                \mathbf{e}_2 - \mathbf{e}_0,
+                \mathbf{e}_0 - \mathbf{e}_2
+            \}
+        \]
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p class="center">
+                <svg height="120" width="120">
+                    <g transform="translate(60,60) scale(1,-1)">
+                        <line x1="-50" y1="0"  x2="50" y2="0"   stroke="#583d72" stroke-width="2"/>
+                        <line x1="-50" y1="50" x2="50" y2="-50" stroke="#583d72" stroke-width="2"/>
+                        <line x1="0"   y1="50" x2="0"  y2="-50" stroke="#583d72" stroke-width="2"/>
+                    </g>
+                </svg>
+            </p>
+        </div>
+        <div class="col fragment">
+            <p class="center">
+                <svg height="120" width="120">
+                    <g transform="translate(60,60) scale(50,-50)">
+                        <polygon points="-1,0 -1,1 0,1 1,0 1,-1 0,-1" fill="#583d72"/>
+                    </g>
+                </svg>
+            </p>
+        </div>
+    </div>
+    <ul>
+        <li class="fragment">
+            Is there any connections between the
+            topological properties of $G$
+            and geometric properties of $P$?
+        </li>
+        <li class="fragment">
+            How does this connection (if exist)
+            depends on the choice of $f$?
+        </li>
+    </ul>
+</section>
+<section> <!-- Directed Adjacency Polytope --------------------------------->
+    <h3>Adjacency polytopes (directed version)</h3>
+    <p>
+        Given a <em>digraph</em> $\vec{G}$,
+        represented by its list of directed edges $A$ (and loops),
+        we consider a function
+        \[
+            f : A \to \mathcal{P}^n
+        \]
+        where $\mathcal{P}^n$ is the set of convex (lattice) polytopes
+        in $\mathbb{R}^n$.
+    </p>
+    <p class="fragment">
+        The <b class="highlight">adjacency polytope</b> of $\vec{G}$,
+        induced by $f$, is the (lattice) polytope
+        \[
+            P = 
+            \operatorname{conv}
+            \left(
+                \{ \mathbf{0} \}
+                \cup
+                \bigcup_{ (i,j) \in A } f((i,j))
+            \right)
+            \; \subset \;
+            \mathbb{R}^n
+        \]
+    </p>
+    <p class="fragment">
+        Again, they are only defined up to unimodular transformations.
+    </p>
+</section>
+<section>
+    <p>
+        Adjacency polytope of $\vec{G}$ with directed edge set $A$
+        induced by $f$:
+        \[
+            P = 
+            \operatorname{conv}
+            \left(
+                \{ \mathbf{0} \}
+                \cup
+                \bigcup_{ (i,j) \in A } f((i,j))
+            \right)
+            \; \subset \;
+            \mathbb{R}^n
+        \]
+    </p>
+    <p class="center fragment">
+        <br/>
+        <br/>
+        <br/>
+        Why should we care?
+    </p>
+</section>
+<!-- <section>
+    <h3>Noonburg's model for neural network (1989)</h3>
+
+    <p>
+        For a network $G$,
+        \[
+            0 = c x_i - 1 - \sum_{j \in \mathcal{N}_G(i)} w_{ij} \, x_i \, x_j^2
+            \quad \text{for each node } i.
+        \]
+    </p>
+    <p class="small">
+        V. W. Noonburg. <br/>
+        <em>"A neural network modeled by an adaptive Lotka-Volterra system."</em>
+        SIAM Journal on Applied Mathematics 49.6 (1989): 1779-1792.
+    </p>
+    <p class="fragment small">
+        \begin{align*}
+            0 &= c x_0 -1 - (w_{01} x_0 x_1^2 + w_{02} x_0 x_2^2 + w_{03} x_0 x_3^2) \\[1ex]
+            0 &= c x_1 -1 - (w_{10} x_1 x_0^2 + w_{13} x_1 x_3^2) \\[1ex]
+            0 &= c x_2 -1 - (w_{20} x_2 x_0^2 + w_{23} x_2 x_3^2) \\[1ex]
+            0 &= c x_3 -1 - (w_{30} x_3 x_0^2 + w_{31} x_3 x_1^2 + w_{32} x_3 x_2^2)
+        \end{align*}
+    </p>
+</section> -->
+<section>
+    <h3>Kuramoto model </h3>
+    <p>
+        Standard model for studying spontaneous synchronizations
+        in networks of weakly coupled oscillators 
+        (Y. Kuramoto 蔵本由紀 1975).
+    </p>
+    <div class="cols fragment">
+        <div class="col">
+            <img src="kuramoto.png" height=340>
+        </div>
+        <div class="col">
+            <p>
+                <em>Mechanical model:</em>
+                Massless particles rotating on the unit circle
+                coupled with one another via springs.
+            </p>
+            <p class="fragment">
+                Each particle has its own natural frequency
+                (angular velocity).
+            </p>
+            <p class="fragment">
+                The strength of influence of one particle on another
+                is proportional to the sine of the phase angle difference.
+            </p>
+        </div>
+    </div>
+    <!-- <div class="center">
+    </div> -->
+    <p class="fragment">
+        \[
+            \dot{\theta}_i = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i=0,\dots,n
+        \]
+        <span class="tiny">
+            Kuramoto Y. (1975) Self-entrainment of a population of coupled non-linear oscillators. In: Araki H. (eds) International Symposium on Mathematical Problems in Theoretical Physics. Lecture Notes in Physics, vol 39. Springer, Berlin, Heidelberg.
+        </span>
+    </p>
+    <!-- <p class="fragment">
+        A balance between simple formulation and complex behavior
+    </p> -->
+</section>
+<section>
+    <h3>Kuramoto model</h3>
+    <p>
+        Standard model for studying synchronization in 
+        networks of oscillators.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <img src="./firefly.jpg" alt="A firefly">
+        </div>
+        <div class="col fragment">
+            <p>
+                The synchronization phenomenon
+                in the flashing of fireflies.
+                \[
+                    \dot{\theta}_i = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+                \]
+                where $\theta_i$'s models the flashing cycle of a firefly,
+                $\omega_i$ is its <em>natural frequency</em>,
+                and $k_{ij} = k_{ji}$ describes the coupling.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Some species of fireflies can synchronize their flashings
+        to have the exact same frequencies.
+        (Frequency synchronization)
+    </p>
+</section>
+<section>
+    <h3>
+        Frequency synchronization
+    </h3>
+    <p>
+        Configurations of $(\theta_0,\dots,\theta_n)$
+        for which $\dot{\theta}_i$ are all the same
+    </p>
+    <p>
+        \[
+            c = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i=0,\dots,n
+        \]
+    </p>
+    <p class="fragment">
+        Letting $\bar{\omega}_i = \omega_i - c$,
+        this is equivalent to nonlinear systems
+        \[
+            0 = \bar{\omega}_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i=0,\dots,n
+        \]
+    </p>
+    <p class="fragment">
+        I.e., frequency synchronization configurations
+        are the roots of the system
+        \[
+            p_i(\theta_0,\ldots,\theta_n) = 
+            \bar{\omega}_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i=0,\dots,n
+        \]
+    </p>
+    <!-- <p class="fragment">
+        Not an algebraic system! (Yet)
+    </p> -->
+</section>
+<section> <!-- Sparsity ------------------------------------------------------>
+    <h3>Sparsity</h3>
+    <p>
+        \[
+            p_i(\theta_0,\ldots,\theta_n) = 
+            \bar{\omega}_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i=0,\dots,n
+        \]
+        Earlier studies focused on
+    </p>
+    <ul>
+        <li>complete networks ($k_{ij} \ne 0$ for all $i,j$),</li>
+        <li>uniform coupling ($k_{ij} = k$ for all $i,j$).</li>
+    </ul>
+    <p class="fragment">
+        Recent research trends is to explore sparse networks
+        with non-uniform couplings,
+        i.e., some $k_{ij} = 0$ and $k_{ij}$'s are not all identical.
+    </p>
+    <p class="fragment">
+        We model the network as a weighted graph $G = (V,E)$,
+        \[
+            p_i(\theta_0,\ldots,\theta_n) = 
+            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i=0,\dots,n
+        \]
+        where $\mathcal{N}_G(i)$ contains the neighbors of node $i$ in $G$.
+    </p>
+</section>
+<section> <!-- Reducing variables and equations ------------------------------>
+    <div class="cols">
+        <div class="col">
+                <img src="kuramoto.png" width=300>
+        </div>
+        <div class="col">
+            <p>
+                \[
+                    \begin{aligned}
+                        \bar{\omega}_0 &= k_{01} \sin(\theta_0 - \theta_1) + k_{02} \sin(\theta_0 - \theta_2) \\
+                        \bar{\omega}_1 &= k_{10} \sin(\theta_1 - \theta_0) + k_{13} \sin(\theta_1 - \theta_3) \\
+                        \bar{\omega}_2 &= k_{20} \sin(\theta_2 - \theta_0) + k_{23} \sin(\theta_2 - \theta_3) \\
+                        \bar{\omega}_3 &= k_{31} \sin(\theta_3 - \theta_1) + k_{32} \sin(\theta_3 - \theta_2)
+                    \end{aligned}
+                \]
+            </p>
+            <p class="fragment">
+                Since only angle differences $\theta_i - \theta_j$ are involved,
+                one variable can be set to a constant.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Under the symmetry assumption that $k_{ij} = k_{ji}$,
+        the equations add up to zero,
+        and therefore one equation can be removed.
+    </p>
+    <p class="fragment">
+        \begin{align*}
+            \bar{\omega}_1 &= k_{10} \sin(\theta_1 - \theta_0) + k_{13} \sin(\theta_1 - \theta_3) \\
+            \bar{\omega}_2 &= k_{20} \sin(\theta_2 - \theta_0) + k_{23} \sin(\theta_2 - \theta_3) \\
+            \bar{\omega}_3 &= k_{31} \sin(\theta_3 - \theta_1) + k_{32} \sin(\theta_3 - \theta_2)
+        \end{align*}
+    </p>
+    <p class="fragment">
+        In general, for a network of $n+1$ oscillators,
+        only $n$ equations in $n$ unknowns are needed
+        (square system).
+    </p>
+</section>
+<section>
+    <h3>
+        Turning into an algebraic system
+    </h3>
+    <p>
+        Synchronization configurations are roots of the nonlinear system
+        \[
+            p_i(\theta_0,\ldots,\theta_n) = 
+            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i=0,\dots,n,
+        \]
+        which is not <em>algebraic</em>.
+    </p>
+    <div class="fragment">
+        <p>
+            There are many ways to reformulate it has an algebraic system
+        </p>
+        <ul>
+            <li>
+                J. Baillieul and C. Byrnes <br>
+                <span class="smaller">
+                    Geometric Critical Point Analysis of Lossless Power System Models
+                </span><br>
+            </li>
+            <li>
+                D. Mehta, N. Daleo, F. Dörfler, and J. Hauenstein <br>
+                <span class="smaller">
+                    Algebraic geometrization of the Kuramoto model: Equilibria and stability analysis
+                </span><br>
+            </li>
+            <li>
+                O. Coss, J. Hauenstein, H. Hong, and D. Molzahn <br>
+                <span class="smaller">
+                    Locating and Counting Equilibria of the Kuramoto Model with Rank-One Coupling
+                </span><br>
+            </li>
+        </ul>
+    </div>
+</section>
+<section> <!-- Algebraic formulation ----------------------------------------->
+    <h3>Algebraic formulation</h3>
+
+    <p>Consider complex phase angles</p>
+    
+    <p>
+        \[
+            \theta_i \;\mapsto\;
+            z_i = \theta_i - \mathbf{i}\, r_i
+        \]
+    </p>
+
+    <p class="fragment">
+        and the change of variables
+        \[
+            x_i = e^{\mathbf{i} z_i} = e^{r_i + \mathbf{i}\,\theta_i}
+        \]
+    </p>
+    <p class="fragment">
+        and the transformation
+        \[
+            \sin(z_i - z_j) = \frac{
+                e^{\mathbf{i}z_i - \mathbf{i}z_j} -
+                e^{\mathbf{i}z_j - \mathbf{i}z_i}
+            }{2\mathbf{i}}
+            =
+            \frac{1}{2\mathbf{i}} \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+        \]
+    </p>
+    <div class="equgroup">
+        <p class="fragment">
+            \[
+                \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } k_{ij} \sin(\theta_i - \theta_j)
+            \]
+        </p>
+        <p class="fragment">
+            \[
+                \to
+            \]
+        </p>
+        <p class="fragment">
+            \[
+                \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } a_{ij}' 
+                \left(
+                    \frac{x_i}{x_j} - \frac{x_j}{x_i}
+                \right)
+            \]
+        </p>
+    </div>
+    <p class="fragment">
+        The transcendental system is turned into a Laurent polynomial system.
+    </p>
+</section>
+<!-- <section>
+    <img src="kuramoto.png" border=5 class="stretch">
+    <p>
+        \[
+        \begin{aligned}
+            \omega_0 &= a_{01}' (x_0 / x_1 - x_1 / x_0) + a_{02}' (x_0 / x_2 - x_2 / x_0) \\
+            \omega_1 &= a_{10}' (x_1 / x_0 - x_0 / x_1) + a_{13}' (x_1 / x_3 - x_3 / x_1) \\
+            \omega_2 &= a_{20}' (x_2 / x_0 - x_0 / x_2) + a_{23}' (x_2 / x_3 - x_3 / x_2) \\
+            \omega_3 &= a_{31}' (x_3 / x_1 - x_1 / x_3) + a_{32}' (x_3 / x_2 - x_2 / x_3)
+        \end{aligned}
+        \]
+    </p>
+</section> -->
+<section> <!-- Randomization ------------------------------------------------->
+    <h3>
+        Randomization
+    </h3>
+    <p>
+        \[
+            p_i (x_1,\ldots,x_n) =
+            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } a_{ij}'
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+            =0
+            \quad\text{for } i = 1,\ldots,n
+        \]
+        is a system of $n$ Laurent polynomials in $n$ complex variables.
+    </p>
+    <p class="fragment">
+        For numerical computation,
+        we usually consider the "randomized" version
+        \[
+            \begin{bmatrix}
+                q_1 (x_1,\ldots,x_n) \\
+                \vdots \\
+                q_n (x_1,\ldots,x_n)
+            \end{bmatrix}
+            =
+            M \cdot
+            \begin{bmatrix}
+                p_1 (x_1,\ldots,x_n) \\
+                \vdots \\
+                p_n (x_1,\ldots,x_n)
+            \end{bmatrix}
+            =
+            \mathbf{0}
+        \]
+        for an $n \times n$ nonsingular matrix $M$
+        to improve numerical condition.
+    </p>
+    <p class="fragment">
+        \[
+            q_k(x_1,\ldots,x_n) =
+            c_{k,0,0} - 
+            \sum_{ \{i,j\} \in E } 
+            c_{k,i,j}
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+        \]
+    </p>
+</section>
+<section>
+    <h3>
+        The main questions
+    </h3>
+    <p>
+        Synchronization configurations in a Kuramoto model
+        are represented by certain complex solutions to the
+        Laurent polynomial system
+        \[
+            q_k(x_1,\ldots,x_n) =
+            c_{k,0,0} - 
+            \sum_{ \{i,j\} \in E } 
+            c_{k,i,j}
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+            = 0
+            \quad\text{for } k = 1,\ldots,n.
+        \]
+    </p>
+    <!-- <br/> -->
+    <ul>
+        <li class="fragment">How many solutions are there?</li>
+        <li class="fragment">How to find all solutions?</li>
+        <li class="fragment">What can network topology tell us?</li>
+        <li class="fragment">Can we decompose large networks into smaller ones?</li>
+    </ul>
+</section>
+<section>
+    <h3>The root counting question</h3>
+    <p>
+        \[
+            q_k(x_1,\ldots,x_n) =
+            c_{k,0,0} - 
+            \sum_{ \{i,j\} \in E } 
+            c_{k,i,j}
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+            = 0
+            \quad\text{for } k = 1,\ldots,n.
+        \]
+    </p>
+    <ul class="fragment">
+        <li>Bezout number</li>
+        <li>Bi-homogeneous Bezout number</li>
+        <li>Bernshtein-Kushnirenko-Khovanskii bound</li>
+    </ul>
+</section>
+<section>
+    <h3>Root count as normalized volume</h3>
+    <p>
+        \[
+            q_k(x_1,\ldots,x_n) =
+            c_{k,0,0} - 
+            \sum_{ \{i,j\} \in E } 
+            c_{k,i,j}
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+            = 0
+            \quad\text{for } k = 1,\ldots,n.
+        \]
+    </p>
+    <div class="theorem">
+        <p>
+            <b>Kushnirenko's Theorem.</b>
+            The number of isolated $\mathbb{C}^*$-roots $(q_1,\ldots,q_n)$ has
+            is less than or equal to the normalized volume of
+            the common <em>Newton polytope</em> of $q_1,\ldots,q_n$.
+            <!-- i.e.,
+            \[
+                n! \operatorname{Vol}_n
+                \left(
+                    \operatorname{conv}
+                    \left(
+                    \{ 
+                        \mathbf{e}_i - \mathbf{e}_j \;,\;
+                        \mathbf{e}_i - \mathbf{e}_j
+                    \}
+                    \cup \{ \mathbf{0} \}
+                    \right)
+                \right)
+            \] -->
+        </p>
+    </div>
+    <!-- <p class="fragment small">
+        In general the Kushnirenko Theorem counts isolated solutions
+        in $(\mathbb{C}^*)^n = (\mathbb{C} \setminus \{0\})^n$.
+    </p> -->
+    <p class="fragment">
+        The root count (n.o. "complex" synchronization configurations)
+        is bounded by the normalized volume of the polytope
+        \[
+            \operatorname{conv}
+            \left(
+            \bigcup_{ \{i,j\} \in E }
+                \{ 
+                    \mathbf{e}_i - \mathbf{e}_j \;,\;
+                    \mathbf{e}_i - \mathbf{e}_j
+                \}
+            \cup \{ \mathbf{0} \}
+            \right)
+        \]
+    </p>
+    <p class="fragment">
+        This is precisely the <em class="highlight">adjacency polytope</em>
+        of the network $G$ induced by
+        \[
+            f( \{ i,j \} ) =
+            \operatorname{conv}
+            \{ 
+                \mathbf{e}_i - \mathbf{e}_j \;,\;
+                \mathbf{e}_i - \mathbf{e}_j
+            \}.
+        \]
+    </p>
+</section>
+<section>
+    <h3>
+        Adjacency polytope associated with the Kuramoto model
+    </h3>
+    <div class="cols">
+        <div class="col">
+            <img src="kuramoto.png" height=370>
+        </div>
+        <div class="col">
+            <p>
+                For a Kuramoto network modeled by
+                a weighted graph $G = (V,E)$, we construct the
+                <em class="highlight">adjacency polytope</em>
+                \[
+                    \operatorname{conv}
+                    \left(
+                        \bigcup_{ \{i,j\} \in E }
+                        f( \{i,j\} )
+                        \cup \{ \mathbf{0} \}
+                    \right)
+                \]
+                where
+                \[
+                    f( \{i,j\} ) =
+                    \operatorname{conv}
+                    \{ 
+                        \mathbf{e}_i - \mathbf{e}_j \;,\;
+                        \mathbf{e}_i - \mathbf{e}_j
+                    \}.
+                \]
+            </p>
+        </div>
+    </div>
+
+</section>
+<section>
+    <h3>Power-flow equations (Lossless PQ-formulation)</h3>
+    <p>
+        <span class="alert">Power networks</span>
+        carry alternating current (AC) electric power.
+    </p>
+    <p class="fragment">
+        Derived from Kirchhoff's circuit laws,
+        the PQ-type power-flow equations for power network $G$
+        consisting of $N$ buses is a system of $N-1$ equations
+    </p>
+    <p class="fragment">
+        \[
+            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
+            \quad\text{for } i = 2,\dots,N
+        \]
+    </p>
+    <p class="fragment">
+        in the $N-1$ <span class="alert">complex variables</span> 
+        $v_2, \dots, v_N$ with $v_1 = 1$
+        <span class="fragment">
+            , where $\overline{v}_j$ denotes the
+            <span class="alert">complex conjugate</span> of $v_j$
+        </span>
+    </p>
+    <p class="fragment">
+        <b>Not a polynomial system.</b>
+    </p>
+</section>
+<section>
+    <h3>Turning into an algebraic system</h3>
+    <p>
+        Examples of different approaches of turning power-flow equations into
+        polynomial systems
+    </p>
+    <ul>
+        <li>
+            J. Baillieul and C. Byrnes 
+            <span class="smaller">
+                Geometric Critical Point Analysis of Lossless Power System Models. (1982)
+                IEEE Transactions on Circuits and Systems
+            </span>
+        </li>
+        <li>
+            T.-Y. Li, T. Sauer, and J. Yorke
+            <span class="smaller">
+                Numerical Solution of a Class of Deficient Polynomial Systems
+                SIAM Journal of Numerical Analysis (1987)
+            </span>
+        </li>
+        <li>
+            (Recent survey) D. Mehta, D. Molzahn and K. Turitsyn 
+            <span class="small">
+                "Recent advances in computational methods for the power flow equations", 
+                (2016) American Control Conference.
+            </span>
+        </li>
+    </ul>
+    <p class="smaller">
+        (Not a complete list)
+    </p>
+</section>
+<section>
+    <p>
+        \[
+            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
+            \quad\text{for } i = 2,\dots,N
+        \]
+    </p>
+    <p class="fragment">
+        Introducing new variables $u_i = \overline{v}_i$:
+        \[
+            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i u_j
+            \quad\text{for } i = 2,\dots,N
+        \]
+    </p> 
+    <p class="fragment">
+        We can consider the square system
+        \[
+            \left\{
+                \begin{aligned}
+                    S_i &= \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i u_j
+                    \quad\text{for } i = 2,\dots,N \\
+                    \overline{S}_i &= \sum_{j \in N_G(i)} Y_{ij} u_i v_j
+                    \quad\text{for } i = 2,\dots,N 
+                \end{aligned}
+            \right.
+        \]
+        which is a $(2N-2) \times (2N-2)$ polynomial system.
+    </p>
+</section>
+<section>
+    <h3>Homotopy method 同伦法</h3>
+    <p>
+        Goal: want to solve polynomial system $P(\mathbf{x}) = 0$
+        via a continuous deformation
+    </p>
+    <div class="equgroup fragment">
+        <span>$Q(\mathbf{x}) = 0$</span>
+        <span>$\longleftarrow$</span>
+        <span>$P(\mathbf{x}) = 0$</span>
+    </div>
+    <br/>
+    <div class="equgroup fragment">
+        <span>$H(\mathbf{x},0) = 0$</span>
+        <span>$H(\mathbf{x},t)$</span>
+        <span>$H(\mathbf{x},1) = 0$</span>
+    </div>
+    <div class="fragment">
+        <div class="equgroup">
+            <span>Starting sys.</span>
+            <span>Homotopy</span>
+            <span>Target sys.</span>
+        </div>
+    </div>
+    <br/>
+    <div class="center fragment">
+        Solutions of $H(\mathbf{x},t) = 0$
+        <img src="homotopy.png" alt="homotopy continuation" width="850">
+    </div>
+</section>
+<section>
+    <h3>
+        Polyhedral Homotopy
+    </h3>
+    <p>
+        Huber & Sturmfels 1995
+        \[
+            P(x_1,x_2) = 
+            \begin{cases}
+            c_1 x_1^{a_{11}} x_2^{a_{12}} + c_2 x_1^{a_{21}} x_2^{a_{22}} + c_3 x_1^{a_{31}} x_2^{a_{32}} = 0 \\
+            c_4 x_1^{b_{11}} x_2^{b_{12}} + c_5 x_1^{b_{21}} x_2^{b_{22}} + c_6 x_1^{b_{31}} x_2^{b_{32}} = 0
+            \end{cases}
+        \]
+        with random (generic) coefficients.
+    </p>
+    <p class="fragment">
+        Define homotopy $H(x_1,x_2,t)$
+        \[
+            \begin{cases}
+                c_1 x_1^{a_{11}} x_2^{a_{12}} \color{red}{t^{\omega_1}} +
+                c_2 x_1^{a_{21}} x_2^{a_{22}} \color{red}{t^{\omega_2}} +
+                c_3 x_1^{a_{31}} x_2^{a_{32}} \color{red}{t^{\omega_3}} \\
+                c_4 x_1^{b_{11}} x_2^{b_{12}} \color{red}{t^{\omega_4}} +
+                c_5 x_1^{b_{21}} x_2^{b_{22}} \color{red}{t^{\omega_5}} +
+                c_6 x_1^{b_{31}} x_2^{b_{32}} \color{red}{t^{\omega_6}}
+            \end{cases}
+        \]
+        for generic rational exponents $\omega_1,\dots$
+    </p>
+    <div class="equgroup fragment">
+        <p>
+            \[ H(x_1,x_2,1) = P(x_1,x_2) \]
+        </p>
+        <p class="fragment">
+            \[ H(x_1,x_2,0) = \text{?} \]
+        </p>
+    </div>
+</section>
+<section>
+    <h3>
+        How to start $H$
+    </h3>
+    <div class="equgroup small">
+        <p>
+            \[ H(x_1,x_2,1) = P(x_1,x_2) \]
+        </p>
+        <p>
+            \[ H(x_1,x_2,0) = \text{?} \]
+        </p>
+    </div>
+    <p class="fragment">
+        For $\alpha=(\alpha_1,\alpha_2)$ and $\beta=(\beta_1,\beta_2)$,
+        introduce new variables $(y_1,y_2)$.
+        <div class="equgroup">
+            <p class="fragment">
+                \[
+                    \begin{cases}
+                    x_1 = y_1 t^{\color{red}{\alpha_1}} \\
+                    x_2 = y_2 t^{\color{red}{\alpha_2}}
+                    \end{cases}
+                \]
+            </p>
+            <div class="r-stack">
+                <p class="fragment fade-in-then-out">
+                    \[  
+                        H = 
+                        \begin{cases}
+                            \;\;\;\; H_1 (
+                            \,\;\;x_1\;\;,
+                            \,\;\;x_2\;\;,
+                            t) \\
+                            \;\;\;\; H_2 (
+                            \,\;\;x_1\;\;,
+                            \,\;\;x_2\;\;,
+                            t)
+                        \end{cases}
+                    \]
+                </p>
+                <p class="fragment">
+                    \[  
+                        H = 
+                        \begin{cases}
+                            \color{red}{ t^{-\beta_1}} H_1 (
+                            \color{red}{ y_1 t^{\alpha_1}},
+                            \color{red}{ y_2 t^{\alpha_2}},
+                            t) \\
+                            \color{red}{     t^{-\beta_2}} H_2 (
+                            \color{red}{ y_1 t^{\alpha_1}} ,
+                            \color{red}{ y_2 t^{\alpha_2}} ,
+                            t)
+                        \end{cases}
+                    \]
+                </p>
+            </div>
+        </div>
+    </p>
+    <p class="fragment">
+        $H^\alpha(y_1,y_2,\color{red}{1}) \equiv P(y_1,y_2)$.
+        <span class="fragment">
+            What about $H^\alpha(y_1,y_2,\color{red}{0})$?
+        </span>
+    </p>
+    <p class="fragment">
+        <b> IF </b>
+        we choose the <em>correct</em> $\alpha$ and $\beta$ then
+    </p>
+    <div class="r-stack">
+        <p class="fragment fade-in-then-out">
+            \[
+                H^\alpha(y_1,y_2,\,t) = 
+                \begin{cases}
+                    \text{2 terms without $t$} 
+                    \; + \; o(t)
+                    \\
+                    \text{2 terms without $t$}
+                    \; + \; o(t)
+                \end{cases}
+            \]
+        </p>
+        <p class="fragment">
+            \[
+                H^\alpha(y_1,y_2,\color{red}{0}) = 
+                \begin{cases}
+                    \text{2 terms without $t$} 
+                    \quad\quad\quad\;\,
+                    \\
+                    \text{2 terms without $t$}
+                    \quad\quad\quad\;\,
+                \end{cases}
+            \]
+        </p>
+    </div>
+    <p class="fragment">
+        Such <b>binomial</b> systems can be solved easily,
+        <span class="fragment">
+            giving us starting points,
+            and the homotopy can start.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>
+        The key idea
+    </h3>
+    <p>
+        <b>IF</b>
+        we choose the <em>correct </em> $\alpha$ and $\beta$ then
+        \[
+            H^\alpha(y_1,y_2,\color{red}{0}) = 
+            \text{ a ``binomial system''}
+        \]
+        and can be solved.
+    </p>
+    <p class="fragment">
+        In general, such pairs of "correct" $\alpha$ and $\beta$ is not unique.
+    </p>
+    <p class="fragment">
+        The key question: How to find such "correct" $\alpha$ and $\beta$?
+    </p>
+    <p class="fragment">
+        Answer: "Mixed cell computation"  
+        (equivalent to tropical intersection)
+    </p>
+</section>
+<section>
+    <h3>The number of homotopy paths</h3>
+
+    <p>
+        Generally,
+    </p>
+    <ul>
+        <li>
+            More path: slower.
+        </li>
+        <li>
+            Fewer path: faster.
+        </li>
+    </ul>
+    <p class="fragment small">
+        The situation is much more complicated in terms of complexity.
+    </p>
+</section>
+<section>
+    <h3>Bernshtein-Kushnirenko-Khovanskii (BKK) bound</h3>
+    <p>
+        <b>Theorem.</b>
+        [Bernshtein, Kushnirenko, Khovanskii]
+    <!-- </p>
+    <p> -->
+        Given a system of (Laurent) polynomials
+        $f_1,\dots,f_n$ in $(x_1,\dots,x_n)$
+        with <em>generic</em> coefficients,
+        the number of isolated common roots in
+        $(\mathbb{C}^*)^n$ (i.e., $x_i \ne 0$ for each $i$) is 
+        \[ \text{MVol}(\text{Newt}(f_1),\dots,\text{Newt}(f_n)). \]
+    </p>
+    <p class="fragment">
+        Here, $\text{MVol}$ denotes the <b>mixed volume</b> function,
+        and $\text{Newt}(f_i)$ is the Newton polytope of $f_i$,
+        <span class="fragment">
+            and the Newton polytope is the convex hull of the exponent vectors
+            in $f_i$ as points in $\mathbb{R}^n$.
+        </span>
+    </p>
+    <br/>
+    <p class="fragment">
+        This is the number of paths the polyhedral homotopy has to trace.
+    </p>
+</section>
+<section>
+    <h3>Mixed volume</h3>
+    <p>
+        \[
+            \text{Minkowski sum: }
+            A + B := \{ a + b \mid a \in A, b \in B \}
+        \]
+    </p>
+    <br/>
+    <div class="center fragment">
+        <svg height="140" width="600">
+            <g fill="none" stroke="purple" stroke-width="1">
+              <path stroke-linecap="round" d="M10 20 l100 100" />
+            </g>
+            <text x="150" y="75" fill="black"> +</text>
+            <text x="320" y="75" fill="black"> =</text>
+            <circle cx="240" cy="70" r="20" stroke="black" stroke-width="1" fill="purple" />
+            <g fill="none" stroke="purple" stroke-width="40">
+              <path stroke-linecap="round" d="M400 20 l100 100" />
+            </g>
+          </svg>
+    </div>
+    <br/>
+    <p class="fragment">
+        <b>Definition.</b>    
+        [H. Minkowski]
+        For convex polytopes $P_1,\dots,P_n$ in $\mathbb{R}^n$,
+        the <b class="alert">mixed volume</b>
+        $\text{MVol}(P_1,\dots,P_n)$
+        is the coefficient of $\lambda_1 \cdots \lambda_n$ in
+        \[
+            \text{vol}(\lambda_1 P_1 + \cdots + \lambda_n P_n)
+        \]
+    </p>
+    <br/>
+    <p class="fragment center small">
+        Many researchers prefer the definition with an additional
+        factor of $\frac{1}{n!}$.
+    </p>
+</section>
+<section>
+    <h3>2-dimensional case</h3>
+    <p class="center">
+        $\text{MVol}(A,B)$
+        is the coefficient of $\lambda_1 \lambda_2$ in
+        $
+            \text{vol}(\lambda_1 A + \lambda_2 B)
+        $
+    </p>
+    <br/>
+    <div class="center fragment">
+        <svg height="350" width="800">
+            <g transform="translate(0,300), scale(0.75,-0.75)">
+                <g>
+                    <polygon 
+                        points="0,0 200,100 100,200"
+                        style="fill:lightsteelblue;stroke:black;stroke-width:1"
+                    />
+                </g>
+                <g transform="translate(300,0)">
+                    <polygon 
+                        points="0,0 200,0 200,200 0,200"
+                        style="fill:coral;stroke:black;stroke-width:1"
+                    />
+                </g>
+                <text x="225" y="120" fill="black"> + </text>
+                <text x="525" y="120" fill="black"> =</text>
+                <g transform="translate(570,0)">
+                    <polygon 
+                        points="0,0 200,0 200,200 0,200"
+                        style="fill:coral;stroke:black;stroke-width:1"
+                    />
+                    <g transform="translate(200,200)">
+                        <polygon 
+                            points="0,0 200,100 100,200"
+                            style="fill:lightsteelblue;stroke:black;stroke-width:1"
+                        />
+                    </g>
+                    <g transform="translate(200,0)">
+                        <polygon 
+                            points="0,0 200,100 200,300 0,200"
+                            style="fill:orchid;stroke:black;stroke-width:1"
+                        />
+                    </g>
+                    <g transform="translate(0,200)">
+                        <polygon 
+                            points="0,0 200,0 300,200 100,200"
+                            style="fill:orchid;stroke:black;stroke-width:1"
+                        />
+                    </g>
+                </g>
+            </g>
+          </svg>
+    </div>
+    <p class="fragment">
+        \[
+            \text{MVol}(A,B) =
+            \text{vol}(A+B) - \text{vol}(A) - \text{vol}(B)
+        \]
+    </p>
+    <br/>
+    <p class="fragment">
+        This formula can be generalized to higher dimensional cases (polarization formula),
+        <span class="fragment">
+            but this is <b>not</b> how we compute mixed volume (BKK bound) in practice.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Mixed volume computation</h3>
+
+    <p>
+        \[
+            \text{``Mixed volume''} \;=\; \text{sum of ``mixed cells''}
+        \]
+    </p>
+    <br/>
+    <div class="fragment">
+        <p>In practice, <em>mixed cells</em> give up two thing</p>
+        <ul>
+            <li>
+                Mixed volume, i.e., generic root count, i.e., number of paths;
+            </li>
+            <li>
+                Starting point of polyhedral homotopies.
+            </li>
+        </ul>
+    </div>
+    <p class="fragment">
+        Mixed cells computation component is the most important part 
+        of a polyhedral homotopy implementation.
+    </p>
+
+</section>
+<section>
+    <h3>
+        Polyhedral homotopy: Summary
+    </h3>
+    <ul>
+        <li class="fragment">
+            A numerical homotopy method for solving (Laurent) polynomial systems;
+        </li>
+        <li class="fragment">
+            Finds all isolated complex solutions (including singular solutions);
+        </li>
+        <li class="fragment">
+            Naturally parallel and highly scalable;
+        </li>
+        <li class="fragment">
+            Generically optimal: it traces the least number of paths
+            for polynomial systems with generic coefficients;
+        </li>
+        <li class="fragment">
+            Takes advantage of the combinatorial structures in the Newton polytopes
+            of a polynomial system;
+        </li>
+        <li class="fragment">
+            It is bootstrapped by mixed cells computation;
+        </li>
+    </ul>
+    <br/>
+    <div class="fragment">
+        <p>Implementations (not a complete list)</p>
+        <ul>
+            <li>PHCPack (J. Verschelde)</li>
+            <li>Hom4PS, Hom4PS-2, Hom4PS-3 (李天岩研究组)</li>
+            <li>PSS5 (G. Malajovich)</li>
+            <li>HomotopyContinuation.jl (P. Breiding, S. Timme)</li>
+            <li>pHom (T. Gunji, S. Kim, M. Kojima, A. Takeda, K. Fujisawa, T. Mizutani)</li>
+        </ul>
+    </div>
+</section>
+<!-- <section>
+    <h3>
+        Positive dimensional solutions
+    </h3>
+    <p>
+        <em>Positive dimensional solutions sets</em>
+        are solution sets that are not isolated.
+        [Sommese & Wampler 1996: Numerical algebraic geometry]
+    </p>
+    <p class="fragment">
+        Polyhedral homotopy can find all isolated complex solutions,
+        but, in general, there it cannot sample positive dimensional solution sets.
+    </p>
+</section> -->
+<!-- <section>
+    <h3>
+        Stratified polyhedral homotopy (unmixed case)
+    </h3>
+    <p>
+        To sample the positive dimensional solution sets
+    \[
+        \left\{
+        \begin{aligned}
+            a_0 + a_1 x_1^1 x_2^2 + a_2 x_1^2 x_2^1 &= 0 \\
+            b_0 + b_1 x_1^1 x_2^2 + b_2 x_1^2 x_2^1 &= 0 
+        \end{aligned}
+        \right.
+        \quad \text{in } (\C^*)^2
+        \quad \text{(reduced case)}
+    \]
+
+    </p>
+
+    \pause \vskip 2ex
+
+    Define $H(x_1,x_2,t_0,t_1,t_2)$ given by
+    \[
+        \left\{
+        \begin{aligned}
+            &(a_0 + \alert{t_1\lambda_{11} a_{01}^* + t_2 \lambda_{12} a_{02}^*}) \alert{e^{\omega_0 t_0}}+ 
+             (a_1 + \alert{t_1\lambda_{11} a_{11}^* + t_2 \lambda_{12} a_{12}^*}) \alert{e^{\omega_1 t_0}}x_1^1 x_2^2 \cdots \\
+            &(b_0 + \alert{t_1\lambda_{21} b_{01}^* + t_2 \lambda_{22} b_{02}^*}) \alert{e^{\omega_0't_0}}+ 
+             (b_1 + \alert{t_1\lambda_{21} b_{11}^* + t_2 \lambda_{22} b_{12}^*}) \alert{e^{\omega_1't_0}}x_1^1 x_2^2 \cdots
+        \end{aligned}
+        \right.
+    \]
+    \pause
+
+    Move the parameter $\mathbf{t} = (t_0,t_1,t_2)$ along the path
+</section> -->
+
+<!-- <section>
+    <div class="theorem">
+        <h4>Definition: <b class="alert">Adjacency polytope</b></h4>
+        <p>
+            For a graph $G$ with nodes $\{0,1,\ldots,n\}$, 
+        </p>
+        <p>
+            \[
+                \nabla_G \;:=\;
+                \text{conv} \{ \pm(\mathbf{e}_i - \mathbf{e}_j) \mid \{i,j\} \in E(G) \}
+            \]
+            where $\mathbf{e}_0 = \mathbf{0}$.
+        </p>
+    </div>
+    <div class="mcols">
+        <div class="col4">
+            <svg width="300" height="200" class="fragment">
+                <path fill="none" stroke="black" d="M 100 50 L 20 150 L 180 150 Z"></path>
+                <g transform="translate(100,50)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">0</text>
+                </g>
+                <g transform="translate(20,150)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">1</text>
+                </g>
+                <g transform="translate(180,150)">
+                    <circle cx="0" cy="0" r="20" class="shape1" />
+                    <text text-anchor="middle" x="0" y="10" transform="scale(0.6,0.6)" fill="black">2</text>
+                </g>
+            </svg>
+        </div>
+        <div class="col4">
+            <table class="fragment">
+                <tr>
+                    <td>$\pm(\mathbf{e}_0 - \mathbf{e}_1)$</td>
+                </tr>
+                <tr>
+                    <td>$\pm(\mathbf{e}_1 - \mathbf{e}_2)$</td>
+                </tr>
+                <tr>
+                    <td>$\pm(\mathbf{e}_2 - \mathbf{e}_0)$</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col4">
+            <svg width="240" height="200" class="fragment">
+                <g transform="scale(0.8,-0.8) translate(105,-105)">
+                    <polygon 
+                        points="-100,0 0,-100 100,-100 100,0 0,100 -100,100"
+                        class="shape2" />
+                </g>
+            </svg>
+        </div>
+    </div>
+        <p class="fragment">
+            Convex hull of the union of the Newton polytopes
+        </p>
+</section> -->
+<!-- <section>
+    <div class="theorem">
+        <h4>Theorem (C.)</h4>
+        <p>
+            For a <b>cycle</b> graph $C_N$ of $N$ nodes,
+            the corresponding Kuramoto equations with generic coefficients 
+            the total number of complex solutions it has is exactly
+        </p>
+        <p>
+            \[
+                \text{Vol}_{N-1}(\nabla_{C_N})
+            \]
+        </p>
+        <p class="footnote">(normalized volume of the adjacency polytope)</p>
+    </div>
+</section> -->
+<!-- <section>
+    <h3>Generalizations</h3>
+    <ul>
+        <li>Trees</li>
+        <li>Complete graphs</li>
+        <li>Cycles glued together along an single edge</li>
+    </ul>
+</section> -->
+<!-- <section>
+    <table>
+        <tr>
+            <td>
+            Adjacency polytopes<br>
+            for complete graphs
+            </td>
+            <td>
+                $\longrightarrow$
+            </td>
+            <td>
+                Root system<br> 
+                polytopes
+            </td>
+        </tr>
+    </table>
+    <p>
+        <b class="alert">Symmetric edge polytope</b>:
+        Matsui, Higashitani, Nagazawa, Ohsugi, Hibi. 
+        <span class="emph gray"> 2011 </span>
+    </p>
+    <p>
+        <b class="alert">Fundamental polytope</b>:
+        Delucchi & Hoessly
+        <span class="emph gray"> 2019 </span>
+    </p>
+</section> -->
+<!-- <section>
+    <div class="theorem">
+        <h4>Theorem (C., R. Davis, D. Mehta)</h4>
+        <p>
+            For tree networks of $N$ oscillators,
+            the algebraic Kuramoto system has
+            at most $2^{N-1}$ isolated complex solutions.
+        </p>
+        <p>
+            For cycle networks of $N$ oscillators,
+            the algebraic Kuramoto system has at most 
+            $N\binom{N-1}{\lfloor (N-1)/2 \rfloor}$ 
+            isolated complex solutions.
+        </p>
+    </div>
+    <p class="fragment">
+        These bound may be attained by just
+        <b class="alert">real solutions</b>:
+        (Zachariah, Charles, Boston, Lesieutre 2018)
+    </p>
+</section> -->
+<!-- <section>
+    <p>
+        Adjacency polytope
+    </p>
+    <table>
+        <tr class="fragment">
+            <td>Volume</td>
+            <td>$\longrightarrow$</td>
+            <td>Root count</td>
+        </tr>
+        <tr class="fragment">
+            <td>Facets</td>
+            <td>$\longrightarrow$</td>
+            <td>Directed subnetworks</td>
+        </tr>
+    </table>
+</section> -->
+<!-- <section>
+    <h1>Thank you!</h1>
+    <ul>
+        <li>
+            Chen 
+            <span class="alert">arXiv:1703.01684</span>
+            <span class="emph footnote">
+                "Unmixing the mixed volume computation" 
+            </span>
+        </li>
+        <li>
+            Chen, Davis, Mehta
+            <span class="alert">arXiv:1708.09246</span>
+            <span class="emph footnote">
+                "Counting equilibria of the Kuramoto model using birationally invariant intersection index " 
+            </span>
+        </li>
+        <li>
+            Chen, Davis
+            <span class="alert">arXiv:1810.05690</span>
+            <span class="emph footnote">
+                "A toric deformation method for solving Kuramoto equations" 
+            </span>
+        </li>
+        <li>
+            Chen
+            <span class="alert">arXiv:1812.05408</span>
+            <span class="emph footnote">
+                "On the equality of BKK bound and birationally invariant intersection index" 
+            </span>
+        </li>
+        <li>
+            Chen
+            <span class="alert">arXiv:1903.04492</span>
+            <span class="emph footnote">
+                "Directed acyclic decomposition of Kuramoto equations"
+            </span>
+        </li>
+    </ul>
+</section> -->
+<section class="titlepage">
+    <div class="cols">
+        <div class="col">
+            <p>
+                Research supported, in part, by National Science Foundation,
+                Auburn University at Montgomery Grant-In-Aid,
+                and AMS-Simons travel grants
+            </p>
+        </div>
+        <div class="col center">
+            <img width="200" src="nsf.png">
+            <img width="200" src="aum.jpg">
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <h1>Thank You!</h1>
+
+    <p>
+        <code>ti@nranchen.org</code>
+    </p>
+    <p>
+        <code>
+        http://www.tianranchen.org/
+        </code>
+    </p>
+</section>
