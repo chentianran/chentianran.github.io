@@ -14,7 +14,7 @@ title: Fireflies, power plants, and convex polytopes
     </p>
     <br/>
     <p class="small">
-        Joint work with Robert Davis and Evgeniia Korchevskaia
+        Joint work with Robert Davis, Evgeniia Korchevskaia, and Dhagash Mehta
     </p>
     <br/>
     <p class="small">
@@ -27,7 +27,7 @@ title: Fireflies, power plants, and convex polytopes
 <section> <!-- Undirected Adjacency Polytope --------------------------------->
     <h3>Adjacency polytopes</h3>
     <p>
-        Given a graph $G$,
+        Given a connected graph $G$,
         represented by its adjacency/edge list $A$
         (list of edges and loops),
         we consider a function
@@ -96,7 +96,7 @@ title: Fireflies, power plants, and convex polytopes
             <p>
                 \begin{align*}
                     A &= \{\; \{0,1\}, \{1,2\}, \{2,0\} \;\} \\
-                    f(i,j) &= \operatorname{conv} \{
+                    f(\{i,j\}) &= \operatorname{conv} \{
                         \mathbf{e}_i - \mathbf{e}_j,
                         \mathbf{e}_j - \mathbf{e}_i
                     \}
@@ -156,7 +156,7 @@ title: Fireflies, power plants, and convex polytopes
 <section> <!-- Directed Adjacency Polytope --------------------------------->
     <h3>Adjacency polytopes (directed version)</h3>
     <p>
-        Given a <em>digraph</em> $\vec{G}$,
+        Given a (weakly connected) <em>digraph</em> $\vec{G}$,
         represented by its list of directed edges $A$ (and loops),
         we consider a function
         \[
@@ -165,21 +165,23 @@ title: Fireflies, power plants, and convex polytopes
         where $\mathcal{P}^n$ is the set of convex (lattice) polytopes
         in $\mathbb{R}^n$.
     </p>
-    <p class="fragment">
-        The <b class="highlight">adjacency polytope</b> of $\vec{G}$,
-        induced by $f$, is the (lattice) polytope
-        \[
-            P = 
-            \operatorname{conv}
-            \left(
-                \{ \mathbf{0} \}
-                \cup
-                \bigcup_{ (i,j) \in A } f((i,j))
-            \right)
-            \; \subset \;
-            \mathbb{R}^n
-        \]
-    </p>
+    <div class="theorem fragment">
+        <p>
+            The <b>adjacency polytope</b> of $\vec{G}$,
+            induced by $f$, is the (lattice) polytope
+            \[
+                P =
+                \operatorname{conv}
+                \left(
+                    \{ \mathbf{0} \}
+                    \cup
+                    \bigcup_{ (i,j) \in A } f((i,j))
+                \right)
+                \; \subset \;
+                \mathbb{R}^n
+            \]
+        </p>
+    </div>
     <p class="fragment">
         Again, they are only defined up to unimodular transformations.
     </p>
@@ -916,7 +918,7 @@ title: Fireflies, power plants, and convex polytopes
         with partition of nodes $V_+ \cup V_-$.
     </p>
     <p class="fragment">
-        Define $\boldsymbol{\alpha} = (\alpha_1,\dots,\alpha_N)$ with
+        Define $\boldsymbol{\alpha} = (\alpha_1,\dots,\alpha_n) \in \mathbb{R}^n$ with
         \begin{align*}
             \alpha_i &=
             \begin{cases}
@@ -1012,15 +1014,16 @@ title: Fireflies, power plants, and convex polytopes
         <p>
             <b>Proposition.</b>
             (<em>D'Alì, Delucchi, and Michałek</em>)<br/>
-            The number of facets $P$ has is bounded by $2^{N-1}$
+            If $G$ is bipartite, then
+            The number of facets $P$ has is bounded by $2^{n}$
         </p>
     </div>
     <div class="theorem fragment">
         <p>
             <b>Proposition.</b>(<em>C., Davis, Korchevskaia</em>)<br/>
-            The number of facets $P$ has is bounded by
+            In general, the number of facets $P$ has is bounded by
             \[
-                \beta \cdot 2^{N-1},
+                \beta \cdot 2^{n},
             \]
             where $\beta$ is the number of maximal bipartite subgraphs that $G$ has.
         </p>
@@ -1318,7 +1321,7 @@ title: Fireflies, power plants, and convex polytopes
         to convex sets (or point configurations).
     </p>
     <br/>
-    <ul class="fragment">
+    <ul>
         <li class="fragment">
             Is there any connections between the
             topological properties of $G$
@@ -1327,6 +1330,9 @@ title: Fireflies, power plants, and convex polytopes
         <li class="fragment">
             How does this connection (if exist)
             depends on the choice of $f$?
+        </li>
+        <li class="fragment">
+            What is the tropical interpretation here?
         </li>
         <li class="fragment">
             Are there other examples missed here?
