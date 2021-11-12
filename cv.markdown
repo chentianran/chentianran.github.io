@@ -7,16 +7,17 @@ title: CV
 
 ### Employment
 
-- 2021 – present Associate Professor, Auburn University Montgomery.
-- 2017/1 – 2021 Assistant Professor, Auburn University Montgomery.
-- 2016/8–2016/12 Lecturer, Auburn University Montgomery.
-- 2012 – 2016 Research Instructor, Michigan State University.
-- 2006 – 2012 Research and Teaching Assistant, Michigan State University.
-- 2003 – 2005 Research Assistant, Western Connecticut State University.
+- 2021 - present Distinguished Research Associate Professor of Mathematics, Auburn University Montgomery
+- 2021 - present Associate Professor (with tenure), Auburn University Montgomery.
+- 2017/1 - 2021 Assistant Professor, Auburn University Montgomery.
+- 2016/8-2016/12 Lecturer, Auburn University Montgomery.
+- 2012 - 2016 Research Instructor, Michigan State University.
+- 2006 - 2012 Research and Teaching Assistant, Michigan State University.
+- 2003 - 2005 Research Assistant, Western Connecticut State University.
 
 ### Education
 
-- 2012 : Ph.D. Applied Mathematics, Michigan State University, (MI USA).  
+- 2012 : Ph.D. in Applied Mathematics, Michigan State University, (MI USA).  
   Advisor: Tien-Yien Li
 - 2005 : B.A. Computer Science, Western Connecticut State University, (CT USA).  
   Secondary major in Mathematics
@@ -30,6 +31,8 @@ title: CV
 
 ### Awards
 
+- Distinguished Research Associate Professor Award (2021 – 2024, \$3,000),
+  (Department of Mathematics, Auburn University Montgomery)
 - 2020 Outstanding faculty award
   (Department of Mathematics, Auburn University Montgomery)
 - 2014 A paper selected for Journal of Chemical Physics Editors’ Choice for 2014
