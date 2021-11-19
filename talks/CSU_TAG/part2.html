@@ -1,0 +1,1396 @@
+---
+layout: mtalk
+title: Fireflies, power plants, and convex polytopes (Part 2)
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h1 class="title">Fireflies, power plants, and convex polytopes (Part II)</h1>
+        <!-- <p>Part II</p> -->
+    </div>
+    <p>Tianran Chen</p>
+    <p class="small">
+        Department of Mathematics and Computer Science<br/>
+        Auburn University at Montgomery
+    </p>
+    <br/>
+    <p class="small">
+        Joint work with Robert Davis, Evgeniia Korchevskaia, and Dhagash Mehta
+    </p>
+    <br/>
+    <p class="small">
+        November 19, 2021<br/>
+        Department of Mathematics and Statistics<br/>
+        Cleveland State University<br/>
+        (Virtual) Topology, Algebra, and Geometry Seminar
+    </p>
+</section>
+<section> <!-- Undirected Adjacency Polytope --------------------------------->
+    <h3>Adjacency polytopes</h3>
+    <p>
+        Given a connected graph $G$,
+        represented by its adjacency/edge list $A$
+        (list of edges and loops),
+        we consider a function
+        \[
+            f : A \to \mathcal{P}^n
+        \]
+        where $\mathcal{P}^n$ is the set of convex (lattice) polytopes
+        in $\mathbb{R}^n$.
+    </p>
+    <div class="theorem fragment">
+        <p>
+            The <b>adjacency polytope</b> of $G$,
+            induced by $f$, is the (lattice) polytope
+            \[
+                P =
+                \operatorname{conv}
+                \left(
+                    \{ \mathbf{0} \}
+                    \cup
+                    \bigcup_{ \{i,j\} \in A } f(\{i,j\})
+                \right)
+                \; \subset \;
+                \mathbb{R}^n
+            \]
+        </p>
+        <p>
+            (It is defined only up to a unimodular transformations.)
+        </p>
+    </div>
+</section>
+<section> <!-- First example ------------------------------------------------->
+    <p>
+        <b>Example.</b>
+        <!-- Consider the complete graph with 3 nodes: -->
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="center">
+                <svg height="120" width="200">
+                    <line x1="100" y1="20"  x2="160" y2="100" stroke="#583d72" stroke-width="2"/>
+                    <line x1="100" y1="20"  x2="40"  y2="100" stroke="#583d72" stroke-width="2"/>
+                    <line x1="40"  y1="100" x2="160" y2="100" stroke="#583d72" stroke-width="2"/>
+                    <g transform="translate(100,20)">
+                        <circle cx="0" cy="0" r="20" stroke-width="0" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            0
+                        </text>
+                    </g>
+                    <g transform="translate(160,100)">
+                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            1
+                        </text>
+                    </g>
+                    <g transform="translate(40,100)">
+                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            2
+                        </text>
+                    </g>
+                </svg>
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                \begin{align*}
+                    A &= \{\; \{0,1\}, \{1,2\}, \{2,0\} \;\} \\
+                    f(\{i,j\}) &= \operatorname{conv} \{
+                        \mathbf{e}_i - \mathbf{e}_j,
+                        \mathbf{e}_j - \mathbf{e}_i
+                    \}
+                \end{align*}
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        <!-- The adjacency polytope is the convex hull -->
+        \[
+            P =
+            \operatorname{conv}
+            \{
+                \pm (\mathbf{e}_0 - \mathbf{e}_1),
+                \pm (\mathbf{e}_1 - \mathbf{e}_2),
+                \pm (\mathbf{e}_2 - \mathbf{e}_0)
+            \}
+        \]
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p class="center">
+                <svg height="120" width="120">
+                    <g transform="translate(60,60) scale(1,-1)">
+                        <line x1="-50" y1="0"  x2="50" y2="0"   stroke="#583d72" stroke-width="2"/>
+                        <line x1="-50" y1="50" x2="50" y2="-50" stroke="#583d72" stroke-width="2"/>
+                        <line x1="0"   y1="50" x2="0"  y2="-50" stroke="#583d72" stroke-width="2"/>
+                    </g>
+                </svg>
+            </p>
+        </div>
+        <div class="col fragment">
+            <p class="center">
+                <svg height="120" width="120">
+                    <g transform="translate(60,60) scale(50,-50)">
+                        <polygon points="-1,0 -1,1 0,1 1,0 1,-1 0,-1" fill="#583d72"/>
+                    </g>
+                </svg>
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        There are some interesting connections between the
+        topological properties of $G$
+        and geometric properties of $P$.
+    </p>
+</section>
+<!-- <section>
+    <h3>Noonburg's model for neural network (1989)</h3>
+
+    <p>
+        For a network $G$,
+        \[
+            0 = c x_i - 1 - \sum_{j \in \mathcal{N}_G(i)} w_{ij} \, x_i \, x_j^2
+            \quad \text{for each node } i.
+        \]
+    </p>
+    <p class="small">
+        V. W. Noonburg. <br/>
+        <em>"A neural network modeled by an adaptive Lotka-Volterra system."</em>
+        SIAM Journal on Applied Mathematics 49.6 (1989): 1779-1792.
+    </p>
+    <p class="fragment small">
+        \begin{align*}
+            0 &= c x_0 -1 - (w_{01} x_0 x_1^2 + w_{02} x_0 x_2^2 + w_{03} x_0 x_3^2) \\[1ex]
+            0 &= c x_1 -1 - (w_{10} x_1 x_0^2 + w_{13} x_1 x_3^2) \\[1ex]
+            0 &= c x_2 -1 - (w_{20} x_2 x_0^2 + w_{23} x_2 x_3^2) \\[1ex]
+            0 &= c x_3 -1 - (w_{30} x_3 x_0^2 + w_{31} x_3 x_1^2 + w_{32} x_3 x_2^2)
+        \end{align*}
+    </p>
+</section> -->
+<section>
+    <h3>Kuramoto model</h3>
+    <p>
+        Standard model for studying spontaneous synchronizations
+        in networks of weakly coupled oscillators 
+        (Yoshiki Kuramoto 1975).
+    </p>
+    <div class="cols">
+        <div class="col">
+            <img src="../kuramoto.png" height=340>
+        </div>
+        <div class="col">
+            <p>
+                <em>Mechanical model:</em>
+                Massless particles rotating on the unit circle
+                coupled together by springs.
+            </p>
+            <p>
+                Each particle has its own natural frequency.
+                The strength of influence of one particle on another
+                is proportional to the sine of the phase angle difference.
+            </p>
+        </div>
+    </div>
+    <p>
+        \[
+            \dot{\theta}_i = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i=0,\dots,n
+        \]
+        <span class="tiny">
+            Kuramoto Y. (1975) Self-entrainment of a population of coupled non-linear oscillators.
+            In: Araki H. (eds) International Symposium on Mathematical Problems in Theoretical Physics.
+            Lecture Notes in Physics, vol 39. Springer, Berlin, Heidelberg.
+        </span>
+    </p>
+    <!-- <p class="fragment">
+        A balance between simple formulation and complex behavior
+    </p> -->
+</section>
+<!-- <section>
+    <h3>Kuramoto model</h3>
+    <p>
+        Standard model for studying synchronization in 
+        networks of oscillators.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <img src="./firefly.jpg" alt="A firefly">
+        </div>
+        <div class="col fragment">
+            <p>
+                The synchronization phenomenon
+                in the flashing of fireflies.
+                \[
+                    \dot{\theta}_i = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+                \]
+                where $\theta_i$'s models the flashing cycle of a firefly,
+                $\omega_i$ is its <em>natural frequency</em>,
+                and $k_{ij} = k_{ji}$ describes the coupling.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Some species of fireflies can synchronize their flashings
+        to have the exact same frequencies.
+        (Frequency synchronization)
+    </p>
+</section> -->
+<section>
+    <h3>
+        Frequency synchronization
+    </h3>
+    <p>
+        Configurations of $(\theta_0,\dots,\theta_n)$
+        for which $\dot{\theta}_i$ are all the same
+    </p>
+    <p>
+        \[
+            c = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i=0,\dots,n
+        \]
+    </p>
+    <p class="fragment">
+        We can reduce this into a square system of $n$ equations
+        \[
+            0 =
+            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i=1,\dots,n
+        \]
+        in $n$ real variables $\theta_1,\ldots,\theta_n$.
+    </p>
+    <p class="fragment">
+        Through the change of variables and the change of variables
+        $
+            x_i = e^{r_i + \mathbf{i}\,\theta_i}
+        $
+        we get system of $n$ Laurent polynomials
+        \[
+            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } a_{ij}' 
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+        \]
+        in the $n$ complex variables $x_1,\ldots,x_n$.
+    </p>
+</section>
+<section> <!-- Randomization ------------------------------------------------->
+    <h3>
+        Randomization and perturbation
+    </h3>
+    <p>
+        For numerical stability considerations,
+        we usually do not directly solve
+        \[
+            p_i (\mathbf{x}) =
+            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } a_{ij}'
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+            =0,
+            \quad i = 1,\ldots,n.
+        \]
+    </p>
+    <p class="fragment">
+        Instead, we solve the "randomized" and perturbed version
+        \[
+            \begin{bmatrix}
+                q_1 (\mathbf{x}) \\
+                \vdots \\
+                q_n (\mathbf{x})
+            \end{bmatrix}
+            =
+            M \cdot
+            \begin{bmatrix}
+                p_1 (\mathbf{x}) + \epsilon_1 \\
+                \vdots \\
+                p_n (\mathbf{x}) + \epsilon_n
+            \end{bmatrix}
+            =
+            \mathbf{0}
+        \]
+        where the nonsingular matrix $M$
+        is chosen carefully with some randomness.
+    </p>
+    <p class="fragment">
+        \[
+            q_k(\mathbf{x}) =
+            c_{k,0,0} - 
+            \sum_{ \{i,j\} \in E } 
+            \left(
+                c_{k,i,j} \frac{x_i}{x_j} - 
+                c_{k,j,i} \frac{x_j}{x_i}
+            \right),
+            \quad
+            k=1,\ldots,n.
+        \]
+    </p>
+</section>
+<section><!------------------------------------------------------------------->
+    <h3>Three flavors</h3> 
+    <ul>
+        <li class="fragment">
+            Original real system $P(\boldsymbol{\theta})$
+            \[
+                \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } k_{ij} \sin(\theta_i - \theta_j)
+            \]
+        </li>
+        <li class="fragment">
+            Complex Laurent system $P(\mathbf{x})$
+            \[
+                \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } a_{ij}'
+                \left(
+                    \frac{x_i}{x_j} - \frac{x_j}{x_i}
+                \right)
+            \]
+        </li>
+        <li class="fragment">
+            Randomized and perturbed Laurent system $Q(\mathbf{x})$
+            \[
+                c_{k,0,0} -
+                \sum_{ \{i,j\} \in E }
+                \left(
+                    c_{k,i,j} \frac{x_i}{x_j} - 
+                    c_{k,j,i} \frac{x_j}{x_i}
+                \right).
+            \]
+        </li>
+    </ul>
+</section>
+<section><!------------------------------------------------------------------->
+    <h3>Root counting</h3> 
+    <ul>
+        <li>
+            Original real system $P(\boldsymbol{\theta})$
+        </li>
+        <li>
+            Complex Laurent system $P(\mathbf{x})$
+        </li>
+        <li>
+            Randomized Laurent system $Q(\mathbf{x})$
+        </li>
+    </ul>
+    <p class="fragment">
+        Root counting problem:
+        How many isolated roots can there be?
+    </p>
+    <ul>
+        <li class="fragment">
+            Real roots of $P(\boldsymbol{\theta})$
+            corresponds to synchronization configurations.
+        </li>
+        <li class="fragment">
+            Real roots of $P(\boldsymbol{\theta})$
+            corresponds to complex roots of $P(\mathbf{x})$.
+        </li>
+        <li class="fragment">
+            Complex roots of $P(\mathbf{x})$ may not 
+            correspond to real roots of $P(\boldsymbol{\theta})$.
+        </li>
+        <li class="fragment">
+            Complex roots of $P(\mathbf{x})$ are close to complex roots of $Q(\mathbf{x})$.
+        </li>
+    </ul>
+    <br/>
+    <br/>
+    <div class="equ">
+        <span class="fragment">
+            $| \mathcal{V}_{\mathbb{R}} (P(\boldsymbol{\theta})) |$
+        </span>
+        <span class="fragment">
+            $\quad\le\;\; | \mathcal{V}_{\mathbb{C}} (P(\mathbf{x})) |$
+        </span>
+        <span class="fragment">
+            $\quad\le\;\; | \mathcal{V}_{\mathbb{C}} (Q(\mathbf{x})) |$
+        </span>
+    </div>
+</section>
+<section><!---- Max. and generic root counts --------------------------------->
+    <h3>A closer look at the root counts</h3>
+    <div class="equ">
+        <span>
+            $| \mathcal{V}_{\mathbb{R}} (P(\boldsymbol{\theta})) |$
+        </span>
+        <span>
+            $\quad\le\;\; | \mathcal{V}_{\mathbb{C}} (P(\mathbf{x})) |$
+        </span>
+        <span>
+            $\quad\le\;\; | \mathcal{V}_{\mathbb{C}} (Q(\mathbf{x})) |$
+        </span>
+    </div>
+    <br/>
+    <p class="fragment">
+        These are all difficult questions.
+    </p>
+    <div class="equ fragment">
+        <p class="center">
+            Maximum<br/>
+            $| \mathcal{V}_{\mathbb{R}} (P(\boldsymbol{\theta})) |$
+        </p>
+        <span>
+            $\quad\le\quad$
+        </span>
+        <p class="center">
+            Generic<br/>
+            $| \mathcal{V}_{\mathbb{C}} (P(\mathbf{x})) |$
+        </p>
+        <span>
+            $\quad\le\quad$
+        </span>
+        <p class="center">
+            Generic<br/>
+            $| \mathcal{V}_{\mathbb{C}} (Q(\mathbf{x})) |$
+        </p>
+    </div>
+    <p class="fragment">
+        <b class="highlight">Generic:</b>
+        For <em>almost all</em> choices of coefficients
+        the root count holds.
+    </p>
+    <p class="fragment">
+        <b class="highlight">Generic:</b>
+        In the space of all choices of complex coefficients,
+        there is a nonempty Zariski open set $U$
+        on which the root count holds.
+    </p>
+</section>
+<section><!---- Root count of Q ---------------------------------------------->
+    <h3>Generic root count of $Q$</h3>
+    <p>
+        For <em>generic</em> choices of coefficients,
+        what is complex root count of the system
+        \[
+            q_k(\mathbf{x}) =
+            c_{k,0,0} -
+            \sum_{ \{i,j\} \in E }
+            \left(
+                c_{k,i,j} \frac{x_i}{x_j} - 
+                c_{k,j,i} \frac{x_j}{x_i}
+            \right)
+            \quad k = 1,\ldots,n ?
+        \]
+    </p>
+    <div class="theorem fragment">
+        <p>
+            <b>Kushnirenko's Theorem.</b>
+            The number of isolated $\mathbb{C}^*$-roots $(q_1,\ldots,q_n)$ has
+            is less than or equal to the normalized volume of
+            the common <em>Newton polytope</em> of $q_1,\ldots,q_n$.
+        </p>
+        <p class="fragment">
+            For generic choices of the coefficients,
+            this root count is exact.
+        </p>
+    </div>
+    <!-- <p class="fragment small">
+        In general the Kushnirenko Theorem counts isolated solutions
+        in $(\mathbb{C}^*)^n = (\mathbb{C} \setminus \{0\})^n$.
+    </p> -->
+    <p class="fragment">
+        The generic root count of $Q(\mathbf{x})$
+        (the randomized and perturbed system)
+        is the normalized volume of the adjacency polytope
+        \[
+            \operatorname{conv}
+            \left(
+            \bigcup_{ \{i,j\} \in E }
+                \{ 
+                    \mathbf{e}_i - \mathbf{e}_j \;,\;
+                    \mathbf{e}_j - \mathbf{e}_i
+                \}
+            \cup \{ \mathbf{0} \}
+            \right)
+        \]
+    </p>
+</section>
+<!-- <section>
+    <h3>
+        Adjacency polytope associated with the Kuramoto model
+    </h3>
+    <div class="cols">
+        <div class="col">
+            <img src="kuramoto.png" height=370>
+        </div>
+        <div class="col">
+            <p>
+                For a Kuramoto network of $n+1$ oscillators
+                modeled by $G = (V,E)$, we constructed the
+                <em class="highlight">adjacency polytope</em>
+                \[
+                    P =
+                    \operatorname{conv}
+                    \left(
+                        \bigcup_{ \{i,j\} \in E }
+                        f( \{i,j\} )
+                        \cup \{ \mathbf{0} \}
+                    \right)
+                \]
+                where
+                \[
+                    f( \{i,j\} ) =
+                    \operatorname{conv}
+                    \{ 
+                        \mathbf{e}_i - \mathbf{e}_j \;,\;
+                        \mathbf{e}_j - \mathbf{e}_i
+                    \}.
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        The maximum number of "complex" synchronization configurations is
+        \[
+            n! \operatorname{Vol}_n (P),
+        \]
+        which we will call "adjacency polytope bound" or "AP bound"
+        (a special case of the BKK bound).
+    </p>
+</section> -->
+<section>
+    <h3>
+        Generic root count of $Q(\mathbf{x})$ for some graphs
+    </h3>
+    <table>
+        <tr>
+            <th>Types of network</th>
+            <th align="center">AP bound</th>
+        </tr>
+        <tr>
+            <td>Complete graphs $K_n$</td>
+            <td align="center">$\binom{2n}{n}$</td>
+        </tr>
+        <tr>
+            <td>Trees $T_n$</td>
+            <td align="center">$2^n$</td>
+        </tr>
+        <tr>
+            <td>Cycles $C_n$</td>
+            <td align="center">$(n+1) \binom{n}{\lfloor n/2 \rfloor}$</td>
+        </tr>
+        <tr>
+            <td>Odd cycles $C_{i+1}$ and $C_{j+1}$<br/>glued together along an edge</td>
+            <td align="center">$(i+j+2ij) \binom{2i}{i} \binom{2j}{j}$</td>
+        </tr>
+        <tr>
+            <td>Odd wheels $K_1 * C_n$</td>
+            <td align="center">$(1-\sqrt{3})^n + (1+\sqrt{3})^n$</td>
+        </tr>
+        <tr>
+            <td>Even wheels $K_1 * C_n$</td>
+            <td align="center">$(1-\sqrt{3})^n + (1+\sqrt{3})^n - 2$</td>
+        </tr>
+    </table>
+    <p class="smaller">
+        T. Chen, R. Davis, D. Mehta,
+        <em>Counting equilibria of the Kuramoto model using birationally invariant intersection index</em>
+        SIAM Journal on Applied Algebra and Geometry, 2018, Vol. 2, No. 4 pp. 489-507
+    </p>
+    <p class="smaller">
+        A D'Alì, E Delucchi, M Michałek,
+        <em>Many faces of symmetric edge polytopes</em>
+        <a href="https://arxiv.org/abs/1910.05193">arXiv:1910.05193</a>
+    </p>
+    <p class="smaller">
+        H. Ohsugi, A. Tsuchiya,
+        <em>The $h^*$-Polynomials of Locally Anti-Blocking Lattice Polytopes and Their 𝛾-Positivity.</em>
+        Discrete Comput Geom 66, 701–722 (2021). https://doi.org/10.1007/s00454-020-00236-6
+    </p>
+</section>
+<section>
+    <h3>Bounding the root count of $P(\mathbf{x})$</h3>
+    <p>
+        Can we bound the root count of the system
+        \[
+            p_i(\mathbf{x}) =
+            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } a_{ij}'
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right),
+            \quad i = 1 \ldots,n \, ?
+        \]
+    </p>
+    <div class="theorem fragment">
+        <p>
+            <b>Bernshtein's First Theorem.</b>
+            The number of isolated $\mathbb{C}^*$-roots the system $P = (p_1,\ldots,p_n)$
+            has is bounded by the <em>mixed volume</em>
+            of the Newton polytopes of $P$ (BKK bound).
+        </p>
+    </div>
+    <p class="fragment">
+        There appear to be no published results on direct computations of this bound
+        for the Kuramoto model.
+    </p>
+</section>
+<section>
+    <h3>BKK bound vs AP bound</h3>
+    <div class="equ">
+        <p class="center">
+            BKK bound<br/>
+            of $P(\mathbf{x})$<br/><br/>
+            $\parallel$<br/><br/>
+            $\operatorname{MV}(NP_1,\ldots,NP_n)$
+        </p>
+        <span>
+            <br/>$\quad\le\quad$<br/><br/><br/><br/>$\quad\le\quad$
+        </span>
+        <p class="center">
+            Generic<br/>
+            $| \mathcal{V}_{\mathbb{C}} (Q(\mathbf{x})) |$<br/><br/>
+            $\parallel$<br/><br/>
+            $\operatorname{Vol}_n(AP)$
+        </p>
+    </div>
+    <br/>
+    <br/>
+    <p class="fragment center">
+        Is there a gap between this two bounds?
+    </p>
+    <br/>
+    <p class="fragment center">
+        No!
+    </p>
+</section>
+<section><!---- BKK == AP ---------------------------------------------------->
+    <div class="theorem">
+        <b>Proposition.</b>
+        \[
+            \operatorname{MV}(NP_1,\ldots,NP_n)
+            =
+            \operatorname{Vol}_n(AP)
+        \]
+    </div>
+</section>
+<section>
+    <h3>BKK bound revisited</h3>
+    <p>
+        The BKK bound for the system
+        \[
+            p_i(\mathbf{x}) =
+            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } a_{ij}'
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right),
+            \quad i = 1 \ldots,n,
+        \]
+        is the mixed volume
+        \[
+            \operatorname{MV}(NP_1,\ldots,NP_n).
+        \]
+    </p>
+    <p class="fragment">
+        This bound is exact if coefficients are generic.
+    </p>
+    <p class="fragment">
+        However, there are built-in relations among the coefficients:
+        \begin{align*}
+            &a'_{ij} \frac{x_i}{x_j}
+            &&\text{and} &
+            &a'_{ij} \frac{x_j}{x_i}
+        \end{align*}
+        must have the same coefficients.
+        I.e., non-generic coefficients.
+    </p>
+</section>
+<section>
+    <h3>More precise generic root count</h3>
+    <p>
+        For generic choices of the coefficients
+        $\overline{\omega}_i, a'_{ij}$, what is the root count for
+        \[
+            p_i(\mathbf{x}) =
+            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } a_{ij}'
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right),
+            \quad i = 1 \ldots,n
+            \,?
+        \]
+    </p>
+    <p class="fragment">
+        A better question: Define spaces of rational functions
+        \[
+            L_i = \operatorname{Span} \left\{ 
+                \frac{x_i}{x_j} - \frac{x_j}{x_i} 
+                \;:\; j \in \mathcal{N}_G(i)
+            \right\}
+            \cup \{ 1 \}
+            \quad
+            i = 1,\ldots,n.
+        \]
+    </p>
+    <p class="fragment">
+        For generic choices $\ell_i \in L_i$ for $i = 1,\ldots,n$,
+        what is the number of intersections
+        \[
+            \mathcal{V}(\ell_1) \,\cap\, \cdots \, \cap \,
+            \mathcal{V}(\ell_n)
+        \]
+        in the algebraic torus $(\mathbb{C}^*)^n$ ?
+        <span class="fragment">
+            (Away from the base locus)
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Birationally invariant intersection index</h3>
+    <p>
+        In this setup, we start with spaces of rational functions
+        \[
+            L_i = \operatorname{Span} \left\{ 
+                \frac{x_i}{x_j} - \frac{x_j}{x_i} 
+                \;:\; j \in \mathcal{N}_G(i)
+            \right\}
+            \cup \{ 1 \}
+            \quad
+            i = 1,\ldots,n.
+        \]
+        Kaveh and Khovanskii developed the notation of
+        <b>birationally invariant intersection index</b>
+        \[
+            [L_1,\ldots,L_n] :=
+            |
+            \mathcal{V}(\ell_1) \,\cap\, \cdots \, \cap \,
+            \mathcal{V}(\ell_n)
+            |
+        \]
+        which generalizes the BKK bound.
+    </p>
+    <ul class="fragment smaller">
+        <li>
+            Kaveh, K., & Khovanskii, A. G. (2008).
+            Mixed volume and an extension of intersection theory of divisors.
+            arXiv:0812.0433
+        </li>
+        <li>
+            Kaveh, K., & Khovanskii, A. G. (2012).
+            Newton-Okounkov bodies, semigroups of integral points, graded algebras and intersection theory.
+            Annals of Mathematics, 176(2), 925–978.
+        </li>
+    </ul>
+    <p class="fragment">
+        \[
+            [L_1,\ldots,L_n] \le \operatorname{MV}(NP_1,\ldots,NP_n) \quad \text{(BKK bound)}
+        \]
+    </p>
+    <!-- <p class="fragment">
+        The question becomes
+        \[
+            [L_1,\ldots,L_n] = \;?
+        \]
+    </p>
+    <p class="fragment">
+        And is it...
+        \[
+            [L_1,\ldots,L_n] = \lneq 
+        \]
+    </p> -->
+</section>
+<section>
+    <h3>
+        Some real root counting results
+    </h3>
+    <p>
+        "Complex" synchronization configurations
+        $(x_1,\ldots,x_n)$
+        corresponds to "real" configurations $(\theta_1,\ldots,\theta_n)$ via
+        \[
+            x_i = e^{r_i + \mathbf{i} \theta_i}.
+        \]
+    </p>
+    <p class="fragment">
+        Only "complex" synchronization configurations
+        with $|x_i| = 1$ are "real".
+    </p>
+    <div class="fragment">
+        <table>
+            <tr>
+                <th>Types of network</th>
+                <th>Max. real roots</th>
+                <th>AP bound</th>
+            </tr>
+            <tr>
+                <td>Complete graph $K_3$</td>
+                <td align="center">6</td>
+                <td align="center">6</td>
+            </tr>
+            <tr>
+                <td>Trees $T_{n+1}$</td>
+                <td align="center">$2^{n}$</td>
+                <td align="center">$2^{n}$</td>
+            </tr>
+            <tr>
+                <td>Cycles</td>
+                <td align="center">$(n+1) \binom{n}{\lfloor n/2 \rfloor}$</td>
+                <td align="center">$(n+1) \binom{n}{\lfloor n/2 \rfloor}$</td>
+            </tr>
+        </table>
+        <p class="smaller">
+            J. Baillieul, C. Byrnes,
+            <em>Geometric critical point analysis of lossless power system models,</em>
+            in IEEE Transactions on Circuits and Systems, vol. 29, no. 11, pp. 724-737, 1982, doi: 10.1109/TCS.1982.1085093.
+        </p>
+        <p class="smaller">
+            J. Lindberg, A. Zachariah, N. Boston, B. Lesieutre,
+            <em>The Distribution of the Number of Real Solutions to the Power Flow Equations</em>
+            <a href="https://arxiv.org/abs/2010.03069">arXiv:2010.03069</a>
+        </p>
+    </div>
+</section>
+<section>
+    <h3>
+        Other connections
+    </h3>
+    <p>
+        Geometric invariants/constructs have natural correspondence
+        to aspects of the study of synchronization configurations
+        of Kuramoto networks.
+    </p>
+    <table>
+        <tr>
+            <th>In adjacency polytope</th>
+            <th></th>
+            <th>In networks</th>
+        </tr>
+        <tr>
+            <td>Normalized volume</td>
+            <td>$=$</td>
+            <td>Max. complex roots</td>
+        </tr>
+        <tr>
+            <td>Simplicial facets</td>
+            <td>$\to$</td>
+            <td>Spanning trees</td>
+        </tr>
+        <tr>
+            <td>Circuit facets</td>
+            <td>$\to$</td>
+            <td>Spanning chordless cycles</td>
+        </tr>
+        <tr>
+            <td>Facets</td>
+            <td>$\leftrightarrow$</td>
+            <td>Max. bipartite subgraphs</td>
+        </tr>
+        <tr>
+            <td>Triangulations</td>
+            <td>$\leftarrow$</td>
+            <td>"Primitive" subnetwork decompositions</td>
+        </tr>
+        <tr>
+            <td>Unimodular triangulations</td>
+            <td>$\leftarrow$</td>
+            <td>?</td>
+        </tr>
+    </table>
+</section>
+<section>
+    <h3>
+        The facet-subgraph correspondence
+    </h3>
+    <p>
+        The graph-polytope correspondence given by the adjacency polytope construction
+        extends to the polyhedral complex.
+    </p>
+    <p class="fragment">
+        We associate a subset $X \subseteq P$ with a subgraph $G_X$ of $G$
+        with the edge set
+        \[
+            \{ \; 
+                \{ i, j \} 
+                \;\mid\; \mathbf{e}_i - \mathbf{e}_j \in X \text{ or } \mathbf{e}_j - \mathbf{e}_i \in X 
+            \}.
+        \]
+    </p>
+    <p class="fragment">
+        Then each face of $P$ is associated with a subgraph of $G$
+        (an order-preserving map, indeed a matroid morphism).
+    </p>
+    <p class="small fragment">
+        (Actually, this is a map between the <em>point configurations</em> and subgraphs.)
+    </p>
+    <div class="theorem fragment">
+        <p>
+            <b>Proposition.</b>
+            If $F$ is a <em>simplicial</em> facet of $P$,
+            then $G_F$ is a spanning tree.
+        </p>
+    </div>
+    <div class="theorem fragment">
+        <p>
+            <b>Proposition.</b>
+            If $F$ is a <em>circuit</em> facet of $P$,
+            then $G_F$ is a spanning chordless cycle of $G$.
+        </p>
+    </div>
+</section>
+<section>
+    <h3>
+        Facet-subgraph correspondence
+    </h3>
+    <div class="theorem">
+        <p>
+            <b>Theorem.</b> (C., R. Davis, E. Korchevskaia)
+            A subgraph $H$ of $G$ is a facet subgraph of $G$
+            if and only if it is a <em>maximal bipartite subgraph</em> of $G$.
+        </p>
+    </div>
+    <p class="fragment">
+        <b>Sketch of proof</b>
+        ($\Leftarrow$)
+        Let $B$ be a maximal bipartite subgraph of $G$
+        with partition of nodes $V_+ \cup V_-$.
+    </p>
+    <p class="fragment">
+        Define $\boldsymbol{\alpha} = (\alpha_1,\dots,\alpha_n) \in \mathbb{R}^n$ with
+        \begin{align*}
+            \alpha_i &=
+            \begin{cases}
+                +1/2 &\text{if } i \in V_+ \\
+                -1/2 &\text{if } i \in V_-
+            \end{cases}
+        \end{align*}
+    </p>
+    <p class="fragment">
+        Then 
+        \[
+            \langle \mathbf{e}_i - \mathbf{e}_j \,,\, \boldsymbol{\alpha} \rangle =
+            \begin{cases}
+                0     &\text{if } i,j \in V_+ \text{ or } i,j \in V_- \\
+                \pm 1 &\text{if } i \in V_\pm \text{ and } j \in V_\mp.
+            \end{cases}
+        \]
+        <!-- In particular,  
+        since $V_+$ and $V_-$ partition the vertices of $B$, which is bipartite,
+        $\inner{ \bolde_i - \bolde_j }{ \boldalpha } = \pm 1$
+        for every $\{i,j\} \in \edges(B)$.
+        Let
+        \[
+            F = \{ 
+                \bolde_i - \bolde_j \mid 
+                \inner{ \bolde_i - \bolde_j }{ \boldalpha } = -1
+            \}.
+        \]
+        By definition, the linear functional $\inner{ \,\cdot\, }{ \boldalpha }$
+        attains its minimum over $\adjp_G$ on $F$,
+        and therefore $F$ is a face of $\adjp_G$.
+        Moreover, $G_F$ is a bipartite subgraph of $G[\nodes(B)]$ that contains $B$.
+        But $B$ is assumed to be a maximal bipartite subgraph of $G[\nodes(B)]$,
+        therefore $B = G_F$, i.e., $B$ is a face subgraph. -->
+    </p>
+    <p class="fragment">
+        Therefore, $\boldsymbol{\alpha}$ is an inner normal of $P$.
+    </p>
+    <p class="smaller fragment">
+        T. Chen, R. Davis, E. Korchevskaia,
+        <em>Facets and facet subgraphs of adjacency polytopes.</em>
+        <a href="https://arxiv.org/abs/2107.12315">arXiv:2107.12315</a>
+    </p>
+</section>
+<section>
+    <h3>Face-subgraph correspondence</h3>
+
+    <p>
+        The same idea generalizes to faces of $P$ in general.
+    </p>
+
+    <div class="theorem">
+        <p>
+            <b>Theorem.</b>
+            A connected nontrivial subgraph $H$ is a face subgraph
+            if and only if it is a maximally bipartite in the induced subgraph $G[N(H)]$.
+        </p>
+    </div>
+    <div class="theorem fragment">
+        <p>
+            <b>Corollary.</b>
+            If $F$ be a face of $P$,
+            then each connected component $H$ of $G_F$ is a maximal bipartite subgraph of
+            the induced subgraph $G[N(H)]$.
+        </p>
+    </div>
+    <div class="theorem fragment">
+        <p>
+            <b>Corollary</b>
+            $P$ is simplicial if and only if $G$ has no even cycles.
+        </p>
+    </div>
+
+    <div class="fragment">
+        <p class="smaller">
+            T. Chen, R. Davis, E. Korchevskaia,
+            <em>Facets and facet subgraphs of adjacency polytopes.</em>
+            <a href="https://arxiv.org/abs/2107.12315">arXiv:2107.12315</a>
+        </p>
+        <p class="small">
+            These indirectly provide positive answers
+            to Tien-Yien. Li's "bipartite subgraph ideal" conjecture.
+            (T.Y. Li, 2013 Lecture at Michigan State University)
+        </p>
+    </div>
+</section>
+<section>
+    <h3>Facet count estimation</h3>
+    <p>
+        How many facets can $P$ have?
+    </p>
+    <div class="theorem fragment">
+        <p>
+            <b>Proposition.</b>
+            (<em>D'Alì, Delucchi, and Michałek</em>)<br/>
+            If $G$ is bipartite, then
+            The number of facets $P$ has is bounded by $2^{n}$
+        </p>
+    </div>
+    <div class="theorem fragment">
+        <p>
+            <b>Proposition.</b>(<em>C., Davis, Korchevskaia</em>)<br/>
+            In general, the number of facets $P$ has is bounded by
+            \[
+                \beta \cdot 2^{n},
+            \]
+            where $\beta$ is the number of maximal bipartite subgraphs that $G$ has.
+        </p>
+    </div>
+    <div class="fragment">
+        <p class="smaller">
+            A D'Alì, E Delucchi, M Michałek,
+            <em>Many faces of symmetric edge polytopes</em>
+            <a href="https://arxiv.org/abs/1910.05193">arXiv:1910.05193</a>
+        </p>
+        <p class="smaller">
+            T. Chen, R. Davis, E. Korchevskaia,
+            <em>Facets and facet subgraphs of adjacency polytopes.</em>
+            <a href="https://arxiv.org/abs/2107.12315">arXiv:2107.12315</a>
+        </p>
+    </div>
+</section>
+<section>
+    <h3>
+        Symmetric edge polytopes
+    </h3>
+    <p>
+        The same polytopes also appear in other seemingly independent fields of studies.
+    </p>
+    <p class="fragment">
+        E.g., the <b>symmetric edge polytope</b> associated with a graph $G = (V,E)$:
+        \[
+            P_G =
+            \operatorname{conv}
+            \{
+                \mathbf{e}_i - \mathbf{e}_j
+                \mid \{i,j\} \in E
+            \},
+        \]
+        which is unimodularly equivalent to the adjacency polytope
+        of a Kuramoto network $G = (V,E)$.
+    </p>
+    <p class="fragment small">
+        "<em>Early interest in symmetric edge polytopes was spurred by the fact that certain families
+            of polynomials sharing properties similar to Riemann’s $\zeta$-function are Ehrhart polynomials
+            of special symmetric edge polytopes...</em>"
+        <span class="smaller">
+            (from <em>Many faces of symmetric edge polytopes</em>
+            by A D'Alì, E Delucchi, M Michałek.)
+        </span>
+    </p>
+    <div class="fragment">
+        <p class="small">
+            T. Matsui, A. Higashitani, Y. Nagazawa, H. Ohsugi, T. Hibi,
+            <em>Roots of Ehrhart polynomials arising from graphs,</em>
+            Journal of Algebraic Combinatorics, 34 (2011).
+        </p>
+    </div>
+</section>
+<section>
+    <h3>Fundamental polytopes of metric spaces</h3>
+    <p>
+        In the study of finite metric spaces, A. M. Vershik
+        proposed the fundamental polytopes of metric spaces
+        in 2015.
+    </p>
+    <p class="fragment">
+        For a a finite metric space $(X,d)$, its
+        <b>fundamental polytope</b> is
+        \[
+            \operatorname{conv}
+            \left\{
+                \frac{ \mathbf{e}_i - \mathbf{e}_j }{ d(i,j) }
+                \;:\; i,j \in X
+            \right\}.
+        \]
+    </p>
+    <div class="fragment">
+        <p class="small">
+            A. M. Vershik,
+            <em>Classification of finite metric spaces and combinatorics of convex polytopes,</em>
+            Arnold Mathematical Journal, 1 (2015), pp. 75–81.
+        </p>
+        <p class="small">
+            E. Delucchi, L. Hoessly,
+            <em>Fundamental polytopes of metric trees via hyperplane arrangements,</em>
+            arXiv:1612.05534, (2016)
+        </p>
+        <p class="small">
+            J. Gordon, F. Petrov,
+            <em>Combinatorics of the Lipschitz polytope,</em>
+            Arnold Mathematical Journal, 3 (2017), pp. 205–218.
+        </p>
+        <p class="small">
+            F. D. Jevtic, M. Jelic, and R. T. Zivaljevic,
+            <em>Cyclohedron and Kantorovich–Rubinstein polytopes,</em>
+            Arnold Mathematical Journal, 4 (2018), pp. 87–112.
+        </p>
+    </div>
+</section>
+<!-- <section>
+    <h3>
+        Other constructions?
+    </h3>
+</section> -->
+<section>
+    <h3>Power-flow equations (Lossless PQ-formulation)</h3>
+    <p>
+        <span class="alert">Power networks</span>
+        carry alternating current (AC) electric power.
+    </p>
+    <p class="fragment">
+        The <em>power-flow equations</em> (a.k.a. load-flow equations)
+        describe the synchronization/balancing conditions
+        of a power network.
+    </p>
+    <p class="fragment">
+        Derived from Kirchhoff's circuit laws,
+        the "PQ-type" power-flow equations for power network $G = (V,E)$
+        (with loops)
+        consisting of $n+1$ buses 
+        (buses $0,1,\ldots,n$) is a system of $n$ equations
+    </p>
+    <p class="fragment">
+        \[
+            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
+            \quad\text{for } i = 1,\dots,n
+        \]
+    </p>
+    <p class="fragment">
+        in the $n$ nonzero complex variables
+        $v_1, \dots, v_n$ with constant $v_0 = 1$
+        <span class="fragment">
+            , where $\overline{v}_j$ is the
+            complex conjugate of $v_j$
+        </span>
+    </p>
+    <br/>
+    <p class="fragment">
+        <b>Not an algebraic system.</b>
+    </p>
+</section>
+<section>
+    <h3>Turning into an algebraic system</h3>
+    <p>
+        Examples of different approaches of turning power-flow equations into
+        polynomial systems
+    </p>
+    <ul>
+        <li>
+            J. Baillieul and C. Byrnes 
+            <span class="smaller">
+                Geometric Critical Point Analysis of Lossless Power System Models. (1982)
+                IEEE Transactions on Circuits and Systems
+            </span>
+        </li>
+        <li>
+            T.-Y. Li, T. Sauer, and J. Yorke
+            <span class="smaller">
+                Numerical Solution of a Class of Deficient Polynomial Systems
+                SIAM Journal of Numerical Analysis (1987)
+            </span>
+        </li>
+        <li>
+            (Recent survey) D. Mehta, D. Molzahn and K. Turitsyn 
+            <span class="small">
+                "Recent advances in computational methods for the power flow equations", 
+                (2016) American Control Conference.
+            </span>
+        </li>
+    </ul>
+    <p class="smaller">
+        (Not a complete list)
+    </p>
+</section>
+<section>
+    <p>
+        \[
+            S_i - \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
+            \quad\text{for } i = 1,\dots,n
+        \]
+    </p>
+    <p class="fragment">
+        Introducing new variables $u_i = \overline{v}_i$:
+        \[
+            S_i - \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i u_j
+            \quad\text{for } i = 1,\dots,n
+        \]
+    </p> 
+    <p class="fragment">
+        We can consider the square system
+        \[
+            \left\{
+                \begin{aligned}
+                    S_i &- \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i u_j
+                    \quad\text{for } i = 1,\dots,n \\
+                    \overline{S}_i &- \sum_{j \in N_G(i)} Y_{ij} u_i v_j
+                    \quad\text{for } i = 1,\dots,n 
+                \end{aligned}
+            \right.
+        \]
+        which is a system of $2n$ polynomials
+        in the $2n$ (nonzero) complex variables $v_1,\ldots,v_n,u_1,\ldots,u_n$.
+    </p>
+    <p class="small fragment">
+        <em>
+            T.-Y. Li, T. Sauer, and J. Yorke,
+            Numerical Solution of a Class of Deficient Polynomial Systems,
+            SIAM Journal of Numerical Analysis (1987)
+        </em>
+    </p>
+</section>
+<section>
+    <h3>Adjacency polytope of PQ-type power-flow equations</h3>
+    <p>
+        After a similar randomization process,
+        the common Newton polytope is
+        \[
+            P =
+            \operatorname{conv}
+            \left(
+            \left\{
+                \begin{bmatrix}
+                    \mathbf{e}_i \\
+                    \mathbf{e}_j
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                    \mathbf{e}_j \\
+                    \mathbf{e}_i
+                \end{bmatrix}
+                \,:\,
+                \{i,j\} \in A
+            \right\}
+            \cup \{ \mathbf{0} \}
+            \right)
+            \subset \mathbb{R}^{2n},
+        \]
+        where $A$ is the list of edges and loops (adjacency list).
+    </p>
+    <p class="fragment">
+        This is equivalent to the construction
+        \begin{align*}
+            P &=
+            \operatorname{conv}
+            \left(
+                \{ \mathbf{0} \}
+                \cup
+                \bigcup_{ \{i,j\} \in A } f(\{i,j\})
+            \right)
+            \; \subset \;
+            \mathbb{R}^n
+            \\
+            f( \{i,j\} ) &=
+            \operatorname{conv}
+            \left\{
+                \begin{bmatrix}
+                    \mathbf{e}_i \\
+                    \mathbf{e}_j
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                    \mathbf{e}_j \\
+                    \mathbf{e}_i
+                \end{bmatrix}
+            \right\}.
+        \end{align*}
+    </p>
+    <div class="fragment">
+        <p>
+            The combinatorial properties of this polytope
+            is being actively studied.
+        </p>
+        <p class="smaller">
+            R. Davis, T. Chen,
+            <em>Computing volumes of adjacency polytopes via draconian sequences</em>
+            <a href="https://arxiv.org/abs/2007.11051">	arXiv:2007.11051</a>
+        </p>
+        <p class="smaller">
+            T. Chen, D. Mehta,
+            <em>On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations,</em>
+            IEEE Transactions on Power Systems, vol. 33, no. 2, pp. 1451-1460, March 2018, doi: 10.1109/TPWRS.2017.2724030.
+        </p>
+    </div>
+</section>
+<section>
+    <h3>Adjacency polytope</h3>
+    <p>
+        We outlined several examples of the constructions
+        \[
+            P =
+            \operatorname{conv}
+            \left(
+                \{ \mathbf{0} \}
+                \cup
+                \bigcup_{ \{i,j\} \in A } f(\{i,j\})
+            \right)
+        \]
+        induced by a function $f$ that maps the set of edges and loops $A$
+        to convex sets (or point configurations).
+    </p>
+    <br/>
+    <ul>
+        <li class="fragment">
+            Is there any connections between the
+            topological properties of $G$
+            and geometric properties of $P$?
+        </li>
+        <li class="fragment">
+            How does this connection (if exist)
+            depends on the choice of $f$?
+        </li>
+        <li class="fragment">
+            What is the tropical interpretation here?
+        </li>
+        <li class="fragment">
+            Are there other examples missed here?
+        </li>
+    </ul>
+</section>
+<section class="titlepage">
+    <br/>
+    <br/>
+    <h1>Thank You!</h1>
+
+    <p>
+        <code>ti@nranchen.org</code>
+    </p>
+    <p>
+        <code>
+        http://www.tianranchen.org/
+        </code>
+    </p>
+    <br/>
+    <br/>
+    <div class="cols">
+        <div class="col">
+            <img height="180" src="nsf.png">
+        </div>
+        <div class="col">
+            <p class="small">
+                Research supported, in part, by National Science Foundation,
+                Auburn University at Montgomery Grant-In-Aid,
+                and AMS-Simons travel grants
+            </p>
+        </div>
+        <div class="col">
+            <img height="180" src="aum.jpg">
+        </div>
+    </div>
+</section>
