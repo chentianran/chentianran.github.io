@@ -140,9 +140,30 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
     </div>
     <p class="fragment">
         There are some interesting connections between the
-        topological properties of $G$
-        and geometric properties of $P$.
+        $G$ and $P$.
     </p>
+    <table class="small fragment">
+        <tr>
+            <td>Simplicial facets</td>
+            <td>$\to$</td>
+            <td>Spanning trees</td>
+        </tr>
+        <tr>
+            <td>Circuit facets</td>
+            <td>$\to$</td>
+            <td>Spanning chordless cycles</td>
+        </tr>
+        <tr>
+            <td>Facets</td>
+            <td>$\leftrightarrow$</td>
+            <td>Max. bipartite subgraphs</td>
+        </tr>
+        <tr>
+            <td>Triangulations</td>
+            <td>$\leftarrow$</td>
+            <td>"Primitive" subnetwork decompositions</td>
+        </tr>
+    </table>
 </section>
 <!-- <section>
     <h3>Noonburg's model for neural network (1989)</h3>
@@ -455,10 +476,10 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
     </p>
 </section>
 <section><!---- Root count of Q ---------------------------------------------->
-    <h3>Generic root count of $Q$</h3>
+    <h3>Generic root count of $Q(\mathbf{x})$</h3>
     <p>
         For <em>generic</em> choices of coefficients,
-        what is complex root count of the system
+        what is complex root count of...
         \[
             q_k(\mathbf{x}) =
             c_{k,0,0} -
@@ -618,6 +639,22 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
         </p>
     </div>
     <p class="fragment">
+        \[
+            \text{BKK bound} =
+            \operatorname{MV}(NP_1,\ldots,NP_n)
+        \]
+        <span class="fragment">
+            where
+            \[
+                NP_i = \operatorname{conv} \left(
+                        \{ \mathbf{0} \}
+                        \cup
+                        \{ \pm(\mathbf{e}_i - \mathbf{e}_j) \mid j \in \mathcal{N}_G(i) \}
+                    \right)
+            \]
+        </span>
+    </p>
+    <p class="fragment">
         There appear to be no published results on direct computations of this bound
         for the Kuramoto model.
     </p>
@@ -648,18 +685,53 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
     </p>
     <br/>
     <p class="fragment center">
-        No!
+        For many graphs, No!
     </p>
 </section>
 <section><!---- BKK == AP ---------------------------------------------------->
     <div class="theorem">
         <b>Proposition.</b>
+        If $G$ is a tree, cycle,
+        or $G$ can be decomposed into trees and cycles
+        at cut vertices, then
         \[
             \operatorname{MV}(NP_1,\ldots,NP_n)
             =
             \operatorname{Vol}_n(AP)
         \]
     </div>
+    <p class="fragment">
+        <b>Conjecture.</b>
+        This is true for all graphs.
+        <span class="small">
+            (Appears to be proved)
+        </span>
+    </p>
+    <div class="fragment">
+        <p>
+            Monotonicity conditions of mixed volume.
+        </p>
+        <ul class="small">
+            <li>
+                Frédéric Bihan and Ivan Soprunov.
+                Criteria for strict monotonicity of the mixed volume of convex polytopes.
+                Advances in Geometry, Vol 19, Issue 4 527-540 (2019)
+            </li>
+            <li>
+                C.
+                Unmixing the mixed volume computation.
+                Discrete & Computational Geometry (2019) 62:55–86
+            </li>
+        </ul>
+    </div>
+    <p class="fragment">
+        Practical implications: The AP bound $\operatorname{Vol}_n(AP)$
+        appears to be much easier to compute.
+        <span class="fragment">
+            And it leads to a particularly efficient algorithm
+            for compute finding all complex roots.
+        </span>
+    </p>
 </section>
 <section>
     <h3>BKK bound revisited</h3>
@@ -769,9 +841,13 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
         </li>
     </ul>
     <p class="fragment">
+        This is a refinement of the BKK bound in the sense that
         \[
             [L_1,\ldots,L_n] \le \operatorname{MV}(NP_1,\ldots,NP_n) \quad \text{(BKK bound)}
         \]
+    </p>
+    <p class="fragment center">
+        Is there a gap?
     </p>
     <!-- <p class="fragment">
         The question becomes
@@ -787,8 +863,56 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
     </p> -->
 </section>
 <section>
+    <h3>B.I.I.I vs BKK bound vs AP bound</h3>
+    <div class="theorem">
+        <p>
+            <b>Proposition.</b>
+            If $G$ is a complete graph, a tree, a cycle,
+            or a graph that can be decomposed into trees and cycles
+            at cut vertices, then
+            \[
+                [ L_1, \ldots, L_n ] =
+                \operatorname{MV}(NP_1,\ldots,NP_n) =
+                \operatorname{Vol}_n(AP).
+            \]
+        </p>
+    </div>
+    <div class="fragment">
+        <p>
+            I.e., in these cases,
+            \[
+                \text{B.I.I.I.} =
+                \text{BKK bound} =
+                \text{AP bound}
+            \]
+        </p>
+        <br/>
+        <ul class="small">
+            <li>
+                C.
+                <em>On the equality of BKK bound and birationally invariant intersection index.</em>
+                arXiv:1812.05408
+            </li>
+            <li>
+                C., R. Davis, D. Mehta,
+                <em>Counting equilibria of the Kuramoto model using birationally invariant intersection index.</em>
+                SIAM Journal on Applied Algebra and Geometry, 2018, Vol. 2, No. 4 pp. 489-507
+            </li>
+        </ul>
+    </div>
+    <p class="fragment">
+        <b>Conjecture.</b>
+        This is true for all graphs.
+        <span class="small">(Several cases appear to be proved)</span>
+    </p>
+    <!-- <p class="fragment center">
+        In this chain of relaxation,
+        we loose nothing!
+    </p> -->
+</section>
+<section>
     <h3>
-        Some real root counting results
+        What about real root count?
     </h3>
     <p>
         "Complex" synchronization configurations
@@ -801,6 +925,9 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
     <p class="fragment">
         Only "complex" synchronization configurations
         with $|x_i| = 1$ are "real".
+    </p>
+    <p class="fragment">
+        Here "real" means $x_i$'s are on the unit circle.
     </p>
     <div class="fragment">
         <table>
@@ -838,402 +965,75 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
     </div>
 </section>
 <section>
-    <h3>
-        Other connections
-    </h3>
-    <p>
-        Geometric invariants/constructs have natural correspondence
-        to aspects of the study of synchronization configurations
-        of Kuramoto networks.
-    </p>
-    <table>
-        <tr>
-            <th>In adjacency polytope</th>
-            <th></th>
-            <th>In networks</th>
-        </tr>
-        <tr>
-            <td>Normalized volume</td>
-            <td>$=$</td>
-            <td>Max. complex roots</td>
-        </tr>
-        <tr>
-            <td>Simplicial facets</td>
-            <td>$\to$</td>
-            <td>Spanning trees</td>
-        </tr>
-        <tr>
-            <td>Circuit facets</td>
-            <td>$\to$</td>
-            <td>Spanning chordless cycles</td>
-        </tr>
-        <tr>
-            <td>Facets</td>
-            <td>$\leftrightarrow$</td>
-            <td>Max. bipartite subgraphs</td>
-        </tr>
-        <tr>
-            <td>Triangulations</td>
-            <td>$\leftarrow$</td>
-            <td>"Primitive" subnetwork decompositions</td>
-        </tr>
-        <tr>
-            <td>Unimodular triangulations</td>
-            <td>$\leftarrow$</td>
-            <td>?</td>
-        </tr>
-    </table>
-</section>
-<section>
-    <h3>
-        The facet-subgraph correspondence
-    </h3>
-    <p>
-        The graph-polytope correspondence given by the adjacency polytope construction
-        extends to the polyhedral complex.
-    </p>
-    <p class="fragment">
-        We associate a subset $X \subseteq P$ with a subgraph $G_X$ of $G$
-        with the edge set
-        \[
-            \{ \; 
-                \{ i, j \} 
-                \;\mid\; \mathbf{e}_i - \mathbf{e}_j \in X \text{ or } \mathbf{e}_j - \mathbf{e}_i \in X 
-            \}.
-        \]
-    </p>
-    <p class="fragment">
-        Then each face of $P$ is associated with a subgraph of $G$
-        (an order-preserving map, indeed a matroid morphism).
-    </p>
-    <p class="small fragment">
-        (Actually, this is a map between the <em>point configurations</em> and subgraphs.)
-    </p>
-    <div class="theorem fragment">
-        <p>
-            <b>Proposition.</b>
-            If $F$ is a <em>simplicial</em> facet of $P$,
-            then $G_F$ is a spanning tree.
-        </p>
-    </div>
-    <div class="theorem fragment">
-        <p>
-            <b>Proposition.</b>
-            If $F$ is a <em>circuit</em> facet of $P$,
-            then $G_F$ is a spanning chordless cycle of $G$.
-        </p>
-    </div>
-</section>
-<section>
-    <h3>
-        Facet-subgraph correspondence
-    </h3>
+    <h3>Constructive real root count results</h3>
     <div class="theorem">
         <p>
-            <b>Theorem.</b> (C., R. Davis, E. Korchevskaia)
-            A subgraph $H$ of $G$ is a facet subgraph of $G$
-            if and only if it is a <em>maximal bipartite subgraph</em> of $G$.
+            <b>Theorem.</b> (J. Lindberg, A. Zachariah, N. Boston, B. Lesieutre, 2020)
+            If $G$ is a cycle, then the number real synchronization configurations is
+            \[
+                | \mathcal{V}_{\mathbb{R}} (P(\boldsymbol{\theta})) | = (n+1) \binom{n}{\lfloor n/2 \rfloor}
+                = \operatorname{Vol}_n(AP).
+            \]
+        </p>
+        <p class="small">
+            J. Lindberg, A. Zachariah, N. Boston, B. Lesieutre,
+            <em>The Distribution of the Number of Real Solutions to the Power Flow Equations</em>
+            <a href="https://arxiv.org/abs/2010.03069">arXiv:2010.03069</a>
         </p>
     </div>
-    <p class="fragment">
-        <b>Sketch of proof</b>
-        ($\Leftarrow$)
-        Let $B$ be a maximal bipartite subgraph of $G$
-        with partition of nodes $V_+ \cup V_-$.
-    </p>
-    <p class="fragment">
-        Define $\boldsymbol{\alpha} = (\alpha_1,\dots,\alpha_n) \in \mathbb{R}^n$ with
-        \begin{align*}
-            \alpha_i &=
-            \begin{cases}
-                +1/2 &\text{if } i \in V_+ \\
-                -1/2 &\text{if } i \in V_-
-            \end{cases}
-        \end{align*}
-    </p>
-    <p class="fragment">
-        Then 
-        \[
-            \langle \mathbf{e}_i - \mathbf{e}_j \,,\, \boldsymbol{\alpha} \rangle =
-            \begin{cases}
-                0     &\text{if } i,j \in V_+ \text{ or } i,j \in V_- \\
-                \pm 1 &\text{if } i \in V_\pm \text{ and } j \in V_\mp.
-            \end{cases}
-        \]
-        <!-- In particular,  
-        since $V_+$ and $V_-$ partition the vertices of $B$, which is bipartite,
-        $\inner{ \bolde_i - \bolde_j }{ \boldalpha } = \pm 1$
-        for every $\{i,j\} \in \edges(B)$.
-        Let
-        \[
-            F = \{ 
-                \bolde_i - \bolde_j \mid 
-                \inner{ \bolde_i - \bolde_j }{ \boldalpha } = -1
-            \}.
-        \]
-        By definition, the linear functional $\inner{ \,\cdot\, }{ \boldalpha }$
-        attains its minimum over $\adjp_G$ on $F$,
-        and therefore $F$ is a face of $\adjp_G$.
-        Moreover, $G_F$ is a bipartite subgraph of $G[\nodes(B)]$ that contains $B$.
-        But $B$ is assumed to be a maximal bipartite subgraph of $G[\nodes(B)]$,
-        therefore $B = G_F$, i.e., $B$ is a face subgraph. -->
-    </p>
-    <p class="fragment">
-        Therefore, $\boldsymbol{\alpha}$ is an inner normal of $P$.
-    </p>
-    <p class="smaller fragment">
-        T. Chen, R. Davis, E. Korchevskaia,
-        <em>Facets and facet subgraphs of adjacency polytopes.</em>
-        <a href="https://arxiv.org/abs/2107.12315">arXiv:2107.12315</a>
-    </p>
-</section>
-<section>
-    <h3>Face-subgraph correspondence</h3>
-
-    <p>
-        The same idea generalizes to faces of $P$ in general.
-    </p>
-
-    <div class="theorem">
-        <p>
-            <b>Theorem.</b>
-            A connected nontrivial subgraph $H$ is a face subgraph
-            if and only if it is a maximally bipartite in the induced subgraph $G[N(H)]$.
-        </p>
-    </div>
-    <div class="theorem fragment">
+    <br/>
+    <div class="fragment theorem">
         <p>
             <b>Corollary.</b>
-            If $F$ be a face of $P$,
-            then each connected component $H$ of $G_F$ is a maximal bipartite subgraph of
-            the induced subgraph $G[N(H)]$.
-        </p>
-    </div>
-    <div class="theorem fragment">
-        <p>
-            <b>Corollary</b>
-            $P$ is simplicial if and only if $G$ has no even cycles.
-        </p>
-    </div>
-
-    <div class="fragment">
-        <p class="smaller">
-            T. Chen, R. Davis, E. Korchevskaia,
-            <em>Facets and facet subgraphs of adjacency polytopes.</em>
-            <a href="https://arxiv.org/abs/2107.12315">arXiv:2107.12315</a>
-        </p>
-        <p class="small">
-            These indirectly provide positive answers
-            to Tien-Yien. Li's "bipartite subgraph ideal" conjecture.
-            (T.Y. Li, 2013 Lecture at Michigan State University)
-        </p>
-    </div>
-</section>
-<section>
-    <h3>Facet count estimation</h3>
-    <p>
-        How many facets can $P$ have?
-    </p>
-    <div class="theorem fragment">
-        <p>
-            <b>Proposition.</b>
-            (<em>D'Alì, Delucchi, and Michałek</em>)<br/>
-            If $G$ is bipartite, then
-            The number of facets $P$ has is bounded by $2^{n}$
-        </p>
-    </div>
-    <div class="theorem fragment">
-        <p>
-            <b>Proposition.</b>(<em>C., Davis, Korchevskaia</em>)<br/>
-            In general, the number of facets $P$ has is bounded by
+            If $G$ is a tree, a cycle, or a graph that can be decomposed into
+            trees and cycles at cut verticies, then
             \[
-                \beta \cdot 2^{n},
+                | \mathcal{V}_{\mathbb{R}} (P) | = 
+                [ L_1,\ldots,L_n ] =
+                \operatorname{MV}(NP_1,\ldots,NP_n) =
+                \operatorname{Vol}_n(AP).
             \]
-            where $\beta$ is the number of maximal bipartite subgraphs that $G$ has.
-        </p>
-    </div>
-    <div class="fragment">
-        <p class="smaller">
-            A D'Alì, E Delucchi, M Michałek,
-            <em>Many faces of symmetric edge polytopes</em>
-            <a href="https://arxiv.org/abs/1910.05193">arXiv:1910.05193</a>
-        </p>
-        <p class="smaller">
-            T. Chen, R. Davis, E. Korchevskaia,
-            <em>Facets and facet subgraphs of adjacency polytopes.</em>
-            <a href="https://arxiv.org/abs/2107.12315">arXiv:2107.12315</a>
         </p>
     </div>
 </section>
 <section>
-    <h3>
-        Symmetric edge polytopes
-    </h3>
+    <h3>Obstacles to real root counting</h3>
     <p>
-        The same polytopes also appear in other seemingly independent fields of studies.
+        "Real" are those with $x_i$ on the unit circle
+        (not the real line).
     </p>
-    <p class="fragment">
-        E.g., the <b>symmetric edge polytope</b> associated with a graph $G = (V,E)$:
-        \[
-            P_G =
-            \operatorname{conv}
-            \{
-                \mathbf{e}_i - \mathbf{e}_j
-                \mid \{i,j\} \in E
-            \},
-        \]
-        which is unimodularly equivalent to the adjacency polytope
-        of a Kuramoto network $G = (V,E)$.
-    </p>
-    <p class="fragment small">
-        "<em>Early interest in symmetric edge polytopes was spurred by the fact that certain families
-            of polynomials sharing properties similar to Riemann’s $\zeta$-function are Ehrhart polynomials
-            of special symmetric edge polytopes...</em>"
-        <span class="smaller">
-            (from <em>Many faces of symmetric edge polytopes</em>
-            by A D'Alì, E Delucchi, M Michałek.)
-        </span>
-    </p>
-    <div class="fragment">
-        <p class="small">
-            T. Matsui, A. Higashitani, Y. Nagazawa, H. Ohsugi, T. Hibi,
-            <em>Roots of Ehrhart polynomials arising from graphs,</em>
-            Journal of Algebraic Combinatorics, 34 (2011).
-        </p>
-    </div>
+    <ul class="fragment">
+        <li><s>
+            Amoeba theory
+        </s></li>
+        <li><s>
+            Tropical methods
+        </s></li>
+        <li><s>
+            Viro/Sturmfels patchwork
+        </s></li>
+    </ul>
+    <br/>
+    <br/>
+    <ul>
+        <li class="fragment">Different ideas for real root counting?</li>
+        <li class="fragment">Different algebraic formulation?</li>
+    </ul>
 </section>
-<section>
-    <h3>Fundamental polytopes of metric spaces</h3>
-    <p>
-        In the study of finite metric spaces, A. M. Vershik
-        proposed the fundamental polytopes of metric spaces
-        in 2015.
-    </p>
-    <p class="fragment">
-        For a a finite metric space $(X,d)$, its
-        <b>fundamental polytope</b> is
-        \[
-            \operatorname{conv}
-            \left\{
-                \frac{ \mathbf{e}_i - \mathbf{e}_j }{ d(i,j) }
-                \;:\; i,j \in X
-            \right\}.
-        \]
-    </p>
-    <div class="fragment">
-        <p class="small">
-            A. M. Vershik,
-            <em>Classification of finite metric spaces and combinatorics of convex polytopes,</em>
-            Arnold Mathematical Journal, 1 (2015), pp. 75–81.
-        </p>
-        <p class="small">
-            E. Delucchi, L. Hoessly,
-            <em>Fundamental polytopes of metric trees via hyperplane arrangements,</em>
-            arXiv:1612.05534, (2016)
-        </p>
-        <p class="small">
-            J. Gordon, F. Petrov,
-            <em>Combinatorics of the Lipschitz polytope,</em>
-            Arnold Mathematical Journal, 3 (2017), pp. 205–218.
-        </p>
-        <p class="small">
-            F. D. Jevtic, M. Jelic, and R. T. Zivaljevic,
-            <em>Cyclohedron and Kantorovich–Rubinstein polytopes,</em>
-            Arnold Mathematical Journal, 4 (2018), pp. 87–112.
-        </p>
-    </div>
-</section>
-<!-- <section>
-    <h3>
-        Other constructions?
-    </h3>
-</section> -->
 <section>
     <h3>Power-flow equations (Lossless PQ-formulation)</h3>
     <p>
-        <span class="alert">Power networks</span>
-        carry alternating current (AC) electric power.
-    </p>
-    <p class="fragment">
-        The <em>power-flow equations</em> (a.k.a. load-flow equations)
+        The power-flow (load-flow equations) equations
         describe the synchronization/balancing conditions
-        of a power network.
-    </p>
-    <p class="fragment">
-        Derived from Kirchhoff's circuit laws,
-        the "PQ-type" power-flow equations for power network $G = (V,E)$
-        (with loops)
-        consisting of $n+1$ buses 
-        (buses $0,1,\ldots,n$) is a system of $n$ equations
-    </p>
-    <p class="fragment">
+        of a power network consisting of $n+1$ buses 
+        (buses $0,1,\ldots,n$): 
         \[
             S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
             \quad\text{for } i = 1,\dots,n
         \]
     </p>
     <p class="fragment">
-        in the $n$ nonzero complex variables
-        $v_1, \dots, v_n$ with constant $v_0 = 1$
-        <span class="fragment">
-            , where $\overline{v}_j$ is the
-            complex conjugate of $v_j$
-        </span>
-    </p>
-    <br/>
-    <p class="fragment">
-        <b>Not an algebraic system.</b>
-    </p>
-</section>
-<section>
-    <h3>Turning into an algebraic system</h3>
-    <p>
-        Examples of different approaches of turning power-flow equations into
-        polynomial systems
-    </p>
-    <ul>
-        <li>
-            J. Baillieul and C. Byrnes 
-            <span class="smaller">
-                Geometric Critical Point Analysis of Lossless Power System Models. (1982)
-                IEEE Transactions on Circuits and Systems
-            </span>
-        </li>
-        <li>
-            T.-Y. Li, T. Sauer, and J. Yorke
-            <span class="smaller">
-                Numerical Solution of a Class of Deficient Polynomial Systems
-                SIAM Journal of Numerical Analysis (1987)
-            </span>
-        </li>
-        <li>
-            (Recent survey) D. Mehta, D. Molzahn and K. Turitsyn 
-            <span class="small">
-                "Recent advances in computational methods for the power flow equations", 
-                (2016) American Control Conference.
-            </span>
-        </li>
-    </ul>
-    <p class="smaller">
-        (Not a complete list)
-    </p>
-</section>
-<section>
-    <p>
-        \[
-            S_i - \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
-            \quad\text{for } i = 1,\dots,n
-        \]
-    </p>
-    <p class="fragment">
-        Introducing new variables $u_i = \overline{v}_i$:
-        \[
-            S_i - \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i u_j
-            \quad\text{for } i = 1,\dots,n
-        \]
-    </p> 
-    <p class="fragment">
-        We can consider the square system
+        It can be turned into a square polynomial system
         \[
             \left\{
                 \begin{aligned}
@@ -1244,11 +1044,7 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
                 \end{aligned}
             \right.
         \]
-        which is a system of $2n$ polynomials
-        in the $2n$ (nonzero) complex variables $v_1,\ldots,v_n,u_1,\ldots,u_n$.
-    </p>
-    <p class="small fragment">
-        <em>
+        <em class="small">
             T.-Y. Li, T. Sauer, and J. Yorke,
             Numerical Solution of a Class of Deficient Polynomial Systems,
             SIAM Journal of Numerical Analysis (1987)
@@ -1261,7 +1057,7 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
         After a similar randomization process,
         the common Newton polytope is
         \[
-            P =
+            AP =
             \operatorname{conv}
             \left(
             \left\{
@@ -1283,39 +1079,17 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
         \]
         where $A$ is the list of edges and loops (adjacency list).
     </p>
-    <p class="fragment">
-        This is equivalent to the construction
-        \begin{align*}
-            P &=
-            \operatorname{conv}
-            \left(
-                \{ \mathbf{0} \}
-                \cup
-                \bigcup_{ \{i,j\} \in A } f(\{i,j\})
-            \right)
-            \; \subset \;
-            \mathbb{R}^n
-            \\
-            f( \{i,j\} ) &=
-            \operatorname{conv}
-            \left\{
-                \begin{bmatrix}
-                    \mathbf{e}_i \\
-                    \mathbf{e}_j
-                \end{bmatrix}
-                ,
-                \begin{bmatrix}
-                    \mathbf{e}_j \\
-                    \mathbf{e}_i
-                \end{bmatrix}
-            \right\}.
-        \end{align*}
-    </p>
-    <div class="fragment">
+    <div class="theorem fragment">
         <p>
-            The combinatorial properties of this polytope
-            is being actively studied.
+            <b>Proposition.</b>
+            The adjacency polytope bound $\operatorname{Vol}_n(AP)$
+            can be computed by counting <em>draconian sequences</em>
+            \[
+                a_{i_1} + \cdots + a_{i_k} < \left|\bigcup_{j=1}^k \mathcal{N}_G(i_j)\right|.
+            \]
         </p>
+    </div>
+    <div class="fragment">
         <p class="smaller">
             R. Davis, T. Chen,
             <em>Computing volumes of adjacency polytopes via draconian sequences</em>
@@ -1327,41 +1101,9 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
             IEEE Transactions on Power Systems, vol. 33, no. 2, pp. 1451-1460, March 2018, doi: 10.1109/TPWRS.2017.2724030.
         </p>
     </div>
-</section>
-<section>
-    <h3>Adjacency polytope</h3>
-    <p>
-        We outlined several examples of the constructions
-        \[
-            P =
-            \operatorname{conv}
-            \left(
-                \{ \mathbf{0} \}
-                \cup
-                \bigcup_{ \{i,j\} \in A } f(\{i,j\})
-            \right)
-        \]
-        induced by a function $f$ that maps the set of edges and loops $A$
-        to convex sets (or point configurations).
+    <p class="fragment center">
+        Can the root counting results be extended to this setup?
     </p>
-    <br/>
-    <ul>
-        <li class="fragment">
-            Is there any connections between the
-            topological properties of $G$
-            and geometric properties of $P$?
-        </li>
-        <li class="fragment">
-            How does this connection (if exist)
-            depends on the choice of $f$?
-        </li>
-        <li class="fragment">
-            What is the tropical interpretation here?
-        </li>
-        <li class="fragment">
-            Are there other examples missed here?
-        </li>
-    </ul>
 </section>
 <section class="titlepage">
     <br/>
@@ -1380,7 +1122,7 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
     <br/>
     <div class="cols">
         <div class="col">
-            <img height="180" src="nsf.png">
+            <img height="180" src="../nsf.png">
         </div>
         <div class="col">
             <p class="small">
@@ -1390,7 +1132,7 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
             </p>
         </div>
         <div class="col">
-            <img height="180" src="aum.jpg">
+            <img height="180" src="../aum.jpg">
         </div>
     </div>
 </section>
