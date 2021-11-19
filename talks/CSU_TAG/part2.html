@@ -58,6 +58,9 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
             (It is defined only up to a unimodular transformations.)
         </p>
     </div>
+    <p class="fragment">
+        Turns out be closely related to the "symmetric edge" and the "fundamental polytope".
+    </p>
 </section>
 <section> <!-- First example ------------------------------------------------->
     <p>
@@ -165,30 +168,6 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
         </tr>
     </table>
 </section>
-<!-- <section>
-    <h3>Noonburg's model for neural network (1989)</h3>
-
-    <p>
-        For a network $G$,
-        \[
-            0 = c x_i - 1 - \sum_{j \in \mathcal{N}_G(i)} w_{ij} \, x_i \, x_j^2
-            \quad \text{for each node } i.
-        \]
-    </p>
-    <p class="small">
-        V. W. Noonburg. <br/>
-        <em>"A neural network modeled by an adaptive Lotka-Volterra system."</em>
-        SIAM Journal on Applied Mathematics 49.6 (1989): 1779-1792.
-    </p>
-    <p class="fragment small">
-        \begin{align*}
-            0 &= c x_0 -1 - (w_{01} x_0 x_1^2 + w_{02} x_0 x_2^2 + w_{03} x_0 x_3^2) \\[1ex]
-            0 &= c x_1 -1 - (w_{10} x_1 x_0^2 + w_{13} x_1 x_3^2) \\[1ex]
-            0 &= c x_2 -1 - (w_{20} x_2 x_0^2 + w_{23} x_2 x_3^2) \\[1ex]
-            0 &= c x_3 -1 - (w_{30} x_3 x_0^2 + w_{31} x_3 x_1^2 + w_{32} x_3 x_2^2)
-        \end{align*}
-    </p>
-</section> -->
 <section>
     <h3>Kuramoto model</h3>
     <p>
@@ -224,39 +203,7 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
             Lecture Notes in Physics, vol 39. Springer, Berlin, Heidelberg.
         </span>
     </p>
-    <!-- <p class="fragment">
-        A balance between simple formulation and complex behavior
-    </p> -->
 </section>
-<!-- <section>
-    <h3>Kuramoto model</h3>
-    <p>
-        Standard model for studying synchronization in 
-        networks of oscillators.
-    </p>
-    <div class="cols">
-        <div class="col fragment">
-            <img src="./firefly.jpg" alt="A firefly">
-        </div>
-        <div class="col fragment">
-            <p>
-                The synchronization phenomenon
-                in the flashing of fireflies.
-                \[
-                    \dot{\theta}_i = \omega_i - \sum_{j=0}^n k_{ij} \sin(\theta_i - \theta_j)
-                \]
-                where $\theta_i$'s models the flashing cycle of a firefly,
-                $\omega_i$ is its <em>natural frequency</em>,
-                and $k_{ij} = k_{ji}$ describes the coupling.
-            </p>
-        </div>
-    </div>
-    <p class="fragment">
-        Some species of fireflies can synchronize their flashings
-        to have the exact same frequencies.
-        (Frequency synchronization)
-    </p>
-</section> -->
 <section>
     <h3>
         Frequency synchronization
@@ -377,6 +324,55 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
             \]
         </li>
     </ul>
+</section>
+<section>
+    <h3>The real transcendental version</h3>
+    <p>
+        \[
+            \begin{aligned}
+                p_1(\boldsymbol{\theta}) &= \bar{\omega}_1 - k_{10} \sin(\theta_1 - \theta_0) - k_{13} \sin(\theta_1 - \theta_3) \\
+                p_2(\boldsymbol{\theta}) &= \bar{\omega}_2 - k_{20} \sin(\theta_2 - \theta_0) - k_{23} \sin(\theta_2 - \theta_3) \\
+                p_3(\boldsymbol{\theta}) &= \bar{\omega}_3 - k_{31} \sin(\theta_3 - \theta_1) - k_{32} \sin(\theta_3 - \theta_2)
+            \end{aligned}
+        \]
+        in the real variables $\theta_1,\theta_2,\theta_3 \in (-\pi,\pi]$.
+    </p>
+</section>
+<section>
+    <h3>The complex Laurent system</h3>
+    <p>
+        \begin{align*}
+            p_1(\mathbf{x}) &= \bar{\omega}_1 - a_{10}' (x_1 / x_0 - x_0 / x_1) - a_{13}' (x_1 / x_3 - x_3 / x_1) \\
+            p_2(\mathbf{x}) &= \bar{\omega}_2 - a_{20}' (x_2 / x_0 - x_0 / x_2) - a_{23}' (x_2 / x_3 - x_3 / x_2) \\
+            p_3(\mathbf{x}) &= \bar{\omega}_3 - a_{31}' (x_3 / x_1 - x_1 / x_3) - a_{32}' (x_3 / x_2 - x_2 / x_3)
+        \end{align*}
+        in the complex variables $x_1,x_2,x_3$.
+    </p>
+</section>
+<section>
+    <h3>The randomized and perturbed  system</h3>
+    <p class="smaller">
+        \begin{align*}
+            q_1(\mathbf{x}) &= c_{100}
+                - \left(c_{110} \frac{x_1}{x_0} - c_{101} \frac{x_0}{x_1} \right) 
+                - \left(c_{121} \frac{x_2}{x_1} - c_{112} \frac{x_1}{x_2} \right) 
+                - \left(c_{132} \frac{x_3}{x_2} - c_{123} \frac{x_2}{x_3} \right)
+                - \left(c_{103} \frac{x_0}{x_3} - c_{123} \frac{x_3}{x_0} \right) \\
+            q_2(\mathbf{x}) &= c_{200}
+                - \left(c_{210} \frac{x_1}{x_0} - c_{201} \frac{x_0}{x_1} \right) 
+                - \left(c_{221} \frac{x_2}{x_1} - c_{212} \frac{x_1}{x_2} \right) 
+                - \left(c_{202} \frac{x_0}{x_2} - c_{220} \frac{x_1}{x_2} \right)
+                - \left(c_{203} \frac{x_0}{x_3} - c_{223} \frac{x_3}{x_0} \right) \\
+            q_3(\mathbf{x}) &= c_{300}
+                - \left(c_{310} \frac{x_1}{x_0} - c_{301} \frac{x_0}{x_1} \right) 
+                - \left(c_{321} \frac{x_2}{x_1} - c_{312} \frac{x_1}{x_2} \right) 
+                - \left(c_{332} \frac{x_3}{x_2} - c_{323} \frac{x_2}{x_3} \right)
+                - \left(c_{303} \frac{x_0}{x_3} - c_{323} \frac{x_3}{x_0} \right) \\
+        \end{align*}
+    </p>
+    <p>
+        in the complex variables $x_1,x_2,x_3$.
+    </p>
 </section>
 <section><!------------------------------------------------------------------->
     <h3>Root counting</h3> 
@@ -503,10 +499,6 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
             this root count is exact.
         </p>
     </div>
-    <!-- <p class="fragment small">
-        In general the Kushnirenko Theorem counts isolated solutions
-        in $(\mathbb{C}^*)^n = (\mathbb{C} \setminus \{0\})^n$.
-    </p> -->
     <p class="fragment">
         The generic root count of $Q(\mathbf{x})$
         (the randomized and perturbed system)
@@ -524,49 +516,6 @@ title: Fireflies, power plants, and convex polytopes (Part 2)
         \]
     </p>
 </section>
-<!-- <section>
-    <h3>
-        Adjacency polytope associated with the Kuramoto model
-    </h3>
-    <div class="cols">
-        <div class="col">
-            <img src="kuramoto.png" height=370>
-        </div>
-        <div class="col">
-            <p>
-                For a Kuramoto network of $n+1$ oscillators
-                modeled by $G = (V,E)$, we constructed the
-                <em class="highlight">adjacency polytope</em>
-                \[
-                    P =
-                    \operatorname{conv}
-                    \left(
-                        \bigcup_{ \{i,j\} \in E }
-                        f( \{i,j\} )
-                        \cup \{ \mathbf{0} \}
-                    \right)
-                \]
-                where
-                \[
-                    f( \{i,j\} ) =
-                    \operatorname{conv}
-                    \{ 
-                        \mathbf{e}_i - \mathbf{e}_j \;,\;
-                        \mathbf{e}_j - \mathbf{e}_i
-                    \}.
-                \]
-            </p>
-        </div>
-    </div>
-    <p class="fragment">
-        The maximum number of "complex" synchronization configurations is
-        \[
-            n! \operatorname{Vol}_n (P),
-        \]
-        which we will call "adjacency polytope bound" or "AP bound"
-        (a special case of the BKK bound).
-    </p>
-</section> -->
 <section>
     <h3>
         Generic root count of $Q(\mathbf{x})$ for some graphs
