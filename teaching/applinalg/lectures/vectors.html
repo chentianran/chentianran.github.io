@@ -1,0 +1,677 @@
+---
+layout: ilecture_only
+title: Vectors in the plane
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Vectors</h2>
+        <p class="small">
+            ...and things we can do with them
+        </p>
+    </div>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Vectors in $\mathbb{R}^2$</h3>
+    <p>
+        A <b>"vector"</b> in $\mathbb{R}^2$ is simply a mathematical object
+        consisting of two real numbers like
+        \[
+            \begin{bmatrix} 3 \\ 4 \end{bmatrix}.
+        \]
+    </p>
+    <!-- <p class="fragment">
+        We usually write them in columns
+        (column vectors).
+    </p> -->
+    <p class="fragment">
+        In general, we consider mathematical objects of the form
+        \[
+            \begin{bmatrix} a \\ b \end{bmatrix}.
+        \]
+        where $a$ and $b$ are real numbers.
+        They are called "<b class="highlight">vectors</b>".
+        <span class="fragment">
+            Here, $a$ and $b$ are called
+            <b class="highlight">entries</b>
+            (or elements or coefficients) of the vectors.
+        </span>
+    </p>
+    <p class="fragment">
+        The collection of all such vectors is denoted $\mathbb{R}^2$
+        (read as "R-two").
+    </p>
+</section>
+<section>
+    <p>
+        Stated more explicitly:
+        \[
+            \mathbb{R}^2 = 
+            \left\{
+                \begin{bmatrix} a \\ b \end{bmatrix}
+                \;:\;
+                a,b \in \mathbb{R}
+            \right\}.
+        \]
+    </p>
+    <p class="fragment">
+        Among them, the very special vector
+        \[
+            \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+        \]
+        is known as the <b class="highlight">zero vector</b>.
+    </p>
+    <p class="fragment">
+        Very often we use the notation $\mathbf{0}$
+        for the zero vector.
+        However, it is not to be confused with 0
+        (the number).
+    </p>
+</section>
+<section>
+    <h3>Equality of vectors</h3>
+    <p class="fragment">
+        Two vectors are consider equal if and only if
+        their entries match:
+        \[
+            \begin{bmatrix} a_1 \\ b_1 \end{bmatrix} =
+            \begin{bmatrix} a_2 \\ b_2 \end{bmatrix}
+            \quad\text{if and only if}\quad
+            a_1 = a_2 \text{ and } b_1 = b_2.
+        \]
+        I.e., the ordering of the entries matters.
+    </p>
+    <p class="fragment">
+        So
+        \[
+            \begin{bmatrix} 3 \\ 4 \end{bmatrix}
+            \;\ne\;
+            \begin{bmatrix} 4 \\ 3 \end{bmatrix}.
+        \]
+    </p>
+</section>
+<section>
+    <h3>Representing data</h3>
+    <p>
+        Vectors of this form
+        \[
+            \begin{bmatrix} a \\ b \end{bmatrix}
+        \]
+        are quite useful in representing real world data
+        whenever the description require a pair of numbers.
+    </p>
+    <p class="fragment">
+        Can you think of real objects whose descriptions
+        require a pair of numbers?
+    </p>
+</section>
+<section>
+    <h3>Notations</h3>
+    <p>
+        In this course, most often we will use boldface lower case letters,
+        e.g., $\mathbf{u}$ and $\mathbf{v}$, as the names of vectors
+        to distinguish them from other objects.
+    </p>
+    <p class="fragment">
+        In physics and multi-variable calculus,
+        it is more popular to use notations such as
+        $\vec{u}$ and $\vec{v}$.
+    </p>
+    <p class="fragment">
+        Using these notations is mostly about personal choices,
+        and what they mean should always be clear from context.
+    </p>
+</section>
+<section>
+    <h3>Adding vectors together</h3>
+    <p>
+        Two vectors can be added entry by entry:
+    </p>
+    <div class="equ">
+        <span class="fragment">
+            $
+            \begin{bmatrix} 2 \\ 3 \end{bmatrix} +
+            \begin{bmatrix} 4 \\ 5 \end{bmatrix}
+            $
+        </span>
+        <span class="fragment">
+            $
+            \;\;=\;
+            \begin{bmatrix} 2 + 4 \\ 3 + 5 \end{bmatrix}
+            $
+        </span>
+        <span class="fragment">
+            $
+                \;\;=\;
+                \begin{bmatrix} 6 \\ 8 \end{bmatrix}.
+            $
+        </span>
+    </div>
+    <p class="fragment">
+        In general,
+        \[
+            \begin{bmatrix} a_1 \\ b_1 \end{bmatrix}
+            +
+            \begin{bmatrix} a_2 \\ b_2 \end{bmatrix}
+            =
+            \begin{bmatrix} a_1 + a_2 \\ b_1 + b_2 \end{bmatrix}
+        \]
+        as expected.
+    </p>
+</section>
+<section>
+    <h3>
+        Properties of vector addition
+    </h3>
+    <p>
+        Just like the addition of "regular" numbers,
+        for two vectors $\mathbf{u},\mathbf{v} \in \mathbb{R}^2$,
+        \[
+            \mathbf{u} + \mathbf{v} = 
+            \mathbf{v} + \mathbf{u}.
+        \]
+    </p>
+    <p class="fragment">
+        This property is known as <em class="highlight">commutativity</em>.
+    </p>
+    <p class="fragment">
+        Also, as expected, we can verify that for any vector $\mathbf{v}$,
+        \[
+            \mathbf{v} + \mathbf{0} = \mathbf{v}
+            \quad\quad
+            \mathbf{0} + \mathbf{v} = \mathbf{v}.
+        \]
+    </p>
+</section>
+<section>
+    <h3>
+        Additive inverse
+    </h3>
+    <p>
+        Just like we have negative version of each positive number,
+        we can form the "negative version" of a vector
+        \[
+            -
+            \begin{bmatrix} 3 \\ 4 \end{bmatrix}
+            =
+            \begin{bmatrix} -3 \\ -4 \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        This is known as the <b class="highlight">additive inverse</b>
+        of the vector.
+    </p>
+    <p class="fragment">
+        In general,
+        \[
+            -
+            \begin{bmatrix} a \\ b \end{bmatrix}
+            =
+            \begin{bmatrix} -a \\ -b \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        In more compact notation,
+        the additive inverse of the vector $\mathbf{v}$
+        is $-\mathbf{v}$.
+    </p>
+    <p class="fragment">
+        As expected,
+        \[
+            \mathbf{v} + (-\mathbf{v}) = \mathbf{0}.
+        \]
+    </p>
+</section>
+<section>
+    <h3>
+        Subtracting a vector from another
+    </h3>
+    <p>
+        Remember that subtraction is simply addition of the negative.
+    </p>
+    <p class="fragment">
+        Therefore,
+        \[
+            \mathbf{u} - \mathbf{v} = \mathbf{u} + (-\mathbf{v}).
+        \]
+    </p>
+    <p class="fragment">
+        Can you compute
+        \[
+            \begin{bmatrix} 3 \\ 4 \end{bmatrix}
+            -
+            \begin{bmatrix} 2 \\ 5 \end{bmatrix} ?
+        \]
+    </p>
+    <p class="fragment">
+        In that sense, "subtraction" is not a new operation
+        (it's just a version of addition).
+    </p>
+</section>
+<section>
+    <h3>Vector scaling</h3>
+    <p>
+        We can also multiply a real number to
+        a vector entry-by-entry:
+    </p>
+    <div class="equ">
+        <span class="fragment">
+            $
+            5 \cdot
+            \begin{bmatrix} 2 \\ 3 \end{bmatrix}
+            $
+        </span>
+        <span class="fragment">
+            $
+            \;\;=\;
+            \begin{bmatrix} 5 \cdot 2 \\ 5 \cdot 3 \end{bmatrix}
+            $
+        </span>
+        <span class="fragment">
+            $
+                \;\;=\;
+                \begin{bmatrix} 10 \\ 15 \end{bmatrix}.
+            $
+        </span>
+    </div>
+    <p class="fragment">
+        In general, for any real number $r$, we define
+        \[
+            r \cdot \begin{bmatrix} a \\ b \end{bmatrix}
+            =
+            \begin{bmatrix} r \cdot a \\ r \cdot b \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        This is known as the <b class="highlight">scalar multiplication</b>.
+        <span class="fragment lowlight">
+            (Not to be confused with other products we are going to learn later)
+        </span>
+    </p>
+    <p class="fragment">
+        For a real number $r$ and a vector $\mathbf{v}$,
+        we can use notations $r \cdot \mathbf{v}$, $r \mathbf{v}$, or $\mathbf{v} r$
+        for the scalar multiplication.
+        <span class="fragment">
+            And we usually drop the "$\cdot$"
+            whenever it is <em>not</em> confusing
+            (e.g. $3\mathbf{v}$ instead of $3 \cdot \mathbf{v}$).
+        </span>
+    </p>
+</section>
+<section>
+    <h3>
+        Scalars
+    </h3>
+    <p>
+        In our context,
+        the real number $r$ in the scalar multiplication
+        \[
+            r \cdot \mathbf{v}
+        \]
+        is called a "<b class="highlight">scalar</b>".
+        <span class="lowlight">
+            (Its job is to scale a vector)
+        </span>
+    </p>
+    <p class="fragment">
+        Throughout this course,
+        we will call real numbers "scalars"
+        to distinguish them from vectors.
+    </p>
+    <p class="fragment lowlight">
+        Later, we will also see complex numbers
+        play the role of scalars.
+    </p>
+</section>
+<section>
+    <h3>
+        Scaling by 0
+    </h3>
+    <p>
+        It is easy to see from how scalar multiplication is defined that
+        \[
+            0 \cdot
+            \begin{bmatrix} a \\ b \end{bmatrix}
+            =
+            \begin{bmatrix} 0 \cdot a \\ 0 \cdot b \end{bmatrix}
+            =
+            \begin{bmatrix} 0 \\ 0 \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        In general, as expected,
+        \[
+            0 \mathbf{v} = \mathbf{0}
+        \]
+        for any vector $\mathbf{v} \in \mathbb{R}^2$.
+        <span class="lowlight">
+            Make sure you understand that
+            "0" and "$\mathbf{0}$"
+            are not the same thing.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>
+        Scaling by negative scalar
+    </h3>
+    <p>
+        It is also easy to see that
+        \[
+            (-1) \cdot
+            \begin{bmatrix} a \\ b \end{bmatrix}
+            =
+            \begin{bmatrix} (-1) \cdot a \\ (-1) \cdot b \end{bmatrix}
+            =
+            \begin{bmatrix} -a \\ -b \end{bmatrix}
+        \]
+        which is exactly the additive inverse of the original vector.
+    </p>
+    <p class="fragment">
+        Therefore,
+        \[
+            (-1) \mathbf{v} = -\mathbf{v}
+        \]
+        for any vector $\mathbf{v} \in \mathbb{R}^2$.
+    </p>
+    <p class="fragment">
+        More generally,
+        \[
+            (-r) \mathbf{v} = - (r \mathbf{v}).
+        \]
+    </p>
+</section>
+<section>
+    <h3>
+        Associativity
+    </h3>
+    <p>
+        The way we defined scalar multiplications
+        also implies "associativity":
+        for scalars $r_1,r_2$ and vector $\mathbf{v} \in \mathbb{R}^2$,
+        \[
+            r_1 ( r_2 \mathbf{v} )
+            =
+            (r_1 r_2) \mathbf{v}
+        \]
+    </p>
+    <p class="fragment">
+        This property is known as the
+        <b class="highlight">associativity</b>
+        of the scalar multiplication.
+    </p>
+    <p class="fragment">
+        For example, as expected,
+        \[
+            3 (4 \mathbf{v}) = 12 \mathbf{v}.
+        \]
+    </p>
+</section>
+<section>
+    <h3>
+        Distributive property
+    </h3>
+    <p>
+        Just from the way we define vector addition
+        and scalar multiplications, it is easy to see that
+        for a scalar $r$ and two vectors
+        $\mathbf{u},\mathbf{v} \in \mathbb{R}^2$,
+        \[
+            r ( \mathbf{u} + \mathbf{v} )
+            =
+            (r \mathbf{u}) + (r \mathbf{v})
+        \]
+    </p>
+    <p class="fragment">
+        This property is known as the
+        <b class="highlight">distributive property</b>.
+    </p>
+    <p class="fragment">
+        Similarly, we can verify that for scalars $r_1,r_2$ and a vector $\mathbf{v}$,
+        \[
+            r_1 \mathbf{v} + r_2 \mathbf{v} = (r_1 + r_2) \mathbf{v}
+        \]
+        <span class="fragment lowlight">
+            It's just a consequence of how we define scalar multiplications.
+        </span>
+    </p>
+    <p class="fragment">
+        E.g.,
+        \[
+            3 \mathbf{v} + 4 \mathbf{v} = 7 \mathbf{v}.
+        \]
+    </p>
+</section>
+<section>
+    <h3>
+        Linear combinations
+    </h3>
+    <p>
+        We can combine the two operations we just learned
+        (scalar multiplication and vector addition):
+        <span class="fragment">
+            For two scalars $r_1,r_2$ and two vectors
+            $\mathbf{v}_1,\mathbf{v}_2 \in \mathbb{R}^2$,
+            the expression
+            \[
+                r_1 \mathbf{v}_1 + r_2 \mathbf{v}_2
+            \]
+            is called a <b class="highlight">linear combination</b>
+            of $\mathbf{v}_1$ and $\mathbf{v}_2$.
+        </span>
+    </p>
+    <div class="problem fragment">
+        What does this operation mean?
+        E.g., think about two vectors $\mathbf{v}_1,\mathbf{v}_2$
+        representing some real-world objects.
+        In that case, what would
+        $r_1 \mathbf{v}_1 + r_2 \mathbf{v}_2$ mean?
+    </div>
+</section>
+<section>
+    <h3>Dot product</h3>
+    <p>
+        There are several different types of "products" between vectors.
+        <b class="highlight">Dot product</b> is of particular importance in our
+        context, and it is defined as
+        \[
+            \begin{bmatrix}
+                a \\ b 
+            \end{bmatrix}
+            \;\cdot\;
+            \begin{bmatrix}
+                x \\ y
+            \end{bmatrix}
+            =
+            ax + by.
+        \]
+    </p>
+    <p class="fragment">
+        It is important to understand
+        that the dot product produces a <em>scalar</em> rather than a vector.
+    </p>
+    <p class="fragment small lowlight">
+        It is an example of the more general 
+        <em class="highlight">inner product</em>,
+        which we will study later.
+    </p>
+    <p class="fragment">
+        The " $\cdot$ " in dot products is necessary.
+        Omitting the " $\cdot$ " in the above will not make sense
+        (it's $\mathbf{u} \cdot \mathbf{v}$, not $\mathbf{u} \mathbf{v}$).
+    </p>
+</section>
+<section>
+    <h3>
+        Norm of vectors
+    </h3>
+    <p>
+        For a vector
+        $\mathbf{x} = \left[ \begin{smallmatrix} a \\ b \end{smallmatrix} \right]$
+        in $\mathbb{R}^2$, we define its <b class="highlight">norm</b> to be
+        \[
+            \| \mathbf{x} \| = \sqrt{ a^2 + b^2 }.
+        \]
+    </p>
+    <p class="fragment">
+        This can be interpreted as the "length" of the vector.
+        <span class="fragment">
+            It is always nonnegative, and the only vector
+            that has norm 0 is the zero vector.
+        </span>
+    </p>
+    <p class="fragment">
+        We can easily verify that the norm can also be expressed in terms
+        of dot product: For a vector
+        $\mathbf{x} \in \mathbb{R}^2$,
+        \[
+            \| \mathbf{x} \| = \sqrt{ \mathbf{x} \cdot \mathbf{x} }.
+        \]
+    </p>
+</section>
+<section>
+    <h3>
+        Generalization to $\mathbb{R}^n$
+    </h3>
+    <p>
+        Everything we just discussed generalize directly to the
+        collection of column vectors with $n$ entries which we call
+        $\mathbb{R}^n$.
+    </p>
+    <p class="fragment">
+        For instance,
+        \[  
+            \begin{bmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{bmatrix}
+            +
+            \begin{bmatrix}
+                y_1 \\ \vdots \\ y_n
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                x_1 + y_1 \\ \vdots \\ x_n + y_n
+            \end{bmatrix}
+        \]
+        and
+        \[
+            \begin{bmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{bmatrix}
+            -
+            \begin{bmatrix}
+                y_1 \\ \vdots \\ y_n
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                x_1 - y_1 \\ \vdots \\ x_n - y_n
+            \end{bmatrix}.
+        \]
+    </p>
+</section>
+<section>
+    <p>
+        Similarly, the <b class="highlight">dot product</b>
+        between two vectors is defined as
+        \[
+            \begin{bmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{bmatrix}
+            \cdot
+            \begin{bmatrix}
+                y_1 \\ \vdots \\ y_n
+            \end{bmatrix}
+            =
+            x_1 y_1 + \cdots + x_n y_n
+        \]
+    </p>
+    <p class="fragment">
+        And for a column vector $\mathbf{v} \in \mathbb{R}^n$,
+        its <b class="highlight">norm</b> is still
+        \[
+            \| \mathbf{x} \| = \sqrt{ \mathbf{x} \cdot \mathbf{x} },
+        \]
+        which is always non-negative.
+        <span class="fragment">
+            ($\mathbf{0}$ is still the <em>only</em> vector with norm 0)
+        </span>
+    </p>
+    <div class="problem fragment">
+        Generalize all the operations we learned to $\mathbb{R}^n$.
+    </div>
+</section>
+<section>
+    <h3>
+        Row vectors
+    </h3>
+    <p>
+        So far, we express vectors as columns of numbers.
+        However, in many situation, we can also write the numbers in rows:
+        \[
+            \mathbf{x} =
+            \begin{bmatrix}
+                a & b
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        ... or more generally,
+        \[
+            \mathbf{x} =
+            \begin{bmatrix}
+                x_1 & \cdots & x_n
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        For most purpose, we can use either format
+        as long as we are being consistent.
+    </p>
+    <p class="fragment lowlight">
+        In later sections, we will see row and columns vectors
+        are actually <em>different</em>,
+        and they will play very different roles in linear algebra.
+    </p>
+</section>
+<section>
+    <h3>
+        Representing high-dimensional data
+    </h3>
+    <p>
+        Vectors of this form
+        \[
+            \begin{bmatrix} x_1 \\ \vdots \\ x_n \end{bmatrix}
+        \]
+        are useful in representing real world data
+        whenever the description require more than one number.
+    </p>
+    <p class="fragment">
+        Your grades in this course depends on your performance
+        in several graded components.
+        <ol>
+            <li>
+                Read the syllabus carefully and explain how your
+                graded components can be represented by a vector.
+            </li>
+            <li>
+                How will the following quantities be expressed
+                as mathematical operations of these vectors?
+                <ul>
+                    <li>
+                        Your overall course score;
+                    </li>
+                    <li>
+                        The average scores of all the students in class
+                        in each graded component.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </p>
+</section>
