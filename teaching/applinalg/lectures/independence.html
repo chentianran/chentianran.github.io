@@ -1,0 +1,313 @@
+---
+layout: ilecture_only
+title: Linear dependence and independence
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Linear dependence/independence</h2>
+        <!-- <p class="small">
+            ...and things we can do with them
+        </p> -->
+    </div>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Review: linear combination</h3>
+    <p>
+        Recall that a <b>linear combination</b> 
+        <span class="lowlight">(weighted sum)</span> of two vectors
+        $\mathbf{v}_2$ and $\mathbf{v}_2$ in $\mathbb{R}^n$
+        is an expression of the form
+        \[
+            a \mathbf{v}_1 + b \mathbf{v}_2
+        \]
+        where $a$ and $b$ are scalars (numbers).
+    </p>
+    <p class="fragment">
+        In general, a <b>linear combination</b> of a set of vectors
+        $\{ \mathbf{v}_1, \dots, \mathbf{v}_n \}$ in $\mathbb{R}^n$
+        is an expression of the form
+        \[ 
+            c_1 \mathbf{v}_1 + \dots + c_n \, \mathbf{v}_n,
+        \]
+        where $c_1,\dots,c_n$ are scalars known as <em>coefficients</em>.
+    </p>
+    <p class="fragment lowlight smaller">
+        Of course, for this to be meaningful,
+        we require all the vectors to be of the same shape.
+        Indeed, we will soon learn that this operation only make sense
+        when all the vectors are coming from the same "vector space".
+    </p>
+</section>
+<section>
+    <h3>
+        Geometric interpretation
+    </h3>
+    <p>
+        Vectors in $\mathbb{R}^2$ can represent
+        geometric (free) vectors in the plane.
+    </p>
+    <p class="fragment">
+        It is often convenient to visualize these vectors
+        as <em>directed</em> line segments on the plane
+        with initial points being the origin.
+    </p>
+    <div class="problem fragment">
+        Can we visualize linear combinations of two vectors?
+    </div>
+</section>
+<section>
+    <p>
+        Recall that grayscale images can be represented as vectors.
+        E.g., a image of $100 \times 100$ pixel can be represented as
+        a vector in $\mathbb{R}^{10000}$.
+    </p>
+    <div class="problem">
+        Following this interpretation,
+        suppose we have grayscale images
+        represented by $\mathbf{v}_1$ and $\mathbb{v}_2$ respectively.
+        <span class="fragment">
+            What do you think is the meaning of the linear combination
+            \[
+                \frac{1}{2} \mathbf{v}_1 + \frac{1}{2} \mathbf{v}_2 \, ?
+            \]
+        </span>
+    </div>
+</section>
+<section>
+    <h3>Linear dependence/independence (set of 2)</h3>
+
+    <p>
+        $\{ \mathbf{v}_1, \mathbf{v}_2 \}$
+        is said to be <b class="highlight">linearly dependent</b>
+        if one of them is a <em>scalar multiple</em> of the other,
+        including the cases where one or both are $\mathbf{0}$.
+    </p>
+    <p class="fragment">
+        Conversely, $\{ \mathbf{v}_1, \mathbf{v}_2 \}$
+        is <b class="highlight">linearly independent</b>
+        if neither is a multiple of the other.
+        <span class="fragment lowlight">
+            (This also implies that both vectors are not $\mathbf{0}$)
+        </span>
+    </p>
+    <p class="fragment">
+        I.e., a set $S$ of two is
+        linearly independent if it is <em>not</em> linearly dependent.
+        Equivalently, $S$ is linearly dependent if it is <em>not</em> linearly independent.
+    </p>
+</section>
+<section>
+    <div class="problem">
+        In the following list of sets of vectors,
+        which ones are linear independent?
+        Which ones are linearly dependent?
+        <div class="cols">
+            <div class="col">
+                \[
+                    S_1 = 
+                    \left\{
+                        \begin{bmatrix}
+                            2 \\ 4
+                        \end{bmatrix}
+                        \,,\,
+                        \begin{bmatrix}
+                            1 \\ 2
+                        \end{bmatrix}
+                    \right\}
+                \]
+                \[
+                    S_2 = 
+                    \left\{
+                        \begin{bmatrix}
+                            2 \\ 4
+                        \end{bmatrix}
+                        \,,\,
+                        \begin{bmatrix}
+                            1 \\ 5
+                        \end{bmatrix}
+                    \right\}
+                \]
+            </div>
+            <div class="col">
+                \[
+                    S_3 = 
+                    \left\{
+                        \begin{bmatrix}
+                            2 \\ 4
+                        \end{bmatrix}
+                        \,,\,
+                        \begin{bmatrix}
+                            0 \\ 0
+                        \end{bmatrix}
+                    \right\}
+                \]
+                \[
+                    S_4 = 
+                    \left\{
+                        \begin{bmatrix}
+                            1 \\ 0
+                        \end{bmatrix}
+                        \,,\,
+                        \begin{bmatrix}
+                            0 \\ 1
+                        \end{bmatrix}
+                    \right\}
+                \]
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>
+        Geometric interpretation
+    </h3>
+    <p>
+        Vectors in $\mathbb{R}^2$ can represent geometric (free) vectors
+        in the plane (think displacement).
+    </p>
+    <div class="problem fragment">
+        Explain that does it mean for two vectors in $\mathbb{R}^2$
+        to be linearly independent (vs. linearly dependent).
+    </div>
+</section>
+<section>
+    <div class="problem">
+        Determine if the following sets are linearly independent or linearly dependent.
+        \[
+            \begin{aligned}
+                \left\{
+                    \begin{bmatrix}
+                        1 \\ 2 \\ 3
+                    \end{bmatrix}
+                    ,
+                    \begin{bmatrix}
+                        3 \\ 2 \\ 1
+                    \end{bmatrix}
+                \right\}
+                &&
+                \left\{
+                    \begin{bmatrix}
+                        1 \\ 2 \\ 3
+                    \end{bmatrix}
+                    ,
+                    \begin{bmatrix}
+                        0 \\ 0 \\ 0
+                    \end{bmatrix}
+                \right\}
+                &&
+                \left\{
+                    \begin{bmatrix}
+                        1 \\ 2 \\ 1
+                    \end{bmatrix}
+                    ,
+                    \begin{bmatrix}
+                        -3 \\ -6 \\ -3
+                    \end{bmatrix}
+                \right\}
+            \end{aligned}
+        \]
+    </div>
+</section>
+<section>
+    <h3>
+        Linear dependence
+    </h3>
+    <p>
+        A <em>nonempty</em> set of vector
+        $\{ \mathbf{v}_1, \dots, \mathbf{v}_m \} \subset \mathbb{R}^n$
+        is said to be <b class="highlight">linearly dependent</b>
+        if there are real numbers
+        $c_1,\dots,c_m$, <em>not all zero</em>, such that
+        \[
+            c_1 \mathbf{v}_1 + \cdots + c_m \mathbf{v}_m = \mathbf{0}.
+        \]
+    </p>
+    <div class="fragment">
+        <p>
+            A simpler way to say this is that a set of vectors is
+            linearly dependent if...
+        </p>
+        <ul>
+            <li>
+                One vector is a linear combination of the other vectors, or
+            </li>
+            <li>
+                At least one of them is the zero vector
+                (this is actually included in the previous case).
+            </li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h3>
+        Linear independence
+    </h3>
+    <p>
+        A set that is <em>not</em> linearly dependent
+        is said to be <b class="highlight">linearly independent</b>.
+    </p>
+    <p class="fragment">
+        More explicitly:
+        A set of vector $\{ \mathbf{v}_1, \dots, \mathbf{v}_m \}$
+        is linearly independent if the equation
+        \[
+            c_1 \mathbf{v}_1 + \cdots + c_m \mathbf{v}_m = \mathbf{0}
+        \]
+        for real numbers $c_1,\dots,c_m$ implies
+        that $c_1 = \cdots = c_m = 0$.
+    </p>
+    <p class="fragment lowlight">
+        That is, for a linearly independent set of vectors, the only way to
+        create $\mathbf{0}$ as a linear combination of this set is to use <em>all</em>
+        zero coefficients.
+    </p>
+</section>
+<section>
+    <h3>
+        The case of the empty set
+    </h3>
+    <p>
+        In the above, we specifically required the set to be nonempty.
+        So one question remains: "what about $\{ \, \}$?"
+        Should the empty set be considered as linearly dependent or independent.
+
+
+    </p>
+    <p class="fragment">
+        The convention that
+        the empty set $\varnothing = \{\,\}$ is
+        linearly <em class="highlight">independent</em>.
+    </p>
+    <p class="fragment">
+        This is actually consistent with and implied by the definition of linear
+        independence stated above.
+    </p>
+</section>
+<section>
+    <div class="problem">
+        Can 3 vectors in $\mathbb{R}^2$ be linearly independent?
+        Explain your reasoning.
+    </div>
+    <div class="problem fragment">
+        What about $n+1$ vectors in $\mathbb{R}^n$?
+        Explain your reasoning.
+    </div>
+</section>
+<section>
+    <p>
+        Recall that grayscale images can be represented as vectors.
+        E.g., a image of $100 \times 100$ pixel can be represented as
+        a vector in $\mathbb{R}^{10000}$.
+    </p>
+    <div class="problem">
+        In this context, what does it mean when a set of two images
+        is linearly independent?
+        (Considering the images as vectors)
+    </div>
+</section>
