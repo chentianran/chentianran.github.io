@@ -8,10 +8,9 @@ title: MATH-2630
 <!-- This course focuses on multivariable calculus
 which is a fundamental pillar for modern science and engineering. -->
 
-* [Syllabus](syllabus-S2021/)
-<!-- * [Schedule](syllabus/#schedule) -->
+* [Syllabus](syllabus-S2022/)
 
-## Lecture slideshows
+## Lecture slide
 
 * Vector algebra
   * [Vectors in the plane](vectors-in-plane/)

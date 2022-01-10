@@ -7,10 +7,10 @@ title: Multivariable Calculus Projects
 
 The following problems will guide you to gain deeper understanding of the
 key concepts in this course.
-Please attempt as many problem as possible.
+<!-- Please attempt as many problem as possible.
 You can earn up to __20 points__ for each problem.
 You must type your solutions and clearly label each problem
-(ideally each problem should on a separate sheet of paper).
+(ideally each problem should on a separate sheet of paper). -->
 
 ### Vectors
 
