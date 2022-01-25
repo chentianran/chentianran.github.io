@@ -1,0 +1,129 @@
+---
+layout: ilecture_only
+title: Images as vectors
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Images as vectors</h2>
+        <p class="small">
+            How to encoding images as vectors in a vector space.
+        </p>
+    </div>
+        <p>
+            Digital images may be encoded as vectors in certain vector spaces.
+            We already know of the basic ideas,
+            in this lecture we will take a closer look at
+            some of the technical detail.
+        </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>
+        How are images stored in computers?
+    </h3>
+    <div class="cols">
+        <div class="col">
+            <img src="../mario-color.jpg" alt="8bit mario">
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Digital images (uncompressed "bitmaps")
+                are usually stored as a collection of "pixels" in computers.
+            </p>
+            <p class="fragment">
+                Each pixel can be represented as a number
+                or a series of numbers.
+            </p>
+            <p class="fragment lowlight">
+                (This is not always the case,
+                there are "vector" graphics)
+            </p>
+            <p class="fragment">
+                In our homework,
+                we have already explored the basic idea
+                of representing pixels as vectors
+                and images as even longer vectors.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>
+        Grayscale vs colored images
+    </h3>
+    <div class="cols">
+        <div class="col"><img src="../mario-gray.png"  alt=""></div>
+        <div class="col"><img src="../mario-color.jpg" alt=""></div>
+    </div>
+</section>
+<section>
+    <h3>
+        Grayscale vs colored images
+    </h3>
+    <p>
+        On the level of individual pixels...
+    </p>
+    <ul>
+        <li>Each grayscale pixel can be represented by a single number
+            (only the "brightness" of the pixel is recorded").</li>
+        <li>
+            Each colored pixel is represented by several numbers.
+            (See our homework assignment(s) for detailed discussion
+            on how color is represented)
+        </li>
+    </ul>
+    <p class="lowlight fragment">
+        Of course, there are images that are actually a combination of
+        color information together with brightness information.
+        Such formats are common in scientific instruments.
+    </p>
+</section>
+<section>
+    <h3>
+        Grayscale images
+    </h3>
+    <p>
+        For a grayscale image, each pixel is completely described by
+        its "brightness", which can be represented by a single number.
+        (Usually larger number means brighter, and smaller number means darker)
+    </p>
+    <div class="cols fragment">
+        <div class="col">
+            <img src="../3x3-face.png" alt="">
+        </div>
+        <div class="col">
+            <p>
+                Can we encode this $3 \times 3$ image as a vector 
+                in $\mathbb{R}^9$?
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>
+        Colored images
+    </h3>
+    <p>
+        For images with color, each pixel must be represented by
+        several numbers.
+        In the most commonly used "RGB" scheme,
+        each pixel is represented by 3 numbers:
+        the Red, Gree, and Blue component of the color.
+    </p>
+    <div class="cols fragment">
+        <div class="col">
+            <img src="../3x3-face-color.png" alt="">
+        </div>
+        <div class="col">
+            <p>
+                Can we encode this $3 \times 3$ image as a vector 
+                in $\mathbb{R}^9$?
+            </p>
+        </div>
+    </div>
+</section>
