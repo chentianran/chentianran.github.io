@@ -12,23 +12,29 @@ will _not_ have corresponding slides.
 Also, please be aware that the slides do not reflect
 the deeper discussion involved in each class meeting.
 
-* Day 1: [Vectors](vectors/)
-* Day 2: [Linear dependence/independence](independence/)
-* Day 3: Span and subspaces
-* Day 4: Basis and dimension of subspaces
-* Day 5: Inner product spaces
-* Day 6: Linear functions
-* Day 7: Regression models
-* Day 8: Matrices as representations of linear functions
-* Day 9: Algebraic operations involving matrices
-* Day 10: Matrices from applications
-* Day 11: Rank and inverse of matrices
-* Day 12: Different types of matrices
-* Day 13: Orthogonal group and special orthogonal group
-* Day 14: Systems of linear equations
-* Day 15: Least squares problem
-* Day 16: QR decomposition
-* Day 17: Eigenvalues and eigenvectors
-* Day 18: Eigenvalue decomposition
-* Day 19: Singular values
-* Day 20: Singular value decomposition
+* Lecture 1: [Vectors](vectors/)
+* Lecture 2: [Linear dependence/independence](independence/)
+* Lecture 3: [Span and subspaces](subspace/)
+* Lecture 4: Basis and dimension of subspaces
+* Lecture 5: Inner product spaces
+* Lecture 6: Linear functions
+* Lecture 7: Regression models
+* Lecture 8: Matrices as representations of linear functions
+* Lecture 9: Algebraic operations involving matrices
+* Lecture 10: Matrices from applications
+* Lecture 11: Rank and inverse of matrices
+* Lecture 12: Different types of matrices
+* Lecture 13: Orthogonal group and special orthogonal group
+* Lecture 14: Systems of linear equations
+* Lecture 15: Least squares problem
+* Lecture 16: QR decomposition
+* Lecture 17: Eigenvalues and eigenvectors
+* Lecture 18: Eigenvalue decomposition
+* Lecture 19: Singular values
+* Lecture 20: Singular value decomposition (optional)
+
+We also have additional lectures discussions on specific aspects
+applications of things we learned.
+
+* Application 1: [Images and pixels](images/)
+* Application 2: Sound signal and time series

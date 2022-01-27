@@ -1,0 +1,338 @@
+---
+layout: ilecture_only
+title: Spans and subspaces
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Spans and subspaces</h2>
+        <p class="small">
+            Vector spaces inside vector spaces
+        </p>
+    </div>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Examples of vector spaces and their subspaces</h3>
+    <p>
+        $\mathbb{R}^1$, $\mathbb{R}^2$, $\mathbb{R}^3$, $\mathbb{R}^4$, $\ldots, \mathbb{R}^n$
+        are examples of vector spaces
+        <span class="lowlight">
+            (which we will define more carefully later).
+        </span>
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p>
+                It is possible to "embed" one vector space inside another.
+                E.g.,
+                \[
+                    \left\{
+                        \begin{bmatrix}
+                            x \\ 0 \\ 0
+                        \end{bmatrix}
+                        \;:\;
+                        x \in \mathbb{R}
+                    \right\}
+                \]
+                is a copy of $\mathbb{R}^1$ inside $\mathbb{R}^3$.
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                Similarly, we can embed $\mathbb{R}^2$ into $\mathbb{R}^3$
+                as the set
+                \[
+                    \left\{
+                        \begin{bmatrix}
+                            x \\ y \\ 0
+                        \end{bmatrix}
+                        \;:\;
+                        x,y \in \mathbb{R}
+                    \right\}.
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        These are examples of <em>subspaces</em> of $\mathbb{R}^3$.
+    </p>
+</section>
+<section>
+    <h3>
+        Definition of subspaces of $\mathbb{R}^n$
+    </h3>
+    <div class="definition">
+        A <em>subset</em> $V$ of $\mathbb{R}^n$
+        is called a <b class="highlight">subspace</b> of $\mathbb{R}^n$
+        if $V$ is <em>nonempty</em> and
+        $V$ is <em>closed under linear combination</em>,
+        i.e., for any $\mathbf{u},\mathbf{v} \in V$ and
+        $a,b \in \mathbb{R}$, the linear combination
+        $a \mathbf{u} + b \mathbf{v}$ remains in $V$.
+    </div>
+    <div class="fragment">
+        <p>Equivalent description:</p>
+        <ul>
+            <li>
+                $V$ contains the zero vector $\mathbf{0}$.
+            </li>
+            <li>
+                $V$ is closed under vector addition, i.e., if
+                $\mathbf{u},\mathbf{v} \in V$, then $\mathbf{u} + \mathbf{v} \in V$.
+            </li>
+            <li>
+                $V$ is closed under scalar multiplication, i.e., if
+                $\mathbf{v} \in V$ and $r \in \mathbb{R}$, then
+                $r \mathbf{v} \in V$.
+            </li>
+        </ul>
+    </div>
+    <p class="fragment small lowlight">
+        Here, being "closed" under certain operations means starting from
+        elements from the set and applying these operations,
+        we will never leave the set.
+    </p>
+</section>
+<section>
+    <h3>An example</h3>
+    <p>
+        The set
+        \[
+            V = \left\{
+                \begin{bmatrix}
+                    x \\ y \\ 0
+                \end{bmatrix}
+                \;:\;
+                x, y \in \mathbb{R}
+                \right\}
+        \]
+        is the subset of vectors in $\mathbb{R}^3$
+        that has 0 as the third entry.
+    </p>
+    <p class="fragment">
+        It is not hard to see $V$ satisfies the definition above,
+        so $V$ is a subspace of $\mathbb{R}^3$.
+        Indeed, it is exactly the $xy$-plane,
+        which can be considered as a copy of $\mathbb{R}^2$
+        that is embedded inside $\mathbb{R}^3$.
+    </p>
+</section>
+<section>
+    <h3>
+        Exercise
+    </h3>
+    <p>
+        Determine which of the following sets form subspaces of $\mathbb{R}^2$:
+        \[
+            \begin{aligned}
+                S_1 &= \left\{ 
+                    \begin{bmatrix}
+                        0 \\ 0
+                    \end{bmatrix}
+                    \right\}
+                    &
+                S_3 &= \left\{ 
+                    \begin{bmatrix}
+                        a \\ 2a
+                    \end{bmatrix}
+                    \;\mid\;
+                    a \in \mathbb{R}
+                    \right\}
+                    \\
+                S_2 &= \left\{ 
+                    \begin{bmatrix}
+                        1 \\ 2
+                    \end{bmatrix}
+                    \right\}
+                    &
+                S_4 &= \left\{ 
+                    \begin{bmatrix}
+                        a \\ 7
+                    \end{bmatrix}
+                    \;\mid\;
+                    a \in \mathbb{R}
+                    \right\}
+                    \\
+                S_5 &= \left\{ 
+                    \;
+                    \right\}
+                    &
+                S_6 &= \left\{ 
+                    \begin{bmatrix}
+                        3a \\ 2b
+                    \end{bmatrix}
+                    \;\mid\;
+                    a,b \in \mathbb{R}
+                    \right\}
+            \end{aligned}
+        \]
+    </p>
+</section>
+<section>
+    <h3>
+        Review: span of vectors
+    </h3>
+    <p>
+        Recall that given a set of vectors
+        $\{ \mathbf{v}_1,\ldots,\mathbf{v}_m \} \subset \mathbb{R}^n$,
+        its <em class="highlight">span</em> is 
+        the set of all possible linear combinations of these vectors.
+    </p>
+    <p class="fragment">
+        I.e., it is the set
+        \[
+            \left\{
+                c_1 \mathbf{v}_1
+                + \cdots +
+                c_m \mathbf{v}_m
+                \;\mid\;
+                c_1,\ldots,c_m \in \mathbb{R}
+            \right\}
+        \]
+    </p>
+    <p class="fragment">
+        and we use the notation
+        \[
+            \operatorname{span} \{ \mathbf{v}_1,\ldots,\mathbf{v}_m \}.
+        \]
+    </p>
+</section>
+<section>
+    <h3>Spans as subspaces</h3>
+    <p>
+        Indeed,
+        the span of any set $S \subset \mathbb{R}^n$,
+        is a <em>subspace</em> of $\mathbb{R}^n$.
+        <span class="lowlight">
+            (The converse is also true:
+            every subspace in $\mathbb{R}^n$
+            is the span of <em>some</em> set of vectors in $\mathbb{R}^n$.)
+        </span>
+    </p>
+    <p class="fragment">
+        In this case, we say the resulting subspace
+        is the <em class="highlight">subspace spanned by</em> $S$.
+        It is easy to verify that $\operatorname{span} S$ is
+        the <em>smallest</em> subspace that contains $S$.
+    </p>
+    <p class="fragment">
+        <b>Exercise.</b>
+        Explain why the these claims are true.
+    </p>
+</section>
+<section>
+    <h3>
+        Exercises
+    </h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                What is the subspace spanned by
+                \[
+                    \left\{
+                        \begin{bmatrix}
+                            1 \\ 0
+                        \end{bmatrix}
+                    \right\}
+                    \;?
+                \]
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                What about the subspace spanned by
+                \[
+                    \left\{
+                        \begin{bmatrix}
+                            1 \\ 1
+                        \end{bmatrix}
+                    \right\}
+                    \;?
+                \]
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                What about the subspace spanned by
+                \[
+                    \left\{
+                        \begin{bmatrix}
+                            0 \\ 0
+                        \end{bmatrix}
+                    \right\}
+                    \;?
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        In $\mathbb{R}^3$, what is the subspace spanned by
+        \[
+            \left\{
+                \begin{bmatrix}
+                    1 \\ 0
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                    0 \\ 1
+                \end{bmatrix}
+                ,
+                \begin{bmatrix}
+                    2 \\ 1
+                \end{bmatrix}
+            \right\}
+            \;?
+        \]
+    </p>
+</section>
+<section>
+    <h3>
+        Exercises
+    </h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                In the (virtual) RGB color space,
+                what is the subspace spanned by
+                \[
+                    \left\{
+                        \color{red}{
+                            \begin{bmatrix}
+                                1 \\ 0 \\ 0
+                            \end{bmatrix}
+                        }
+                        ,
+                        \color{blue}{
+                            \begin{bmatrix}
+                                0 \\ 0 \\ 1
+                            \end{bmatrix}
+                        }
+                    \right\}
+                    \;?
+                \]
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                Similarly, 
+                what about the subspace spanned by
+                \[
+                    \left\{
+                        \begin{bmatrix}
+                            0.5 \\ 0.5 \\ 0
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            0 \\ 0.5 \\ 0.5
+                        \end{bmatrix}
+                    \right\}
+                    \;?
+                \]
+            </p>
+        </div>
+    </div>
+</section>
