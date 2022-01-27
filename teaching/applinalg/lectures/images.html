@@ -100,6 +100,7 @@ title: Images as vectors
             <p>
                 Can we encode this $3 \times 3$ image as a vector 
                 in $\mathbb{R}^9$?
+                (One number for each pixel)
             </p>
         </div>
     </div>
@@ -113,7 +114,7 @@ title: Images as vectors
         several numbers.
         In the most commonly used "RGB" scheme,
         each pixel is represented by 3 numbers:
-        the Red, Gree, and Blue component of the color.
+        the Red, Green, and Blue component of the color.
     </p>
     <div class="cols fragment">
         <div class="col">
@@ -123,6 +124,184 @@ title: Images as vectors
             <p>
                 Can we encode this $3 \times 3$ image as a vector 
                 in $\mathbb{R}^9$?
+            </p>
+        </div>
+    </div>
+    <p class="fragment lowlight">
+        Nearly all modern computers use the 24-bit color depth
+        (8-bit per channel for the 3 channels).
+        In this, 
+        each of the "R", "G", "B" value range from 0 to 255
+        with 0 being the lowest intensity
+        and 255 being the highest intensity
+        ($255 = 2^8 - 1$).
+        When combined, they can represent over 16 million colors
+        ($2^{24}$ distinct colors to be exact).
+    </p>
+</section>
+<section>
+    <h3>RGB color space, revisited</h3>
+    <p>
+        Consider the three unit vectors
+        \[
+            \mathbb{r} =
+            \color{red}{
+            \begin{bmatrix}
+                1 \\ 0 \\ 0
+            \end{bmatrix}
+            }
+            \;,\quad
+            \mathbb{g} =
+            \color{green}{
+            \begin{bmatrix}
+                0 \\ 1 \\ 0
+            \end{bmatrix}
+            }
+            \;,\quad
+            \mathbb{b} =
+            \color{blue}{
+            \begin{bmatrix}
+                0 \\ 0 \\ 1
+            \end{bmatrix}
+            }
+        \]
+        they represent unit amount of red, green, and blue, respectively.
+    </p>
+    <p class="fragment">
+        Any color can be represented as a linear combination of
+        these three. E.g.,
+        \[
+            \frac{1}{2} \color{red}  { \mathbf{r} } +
+            \frac{1}{2} \color{blue}{ \mathbf{b} }
+            =
+            \frac{1}{2} 
+            \color{red}{
+                \begin{bmatrix}
+                    1 \\ 0 \\ 0
+                \end{bmatrix}
+            }
+            +
+            \frac{1}{2}
+            \color{blue}{
+                \begin{bmatrix}
+                    0 \\ 0 \\ 1
+                \end{bmatrix}
+            }
+            =
+            \color{purple}{
+            \begin{bmatrix}
+                \frac{1}{2} \\ 0 \\ \frac{1}{2}
+            \end{bmatrix}
+            }
+        \]
+    </p>
+    <p class="fragment">
+        This setup resembles $\mathbf{R}^3$.
+    </p>
+</section>
+<section>
+    <h3>RGB vector space vs. reality</h3>
+    <p>
+        Of course, the "RGB vector space" we just described
+        does not match the reality of display technology exactly.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                The entries in the vector
+                \[
+                    \begin{bmatrix}
+                        \color{red}{R} \\ 
+                        \color{green}{G} \\ 
+                        \color{blue}{B} \\ 
+                    \end{bmatrix}
+                \]
+                can be arbitrarily large,
+                but any physical display would have some limits
+                on the output of light.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Entries can also be negative, e.g.,
+                \[
+                    \begin{bmatrix}
+                        \color{red}{-0.5} \\ 
+                        \color{green}{0.2} \\ 
+                        \color{blue}{0.1} \\ 
+                    \end{bmatrix}
+                \]
+                does not produce a "real" color.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        How can we make sense of such "virtual" color space?
+    </p>
+</section>
+<section>
+    <h3>HSV color space, revisited</h3>
+    <p class="lowlight small">
+        You should have already seen the concept of "HSV color space"
+        in homework assignments or projects.
+    </p>
+    <p>
+        HSV (Hue, Saturation, Value), and its variations,
+        is a more intuitive alternative to the RGB color representation.
+    </p>
+    <ul class="fragment">
+        <li>
+            H: The <b>Hue</b> is represented by a number that corresponds to
+            the position on the color wheel;
+        </li>
+        <li>
+            S: The <b>Saturation</b> is represented by a number that
+            show how pure the color is, independent from the hue
+            (with 0 being a shade of gray and maximum value
+            indicate the most pure and vibrant color);
+        </li>
+        <li>
+            V: The <b>value</b> roughly corresponds to the brightness,
+            i.e., the amount of light, independent from hue and saturation
+            the color produces.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>HSV cylinder</h3>
+    <p>
+        The HSV color space is best visualized as a cylinder.
+    </p>
+    <img src="../HSV-cylinder.png" alt="HSV color cylinder">
+    <p class="lowlight smaller">
+        (Image source: Wikipedia and Michigan State University)
+    </p>
+</section>
+<section>
+    <h3>HSV representation</h3>
+    <div class="cols">
+        <div class="col">
+            <img src="../HSV-cylinder.png" alt="HSV color cylinder">
+            <p class="lowlight">
+                (Note the subtle difference between HSV and HSL)
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                In this setup, a color can also be represented by
+                \[
+                    \begin{bmatrix}
+                        H \\ S \\ V
+                    \end{bmatrix}
+                    \in
+                    \mathbb{R}^3
+                \]
+                representing the Hue, Saturation, and Value, respectively.
+            </p>
+            <p class="fragment">
+                Note that this also does not match $\mathbb{R}^3$ exactly
+                since as the value of $H$ increases,
+                eventually, we will come back to the same color.
             </p>
         </div>
     </div>
