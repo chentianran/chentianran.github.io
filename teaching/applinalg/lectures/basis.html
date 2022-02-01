@@ -1,0 +1,208 @@
+---
+layout: ilecture_only
+title: Basis and dimension
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Basis and dimension</h2>
+        <p class="small">
+            Finite representation of subspaces
+        </p>
+    </div>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Goal: defining basis and dimension</h3>
+    <p>
+        A common theme is the extraction of
+        a set of linearly independent vector from a subspace
+        that contains enough information to represent the subspace as a whole.
+    </p>
+    <p class="fragment">
+        That is the job of "basis".
+        We will define this concept more precisely.
+    </p>
+    <p class="fragment">
+        A by-product is the concept of "dimension".
+        <!-- Intuitively, $\mathbb{R}^1$ (the real line) should 1-dimensional,
+        and $\mathbb{R}^2$ should be 2-dimensional.
+        We will also give this term a precise meaning. -->
+    </p>
+</section>
+<section>
+    <h3>A basis of the plane</h3>
+    <p>
+        Verify that the set
+        \[
+            \left\{
+                \begin{bmatrix}
+                    1 \\ 0
+                \end{bmatrix}
+                \,,\,
+                \begin{bmatrix}
+                    0 \\ 1
+                \end{bmatrix}
+            \right\}
+        \]
+        is linearly independent.
+        <span class="fragment">
+            Also verify that this set spans $\mathbb{R}^2$.
+        </span>
+    </p>
+    <p class="fragment">
+        That is, this subset of $\mathbb{R}^2$ is <em>both</em>
+        <span class="highlight">linear independent</span> and
+        <span class="highlight">spanning</span>.
+        <!-- <span class="fragment">
+            This is an example of a basis.
+        </span> -->
+    </p>
+    <p class="fragment">
+        These properties make it very special.
+        In particular, every vector in $\mathbb{R}^2$
+        can be written as a linear combination of this set.
+        E.g.,
+        \[
+            \begin{bmatrix}
+                3 \\ 5
+            \end{bmatrix}
+            =
+            3
+            \begin{bmatrix}
+                1 \\ 0
+            \end{bmatrix}
+            +
+            5
+            \begin{bmatrix}
+                0 \\ 1
+            \end{bmatrix}.
+        \]
+        <span class="fragment">
+            And this can be done in a unique way.
+            (Must be 3 and 5; no other set of coefficients can make this work)
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <p>
+        Show the two sets
+        \[
+            \begin{aligned}
+                \mathcal{B}_1 &= 
+                \left\{
+                    \begin{bmatrix}
+                        1 \\ 0
+                    \end{bmatrix}
+                    ,
+                    \begin{bmatrix}
+                        1 \\ 1
+                    \end{bmatrix}
+                \right\}
+                &
+                \mathcal{B}_2 &= 
+                \left\{
+                    \begin{bmatrix}
+                        1 \\ 2
+                    \end{bmatrix}
+                    ,
+                    \begin{bmatrix}
+                        3 \\ 5
+                    \end{bmatrix}
+                \right\}.
+            \end{aligned}
+        \]
+        are both linearly independent,
+        and they are both spanning sets of $\mathbb{R}^2$.
+    </p>
+    <p class="fragment">
+        They are examples of <em>basis</em> of $\mathbb{R}^2$.
+    </p>
+</section>
+<section>
+    <h3>Basis</h3>
+    <div class="definition">
+        For a subspace $V$ of $\mathbb{R}^n$
+        (including the case where $V = \mathbb{R}^n$),
+        a subset $B$ of $V$ is said to be a <b class="highlight">basis</b> of $V$ if
+        <ul>
+            <li>
+                $B$ is linearly independent, and
+            </li>
+            <li>
+                $B$ spans $V$ (i.e., $V = \operatorname{span}(B)$).
+            </li>
+        </ul>
+    </div>
+    <div class="fragment">
+        <p>
+            Stated intuitively, a basis of a subspace
+            is a subset of vectors in this subspace that is
+        </p>
+        <ul>
+            <li>
+                small enough to be linearly independent, and
+            </li>
+            <li>
+                large enough to span the subspace.
+            </li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h3>A basis is not too big, not too small</h3>
+    <p>
+        We can push this intuitive idea of bases having just the "right size" even further.
+        <!-- Recall that a basis of a subspace is both linearly independent and spanning.
+        We can show that adding any element will make it linearly dependent,
+        and removing any element will make it no longer a spanning set: -->
+    </p>
+    <div class="fragment">
+        <p>
+            Let $B$ be a basis of a subspace $V$ of $\mathbb{R}^n$, then
+        </p>
+        <ul>
+            <li>
+                For any $\mathbf{v} \in V \setminus B$,
+                $B \cup \{ \mathbf{v} \}$ is linearly <em>dependent</em>.
+            </li>
+            <li>
+                For any $\mathbf{v} \in B$,
+                the set $B \setminus \{ \mathbf{v} \}$ is <em>not</em> a spanning set of $V$.
+            </li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h3>Dimension</h3>
+    <div class="definition">
+        The <b class="highlight">dimension</b> of $V$
+        is the number of elements in a basis of $V$
+        and is denoted by $\dim V$.
+    </div>
+    <p class="fragment">
+        Implicit in this statement is the fact that any two basis for $V$
+        must be of the exact same size.
+    </p>
+    <p class="fragment">
+        I.e.,
+        if $B_1$ and $B_2$ are both bases of a subspace $V$ of $\mathbb{R}^n$,
+        then $| B_1 | = | B_2 |$.
+        This fact is not completely obvious.
+        <span class="fragment lowlight">
+            Indeed, it is a part of the "Basis Theorem".
+            One intuitive explanation of this important fact is that
+            a basis has to be of just the "right size".
+        </span>
+    </p>
+    <p class="fragment">
+        Exercise.
+        Can you explain why this has to be true?
+        (Try the special case of $n=2$)
+    </p>
+</section>

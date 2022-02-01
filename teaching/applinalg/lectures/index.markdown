@@ -15,7 +15,7 @@ the deeper discussion involved in each class meeting.
 * Lecture 1: [Vectors](vectors/)
 * Lecture 2: [Linear dependence/independence](independence/)
 * Lecture 3: [Span and subspaces](subspace/)
-* Lecture 4: Basis and dimension of subspaces
+* Lecture 4: [Basis and dimension of subspaces](basis/)
 * Lecture 5: Inner product spaces
 * Lecture 6: Linear functions
 * Lecture 7: Regression models
@@ -24,7 +24,7 @@ the deeper discussion involved in each class meeting.
 * Lecture 10: Matrices from applications
 * Lecture 11: Rank and inverse of matrices
 * Lecture 12: Different types of matrices
-* Lecture 13: Orthogonal group and special orthogonal group
+* Lecture 13: Orthogonal group and special orthogonal group (optional)
 * Lecture 14: Systems of linear equations
 * Lecture 15: Least squares problem
 * Lecture 16: QR decomposition
