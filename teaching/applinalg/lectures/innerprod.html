@@ -1,0 +1,300 @@
+---
+layout: ilecture_only
+title: Dot product and inner product space
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Dot product and inner product</h2>
+        <p class="small">
+            Product of vectors that produce scalars.
+        </p>
+    </div>
+    <p class="small">
+        Dot product and inner product are products between vectors
+        that give us additional structures on vector spaces.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Don't forget about "dot" products</h3>
+    <p>
+        So far our discussions on subspaces and basis
+        focused only on vector addition and scalar multiplication.
+        But there is one more operation...
+    </p>
+    <p class="fragment centered highlight">
+        <em>Dot product!</em>
+    </p>
+    <p class="fragment">
+        The <em class="highlight">dot product</em>
+        \[
+            \begin{bmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{bmatrix}
+            \cdot
+            \begin{bmatrix}
+                y_1 \\ \vdots \\ y_n
+            \end{bmatrix}
+            =
+            x_1 y_1 + \cdots x_n y_n
+        \]
+        produces a <em>scalar</em> (number).
+    </p>
+    <p class="fragment">
+        It gives us one more thing we can do with vectors.
+        <span class="fragment">
+            In mathematics, we call this an additional
+            <em class="highlight">"structure"</em>.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Review: properties of dot products</h3>
+    <p>
+        We can verify that
+        the dot product operation is "linear" in each factor.
+    </p>
+    <p class="fragment">
+        I.e., for two vectors
+        $\mathbf{u},\mathbf{v} \in \mathbb{R}^n$
+        and a real number $r$,
+        \[
+            \begin{aligned}
+                (r \mathbf{u}) \cdot \mathbf{v} &=
+                r (\mathbf{u} \cdot \mathbf{v}),
+                &&\text{and} &
+                \mathbf{u} \cdot (r\mathbf{v}) &=
+                r (\mathbf{u} \cdot \mathbf{v}),
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment">
+        Similarly,
+        \[
+            \mathbf{u} \cdot (\mathbf{v}_1 + \mathbf{v}_2) =
+            (\mathbf{u} \cdot \mathbf{v}_1) +
+            (\mathbf{u} \cdot \mathbf{v}_2)
+        \]
+    </p>
+    <p class="fragment">
+        This linearity property is important,
+        as it tells us that the dot product operation interacts
+        "nicely" with linear combinations:
+        The dot product of a vector with a linear combination
+        is exactly the weighted sum of dot products.
+    </p>
+</section>
+<section>
+    <h3>About zero dot product</h3>
+    <p>
+        It is easy to see that for any $\mathbf{v} \in \mathbb{R}^n$,
+        \begin{align*}
+            \mathbf{v} \cdot \mathbf{0} &= 0
+            &&\text{and} &
+            \mathbf{0} \cdot \mathbf{v} &= 0
+        \end{align*}
+    </p>
+    <p class="fragment">
+        However, these are not the only cases where
+        the dot product of two vectors can be zero.
+    </p>
+    <p class="fragment">
+        Indeed, the dot product of two <em>nonzero</em> vectors can still be zero.
+        <span class="fragment">
+            E.g.,
+            \[
+                \begin{bmatrix}
+                    2 \\ 0
+                \end{bmatrix}
+                \cdot
+                \begin{bmatrix}
+                    0 \\ 3
+                \end{bmatrix}
+                =
+                2 \cdot 0 + 0 \cdot 3
+                =
+                0.
+            \]
+        </span>
+        <span class="fragment">
+            It is easy to come up with other examples,
+            and they show us that the <em>dot product</em>
+            behave very differently from product of real numbers.
+        </span>
+    </p>
+    <p class="fragment">
+        In general, from the fact that $\mathbf{u} \cdot \mathbf{v} = 0$
+        we <b>cannot</b> conclude that $\mathbf{u} = \mathbf{0}$ or $\mathbf{v} = \mathbf{0}$.
+    </p>
+</section>
+<section>
+    <h3>Geometric interpretation</h3>
+    <div class="cols">
+        <div class="col">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 190">
+                <defs>
+                  <marker id="arrowhead" markerWidth="8" markerHeight="5" 
+                  refX="0" refY="2.5" orient="auto">
+                    <polygon points="0 0, 8 2.5, 0 5" />
+                  </marker>
+                </defs>
+                <line x1="10" y1="180" x2="250" y2="50" stroke="#000" 
+                stroke-width="5" marker-end="url(#arrowhead)" />
+            </svg>
+        </div>
+        <div class="col">
+            <p>
+                Recall that vectors in $\mathbb{R}^2$ or $\mathbb{R}^3$
+                represents geometric vectors,
+                i.e.,
+                <em class="highlight">directed line segments</em>.
+            </p>
+            <p class="smaller">
+                A "<em>directed</em>" line segment is 
+                simply a line segment with an assigned direction.
+                The two end points are called its
+                <b class="term">initial point</b> and
+                <b class="term">terminal point</b>  respectively,
+                and we usually draw an arrowhead from the initial point
+                to the terminal point to indicate the <em class="term">direction</em>.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        For two nonzero vectors $\mathbf{u}$ and $\mathbf{v}$,
+        \[
+            \mathbf{u} \cdot \mathbf{v} = \| \mathbf{u} \| \, \| \mathbf{v} \| \, \cos(\theta)
+        \]
+        where $\theta$ is the angle between the two vector.
+    </p>
+</section>
+<section>
+    <p>
+        In particular, for two <b>unit</b> vectors
+        $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$
+        (i.e., $\| \mathbf{u} \| = \| \mathbf{v} \| = 1$),
+        the equation above can be simplified into
+        \[
+            \mathbf{u} \cdot \mathbf{v} = \cos(\theta),
+        \]
+        which is between $-1$ and $1$.
+    </p>
+    <ul>
+        <li class="fragment">
+            $\mathbf{u} \cdot \mathbf{v} = 1$ when the two are equal.
+        </li>
+        <li class="fragment">
+            $\mathbf{u} \cdot \mathbf{v} = -1$ when the two have opposite directions
+        </li>
+        <li class="fragment">
+            $\mathbf{u} \cdot \mathbf{v} = 0$ when they are "perpendicular" to one another.
+        </li>
+    </ul>
+    <p class="fragment small lowlight">
+        Here, the word "perpendicular" still mean
+        the two directed line segments form a 90 degree angle
+        when $n = 2$.
+        The same idea still work for higher dimension
+        as two vectors are always contained in a plane.
+    </p>
+    <p class="fragment">
+        In this sense, the dot product between two <b>unit</b> vectors
+        measure the extend to which the two directions agree with each other.
+    </p>
+</section>
+<section>
+    <h3>Orthogonal vectors</h3>
+    <div class="definition">
+        Two vectors $\mathbf{u}$ and $\mathbf{v}$ in $\mathbb{R}^n$
+        are said to be <b class="highlight">orthogonal</b> to each other,
+        if
+        \[
+            \mathbf{u} \cdot \mathbf{v} = 0.
+        \]
+    </div>
+    <p class="fragment lowlight">
+        We can also say $\mathbf{u}$ <b>is orthogonal to</b> $\mathbf{v}$.
+    </p>
+    <p class="fragment">
+        This is simply a generalization of the idea of two line segments
+        forming a 90 degree angle into the higher dimension.
+        <em class="fragment">
+            Note, however, that the definition also include the cases
+            where one or both are zero vectors.
+        </em>
+    </p>
+</section>
+<section>
+    <h3>General inner product</h3>
+    <p>
+        The dot product is one example of the more general 
+        "inner product".
+    </p>
+    <div class="definition fragment">
+        An inner product defined on $\mathbb{R}^n$
+        is a function $\langle \cdot,\cdot \rangle$
+        that takes in two vectors and produce a real number such that
+        <ul>
+            <li>
+                $\langle \mathbf{u}, \mathbf{v} \rangle = \langle \mathbf{v}, \mathbf{u} \rangle$
+                for any $\mathbf{u},\mathbf{v} \in \mathbb{R}^n$.
+                (Symmetric)
+            </li>
+            <li>
+                $
+                    \langle r_1 \mathbf{u}_1 + r_2 \mathbf{u}_2, \mathbf{v} \rangle = 
+                    r_1 \langle \mathbf{u}_1, \mathbf{v} \rangle + 
+                    r_2 \langle \mathbf{u}_2, \mathbf{v} \rangle  
+                $
+                for any $\mathbf{u}_1,\mathbf{u}_2,\mathbf{v} \in \mathbb{R}^n$
+                and $r_1,r_2 \in \mathbb{R}$.
+                (Linear)
+            </li>
+            <li>
+                $
+                    \langle \mathbf{v}, \mathbf{v} \rangle > 0
+                $
+                for any $\mathbf{v} \ne \mathbf{0}$.
+                (Positive-definite)
+            </li>
+        </ul>
+    </div>
+    <p class="fragment lowlight small">
+        Here, we focus on real-valued inner products.
+        It is possible to have inner product that have complex values,
+        in which case a different set of properties are specified.
+    </p>
+    <p class="fragment">
+        It is easy to see the dot product
+        satisfies all these conditions.
+        Therefore the dot product is a special kind of inner product.
+        However there are other possible inner products.
+    </p>
+</section>
+<section>
+    <h3>
+        Exercise
+    </h3>
+    <p>
+        We can verified that
+        \[
+            \left\langle
+                \begin{bmatrix}
+                    u_1 \\ u_2
+                \end{bmatrix}
+                \,,\,
+                \begin{bmatrix}
+                    v_1 \\ v_2
+                \end{bmatrix}
+            \right\rangle
+            =
+            2 u_1 v_1 + 3 u_1 v_2 + 3 u_2 v_1 + 4 u_2 v_2
+        \]
+        satisfies the properties listed above.
+    </p>
+</section>
