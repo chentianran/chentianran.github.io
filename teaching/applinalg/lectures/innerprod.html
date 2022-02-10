@@ -298,3 +298,76 @@ title: Dot product and inner product space
         satisfies the properties listed above.
     </p>
 </section>
+<section>
+    <h3>
+        Advanced exercise
+    </h3>
+    <p>
+        For what choices of $a,b,c,d$, will the formula
+        \[
+            \left\langle
+                \begin{bmatrix}
+                    u_1 \\ u_2
+                \end{bmatrix}
+                \,,\,
+                \begin{bmatrix}
+                    v_1 \\ v_2
+                \end{bmatrix}
+            \right\rangle
+            =
+            a u_1 v_1 + b u_1 v_2 + c u_2 v_1 + d u_2 v_2
+        \]
+        define an inner product?
+    </p>
+</section>
+<section>
+    <h3>
+        Inner product space
+    </h3>
+    <div class="definition">
+        Suppose $V$ is a vector space (e.g. a subspace of $\mathbb{R}^n$)
+        and $\langle \cdot, \cdot \rangle$ is an inner product defined on $V$.
+        Then the pair $(V,\langle \cdot, \cdot \rangle)$ is called an
+        <b class="highlight">inner product space</b>.
+    </div>
+    <p class="fragment">
+        Note inner product space is the <em class="highlight">pairing</em>
+        of a vector space (subspace) and a choice of inner product.
+        It does not make much sense to ask if a vector space is an inner product space.
+    </p>
+    <p class="fragment">
+        All the examples we have seen so far are, implicitly, inner product spaces,
+        e.g., $\mathbb{R}^n$ together with the dot product.
+        Similarly, each subspace of $\mathbb{R}^n$ also inherits
+        this inner product structure.
+    </p>
+</section>
+<section>
+    <h3>
+        General orthogonality from inner products
+    </h3>
+    <p class="fragment">
+        Once an inner product is chosen,
+        we can redefine the notion of orthogonal vectors
+        in terms of the inner product.
+    </p>
+    <p class="fragment">
+        In general, we say $\mathbf{u},\mathbf{v}$ are orthogonal
+        if
+        \[
+            \langle \mathbf{u} , \mathbf{v} \rangle = 0.
+        \]
+    </p>
+</section>
+<section>
+    <h3>Orthogonal basis</h3>
+    <p>
+        The most important concept related to orthogonality,
+        in this course, is "orthogonal basis".
+    </p>
+    <div class="definition fragment">
+        A <b class="highlight">orthogonal basis</b>
+        for an <em>inner product space</em>
+        is a basis in which vectors are mutually orthogonal.
+    </div>
+</section>
