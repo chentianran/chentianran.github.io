@@ -16,7 +16,7 @@ the deeper discussion involved in each class meeting.
 * Lecture 2: [Linear dependence/independence](independence/)
 * Lecture 3: [Span and subspaces](subspace/)
 * Lecture 4: [Basis and dimension of subspaces](basis/)
-* Lecture 5: Inner product spaces
+* Lecture 5: [Inner product spaces](innerprod/)
 * Lecture 6: Linear functions
 * Lecture 7: Regression models
 * Lecture 8: Matrices as representations of linear functions
