@@ -1,0 +1,177 @@
+---
+layout: ilecture_only
+title: Sound signal as vectors
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Sound signal as vectors</h2>
+        <p class="small">
+            Sound waves are vectors too
+        </p>
+    </div>
+        <p>
+            The analysis and generation of sound signals
+            rely heavily on the vector space (and inner product space) structures.
+            In this lecture we extend the concept of vector spaces
+            to allow inclusion of sound signals.
+        </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>
+        What is sound?
+    </h3>
+    <p>
+        In physics, <em>sound</em> is simply
+        vibration propagates as an acoustic wave in some medium.
+    </p>
+    <p class="fragment">
+        For most of us, this is simply the vibration of air.
+        <span class="fragment">
+            And in air, sound is transmitted as "longitudinal waves", a.k.a. "compression waves".
+        </span>
+        <span class="fragment">
+            (Change in air pressure over time)
+        </span>
+    </p>
+    <div class="r-stack">
+        <img src="../violin-wave.png" alt="Violin sound wave" class="fragment" height="200">
+        <img src="../violin-wave-2.png" alt="Violin sound wave" class="fragment" height="200">
+        <img src="../violin-wave-3.png" alt="Violin sound wave" class="fragment" height="200">
+    </div>
+</section>
+<section>
+    <h3>Creating sound out of sine and cosine</h3>
+    <p>
+        We can generate a pressure wave, in air,
+        with relative pressure given by
+        \[
+            f(t) = A \sin (k \cdot 2\pi t)
+        \]
+        where $A$ and $k$ are positive real numbers representing
+        <b class="highlight">amplitude</b> and <b class="highlight">frequency</b>
+        of the wave.
+        <span class="fragment">
+            This models actual waves very accurately.
+        </span>
+    </p>
+    <p class="fragment">
+        It is convenient to use <em>second</em> as the unit for $t$ (time).
+        <span class="fragment">
+            While the standard unit for $A$ (and hence $f$ itself)
+            should be <em>Pascal</em>, this is rarely used.
+            Instead, $A$ is usually expressed as percentage
+            (e.g. 25%, 90%, etc).
+        </span>
+        <span class="fragment">
+            The standard unit for $k$ is <em>hertz</em> (Hz).
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Amplitude and frequency</h3>
+    <p>
+        In the wave,
+        \[
+            f(t) = A \sin (k \cdot 2\pi t)
+        \]
+        the amplitude roughly correspond to loudness
+        <span class="fragment">
+            (although loudness is a complicated function of amplitude).
+        </span>
+    </p>
+    <p class="fragment">
+        The frequency, $k$ (measured in Hz), corresponds to pitch
+        (i.e., higher or lower notes).
+    </p>
+    <p class="fragment">
+        Our ears can hear certain range of amplitude and frequency.
+        <span class="fragment">
+            Do you know the human hearing range? What about that for dogs?
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Scalar multiple of a sine wave</h3>
+    <p>
+        For a wave,
+        \[
+            f_0(t) = \sin (440 \cdot 2 \pi t)
+        \]
+        <span class="fragment">
+            scalar multiple of $f_0$ with a positive $r \in \mathbb{R}$,
+            \[
+                r \cdot f_0(t) = r \sin (440 \cdot 2 \pi t)
+            \]
+            corresponds to a change of amplitude (louder or quieter).
+        </span>
+    </p>
+    <p class="fragment">
+        Negative scalars can also be used,
+        but they will also invert the "phase".
+    </p>
+</section>
+<section>
+    <h3>Sum of sine waves</h3>
+    <p>
+        Two sine waves of different frequencies
+        can be added together (as functions), e.g.
+        \[
+            \sin (440 \cdot 2 \pi t) +
+            \sin (880 \cdot 2 \pi t)
+        \]
+    </p>
+    <p class="fragment">
+        This operation corresponds to playing/hearing
+        two sound at the same time.
+        (That's how waves combine)
+    </p>
+    <div class="r-stack">
+        <img src="../sine-440.png"      class="fragment" alt="">
+        <img src="../sine-880.png"      class="fragment" alt="">
+        <img src="../sine-combined.png" class="fragment" alt="">
+    </div>
+</section>
+<section>
+    <h3>Linear combinations</h3>
+    <p>
+        By combine scalar multiplication
+        and sum of sine waves,
+        we can create linear combinations of waves,
+        e.g.
+        \[
+            a \cdot f_1(t) + b \cdot f_2(t).
+        \]
+        Can you interpret the physical meaning of this operation?
+    </p>
+    <p class="fragment">
+        In general, it is possible to combine an arbitrary number of
+        sine waves through linear combinations:
+        \[
+            \sum_{k=1}^n a_k \cdot f_k(t)
+        \]
+        where each $f_k$ is a sine wave and $a_k$ is a real number.
+    </p>
+</section>
+<section>
+    <h3>Infinite sum</h3>
+    <p>
+        In general, we can consider arbitrary linear combinations
+        of sine waves of frequencies 1Hz, 2Hz, 3Hz,... (to infinity)
+    </p>
+    <p class="fragment">
+        \[
+            \sum_{k=1}^\infty a_k \sin(k \cdot 2\pi t) 
+        \]
+    </p>
+    <p class="fragment lowlight">
+        In more rigorous studies, we must consider the question of convergence.
+        In this course, for simplicity, we will ignore this question
+        and only consider the symbolic aspect of such sums.
+    </p>
+</section>
