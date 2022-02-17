@@ -175,3 +175,384 @@ title: Sound signal as vectors
         and only consider the symbolic aspect of such sums.
     </p>
 </section>
+<section>
+    <h3>Phase</h3>
+    <p>
+        So far we only considered the frequencies of sine waves.
+    </p>
+    <p class="fragment">
+        There is another parameter: <em>phase</em>,
+        which allows us to shift the graph of sine horizontally
+        and construct general "sine-like" waves.
+    </p>
+    <div class="definition fragment">
+        A <b class="highlight">sinusoid</b>,
+        (aka. a <b class="highlight">sine wave</b>),
+        is a a scaled version
+        of the graph of the sine function,
+        i.e., the graph of a function
+        \[
+            f(t) = A \sin(2k\pi t + \phi),
+        \]
+        where $A,k,\phi$ are real numbers.
+    </div>
+    <ul>
+        <li class="fragment">
+            $A$ is still the <b class="highlight">amplitude</b>
+            (peak deviation from zero).
+        </li>
+        <li class="fragment">
+            $k$ still is the <b class="highlight">frequency</b>
+            (number of cycles over $[0,1]$).
+        </li>
+        <li class="fragment">
+            $\phi$ is the <b class="highlight">phase</b>
+            (horizontal shift of the graph).
+        </li>
+    </ul>
+    <p class="fragment">
+        What we discussed previously is simply the special case
+        of $\phi = 0$.
+    </p>
+</section>
+<section>
+    <h3>
+        Cosine waves are sine waves too
+    </h3>
+    <p>
+        Recall that
+        \[
+            \cos(t) = \sin(t + \pi/2).
+        \]
+        That is, cosine is exactly a shifted version of the sine function.
+        <span class="fragment">
+            (We shift the graph of sine to the left by $\pi/2$)
+        </span>
+    </p>
+    <p class="fragment">
+        Therefore, cosine waves are sine waves (sinusoids) too!
+    </p>
+</section>
+<section>
+    <h3>Sine-cosine form</h3>
+    <p>
+        The expression
+        \[
+            A \sin(2k\pi t + \phi),
+        \]
+        for a general sine wave is not very convenient for computation.
+        <span class="fragment">
+            An equivalent sine-cosine form is generally preferred.
+        </span>
+    </p>
+    <p class="fragment">
+        Using trig. identities,
+        the above can be transformed into
+        \[
+            a \cos(2k\pi t) + b \sin(2k\pi t),
+        \]
+        where $a,b$ are real numbers
+        that can be computed from $A$ and $\phi$.
+    </p>
+    <p class="fragment">
+        In this form, the amplitude and phase
+        are "hiding" inside in $a$ and $b$.
+    </p>
+    <div class="problem fragment">
+        Can you compute $a$ and $b$ from $A$ and $\phi$?
+    </div>
+</section>
+<section>
+    <h3>Linear combinations of sine waves</h3>
+    <p>
+        Like before,
+        we can consider linear combinations of sine waves,
+        e.g.,
+        \[
+            \alpha A_1 \sin(2k_1\pi t + \phi_1) +
+            \beta  A_2 \sin(2k_2\pi t + \phi_2).
+        \]
+    </p>
+    <p class="fragment">
+        ...or in the sine-cosine form
+        \[
+            \alpha [a_1 \cos(2k_1 \pi t) + b_1 \sin(2k_1 \pi t)] +
+            \beta  [a_2 \cos(2k_2 \pi t) + b_2 \sin(2k_2 \pi t)].
+        \]
+    </p>
+    <p class="fragment">
+        Linear combinations of sine waves of
+        <em>different</em> frequencies
+        may <b>not</b> be sine waves.
+        <span class="fragment lowlight">
+            (But we will still call them waves)
+        </span>
+    </p>
+    <p class="fragment">
+        This is a good thing!
+        <span class="fragment">
+            By combining different sine waves,
+            we can create much more interesting functions.
+            And that's the whole point!
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Vector space of waves</h3>
+    <p>
+        For range of frequencies,
+        say $k=1,\ldots,N$,
+        we consider the set
+        \[
+            V = \left\{
+                    \sum_{k=1}^N
+                    a_k \cos(2k\pi t) + b_k \sin(2k\pi t)
+                    \;:\;
+                    a_k,b_k \in \mathbb{R}
+                \right\}.
+        \]
+        <span class="fragment">
+            which include combinations of sine waves
+            of 1 Hz, 2 Hz, ..., $N$ Hz
+            (as well as all different phase parameters).
+        </span>
+    </p>
+    <p class="fragment">
+        $V$ has a natural 
+        <em class="highlight">vector space</em> structure
+        derived from the linear combination of waves.
+    </p>
+    <p class="fragment">
+        I.e., it is closed under linear combinations.
+        <span class="fragment">
+            The <b>zero</b> element, as expected,
+            is the zero function $f(t) = 0$
+            (a sine wave of zero amplitude).
+        </span>
+    </p>
+    <p class="fragment">
+        $V$ is fundamentally different from $\mathbb{R}^n$,
+        <span class="fragment">
+            yet it also forms a vector space.
+        </span>
+        <span class="fragment lowlight">
+            As such, combinations of sine waves can be legitimately called
+            <b>vectors</b>.
+        </span>
+    </p>
+<!-- 
+    The important point here is that
+    even though the individual elements of this set
+    look and feel very different from elements of $\mathbb{R}^n$
+    (waves vs. stacks of numbers),
+    we have the same structure governing the interactions among the elements. -->
+</section>
+<section>
+    <h3>Interpretations</h3>
+    <p>
+        The vector space
+        \[
+            V = \left\{
+                    \sum_{k=1}^N
+                    a_k \cos(2k\pi t) + b_k \sin(2k\pi t)
+                    \;:\;
+                    a_k,b_k \in \mathbb{R}
+                \right\},
+        \]
+        equipped with scalar multiplication and addition,
+        include combinations of sine waves
+        of 1 Hz, 2 Hz, ..., $N$ Hz
+        with all different phase values.
+        </span>
+    </p>
+    <div class="problem fragment">
+        In this context,
+        what do concepts such as span, subspace, basis, dimension,
+        and linear independence mean?
+    </div>
+</section>
+<section>
+    <h3>Length, angle, and inner product?</h3>
+    <p>
+        In the vector space
+        \[
+            V = \left\{
+                    \sum_{k=1}^N
+                    a_k \cos(2k\pi t) + b_k \sin(2k\pi t)
+                    \;:\;
+                    a_k,b_k \in \mathbb{R}
+                \right\},
+        \]
+        elements ("vectors") are combinations of sine waves.
+    </p>
+    <p class="fragment">
+        Does it makes sense to talk about the
+        <em class="highlight">length</em> of these waves?
+        <span class="fragment">
+            What about <em class="highlight">angles</em>
+            between waves?
+        </span>
+    </p>
+    <p class="fragment">
+        Recall that in $\mathbb{R}^n$,
+        such concepts came from inner/dot products.
+        <span class="fragment">
+            So the key question is:
+            "Do we have inner product between waves?"
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Inner product</h3>
+    <p>
+        Now, we will define inner product for waves in
+        \[
+            V = \left\{
+                    \sum_{k=1}^N
+                    a_k \cos(2k\pi t) + b_k \sin(2k\pi t)
+                    \;:\;
+                    a_k,b_k \in \mathbb{R}
+                \right\}.
+        \]
+    </p>
+    <div class="definition fragment">
+        For $f,g \in V$, we define
+        \[
+            \langle f, g \rangle =
+            \int_{-\frac{1}{2}}^{\frac{1}{2}} f(t) \, g(t) \, dt.
+        \]
+    </div>
+    <p class="fragment lowlight small">
+        For this to make sense,
+        we need $f$ and $g$ to be "square integrable",
+        which is satisfied by construction.
+        But this topic is outside the scope of our discussion.
+    </p>
+    <p class="fragment">
+        The interval $\left[ -\frac{1}{2},\frac{1}{2} \right]$ is arbitrary:
+        Any interval covering one period of $f(t) = \sin(2\pi t)$ may be used.
+        This one makes computation easier.
+    </p>
+    <div class="problem fragment">
+        Verify this function actually defines an inner product.
+    </div>
+</section>
+<section>
+    <h3>Norm of waves (strange as it may seem)</h3>
+    <!-- <p>
+        Strange as it may seem,
+        we can now talk about norm of waves.
+    </p> -->
+    <div class="definition fragment">
+        For a wave $f$, its <b class="highlight">norm</b> is defined to be
+        \[
+            \| f \| =
+            \sqrt{\langle f, f \rangle} =
+            \sqrt{\int_{-\frac{1}{2}}^{\frac{1}{2}} f(t) f(t) \, dt} =
+            \sqrt{\int_{-\frac{1}{2}}^{\frac{1}{2}} [f(t)]^2 \, dt},
+        \]
+    </div>
+    <p class="fragment">
+        This is a generalization of "length",
+        and it is now very much detached from our geometric intuition.
+        <span class="fragment">
+            (Visualization is unlikely to be helpful)
+        </span>
+    </p>
+    <div class="problem fragment">
+        Show $\| f \| \ge 0$.
+    </div>
+    <div class="problem fragment">
+        Compute the norm of $f(t) = \sin(2\pi t)$.
+    </div>
+    <div class="problem fragment">
+        (Advanced)
+        Is the zero function
+        the only function in this space whose norm is zero? Why?
+    </div>
+</section>
+<section>
+    <h3>Unit vector/waves</h3>
+    <p>
+        Naturally, we say a vector (wave) $f$ is a <b class="highlight">unit vector</b>
+        if $\|f\| = 1$,
+        i.e.,
+        \[
+            \int_{-\frac{1}{2}}^{\frac{1}{2}} [f(t)]^2 \, dt = 1.
+        \]
+    </p>
+    <div class="problem fragment">
+        Find a wave (combination of sine waves)
+        that has norm 1.
+    </div>
+</section>
+<section>
+    <h3>Angle between "unit" waves</h3>
+    <p>
+        For $f,g$ in this space such that $\|f\| = \| g \| = 1$,
+        we can show that $\langle f, g \rangle$ must be between $-1$ and $1$.
+        <span class="fragment lowlight small">
+            (a consequence of the Cauchy-Schwarz inequality).
+        </span>
+    </p>
+    <p class="fragment">
+        This happens to be the range of the cosine function.
+    </p>
+    <p class="fragment">
+        So it is meaningful to define the angle $\theta$
+        between $f$ and $g$ to be the real number
+        (in $[0,\pi)$) such that
+        \[
+            \cos \theta = \langle f, g \rangle.
+        \]
+    </p>
+</section>
+<section>
+    <h3>Angle between waves, in general</h3>
+    <p>
+        For nonzero waves $f$ and $g$,
+        we define the <b class="highlight">angle</b> between them to be
+        \[
+            \theta = \cos^{-1} \left(
+                    \frac{ \langle f, g \rangle }{ \| f \| \| g \| }
+                \right).
+        \]
+    </p>
+    <div class="problem fragment">
+        Compute the angle between $\sin(2\pi t)$ and $\cos(2\pi t)$.
+    </div>
+    <div class="problem fragment">
+        Compute the angle between $\sin(2\pi t)$ and $\sin(4\pi t)$.
+    </div>
+    <p class="fragment">
+        It may feel rather strange to talk about angle between waves,
+        but this is a generalization of angle between geometric vectors.
+    </p>
+    <p class="fragment">
+        Strange or not, it is actually quite useful,
+        as it allows us to talk about orthogonality in this space.
+    </p>
+</section>
+<section>
+    <h3>Orthogonal waves</h3>
+    <p>
+        Following our definition of "angles" between waves,
+        we say two waves $f$ and $g$ are
+        <b class="highlight">orthogonal</b> to each other if
+        \[
+            \langle f, g \rangle = 0.
+        \]
+    </p>
+    <p class="fragment">
+        That is,
+        \[
+            0 =
+            \langle f, g \rangle =
+            \int_{-\frac{1}{2}}^{\frac{1}{2}} f(t) \, g(t) \, dt.
+        \]
+    </p>
+    <div class="problem fragment">
+        Find two nonzero waves
+        that are orthogonal to each other.
+    </div>
+</section>
