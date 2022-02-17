@@ -37,4 +37,4 @@ We also have additional lectures discussions on specific aspects
 applications of things we learned.
 
 * Application 1: [Images and pixels](images/)
-* Application 2: Sound signal and time series
+* Application 2: [Sound signal](sound/)
