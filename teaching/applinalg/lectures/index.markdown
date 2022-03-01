@@ -17,8 +17,8 @@ the deeper discussion involved in each class meeting.
 * Lecture 3: [Span and subspaces](subspace/)
 * Lecture 4: [Basis and dimension of subspaces](basis/)
 * Lecture 5: [Inner product spaces](innerprod/)
-* Lecture 6: Linear functions
-* Lecture 7: Regression models
+* Lecture 6: Things that can be considered as "vectors"
+* Lecture 7: [Linear/affine functions and regression models](regression/)
 * Lecture 8: Matrices as representations of linear functions
 * Lecture 9: Algebraic operations involving matrices
 * Lecture 10: Matrices from applications

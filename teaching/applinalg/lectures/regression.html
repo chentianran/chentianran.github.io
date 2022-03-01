@@ -1,0 +1,260 @@
+---
+layout: ilecture_only
+title: Linear regression models
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Linear regression models</h2>
+        <p class="small">
+            Learning formula from data
+            and predicting data from formula
+        </p>
+    </div>
+        <p>
+            Linear regression models
+            are one of the most basic tools in statistics,
+            data science, and machine learning.
+            Essentially, they are linear/affine functions
+            that have "best fit" for some data set.
+        </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Linear functions</h3>
+    <p>
+        One of the simplest class of functions
+        are functions of the form
+        \[
+            f(x) = a x,
+        \]
+        where $a$ are real numbers.
+    </p>
+    <p class="fragment">
+        The graph of such a function is a straight <em>line</em>
+        passing though the origin.
+        <span class="fragment">
+            This is a <em class="highlight">linear function</em>.
+        </span>
+    </p>
+    <p class="fragment">
+        It satisfies the properties that
+        \[
+            \begin{aligned}
+            f(x_1 + x_2) &= f(x_1) + f(x_2)
+            &
+            f(r x) &= r \cdot f(x).
+            \end{aligned}
+        \]
+        <span class="fragment">
+            We will take these to be the <em>defining property</em>
+            and call any function that satisfy these properties linear functions.
+        </span>
+    </p>
+</section>
+<section>
+    <p>
+        Using these two defining properties,
+        we can generalize the concept of linear functions.
+    </p>
+    <div class="definition">
+        A function $f : \mathbb{R}^n \to \mathbb{R}^m$
+        is a <b class="highlight">linear function</b>
+        if
+        \[
+            \begin{aligned}
+            f(\mathbf{x}_1 + \mathbf{x}_2) &= f(\mathbf{x}_1) + f(\mathbf{x}_2)
+            &
+            f(r \, \mathbf{x}) &= r \, f(\mathbf{x}).
+            \end{aligned}
+        \]
+    </div>
+    <p class="fragment">
+        It is quite easy to understand the behavior of linear functions.
+        In particular, all linear functions from $\mathbb{R}^n$ to $\mathbb{R}^1$
+        has a simple form that we already understand well.
+    </p>
+    <div class="problem fragment">
+        Show that a linear function $f : \mathbb{R}^n \to \mathbb{R}^1$
+        must be of the form
+        \[
+            f(\mathbf{x}) = \mathbf{a} \cdot \mathbf{x}
+        \]
+        for some vector $\mathbf{a} \in \mathbf{R}^n$.
+    </div>
+</section>
+<section>
+    <h3>Affine functions</h3>
+    <p>
+        A function of the form
+        \[
+            f(x) = a x + b,
+        \]
+        for some real numbers $a,b$
+        is called an <b class="highlight">affine function</b>.
+    </p>
+    <p class="fragment">
+        The graph of such a function is a straight <em>line</em>
+        (that may or may not pass through the origin).
+        <span class="fragment">
+            Similarly, we can generalize this to any dimension.
+        </span>
+    </p>
+    <div class="definition fragment">
+        A function $f : \mathbb{R}^n \to \mathbb{R}^m$
+        is an <b class="highlight">affine function</b>
+        if
+        \[
+            f(\mathbf{x}) = L(\mathbf{x}) + \mathbf{b}
+        \]
+        for some linear function $L : \mathbb{R}^n \to \mathbb{R}^m$
+        and a vector $\mathbf{b} \in \mathbb{R}^m$.
+    </div>
+</section>
+<section>
+    <h3>Linear regression models</h3>
+    <p>
+        In our context,
+        a <b class="highlight">regression model</b>
+        is simply a <em>linear</em> or <em>affine function</em>.
+    </p>
+    <p class="fragment">
+        E.g.,
+        \[
+            f(x_1,x_2) = a_1 x_1 + a_2 x_2 + v
+        \]
+        where $a_1,a_2$ and $v$ are real numbers.
+    </p>
+    <p class="fragment">
+        In statistics, the variables $x_1,x_2$
+        are also called <b class="highlight">regressors</b>.
+        The coefficients $a_1,a_2$ are 
+        <b class="highlight">weights</b>,
+        and the constant term $v$ is 
+        the <b class="highlight">offset</b>.
+    </p>
+    <p class="fragment">
+        The function value
+        \[
+            \hat{y} = f(x_1,x_2) = a_1 x_1 + a_2 x_2 + v
+        \]
+        is called the <b class="highlight">prediction</b>.
+        <span class="lowlight smaller">
+            (The "hat" notation is just part of the name of the variable).
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Why is it called "regression"?</h3>
+    <p>
+        The term "regression" had an origin in biology.
+        It was coined by Francis Galton in the 19th century
+        in his study about the phenomenon that 
+        the heights of sons and daughters
+        of tall parents tend to "regress" back towards an average.
+    </p>
+    <p class="fragment">
+        Today, this important statistical phenomenon
+        is known as the <em>regression toward the mean</em>.
+    </p>
+    <p class="fragment">
+        Over time, this fundamental idea is applied to wider and wider
+        area of scientific studies,
+        and the term "regression" is no longer connected to
+        the biological idea of regression.
+    </p>
+</section>
+<section>
+    <h3>More general construction</h3>
+    <p>
+        In general, a <b class="highlight">regression model</b>,
+        involving $n$ independent variables $x_1,\ldots,x_n$
+        is simply an <em>affine function</em> of the form
+        \[
+            f(x_1,\ldots,x_n) = a_1 x_1 + \cdots + a_n x_n + v
+        \]
+        where $a_n,\ldots,a_n$ and $v$ are real numbers.
+    </p>
+    <p class="fragment">
+        As before, the $x_1,\ldots,x_n$
+        are called <b class="highlight">regressors</b>.
+        The coefficients $a_1,\ldots,a_n$ are 
+        <b class="highlight">weights</b>,
+        and the constant term $v$ is 
+        the <b class="highlight">offset</b>.
+    </p>
+    <p class="fragment">
+        Using a vector notation,
+        such a function can be written as
+        \[
+            \hat{y} = f(x_1,\ldots,x_n) = 
+            \begin{bmatrix}
+                a_1 \\ \vdots \\ a_n
+            \end{bmatrix}
+            \cdot
+            \begin{bmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{bmatrix}
+            + v
+        \]
+        where $\cdot$ is the <em>dot product</em> operation.
+    </p>
+</section>
+<section>
+    <h3>Even more general construction</h3>
+    <p>
+        It is even possible to construct
+        regression models with multiple output (dependent) variables
+        \[
+            \begin{bmatrix}
+                y_1 \\ \vdots \\ y_m
+            \end{bmatrix}
+            =
+            f(x_1,\ldots,x_n)
+        \]
+    </p>
+    <p class="fragment">
+        where
+        \[
+            \hat{y}_i = 
+            \begin{bmatrix}
+                a_{i1} \\ \vdots \\ a_{in}
+            \end{bmatrix}
+            \cdot
+            \begin{bmatrix}
+                x_1 \\ \vdots \\ x_n
+            \end{bmatrix}
+            + v_i
+        \]
+        for $i=1,\ldots,m$.
+    </p>
+    <p class="fragment">
+        The notation is very complicated.
+        We will learn how to manage these complicated expression
+        using "matrices".
+    </p>
+</section>
+<section>
+    <h3>How to construct regression models?</h3>
+    <p>
+        In math classes, we are often given formula for certain function
+        and asked to perform interesting/boring calculations.
+    </p>
+    <p class="fragment">
+        In the real world,
+        the situation is reversed
+        <span class="fragment">
+            --- we almost always need to guess the "correct" formula
+            from observations (data).
+        </span>
+    </p>
+    <p class="fragment">
+        In the rest of this course,
+        we will develop the language and concepts
+        necessary for solving this problem.
+    </p>
+</section>
