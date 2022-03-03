@@ -1,0 +1,522 @@
+---
+layout: ilecture_only
+title: Matrices
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Matrices</h2>
+        <p class="small">
+            Rectangular arrays of numbers.
+        </p>
+    </div>
+        <p>
+            Matrices are rectangular arrays of number
+            with which we can carried complicated algebraic operations.
+        </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Matrices</h3>
+    <p>
+        A <b class="highlight">matrix</b> is simply
+        a rectangular array of numbers.
+    </p>
+    <p class="fragment">
+        E.g.,
+        \[
+            \begin{bmatrix}
+                1 & 2 & 3 \\
+                4 & 5 & 6
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        A matrix that has $m$ rows and $n$ columns is called
+        a $m \times n$ matrix.
+
+    </p>
+    <p class="fragment">
+        That is, we always follow the
+        <em class="highlight">"rows-by-columns"</em> convention
+        when describing the size (dimension) of a matrix.
+    </p>
+</section>
+<section>
+    <h3>Subscripts of entries</h3>
+    <p>
+        When using symbols to represent entries in a matrix,
+        we write something like
+        \[  
+            \begin{bmatrix}
+                a_{11} & a_{12} & a_{13} \\
+                a_{21} & a_{22} & a_{23}
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        Note the ordering in the subscripts:
+        $a_{12}$ and $a_{21}$ represents two different entries.
+    </p>
+</section>
+<section>
+    <h3>Square matrices</h3>
+    <p>
+        If the number of rows and columns in a matrix are the same,
+        i.e., a $n \times n$ matrix,
+        then we call this matrix a
+        <b class="highlight">square matrix</b>.
+    </p>
+    <p class="fragment">
+        E.g.,
+        \[
+            \begin{bmatrix}
+                1 & 2 & 3 \\
+                4 & 5 & 6 \\
+                7 & 8 & 9
+            \end{bmatrix}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Row/column vectors are matrices too</h3>
+    <p>
+        As far as algebra is concerned,
+        matrices of only one column behave just like column vectors.
+    </p>
+    <p class="fragment">
+        E.g.,
+        \[
+            \begin{bmatrix}
+                1 \\
+                2 \\
+                3 
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        Similarly, matrices of only one row behave
+        just like row vectors.
+    </p>
+    <p class="fragment">
+        E.g.,
+        \[
+            \begin{bmatrix}
+                1 & 2 & 3 
+            \end{bmatrix}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Adding two matrices together</h3>
+    <p>
+        We can add two matrices
+        <em class="highlight">of the same size</em> together
+        simply by adding the corresponding entries.
+    </p>
+    <p class="fragment">
+        \[  
+            \begin{bmatrix}
+                a & b \\
+                c & d
+            \end{bmatrix}
+            +
+            \begin{bmatrix}
+                x & y \\
+                z & w
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                a+x & b+y \\
+                c+z & d+w
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        We do <b>not</b> allow matrices of difference sizes
+        to be added together.
+    </p>
+    <p class="fragment">
+        This definition is consistent with the way
+        we define vector sums.
+    </p>
+</section>
+<section>
+    <h3>The zero matrix</h3>
+    <p>
+        The zero matrix, of any size,
+        is the matrix consists of zero entries.
+    </p>
+    <p class="fragment">
+        E.g., a $2 \times 3$ matrix is
+        \[  
+            \begin{bmatrix}
+                0 & 0 & 0      \\
+                0 & 0 & 0
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        In general, a zero matrix is
+        <span class="lowlight">(dimension usually clear from context)</span>
+        \[
+            \mathbf{0} =
+            \begin{bmatrix}
+                0      & \cdots & 0      \\
+                \vdots & \ddots & \vdots \\
+                0      & \cdots & 0
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        Sum of the zero matrix
+        with any matrix $A$ of the same size is still $A$:
+        \[
+            \mathbf{0} + A = A + \mathbf{0} = A
+        \]
+        So it really behaves like the number "0"
+        in the world of matrices.
+    </p>
+</section>
+<section>
+    <h3>Scalar multiples of matrices</h3>
+    <p>
+        E.g., for any (real) number $r$,
+        \[  
+            r \cdot
+            \begin{bmatrix}
+                a & b \\
+                c & d
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                ra & rb \\
+                rc & rd
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        In general, for a scalar $r$,
+        \[  
+            r \cdot
+            \begin{bmatrix}
+                a_{11} & \cdots & a_{1n} \\
+                \vdots & \ddots & \vdots \\
+                a_{m1} & \cdots & a_{mn}
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                r \, a_{11} & \cdots & r \, a_{1n} \\
+                \vdots & \ddots & \vdots \\
+                r \, a_{m1} & \cdots & r \, a_{mn}
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        $A$ and $rA$ always have the same size
+        (for any scalar $r$).
+    </p>
+    <p class="fragment">
+        As expected, $-A$ simply means $(-1)A$.
+    </p>
+</section>
+<section>
+    <h3>Matrix transpose</h3>
+    <p>
+        This is an operation that reflect entries of a matrix
+        along the main diagonal
+        (upper left to lower right).
+    </p>
+    <p class="fragment">
+        \[  
+            \begin{bmatrix}
+                a & b \\
+                c & d
+            \end{bmatrix}^\top
+            \;=\;
+            \begin{bmatrix}
+                a & c \\
+                b & d
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        Similarly,
+        \[  
+            \begin{bmatrix}
+                a_{11} & a_{12} & a_{13} \\
+                a_{21} & a_{22} & a_{23} \\
+            \end{bmatrix}^\top
+            \;=\;
+            \begin{bmatrix}
+                a_{11} & a_{21} \\
+                a_{12} & a_{22} \\
+                a_{13} & a_{23} \\
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        This operation simply turns rows into columns.
+    </p>
+    <p class="fragment">
+        In general,
+        the <b class="highlight">transpose</b> of an
+        $m \times n$ matrix $A$
+        is an $n \times m$ matrix denoted by $A^\top$,
+        with $[ a_{ij} ]^\top = [ a_{ji} ]$.
+        <span class="fragment">
+            Clearly, $(A^\top)^\top = A$.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Matrix-vector product</h3>
+    <p>
+        We can also define the product of
+        a $2 \times 2$ matrix and a vector in $\mathbb{R}^2$.
+    </p>
+    <p class="fragment">
+        \[  
+            \begin{bmatrix}
+                a & b \\
+                c & d 
+            \end{bmatrix}
+            \,
+            \begin{bmatrix}
+                x \\ y
+            \end{bmatrix}
+            \;=\;
+            \begin{bmatrix}
+                ax + by \\
+                cx + dy
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        The two resulting entries are exactly
+        the dot product between the two rows
+        and the vector, respectively.
+    </p>
+    <div class="problem fragment">
+        Compute the matrix-vector product
+        \[  
+            \begin{bmatrix}
+                1 & 2 \\
+                3 & 4 
+            \end{bmatrix}
+            \,
+            \begin{bmatrix}
+                x \\ y
+            \end{bmatrix}
+        \]
+
+    </div>
+</section>
+<section>
+    <h3>Matrix-vector product</h3>
+    <p>
+        In general, we can multiply an $m \times n$ matrix
+        (left)
+        with a column vector in $\mathbb{R}^n$
+        (right)
+        via the formula
+        \[  
+            \begin{bmatrix}
+                a_{11} & \cdots & a_{1n} \\
+                \vdots & \ddots & \vdots \\
+                a_{m1} & \cdots & a_{mn} 
+            \end{bmatrix}
+            \begin{bmatrix}
+                x_1 \\ 
+                \vdots \\
+                x_n
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                a_{11} x_1 + \cdots + a_{1n} x_n \\
+                \vdots \\
+                a_{m1} x_1 + \cdots + a_{mn} x_n \\
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        The result is a column vector in $\mathbb{R}^m$.
+    </p>
+    <p class="fragment">
+        And the entries are exactly the dot products
+        between the rows of the matrix and the vector.
+    </p>
+    <p class="fragment">
+        This multiplication is only possible when
+        the number of columns the matrix (left) has
+        matches the number of entries in the vector (right).
+    </p>
+</section>
+<section>
+    <h3>Linearity</h3>
+    <p>
+        For a $m \times n$ matrix $A$,
+        a vector $\mathbf{v} \in \mathbb{R}^n$,
+        and a real number $r$, it is easy to verify that
+        \[
+            A (r \, \mathbf{v}) = r \, A \, \mathbf{v}.
+        \]
+        <span class="lowlight">
+            (The entries of the resulting vector are dot products)
+        </span>
+    </p>
+    <p class="fragment">
+        Similarly, for a $m \times n$ matrix $A$
+        and two vectors $\mathbf{u}, \mathbf{v} \in \mathbb{R}^n$,
+        we can also verify that
+        \[
+            A (\mathbf{u} + \mathbf{v}) = 
+            A \, \mathbf{u} \, + \, A \, \mathbf{v}
+        \]
+    </p>
+    <p class="fragment">
+        Therefore, the function
+        $\mathbf{v} \mapsto A \mathbf{v}$
+        is a <em class="highlight">linear function</em>.
+    </p>
+    <p class="fragment">
+        Indeed, we will show, later, that
+        <em>all</em> linear functions between
+        $\mathbb{R}^n$ to $\mathbb{R}^m$
+        can be represented by matrices-vector products in this way.
+    </p>
+</section>
+<section>
+    <h3>More algebraic properties</h3>
+    <p>
+        It is also easy to verify that
+        for two $m \times n$ matrices $A$ and $B$
+        and a vector $\mathbf{v} \in \mathbb{R}^n$,
+        \[
+            (A+B) \mathbf{v} = A \mathbf{v} + B \mathbf{v}.
+        \]
+    </p>
+    <p class="fragment">
+        Similarly,
+        \[
+            (-A) \mathbf{v} = -(A \mathbf{v}) = A(-\mathbf{v}).
+        \]
+    </p>
+</section>
+<section>
+    <h3>Non-commutativity</h3>
+    <p>
+        In a matrix-vector product,
+        the order in which we write the factors is very important:
+        For a $m \times n$ matrices $A$
+        and a vector $\mathbf{v} \in \mathbb{R}^n$,
+        \[
+            A \mathbf{x}
+        \]
+        makes sense (as we have defined).
+        However,
+        \[
+            \mathbf{x} A
+        \]
+        does <em class="highlight">not</em> make sense.
+    </p>
+    <div class="problem fragment">
+        Can you see why $\mathbf{x} A$ does not make sense?
+    </div>
+</section>
+<section>
+    <h3>Identity matrix</h3>
+    <p>
+        The $n \times n$ <b class="highlight">identity matrix</b>,
+        denoted $I_n$, is the matrix
+        \[
+            I_n = 
+            \begin{bmatrix}
+                1 &        & \\
+                & \ddots & \\
+                &        & 1
+            \end{bmatrix}.
+        \]
+        (missing entries are $0$'s)
+    </p>
+    <p class="fragment">
+        That is, it has $1$'s on the main diagonal and $0$'s elsewhere.
+    </p>
+    <p class="fragment">
+        It has the very special property that
+        \[
+            I_n \, \mathbf{v} = \mathbf{v}
+        \]
+        for any $\mathbf{v} \in \mathbb{R}^n$.
+        It plays the role of "1", in matrix-vector products.
+    </p>
+    <p class="fragment">
+        Whenever the dimension is clear from the context,
+        we simply use $I = I_n$,
+        an it is always assumed to be square.
+    </p>
+</section>
+<section>
+    <h3>Connections to linear functions</h3>
+    <p>
+        Matrices are nice containers for data
+        (they look like spreadsheets).
+    </p>
+    <p class="fragment">
+        But their real usefulness:
+        Connection to <em>linear functions</em>.
+    </p>
+    <p class="fragment">
+        As noted earlier, each $m \times n$ matrix $A$
+        defines a linear function $f : \mathbb{R}^n \to \mathbb{R}^m$
+        given by
+        \[
+            f(\mathbf{x}) = A \mathbf{x}.
+        \]
+    </p>
+    <p class="fragment lowlight small">
+        In mathematics, the terms
+        <em class="highlight">function</em>,
+        <em class="highlight">transformation</em>, and
+        <em class="highlight">map</em>
+        have similar meaning and are often used in inconsistent ways.
+        So you will often see people use "linear transformation"
+        or "linear map" instead.
+    </p>
+</section>
+<section>
+    <h3>All linear function</h3>
+    <p>
+        The converse is also true:
+        For every linear function $f : \mathbb{R}^n \to \mathbb{R}^m$,
+        there exists a <em>unique</em> $m \times n$ matrix $A$ such that
+        \[
+            f(\mathbf{x}) = A \mathbf{x}.
+        \]
+    </p>
+    <p class="lowlight small fragment">
+        This statement falls apart when we enter infinite dimensional vector spaces.
+    </p>
+    <div class="problem fragment">
+        Prove this statement. (Start with $n=2$ and $m=3$)
+    </div>
+    <p class="fragment">
+        That is, every linear function is associated with a unique matrix,
+        and every matrix is associated with a unique linear function.
+        Mathematicians call such special one-to-one correspondence
+        a <em>bijection</em>.
+    </p>
+    <p class="fragment">
+        There is no difference between
+        working with linear functions (important in applications)
+        and working with matrices (finite representation).
+    </p>
+    <div class="problem fragment">
+        Write down a matrix that defines the linear function
+        that rotates the plane ($\mathbb{R}^2$) counterclockwise by 90 degrees.
+    </div>
+</section>

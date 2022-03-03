@@ -19,7 +19,7 @@ the deeper discussion involved in each class meeting.
 * Lecture 5: [Inner product spaces](innerprod/)
 * Lecture 6: Things that can be considered as "vectors"
 * Lecture 7: [Linear/affine functions and regression models](regression/)
-* Lecture 8: Matrices as representations of linear functions
+* Lecture 8: [Matrices as representations of linear functions](matrices/)
 * Lecture 9: Algebraic operations involving matrices
 * Lecture 10: Matrices from applications
 * Lecture 11: Rank and inverse of matrices
