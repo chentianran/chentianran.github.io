@@ -1,0 +1,277 @@
+---
+layout: ilecture_only
+title: Matrix product
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Matrix-matrix products</h2>
+        <p class="small">
+            Multiplying matrices together
+        </p>
+    </div>
+    <p>
+        As a natural extension of matrix-vector product,
+        we now develop the rules for multiplying matrices together.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Review: Matrix-vector product</h3>
+    <p>
+        We saw how matrix-vector product is defined.
+        In particular,
+        \[  
+            \begin{bmatrix}
+                a & b \\
+                c & d 
+            \end{bmatrix}
+            \,
+            \begin{bmatrix}
+                x \\ y
+            \end{bmatrix}
+            \;=\;
+            \begin{bmatrix}
+                ax + by \\
+                cx + dy
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        The resulting entries are exactly
+        the dot product between the two rows
+        and the vector, respectively.
+    </p>
+    <p class="fragment">
+        \[  
+            \begin{bmatrix}
+                1 & 2 \\
+                3 & 4 
+            \end{bmatrix}
+            \,
+            \begin{bmatrix}
+                x \\ y
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                1 x + 2 y \\
+                3 x + 4 y
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        In general, for an $m \times n$ matrix
+        and a column vector in $\mathbb{R}^n$
+        \[  
+            \begin{bmatrix}
+                a_{11} & \cdots & a_{1n} \\
+                \vdots & \ddots & \vdots \\
+                a_{m1} & \cdots & a_{mn} 
+            \end{bmatrix}
+            \begin{bmatrix}
+                x_1 \\ 
+                \vdots \\
+                x_n
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                a_{11} x_1 + \cdots + a_{1n} x_n \\
+                \vdots \\
+                a_{m1} x_1 + \cdots + a_{mn} x_n \\
+            \end{bmatrix}
+        \]
+        The result is a column vector in $\mathbb{R}^m$.
+    </p>
+</section>
+<section>
+    <h3>Review: Matrix-vector product as linear functions</h3>
+    <p>
+        For every linear function $f : \mathbb{R}^n \to \mathbb{R}^m$,
+        there exists a <em>unique</em> $m \times n$ matrix $A$ such that
+        \[
+            f(\mathbf{x}) = A \, \mathbf{x}.
+        \]
+    </p>
+    <p class="fragment">
+        Indeed, matrix-vector products are exactly the representations
+        of linear functions between (finite-dimensional) vector spaces.
+    </p>
+    <p class="fragment">
+        This is the main reason that
+        define matrix-vector product in such a strange way.
+        <span class="fragment">
+            This is also why they are so useful.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>What about matrix-matrix products?</h3>
+    <p>
+        Can we multiply two matrices together?
+        <span class="fragment">
+            Answer: Yes... but only when their dimensions
+            match in a very special way.
+        </span>
+    </p>
+    <p class="fragment lowlight">
+        Note that here we use the word 
+        <b>dimension</b> for 
+        rows $\times$ columns,
+        which is <em>not</em> to be confused with
+        the <em>dimension</em> of a vector space.
+    </p>
+    <p class="fragment">
+        The definition of products of matrices appears complicated.
+        It is much easier to explain if we write matrices in terms of columns and rows.
+        
+    </p>
+    <p class="fragment">
+        For a $4 \times 2$ matrix $A$ and a $2 \times 3$ matrix $B$,
+        can we write
+        $B = [ \mathbf{b}_1 \; \mathbf{b}_2 \; \mathbf{b}_3]$,
+        where $\mathbf{b}_1,\mathbf{b}_2,\mathbf{b}_3$ are its three columns.
+        <span class="fragment">
+            Then
+            \[
+                AB =
+                A
+                \begin{bmatrix}
+                    \mathbf{b}_1 &
+                    \mathbf{b}_2 &
+                    \mathbf{b}_3
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                    A \mathbf{b}_1 &
+                    A \mathbf{b}_2 &
+                    A \mathbf{b}_3
+                \end{bmatrix}.
+            \]
+        </span>
+    </p>
+    <p class="fragment">
+        The product $AB$ is a $4 \times 3$ matrix.
+    </p>
+    <p class="fragment">
+        That is, the matrix-matrix product $AB$
+        can be understood as the the product
+        between $A$ and each of the columns of $B$.
+    </p>
+</section>
+<section>
+    <h3>General matrix-matrix product</h3>
+    <p>
+        In general, if $B$ has $\ell$ columns,
+        and we write
+        \[
+            B = 
+            \begin{bmatrix}
+                \mathbf{b}_1 &
+                \cdots &
+                \mathbf{b}_\ell
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        then the product $AB$ also has
+        $\ell$ columns and
+        \[
+            AB =
+            \begin{bmatrix}
+                A \mathbf{b}_1 &
+                \cdots &
+                A \mathbf{b}_\ell
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        We can see that for this definition to make sense,
+        the number of columns that $A$ has must match
+        the number of rows that $B$ has.
+    </p>
+    <p class="fragment">
+        That is, we can <em>only</em> multiply matrices of dimensions
+        \begin{align*}
+            m \; &\times \; n
+            &&\text{and} &
+            n \; &\times \; \ell
+        \end{align*}
+        (the two number in the middle must match,
+        otherwise the above definition is meaningless).
+    </p>
+    <p class="fragment">
+        The product $AB$ will be an $m \times \ell$ matrix,
+        <span class="fragment">
+            i.e., it has the same number of rows as $A$
+            and same number of columns as $B$.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <p>
+        Following the interpretation
+        \[
+            AB =
+            A
+            \begin{bmatrix}
+                \mathbf{b}_1 &
+                \cdots &
+                \mathbf{b}_\ell
+            \end{bmatrix}
+            \begin{bmatrix}
+                A \mathbf{b}_1 &
+                \cdots &
+                A \mathbf{b}_\ell
+            \end{bmatrix}.
+        \]
+        compute the following matrix-matrix product.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="problem">
+                Compute the matrix-matrix product
+                \[  
+                    \begin{bmatrix}
+                        1 & 2 \\
+                        3 & 4 \\
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        2 & 1 \\
+                        0 & 4 \\
+                    \end{bmatrix}.
+                \]
+            </div>
+        </div>
+        <div class="col">
+            <div class="problem">
+                Compute
+                \[  
+                    \begin{bmatrix}
+                        1 & 2 \\
+                        3 & 4 \\
+                        0 & 2
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        0 & 3 & 1 & 0\\
+                        1 & 2 & 0 & 4
+                    \end{bmatrix}.
+                \]
+            </div>
+        </div>
+    </div>
+    <p class="fragment">
+        Remember that
+        \begin{align*}
+            m \; &\times \; n
+            &&\text{times} &
+            n \; &\times \; \ell
+            &&\longrightarrow &
+            m \times \ell
+        \end{align*}
+    </p>
+</section>
