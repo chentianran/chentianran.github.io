@@ -127,7 +127,6 @@ title: Matrix product
     <p class="fragment">
         The definition of products of matrices appears complicated.
         It is much easier to explain if we write matrices in terms of columns and rows.
-        
     </p>
     <p class="fragment">
         For a $4 \times 2$ matrix $A$ and a $2 \times 3$ matrix $B$,
@@ -273,5 +272,317 @@ title: Matrix product
             &&\longrightarrow &
             m \times \ell
         \end{align*}
+    </p>
+</section>
+<section>
+    <h3>The dot product formula</h3>
+    <p>
+        Equivalently, we can also describe entries of
+        the product $AB$
+        as the dot product between rows of $A$
+        and columns of $B$.
+    </p>
+    <p class="fragment">
+        For example, if $A$ has 3 rows
+        and $B$ has 2 columns, we can write
+        \begin{align*}
+            A &= 
+            \begin{bmatrix}
+                \mathbf{a}_1^\top \\
+                \mathbf{a}_2^\top \\
+                \mathbf{a}_3^\top
+            \end{bmatrix}
+            &&\text{and} &
+            B &= 
+            \begin{bmatrix}
+                \mathbf{b}_1 &
+                \mathbf{b}_2
+            \end{bmatrix}
+        \end{align*}
+        <span class="lowlight">
+            Here the $(\,)^\top$ simply emphasize that
+            the vectors are row vectors.
+        </span>
+    </p>
+    <p class="fragment">
+        <span class="lowlight">
+            (Assuming $AB$ is defined)
+        </span>
+        Then $AB$ is a $3 \times 2$ matrix and 
+        \[
+            AB =
+            \begin{bmatrix}
+                \mathbf{a}_1 \cdot \mathbf{b}_1 &
+                \mathbf{a}_1 \cdot \mathbf{b}_2 \\
+                \mathbf{a}_2 \cdot \mathbf{b}_1 &
+                \mathbf{a}_2 \cdot \mathbf{b}_2 \\
+                \mathbf{a}_3 \cdot \mathbf{b}_1 &
+                \mathbf{a}_3 \cdot \mathbf{b}_2 \\
+            \end{bmatrix}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Entry formula</h3>
+    <p>
+        More formally, we can also express matrix-matrix product
+        in terms of the formula for individual entries.
+
+    </p>       
+    <p class="fragment">
+        Suppose $A$ is an $m \times n$ matrix
+        and $B$ is an $n \times \ell$ matrix
+        then the product $C = AB$ is an $m \times \ell$ matrix
+        whose entries are given by
+        \[
+            c_{ij} = \sum_{k=1}^n a_{ik} b_{kj}.
+        \]
+        Of course, this formula is completely equivalent to
+        what we explained above.
+        <span class="lowlight">
+            (Not telling us anything that we don't already know)
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Matching dimensions, again</h3>
+    <p>
+        It is worth emphasizing that for a matrix-matrix product to be defined,
+        the dimensions of the matrices must match in a specific way:
+        \[  
+            (m \times n) \;\text{ times }\; (n \times \ell)
+            \;\longrightarrow\;
+            (m \times \ell).
+        \]
+    </p>
+    <p class="fragment">
+        That is, for the matrix $AB$ to make sense,
+        the number of columns in $A$ must be exactly the number of rows in $B$.
+    </p>
+    <p class="fragment">
+        For example, the product
+        \[
+            \begin{bmatrix}
+                1 & 2 & 3 \\
+                4 & 5 & 6
+            \end{bmatrix}
+            \,
+            \begin{bmatrix}
+                2 & 4 & 6 \\
+                5 & 3 & 1
+            \end{bmatrix}
+        \]
+        is actually <em>NOT</em> defined.
+    </p>
+</section>
+<section>
+    <h3>Product notation</h3>
+    <p>
+        The matrix-matrix product
+        between $A$ and $B$ is simply 
+        \[
+            AB.
+        \]
+    </p>
+    <ul>
+        <li class="fragment">
+            $A \cdot B$ is not wrong, but usually avoided;
+        </li>
+        <li class="fragment">
+            $A \times B$ is never used.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Dot product as matrix-matrix product</h3>
+    <p>
+        If we consider row and column vectors as matrices
+        <em class="lowlight">
+            (matrices having only one row or one column),
+        </em>
+        then dot product are simply special cases of matrix-matrix product:
+        \[
+            \begin{bmatrix}
+                a & b & c
+            \end{bmatrix}
+            \,
+            \begin{bmatrix}
+                x \\ y \\ z
+            \end{bmatrix}
+            =
+            ax + by + cz
+        \]
+        looks just like the dot product.
+        <span class="lowlight">
+            Note that the vector on the left must be a row vector,
+            otherwise this "matrix-matrix" product is not defined.
+        </span>
+    </p>
+    <p class="fragment">
+        Therefore, the dot product between column vectors $\mathbf{u}$ and $\mathbf{v}$
+        can also be written as
+        \[
+            \mathbf{u} \cdot \mathbf{v}
+            =
+            \mathbf{u}^\top \mathbf{v}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Matrix product with the identity matrix</h3>
+    <p>
+        It is easy to see that
+        \[
+            \begin{bmatrix}
+                1 & 0 \\
+                0 & 1
+            \end{bmatrix}
+            \,
+            \begin{bmatrix}
+                a & b \\
+                c & d
+            \end{bmatrix}
+            \;=\;
+            \begin{bmatrix}
+                a & b \\
+                c & d
+            \end{bmatrix}
+        \]
+        That is, multiplication with the identity matrix
+        "does nothing".
+    </p>
+    <p class="fragment">
+        In general, for an $m \times n$ matrix $A$,
+        \[
+            I_m \, A = A
+        \]
+        <span class="lowlight">
+            (Here, $A$ does not have to be square, but $I_m$ is always square)
+        </span>
+    </p>
+    <p class="fragment">
+        Similarly, for an $m \times n$ matrix $A$,
+        \[
+            A \, I_n = A
+        \]
+    </p>
+    <p class="fragment">
+        Again, the identity matrix $I$ behave just like 1.
+        Indeed, it exactly the mirror image 1
+        in the world of matrices
+        <span class="lowlight">
+            (called <b>unity</b>).
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Algebraic properties</h3>
+    <p>
+        It is straightforward to verify that for matrices $A,B,C$,
+        \begin{align*}
+            IA &= A
+            &
+            (A+B)C &= AC + BC
+            &
+            (AB)C &= A(BC)
+            \\
+            AI &= A
+            &
+            A(B+C) &= AB + AC
+            &
+            (AB)^\top &= B^\top A^\top
+        \end{align*}
+        as long as their dimensions allow the products to be properly defined.
+    </p>
+    <p class="fragment">
+        Similarly, for a matrices $A,B$ and a vector $\mathbf{v}$
+        \begin{align*}
+            A(B\mathbf{v}) &= (AB) \mathbf{v}
+            &
+            (\mathbf{v}^\top A)B &= \mathbf{v}^\top (AB)
+        \end{align*}
+        as long as their dimensions allow these products to be properly defined.
+        <span class="lowlight">
+            (In particular, the vector $\mathbf{v}^\top$ in the second equation has to be a row vector).
+        </span>
+
+    </p>
+</section>
+<section>
+    <h3>What about commutativity?</h3>
+    <p>
+        A notable missing property is the "commutativity".
+    </p>
+    <div class="problem">
+        In general, can we expect
+        \[
+            A B = B A
+        \]
+        for two matrices $A$ and $B$?
+        Why?
+    </div>
+</section>
+<section>
+    <h3>Matrix power</h3>
+    <p>
+        For a <em class="highlight">square</em> matrix $A$,
+        its product with <em>itself</em> is well defined,
+        and naturally we use the notation
+        \[
+            A^2 = A A.
+        \]
+    </p>
+    <p class="fragment">
+        Similarly,
+        \[
+            A^3 = A A A.
+        \]
+    </p>
+    <p class="fragment">
+        In general, we use the notation
+        \[
+            A^d = \overbrace{A \cdots A}^d
+        \]
+        for any positive integer $d$.
+    </p>
+</section>
+<section>
+    <h3>Connection to functions</h3>
+    <p>
+        Recall that linear functions
+        <span class="lowlight">(a.k.a. transformations or maps)</span>
+        between (finite dimensional) vector spaces
+        are represented by matrices.
+    </p>
+    <p>
+        For example, suppose
+        $f : \mathbb{R}^2 \to \mathbb{R}^2$ and 
+        $g : \mathbb{R}^2 \to \mathbb{R}^2$ are both linear functions.
+        <span class="fragment">
+            Then there are $2 \times 2$ matrices $A$ and $B$ such that
+            \begin{align*}
+                f(\mathbf{x}) &= A \mathbf{x} &
+                &\text{and} &
+                g(\mathbf{x}) &= B \mathbf{x} &
+            \end{align*}
+        </span>
+    </p>
+    <p class="fragment">
+        And the function composition can be represented by matrix-matrix product
+        in the sense that
+        \[
+            g(f(\mathbf{x})) =
+            B(A(\mathbf{x})) =
+            (B A) \mathbf{x}.
+        \]
+    </p>
+    <p class="fragment">
+        That is, the product $BA$ is exactly the representation of the
+        function composition $g \circ f$.
+        <span class="fragment lowlight">
+            Note that the order in which we write down the factors
+            is consistent with their corresponding ordering in the function composition
+            but opposite of the order they are applied.
+        </span>
     </p>
 </section>
