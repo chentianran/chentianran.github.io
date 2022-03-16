@@ -1,3 +1,47 @@
+- nickname: draconian
+  title: Computing volumes of adjacency polytopes via draconian sequences
+  coauthors: Robert Davis, (I only made minor contributions)
+  journal: Electronic Journal of Combinatorics
+  pdf: draconian.pdf
+  arxiv: https://arxiv.org/abs/2007.11051
+  abstract: >
+    Adjacency polytopes of graphs appear naturally in the study of 
+    nonlinear emergent phenomenon in complex networks. 
+    The "type-PV" adjacency polytope, also known as a symmetric edge polytope, 
+    arises in the study of Kuramoto equations. 
+    The "type-PQ" adjacency polytope of the graph G, denote by $\nabla^{PQ}_G$, 
+    which is the focus of this work, encodes rich combinatorial information 
+    about power-flow solutions in sparse power networks 
+    that are studied in electric engineering.
+    Of particular importance is the normalized volume of such an adjacency polytope, 
+    which provides an upper bound on the number of distinct power-flow solutions.
+    In this article we show that the problem of computing normalized volumes 
+    for the type-PQ adjacency polytopes can be rephrased as the problem of 
+    counting $D(G)$-draconian sequences where $D(G)$ is a certain bipartite graph 
+    associated to the network. 
+    We provide recurrences for all networks with connectivity as most 1 and, 
+    for 2-connected graphs, we give, under an additional mild restriction, 
+    recurrences for subdividing an edge and taking the join of an edge 
+    with a new vertex. 
+    Together, these recurrences imply a simple, non-recursive formula 
+    for the normalized volume of $\nabla^{PQ}_G$ when $G$ is part of a large class of outerplanar graphs; 
+    we conjecture that the formula holds for all outerplanar graphs. 
+    Explicit formulas for several other (non-outerplanar) classes are given. 
+    Further, we identify several important classes of graphs G which are planar 
+    but not outerplanar worth additional study.
+  bibtex: |
+    @article{DavisChen2020Computing,
+      archivePrefix = {arXiv},
+      arxivId = {2007.11051},
+      journal = {Electronic Journal of Combinatorics},
+      author = {Robert Davis and Tianran Chen},
+      eprint = {2007.11051},
+      month = {jul},
+      title = {Computing Volumes of Adjacency Polytopes via Draconian Sequences},
+      url = {https://arxiv.org/abs/2007.11051},
+      year = {2022}
+    }
+
 - nickname: deep-linear
   title: The loss surface of deep linear networks viewed through the algebraic geometry lens
   coauthors: Dhagash Mehta, Tingting Tang and Jonathan D. Hauenstein

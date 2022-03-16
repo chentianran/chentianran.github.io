@@ -66,9 +66,16 @@ Grants
   \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
 - 2016--2019 AMS-Simons Travel Grant
 
-Recent talks
-------------
+News and recent talks
+---------------------
 
+- Together with Julia Lindberg and Rob Davis,
+  I am organizing a special session on
+  _Algebraic, Combinatorial, and Optimization Methods for Kuramoto and Power-flow Equations_
+  at the
+  [Spring Western Virtual Sectional Meeting](https://www.ams.org/meetings/sectional/2294_program.html)
+  May 14-15, 2022
+  (formerly at University of Denver)
 - [AMS Fall 2020 Eastern Virtual Sectional Meeting](https://www.ams.org/meetings/sectional/2278_program.html)
   October 3-4, 2020,  
   (formerly at Pennsylvania State University)  

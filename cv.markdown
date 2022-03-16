@@ -59,20 +59,30 @@ title: CV
 
 ### Teaching Experience
 
-|              |                                              |
-|--------------|----------------------------------------------|
-| 2016 to 2021 | Linear Algebra, Modern Algebra I, Modern Algebra II |
-|              | Mathematical modeling and simulation |
-|              | Pre-calculus, Calculus I,II, Multivariable calculus |
+|--------------|--------------------------------------------|
+| 2016 -- 2022 | Linear Algebra, Applied linear algebra,    |
+|              | Modern Algebra I, Modern Algebra II        |
+|              | Mathematical modeling and simulation       |
+|              | Calculus I,II, Multivariable calculus,     |
+|              | Pre-calculus.                              |
 |              | Differential equations, Numerical analysis |
-| 2012 to 2016 | Calculus sequence, Linear Algebra, Transition to Advanced Mathematics, Abstract algebra. |
-| 2006 to 2012 | Teaching Assistant for Calculus sequence |
+| 2012 -- 2016 | Calculus sequence, Linear Algebra          |
+|              | Transition to Advanced Mathematics         |
+|              | Abstract algebra.                          |
+| 2006 -- 2012 | Teaching Assistant for Calculus sequence   |
 
 ### Professional Services
-- (2019) Co-organizer for the Special Session on 
+
+- (2022) Co-organizer for the Special Session on
+  _Algebraic, Combinatorial, and Optimization Methods for
+  Kuramoto and Power-flow Equations_
+  at 2022 Spring Virtual Western Sectional Meeting
+  (formerly at University of Denver)
+  (May 14-15, 2022)
+- (2019) Co-organizer for the Special Session on
   _Applications of Algebraic Geometry_
   at 2019 AMS Spring Southeastern Sectional Meeting
-  (March 15-17, 2019) 
+  (March 15-17, 2019)
   Auburn University, Auburn, AL USA  
 - (2018) Co-organizer for the
   [Southern Regional Algebra Conference 2018 ](http://www.srac2018.org/).
