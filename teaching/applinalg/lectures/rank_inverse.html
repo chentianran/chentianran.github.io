@@ -1,0 +1,506 @@
+---
+layout: ilecture_only
+title: Matrix product
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Rank and inverse of matrices</h2>
+        <!-- <p class="small">
+        </p> -->
+    </div>
+    <p>
+        The "rank" of a matrix measures
+        the maximum number of linear independent rows or columns in the matrix,
+        and it is an important numerical quantity associated with a matrix.
+        Square matrices that have the maximum rank
+        have something called "inverse".
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Review: matrices</h3>
+    <p>
+        Recall that matrices are simply rectangular arrays of numbers.
+        E.g.,
+        \[  
+            \begin{bmatrix}
+                1 & 2 \\
+                3 & 5
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        Of course, things only become interesting when we
+        define sum and product between matrices
+        <span class="fragment">
+            and interpret matrices as representations of
+            linear functions between (finite dimensional) vector spaces.
+        </span>
+    </p>
+    <p class="fragment">
+        For example, the matrix above represents the linear function
+        \[
+            \begin{bmatrix}
+                x \\ y
+            \end{bmatrix}
+            \quad\mapsto\quad
+            \begin{bmatrix}
+                1 & 2 \\
+                3 & 5
+            \end{bmatrix}
+            \;
+            \begin{bmatrix}
+                x \\ y
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                1x + 2y \\
+                3x + 5y
+            \end{bmatrix},
+        \]
+        which sends vectors in the plane to vectors in the plane.
+    </p>
+</section>
+<section>
+    <h3>Column rank of a matrix</h3>
+    <div class="definition">
+        For a matrix $A$,
+        the maximal number of linearly independent <em>columns</em>
+        is known as the <b class="highlight">column rank</b>
+        of the matrix.
+    </div>
+    <p class="fragment lowlight smaller">
+        Note that there may be more than one way of choosing a
+        linearly independent subset of columns.
+        However, regardless of our choice, the maximum number of columns in such a
+        linearly independent subset of columns is always the same,
+        and this number is the column rank.
+    </p>
+    <p class="fragment">
+        For example,
+        we can see that the columns in
+        \[  
+            \begin{bmatrix}
+                1 & 2 \\
+                3 & 5
+            \end{bmatrix}
+        \]
+        i.e.,
+        \[  
+            \begin{bmatrix}
+                1 \\
+                3 
+            \end{bmatrix}
+            \;,\;
+            \begin{bmatrix}
+                2 \\
+                5
+            \end{bmatrix}
+        \]
+        form a linearly independent set.
+    </p>
+    <p class="fragment">
+        That is, we can find a set of <em class="highlight">two</em>
+        linearly independent columns.
+        <span class="fragment">
+            Therefore, the rank of this matrix is
+            <em class="highlight">2</em>.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <div class="problem">
+        Determine the column rank of the following matrices
+        \[
+            \begin{bmatrix}
+                1 & 0 \\
+                3 & 0
+            \end{bmatrix}
+            \;,\;
+            \begin{bmatrix}
+                1 & 2 \\
+                3 & 6
+            \end{bmatrix}
+            \;,\;
+            \begin{bmatrix}
+                1 & 2 & 0 \\
+                3 & 5 & 1
+            \end{bmatrix}
+        \]
+    </div>
+</section>
+<section>
+    <h3>Full column rank</h3>
+    <div class="definition">
+        A matrix whose column rank matches its number of columns
+        (i.e., reaching the maximum possible column rank)
+        is said to be of <b class="highlight">full column rank</b>.
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                Using the same example again,
+                \[  
+                    \begin{bmatrix}
+                        1 & 2 \\
+                        3 & 5
+                    \end{bmatrix}
+                \]
+                is of full column rank.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                But,
+                \[  
+                    \begin{bmatrix}
+                        1 & 2 \\
+                        3 & 6
+                    \end{bmatrix}
+                    \quad\text{and}\quad
+                    \begin{bmatrix}
+                        1 & 2 & 0 \\
+                        3 & 5 & 1
+                    \end{bmatrix}
+                \]
+                are <em class="highlight">not</em>
+                of full column rank.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        It is particularly important to understand
+        a $m \times n$ matrix with $m < n$
+        can never be of full <em>column</em> rank.
+        <span class="fragment">
+            E.g., a $3 \times 5$ matrix
+            can never be of full column rank.
+        </span>
+        <span class="fragment">
+            Can you see why?
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Row rank</h3>
+    <p>
+        Similarly, we can also derive a "rank"
+        from the number of linearly independent rows.
+    </p>
+    <div class="definition fragment">
+        For a matrix $A$,
+        the maximum number of linearly independent <em class="highlight">rows</em>
+        is known as the <b class="highlight">row rank</b> of the matrix.
+        <span class="fragment">
+            A matrix whose row rank matches its number of rows
+            (i.e., reaching the maximum possible row rank)
+            is said to be of <b class="highlight">full row rank</b>.
+        </span>
+    </div>
+    <div class="problem fragment">
+        Determine the rank of the following matrices
+        \[
+            \begin{bmatrix}
+                0 & 0 \\
+                0 & 0 \\
+            \end{bmatrix}
+            , \quad
+            \begin{bmatrix}
+                1 & 2 \\
+                2 & 4 \\
+            \end{bmatrix}
+            , \quad
+            \begin{bmatrix}
+                1 & 2 & 3 \\
+                4 & 5 & 6 \\
+                7 & 8 & 9 \\
+            \end{bmatrix}
+            , \quad
+            \begin{bmatrix}
+                1 & 2 & 3 \\
+                0 & 0 & 0 \\
+                2 & 4 & 6 \\
+                3 & 6 & 9 \\
+            \end{bmatrix}
+        \]
+    </div>
+</section>
+<section>
+    <h3>Rank of a matrix</h3>
+    <p>
+        It turns out, despite the rather different definitions,
+        the column rank and row rank of a matrix are always the same.
+    </p>
+    <div class="theorem fragment">
+        Given a matrix $A$, its column rank equals its row rank.
+    </div>
+    <p class="fragment">
+        One consequence is that $A$ and $A^\top$
+        have the same column/row ranks.
+    </p>
+    <p class="fragment">
+        Therefore, we simply call this number the
+        <b class="highlight">rank</b> of the matrix $A$
+        and use the notation $\operatorname{rank} A$.
+    </p>
+    <p class="fragment">
+        This turns out to be an important quantity of a matrix.
+        It tells us a great deal of information
+        about the corresponding linear function.
+    </p>
+</section>
+<section>
+    <h3>Rank, as a measurement of range</h3>
+    <p>
+        The rank of a matrix $A$ measures how "big"
+        is the range the associated linear function
+        $f(\mathbf{x}) = A \mathbf{x}$.
+    </p>
+    <p class="fragment">
+        That is, the rank of an $m \times n$ matrix $A$
+        is exactly the <em class="highlight">dimension</em> of the set
+        \[
+            \{ A \mathbf{x} \mid \mathbf{x} \in \mathbb{R}^n \}
+        \]
+    </p>
+    <p class="fragment">
+        For example, the function
+        \[
+            \begin{bmatrix}
+                x \\
+                y
+            \end{bmatrix}
+            \;\mapsto\;
+            \begin{bmatrix}
+                1 & 0 \\
+                0 & 0
+            \end{bmatrix}
+            \begin{bmatrix}
+                x \\
+                y
+            \end{bmatrix}
+        \]
+        "projects" the entire plane onto the $x$-axis
+        (horizontal axis).
+        <span class="fragment">
+            The rank of the matrix, i.e. the dimension of the range,
+            is therefore 1.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Full rank square matrices</h3>
+    <p>
+        A <em class="highlight">square</em> $n \times n$ matrix $A$
+        is said to be of <b class="highlight">full rank</b>
+        if its rank is $n$ (the maximum possible rank).
+    </p>
+    <p>
+        Full rank square matrices come in pairs
+        with a very special relationship.
+    </p>
+    <p class="fragment">
+        We will have to define a few new concepts firsts.
+    </p>
+</section>
+<section>
+    <h3>Inverse of a square matrix</h3>
+    <div class="definition">
+        For a <em>square</em> matrix $A$,
+        if there is a matrix $B$ of the same size such that
+        \[  
+            \begin{aligned}
+                AB &= I
+                &&\text{and} &
+                BA &= I
+            \end{aligned},
+        \]
+        then $B$ is called an <b class="highlight">inverse matrix</b> of $A$
+        (or simply an <b class="highlight">inverse</b> of $A$).
+    </div>
+    <p class="fragment">
+        It is important to note that some matrix
+        may not have an inverse at all.
+        An non-example is
+        \[
+            A =
+            \begin{bmatrix}
+                1 & 0 \\
+                0 & 0
+            \end{bmatrix}
+        \]
+        which has no inverse.
+    </p>
+    <p class="fragment">
+        If an inverse of a matrix does exist, then it must be unique.
+        <span class="fragment">
+            This is a nontrivial fact,
+            and we will explore the reasoning in other context.
+        </span>
+        <span class="fragment">
+            Therefore we say it is <em class="highlight">the</em>
+            inverse of that matrix.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Notation and adjectives</h3>
+    <p>
+        For a square matrix $A$,
+        we use the notation $A^{-1}$ for the inverse of $A$, if exists.
+    </p>
+    <p class="fragment">
+        In this case, we say $A$ is <b class="highlight">invertible</b>
+        (or <b class="highlight">nonsingular</b>).
+
+    </p>
+    <div class="fragment">
+        <p>The following descriptions are equivalent</p>
+        <ul>
+            <li>has an inverse: is invertible, is nonsingular</li>
+            <li>has no inverse: is not invertible, is singular</li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h3>A word about left/right inverses</h3>
+    <p>
+        Note that for square matrices,
+        we do not have to distinguish left and right inverses.
+    </p>
+    <div class="problem">
+        (Not as easy as it looks)
+        The definition of matrix inverse requires us to check both
+        $AB = I$ and $BA = I$ before we declare $B$ to be the inverse of $A$.
+        Do we have to check both directions?
+        Or will $AB = I$ automatically imply $BA = I$? Explain why.
+    </div>
+</section>
+<section>
+    <h3>Algebraic properties of matrix inverse</h3>
+    <p>
+        It is straightforward to verify the following:
+        \[  
+            \begin{aligned}
+                (A^{-1})^{-1} &= A &
+                (A^\top)^{-1} &= (A^{-1})^\top \\
+                (AB)^{-1} &= B^{-1} A^{-1} &
+                (A^n)^{-1} &= (A^{-1})^n.
+            \end{aligned}
+        \]
+        You should spend some time to explain why each one is true.
+    </p>
+</section>
+<section>
+    <h3>Invertible vs full rank</h3>
+    <p>
+        It turns out there is a simple description of invertible matrices:
+        they are exactly square matrices of full rank.
+    </p>
+    <div class="theorem fragment">
+        An $n \times n$ square matrix $A$ is invertible
+        if and only if
+        \[
+            \operatorname{rank} A = n,
+        \]
+        i.e., $A$ is of full rank.
+    </div>
+    <p class="fragment">
+        Can you see why this is true?
+    </p>
+    <p class="lowlight fragment">
+        It may be quite confusing that, in linear algebra,
+        there are multiple different ways of saying the same thing.
+        This is actually a feature, not a bug.
+        Indeed, we are barely scratching the surface here.
+        We will see at least 6 different ways of characterizing 
+        invertible matrices.
+    </p>
+</section>
+<section>
+    <h3>Inverse matrix and inverse function</h3>
+    <p>
+        For an $n \times n$ matrix $A$,
+        we can consider the linear function
+        $f : \mathbb{R}^n \to \mathbb{R}^n$ given by
+        \[ f(\mathbf{x}) = A \mathbf{x}. \]
+    </p>
+    <p>
+        If $A$ has an inverse $A^{-1}$,
+        then it is easy to verify that $f$ also has an inverse function,
+        and this inverse function is given by
+        \[
+            f^{-1}(\mathbf{x}) = A^{-1} \mathbf{x}.
+        \]
+    </p>
+</section>
+<section>
+    <h3>Exercises</h3>
+    <p>
+        Determine if the following matrices are invertible.
+        If yes, find the inverse matrices.
+        \[
+            \begin{aligned}
+                A &=
+                \begin{bmatrix}
+                    2 & 0 \\
+                    0 & 3
+                \end{bmatrix}
+                &
+                B &=
+                \begin{bmatrix}
+                    0 & 1 \\
+                    1 & 0
+                \end{bmatrix}
+                &
+                C &=
+                \begin{bmatrix}
+                    1 & 1 \\
+                    2 & 2
+                \end{bmatrix}
+            \end{aligned}
+        \]
+        \[
+            \begin{aligned}
+                D &=
+                \begin{bmatrix}
+                    2 & 0 & 0 \\
+                    0 & 3 & 0 \\
+                    0 & 0 & 4
+                \end{bmatrix}
+                &
+                E &=
+                \begin{bmatrix}
+                    0 & 1 & 0 \\
+                    1 & 0 & 0 \\
+                    0 & 0 & 1
+                \end{bmatrix}
+                &
+                F &=
+                \begin{bmatrix}
+                    1 & 1 & 1 \\
+                    2 & 2 & 2 \\
+                    3 & 3 & 3
+                \end{bmatrix}
+            \end{aligned}
+        \]
+    </p>
+</section>
+<section>
+    <h3>A word about determinant</h3>
+    <p>
+        Matrix determinant is a particularly useful tool
+        for determine if a matrix is invertible.
+        Indeed, it can also help us to compute the inverse matrix.
+    </p>
+    <p class="fragment">
+        However, in this course, we will not pay much attention to determinants.
+        This is intentional.
+    </p>
+</section>
