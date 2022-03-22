@@ -12,15 +12,15 @@ will _not_ have corresponding slides.
 Also, please be aware that the slides do not reflect
 the deeper discussion involved in each class meeting.
 
-* Lecture 1: [Vectors](vectors/)
-* Lecture 2: [Linear dependence/independence](independence/)
-* Lecture 3: [Span and subspaces](subspace/)
-* Lecture 4: [Basis and dimension of subspaces](basis/)
-* Lecture 5: [Inner product spaces](innerprod/)
-* Lecture 6: Things that can be considered as "vectors"
-* Lecture 7: [Linear/affine functions and regression models](regression/)
-* Lecture 8: [Matrices as representations of linear functions](matrices/)
-* Lecture 9: [Matrix-matrix products](matrixprod/)
+* Lecture 1:  [Vectors](vectors/)
+* Lecture 2:  [Linear dependence/independence](independence/)
+* Lecture 3:  [Span and subspaces](subspace/)
+* Lecture 4:  [Basis and dimension of subspaces](basis/)
+* Lecture 5:  [Inner product spaces](innerprod/)
+* Lecture 6:  Things that can be considered as "vectors"
+* Lecture 7:  [Linear/affine functions and regression models](regression/)
+* Lecture 8:  [Matrices as representations of linear functions](matrices/)
+* Lecture 9:  [Matrix-matrix products](matrixprod/)
 * Lecture 10: [Rank and inverse of matrices](rank_inverse/)
 * Lecture 11: Matrices from applications
 * Lecture 12: Different types of matrices
