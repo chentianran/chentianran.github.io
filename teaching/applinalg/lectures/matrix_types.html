@@ -1,0 +1,313 @@
+---
+layout: ilecture_only
+title: Types of matrices
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Types of matrices</h2>
+        <!-- <p class="small">
+        </p> -->
+    </div>
+    <p>
+        Matrices can be classified into a few general types
+        based on a variety of properties.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Classification of matrices</h3>
+</section>
+<section>
+    <h3>By size</h3>
+</section>
+<section>
+    <h3>Square matrices</h3>
+</section>
+<section>
+    <h3>Zero</h3>
+    <p>
+        The zero matrix, of any size,
+        is the matrix consists of only zero entries.
+    </p>
+    <p class="fragment">
+        E.g., a $2 \times 3$ matrix is
+        \[  
+            \begin{bmatrix}
+                0 & 0 & 0      \\
+                0 & 0 & 0
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        In general, a zero matrix is
+        <span class="lowlight">(dimension usually clear from context)</span>
+        \[
+            \mathbf{0} =
+            \begin{bmatrix}
+                0      & \cdots & 0      \\
+                \vdots & \ddots & \vdots \\
+                0      & \cdots & 0
+            \end{bmatrix}.
+        \]
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                Clearly,
+                \[
+                    \mathbf{0} + A = A + \mathbf{0} = A
+                \]
+                So it really behaves like the number "0"
+                in the world of matrices.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Similarly, as long as dimensions are matched correctly,
+                \[
+                    \mathbf{0} A = \mathbf{0}
+                \]
+                (Note that the two zero matrix here may not have the same dimension)
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Identity</h3>
+    <p>
+        As we have seen previously,
+        the $n \times n$ <b class="highlight">identity matrix</b>,
+        denoted $I_n$, is the matrix
+        \[
+            I_n = 
+            \begin{bmatrix}
+                1 &        & \\
+                & \ddots & \\
+                &        & 1
+            \end{bmatrix}.
+        \]
+        (missing entries are $0$'s)
+    </p>
+    <p class="fragment">
+        That is, it has $1$'s on the main diagonal and $0$'s elsewhere.
+    </p>
+    <p class="fragment">
+        Whenever the dimension is clear from the context,
+        we simply use $I = I_n$,
+        an it is always assumed to be square.
+    </p>
+    <p class="fragment">
+        It has the very special property that
+        \[
+            IA = A
+        \]
+        for any matrix $A$ as long as their dimensions match correctly.
+    </p>
+</section>
+<section>
+    <h3>Diagonal</h3>
+    <p>
+        A square matrix $A$ is said to be <b class="highlight">diagonal</b>
+        if all its nonzero entries are on the main diagonal
+        (upper left corner to lower right corner).
+        E.g.,
+        \[
+            \begin{bmatrix}
+                3 & 0 & 0 \\
+                0 & 4 & 0 \\
+                0 & 0 & 8 \\
+            \end{bmatrix}
+        \]
+        is a $3 \times 3$ diagonal matrix.
+    </p>
+    <p class="fragment">
+        It is okay for some diagonal entries to also be zero,
+        e.g.,
+        \[
+            \begin{bmatrix}
+                3 & 0 & 0 \\
+                0 & 0 & 0 \\
+                0 & 0 & 5 \\
+            \end{bmatrix}
+        \]
+        as we only require nonzero entries to be on the main diagonal.
+    </p>
+    <p class="fragment">
+        In general, we can write an $n \times n$ diagonal matrix as
+        \[
+            \begin{bmatrix}
+                d_1 & & \\
+                    & \ddots & \\
+                    &        & d_n
+            \end{bmatrix}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Triangular</h3>
+    <p>
+        A square matrix $A$ is said to be <b class="highlight">lower triangular</b>
+        if all its nonzero entries are on or below the main diagonal
+        E.g.,
+        \[
+            \begin{bmatrix}
+                3 & 0 & 0 \\
+                2 & 4 & 0 \\
+                1 & 6 & 8 \\
+            \end{bmatrix}
+        \]
+        is a $3 \times 3$ lower triangular matrix.
+    </p>
+    <p class="fragment">
+        Similarly,
+        \[
+            \begin{bmatrix}
+                3 & 2 & 1 \\
+                0 & 8 & 7 \\
+                0 & 0 & 6 \\
+            \end{bmatrix}
+        \]
+        is an <em>upper triangular</em> matrix.
+    </p>
+</section>
+<section>
+    <h3>Singular vs nonsingular</h3>
+    <p>
+        This is an important classification.
+        See our previous discussion for detail.
+    </p>
+</section>
+<!-- <section>
+    <h3>Unimodular</h3>
+</section> -->
+<section>
+    <h3>Symmetric</h3>
+    <div class="definition">
+        A square matrix $A$ (with real entries) is
+        a <b class="highlight">symmetric matrix</b> if
+        \[
+            A^\top = A
+        \]
+    </div>
+    <p class="fragment">
+        That is, a symmetric matrix remain unchanged if we take the transpose.
+    </p>
+    <p class="fragment">
+        Examples:
+        \begin{align*}
+            A &=
+            \begin{bmatrix}
+                3 & 1 \\
+                1 & 5
+            \end{bmatrix}
+            &
+            B &=
+            \begin{bmatrix}
+                3 & 1 & 9 \\
+                1 & 5 & 0 \\
+                9 & 0 & 6
+            \end{bmatrix}
+            &
+            C &=
+            \begin{bmatrix}
+                0 & 0 & 9 \\
+                0 & 0 & 0 \\
+                9 & 0 & 0
+            \end{bmatrix}
+        \end{align*}
+        are all symmetric matrices.
+    </p>
+    <p class="fragment">
+        Of course, square zero matrices, identity matrices, or diagonal matrices in general
+        are all naturally symmetric.
+    </p>
+</section>
+<section>
+    <h3>Creating symmetric matrices</h3>
+    <p>
+        Starting from any matrix $A$ (not necessary square),
+        we can create square <em>symmetric</em> matrices
+        \begin{align*}
+            & A^\top A
+            &&\text{and} &
+            &AA^\top
+        \end{align*}
+    </p>
+    <div class="problem fragment">
+        Verify that both of these matrices are indeed symmetric.
+    </div>
+    <p class="fragment">
+        The transformation $A \maps A^\top A$ (or $A A^\top$)
+        is a useful transformation used in many place.
+        <span class="fragment">
+            For example, we will see this in the construction of
+            <em>covariance matrix</em> in statistics/data analysis
+            or the <em>normal equation</em> in optimization.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Variations of symmetric matrices</h3>
+    <p>
+        There are also quite a few variations on the property of being "symmetric".
+    </p>
+    <ul>
+        <li class="fragment">
+            A matrix $A$ is said to be <em class="highlight">skew-symmetric</em>
+            if $A^\top = -A$.
+            E.g.,
+            \[
+                \begin{bmatrix}
+                    3 & -2 \\
+                    2 &  4
+                \end{bmatrix}
+            \]
+        </li>
+        <li class="fragment">
+            A matrix $A$ with complex entries is said to be <em class="highlight">Hermition</em>
+            if $\widebar{A}^\top = A$.
+            Here, the "bar" notation is the complex conjugation operation.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Orthogonal</h3>
+    <div class="definition">
+        A square matrix $Q$ (with real entries) is
+        an <b class="highlight">orthogonal matrix</b>
+        (a.k.a. <b class="highlight">orthonormal matrix</b>) if
+        \[
+            Q^\top Q = Q Q^\top = I
+        \]
+    </div>
+    <p class="fragment">
+        Basically, the columns (or rows) of an orthogonal matrix are unit vectors
+        that are orthogonal to one another
+        (have zero dot product with one another).
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                From the above equation,
+                we can see that
+                \[
+                    Q^{-1} = Q^\top.
+                \]
+                That is, an orthogonal matrix is always invertible,
+                and its transpose is also its inverse.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                We can also describe this the point of view of basis:
+                the column (or rows) of an orthogonal $n \times n$ matrix
+                form an orthonormal basis for $\mathbb{R}^n$.
+            </p>
+        </div>
+    </div>
+</section>
