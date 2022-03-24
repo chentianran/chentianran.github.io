@@ -12,6 +12,7 @@ title: Types of matrices
     <p>
         Matrices can be classified into a few general types
         based on a variety of properties.
+        These names allow us to talk about matrices in a more complex way.
     </p>
     <!-- <p>Tianran Chen</p> -->
     <!-- <p class="footnote2"> -->
@@ -21,21 +22,133 @@ title: Types of matrices
 </section>
 <section>
     <h3>Classification of matrices</h3>
+    <p>
+        We can classify matrices into families
+        sharing certain properties,
+        and we will name each family.
+    </p>
+    <p class="fragment">
+        These names allow us to talk about matrices
+        and their applications more efficiently.
+    </p>
+    <p class="fragment">
+        Depending on the property we focus on,
+        we can classify matrices differently.
+        We will discuss a few ways.
+    </p>
 </section>
 <section>
     <h3>By size</h3>
+    <p>
+        The most crude classification can be done
+        just by looking at the sizes (dimensions) of the matrices.
+    </p>
+    <ul class="fragment">
+        <li>
+            Square matrices
+        </li>
+        <li>Non-square matrices (everything else)</li>
+    </ul>
+    <p class="fragment">
+        We may want to further distinguish matrices
+        with more rows than columns or more columns than rows,
+        i.e.
+        \begin{align*}
+            &
+            \begin{bmatrix}
+                * & * \\
+                * & * \\
+                * & * \\
+                * & * \\
+            \end{bmatrix}
+            &&\text{vs.}
+            \begin{bmatrix}
+                * & * & * \\
+                * & * & * \\
+            \end{bmatrix}
+        \end{align*}
+        but there are no good names for them.
+    </p>
 </section>
 <section>
-    <h3>Square matrices</h3>
+    <h3>By sparsity</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                We also say a matrix is <em class="highlight">sparse</em>
+                if it contains "many" zero entries.
+            </p>
+            <p class="fragment">
+                The threshold (how many is "many") is inherently vague
+                and potentially subjective,
+                but it is nonetheless a very useful concept in computation.
+                E.g.,
+                \[
+                    \begin{bmatrix}
+                        3 & 0 & 0 & 0 \\
+                        0 & 0 & 2 & 0 \\
+                        0 & 0 & 0 & 0 \\
+                    \end{bmatrix}
+                \]
+                is a fairly sparse matrix.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Similarly, a matrix with "many" nonzero entries
+                are <em class="highlight">dense</em>.
+            </p>
+            <p class="fragment">
+                The threshold is equally vague or subjective,
+                yet it is just as useful.
+                E.g.,
+                \[
+                    \begin{bmatrix}
+                        3 & 2 & 1 & 0 \\
+                        5 & 3 & 2 & 9 \\
+                        2 & 1 & 0 & 8 \\
+                    \end{bmatrix}
+                \]
+                is quite dense.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>By rank</h3>
+    <p>
+        The rank of a matrix is an important numerical quantity
+        that convey some very useful information.
+    </p>
+    <p class="fragment">
+        The following matrices
+        \[
+            \begin{bmatrix}
+                1 & 2 & 2  \\
+                2 & 4 & 4 \\
+                2 & 4 & 4 \\
+            \end{bmatrix}
+            , \quad
+            \begin{bmatrix}
+                1 & 2 & 0  \\
+                2 & 4 & 5 \\
+                2 & 4 & 1 \\
+            \end{bmatrix}
+            , \quad
+            \begin{bmatrix}
+                1 & 2 & 3 \\
+                4 & 5 & 6 \\
+                7 & 8 & 0 \\
+            \end{bmatrix}
+        \]
+        are of rank 1, 2, and 3.
+    </p>
 </section>
 <section>
     <h3>Zero</h3>
     <p>
-        The zero matrix, of any size,
-        is the matrix consists of only zero entries.
-    </p>
-    <p class="fragment">
-        E.g., a $2 \times 3$ matrix is
+        A zero matrix is a matrix consists of only zero entries.
+        E.g.
         \[  
             \begin{bmatrix}
                 0 & 0 & 0      \\
@@ -72,10 +185,23 @@ title: Types of matrices
                 \[
                     \mathbf{0} A = \mathbf{0}
                 \]
-                (Note that the two zero matrix here may not have the same dimension)
+                (Note that the two zero matrices may not have the same dimension)
             </p>
         </div>
     </div>
+</section>
+<section>
+    <h3>Square matrices</h3>
+    <p>
+        In the family of square matrices have the most detailed and interesting 
+        classifications.
+        This is partly due to square matrices represents
+        functions from $\mathbb{R}^n$ to $\mathbb{R}^n$ itself.
+    </p>
+    <p>
+        All the classifications in the following slides
+        focus on square matrices.
+    </p>
 </section>
 <section>
     <h3>Identity</h3>
@@ -125,28 +251,34 @@ title: Types of matrices
         \]
         is a $3 \times 3$ diagonal matrix.
     </p>
-    <p class="fragment">
-        It is okay for some diagonal entries to also be zero,
-        e.g.,
-        \[
-            \begin{bmatrix}
-                3 & 0 & 0 \\
-                0 & 0 & 0 \\
-                0 & 0 & 5 \\
-            \end{bmatrix}
-        \]
-        as we only require nonzero entries to be on the main diagonal.
-    </p>
-    <p class="fragment">
-        In general, we can write an $n \times n$ diagonal matrix as
-        \[
-            \begin{bmatrix}
-                d_1 & & \\
-                    & \ddots & \\
-                    &        & d_n
-            \end{bmatrix}
-        \]
-    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                It is okay for some diagonal entries to also be zero,
+                e.g.,
+                \[
+                    \begin{bmatrix}
+                        3 & 0 & 0 \
+                        0 & 0 & 0 \
+                        0 & 0 & 5 \
+                    \end{bmatrix}
+                \]
+                as we only require nonzero entries to be on the main diagonal.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                In general, we can write an $n \times n$ diagonal matrix as
+                \[
+                    \begin{bmatrix}
+                        d_1 & & \\
+                            & \ddots & \\
+                            &        & d_n
+                    \end{bmatrix}
+                \]
+            </p>
+        </div>
+    </div>
 </section>
 <section>
     <h3>Triangular</h3>
@@ -242,7 +374,7 @@ title: Types of matrices
         Verify that both of these matrices are indeed symmetric.
     </div>
     <p class="fragment">
-        The transformation $A \maps A^\top A$ (or $A A^\top$)
+        The transformation $A \mapsto A^\top A$ (or $A A^\top$)
         is a useful transformation used in many place.
         <span class="fragment">
             For example, we will see this in the construction of
@@ -270,7 +402,7 @@ title: Types of matrices
         </li>
         <li class="fragment">
             A matrix $A$ with complex entries is said to be <em class="highlight">Hermition</em>
-            if $\widebar{A}^\top = A$.
+            if $\bar{A}^\top = A$.
             Here, the "bar" notation is the complex conjugation operation.
         </li>
     </ul>
@@ -307,7 +439,20 @@ title: Types of matrices
                 We can also describe this the point of view of basis:
                 the column (or rows) of an orthogonal $n \times n$ matrix
                 form an orthonormal basis for $\mathbb{R}^n$.
+                <span class="fragment">
+                    This is usually how orthogonal matrices are created.
+                </span>
             </p>
         </div>
+    </div>
+</section>
+<section>
+    <div class="problem">
+        Let $Q$ be an $n \times n$ orthogonal matrix.
+        Show the linear function
+        \[
+            f (\mathbf{x}) = Q \mathbf{x}
+        \]
+        preserves vector norm and angle between vectors.
     </div>
 </section>
