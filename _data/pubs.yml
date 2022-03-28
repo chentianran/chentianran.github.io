@@ -1,7 +1,8 @@
 - nickname: draconian
   title: Computing volumes of adjacency polytopes via draconian sequences
-  coauthors: Robert Davis, (I only made minor contributions)
-  journal: Electronic Journal of Combinatorics
+  coauthors: Robert Davis, (I made minor contributions)
+  journal: Electronic Journal of Combinatorics (2022)
+  link: https://doi.org/10.37236/9768
   pdf: draconian.pdf
   arxiv: https://arxiv.org/abs/2007.11051
   abstract: >
@@ -30,17 +31,20 @@
     Further, we identify several important classes of graphs G which are planar 
     but not outerplanar worth additional study.
   bibtex: |
-    @article{DavisChen2020Computing,
-      archivePrefix = {arXiv},
-      arxivId = {2007.11051},
-      journal = {Electronic Journal of Combinatorics},
+    @article{DavisChen2022Computing,
       author = {Robert Davis and Tianran Chen},
-      eprint = {2007.11051},
-      month = {jul},
+      doi = {10.37236/9768},
+      issn = {1077-8926},
+      issue = {1},
+      journal = {The Electronic Journal of Combinatorics},
+      month = {3},
+      pages = {P1.61-P1.61},
       title = {Computing Volumes of Adjacency Polytopes via Draconian Sequences},
-      url = {https://arxiv.org/abs/2007.11051},
-      year = {2022}
+      volume = {29},
+      url = {https://www.combinatorics.org/ojs/index.php/eljc/article/view/v29i1p61},
+      year = {2022},
     }
+
 
 - nickname: deep-linear
   title: The loss surface of deep linear networks viewed through the algebraic geometry lens
