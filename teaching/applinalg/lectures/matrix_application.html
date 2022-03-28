@@ -1,0 +1,394 @@
+---
+layout: ilecture_only
+title: Matrices from applications
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Matrices from applications</h2>
+        <p class="small">
+            Matrices from applications
+            in 2D and 3D graphics
+        </p>
+    </div>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Review: 2D linear transformations</h3>
+    <p>
+        We learned earlier that
+        linear transformations of the plane $\mathbb{R}^2$
+        can be presented by $2 \times 2$ matrices.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment center">
+                Scaling:
+                \[
+                    \begin{bmatrix}
+                        a & 0 \\
+                        0 & a
+                    \end{bmatrix}
+                \]
+                <span class="small">
+                    scales vectors uniformly
+                    by a factor of some positive factor $a$
+                </span>
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Scaling:
+                \[
+                    \begin{bmatrix}
+                        a & 0 \\
+                        0 & b
+                    \end{bmatrix}
+                \]
+                <span class="small">
+                    scales vectors by factor $a > 0$ in the $x$ direction
+                    and factor $b > 0$ in the $y$ direction.
+                </span>
+            </p>
+        </div>
+        <div class="col centering">
+            <p class="fragment center">
+                Rotation
+                \[
+                    \begin{bmatrix}
+                        \cos \theta & - \sin \theta \\
+                        \sin \theta &   \cos \theta
+                    \end{bmatrix}
+                \]
+                <span class="small">
+                    rotates vectors counterclockwise
+                    about the origin by the angle $\theta$.
+                </span>
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Reflection
+                \[
+                    \begin{bmatrix}
+                        -1 & 0 \\
+                         0 & 1
+                    \end{bmatrix}
+                \]
+                or
+                \[
+                    \begin{bmatrix}
+                         1 & 0 \\
+                         0 &-1
+                    \end{bmatrix}
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        These are all nonsingular matrices.
+        They can be combined via matrix-matrix product.
+    </p>
+</section>
+<section>
+    <h3>Scaling of $\mathbb{R}^3$</h3>
+    <p>
+        The matrices shown in the previous slide
+        can be generalized to the 3-dimensional space $\mathbb{R}^3$ easily.
+    </p>
+    <p class="fragment">
+        E.g., for $a,b,c > 0$, the matrix
+        \[
+            \begin{bmatrix}
+                a & 0 & 0 \\
+                0 & b & 0 \\
+                0 & 0 & c
+            \end{bmatrix}
+        \]
+        scales the $x,y,z$ components of a vector
+        by factors $a,b,c$, respectively,
+        in the sense that
+        \[
+            \begin{bmatrix}
+                a & 0 & 0 \\
+                0 & b & 0 \\
+                0 & 0 & c
+            \end{bmatrix}
+            \begin{bmatrix}
+                x \\ y \\ z
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                ax \\ by \\ cz
+            \end{bmatrix}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Reflection</h3>
+    <p>
+        Similarly, reflections along each axis
+        (over a coordinate plane) can be represented by
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p>
+               \[
+                    \begin{bmatrix}
+                        -1 &  0 &  0 \\
+                        0  &  1 &  0 \\
+                        0  &  0 &  1
+                    \end{bmatrix}
+                \]
+                long the $x$-axis
+                (i.e. over the $yz$-plane)
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                \[
+                    \begin{bmatrix}
+                         1  &  0 &  0 \\
+                         0  & -1 &  0 \\
+                         0  &  0 &  1
+                    \end{bmatrix}
+                \]
+                long the $y$-axis
+                (i.e. over the $xz$-plane)
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                \[
+                    \begin{bmatrix}
+                         1  &  0 &  0 \\
+                         0  &  1 &  0 \\
+                         0  &  0 & -1
+                    \end{bmatrix}
+                \]
+                long the $y$-axis
+                (i.e. over the $xz$-plane)
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        For example,
+        \[
+            \begin{bmatrix}
+                    1  &  0 &  0 \\
+                    0  & -1 &  0 \\
+                    0  &  0 &  1
+            \end{bmatrix}
+            \begin{bmatrix}
+                x \\ y \\ z
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                x \\ -y \\ z
+            \end{bmatrix}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Rotations</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                Rotations about the $x,y,z$ axis
+                can be represented by matrices
+                \begin{align*}
+                    R_x(\theta) &=
+                    \begin{bmatrix}
+                        1 & 0 & 0 \\
+                        0 & \cos\theta & -\sin\theta \\
+                        0 & \sin\theta &  \cos\theta \\
+                    \end{bmatrix}
+                    \\
+                    R_y(\theta) &=
+                    \begin{bmatrix}
+                         \cos\theta &0 &  \sin\theta \\
+                         0          &1 & 0 \\
+                         -\sin\theta &0 &  \cos\theta \\
+                    \end{bmatrix}
+                    \\
+                    R_z(\theta) &=
+                    \begin{bmatrix}
+                         \cos\theta & -\sin\theta & 0\\
+                         \sin\theta &  \cos\theta & 0\\
+                         0 & 0 & 1\\
+                    \end{bmatrix}
+                \end{align*}
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment lowlight small">
+                Here, we follow a "right-handed" coordinate system convention.
+                The signs will be different if a "left-handed" coordinate system
+                is used.
+            </p>
+            <p class="fragment">
+                These matrices are the basic building block of
+                computer graphs, robotics, and many other applications.
+                To learn more about this, read about "Euler angles".
+            </p>
+            <p class="fragment lowlight">
+                There is a complete different way for representing rotations
+                by using "quaternions".
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Exercise</h3>
+    <p>
+        Recall that the composition of multiple transformations described above
+        simply corresponds to multiplication of matrices.
+    </p>
+    <p class="fragment">
+        E.g., the composition of one transformation represented by $R_1$
+        followed by a transformation represented by $R_2$
+        (that is, $R_1$ first, then $R_2$)
+        is represented by the matrix product
+        \[
+            R_2 R_1
+        \]
+        <span class="lowlight">
+            (Notice the counterintuitive ordering)
+        </span>
+    </p>
+    <div class="problem fragment">
+        Find the matrix representation of the transformation
+        that is a reflection in the $x$-direction
+        (i.e. over the $yz$-plane)
+        followed by a rotation by $180^\circ$ about the $y$-axis.
+    </div>
+</section>
+<section>
+    <h3>A word about the orthogonal group</h3>
+    <p>
+        Among the transformations we saw so far,
+        the subset of transformations that
+        are "length-preserving" is of particular importance.
+    </p>
+    <div class="definition fragment">
+        The subset of $3 \times 3$ matrices
+        \[
+            \{ Q \;\mid\; \| Q \mathbf{x} \| = \| \mathbf{x} \| \}
+        \]
+        is called the <b class="highlight">orthogonal group</b>.
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                As expected, this group consists of
+                exactly the orthogonal matrices,
+                which are matrices satisfying the condition
+                that 
+                \[
+                    Q^\top Q = QQ^\top = I
+                \]
+            </p>
+            <!-- <p class="fragment">
+                That is, they are the matrices
+                whose inverses are their transposes.
+            </p> -->
+        </div>
+        <div class="col">
+            <p class="fragment">
+                It can be shown that
+                this group is "generated" by
+                rotations and reflections.
+                <span class="fragment">
+                    That is, each matrix in this group
+                    can be expressed as a product of
+                    rotations and reflections.
+                </span>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Homogeneous coordinates</h3>
+    <p>
+        In computer graphs, we don't just want to transform vectors,
+        we also want to apply <em>affine transformations</em> to points.
+    </p>
+    <img src="../bunnies.png" alt="Bunnies">
+    <p class="fragment">
+        The homogeneous coordinates unifies both vectors (directions)
+        and points (positions),
+        and it is a useful coordinate system for 3D graphics.
+    </p>
+</section>
+<section>
+    <h3>Homogeneous coordinates</h3>
+    <p>
+        A vector (direction)
+        $
+            \begin{bmatrix}
+                a \\ b \\ c
+            \end{bmatrix}
+            \in \mathbb{R}^3
+        $
+        is represented as
+        $
+            \begin{bmatrix}
+                a \\ b \\ c \\ 0
+            \end{bmatrix}
+        $
+    </p>
+    <p class="fragment">
+        A point in the 3D space
+        $
+            \begin{bmatrix}
+                x \\ y \\ z
+            \end{bmatrix}
+        $
+        is represented as
+        $
+            \begin{bmatrix}
+                x \\ y \\ z \\ 1
+            \end{bmatrix}
+        $
+    </p>
+    <p class="fragment">
+        Then both linear and affine transformations can be represented as
+        \[
+            \begin{bmatrix}
+                t_{11} & t_{12} & t_{13} & \Delta x \\
+                t_{21} & t_{22} & t_{23} & \Delta y \\
+                t_{31} & t_{32} & t_{33} & \Delta z \\
+                   0   &    0   &    0   & 1
+            \end{bmatrix}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Pinhole camera matrix</h3>
+    <p>
+        The homogenous coordinates can be defined for any dimension.
+        It is particularly convenient to write down matrix
+        representations for cameras using homogeneous coordinates.
+    </p>
+    <p class="fragment">
+        For example, a <em class="highlight">pinhole camera</em>
+        can be represented by the matrix
+        \[
+            \begin{bmatrix}
+                f & 0 & 0 \\
+                0 & f & 0 \\
+                0 & 0 & 1 \\
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="lowlight fragment">
+        This is one of the simplest models.
+        You can read more about "camera matrix models"
+        to a wide variety of matrix models for digital cameras
+        used in computer vision.
+    </p>
+</section>

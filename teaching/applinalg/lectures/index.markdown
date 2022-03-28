@@ -23,7 +23,7 @@ the deeper discussion involved in each class meeting.
 * Lecture 9:  [Matrix-matrix products](matrixprod/)
 * Lecture 10: [Rank and inverse of matrices](rank_inverse/)
 * Lecture 11: [Different types of matrices](matrix_types/)
-* Lecture 12: Matrices from applications
+* Lecture 12: [Matrices from applications](matrix_application/)
 * Lecture 13: Orthogonal group and special orthogonal group (optional)
 * Lecture 14: Systems of linear equations
 * Lecture 15: Least squares problem
