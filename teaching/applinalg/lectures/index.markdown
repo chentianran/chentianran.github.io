@@ -38,3 +38,4 @@ applications of things we learned.
 
 * Application 1: [Images and pixels](images/)
 * Application 2: [Sound signal](sound/)
+* Application 3: [Covariance matrices](matrix_cov/)
