@@ -1,0 +1,463 @@
+---
+layout: ilecture_only
+title: Stratified polyhedral homotopy
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h1 class="title">Stratified polyhedral homotopy</h1>
+        <p class="title">
+            Picking up witness sets on our way to isolated solutions
+        </p>
+    </div>
+    <p>Tianran Chen</p>
+    <p class="small">
+        Department of Mathematics and Computer Science<br>
+        Auburn University at Montgomery
+    </p>
+    <br/>
+    <p class="small">
+        April 5, 2022<br/>
+        School of Mathematics Algebra Seminar<br/>
+        Georgia Institute of Technology
+    </p>
+</section>
+<section>
+    <h3>Polynomial systems</h3>
+    <p>
+        \[
+            F(x,y) =
+            \left\{
+                \begin{aligned}
+                    1 + 2 x y + 3 x y^2   + 4 x^4 y^3 \\
+                    5 + 3 x y + 2 x^2 y^2 + x^3 \\
+                \end{aligned}
+            \right.
+        \]
+    </p>
+</section>
+<section>
+    <h3>Laurent polynomial systems</h3>
+    <p>
+        Polynomial systems with potentially negative integral exponents. E.g.,
+        \[
+            F(x,y) =
+            \left\{
+                \begin{aligned}
+                    1 + 2 x y + 3 x^{\color{red}{-1}} y^2 + 4 x^4 y^3 \\
+                    5 + 3 x y + 2 x^{\color{red}{-3}} y^2 + x^2 y^{\color{red}{-2}} \\
+                \end{aligned}
+            \right.
+        \]
+    </p>
+    <p class="fragment">
+        We are interested in the zero set of $F$ in $(\mathbb{C}^*)^2$, i.e.,
+        \[
+            \mathcal{V}^*(F) := \{ (x,y) \in \mathbb{C}^2, x,y \ne 0 \mid F(x,y) = (0,0) \}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Solution components</h3>
+    <p>
+        $\mathcal{V}^*(F)$ has the structure of a <em>very affine variety</em>.
+    </p>
+    <p class="fragment">
+        It consists of components with well defined dimensions:
+        \[
+            \mathcal{V}^* (F) = V_0 \cup V_1 \cup \cdots \cup V_n
+        \]
+        where each $V_d$ is pure $d$-dimensional.
+    </p>
+    <div class="fragment">
+        <p>Two classes of problems:</p>
+        <ul>
+            <li>
+                Zero dimensional:
+                <span class="fragment">
+                    $V_0$ consists of a finite number of points.
+                    How to find/approximate all of them?
+                </span>
+            </li>
+            <li>
+                Positive dimension:
+                <span class="fragment">
+                    For $V_1,\ldots,V_n$, how to compute
+                    reasonable/useful representations?
+                </span>
+            </li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h3>The zero dimensional problem</h3>
+    <p>
+        The problem of computing isolated $\mathbb{C}^*$-zeros
+        of a Laurent polynomial system $F(x_1,\ldots,x_n)$.
+    </p>
+    <ul class="fragment">
+        <li>Symbolic methods: ......</li>
+        <li>
+            Numerical methods:
+            <ul class="fragment">
+                <li>Eigenvalue methods</li>
+                <li>Optimization methods</li>
+                <li>Homotopy methods
+                    <ul class="fragment">
+                        <li>Total degree/multi-homogeneous homotopy</li>
+                        <li>Regeneration methods</li>
+                        <li>Monodromy methods</li>
+                        <li>Polyhedral homotopy</li>
+                        <li>......</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Homotopy continuation methods</h3>
+    <p>
+        Most homotopy methods works through a continuous deformation
+        \[
+            H(\mathbf{x},t) =
+            H(x_1,\dots,x_n,t) : \mathbb{C}^n \times [0,1] \to \mathbb{C}^n
+        \]
+        such that
+    </p>
+    <ul>
+        <li class="fragment">
+            $H(\mathbf{x},0) \equiv F(\mathbf{x})$ (the target system)
+        </li>
+        <li class="fragment">
+            $H(\mathbf{x},1) \equiv \; \text{An ``easy'' system}$
+        </li>
+        <li class="fragment">
+            $H(\mathbf{x},t) = \; \text{A deformation between the two}$
+        </li>
+    </ul>
+    <p class="fragment">
+        The isolated solutions also move smoothly as $t$ goes from 1 to 0,
+        forming smooth "solution paths" that lead us to the zeros of $F$.
+    </p>
+    <p class="fragment">
+        We focus on the <b>polyhedral homotopy</b> of Huber and Sturmfels.
+    </p>
+</section>
+<section>
+    <h3>The polyhedral homotopy of Huber and Sturmfels</h3>
+    <p class="small">
+        Huber & Sturmfels. (1995).
+        <em>A polyhedral method for solving sparse polynomial systems.</em>
+        Mathematics of Computation, 64 (212), 1541-1555.
+    </p>
+    <p class="fragment">
+        To find the isolated zeros of 
+        \[
+            F(x_1,x_2) = 
+            \left\{
+            \begin{aligned}
+                a_0 + a_1 x_1^1 x_2^2 + a_2 x_1^2 x_2^1 \\
+                b_0 + b_1 x_1^2 + b_2 x_2^2 + b_3 x_1^2 x_2^2 
+            \end{aligned}
+            \right.
+        \]
+        with generic coefficients $\{ a_i, b_i \}$,
+        <span class="fragment">
+            we consider the deformation
+            \[
+                H(x_1,x_2,\color{red}{t}) = 
+                \left\{
+                \begin{aligned}
+                    a_0             \color{red}{e^{-\omega_1 M t}} + 
+                    a_1 x_1^1 x_2^2 \color{red}{e^{-\omega_2 M t}} + 
+                    a_2 x_1^2 x_2^1 \color{red}{e^{-\omega_3 M t}} \\
+                    b_0             \color{red}{e^{-\omega_4 M t}} + 
+                    b_1 x_1^2       \color{red}{e^{-\omega_5 M t}} + 
+                    b_2 x_2^2       \color{red}{e^{-\omega_6 M t}} + 
+                    b_3 x_1^2 x_2^2 \color{red}{e^{-\omega_7 M t}} 
+                \end{aligned}
+                \right.
+            \]
+            for generic $\omega_1,\ldots,\omega_7 \in \mathbb{Q}^+$
+            and a sufficiently large $M > 0$.
+        </span>
+        <span class="fragment lowlight smaller">
+            This formulation is given in
+            <em>Kim & Kojima (2004). Numerical Stability of Path Tracing in Polyhedral Homotopy Continuation Methods.</em>
+            Computing, 73 (4), 329-348.
+            and
+            Lee, Li, Tsai (2008).
+            <em>HOM4PS-2.0: A software package for solving polynomial systems by the polyhedral homotopy continuation method.</em>
+            Computing, 83(2-3), 109-133.
+        </span>
+    </p>
+    <div class="equgroup">
+        <span class="fragment">
+            $H(x_1,x_2,0) \equiv F(x_1,x_2)$
+        </span>
+        <span class="fragment">
+            $H(x_1,x_2,1) \approx F \text{ at its ``toric limit''}$
+        </span>
+    </div>
+</section>
+<section>
+    <h3>Numerical algebraic geometry through "witness sets"</h3>
+    <blockquote>
+        <p>
+            NAG is concerned with
+            numerical computations of <span class="highlight">objects</span> connected with
+            algebraic sets defined over subfields of the complex numbers.
+            <!-- Some examples of such objects include solution sets and irreducible decom- -->
+        </p>
+    </blockquote>
+    <p class="smaller">
+        Hauenstein, J. and Sommese, A. (2017).
+        <em>What is numerical algebraic geometry?</em>
+        Journal of Symbolic Computation, 79, 499-507.
+    </p>
+    <p class="fragment">
+        Here, "objects" = irreducible decompositions,
+        and "subfield" = $\mathbb{C}$.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                "Witness sets" are the standard data structure
+                for representing algebraic sets in NAG.
+            </p>
+            <p class="fragment">
+                They are generic linear slices of algebraic sets.
+                <span class="lowlight small">
+                    (From classical studies of linear sections
+                    of algebraic sets)
+                </span>
+                <span class="lowlight smaller">
+                    Beltrametti & Sommese. (1995).
+                    <em>The adjunction theory of complex projective varieties (Vol. 16)</em>.
+                    Walter de Gruyter.
+                </span>
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                For a $d$-dimensional algebraic set,
+                <!-- a witness set is -->
+                \[
+                    \text{A witness set: }
+                    (W,F,L)
+                \]
+                where $W$ is the (0-dimensional) zero set of system $(F,L)$
+                and $L$ is a system of linear polynomials.
+                <span class="smaller">
+                    Sommese & Verschelde. (2000).
+                    <em>Numerical homotopies to compute generic points on positive dimensional algebraic sets</em>.
+                    Journal of Complexity, 16(3), 572-602.
+                </span>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="cols">
+        <div class="col">
+            <p>For example,</p>
+            <img src="surface_slice.png" alt="Linear slice of a surface">
+            <p class="small">
+                (This is just the real picture)
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                The added linear polynomials have
+                generic complex coefficients.
+                <span class="lowlight small">
+                    (More refined parametrization should use Grassmannian).
+                </span>
+            </p>
+            <p class="fragment">
+                Witness sets contain enough information
+                for computing other interesting objects/properties...
+            </p>
+            <!-- <br/> -->
+            <p class="fragment">
+                ...and they are the basic building blocks
+                for many higher level algorithms in NAG.
+            </p>
+            <!-- <br/> -->
+            <p class="fragment">
+                We are mainly interested in witness sets
+                for algebraic sets with <em>reduced</em> components...
+                <span class="fragment">
+                    ...in which case witness sets consists of
+                    nonsingular isolated zeros.
+                </span>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>The two problems</h3>
+    <p>
+        For (Laurent) polynomial systems
+        \[
+            F(x_1,\ldots,x_n) = \mathbf{0}
+        \]
+        we have to different problems:
+    </p>
+    <div class="cols">
+        <div class="col">
+            <h4>0-dimensional zeros</h4>
+            <p class="fragment">
+                Polyhedral homotopy can find all 0-dimensional $\mathbb{C}^*$-zeros efficiently.
+            </p>
+        </div>
+        <div class="col">
+            <h4>Positive-dimensional sets</h4>
+            <p class="fragment">
+                They are represented by "witness sets",
+                a special type of sample set.
+            </p>
+        </div>
+    </div>
+    <p class="fragment center">
+        Can they be unified?
+    </p>
+    <p class="fragment">
+        One approach: Use polyhedral homotopy to compute "tropism"
+        and asymptotic approximations of 1-dimensional components (curves).
+        <br/>
+        <span class="smaller">
+            Verschelde, J. (2009).
+            <em>Polyhedral methods in numerical algebraic geometry</em>.
+            Contemporary Mathematics, 496, 243.
+        </span>
+    </p>
+    <br/>
+    <p class="fragment center">
+        Alternative: Polyhedral homotopy actually does both!
+    </p>
+</section>
+<section>
+    <h3>A trivial example</h3>
+    <p>
+        Consider 
+        \[
+            F(x_1,x_2) =
+            \left\{
+            \begin{aligned}
+                (x_1^2 + x_2^2 - 9)(x_1 + x_2 - 3) \\
+                (x_1^2 + x_2^2 - 9)(x_1 - x_2 - 1)
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <p class="fragment">
+        Or equivalently 
+        \[
+            F(x_1,x_2) =
+            \left\{
+            \begin{aligned}
+                x_1^3 + x_1^2 x_2 - 3x_1^2 + x_1 x_2^2 + x_2^3 - 3x_2^2 - 9x_1 - 9x_2 + 27 \\
+                x_1^3 - x_1^2 x_2 - 1x_1^2 + x_1 x_2^2 - x_2^3 - 1x_2^2 - 9x_1 + 9x_2 + 9.
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <br/>
+    <p class="fragment center">
+        Can we find $V_0$ and sample points for $V_1$?
+        <span class="fragment">
+            At the same time?
+        </span>
+    </p>
+    <br/>
+    <p class="fragment lowlight small">
+        The standard polyhedral homotopy can already reach $V_0$ and $V_1$,
+        for this example.
+        In general, it is not known if polyhedral homotopy can
+        always find smooth points in positive dimensional components.
+    </p>
+</section>
+<section>
+    <h3>Standard polyhedral homotopy</h3>
+    <p>
+        \[
+            F(x_1,x_2) =
+            \left\{
+            \begin{aligned}
+                x_1^3 + x_1^2 x_2 - 3x_1^2 + x_1 x_2^2 + x_2^3 - 3x_2^2 - 9x_1 - 9x_2 + 27 \\
+                x_1^3 - x_1^2 x_2 - 1x_1^2 + x_1 x_2^2 - x_2^3 - 1x_2^2 - 9x_1 + 9x_2 + 9.
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <p class="fragment">
+        \[ \uparrow \]
+        \[
+            H (x_1,x_2, t) =
+            \left\{
+            \begin{aligned}
+                ((1-t) 1 + t \color{purple}{c_{11}^*}) x_1^3 &+ ((1-t) \quad 1\;\; + t \color{purple}{c_{12}^*}) x_1^2 x_2 + \cdots \\
+                ((1-t) 1 + t \color{purple}{c_{21}^*}) x_1^3 &+ ((1-t) (-1) + t \color{purple}{c_{22}^*}) x_1^2 x_2 + \cdots 
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <p class="fragment">
+        \[ \uparrow \]
+        \[
+            H_0 (x_1,x_2, t) =
+            \left\{
+            \begin{aligned}
+                \color{purple}{c_{11}^*} x_1^3 \color{red}{e^{-\omega_{11} M t}} + \color{purple}{c_{12}^*} x_1^2 x_2 \color{red}{e^{-\omega_{12} M t}} + \cdots \\
+                \color{purple}{c_{11}^*} x_1^3 \color{red}{e^{-\omega_{21} M t}} + \color{purple}{c_{12}^*} x_1^2 x_2 \color{red}{e^{-\omega_{22} M t}} + \cdots 
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <p class="fragment center">
+        \[ \uparrow \]
+        <span>
+            Binomial systems
+        </span>
+    </p>
+    <p class="fragment center">
+        All isolated $\mathbb{C}^*$-zeros can be reached.
+    </p>
+</section>
+<section>
+    <div class="equgroup">
+        <span>System at toric $\infty$</span>
+    </div>
+</section>
+<section>
+    <h3>A slightly less trivial example</h3>
+</section>
+<section>
+    <h3>Rank $r$ sample sets</h3>
+</section>
+<section>
+    <h3>Stratified polyhedral homotopy method</h3>
+</section>
+<section>
+    <h3>How it works</h3>
+</section>
+<section>
+    <h3></h3>
+</section>
+<section>
+    <h3></h3>
+</section>
+<section>
+    <h3>GPU accelerated implementation</h3>
+</section>
+<section>
+    <h3></h3>
+</section>
+<section>
+    <h3></h3>
+</section>
+<section>
+    <h3></h3>
+</section>
