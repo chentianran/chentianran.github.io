@@ -125,6 +125,10 @@ div.problem:before {
 .col {
   flex: 1;
   padding: 0 15px; }
+  
+.tightcol {
+  flex: 1;
+  padding: 0 0px; }
 
 .center {
   text-align: center;
