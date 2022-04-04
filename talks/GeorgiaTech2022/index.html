@@ -35,6 +35,17 @@ title: Stratified polyhedral homotopy
             \right.
         \]
     </p>
+    <p class="fragment center">
+        <br/>
+        <br/>
+        Fundamental to algebraic geometry
+        and has broad applications.
+    </p>
+    <p class="fragment center">
+        <br/>
+        <br/>
+        We are interested in studying their zero sets.
+    </p>
 </section>
 <section>
     <h3>Laurent polynomial systems</h3>
@@ -50,10 +61,44 @@ title: Stratified polyhedral homotopy
             \right.
         \]
     </p>
-    <p class="fragment">
+    <!-- <p class="fragment">
         We are interested in the zero set of $F$ in $(\mathbb{C}^*)^2$, i.e.,
         \[
             \mathcal{V}^*(F) := \{ (x,y) \in \mathbb{C}^2, x,y \ne 0 \mid F(x,y) = (0,0) \}
+        \]
+    </p> -->
+    <p class="fragment">
+        In general, a (square) Laurent polynomial system $F = (f_1,\ldots,f_n)$:
+        \[
+            f_i (x_1,\ldots,x_n) =
+            f_i (\mathbf{x}) =
+            \sum_{\mathbf{a} \in S_i} c_{i,\mathbf{a}} \, \mathbf{x}^{\mathbf{a}}
+            \quad
+            \text{for } i = 1,\ldots,n
+        \]
+        where $S_i \subset \mathbb{Z}^n$
+        are the <em class="highlight">supports</em>,
+        and
+        \[
+            \mathbf{x}^{\mathbf{a}} = 
+            (x_1,\ldots,x_n)^{
+                \left[
+                \begin{smallmatrix}
+                    a_1 \\ \vdots \\ a_n
+                \end{smallmatrix}
+                \right]
+            }
+            =
+            x_1^{a_1} \cdots x_n^{a_n}
+        \]
+    </p>
+    <p class="fragment">
+        We are interested in its zero set in
+        $(\mathbb{C}^*)^n = (\mathbb{C} \setminus \{0\})^n$:
+        \[
+            \mathcal{V}^*(F) := \{
+                \mathbf{x} \in (\mathbb{C}^*)^n \mid F(\mathbf{x}) = \mathbf{0}
+            \}
         \]
     </p>
 </section>
@@ -71,22 +116,22 @@ title: Stratified polyhedral homotopy
     </p>
     <div class="fragment">
         <p>Two classes of problems:</p>
-        <ul>
-            <li>
-                Zero dimensional:
-                <span class="fragment">
-                    $V_0$ consists of a finite number of points.
+        <div class="cols">
+            <div class="col">
+                <h4>Zero dimensional</h4>
+                <p class="fragment">
+                    $V_0$ consists of a finite number of isolated points.
                     How to find/approximate all of them?
-                </span>
-            </li>
-            <li>
-                Positive dimension:
+                </p>
+            </div>
+            <div class="col".col>
+                <h4>Positive dimension</h4>
                 <span class="fragment">
                     For $V_1,\ldots,V_n$, how to compute
-                    reasonable/useful representations?
+                    reasonable/useful finite representations?
                 </span>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </section>
 <section>
@@ -147,7 +192,7 @@ title: Stratified polyhedral homotopy
 <section>
     <h3>The polyhedral homotopy of Huber and Sturmfels</h3>
     <p class="small">
-        Huber & Sturmfels. (1995).
+        Huber and Sturmfels. (1995).
         <em>A polyhedral method for solving sparse polynomial systems.</em>
         Mathematics of Computation, 64 (212), 1541-1555.
     </p>
@@ -184,10 +229,10 @@ title: Stratified polyhedral homotopy
         </span>
         <span class="fragment lowlight smaller">
             This formulation is given in
-            <em>Kim & Kojima (2004). Numerical Stability of Path Tracing in Polyhedral Homotopy Continuation Methods.</em>
+            <em>Kim and Kojima (2004). Numerical Stability of Path Tracing in Polyhedral Homotopy Continuation Methods.</em>
             Computing, 73 (4), 329-348.
             and
-            Lee, Li, Tsai (2008).
+            Lee, Li, and Tsai (2008).
             <em>HOM4PS-2.0: A software package for solving polynomial systems by the polyhedral homotopy continuation method.</em>
             Computing, 83(2-3), 109-133.
         </span>
@@ -212,9 +257,12 @@ title: Stratified polyhedral homotopy
         </p>
     </blockquote>
     <p class="smaller">
-        Hauenstein, J. and Sommese, A. (2017).
+        Hauenstein and Sommese. (2017).
         <em>What is numerical algebraic geometry?</em>
         Journal of Symbolic Computation, 79, 499-507.
+        <br/>
+        Sommese and Wampler. (2005).
+        <em>The numerical solution of systems of polynomials arising in engineering and science.</em>
     </p>
     <p class="fragment">
         Here, "objects" = irreducible decompositions,
@@ -738,6 +786,26 @@ title: Stratified polyhedral homotopy
     </p>
 </section>
 <section>
+    <div class="theorem">
+        For generic choices of $C^*$ and $\Lambda$,
+        the zero set of $H$ in $(\mathbb{C}^*)^n \times (0,1]$,
+        given by
+        \[
+            H^{(1)}(\mathbf{x},t_1) =
+            (C + \Lambda \operatorname{diag}(t_1,1,\ldots,1) C^*)
+            \, (\mathbf{x}^A \circ e^{-M t_0 \boldsymbol{\omega}} )^\top
+        \]
+        consists of finitely many smooth paths
+        emanating from the nonsingular isolated solutions of
+        $H^{(1)}(\mathbf{x},1)$
+        <!-- $\V^*_0( F^{(d)}_\square )$ at $t=1$, -->
+        and the set of limit points $X$ of these paths in $(\mathbb{C}^*)^n$ as $t \to 0$
+        contains at least one point
+        from each reduced irreducible $(n-1)$-dimensional component of
+        $\mathcal{V}^*(F)$.
+    </div>
+</section>
+<section>
     <h3>The big picture</h3>
     <p>
         To sample all reduced irreducible components
@@ -853,18 +921,242 @@ title: Stratified polyhedral homotopy
             contains all nonsingular isolated $\mathbb{C}^*$-zeros.
         </li>
     </ul>
+    <p class="fragment center">
+        Sample sets of reduced $\mathbb{C}^*$-components are computed
+        as by-products.
+    </p>
 </section>
 <section>
-    <h3>How it works</h3>
+    <h3>The algorithm</h3>
+    <img src="algo31.png" alt="Algorithm 3.1">
+    <ul class="small">
+        <li class="fragment">
+            Input: Laurent polynomial system, generic lifting, ......
+        </li>
+        <li class="fragment">
+            Output: sample sets $W_n,\ldots,W_0$ such that
+            $W_d$ is in the $d$-dimensional component
+            and contains at least one point from each reduced irreducible component.
+        </li>
+        <li class="fragment">
+            Complexity: linear in the normalized volume of the Newton polytope.
+        </li>
+    </ul>
 </section>
 <section>
-    <h3></h3>
+    <h3>Combined homotopy</h3>
+    <p>
+        So far, in
+        \[
+            H(\mathbf{x},t_0,t_1,\ldots,t_n) =
+            (C + \Lambda \operatorname{diag}(t_1,\ldots,t_n) C^*)
+            \, (\mathbf{x}^A \circ e^{-M t_0 \boldsymbol{\omega}} )^\top
+        \]
+        the stratified homotopy part and the polyhedral part are separated.
+    </p>
+    <p class="fragment">
+        In practical implementation, they can be combined,
+        especially when the expected maximum dimension of solution set
+        is much smaller than $n$:
+    </p>
+    <p class="fragment">
+        \[
+            H(\mathbf{x},t_c,\ldots,t_n) =
+            (
+                C + 
+                \Lambda 
+                \operatorname{diag}(\underbrace{\color{red}{t_c,\ldots,t_c}}_{c},\ldots,t_n)
+                C^*
+            )
+            \, (\mathbf{x}^A \circ e^{-\color{red}{t_c} M \boldsymbol{\omega}} )^\top
+        \]
+        where $c = n - d_{\max}$ and $d_{\max}$ is the maximum expected dimension.
+    </p>
+    <p class="fragment">
+        Toric deformation and coefficient deformation 
+        are carried out at the same time as $(t_c,\ldots,t_n)$
+        moves along
+        \[
+            (1,\ldots,1) \;\longrightarrow\; (0,1,\ldots,0).
+        \]
+    </p>
+    <p class="fragment center">
+        This is the <em>stratified</em> polyhedral homotopy.
+    </p>
 </section>
 <section>
-    <h3></h3>
+    <h3>Mixed cases</h3>
+    <p>
+        What we described only work for <em>unmixed</em> Laurent polynomial systems.
+        <em class="fragment">What about mixed systems?</em>
+        <span class="fragment lowlight">
+            (Mixed: polynomials have different support)
+        </span>
+    </p>
+    <div class="fragment">
+        <p><b>Worst solution:</b></p>
+        <ol>
+            <li>
+                Apply standard polyhedral homotopy to solve
+                $F(\mathbf{x}; C^*) = \mathbf{0}$
+                with generic coefficients $C^*$.
+            </li>
+            <li class="fragment">
+                Form the unmixed version
+                \[
+                    G(\mathbf{x}) = R \, F(\mathbf{x})
+                \]
+                for a generic square matrix $R$.
+                Then $G$ and $F$ have the same zero set.
+            </li>
+            <li class="fragment">
+                Apply the stratified homotopy
+                \[
+                    H(\mathbf{x},t_c,\ldots,t_n) =
+                    (
+                        C + 
+                        \Lambda 
+                        \operatorname{diag}(\,\underbrace{t_c,\ldots,t_c}_{c}\,,\ldots,t_n)
+                        C^*
+                    )
+                    \, (\mathbf{x}^A )^\top
+                \]
+                to discover sample sets for reduced irreducible components
+                and isolated zeros of the unmixed version $G(\mathbf{x})$.
+            </li>
+        </ol>
+    </div>
+</section>
+<section>
+    <h3>Potentially better solution</h3>
+    <p>
+        For many systems from applications,
+        we can directly apply the stratified polyhedral homotopy, defined above,
+        to the unmixed version
+        \[
+            G(\mathbf{x}) = R \, F(\mathbf{x})
+        \]
+    </p>
+    <p class="fragment">
+        ...... at the cost of potentially increasing the number of paths from
+        mixed volume of $n$ Newton polytopes $P_1,\ldots,P_n$
+        (BKK bound for $F$)
+        to the normalized volume of $\operatorname{conv}(P_1 \cup \cdots \cup P_n)$.
+    </p>
+    <p class="fragment">
+        In general
+        \[
+            \operatorname{MV} ( P_1, \ldots, P_n ) \le
+            \operatorname{V} ( \operatorname{conv}(P_1 \cup \cdots \cup P_n) )
+        \]
+        this is always true due to the monotonicity of mixed volume.
+    </p>
+</section>
+<section>
+    <h3>Mixed volume vs volume: Equality</h3>
+    <div class="theorem">
+        If both $A$ and $B$ "touch" all the edges of
+        $\operatorname{conv}(A \cup B)$,
+        \[
+            \operatorname{MV}(A,B) \;=\;
+            \operatorname{V}( \operatorname{conv} (A \cup B) )
+        \]
+    </div>
+    <img src="mv_vs_v.png" alt="Mixed volume vs volume">
+    <p class="small">
+        Conditions for the equality of the two was first discovered by Maurice Rojas in 1994
+        (Rojas. (1994)
+        <em>A convex geometric approach to counting the roots of a polynomial system.</em>
+        Theoretical Computer Science, 133(1), 105-140).
+        Variations of these conditions are rediscovered every 10 years.
+    </p>
+</section>
+<section>
+    <h3>Mixed volume vs volume: Complexity</h3>
+    <p>
+        The problem of computing mixed volume and volume are both in $\#P$.
+        <span class="smaller">
+            Dyer, Gritzmann, Hufnagel. (1998)
+            <em>On the complexity of computing mixed volumes.</em>
+            SIAM Journal on Computing, 27(2), 356-400.
+        </span>
+    </p>
+    <div class="fragment">
+        The situation may be more complicated.
+        <div class="theorem">
+            For $m$ points
+            $\{ \mathbf{p}_1, \ldots, \mathbf{p}_m \} \subset \mathbb{R}^n$,
+            with $m > n > 0$,
+            \[
+                \operatorname{NV} ( \operatorname{conv}\{\, \mathbf{p}_1, \dots, \mathbf{p}_m \}) =
+                \operatorname{MV} ( \Delta(\mathbf{p}_1), \dots, \Delta(\mathbf{p}_m) )
+            \]
+            where each
+            \[
+                \Delta(\mathbf{p}) = \operatorname{conv}\{ \, \hat{\mathbf{p}}, \, \mathbf{e}_{n+1}, \dots, \mathbf{e}_m \}
+            \]
+            is a simplex.
+            <span class="small">
+                (Here,
+                $\hat{\mathbf{p}} = 
+                \begin{bmatrix}
+                    \mathbf{p} &
+                    \mathbf{0}_{m-n}
+                \end{bmatrix}^\top
+                \in \mathbb{R}^m$)
+            </span>
+        </div>
+    </div>
+    <p class="fragment">
+        Even the specialized problem of computing the mixed volume
+        of simplices are equivalent to the general problem of computing
+        volume.
+        <span class="lowlight">
+            (C. 2021. arXiv:2108.12875)
+        </span>
+    </p>
+    <p class="fragment">
+        \[
+            \text{Easy MV problems}
+            \approx
+            \text{All Volume problem}
+            \; ?
+        \]
+    </p>
+</section>
+<section>
+    <h3>Mixed volume vs volume: Takeaway</h3>
+    <p>
+        For some systems from applications,
+        it may be beneficial to directly apply the stratified polyhedral homotopy
+        to the unmixed version
+        \[
+            G(\mathbf{x}) = R \, F(\mathbf{x})
+        \]
+        from the point of view of computational complexity.
+    </p>
 </section>
 <section>
     <h3>GPU accelerated implementation</h3>
+    <p>
+        Another advantage of unmixed formulations:
+        GPU acceleration is easy.
+    </p>
+    <ul class="fragment">
+        <li>
+            The evaluation of a system of Laurent polynomials and its Jacobian matrix
+            can be carried out simultaneously on massively parallel computing architectures (GPUs).
+        </li>
+        <li>
+
+        </li>
+        <li>
+
+        </li>
+        <li>
+
+        </li>
+    </ul>
 </section>
 <section>
     <h3></h3>
@@ -873,5 +1165,5 @@ title: Stratified polyhedral homotopy
     <h3></h3>
 </section>
 <section>
-    <h3></h3>
+    <h1>Thank you!</h1>
 </section>
