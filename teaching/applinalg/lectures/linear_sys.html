@@ -1,0 +1,405 @@
+---
+layout: ilecture_only
+title: Systems of linear equations
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Linear systems</h2>
+        <p class="small">
+            Systems of simultaneous linear equations
+            in several variables
+        </p>
+    </div>
+        <p>
+            Many real-world problems can be expressed as
+            systems of simultaneous linear equations.
+        </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>What is an equation?</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="problem">
+                Which of the following are equations?
+                <ul>
+                    <li>$3x + 4 = 7$</li>
+                    <li>$7x - 1$</li>
+                    <li>$5x < 10$</li>
+                    <li>$1 = 2$</li>
+                    <li>$x = 2x$</li>
+                    <li>$x = x$</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col fragment">
+            <p>A few terms are used frequently in our discussions:</p>
+            <ul>
+                <li>
+                    Unknowns, variables, indeterminate
+                </li>
+                <li>
+                    Coefficients
+                </li>
+                <li>
+                    Constant term
+                </li>
+            </ul>
+            <p class="fragment">
+                Make sure you can distinguish equations and functions.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        A <em class="highlight">linear</em> equation 
+        only involve constants or products between one constant and one unknown.
+        <span class="fragment">
+            E.g., the term $3x$ is okay, but $x^2$ or $\sin(x)$ are not allowed
+            in a linear equation.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Linear systems</h3>
+    <p>
+        <b class="highlight">Systems of linear equations</b>
+        (or <b class="highlight">linear systems</b>)
+        are among the most basic computational problems,
+        and they appear naturally in applications.
+    </p>
+    <p class="fragment">
+        A linear system is a system of simultaneous equations
+        involving one or more <em class="highlight">unknowns</em>
+        (variables/indeterminates)
+        where each equation only involve
+        addition and products between constants and unknowns:
+        \[
+            \left\{
+            \begin{aligned}
+                3x + 5y &= 6 \\
+                6x - y  &= 1
+            \end{aligned}
+            \right.
+        \]
+        is a system of two linear equations in the two unknowns
+        $x$ and $y$.
+    </p>
+    <div class="fragment">
+        <p>
+            Make sure you can identify the different parts of
+            a linear system:
+        </p>
+        <ul>
+            <li>
+                Unknowns/variables/indeterminates
+            </li>
+            <li>
+                Coefficients
+            </li>
+            <li>
+                Constant terms
+            </li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h3>Solutions to linear systems</h3>
+    <p>
+        The values for the unknowns that will balance <em>all</em> equations
+        in a linear system is a <b class="highlight">solution</b>,
+        <span class="fragment">
+            and the set of all solutions is the
+            <b class="highlight">solution set</b>.
+        </span>
+
+    </p>
+    <p class="fragment">
+        To <b class="highlight">solve</b> a linear system
+        means to find the set of <em>all</em> solutions.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="problem fragment">
+                Solve the system
+                \[
+                    \left\{
+                        \begin{aligned}
+                            x + y &= 5 \\
+                            x - y &= 1 .
+                        \end{aligned}
+                    \right.
+                \]
+            </div>
+            <p class="small fragment">
+                Note that the same system may be arranged differently.
+                E.g.,
+                \[
+                    \left\{
+                        \begin{aligned}
+                            y + 2x &= 5 + x \\
+                            x - y - 1 &= 0,
+                        \end{aligned}
+                    \right.
+                \]
+                which is equivalent to the above.
+                we should always rearrange and combine terms
+                before we solve them.
+            </p>
+        </div>
+        <div class="col">
+            <div class="problem fragment">
+                Solve the system
+                \[
+                    \left\{
+                        \begin{aligned}
+                            2x + y &= 8 \\
+                            x - 2y &= -6 .
+                        \end{aligned}
+                    \right.
+                \]
+            </div>
+            <div class="fragment">
+                <p>
+                    There are three commonly used classes of methods
+                    for solving small linear systems by hand:
+                </p>
+                <ul>
+                    <li>Elimination</li>
+                    <li>Substitution</li>
+                    <li>Cramer's rule</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Some complications</h3>
+    <p>
+        It is important to recognize that
+        not every linear system has a unique solution.
+        There are actually three possibilities.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="problem fragment">
+                Solve the system
+                \[
+                    \left\{
+                        \begin{aligned}
+                             x +  y &= 5 \\
+                            2x + 2y &= 6 .
+                        \end{aligned}
+                    \right.
+                \]
+            </div>
+            <p class="fragment lowlight">
+                Don't say we cannot solve this system.
+                Actually, we can.
+            </p>
+        </div>
+        <div class="col">
+            <div class="problem fragment">
+                Solve the system 
+                \[
+                    \left\{
+                        \begin{aligned}
+                            x + y  &= 3 \\
+                            2x + 2y &= 6 .
+                        \end{aligned}
+                    \right.
+                \]
+            </div>
+            <p class="fragment">
+                Think about what is the best way to
+                write down the solution set.
+            </p>
+        </div>
+    </div>
+    <div class="fragment">
+        <p>In general there are three kinds of solution sets to linear systems:</p>
+        <ul>
+            <li>No solution at all</li>
+            <li>A unique solution</li>
+            <li>Infinitely many solutions</li>
+        </ul>
+    </div>
+    <p class="fragment smaller lowlight">
+        It is a bit strange that there is nothing between
+        "one solution" and "infinitely many solutions".
+        E.g., there cannot be just two solutions.
+        We will see why that is the case soon.
+    </p>
+</section>
+<section>
+    <h3>2x2 determinant</h3>
+    <p>
+        For the linear system
+        \[
+            \left\{
+                \begin{aligned}
+                    a x + b y &= \alpha \\
+                    c x + d y &= \beta
+                \end{aligned}
+            \right.
+        \]
+        in the unknowns $x$ and $y$,
+        its <b class="highlight">determinant</b> is
+        \[
+            ad - bc
+        \]
+        and it tells us if the system has a unique solution:
+    </p>
+    <ul>
+        <li>
+            <em>Determiant is nonzero:</em>
+            The system has a unique solution.
+        </li>
+        <li>
+            <em>Determiant is zero:</em>
+            The system either has infinitely many solutions or no solutions at all.
+        </li>
+    </ul>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                The value of the determinant does not
+                directly distinguish between the cases of
+                infinite and empty solution sets.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Determinant is an important tool.
+                We use the notation
+                \[
+                    \left|
+                        \begin{smallmatrix}
+                            a & b \\
+                            c & d
+                        \end{smallmatrix}
+                    \right|
+                    \; = \;
+                    ad - bc.
+                \]
+                <span class="smaller lowlight">
+                    But we will very rarely use it in this course.
+                </span>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Linear systems and matrices</h3>
+    <p>
+        We can now view a linear system as
+        a single equation involving a matrix-vector product:
+        \[
+            \left\{
+                \begin{aligned}
+                    a x + b y &= \alpha \\
+                    c x + d y &= \beta \\
+                \end{aligned}
+            \right.
+            \quad\Leftrightarrow\quad
+            \begin{bmatrix}
+                a & b \\
+                c & d 
+            \end{bmatrix}
+            \,
+            \begin{bmatrix}
+                x \\ y
+            \end{bmatrix}
+            \;=\;
+            \begin{bmatrix}
+                \alpha \\
+                \beta
+            \end{bmatrix}.
+        \]
+    </p>
+    <p class="fragment">
+        In general, a system of $m$ equations involving
+        $n$ unknowns can be written as a compact equation
+        \[
+            A \mathbf{x} = \mathbf{b}
+        \]
+        where $A$ is an $m \times n$ matrix that collects all the coefficients,
+        $\mathbf{x}$ is a column vector containing $n$ entries
+        $x_1,\dots,x_n$ each representing an unknown,
+        and $\mathbf{b}$ is a column vector containing the $m$ constant terms
+        on the right hand side of the equations.
+    </p>
+</section>
+<section>
+    <h3>Solving square linear systems using matrix inverse</h3>
+    <div class="cols">
+        <div class="col">
+            <div class="problem">
+                It is known that
+                \[
+                    \begin{bmatrix}
+                        1 & 2 \\
+                        3 & 5
+                    \end{bmatrix}
+                    ^{-1}
+                    =
+                    \begin{bmatrix}
+                        -5 & 2 \\
+                         3 & -1
+                    \end{bmatrix}
+                    .
+                \]
+                How will this information help us to solve the linear system
+                \[
+                    \begin{bmatrix}
+                        1 & 2 \\
+                        3 & 5
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        x \\ y
+                    \end{bmatrix}
+                    =
+                    \begin{bmatrix}
+                        1 \\ 4
+                    \end{bmatrix}
+                    ?
+                \]
+            </div>
+            <p class="fragment">
+                Indeed, the solution is unique.
+            </p>
+            <p class="fragment">
+                This idea works for larger systems
+                as long as the inverse of the coefficient matrix exists.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                A "square" linear system
+                (in which the number of unknowns matches the number of equations)
+                in $n$ unknown can be written as
+                \[
+                    A \mathbf{x} = \mathbf{b}
+                \]
+                where $A$ is an $n \times n$ square matrix.
+                <span class="fragment">
+                    This system has a unique solution
+                    if and only if $A$ is invertible (i.e. nonsingular).
+                </span>
+                <span class="fragment">
+                    And the solution is
+                    \[
+                        \mathbf{x} = A^{-1} \mathbf{b}
+                    \]
+                </span>
+                <span class="fragment lowlight">
+                    We can get this by multiplying both sides of the equation by $A^{-1}$.
+                </span>
+            </p>
+        </div>
+    </div>
+</section>
