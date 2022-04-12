@@ -384,6 +384,62 @@ title: Systems of linear equations
     </p>
 </section>
 <section>
+    <h3>Homogeneous linear systems and null space</h3>
+    <p>
+        A linear system can be expressed as
+        \[
+            A \mathbf{x} = \mathbf{b}.
+        \]
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                The special case of $\mathbf{b} = \mathbf{0}$
+                is known as the <em>homogeneous</em> case.
+            </p>
+            <div class="definition fragment">
+                A <b class="highlight">homogeneous</b> linear system
+                is a linear system of the form
+                \[
+                    A \mathbf{x} = \mathbf{0}
+                \]
+                for some matrix $A$.
+            </div>
+            <p class="fragment">
+                It's called homogeneous because
+                every nonzero term in such a system has degree 1.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                In this context the solution set
+                is also called the <em class="highlight">null space</em>
+                of $A$.
+            </p>
+            <div class="definition fragment">
+                The <b class="highlight">null space</b> of
+                an $m \times n$ matrix $A$,
+                is the set
+                \[
+                    \{
+                        \mathbf{x} \in \mathbb{R}^n
+                        \mid
+                        A \mathbf{x} = \mathbf{0}.
+                    \}
+                \]
+            </div>
+            <p class="fragment">
+                The null space is always nonempty
+                since it contains at least $\mathbf{0}$.
+            </p>
+            <p class="fragment">
+                Indeed, the <em>null space</em> of an $m \times n$ matrix
+                is always a subspace of $\mathbb{R}^n$.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
     <h3>Solving square linear systems using matrix inverse</h3>
     <div class="cols">
         <div class="col">
@@ -448,6 +504,50 @@ title: Systems of linear equations
                 <span class="fragment lowlight">
                     We can get this by multiplying both sides of the equation by $A^{-1}$.
                 </span>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Efficiency considerations</h3>
+    <p>
+        Square linear systems in real-world applications
+        tend to be large.
+        When we care about efficiency,
+        we generally avoid computing matrix inverse.
+    </p>
+    <p class="fragment">
+        They can be solved much more efficiently
+        with "matrix decompositions".
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                A very useful decomposition
+                is called the <em class="highlight">QR decomposition</em>.
+            </p>
+            <p class="fragment">
+                Every (real) square matrix $A$
+                can be "decomposed" into a product
+                \[
+                    A = QR
+                \]
+                where $Q$ is an <em class="highlight">orthogonal</em> matrix
+                and $R$ is an <em class="highlight">upper triangular</em> matrix.
+                If $A$ is nonsingular, so is $R$.
+            </p>
+        </div>
+        <div class="col">
+            <div class="problem fragment">
+                Explain how a square linear system
+                \[
+                    A \mathbf{x} = \mathbf{b}
+                \]
+                can be solved without directly computing $A^{-1}$?
+                Why would people prefer this method?
+            </div>
+            <p class="small fragment">
+                We will learn more about matrix decompositions soon.
             </p>
         </div>
     </div>
