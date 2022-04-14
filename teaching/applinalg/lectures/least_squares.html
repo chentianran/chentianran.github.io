@@ -1,0 +1,141 @@
+---
+layout: ilecture_only
+title: The least-squares problem
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Least-squares problems</h2>
+        <p class="small">
+            Finding best solutions to $Ax \approx b$
+        </p>
+    </div>
+        <p>
+            The least-squares problem is one of the fundamental problems
+            in numerical computations
+            and it is closely linked to many problems in data science.
+        </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Review: linear systems</h3>
+    <p>
+        Recall that a system of linear equations can be
+        expressed as a single equation in the matrix-vector form
+        \[
+            A \mathbf{x} = \mathbf{b}
+        \]
+        where $A$ contains the coefficients,
+        $\mathbf{x}$ is a column vector containing the unknowns,
+        and $\mathbf{b}$ collects the constant terms on the r.h.s.
+    </p>
+    <p class="fragment">
+        Such a linear system has natural geometric interpretations.
+        However, there are multiple different interpretations,
+        depending on our point of views.
+        <span class="fragment lowlight">
+            Holding these very different interpretations
+            at the same time is an important skill we need to develop.
+        </span>
+    </p>
+    <!-- <div class="cols">
+        <div class="col">
+        </div>
+        <div class="col">
+
+        </div>
+    </div> -->
+</section>
+<section>
+    <h3>"Row" interpretation: intersecting lines</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                \[
+                    \left\{
+                        \begin{aligned}
+                            1x + 2y &= 1 \\
+                            3x - 2y &= 3
+                        \end{aligned}
+                    \right.
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                is equivalent to the problem of intersecting two lines.
+            </p>
+        </div>
+    </div>
+    <img src="../linearsys.png" alt="Linear system as intersection of lines" class="r-stretch">
+</section>
+<section>
+    <h3>Overdetermined system</h3>
+    <p>
+        Using the "row" interpretation,
+        it is easy to see why a system of 3 equations in 2 unknowns
+        may not have a solution
+        <span class="lowlight">
+            (unless the configuration of the 3 lines is very "special").
+        </span>
+    </p>
+    <img src="../threelines.png" alt="Three lines" class="r-stretch">
+</section>
+<section>
+    <h3>When there is no solution......</h3>
+    <p>
+        It is common, in applications, to encounter linear systems
+        that has no solutions, i.e., we cannot there is no $\mathbf{x}$
+        such that
+        \[
+            A \mathbf{x} = \mathbf{b}.
+        \]
+    </p>
+    <p class="fragment">
+        The next best thing is to find the <em class="highlight">"best"</em>
+        solution to
+        \[
+            A \mathbf{x} \approx \mathbf{b}
+        \]
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                But what does <em>"best"</em> mean?
+            </p>
+            <p class="fragment">
+                One choices is to <em>minimize</em>
+                the difference between $A \mathbf{x}$
+                and $\mathbf{b}$,
+                which is known as the
+                <b class="highlight">residual</b>.
+            </p>
+            <p class="fragment">
+                That is, we aim to find $\mathbf{x}$ that will minimize
+                $\| A \mathbf{x} - \mathbf{b} \|$.
+                <span class="fragment small">
+                    For technical reasons (calculus),
+                    it is much easier to minimize
+                    the square of this instead.
+                </span>
+            </p>
+        </div>
+        <div class="col">
+            <div class="definition">
+                For an $m \times n$ matrix $A$
+                and a column vector $\mathbf{b} \in \mathbb{R}^m$,
+                the <b class="highlight">least square problem</b>
+                is the problem of finding $\mathbf{x} \in \mathbb{R}^n$
+                that will minimize
+                \[
+                    \| A \mathbf{x} - \mathbf{b} \|^2.
+                \]
+            </div>
+        </div>
+    </div>
+</section>
+

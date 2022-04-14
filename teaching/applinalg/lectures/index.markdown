@@ -26,7 +26,7 @@ the deeper discussion involved in each class meeting.
 * Lecture 12: [Matrices from applications](matrix_application/)
 * Lecture 13: Orthogonal group and special orthogonal group (optional)
 * Lecture 14: [Systems of linear equations](linear_sys/)
-* Lecture 15: Least squares problem
+* Lecture 15: [Least squares problem](least_squares/)
 * Lecture 16: QR decomposition
 * Lecture 17: Eigenvalues and eigenvectors
 * Lecture 18: Eigenvalue decomposition
