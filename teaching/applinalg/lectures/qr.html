@@ -1,0 +1,247 @@
+---
+layout: ilecture_only
+title: QR-decomposition
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">QR-decomposition</h2>
+        <p class="small">
+            A product of an orthogonal and triangular matrix
+            
+        </p>
+    </div>
+        <p>
+            The QR-decomposition is a decomposition of a matrix
+            into a product of an orthogonal matrix and a upper triangular matrix.
+        </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Matrix decomposition</h3>
+    <p>
+        A <em class="highlight">decomposition</em>
+        of a matrix is simply the process of expressing a matrix
+        as the product of two or more matrices.
+        E.g.,
+        \[
+            A = X Y
+        \]
+    </p>
+    <p class="fragment">
+        This is similar to the problem of factorize integers
+        or polynomials,
+        <span class="lowlight">
+            which is why matrix decompositions
+            are also known as matrix <em class="highlight">factorizations</em>.
+        </span>
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                There are many useful decomposition methods,
+                each has its own use case.
+                They are crucial in numerical computations.
+            </p>
+            <p class="fragment lowlight smaller">
+                It may be difficult to appreciate
+                the usefulness of these decompositions in classrooms.
+                Once you see a large matrix from applications,
+                you will understand why we need them.
+            </p>
+        </div>
+        <div class="col">
+            <ul class="fragment">
+                <li>LU decomposition</li>
+                <li>Cholesky/LDL decomposition</li>
+                <li>QR decomposition</li>
+                <li>Eigenvalue decomposition</li>
+                <li>Singular value decomposition (SVD)...</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>QR-decomposition (square case)</h3>
+    <p>
+        <em>QR-decomposition</em> is a special of decomposing a matrix
+        that is particularly useful in solving linear least-squares problems.
+        It is closely related to the "<em>Gram-Schmidt process</em>"
+        that is used to create orthogonal basis.
+    </p>
+    <div class="definition fragment">
+        For any square $n \times n$ matrix $A$,
+        there exists an <em>orthogonal</em> $n \times n$ matrix $Q$
+        and an <em>upper triangular</em> $n \times n$ matrix $R$
+        such that
+        \[
+            A = QR.
+        \]
+        This factorization is known as a
+        <b class="highlight">QR-decomposition</b> of $Q$.
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                Recall that $Q$, being orthogonal, must be nonsingular.
+            </p>
+            <p class="fragment">
+                Also, $R$ is nonsingular if and only if $A$ is nonsingular.
+            </p>
+        </div>
+        <div class="col">
+            <div class="theorem fragment">
+                If $A$ is <em>nonsingular</em>
+                and we require the diagonal entries of $R$ to be positive,
+                then the QR-decomposition is unique.
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>What's the point?</h3>
+    <p>
+        It is inherently difficult to appreciate the value of
+        the QR-decomposition (or matrix decomposition in general)
+        in classroom-settings.
+    </p>
+    <p class="fragment lowlight small">
+        The real usefulness <em>only</em> become apparent
+        when dealing with very large matrices (real-world applications)
+        or matrices with floating-point entries (numerical analysis).
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                If it is known that $A = QR$,
+                then the problem of solving
+                \[
+                    A \mathbf{x} = \mathbf{b}
+                \]
+                <span class="fragment">
+                    Can be turned into the problem
+                    \[
+                        R \mathbf{x} = Q^\top \mathbf{b}
+                    \]
+                </span>
+            </p>
+        </div>
+        <div class="col">
+            <div class="problem fragment">
+                Explain why these two problems are equivalent
+                (even when $A$ itself is singular),
+                and why we may prefer the second formulation.
+            </div>
+        </div>
+    </div>
+    <p class="fragment lowlight">
+        The true benefit is that orthogonal matrices have the best
+        <em class="highlight">numerical condition</em>,
+        which is crucially important in numerical computations.
+        You need to study numerical analysis to see what's going on.
+    </p>
+</section>
+<section>
+    <h3>QR-decomposition and linear least-squares</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                Recall that orthogonal linear transformations
+                preserve vector norms. That is,
+                \[
+                    \| Q \mathbf{x} \| = \| \mathbf{x} \|
+                \]
+                for an orthogonal $n \times n$ matrix
+                and <em>any</em> vector $\mathbf{x} \in \mathbb{R}^n$.
+            </p>
+            <p class="fragment">
+                This observation gives us a very nice way for solving
+                linear least-squares problems.
+            </p>
+        </div>
+        <div class="col">
+            <div class="problem fragment">
+                Suppose we know the QR-decomposition
+                \[
+                    A = QR.
+                \]
+                Why is the problem of minimizing
+                \[
+                    \| A \mathbf{x} - \mathbf{b} \|^2
+                \]
+                is completely equivalent to the problem of minimizing
+                \[
+                    \| R \mathbf{x} - Q^{\top} \mathbf{b} \|^2
+                \]
+            </div>
+        </div>
+    </div>
+    <p class="fragment">
+        Through QR-decomposition,
+        general linear least-squares problems
+        can be reduced to linear least-squares problems
+        involving only upper triangular matrices,
+        which are easy to solve.
+    </p>
+</section>
+<section>
+    <h3>Linear least-squares: Upper triangular case</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                Suppose
+                \[
+                    R = 
+                    \begin{bmatrix}
+                        * & * & * \\
+                        0 & * & * \\
+                        0 & 0 & * \\
+                        0 & 0 & 0 \\
+                        0 & 0 & 0
+                    \end{bmatrix}
+                \]
+                where "$*$" are placeholders for potentially nonzero numbers
+                whose values are not important.
+            </p>
+            <p class="fragment lowlight smaller">
+                The "$*$"-notations is used widely in discussions of numerical computations
+                so that we don't get too distracted by concrete numbers.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                How should we minimize
+                \[
+                    \left\|
+                        \begin{bmatrix}
+                            * & * & * \\
+                            0 & * & * \\
+                            0 & 0 & * \\
+                            0 & 0 & 0 \\
+                            0 & 0 & 0
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            x_1 \\ x_2 \\ x_3
+                        \end{bmatrix}
+                        -
+                        \begin{bmatrix}
+                            * \\ * \\ * \\ * \\ *
+                        \end{bmatrix}
+                    \right\|^2
+                \]
+            </p>
+            <div class="problem fragment">
+                Assume $R$ is nonsingular,
+                explain why the problem of minimizing
+                \[
+                    \| R \mathbf{x} - \mathbf{c} \|^2
+                \]
+                is equivalent to the problem of solving a linear system.
+            </div>
+        </div>
+    </div>
+</section>
