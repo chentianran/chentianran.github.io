@@ -1,0 +1,605 @@
+---
+layout: ilecture_only
+title: Eigenvalues and eigenvectors
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Eigenvalues and eigenvectors</h2>
+        <!-- <p class="small">
+            A product of an orthogonal and triangular matrix
+        </p> -->
+    </div>
+    <p>
+        Eigenvalues and eigenvectors,
+        a.k.a. characteristic values and characteristic vectors,
+        reveal the true nature of a linear transformation.
+        They also show up in surprising places in applications.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Eigenvalues and eigenvectors</h3>
+    <p>
+        "Eigenvalues" and "eigenvectors"
+        are fundamental concepts in linear algebra
+        that have a wide range of direct applications.
+    </p>
+    <p class="fragment">
+        They are only defined for <em>square</em> matrices.
+    </p>
+    <div class="definition fragment">
+        For a square $n \times n$ matrix $A$,
+        if there is a scalar $\lambda$ and
+        a <em>nonzero</em> vector $\mathbf{v} \in \mathbb{R}^n$
+        such that
+        \[
+            A \mathbf{v} = \lambda \, \mathbf{v},
+        \]
+        then $\lambda$    is an <b class="highlight">eigenvalue</b> of $A$,
+        and  $\mathbf{v}$ is an <b class="highlight">eigenvector</b>
+        associated with the eigenvalue $\lambda$.
+    </div>
+    <p class="fragment">
+        Note that we allow complex eigenvalues
+        even for real matrices.
+        <!-- Complex eigenvalues still carry some useful
+        information about real matrices. -->
+    </p>
+    <p class="fragment lowlight small">
+        Some authors also include $\mathbf{0}$
+        as an eigenvector.
+        We <b>do not</b> follow that convention.
+    </p>
+    <p class="fragment">
+        Eigenvalues are scalars;
+        Eigenvectors are vectors,
+        and eigenvectors are always associated with eigenvalues.
+    </p>
+</section>
+<section>
+    <h3>Warmup exercises</h3>
+    <p>
+        For a square matrix $A$,
+        a pair of eigenvalue and eigenvector
+        $\lambda$ and $\mathbf{v}$ is defined by the equation
+        \[
+            A \mathbf{v} = \lambda \mathbf{v}.
+        \]
+    </p>
+    <div class="problem">
+        Identify the eigenvalues and their corresponding eigenvectors
+        for the matrices
+        \begin{align*}
+            I &= 
+            \begin{bmatrix}
+                1 & 0 \\
+                0 & 1
+            \end{bmatrix}
+            &
+            A &= 
+            \begin{bmatrix}
+                3 & 0 \\
+                0 & 4
+            \end{bmatrix}
+            &
+            B &= 
+            \begin{bmatrix}
+                1 & 2 \\
+                3 & 6
+            \end{bmatrix}
+        \end{align*}
+    </div>
+    <p class="fragment">
+        Notice that it is possible for a matrix
+        to have more than one eigenvalue.
+        Similarly, associated with a given eigenvalue,
+        there may be more than one eigenvectors.
+    </p>
+</section>
+<section>
+    <h3>Geometric interpretation</h3>
+    <p>
+        The equation
+        \[
+            A \mathbf{v} = \lambda \mathbf{v}
+        \]
+        can be interpreted geometrically:
+    </p>
+    <p class="fragment">
+        If $\lambda > 0$,
+        under the map $\mathbf{v} \mapsto A \mathbf{v}$,
+        the (very special) eigenvector is only scaled
+        by a factor of $\lambda$,
+        and its direction remain unchanged.
+    </p>
+    <p class="fragment lowlight">
+        That is, $\mathbf{v}$ is stretched or squeezed,
+        but not rotated.
+    </p>
+    <div class="problem fragment">
+        If $A$ is the matrix representation
+        of a linear function on the space of waves
+        (linear combinations of sine waves),
+        how should we interpret eigenvalues and eigenvectors?
+    </div>
+</section>
+<section>
+    <h3>Eigenvalue and eigenvectors in function spaces</h3>
+    <p>
+        The equation $A \mathbf{v} = \lambda \mathbf{v}$
+        and the "eigen-pairs" it defines
+        can be generalized to vector spaces of functions.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                The set of all smooth functions
+                on an interval $(a,b)$ also form a vector space
+                <span class="fragment lowlight">
+                    (although this is an infinite dimensional vector space).
+                </span>
+            </p>
+            <p class="fragment">
+                Let's call this vector space of differentiable functions $V$.
+                <span class="fragment">
+                    Then
+                    \[
+                        \frac{d}{dx}
+                    \]
+                    is a linear function from $V$ to $V$.
+                </span>
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                We have a special class functions
+                \[
+                    \frac{d}{dx} e^{\lambda x} =
+                    \lambda \, e^{\lambda x}
+                \]
+                <!-- for any real number $\lambda$. -->
+            </p>
+            <p class="fragment">
+                This shows that the smooth function $f(x) = e^{\lambda x}$
+                is an eigenvector of the linear function
+                \[ \frac{d}{dx} : V \to V \]
+                associated with the eigenvalue $\lambda$.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>An alternative definition</h3>
+    <p>
+        The previous defines eigenvalues and eigenvectors
+        in relation to one another.
+        <span class="lowlight">
+            More precisely, we are defining "eigen-pairs".
+        </span>
+    </p>
+    <p class="fragment">
+        Eigenvalues can also be defined directly by itself
+        through this alternative
+        <span class="lowlight">
+            but equivalent
+        </span>
+        definition.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="definition fragment">
+                (Alternative)
+                For an $n \times n$ matrix $A$,
+                a complex scalar $\lambda$ is an
+                <b class="highlight">eigenvalue</b> of $A$ if
+                \[
+                    A - \lambda I
+                \]
+                is singular.
+            </div>
+            <p class="fragment">
+                This definition is equivalent to the previous one,
+                and we use them interchangeably.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                In particular, if $A$ is singular,
+                then 0 must be an eigenvalue of $A$.
+            </p>
+            <p class="fragment">
+                Conversely, if $0$ is an eigenvalue of $A$,
+                $A$ must be nonsingular.
+            </p>
+            <div class="problem fragment">
+                Use this definition to verify that
+                for a diagonal or triangular matrix,
+                every diagonal entry will be an eigenvalue.
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Eigenvalues and singularity</h3>
+    <p>
+        From the results above, we can see that
+    </p>
+    <ul>
+        <li>A square matrix is singular if and only if 0 is an eigenvalue.</li>
+        <li>A triangular matrix is singular if and only if it has a zero entry on its diagonal</li>
+    </ul>
+</section>
+<section>
+    <h3>Computing eigenvalues (a 2x2 trick)</h3>
+    <p>
+        For the special case of a $2 \times 2$ matrix
+        \[
+            A =
+            \begin{bmatrix}
+                a & b \\
+                c & d
+            \end{bmatrix}
+        \]
+        we can find the eigenvalues easily.
+        <span class="lowlight small">
+            (Note that this is just a special trick that
+            <b>only</b> work for $2 \times 2$ cases
+            and cannot be generalized)
+        </span>
+    </p>
+    <p class="fragment">
+        This matrix has two eigenvalues $\lambda_1,\lambda_2$
+        <span class="lowlight">
+            (which may or may not be distinct)
+        </span>
+        <span class="fragment">
+            and they satisfy the equations
+            \begin{align*}
+                \lambda_1 \lambda_2 &= ad - bc \\
+                \lambda_1 + \lambda_2 &= a + d
+            \end{align*}
+        </span>
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment small">
+                You may recognize the values on the r.h.s.:
+                They are the determinant and trace $A$, respectively.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment small">
+                That is,
+                \begin{align*}
+                    \lambda_1 \lambda_2 &= \det A \\
+                    \lambda_1 + \lambda_2 &= \operatorname{tr} A
+                \end{align*}
+            </p>
+        </div>
+    </div>
+    <p class="fragment small lowlight">
+        For now, it is not yet clear why this is true.
+        We will get to the reason soon.
+    </p>
+</section>
+<section>
+    <h3>Exercises: 2x2 cases</h3>
+    <p>
+        The two eigenvalues $\lambda_1,\lambda_2$
+        of a $2 \times 2$ matrix $A$
+        satisfies
+        \begin{align*}
+            \lambda_1 \lambda_2 &= \det A \\
+            \lambda_1 + \lambda_2 &= \operatorname{tr} A
+        \end{align*}
+    </p>
+    <p class="fragment">
+        That is, they are the roots of the quadratic polynomial
+        \[
+            \lambda^2 - (\operatorname{tr}) A \lambda + \det A.
+        \]
+        This polynomial is known as the
+        <b class="highlight">characteristic polynomial</b> of $A$.
+    </p>
+    <div class="fragment problem">
+        Find all the eigenvalues for
+        \begin{align*}
+            &
+            \begin{bmatrix}
+                1 & 0 \\
+                0 & 1
+            \end{bmatrix}
+            && 
+            \begin{bmatrix}
+                1 & 2 \\
+                0 & 1
+            \end{bmatrix}
+            &&
+            \begin{bmatrix}
+                2 & 1 \\
+                4 & 5
+            \end{bmatrix}
+            &&
+            \begin{bmatrix}
+                0 & -1 \\
+                1 &  0
+            \end{bmatrix}
+        \end{align*}
+    </div>
+    <p>
+        It is possible for $\lambda_1 = \lambda_2$,
+        <span class="lowlight">
+            i.e., the characteristic polynomial has a "double root".
+        </span>
+        In this case, we consider the eigenvalue to be an eigenvalue
+        of "multiplicity 2"
+        <span class="small lowlight">(not to be confused with geometric multiplicity).</span>
+    </p>
+</section>
+<section>
+    <h3>Complex eigenvalues</h3>
+    <p>
+        We do not require the eigenvalue to be real.
+        Indeed, it is natural to consider non-real eigenvalues.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                Consider the matrix
+                \[
+                    A = 
+                    \begin{bmatrix}
+                        0 & -1 \\
+                        1 & 0
+                    \end{bmatrix},
+                \]
+                which represents a $90^\circ$ counterclockwise rotation
+                of the entire plane.
+            </p>
+            <p class="fragment">
+                As such, the direction of a vector $\mathbf{v}$
+                cannot be preserved under the map
+                $\mathbf{v} \mapsto A \mathbf{v}$.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                The two eigenvalues $\lambda_1,\lambda_2$
+                satisfy the system of equations
+                \begin{align*}
+                    \lambda_1 \lambda_2 &= 1 \\
+                    \lambda_1 + \lambda_2 &= 0
+                \end{align*}
+            </p>
+            <p class="fragment">
+                Therefore, the eigenvalues are
+                \begin{align*}
+                    \lambda_1 &= +i \\
+                    \lambda_1 &= -i
+                \end{align*}
+                where $i$ is the imaginary unit,
+                i.e., $i^2 = -1$.
+            </p>
+        </div>
+    </div>
+    <!-- So all roots of the characteristic polynomial
+are non-real. In the more general sense, when complex vectors are
+considered, we do consider $\pm i$ to be valid eigenvalues of $A$. Even
+when we are restricted to working with real matrices and vectors, such
+non-real eigenvalues still carry some information. In this case, the
+eigenvalues $\pm i$ tells us that this matrix represents a rotation by
+$90^\circ$. -->
+</section>
+<section>
+    <h3>
+        Eigenspaces
+    </h3>
+    <p>
+        One observation from the problem above is that eigenvectors
+        associated with an given eigenvalue of a matrix is <b>never unique</b>.
+    </p>
+    <p class="fragment">
+        Indeed, if $\mathbf{v}$ is an eigenvector associated with
+        an eigenvalue $\lambda$ of a matrix $A$,
+        then so is $r \mathbf{v}$ for any nonzero scalar $r$
+        since
+        \[
+            A (r \mathbf{v}) = 
+            r A \mathbf{v} = 
+            r \lambda \mathbf{v} = \lambda (r \mathbf{v}).
+        \]
+    </p>
+    <p class="fragment">
+        Similarly, if $\mathbf{v}_1,\mathbf{v}_2$ are eigenvectors
+        associated with $\lambda$,
+        then $\mathbf{v}_1 + \mathbf{v}_2$, if <em>nonzero</em>,
+        is also an eigenvector associated with $\lambda$
+        since
+        \[
+            A (\mathbf{v}_1 + \mathbf{v}_2) = 
+                A \mathbf{v}_1 + A \mathbf{v}_2 = 
+                \lambda \mathbf{v}_1 + \lambda \mathbf{v}_2 = 
+                \lambda (\mathbf{v}_1 + \mathbf{v}_2).
+        \]
+    </p>
+    <p class="fragment">
+        Therefore, together with $\mathbf{0}$,
+        the set of all eigenvectors associated with an
+        eigenvalue form a <em>subspace</em>.
+    </p>
+</section>
+<section>
+    <h3>Eigenspaces</h3>
+    <div class="definition">
+        For an eigenvalue $\lambda$ of an $n \times n$ matrix $A$,
+        the set
+        \[
+            E_{\lambda} = \{ 
+                \mathbf{v} \in \mathbb{R}^n \mid 
+                A \mathbf{v} = \lambda \mathbf{v}
+            \}
+        \]
+        (including $\mathbf{0}$)
+        form a subspace of $\mathbb{R}^n$,
+        and it is called the <b class="highlight">eigenspace</b>
+        associated with $\lambda$.
+    </div>
+    <p class="fragment small">
+        It would be incorrect to say that
+        $E_\lambda$ is the "set of eigenvectors" associated with $\lambda$
+        since we do not consider $\mathbf{0} \in E_\lambda$ as an eigenvector.
+    </p>
+    <div class="definition fragment">
+        For an eigenvalue $\lambda$ of a matrix,
+        the dimension of $E_\lambda$ is known as the
+        <b class="highlight">geometric multiplicity</b> of
+        $\lambda$ (as an eigenvalue of $A$).
+    </div>
+    <div class="problem fragment">
+        For each eigenvalue of the following matrices
+        find their eigenspace and geometric multiplicity.
+        \begin{align*}
+            &
+            \begin{bmatrix}
+                1 & 0 \\
+                0 & 1
+            \end{bmatrix}
+            &
+            &
+            \begin{bmatrix}
+                1 & 2 \\
+                0 & 1
+            \end{bmatrix}
+            &
+            &
+            \begin{bmatrix}
+                0 & 1 \\
+                0 & 0
+            \end{bmatrix}
+            &
+            &
+            \begin{bmatrix}
+                3 & 0 \\
+                0 & 4
+            \end{bmatrix}
+        \end{align*}
+    </div>
+</section>
+
+
+
+
+<!-- Compute eigenvalues using determinants {#compute-eigenvalues-using-determinants .unnumbered}
+--------------------------------------
+
+As we can see already, finding eigenvalues together with their
+associated eigenvectors directly is not an easy task, even for small
+matrices. So we will focus on finding eigenvalues first, for which we
+have an simple algebraic solution. By the above definition, $\lambda$ is
+an eigenvalue if there exists a *nonzero* vector $\mathbf{v}$ such that
+$A \mathbf{v} = \lambda \mathbf{v}$. We can see that
+$$A \mathbf{v} = \lambda \mathbf{v}
+        \;\Longleftrightarrow\;
+        \lambda \mathbf{v} - A \mathbf{v}  = \mathbf{0}
+        \;\Longleftrightarrow\;
+        (\lambda I - a) \mathbf{v} = \mathbf{0}.$$ But recall that $A$
+is square, thus $\lambda I - A$ is also square. In this situation, in
+order for $(\lambda I - A) \mathbf{v} = \mathbf{0}$ to hold for a
+nonzero $\mathbf{v} \in \mathbb{R}^n$, the matrix $\lambda I - A$ must
+be singular. This gives us a way to find eigenvalues of $A$ via
+determinant.
+
+$\lambda$ is an eigenvalue of $A$ if and only if
+$$\det(\lambda I - A) = 0.$$ In other words, the eigenvalues of $A$ are
+the roots of the polynomial $$p_A (\lambda) = \det(\lambda I - A),$$
+which is called the **characteristic polynomial** of $A$. The
+multiplicity of an eigenvalue $\lambda$ of $A$ as a root of $p_A$ is
+called the **algebraic multiplicity** of $\lambda$ (as an eigenvalue of
+$A$).
+
+An eigenvalue of algebraic multiplicity one is called a **simple**
+eigenvalue.
+
+Some authors prefer the definition $\det(A - \lambda I)$ for
+characteristic polynomial. Be aware of this distinction when using
+different sources.
+
+It is important to distinguish the algebraic multiplicity and the
+geometric multiplicity of an eigenvalue as they may not agree in
+general.
+
+Find *all* the eigenvalues for the following matrices $$\begin{aligned}
+            & 
+            \begin{bmatrix}
+                1 & 2 \\
+                0 & 1
+            \end{bmatrix}
+            &&
+            \begin{bmatrix}
+                1 & 2 \\
+                3 & 6
+            \end{bmatrix}
+            &&
+            \begin{bmatrix}
+                2 & 1 \\
+                4 & 5
+            \end{bmatrix}
+            &&
+            \begin{bmatrix}
+                0 & -1 \\
+                1 &  0
+            \end{bmatrix}
+        \end{aligned}$$
+
+Day 20 {#day-20 .unnumbered}
+======
+
+2
+
+Review: eigenvalue & char. polynomial {#review-eigenvalue-char.-polynomial .unnumbered}
+-------------------------------------
+
+For a square $n \times n$ matrix $A$, if there exist a scalar $\lambda$
+and a *nonzero* vector $\mathbf{v} \in \mathbb{R}^n$ such that
+$A \mathbf{v} = \lambda \, \mathbf{v}$, then $\lambda$ is called an
+*eigenvalue* of $A$, and $\mathbf{v}$ is a *eigenvector* associated with
+this eigenvalue. Eigenvalues turns out to be the roots of the
+*characteristic poynomial* $$p_A (\lambda) = \det(\lambda I - A).$$ This
+give us a direct way to compute the eigenvalues (but not eigenvectors).
+For a large matrix, $p_A$ will also have high degrees, so the
+computation is not easy. But at least this is doable for small matrices.
+
+Eigenvalues, determinant, & trace {#eigenvalues-determinant-trace .unnumbered}
+---------------------------------
+
+We have studied the concept of determinant in detail. Another important
+numerical property is "trace". The **trace** of a square matrix is the
+sum of its diagonal entries. Eigenvalues of a matrix have direct
+connection to both of these. For a square matrix $A$,
+
+-   the sum of its eigenvalues (including complex eigenvalues), counted
+    with algebraic multiplicity, is its *trace*;
+
+-   the product of its eigenvalues (including complex eigenvalues),
+    counted with algebraic multiplicity, is its *determinant*.
+
+Properties of characteristic polynomials {#properties-of-characteristic-polynomials .unnumbered}
+----------------------------------------
+
+Given an $n \times n$ matrix $A = [a_{ij}]$, the characteristic
+polynomial $p_A(\lambda)$ has the following properties.
+
+-   its degree is $n$;
+
+-   its coefficients are polynomials in $a_{ij}$'s;
+
+-   its leading coefficient is 1 (monic);
+
+-   its constant term is $p_A(0) = (-1)^n \det(A)$;
+
+-   its coefficient for $t^{-1}$ is the *trace* of $-A$. -->

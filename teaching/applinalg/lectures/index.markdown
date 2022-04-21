@@ -28,7 +28,7 @@ the deeper discussion involved in each class meeting.
 * Lecture 14: [Systems of linear equations](linear_sys/)
 * Lecture 15: [Least squares problem](least_squares/)
 * Lecture 16: [QR decomposition](qr/)
-* Lecture 17: Eigenvalues and eigenvectors
+* Lecture 17: [Eigenvalues and eigenvectors](eigen/)
 * Lecture 18: Eigenvalue decomposition
 * Lecture 19: Singular values
 * Lecture 20: Singular value decomposition (optional)
