@@ -490,6 +490,39 @@ $90^\circ$. -->
         \end{align*}
     </div>
 </section>
+<section>
+    <h3>A footnote about using determinants</h3>
+    <p>
+        In standard textbook of linear algebra (not numerical linear algebra),
+        the computation of eigenvalues generally involve <em>determinants</em>.
+    </p>
+    <p class="fragment">
+        Indeed, $\lambda$ is an eigenvalue of $A$
+        if and only if
+        \[
+            \det(\lambda I - A) = 0.
+        \]
+    </p>
+    <p class="fragment">
+        In other words, the eigenvalues of $A$ are
+        exactly the roots of the polynomial
+        \[
+            p_A (\lambda) = \det(\lambda I - A),
+        \]
+        which is called the <b class="highlight">characteristic polynomial</b> of $A$.
+    </p>
+    <p class="fragment">
+        The multiplicity of an eigenvalue $\lambda$ of $A$ as a root of $p_A$
+        is called the <b class="highlight">algebraic multiplicity</b> of $\lambda$
+        <span class="lowlight small">
+            (not to be confused with the geometric multiplicity).
+        </span>
+    </p>
+    <p class="fragment">
+        However, this method is almost never used in practical applications
+        for its inefficiency and numerical instability.
+    </p>
+</section>
 
 
 
