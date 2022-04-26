@@ -268,3 +268,118 @@ title: Eigendecompositions and more eigen-things
         through the same process.
     </p>
 </section>
+<section>
+    <h3>Eigendecompositions</h3>
+    <p>
+        Matrix decomposition is the process of reducing matrices into certain
+        simple canonical forms. They are important tools in linear algebra and
+        its applications in many fields.
+    </p>
+    <p>
+        "Eigenvalue decomposition" a.k.a. "eigendecomposition",
+        which reduces a matrix into a product of a
+        diagonal matrix formed by eigenvalues and
+        invertible matrices created from the eigenvectors.
+        <span class="lowlight smaller">
+            In the area of differentiation
+            equation, it is the key for solving system of linear ordinary
+            differential equations. In classical mechanics, eigenvalue decomposition
+            is used to study natural mode of vibrations. In machine learning, it
+            plays an important role in the principal component analysis method.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Eigendecompsition: a 2x2 example</h3>
+    <!-- <p>
+        We start with a 2x2 example.
+        The idea generalizes to higher dimension.
+    </p> -->
+    <div class="cols">
+        <div class="col">
+            <p>
+                Consider the $2 \times 2$ matrix 
+                \[
+                    A = 
+                    \begin{bmatrix}
+                        8 & 10 \\
+                        -3 & -3
+                    \end{bmatrix}
+                \]
+            </p>
+            <p class="fragment">
+                Its eigenvalues are
+                $\lambda_1 = 3, \lambda_2 = 2$.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                We can find two eigenvectors
+                \[
+                    \begin{bmatrix}
+                        -2 \\ 1
+                    \end{bmatrix}
+                    ,
+                    \begin{bmatrix}
+                        -5/3 \\ 1
+                    \end{bmatrix}.
+                \]
+                corresponding to $\lambda_1,\lambda_2$.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Observe that these two eigenvectors are linearly independent, and
+        \[
+            A
+            =
+            \left[
+            \begin{smallmatrix}
+                -1 & -5/3 \\
+                1 & 1
+            \end{smallmatrix}
+            \right]
+            \left[
+            \begin{smallmatrix}
+                \lambda_1 & 0 \\
+                0 & \lambda_2
+            \end{smallmatrix}
+            \right]
+            \left[
+            \begin{smallmatrix}
+                -1 & -5/3 \\
+                1 & 1
+            \end{smallmatrix}
+            \right]^{-1}
+        \]
+        This is an "eigendecomposition" of $A$.
+    </p>
+</section>
+<section>
+    <h3>Eigendecompositions</h3>
+    <p>
+        For an $n \times n$ matrix $A$,
+        if there are $n$ linearly independent eigenvectors
+        $\{ \mathbf{v}_1, \dots, \mathbf{v}_n \}$
+        associated with all eigenvalues of $A$,
+        then $A$ can be factorized
+        as 
+        \[
+            \begin{aligned}
+                    A &= X \Lambda X^{-1}
+                    &&\text{where}
+                    &
+                    X &= [\; \mathbf{v}_1 \; \cdots \; \mathbf{v}_n \;]
+                \end{aligned}
+        \]
+        and $\Lambda$ is the diagonal matrix whose
+        diagonal entries are the eigenvalues of $A$ corresponding to the
+        eigenvectors in $X$.
+    </p>
+    <p class="fragment">
+        This an <b class="highlight">eigendecomposition</b>
+        (eigenvalue decomposition) of $A$.
+        Such a decomposition is not unique
+        (it depends on your choice of $X$).
+    </p>
+</section>
