@@ -1,0 +1,270 @@
+---
+layout: ilecture_only
+title: Eigendecompositions and more eigen-things
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Eigendecompositions</h2>
+        <p class="small">
+            Eigenvalues, eigenvectors, eigendecomposition, 
+            and many other eigen-things
+        </p>
+    </div>
+    <p>
+        Eigenvalues, eigenvectors, and eigendecompositions
+        show up in many surprising places in applications.
+    </p>
+    <!-- <p>Tianran Chen</p> -->
+    <!-- <p class="footnote2"> -->
+    <!-- Department of Mathematics<br> -->
+    <!-- Auburn University at Montgomery -->
+    <!-- </p> -->
+</section>
+<section>
+    <h3>Eigenvalues, revisited</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                For a square matrix $A$,
+                a complex scalar $\lambda$ is an
+                <em class="highlight">eigenvalue</em> of $A$ if
+                \[
+                    A - \lambda I
+                \]
+                is singular.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                An $n \times n$ matrix has at most $n$ eigenvalues.
+                <span class="fragment">
+                    Indeed, the eigenvalues are exactly the roots
+                    of the "<em>minimal polynomial</em>" of $A$.
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="definition fragment">
+        For a square matrix $A$, its
+        <b class="highlight">minimal polynomial</b>
+        is the polynomial $P$ of least degree and leading coefficient $1$
+        such that
+        \[
+            P(A) = \mathbf{0}.
+        \]
+    </div>
+    <p class="fragment">
+        The degree of the minimal polynomial of an $n \times n$ matrix
+        is at most $n$.
+    </p>
+    <p class="fragment">
+        Direct computation of such a polynomial is rarely needed
+        in applications and numerical computations.
+        Its <em>existence</em> is what's important:
+        It tell us how many eigenvalues we could have
+        and how they are related.
+    </p>
+</section>
+<section>
+    <h3>Eigenspace and rank</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                From the definition, we observed that
+                $A$ is singular if and only if $0$ is an eigenvalue of $A$.
+            </p>
+            <!-- <ul>
+                <li>A square matrix is singular if and only if 0 is an eigenvalue.</li>
+                <li>A triangular matrix is singular if and only if it has a zero entry on its diagonal</li>
+            </ul> -->
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Indeed, we can get rank information from
+                the dimension of corresponding eigenspace.
+            </p>
+        </div>
+    </div>
+    <div class="theoremlike fragment" data-type="Proposition">
+        For an $n \times n$ matrix $A$, the nullity equals to the dimension
+        of the eigenspace associated with its zero eigenvalue.
+    </div>
+    <p class="fragment">
+        Recall that this dimension is called the
+        <em class="highlight">geometric multiplicity</em>
+        of the zero eigenvalue.
+        <span class="fragment">
+            This multiplicity is 0 if 0 is not an eigenvalue of $A$.
+        </span>
+    </p>
+    <p class="fragment">
+        So, by the <em class="highlight">Rank-Nullity Theorem</em>,
+        \[
+            \operatorname{rank} A = n - \dim(E_A(0))
+        \]
+        where $E_A(0)$ is the dimension of eigenspace associated with
+        the zero eigenvalue of $A$,
+        i.e., its geometric multiplicity.
+    </p>
+</section>
+<section>
+    <h3>Eigenvalues and numerical rank</h3>
+    <p>
+        Indeed, eigenvalues and their geometric multiplicities
+        provide something even better.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                Consider the matrix
+                \[
+                    A =
+                    \begin{bmatrix}
+                        1 & 2 \\
+                        1 & 1.999999
+                    \end{bmatrix}
+                \]
+            </p>
+            <p class="fragment">
+                We can see $\operatorname{rank} A = 2$.
+            </p>
+            <p class="fragment">
+                However, the two rows are very close to being identical,
+                i.e., $A$ is extremely close to being of rank 1.
+            </p>
+            <p class="fragment">
+                The concept of rank <em>cannot</em> to capture such subtlety.
+                <span class="lowlight small">
+                    (The rank of $A$ cannot be close to but not equal to 2)
+                </span>
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Eigenvalues can clarify this:
+                The eigenvalues of $A$ are
+                \begin{align*}
+                        &2.99999933333 \\
+                        -&0.00000033333
+                \end{align*}
+                <span class="fragment">
+                    and the geometric multiplicity of the second eigenvalue is 1.
+                </span>
+            </p>
+            <p class="fragment">
+                This "nearly zero" eigenvalue signals that
+                $A$ is "nearly" of rank 1,
+                and its magnitude 
+                gives us a way to quantify this statement.
+            </p>
+        </div>
+    </div>
+
+</section>
+<section>
+    <h3>Computing eigenvalues</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                We saw a simple trick that for
+                \[
+                    A =
+                    \begin{bmatrix}
+                        a & b \\
+                        c & d
+                    \end{bmatrix}
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                its eigenvalues $\lambda_1,\lambda_2$ satisfy
+                \begin{align*}
+                    \lambda_1 \lambda_2 &= ad - bc \\
+                    \lambda_1 + \lambda_2 &= a + d
+                \end{align*}
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        So how do people compute eigenvalues for larger matrices?
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                <b>In classroom:</b>
+                In nearly 100% of the standard textbooks,
+                students are taught to compute the eigenvalues of an $n \times n$ matrix $A$ by
+                solving the polynomial equation
+                \[
+                    p_A (\lambda) = \det(\lambda I - A) = 0
+                \]
+            </p>
+            <p class="fragment">
+                This technique is useless for all but the most trivial cases.
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                <b>In real world:</b>
+                This is a multi-<b class="highlight">b</b>illion dollar business.
+                <span class="fragment lowlight">
+                    <b class="highlight">T</b>rillions?
+                </span>
+            </p>
+            <ul class="fragment">
+                <li>Power methods</li>
+                <li>QR algorithm <span class="lowlight smaller">(not QR-decomposition)</span></li>
+                <li>......</li>
+            </ul>
+            <p class="fragment small">
+                Computing eigenvalues of large matrices efficiently and accurately
+                is an important and difficult problem in computational mathematics.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Eigenvectors, revisited</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                For an $n \times n$ matrix $A$ 
+                and an eigenvalue $\lambda$ of $A$,
+                an <em class="highlight">eigenvector</em> of $A$
+                associated with $\lambda$ is a vector $\mathbf{v} \in \mathbb{R}^n$ such that
+                \[
+                    A \mathbf{v} = \lambda \mathbf{v}
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                That is, they are the roots of the quadratic polynomial
+                \[
+                    (A \mathbf{v} - \lambda I) \mathbf{v} = \mathbf{0}
+                \]
+                <span class="fragment">
+                    That is, $\mathbf{v}$ is in the null space of the square matrix $A - \lambda I$.
+                </span>
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        There is really no difference between
+        "an eigenvector of $A$ associated with $\lambda$" and
+        "a nonzero null vector of the matrix $A - \lambda I$".
+    </p>
+    <p class="fragment">
+        Consequently, finding the eigenvectors associated with $\lambda$
+        is equivalent to the problem of finding the null space of
+        \[
+            A - \lambda I
+        \]
+    </p>
+    <p class="fragment lowlight">
+        In practice, eigenvalues and eigenvectors are usually computed at the same time
+        through the same process.
+    </p>
+</section>
