@@ -143,37 +143,6 @@
       year = {2018}
     }
 
-- nickname: kcycle-homotopy
-  title: A toric deformation method for solving Kuramoto equations
-  coauthors: Robert Davis
-  pdf: kcycle-homotopy.pdf
-  arxiv: http://arxiv.org/abs/1810.05690
-  abstract: >
-    The study of frequency synchronization configurations in Kuramoto models is a
-    ubiquitous mathematical problem that has found applications in many seemingly
-    independent fields. In this paper, we focus on networks whose underlying graph
-    are cycle graphs. Based on the recent result on the upper bound of the
-    frequency synchronization configurations in this context, we propose a toric
-    deformation homotopy method for locating all frequency synchronization
-    configurations with complexity that is linear in this upper bound. Loosely
-    based on the polyhedral homotopy method, this homotopy induces a deformation of
-    the set of the synchronization configurations into a series of toric varieties,
-    yet our method has the distinct advantage of avoiding the costly step of
-    computing mixed cells. We also explore the important consequences of this
-    homotopy method in the context of direct acyclic decomposition of Kuramoto
-    networks and tropical stable intersection points for Kuramoto equations.
-  bibtex: |
-    @article{ChenDavis2018Toric,
-    archivePrefix = {arXiv},
-    arxivId = {1810.05690},
-    author = {Chen, Tianran and Davis, Robert},
-    eprint = {1810.05690},
-    month = {oct},
-    title = {A toric deformation method for solving Kuramoto equations},
-    url = {http://arxiv.org/abs/1810.05690},
-    year = {2018}
-    }
-
 - nickname: index-resolved
   title: An index-resolved fixed-point homotopy and potential energy landscapes
   coauthors: Dhagash Mehta
