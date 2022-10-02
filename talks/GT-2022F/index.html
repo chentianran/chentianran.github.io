@@ -80,7 +80,6 @@ title: Generic and non-generic synchronization configurations
                 a function
                 $x(t) : \mathbb{R} \to S^1$ in $t$.
             </p>
-
         </div>
     </div>
     <p class="fragment">
@@ -198,8 +197,8 @@ title: Generic and non-generic synchronization configurations
             \text{of others}
             \end{gathered}
         \]
-        There is a long history in studing models of this
-        form from seemingly independent fields.
+        There is a long history in studying models of this
+        form in seemingly independent fields.
     </p>
     <br/>
     <ul class="fragment">
@@ -323,8 +322,9 @@ title: Generic and non-generic synchronization configurations
         \]
         for some constant $c$ (synchronized frequency).
     </p>
+    <br/>
     <p class="fragment">
-        I.e.,
+        I.e., solutions to the system of equations
         \[
             c =
             w_i -
@@ -409,7 +409,7 @@ title: Generic and non-generic synchronization configurations
             \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
             \quad\text{for } i = 1,\ldots,n
         \]
-        in $n$ unknowns $\theta_1,\ldots,\theta_0$:
+        in $n$ unknowns $\theta_1,\ldots,\theta_n$:
         <em>reduced</em> Kuramoto system
     </p>
 </section>
@@ -563,7 +563,9 @@ title: Generic and non-generic synchronization configurations
         i.e., roots with some $|x_i| \ne 1$.
     </p>
     <p class="fragment">Do they mean anything?</p>
-    <img src="torickuramoto.png" alt="" class="fragment r-stretch">
+    <div class="center fragment">
+        <img src="torickuramoto.png" alt="" class="r-stretch">
+    </div>
 </section>
 <section>
     <h3>Digression: 2D Toric Kumamoto problem</h3>
@@ -615,11 +617,11 @@ title: Generic and non-generic synchronization configurations
     </p>
     <ul>
         <li>
-            What is the maximum number of $\mathbb{C}^*$-solutions?
+            What is the maximum number of $\mathbb{C}^*$-roots?
             (Is it even finite?)
         </li>
         <li>
-            Are the $\mathbb{C}^*$-solutions isolated (0-dimensional) ?
+            Are the $\mathbb{C}^*$-roots isolated (0-dimensional) ?
         </li>
     <p class="fragment">
         If the $\mathbb{C}^*$-roots are isolated
@@ -852,7 +854,10 @@ title: Generic and non-generic synchronization configurations
         $\nabla_G := \{ \mathbf{0} \} \cup \{ \pm (\mathbf{e}_i - \mathbf{e}_j) \mid \{ i, j \} \in E \}$
     </p>
     <div class="theorem">
-        <strong>Lemma.</strong> 
+        <strong>Lemma.</strong>
+            <span class="small">
+                (Higashitani, Jochemko, Michałek and C., Davis, Korchevskaia)
+            </span>
         <ul>
             <li>
                 Faces of $\nabla_G$ correspond to subgraphs of $G$
@@ -867,10 +872,23 @@ title: Generic and non-generic synchronization configurations
             injective</em>.</p> -->
     <div class="theorem">
         <strong>Lemma.</strong>
+            <span class="small">
+                (C., Davis, Korchevskaia)
+            </span>
         Facets of $\nabla_G$ are in 1-to-1 correspondence with
         "balanced" assignments arc orientations in cut sets of
         maximally bipartite subgraphs of $G$.
     </div>
+    <ul class="smaller lowlight">
+        <li>
+            Higashitani, Jochemko, Michałek.
+            Arithmetic aspects of symmetric edge polytopes. Mathematika 65, 2019.
+        </li>
+        <li>
+            Chen, Davis, Korchevskaia.
+            Facets and facet subgraphs of adjacency polytopes. Arxiv 2021.
+        </li>
+    </ul>
 </section>
 <section>
     <h3>A series of relaxations</h3>
