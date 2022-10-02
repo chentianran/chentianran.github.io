@@ -808,11 +808,13 @@ title: Generic and non-generic synchronization configurations
         \]
     </p>
 </section>
-<section class="slide level2">
-
-    <h3 id="adjacency-polytope-bound">Adjacency polytope bound</h3>
-    <p><strong>Lemma.</strong> The number of isolated complex solutions to
-        the algebraic Kuramoto system <span class="math display">\[
+<section>
+    <h3>Adjacency polytope bound</h3>
+    <div class="theorem">
+        <strong>Lemma.</strong>
+        The number of isolated complex zeros to
+        the algebraic Kuramoto system
+        \[
             f_i(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} k_{ij}
             \left(
             \frac{x_i}{x_j} -
@@ -820,11 +822,17 @@ title: Generic and non-generic synchronization configurations
             \right)
             \quad\text{for }
             i = 1,\ldots,n,
-            \]</span> counting multiplicity, is less than or equal to the normalized
-        volume <span class="math display">\[
+        \]
+        counting multiplicity, is bounded the normalized volume
+        \[
             \operatorname{Vol}(\operatorname{conv}(\nabla_G)).
-            \]</span> This is the <strong>adjacency polytope bound</strong>.</p>
-    <p><span class="math display">\[
+        \]
+    </div>
+    <p>
+        This is the <strong>adjacency polytope bound</strong>.
+    </p>
+    <p>
+        \[
             \begin{gathered}
             \text{Generic} \\
             \mathbb{C}\text{-root count}
@@ -834,27 +842,41 @@ title: Generic and non-generic synchronization configurations
             \text{Adjacency} \\
             \text{polytope bound} \\
             \end{gathered}
-            \]</span></p>
+        \]
+    </p>
 </section>
-<section class="slide level2">
-
-    <h3 id="why-adjacency-polytope">Why adjacency polytope ?</h3>
-    <p>We know much about <span class="math inline">$\nabla_G := \{
-            \mathbf{0} \} \cup \{ \pm (\mathbf{e}_i - \mathbf{e}_j) \mid \{ i, j \}
-            \in E \}$</span></p>
-    <p><strong>Lemma.</strong> - Faces of <span class="math inline">$\nabla_G$</span> correspond to subgraphs of <span
-            class="math inline">$G$</span> that are maximally bipartite in their
-        induced subgraphs. - Facets of <span class="math inline">$\nabla_G$</span> correspond to maximal bipartite
-        subgraph of <span class="math inline">$G$</span>.</p>
-    <p>This correspondence is <em>surjective</em> but <em>not
-            injective</em>.</p>
-    <p><strong>Lemma.</strong> Facets of <span class="math inline">$\nabla_G$</span> are 1-to-1 correspondence with
-        “balanced” assignments arc orientations in cut sets of maximally
-        bipartite subgraphs of <span class="math inline">$G$</span>.</p>
+<section>
+    <h3>Why adjacency polytope ?</h3>
+    <p>
+        We know much about
+        $\nabla_G := \{ \mathbf{0} \} \cup \{ \pm (\mathbf{e}_i - \mathbf{e}_j) \mid \{ i, j \} \in E \}$
+    </p>
+    <div class="theorem">
+        <strong>Lemma.</strong> 
+        <ul>
+            <li>
+                Faces of $\nabla_G$ correspond to subgraphs of $G$
+                that are maximally bipartite in their induced subgraphs.
+            </li>
+            <li>
+                Facets of $\nabla_G$ correspond to maximal bipartite subgraph of $G$.
+            </li>
+        </ul>
+    </div>
+    <!-- <p>This correspondence is <em>surjective</em> but <em>not
+            injective</em>.</p> -->
+    <div class="theorem">
+        <strong>Lemma.</strong>
+        Facets of $\nabla_G$ are in 1-to-1 correspondence with
+        "balanced" assignments arc orientations in cut sets of
+        maximally bipartite subgraphs of $G$.
+    </div>
 </section>
-<section id="a-series-of-relaxations" class="slide level2">
+<section>
     <h3>A series of relaxations</h3>
-    <p>For the parametrized algebraic Kuramoto system <span class="math display">\[
+    <p>
+        For the algebraic Kuramoto system
+        \[
             f_i(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} k_{ij}
             \left(
             \frac{x_i}{x_j} -
@@ -862,10 +884,10 @@ title: Generic and non-generic synchronization configurations
             \right)
             \quad\text{for }
             i = 1,\ldots,n
-            \]</span> with parameters <span class="math inline">$w_1,\ldots,w_n$</span> (natural frequencies) and
-        symmetric coupling coefficients <span class="math inline">$k_{ij} =
-            k_{ji}$</span> ,</p>
-    <p><span class="math display">\[
+        \]
+        with parameters $w_1,\ldots,w_n$ (natural frequencies) and
+        symmetric coupling coefficients $k_{ij} = k_{ji}$,
+        \[
             \begin{gathered}
             \text{Real} \\
             \text{(isolated)} \\
@@ -888,11 +910,13 @@ title: Generic and non-generic synchronization configurations
             \text{polytope} \\
             \text{bound} \\
             \end{gathered}
-            \]</span></p>
+            \]
+        </p>
 </section>
-<section id="a-reasonable-conjecture" class="slide level2">
+<section>
     <h3>A reasonable conjecture</h3>
-    <p><span class="math display">\[
+    <p>
+        \[
             \begin{gathered}
             \text{Generic} \\
             \mathbb{C}\text{-root} \\
@@ -909,15 +933,16 @@ title: Generic and non-generic synchronization configurations
             \text{polytope} \\
             \text{bound} \\
             \end{gathered}
-            \]</span></p>
+            \]</p>
 </section>
-<section id="generic-root-count-result" class="slide level2">
+<section>
     <h3>Generic root count result</h3>
-    <p><strong>Theorem.</strong> (C., Korchevskaia, Lindberg) For
-        <em>generic</em> natural frequencies <span class="math inline">$w_1,\ldots,w_n$</span> and <em>generic</em>
-        <strong>but symmetric</strong> coupling <span class="math inline">$k_{ij} = k_{ji}$</span> , the
-        <em>complex</em>
-        zeros of <span class="math display">\[
+    <div class="theorem">
+        <strong>Theorem.</strong> (C., Korchevskaia, Lindberg)
+        For <em>generic</em> natural frequencies $w_1,\ldots,w_n$ and
+        <em>generic</em> <strong>but symmetric</strong> coupling $k_{ij} = k_{ji}$,
+        the <em>complex</em> zeros of
+        \[
             f(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} \frac{k_{ij}}{2
             \mathbf{i}}
             \left(
@@ -926,10 +951,11 @@ title: Generic and non-generic synchronization configurations
             \right)
             \quad\text{for }
             i = 1,\ldots,n
-            \]</span> are all isolated, and the total number of solutions
+        \]
+        are all isolated, and the total number
         <strong>equal</strong> to the <strong>normalized volume of the adjacency
-            polytope</strong> <span class="math inline">$\operatorname{Vol}(\nabla_G)$</span>.
-    </p>
+        polytope</strong> $\operatorname{Vol}(\nabla_G)$.
+    </div>
     <p><span class="math display">\[
             \begin{gathered}
             \text{Generic} \\
@@ -949,42 +975,53 @@ title: Generic and non-generic synchronization configurations
             \end{gathered}
             \]</span></p>
 </section>
-<section class="slide level2">
-
-    <h3 id="obstacles">Obstacles</h3>
-    <p><span class="math display">\[
-            f(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} \frac{k_{ij}}{2
-            \mathbf{i}}
+<section>
+    <h3>Obstacles</h3>
+    <p>
+        \[
+            f(\mathbf{x}) = 
+            w_i - 
+            \sum_{j \in \mathcal{N}_G(i)} 
+            \frac{k_{ij}}{2 \mathbf{i}}
             \left(
             \frac{x_i}{x_j} -
             \frac{x_j}{x_i}
             \right)
             \quad\text{for }
             i = 1,\ldots,n
-            \]</span> 1. In each polynomial, <span class="math inline">$x_i/x_j$</span> and <span
-            class="math inline">$x_j/x_i$</span>, must share the same coefficient
-        <span class="math inline">$\frac{k_{ij}}{2 \mathbf{i}}$</span>. 2. For
-        any edge <span class="math inline">$\{i,j\} \in E$</span>, the <span class="math inline">$i$</span>-th and
-        <span class="math inline">$j$</span>-th polynomial always have the terms
-        <span class="math inline">$\frac{k_{ij}}{2\mathbf{i}} (x_i x_j^{-1} -
-            x_j x_i^{-1})$</span> and <span class="math inline">$\frac{k_{ji}}{2\mathbf{i}} (x_j x_i^{-1} - x_i
-            x_j^{-1})$</span>, Indeed, the allowed choices of coefficients consists
+        \]
+        <!-- Indeed, the allowed choices of coefficients consists
         of a nowhere dense subset of (Lebesgue) measure 0 among the space of all
-        possible complex coefficients; 3. Unless <span class="math inline">$G$</span> is the complete graph, the
-        Newton
-        polytopes are not full-dimensional.
+        possible complex coefficients;  -->
     </p>
+    <ol>
+        <li class="fragment">
+            In each polynomial, the monomials $x_i/x_j$ and $x_j/x_i$,
+            must share the same coefficient
+            $\frac{k_{ij}}{2 \mathbf{i}}$.
+        </li>
+        <li class="fragment">
+            For any edge $\{i,j\} \in E$, the $i$-th and
+            $j$-th polynomial always have the terms
+            $\frac{k_{ij}}{2\mathbf{i}} (x_i x_j^{-1} - x_j x_i^{-1})$ and 
+            $\frac{k_{ji}}{2\mathbf{i}} (x_j x_i^{-1} - x_i x_j^{-1})$.
+        </li>
+        <li class="fragment">
+            Unless $G$ is the complete graph,
+            the Newton polytopes are not all full-dimensional.
+        </li>
+    </ol>
 </section>
-<section id="how-to-prove-this" class="slide level2">
+<section>
     <h3>How to prove this?</h3>
     <p>There are many ways. We followed a familiar recipe</p>
-    <ol type="1">
+    <ol>
         <li>Construct a homotopy</li>
         <li>Prove smoothness</li>
         <li>Count the number of homotopy paths</li>
     </ol>
 </section>
-<section id="a-nonlinear-homotopy" class="slide level2">
+<section>
     <h3>A nonlinear homotopy</h3>
     <p>Basing on <span class="math display">\[
             f_i(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)}
@@ -1010,59 +1047,79 @@ title: Generic and non-generic synchronization configurations
             1$</span>.
     </p>
 </section>
-<section id="structure-preserving-polyhedral-homotopy" class="slide level2">
+<section>
     <h3>Structure preserving polyhedral homotopy</h3>
-    <p>With <em>generic but symmetric</em> rational “lifting” values <span class="math inline">$\alpha_{ij} =
-            \alpha_{ji} \approx 1$</span>.
-        <span class="math display">\[
-            h_i (\mathbf{x},t) =
+    <p>
+        \[
+            h_i :=
             w_i - \sum_{j \in \mathcal{N}_G(i)}
             \frac{k_{ij}}{2 \mathfrak{i}} \; t^{\alpha_{ij}} \;
             \left(
             \frac{x_i}{x_j} -
             \frac{x_j}{x_i}
             \right)
-            \quad\text{for } i = 1, \ldots,n
-            \]</span> defines a <em>structure preserving</em> polyhedral homotopy
-        (Huber &amp; Sturmfels)
+            \;\text{for } i = 1, \ldots,n
+        \]
+        with <em>generic but symmetric</em> rational “lifting” values
+        $\alpha_{ij} = \alpha_{ji} \approx 1$.
+        defines a <em>structure preserving</em>
+        polyhedral homotopy
+        <span class="smaller lowlight">
+            (Huber & Sturmfels.
+            A polyhedral method for solving sparse polynomial systems.
+            Math Comput 64, 1541–1555, 1995)
+        </span>
     </p>
     <ul>
-        <li>At <span class="math inline">$t=1$</span>, <span class="math inline">$h_i(\mathbf{x},1) \equiv
-                f_i(\mathbf{x})$</span></li>
-        <li>Each <span class="math inline">$h_i (\mathbf{x}, t)$</span> is
-            holomorphic in <span class="math inline">$\mathbf{x}$</span> and <span class="math inline">$t$</span>
-            away from <span class="math inline">$t=0$</span> (smoothness)</li>
-        <li>For any <span class="math inline">$t \ne 0$</span>, symmetry in
-            the coefficients is preserved <span class="math display">\[
+        <li class="fragment">
+            At $t=1$, $h_i(\mathbf{x},1) \equiv f_i(\mathbf{x})$
+        </li>
+        <li class="fragment">
+            Each $h_i (\mathbf{x}, t)$ is holomorphic in $\mathbf{x}$ and $t$
+            away from $t=0$
+        </li>
+        <li class="fragment"i>
+            For any $t \ne 0$, symmetry in the coefficients
+            is preserved
+            \[
                 \frac{k_{ij}}{2 \mathfrak{i}} t^{\alpha_{ij}} =
                 \frac{k_{ji}}{2 \mathfrak{i}} t^{\alpha_{ji}}
-                \]</span> This a symmetry preserving version of the polyhedral
-            homotopy</li>
+            \]
+            <!-- This a symmetry preserving version of the polyhedral
+            homotopy -->
+        </li>
     </ul>
 </section>
-<section id="homotopy-paths" class="slide level2">
+<section>
     <h3>Homotopy paths</h3>
-    <p>Under the assumption of generic parameters <span class="math inline">$k_{ij}$</span>’s and <span
-            class="math inline">$w_i&#39;s$</span>, <span class="math display">\[
+    <p>
+        \[
             0 =
-            h_i (\mathbf{x},t) =
+            h_i =
             w_i - \sum_{j \in \mathcal{N}_G(i)}
             \frac{k_{ij}}{2 \mathfrak{i}} \; t^{\alpha_{ij}} \;
             \left(
             \frac{x_i}{x_j} -
             \frac{x_j}{x_i}
             \right)
-            \quad\text{for } i = 1, \ldots,n
-            \]</span> defines smooth homotopy paths over <span class="math inline">$t \in (0,1]$</span>. <span
-            class="math display">\[
-            \# \text{ paths} \;=\; \text{generic root count}
-            \]</span> So the root counting question becomes a path counting
-        question.</p>
+        \]
+        for $i = 1, \ldots,n$ defines
+        smooth homotopy paths over $t \in (0,1]$.
+    </p>
+    <p class="fragment">
+        Under the assumption that $k_{ij}$'s and $w_i$'s
+        are chosen generically,
+        \[
+            \text{N.o. paths} \;=\; \text{Generic root count}
+        \]
+        So the root counting question becomes a path counting question.
+    </p>
 </section>
-<section id="side-note-the-tropical-view" class="slide level2">
+<section>
     <h3>Side note: the tropical view</h3>
-    <p>Half of the question is tropical: Going back to the Laurent
-        polynomials <span class="math display">\[
+    <p>
+        Half of the question is tropical: Going back to
+        \[
             f_i(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)}
             \frac{k_{ij}}{2 \mathbf{i}}
             \left(
@@ -1071,78 +1128,123 @@ title: Generic and non-generic synchronization configurations
             \right)
             \quad\text{for }
             i = 1,\ldots,n
-            \]</span> We assign the symmetry preserving valuations <span class="math display">\[
+        \]
+        We assign the symmetry preserving valuations
+        \[
             \begin{aligned}
-            \operatorname{val}(w_i) &amp;= 0 &amp;&amp;\text{and} &amp;
-            \operatorname{val}(k_{ij}) &amp;= \alpha_{ij} =
-            \operatorname{val}(k_{ji})
-            \quad\text{(generic but symmetric)}
+                \operatorname{val}(w_i) &= 0
+                &&\text{and} &
+                \operatorname{val}(k_{ij}) &= 
+                \operatorname{val}(k_{ji}) =
+                \alpha_{ij}
             \end{aligned}
-            \]</span></p>
-    <p>What is the intersection number of the <span class="math inline">$n$</span> tropical hypersurfaces <span
-            class="math display">\[
+        \]
+    </p>
+    <p class="fragment">
+        What is the intersection number of the $n$
+        tropical hypersurfaces
+        \[
             \mathbb{V}(\;\operatorname{Trop}(f_1) \;)
             \;\cap\;
             \cdots
             \;\cap\;
             \mathbb{V}(\;\operatorname{Trop}(f_n) \;)
-            \]</span></p>
+        \]
+    </p>
+    <p class="fragment">
+        This is the tropical version of the
+        generic root count question.
+    </p>
 </section>
-<section id="randomization" class="slide level2">
+<section>
     <h3>Randomization</h3>
-    <p>For a square algebraic system <span class="math inline">$F =
-            (f_1,\ldots,f_n)$</span>, analysis can be simplified through
-        “randomization” (random linear combinations): For any <span class="math inline">$n \times n$</span>
-        nonsingular matrix <span class="math inline">$R$</span>, <span class="math display">\[
+    <p>
+        For a square algebraic system
+        $F = (f_1,\ldots,f_n)$, analysis can be simplified through
+        "randomization" (random linear combinations):
+        For any $n \times n$ nonsingular matrix $R$,
+        \[
             F(\mathbf{x})
             \quad\quad\text{and}\quad\quad
             R \cdot F(\mathbf{x})
-            \]</span> have the same zero set. So we can study the
-        “<em>randomized</em> Kuramoto system” <span class="math inline">$R
-            \cdot F(\mathbf{x})$</span> instead.</p>
+        \]
+        have the same zero set.
+        <span class="fragment">
+            So we can study the
+            "<em>randomized</em> Kuramoto system"
+            $R \cdot F(\mathbf{x})$ instead.
+        </span>
+    </p>
     <ul>
-        <li>all polynomials in <span class="math inline">$R \cdot F
-                (\mathbf{x})$</span> involve all monomials</li>
-        <li>the Newton polytopes are all identical (unmixed case)</li>
+        <li class="fragment">
+            all polynomials in $R \cdot F (\mathbf{x})$
+            involve all monomials;
+        </li>
+        <li class="fragment">
+            the Newton polytopes are all identical (unmixed case);
+        </li>
     </ul>
-    <p><strong>Terminology.</strong> Numerical analysts would call <span class="math inline">$F \mapsto R \cdot
-            F$</span>
-        “<strong>preconditioning</strong>” (a standard practice to improve the
+    <p class="fragment small lowlight">
+        Terminology: Numerical analysts would call $F \mapsto R \cdot F$
+        "<strong>preconditioning</strong>" (a standard practice to improve the
         numerical condition of systems of equations).</p>
 </section>
-<section id="digression-why-randomize" class="slide level2">
+<section>
     <h3>Digression: Why randomize?</h3>
-    <p>Randomization turns a mixed system to an unmixed system (every
-        polynomial involves every monomial).</p>
+    <p>
+        Randomization turns a mixed system to an unmixed system
+        (every polynomial involves every monomial).
+    </p>
     <ul>
-        <li>Tropical intersection <span class="math inline">$\to$</span>
-            Stable self-intersection</li>
-        <li>Fine mixed subdivision <span class="math inline">$\to$</span>
-            Triangulation</li>
-        <li>Mixed volume computation <span class="math inline">$\to$</span>
-            volume computation</li>
+        <li class="fragment">
+            Tropical intersection $\to$ Stable self-intersection
+        </li>
+        <li class="fragment">
+            Fine mixed subdivision $\to$ Triangulation
+        </li>
+        <li class="fragment">
+            Mixed volume computation $\to$ volume computation
+        </li>
     </ul>
-    <p>Easier? Volume and mixed volume computations are both both #P.</p>
+    <p class="fragment">
+        Easier?
+        <span class="fragment">
+            Volume and mixed volume computations are both #P.
+        </span>
+    </p>
+        <p class="fragment smaller lowlight">
+            (Dyer, Gritzmann, Hufnagel. On The Complexity of Computing Mixed Volumes. SIAM J Comput 27, 1998)
+        </p>
 </section>
-<section id="digression-mixed-volume-vs.-volume" class="slide level2">
-    <h3>Digression: Mixed volume vs. volume</h3>
-    <p><strong>Theorem.</strong> (C. 2020) For <span class="math inline">$m$</span> distinct points <span
-            class="math inline">$\{ \mathbf{p}_1, \dots, \mathbf{p}_m \} \subset
-            \mathbb{R}^n$</span>, with <span class="math inline">$m &gt; n &gt;
-            0$</span>, <span class="math display">\[
+<section>
+    <h3>Digression: Mixed volume vs. volume</h3>
+    <div class="fragment">
+        <strong>Theorem.</strong> (C. 2020)
+        For $m$ distinct points
+        $\{ \mathbf{p}_1, \dots, \mathbf{p}_m \} \subset \mathbb{R}^n$,
+        with $m > n$
+        \[
             \operatorname{Vol} (
-            \operatorname{conv}\{\,
-            \mathbf{p}_1, \dots, \mathbf{p}_m
-            \}
+                \operatorname{conv}
+                \{\,
+                    \mathbf{p}_1, \dots, \mathbf{p}_m
+                \}
             ) =
             \operatorname{MV} (
-            \Delta(\mathbf{p}_1), \dots, \Delta(\mathbf{p}_m)
+                \Delta(\mathbf{p}_1), \dots, \Delta(\mathbf{p}_m)
             )
-            \]</span> where each <span class="math inline">$\Delta(\mathbf{p}_i)$</span> is a simplex of
-        dimension <span class="math inline">$m-n$</span> in <span class="math inline">$\mathbb{R}^m$</span>.</p>
-    <p>The specialized problem of computing mixed volume of simplices is at
-        least as “hard” as the general problem of computing volume.</p>
-    <p><span class="math display">\[
+        \]
+        where each $\Delta(\mathbf{p}_i)$ is a simplex
+        of dimension $m-n$ in $\mathbb{R}^m$.
+    </div>
+    <br/>
+    <p class="fragment">
+        The specialized problem of computing mixed volume of simplices is
+        at least as "hard" as the general problem of computing volume.
+    </p>
+    <br/>
+    <p class="fragment">
+        \[
             \begin{gathered}
             \text{General} \\
             \text{volume computation}
@@ -1152,46 +1254,63 @@ title: Generic and non-generic synchronization configurations
             \text{Very special} \\
             \text{mixed volume computation}
             \end{gathered}
-            \]</span></p>
+            \]</p>
 </section>
-<section id="back-to-path-counting" class="slide level2">
+<section>
     <h3>Back to path counting</h3>
-    <p>We want to count the number of paths over <span class="math inline">$t \in (0,1]$</span> defined by <span
-            class="math display">\[
+    <p>
+        We want to count the number of paths over $t \in (0,1]$ defined by 
+        \[
             0 =
-            h_i (\mathbf{x},t) =
+            h_i =
             w_i - \sum_{j \in \mathcal{N}_G(i)}
             \frac{k_{ij}}{2 \mathfrak{i}} \; t^{\alpha_{ij}} \;
             \left(
             \frac{x_i}{x_j} -
             \frac{x_j}{x_i}
             \right)
-            \quad\text{for } i = 1, \ldots,n.
-            \]</span> It’s much easier to count paths defined by the randomized
-        version <span class="math display">\[
+            \;\text{for } i = 1, \ldots,n.
+        \]
+    </p>
+    <p class="fragment">
+        It's much easier to count paths defined by
+        the randomized version
+        \[
             H^* := R \cdot H = 0
-            \]</span> for a generic (nonsingular) square matrix <span class="math inline">$R$</span>.</p>
-    <p>The stable self-intersections of <span class="math inline">$\operatorname{Trop}(H^*)$</span> are in 1-to-1
-        correspondence with cells in a unimodular triangulation of <span class="math inline">$\partial
-            \nabla_G$</span>. And the total number
-        is exactly <span class="math inline">$\operatorname{Vol}(\nabla_G)$</span>.</p>
+        \]
+        for a generic (nonsingular) square matrix $R$.
+    </p>
+    <p class="fragment">
+        The stable self-intersections "points" of $\operatorname{Trop}(H^*)$ are
+        in 1-to-1 correspondence with cells in a
+        unimodular triangulation of $\partial \nabla_G$.
+        And the total number is exactly $\operatorname{Vol}(\nabla_G)$.
+    </p>
 </section>
-<section class="slide level2">
-
-    <p>There are exactly <span class="math inline">$\operatorname{Vol}(\nabla_G)$</span> stable
-        self-intersections of <span class="math inline">$\operatorname{Trop}(H^*)$</span>.</p>
-    <p>Each gives rise to a path defined by the structure preserving
-        polyhedral homotopy <span class="math display">\[
+<section>
+    <h3>Stable self intersection</h3>
+    <p>
+        There are exactly $\operatorname{Vol}(\nabla_G)$ stable
+        self-intersections of $\operatorname{Trop}(H^*)$.
+    </p>
+    <p>
+        Each gives rise to a single path defined by
+        the structure preserving polyhedral homotopy
+        \[
             0 =
-            h_i (\mathbf{x},t) =
+            h_i =
             w_i - \sum_{j \in \mathcal{N}_G(i)}
             \frac{k_{ij}}{2 \mathfrak{i}} \; t^{\alpha_{ij}} \;
             \left(
             \frac{x_i}{x_j} -
             \frac{x_j}{x_i}
             \right)
-            \quad\text{for } i = 1, \ldots,n.
-            \]</span> Therefore <span class="math display">\[
+            \;\text{for } i = 1, \ldots,n.
+        \]
+    </p>
+    <p class="fragment">
+        Therefore
+        \[
             \operatorname{Vol}(\nabla_G)
             \;\ge\;
             \begin{gathered}
@@ -1205,11 +1324,13 @@ title: Generic and non-generic synchronization configurations
             \end{gathered}
             \;\le\;
             \operatorname{Vol}(\nabla_G)
-            \]</span></p>
+            \]
+        </p>
 </section>
-<section id="bernshtein-generalness" class="slide level2">
+<section>
     <h3>Bernshtein-generalness</h3>
-    <p><span class="math display">\[
+    <p>
+        \[
             \begin{gathered}
             \text{Generic} \\
             \mathbb{C}\text{-root} \\
@@ -1221,7 +1342,11 @@ title: Generic and non-generic synchronization configurations
             \text{polytope} \\
             \text{bound} \\
             \end{gathered}
-            \]</span> We also know that <span class="math display">\[
+        \]
+    </p>
+    <p class="fragment">
+        We also know that
+        \[
             \begin{gathered}
             \text{Generic} \\
             \mathbb{C}\text{-root} \\
@@ -1238,28 +1363,35 @@ title: Generic and non-generic synchronization configurations
             \text{polytope} \\
             \text{bound} \\
             \end{gathered}
-            \]</span> They must be all equal, and the algebraic Kuramoto system is
-        Bernshtein-general.</p>
+        \]
+        So they must be all equal,
+        and the algebraic Kuramoto system is Bernshtein-general.
+    </p>
 </section>
-<section id="recap-generic-root-count" class="slide level2">
+<section>
     <h3>Recap: Generic root count</h3>
-    <p><strong>Theorem.</strong> (C., Korchevskaia, Lindberg) For
-        <em>generic</em> natural frequencies <span class="math inline">$w_1,\ldots,w_n$</span> and <em>generic</em>
-        <strong>but symmetric</strong> coupling <span class="math inline">$k_{ij} = k_{ji}$</span> , the
-        <em>complex</em>
-        zeros of <span class="math display">\[
-            f(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} \frac{k_{ij}}{2
-            \mathbf{i}}
+    <div class="theorem"><strong>Theorem.</strong> (C., Korchevskaia, Lindberg)
+        For <em>generic</em> natural frequencies $w_1,\ldots,w_n$ and
+        <em>generic</em> <strong>but symmetric</strong>
+        coupling coefficients $k_{ij} = k_{ji}$,
+        the <em>complex</em> zeros of
+        \[
+            f(\mathbf{x}) = 
+            w_i - \sum_{j \in \mathcal{N}_G(i)} 
+            \frac{k_{ij}}{2 \mathbf{i}}
             \left(
             \frac{x_i}{x_j} -
             \frac{x_j}{x_i}
             \right)
             \quad\text{for }
             i = 1,\ldots,n
-            \]</span> are all isolated, and the total number of solutions
-        <strong>equal</strong> to the <strong>normalized volume of the adjacency
-            polytope</strong> <span class="math inline">$\operatorname{Vol}(\nabla_G)$</span>.
-    </p>
+        \]
+        are all isolated, and the total number of solutions
+        <strong>equal</strong> to the
+        <strong>normalized volume of the adjacency polytope</strong>
+        $\operatorname{Vol}(\nabla_G)$.
+    </div>
+    <br/>
     <p><span class="math display">\[
             \begin{gathered}
             \text{Generic} \\
@@ -1279,46 +1411,62 @@ title: Generic and non-generic synchronization configurations
             \end{gathered}
             \]</span></p>
 </section>
-<section id="computational-implications" class="slide level2">
+<section>
     <h3>Computational implications</h3>
-    <p><span class="math display">\[
+    <p>
+        \[
             \text{Generic } \mathbb{C}\text{-roots}
             \;=\;
             \text{A.P. bound}
-            \]</span></p>
-    <p>The structure preserving polyhedral homotopy is an optimal homotopy
-        method for solving algebraic Kuramoto equations, IF <span class="math inline">$\mathbb{C}$</span>-roots are
-        needed.</p>
-    <p><strong>Theorem.</strong> For tree and cycle networks, and networks
-        formed by gluing trees and cycles along cut vertices, <span class="math display">\[
+        \]
+    </p>
+    <p>
+        The structure preserving polyhedral homotopy is an
+        optimal homotopy method for solving algebraic Kuramoto equations...
+    </p>
+    <p class="fragment">... IF $\mathbb{C}$-roots are needed.</p>
+    <div class="theorem fragment">
+        <strong>Proposition.</strong> (Lindberg, Zachariah, Boston, Lesieutre. 2022)
+        For tree and cycle networks, and networks
+        formed by gluing trees and cycles along cut vertices,
+        \[
             \text{Max. $\mathbb{R}$-root count}
             \;=\;
             \text{A.P. bound}.
-            \]</span> —</p>
+        \]
+        <span class="smaller lowlight">
+            (Lindberg, Zachariah, Boston, Lesieutre,
+            The Distribution of the Number of Real Solutions to the Power Flow Equations.
+            IEEE T Power Syst PP, 2022).
+        </span>
+    </div>
 </section>
-<section id="this-vs.-the-original-polyhedral-homotopy" class="slide level2">
-    <h3>This vs. the original polyhedral homotopy</h3>
+<section>
+    <h3>This vs. the original polyhedral homotopy</h3>
     <p>Differences:</p>
     <ul>
         <li>Use symmetric lifting values (<span class="math inline">$\operatorname{val}(k_{ij}) =
                 \operatorname{val}(k_{ji})$</span>)</li>
         <li>Different start system</li>
     </ul>
-    <p>Advantages:</p>
-    <ul>
-        <li>Simpler “tree” starting system (can be solved in linear time)</li>
-        <li>Does not require mixed volume computation
-            <ul>
-                <li>Volume computations are sufficient</li>
-                <li>Cells corresponds to arc orientation assignments of spanning trees
-                    of <span class="math inline">$G$</span> (There may be shortcuts!)</li>
-            </ul>
-        </li>
-    </ul>
+    <div class="fragment">
+        <p>Advantages:</p>
+        <ul>
+            <li>Simpler “tree” starting system (can be solved in linear time)</li>
+            <li>Does not require mixed volume computation
+                <ul>
+                    <li>Volume computations are sufficient</li>
+                    <li>Cells corresponds to arc orientation assignments of spanning trees
+                        of <span class="math inline">$G$</span> (There may be shortcuts!)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </section>
-<section id="non-generic-situations" class="slide level2">
+<section>
     <h3>Non-generic situations</h3>
-    <p><span class="math display">\[
+    <p>
+        \[
             \begin{gathered}
             \text{Generic} \\
             \mathbb{C}\text{-root} \\
@@ -1330,17 +1478,20 @@ title: Generic and non-generic synchronization configurations
             \text{polytope} \\
             \text{bound} \\
             \end{gathered}
-            \]</span></p>
+        \]
+    </p>
     <ul>
         <li>when will the actual root count drop below generic root count?</li>
         <li>by how much?</li>
     </ul>
 </section>
-<section id="missing-roots-exceptional-couplings" class="slide level2">
+<section>
     <h3>Missing roots: Exceptional couplings</h3>
-    <p><strong>Lemma.</strong> For generic choices of natural frequencies
-        <span class="math inline">$w_1,\ldots,w_n$</span> the zeros of the
-        algebraic Kuramoto system <span class="math display">\[
+    <div class="theorem">
+        <strong>Lemma.</strong>
+        For generic choices of natural frequencies
+        $w_1,\ldots,w_n$ the zeros of the algebraic Kuramoto system
+        \[
             f(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} \frac{k_{ij}}{2
             \mathbf{i}}
             \left(
@@ -1349,195 +1500,270 @@ title: Generic and non-generic synchronization configurations
             \right)
             \quad\text{for }
             i = 1,\ldots,n
-            \]</span> are all isolated and regular.
-    </p>
-    <p><strong>Q2</strong>: Under the assumption of generic <span class="math inline">$w$</span>’s, what are the
-        choices of coupling
-        coefficients <span class="math inline">$k_{ij}$</span>’s for which
-        <span class="math display">\[
+        \]
+        are all isolated and regular.
+        <span class="lowlight">
+            (Just Sard's Theorem, restated)
+        </span>
+    </div>
+    <p class="fragment">
+        <strong>Q2</strong>:
+        Under the assumption of generic $w$'s,
+        what are the choices of coupling coefficients
+        $k_{ij}$'s for which
+        \[
             \text{Actual $\mathbb{C}$-root count}
-            \; &lt; \;
+            \; < \;
             \text{Generic $\mathbb{C}$-root count}
-            \]</span> This set is the <strong>exceptional coupling
-            coefficients</strong>.
+        \]
+    </p>
+    <p class="fragment">
+        This set is the <strong>exceptional coupling coefficients</strong>.
     </p>
 </section>
-<section id="cycle-basis-description" class="slide level2">
+<section>
     <h3>Cycle basis description</h3>
-    <p><strong>Proposition.</strong> Let <span class="math inline">$G$</span> be a graph consisting of <span
-            class="math inline">$d$</span> independent even cycles, <span
-            class="math inline">$C_1,\ldots,C_d$</span> that overlap at a single
-        edge <span class="math inline">$e$</span> Let <span class="math inline">$U_i \subset \{ -1, 0, +1
-            \}^{|E(G)|}$</span>, for
-        <span class="math inline">$i=1,\ldots,d$</span> be the set of
-        <strong>balanced primitive cycle vectors</strong> associated with <span
-            class="math inline">$C_1,\ldots,C_d$</span>. Then the set of
-        exceptional coupling coefficients is the union of subsets <span class="math display">\[
-            \left\{
-            \mathbf{k} \;:\;
-            \sum_{j=1}^d
-            (-1)^{|C_{i_j}| / 2} \mathbf{k}^{\vec{\eta}_{i_j}}
-            = 1
-            \text{ where }
-            (\vec{\eta}_{i_1},\ldots,\vec{\eta}_{i_t}) \in
-            U_{i_1} \times \cdots \times U_{i_t}
-            \text{ is consistent}
-            \right\}.
-            \]</span>
+    <div class="theorem">
+        <strong>Proposition.</strong>
+        Let $G$ be a graph consisting of $d$ independent even cycles,
+        $C_1,\ldots,C_d$ that overlap at a single edge.
+        Let $U_i \subset \{ -1, 0, +1 \}^{|E(G)|}$,
+        for $i=1,\ldots,d$ be the set of
+        <strong>balanced primitive cycle vectors</strong>
+        associated with $C_1,\ldots,C_d$.
+        Then the set of exceptional coupling is the
+        union of subsets satisfying
+        <div class="small">
+            \[
+                \sum_{j=1}^d
+                (-1)^{|C_{i_j}| / 2} \mathbf{k}^{\vec{\eta}_{i_j}}
+                = 1
+                \text{ where }
+                (\vec{\eta}_{i_1},\ldots,\vec{\eta}_{i_t}) \in
+                U_{i_1} \times \cdots \times U_{i_t}
+                \text{ is consistent}
+            \]
+        </div>
+    </div>
+    <br/>
+    <p class="center">
+        There are a few variations based on graph topology.
     </p>
 </section>
-<section id="general-description" class="slide level2">
+<section>
     <h3>General description</h3>
-    <p><strong>Proposition.</strong> Let <span class="math inline">$\mathcal{B}$</span> be the set of subgraphs of
-        <span class="math inline">$G$</span> that are
-    </p>
-    <ol type="1">
-        <li>bridgeless (and hence cyclic), and</li>
-        <li>maximally bipartite in their induced subgraphs.</li>
-    </ol>
-    <p>Then the set of exceptional coupling coefficients is the union <span class="math display">\[
-            \bigcup_{B \in \mathcal{G}} \mathcal{K}(B).
-            \]</span> where each <span class="math inline">$\mathcal{K}(B)$</span>
-        is the exceptional coupling coefficients on <span class="math inline">$B$</span>, similar to that given in the
-        previous
-        slide.</p>
+    <div class="theorem">
+        <strong>Proposition.</strong>
+        Let $\mathcal{B}$ be the set of subgraphs of $G$ that are
+        <ol type="1">
+            <li>bridgeless (and hence cyclic), and</li>
+            <li>maximally bipartite in their induced subgraphs.</li>
+        </ol>
+        <p>
+            Then the set of exceptional coupling coefficients
+            is the union
+            \[
+                \bigcup_{B \in \mathcal{G}} \mathcal{K}(B).
+            \]
+            where each $\mathcal{K}(B)$ is the exceptional coupling coefficients
+            on $B$, similar to that given in the previous
+            slide.
+        </p>
+    </div>
 </section>
-<section id="example-4-cycle" class="slide level2">
+<section>
     <h3>Example: 4-cycle</h3>
-    <p>There are 4 coupling coefficients <span class="math inline">$k_{01},k_{12},k_{23},k_{30} \ne 0$</span> (under
-        symmetry assumption}</p>
-    <p><strong>Proposition.</strong> The <span class="math inline">$\mathbb{C}$</span>-root count is less than the
-        generic root count <span class="math inline">$\operatorname{Vol}(\nabla_{C_4})$</span> if and
-        only if <span class="math display">\[
+    <p>
+        There are 4 coupling coefficients
+        $k_{01},k_{12},k_{23},k_{30} \ne 0$
+    </p>
+    <div class="fragment">
+        <strong>Proposition.</strong>
+        The $\mathbb{C}$-root count is less than the generic root count
+        $\operatorname{Vol}(\nabla_{C_4}) = 12$
+        if and only if
+        \[
             \begin{aligned}
-            \frac{ k_{01} k_{12} }{ k_{23} k_{30} } &amp;= 1
-            &amp;&amp;\text{or} &amp;
-            \frac{ k_{01} k_{30} }{ k_{12} k_{23} } &amp;= 1
-            &amp;&amp;\text{or} &amp;
-            \frac{ k_{01} k_{23} }{ k_{12} k_{30} } &amp;= 1
+            \frac{ k_{01} k_{12} }{ k_{23} k_{30} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{30} }{ k_{12} k_{23} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{23} }{ k_{12} k_{30} } &= 1
             \end{aligned}
-            \]</span> [[Screen Shot 2022-10-01 at 10.16.21 AM.png]]</p>
-    <p>Three transpose pairs of “balanced subnetworks”.</p>
+        \]
+    </div>
+    <div class="center">
+        <img src="c4subnets.png" alt="" class="r-stretch fragment">
+    </div>
 </section>
-<section id="refined-root-count-for-c_4" class="slide level2">
-    <h3>Refined root count for <span class="math inline">$C_4$</span></h3>
-    <p>Root count drops if and only if <span class="math display">\[
+<section>
+    <h3>Refined root count for $C_4$</h3>
+    <p>
+        Root count drops below the generic root count if and only if
+        \[
             \begin{aligned}
-            \frac{ k_{01} k_{12} }{ k_{23} k_{30} } &amp;= 1
-            &amp;&amp;\text{or} &amp;
-            \frac{ k_{01} k_{30} }{ k_{12} k_{23} } &amp;= 1
-            &amp;&amp;\text{or} &amp;
-            \frac{ k_{01} k_{23} }{ k_{12} k_{30} } &amp;= 1
+            \frac{ k_{01} k_{12} }{ k_{23} k_{30} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{30} }{ k_{12} k_{23} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{23} }{ k_{12} k_{30} } &= 1
             \end{aligned}
-            \]</span> By how much?</p>
+        \]
+    </p>
+    <p class="fragment">By how much?</p>
     <ul>
-        <li>Only 1 out of 3 holds: <strong>10</strong> solutions (missing 2),
-            and all can be real</li>
-        <li>Only 2 out of 3 hold: <strong>8</strong> solutions (missing 4), and
-            all can be real</li>
-        <li>All 3 holds: <strong>6</strong> solutions (missing 6), and all can
-            be real</li>
+        <li class="fragment">
+            Only 1 out of 3 holds:
+            <strong>10</strong> roots (missing 2),
+            and all can be real
+        </li>
+        <li class="fragment">
+            Only 2 out of 3 hold:
+            <strong>8</strong> roots (missing 4),
+            and all can be real
+        </li>
+        <li class="fragment">
+            All 3 holds: <strong>6</strong> roots (missing 6),
+            and all can be real
+        </li>
     </ul>
 </section>
-<section id="balanced-subnetwork" class="slide level2">
+<section>
     <h3>Balanced subnetwork</h3>
-    <p><strong>Definition.</strong> For graph <span class="math inline">$G$</span> that contains a unique cycle <span
-            class="math inline">$O$</span>, an acyclic subdigraph <span class="math inline">$\vec{H}$</span>
-        supports a <strong>balanced
-            subnetwork</strong> if - It has the same n. o. arcs in either
-        orientation - <span class="math display">\[
-            \frac{
-            \text{Product of clockwise $k_{ij}$&#39;s}
-            }{
-            \text{Product of counterclockwise $k_{ij}$&#39;s}
-            }
-            =
-            (-1)^{|O| / 2}.
-            \]</span> Note: balanced subnetworks always come in transpose
-        pairs.</p>
-    <p>In <span class="math inline">$C_4$</span> <span class="math display">\[
+    <div class="definition">
+        <strong>Definition.</strong>
+        For graph $G$ that contains a unique cycle $O$,
+        an acyclic subdigraph $\vec{H}$ supports a
+        <strong>balanced subnetwork</strong> if... 
+        <ul>
+            <li>
+                It has the same n. o. arcs in either orientation
+            </li>
+            <li>
+                \[
+                    \frac{
+                        \text{Product of clockwise $k_{ij}$'s}
+                    }{
+                        \text{Product of counterclockwise $k_{ij}$'s}
+                    }
+                    =
+                    (-1)^{ |O| / 2}.
+                \]
+            </li>
+        </ul>
+    </div>
+    <p class="center fragment lowlight">
+        Balanced subnetworks always come in transpose pairs.
+    </p>
+    <p class="fragment">
+        \[
             \begin{aligned}
-            \frac{ k_{01} k_{12} }{ k_{23} k_{30} } &amp;= 1
-            &amp;&amp;\text{or} &amp;
-            \frac{ k_{01} k_{30} }{ k_{12} k_{23} } &amp;= 1
-            &amp;&amp;\text{or} &amp;
-            \frac{ k_{01} k_{23} }{ k_{12} k_{30} } &amp;= 1
+            \frac{ k_{01} k_{12} }{ k_{23} k_{30} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{30} }{ k_{12} k_{23} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{23} }{ k_{12} k_{30} } &= 1
             \end{aligned}
-            \]</span></p>
+        \]
+    </p>
 </section>
-<section id="each-max.-balance-subnetwork-is--1-root" class="slide level2">
+<section>
     <h3>Each max. balance subnetwork is -1 root</h3>
-    <p>With this we can rephrase: For the <span class="math inline">$C_4$</span> network (with generic natural
-        frequencies),</p>
-    <p><span class="math display">\[
+    <p>
+        With this we can rephrase:
+        For the $C_4$ network
+        (with generic natural frequencies),
+        \[
             \begin{gathered}
             \text{Actual} \\
-            \text{root count}
+            \text{root} \\
+            \text{count}
             \end{gathered}
             \quad = \quad
             \begin{gathered}
             \text{Generic} \\
-            \text{root count}
+            \text{root} \\
+            \text{count}
             \end{gathered}
             \quad - \quad
             \begin{gathered}
             \text{N. o. maximum } \\
-            \text{balanced subnetwork}
+            \text{balanced} \\
+            \text{subnetwork}
             \end{gathered}
-            \]</span></p>
+        \]
+    </p>
 </section>
-<section id="example-6-cycle-case" class="slide level2">
+<section>
     <h3>Example: 6-cycle case</h3>
     <p>Generic root count: 60</p>
     <ul>
-        <li>Choosing <span class="math display">\[
+        <li class="fragment">
+            Choosing 
+            \[
                 [ k_{01}, k_{12}, k_{23}, k_{34}, k_{45}, k_{50} ] =
                 [ \pm 1, \pm 1, \pm 1, \pm 1, \pm 1, \pm 1 ]
-                \]</span> with an <em>odd</em> number of negative choices, then there
-            will be 20 max. balanced subetworks (10 transpose pairs), and <span class="math display">\[
+            \]
+            with an <em>odd</em> number of negative choices,
+            then there will be 20 max. balanced subetworks
+            (10 transpose pairs), and
+            \[
                 \text{Root count} \;=\;
                 60 - 20 \;=\; 40
-                \]</span></li>
-        <li>Choosing <span class="math display">\[
+            \]
+        </li>
+        <li class="fragment">
+            Choosing
+            \[
                 [ k_{01}, k_{12}, k_{23}, k_{34}, k_{45}, k_{50} ] =
                 [ \pm s, \pm s, \pm t, \pm t, \pm t, \pm t ]
-                \]</span> with an <em>odd</em> number of negative choices and <span class="math inline">$s \ne
-                t$</span>, then there will be 12 max.
-            balanced subnetworks (12 transpose pairs), and <span class="math display">\[
+            \]
+            with an <em>odd</em> number of negative choices and
+            $s \ne t$, then there will be 12 max. balanced subnetworks
+            (12 transpose pairs),
+            and
+            \[
                 \text{Root count} \;=\;
                 60 - 12 \;=\; 48
-                \]</span></li>
+            \]
+        </li>
     </ul>
 </section>
-<section id="refined-root-count-unicycle-network" class="slide level2">
+<section>
     <h3>Refined root count unicycle network</h3>
-    <p><strong>Proposition.</strong> Let <span class="math inline">$G$</span> be a connected unicycle graph that
-        contains a unique even cycle <span class="math inline">$O$</span>.
-        Then for generic choices of real or complex <span class="math inline">$w_i$</span>’s, the <span
-            class="math inline">$\mathbb{C}$</span>-zero count of the algebraic
-        Kuramoto system is <span class="math display">\[
-            2^{\ell} \,
+    <div class="theorem"><strong>Proposition.</strong>
+        Let $G$ be a connected unicycle graph that
+        contains a unique even cycle $O$.
+        Then for generic choices of real or complex $w_i$’s,
+        the $\mathbb{C}$-zero count of the algebraic
+        Kuramoto system is
+        \[
+            2^{ |G| - |O| } \,
             \left[
-            m \binom{m-1}{m/2 - 1} - \beta
+                m \binom{m-1}{m/2 - 1} - \beta
             \right],
-            \]</span> where <span class="math inline">$\ell = | V(G) \setminus V(O)
-            |$</span>, and <span class="math inline">$\beta$</span> is the n. o.
-        maximally balanced subnetworks.</p>
-    <p><strong>Corollary.</strong> …… if <span class="math inline">$O$</span> is an odd cycle, then for <em>any</em>
-        choices of real or complex <span class="math inline">$k_{ij}$</span>’s
-        the total number of <span class="math inline">$\mathbb{C}$</span>-zeros equals the adjacency
-        polytope bound <span class="math display">\[
+        \] 
+        where $\beta$ is the
+        n.o.  maximally balanced subnetworks.
+    </div>
+    <div class="theorem fragment">
+        <strong>Corollary.</strong>
+        If $O$ is odd,
+        for <em>any</em> nonzero $k_{ij}$'s
+        the total number of $\mathbb{C}$-zeros equals the
+        adjacency polytope bound
+        \[
             \operatorname{Vol}( \nabla_G ) =
             2^{\ell} \, m \, \binom{m-1}{(m-1)/2},
-            \]</span></p>
+        \]
+    </div>
 </section>
-<section id="future-directions" class="slide level2">
+<section>
     <h3>Future directions</h3>
     <ul>
         <li>Refined root count for networks beyond unicycle networks</li>
-        <li>Investigation of max. real root count vs. A. P. bound</li>
-        <li>Formula for A. P. bound for all networks as a function of
-            topology</li>
+        <li>Investigation of max. real root count vs. A. P. bound</li>
+        <li>Formula for A. P. bound for all networks</li>
         <li>A graph theoretical method for enumerating cells in a unimodular
             triangulation of the A. P. <span class="math inline">$\nabla_G$</span>.</li>
     </ul>
@@ -1547,6 +1773,36 @@ title: Generic and non-generic synchronization configurations
     <p>Another way generic root count is broken: appearance of
         positive-dimensional components.</p>
 </section>
-<section class="slide level2">
+<section>
+    <br/>
+    <div class="center">
+        <h1>
+            Thank you!
+        </h1>
+    </div>
+    <br/>
+    <p class="center">
+        https://arxiv.org/abs/2107.12315
+    </p>
+    <p class="center">
+        http://arxiv.org/abs/2108.12875
+    </p>
+    <br/>
+    <div class="cols">
+        <div class="col center">
+            <img width=150 src="nsf.png" alt="">
+        </div>
+        <div class="col">
+            <p class="center smaller lowlight">
+                Research supported, in part, by National Science Foundation,
+                and Auburn University at Montgomery via
+                Grant-In-Aid program, PIL program,
+                and undergraduate research experience program.
+            </p>
+        </div>
+        <div class="col center">
+            <img width=150 src="aum.jpg" alt="">
+        </div>
+    </div>
 
 </section>

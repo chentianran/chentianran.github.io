@@ -20,30 +20,35 @@
 
 .reveal .titlebox {
   box-shadow: 0 4px 8px 0 rgba(126, 120, 120, 0.8);
-  background: #583d72;
+  background: #0257B7;
   transition: 0.3s;
-  margin: 15px 2px;
-  /* color: white; */
-  text-shadow: 2px 2px 8px #383D3D; }
+  margin: 15px 15px;
+  text-shadow: 2px 2px 8px #383D3D;
+  border-radius: 10px;
+}
 
 .reveal .title {
   color: white; }
 
 .theorem {
-  box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.2);
-  background: #ffba93;
+  box-shadow: 0 4px 8px 0 #2f2a44a8;
+  background: #d6daf0;
+  border-radius: 10px;
   transition: 0.3s;
   text-align: left;
   padding: 2px 15px;
   margin: 15px 2px; }
 
 .definition {
-  box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.2);
-  background: #ffba93;
+  box-shadow: 0 4px 8px 0 #2f2a44a8;
+  background: #d6daf0;
+  border-radius: 10px;
   transition: 0.3s;
   text-align: left;
+  padding: 2px 15px;
   margin: 15px 2px;
-  color: #583d72; }
+  /* color: #0257B7; */
+}
 
 .small {
   font-size: 85%; }
@@ -55,10 +60,13 @@
   font-size: 50%; }
 
 .term {
-  color: #583d72; }
+  color: #0257B7; }
 
 .highlight {
-  color: #ff8e71; }
+  color: #0257B7; }
+
+.lowlight {
+  color: #505050; }
 
 .equ {
   display: flex;
@@ -94,7 +102,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --block-margin: 10px;
   --heading-margin: 0 0 20px 0;
   --heading-font: Palatino Linotype, Book Antiqua, Palatino, FreeSerif, serif;
-  --heading-color: #583d72;
+  --heading-color: #0257B7;
   --heading-line-height: 1.2;
   --heading-letter-spacing: normal;
   --heading-text-transform: none;
@@ -106,7 +114,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --heading3-size: 1.25em;
   --heading4-size: 1em;
   --code-font: monospace;
-  --link-color: #ff8e71;
+  --link-color: #0257B7;
   --link-color-hover: #ffdfd7;
   --selection-background-color: #26351C;
   --selection-color: #fff; }
@@ -146,7 +154,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #583d72;
+  color: #0257B7;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
   font-weight: normal;
   line-height: 1.2;
