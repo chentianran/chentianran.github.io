@@ -282,6 +282,9 @@ title: Generic and non-generic synchronization configurations
 </section>
 <section>
     <h3>Simple simulation</h3>
+    <div class="center">
+        <iframe data-src="../../research/kuramoto/sim/" height="600" width="800"></iframe>
+    </div>
 </section>
 <section>
     <h3>Synchronization</h3>
@@ -426,9 +429,39 @@ title: Generic and non-generic synchronization configurations
     <ul>
         <li>
             What is the maximum number of solutions? (Is it even finite?)
+            <ul>
+                <li>Lower bound: $2^n$</li>
+                <li>Upper bound: $\binom{2n}{n}$</li>
+                <li>Complication: the maximum number is topology-sensitive</li>
+            </ul>
         </li>
         <li>
             Are the solutions isolated (0-dimensional) ?
+        </li>
+    </ul>
+    <ul class="fragment">
+        <li class="smaller lowlight">
+            J. Baillieul and C. Byrnes, Geometric critical point analysis of lossless power system models, IEEE Trans-
+actions on Circuits and Systems, 29 (1982)
+        </li>
+        <li class="smaller lowlight">
+            O. Coss, J. D. Hauenstein, H. Hong, and D. K. Molzahn, Locating and counting equilibria of the Kuramoto
+model with rank-one coupling, SIAM J. Appl. Algebra Geom., 2 (2018)
+        </li>
+        <li class="smaller lowlight">
+            S. Guo and F. Salam, Determining the solutions of the load flow of power systems: Theoretical results and
+computer implementation, 29th IEEE Conference on Decision and Control, (1990)
+        </li>
+        <li class="smaller lowlight">
+            J. Lindberg, A. Zachariah, N. Boston, and B. Lesieutre, The Distribution of the Number of Real Solutions
+to the Power Flow Equations, IEEE Transactions on Power Systems, PP (2022)
+        </li>
+        <li class="smaller lowlight">
+            D. K. Molzahn, D. Mehta, and M. Niemerg, Toward Topologically Based Upper Bounds on the Number of
+Power Flow Solutions, 2016 American Control Conference (ACC), (2016)
+        </li>
+        <li class="lowlight">
+            ......
         </li>
     </ul>
 </section>
@@ -762,7 +795,7 @@ title: Generic and non-generic synchronization configurations
         Equivalent to <strong class="term">symmetric edge polytope</strong>
         studied in other fields.
         <span class="smaller lowlight">
-            (See, e.g. D’Alì, Delucchi, Michałek. Many
+            (See, e.g. D'Alì, Delucchi, Michałek. Many
             Faces of Symmetric Edge Polytopes. <em>Electron J Comb</em>
             29, 2022)
         </span>
@@ -1085,7 +1118,7 @@ title: Generic and non-generic synchronization configurations
         <span class="smaller lowlight">
             (Huber & Sturmfels.
             A polyhedral method for solving sparse polynomial systems.
-            Math Comput 64, 1541–1555, 1995)
+            Math Comput 64, 1541-1555, 1995)
         </span>
     </p>
     <ul>
@@ -1752,7 +1785,7 @@ title: Generic and non-generic synchronization configurations
     <div class="theorem"><strong>Proposition.</strong>
         Let $G$ be a connected unicycle graph that
         contains a unique even cycle $O$.
-        Then for generic choices of real or complex $w_i$’s,
+        Then for generic choices of real or complex $w_i$'s,
         the $\mathbb{C}$-zero count of the algebraic
         Kuramoto system is
         \[
@@ -1786,10 +1819,226 @@ title: Generic and non-generic synchronization configurations
             triangulation of the A. P. <span class="math inline">$\nabla_G$</span>.</li>
     </ul>
 </section>
-<section id="non-isolated-configurations" class="slide level2">
-    <h3>Non-isolated configurations</h3>
-    <p>Another way generic root count is broken: appearance of
-        positive-dimensional components.</p>
+<section>
+    <h3>Non-isolated solution sets</h3>
+    <p>
+        Another way generic root count is broken:
+        appearance of non-isolated (positive-dimensional) components.
+        They represent synchronization configurations
+        with at least one degree of freedom.
+    </p>
+    <ul class="fragment">
+        <li class="small">
+            (Complete graphs) P. Ashwin, C. Bick, and O. Burylko.
+            Identical Phase Oscillator Networks:
+            Bifurcations, Symmetry and Reversibility for Generalized Coupling,
+            Frontiers in Applied Mathematics and Statistics, 2 (2016)
+        </li>
+        <li class="small">
+            (Complete graphs) O. Coss, J. D. Hauenstein, H. Hong, and D. K. Molzahn.
+            Locating and counting equilibria of the Kuramoto
+            model with rank-one coupling,
+            SIAM J. Appl. Algebra Geom., 2 (2018)
+        </li>
+        <li class="small">
+            (Complete graphs and cycles) J. Lindberg, A. Zachariah, N. Boston, and B. Lesieutre.
+            The Distribution of the Number of Real Solutions to
+            the Power Flow Equations.
+            IEEE Transactions on Power Systems, PP (2022)
+        </li>
+        <li class="small">
+            D. Sclosa, Kuramoto networks with infinitely many stable equilibria. (2022)
+        </li>
+    </ul>
+    <div class="theorem fragment">
+        <b>Theorem.</b> (D. Sclosa)
+        For every $d \ge 1$ there is a Kuramoto network
+        whose stable equilibria form a manifold of dimension $d$
+    </div>
+</section>
+<section>
+    <h3>Constructing positive-dimensional solutions</h3>
+    <!-- <p>
+        For certain bipartite networks,
+        there is a formula:
+        for constructing
+        positive-dimensional solution sets
+    </p> -->
+    <div class="theorem fragment">
+        <b>Proposition.</b>
+        <p>
+            Let $G$ be a unicycle graph on $n+1$ nodes that contains a unique even cycle $O$.
+            Suppose the coupling coefficients satisfy:
+        </p>
+        <ul>
+            <li>
+                $(G,K)$ contains a balanced subnetwork $(\vec{H},K)$;
+            </li>
+            <li>
+                $|k_{ij}|$ are identical for edges on $O$.
+            </li>
+        </ul>
+        <p>
+            Then algebraic Kuramoto system derived from the network
+            of identical oscillators has a positive-dimensional $\mathbb{C}^*$-zero set.
+        </p>
+    </div>
+    <p class="fragment">
+        Indeed we can construct a $\mathbb{C}^*$-orbit
+        \begin{align*}
+            \begin{bmatrix}
+                x_1(\lambda) &
+                \cdots &
+                x_m(\lambda)
+            \end{bmatrix}
+            &=
+            (
+                \lambda \cdot
+                \boldsymbol{\eta}_{\vec{T}} \circ
+                (\mathbf{k}(\vec{T})^{-I})
+            )^{Q(\vec{T})^{-1}}
+            \\
+            x_i &= \pm x_{\pi(i)}
+            \quad\text{for } i = m+1, \ldots, n,
+        \end{align*}
+    </p>
+    <p class="fragment lowlight small">
+        (Require further explanation) Main point:
+        It contain an 1-dimensional orbit
+        parametrized by a system of Laurent monomials.
+    </p>
+</section>
+<section>
+    <h3>Real-orbits</h3>
+    <div class="theorem">
+        <b>Corollary.</b>
+        ...... Furthermore, if $k_{ij}$'s are all identical,
+        then the $\mathbb{C}^*$-orbit constructed
+        contains a $S^1$-robit in the real torus.
+    </div>
+    <p class="fragment">
+        The original Kuramoto equations
+        will have positive-dimensional
+        real solution components.
+    </p>
+    <p class="fragment">
+        For the 4-cycle example,
+        when the natural frequencies are identical,
+        and $k_{ij}$'s are identical,
+        we have 1-dimensional solution sets
+        \[
+            \left\{
+            \begin{aligned}
+                \theta_0 &= 0 \\
+                \theta_1 &= t + \pi + \sigma^{10} \\
+                \theta_2 &= \pi + \sigma^{12}_{10} \\
+                \theta_3 &= t + \sigma^{30} \\
+            \end{aligned}
+            \right.
+            \quad
+            \left\{
+            \begin{aligned}
+                \theta_0 &= 0 \\
+                \theta_1 &= \sigma^{10} + t \\
+                \theta_2 &= \pi + \sigma^{21}_{10} \\
+                \theta_3 &= \sigma^{30} - t
+            \end{aligned}
+            \right.
+            \quad
+            \left\{
+            \begin{aligned}
+                \theta_0 &= 0 \\
+                \theta_1 &= \sigma^{10} - t \\
+                \theta_2 &= \sigma^{21}_{10} -2t \\ %\sigma(k_{21}/k_{10}) \\
+                \theta_3 &= \pi + \sigma^{30} -t \\
+            \end{aligned}
+            \right.
+        \]
+        <span class="smaller lowlight">
+            $\sigma$'s are phase shift values, $0$ or $\pi$,
+            that only used to adjust for the signs of $k_{ij}$'s
+            (not very important).
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Beyond unicycle networks</h3>
+    <div class="theorem">
+        <b>Proposition.</b>
+        Suppose $G$ consists of $d$ independent even cycles
+        $C_1,\ldots,C_d$ that share a single edge $e$,
+        then with the choice of the coupling coefficients
+        \[
+            k_{ij} =
+            \begin{cases}
+                sd &\text{if } \{i,j\} = e \text{ (shared edge)}\\
+                s  &\text{othewise},
+            \end{cases}
+        \]
+        for any $s \in \mathbb{C}^*$,
+        and identical natural frequencies,
+        the algebraic Kuramoto system
+        has a positive-dimensional $\mathbb{C}^*$-zero set.
+    </div>
+    <p class="fragment">
+        There is a similar $\mathbb{C}^*$-orbit formula
+        that parametrizes an 1-dimensional orbit
+        inside the zero set.
+    </p>
+    <div class="theorem fragment">
+        <b>Corollary.</b>
+        ...... there also can be real orbits
+        in the solution set.
+    </div>
+</section>
+<section>
+    <h3>Example: 2 cycles sharing an edge</h3>
+    <div class="center">
+        <img src="fig8.png" width=400 alt="">
+    </div>
+    <p>
+        The construction produces the
+        1-dimensional real solution set
+        \[
+            (\theta_0,\theta_1,\theta_2,\theta_3,\theta_4,\theta_5) =
+            (
+                0, 
+                t + \pi,
+                0,
+                t,
+                \pi,
+                t
+            )
+        \]
+        <span class="smaller lowlight">
+            This is one of many real orbits.
+        </span>
+    </p>
+</section>
+<section>
+    <p>
+        <b>Observation:</b>
+        The positive-dimensional solution sets
+        constructed this way are actually
+        solution set of <em>certain initial systems</em>!
+    </p>
+    <div class="fragment">
+        <p>
+            Open problems:
+        </p>
+        <ul>
+            <li>
+                Are there positive-dimensional solution sets
+                other than the $\mathbb{C}^*$-orbits we constructed here?
+            </li>
+            <li>
+                Can positive-dimensional and isolated solutions coexist?
+            </li>
+            <li>
+                Stability analysis
+            </li>
+        </ul>
+    </div>
 </section>
 <section>
     <br/>
@@ -1799,6 +2048,9 @@ title: Generic and non-generic synchronization configurations
         </h1>
     </div>
     <br/>
+    <p class="center">
+        https://www.tianranchen.org/research/papers/krootcount.pdf
+    </p>
     <p class="center">
         https://arxiv.org/abs/2107.12315
     </p>
