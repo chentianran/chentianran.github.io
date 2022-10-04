@@ -1,3 +1,28 @@
+- nickname: krootcount
+  title: On the typical and atypical solutions to the Kuramoto equations
+  pdf: krootcount.pdf
+  abstract: > 
+    The Kuramoto model is a dynamical system that models the interaction of coupled oscillators.
+    There has been much work to effectively bound the number of equilibria to
+    the Kuramoto model for a given network.
+    By formulating the Kuramoto equations as a system of algebraic equations,
+    we first relate the complex root count of the Kuramoto equations to the
+    combinatorics of the underlying network by showing that the complex root count
+    is generically equal to the normalized volume of the corresponding adjacency polytope of the network.
+    We then give explicit algebraic conditions under which this bound is strict and show that there are conditions
+    where the Kuramoto equations have infinitely many equilibria.
+  bibtex: |
+    @article{Chen2022Typical,
+      archivePrefix = {arXiv},
+      arxivId = {2210.00784},
+      author = {Chen, Tianran},
+      eprint = {2210.00784},
+      month = {oct},
+      title = {On the typical and atypical solutions to the Kuramoto equations},
+      url = {https://arxiv.org/abs/2210.00784},
+      year = {2022}
+    }
+    
 - nickname: v-is-mv
   title: (Short note) Volume of convex polytopes equals mixed volume of simplices
   pdf: v-is-mv.pdf
