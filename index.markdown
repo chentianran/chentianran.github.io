@@ -28,7 +28,12 @@ In the Spring semester of 2022 I am teaching
 Office hours
 ------------
 
-{% include hours.markdown %}
+I am on professional improvement leave
+(sabbatical) in the Fall semester of 2022.
+Thus, I have no fixed office hours,
+but drop me an email if you need to me on campus.
+
+<!-- {% include hours.markdown %} -->
 <!-- {% include appointments.markdown %} -->
 
 Appointments
@@ -68,6 +73,11 @@ Grants
 
 News and recent talks
 ---------------------
+
+- Georgia Tech algebra seminar
+  October 3, 2022  
+  Georgia Tech, Atlanta, GA, USA.  
+  [ [talk slides](/talks/GT-2022F/) ]
 
 - Together with Julia Lindberg and Rob Davis,
   I am organizing a special session on
