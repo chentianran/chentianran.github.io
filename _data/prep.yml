@@ -1,6 +1,7 @@
 - nickname: krootcount
   title: On the typical and atypical solutions to the Kuramoto equations
   pdf: krootcount.pdf
+  arxiv: https://arxiv.org/abs/2210.00784
   abstract: > 
     The Kuramoto model is a dynamical system that models the interaction of coupled oscillators.
     There has been much work to effectively bound the number of equilibria to
