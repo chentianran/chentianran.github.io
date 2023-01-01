@@ -24,7 +24,7 @@ title: CV
 
 ### Grants
 
-- 2019--2022 NSF research grant DMS-1923099
+- 2019--2023 NSF research grant DMS-1923099
   _AMPS: Collaborative Research: A Convex Geometry and Homotopy Approach for Power-Flow Equations_
   \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
 - 2016 AMS-Simons Travel Grant
@@ -60,7 +60,7 @@ title: CV
 ### Teaching Experience
 
 |--------------|--------------------------------------------|
-| 2016 -- 2022 | Linear Algebra, Applied linear algebra,    |
+| 2016 -- 2023 | Linear Algebra, Applied linear algebra,    |
 |              | Modern Algebra I, Modern Algebra II        |
 |              | Mathematical modeling and simulation       |
 |              | Calculus I,II, Multivariable calculus,     |

@@ -19,22 +19,17 @@ and is supported by [NSF grant DMS-1923099](https://nsf.gov/awardsearch/showAwar
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-<!-- In the Spring semester of 2022 I am teaching
+In the Spring semester of 2023 I am teaching
 
-- [MATH-2630](teaching/calc3/)     (Multivariable Calculus)
+- [ENGR-1210](teaching/matlab/)    (Introduction to computer programming)
+- [MATH-1610](teaching/calc1/)     (Calculus I),
 - [MATH-3660](teaching/applinalg/) (Applied linear algebra)
-- [MATH-4400](teaching/modsim/)    (Math Models and Simulations) -->
 
 Office hours
 ------------
 
-I am on professional improvement leave
-(sabbatical) in the Fall semester of 2022.
-Thus, I have no fixed office hours,
-but drop me an email if you need to me on campus.
-
-<!-- {% include hours.markdown %} -->
-<!-- {% include appointments.markdown %} -->
+{% include hours.markdown %}
+{% include appointments.markdown %}
 
 Appointments
 ------------
@@ -65,7 +60,7 @@ See detail [here](hiring/).
 Grants
 -------------
 
-- 2019--2022 NSF research grant 
+- 2019--2023 NSF research grant 
   [DMS-1923099](https://nsf.gov/awardsearch/showAward?AWD_ID=1923099)
   _AMPS: Collaborative Research: A Convex Geometry and Homotopy Approach for Power-Flow Equations_
   \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
