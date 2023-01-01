@@ -1,0 +1,969 @@
+---
+layout: mtalk
+title: Stratified polyhedral homotopy
+---
+<section id="stratified-polyhedral-homotopy" class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">Stratified polyhedral homotopy</h2>
+        <p class="title"><em>Picking up witness sets on our way to isolated solutions</em></p>
+    </div>
+    <br/>
+    <p>Tianran Chen</p>
+    <p class="smaller">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+    <br/>
+    <br/>
+    <p class="smaller">
+        January 4, 2023<br/>
+        AMS Special Session on Polynomial Systems, Homotopy Continuation and Applications<br/>
+        Joint Mathematics Meetings 2023<br/>
+        Boston, MA USA
+    </p>
+</section>
+<section id="numerical-algebraic-geometry-toolbox">
+    <h3>Numerical algebraic geometry toolbox</h3>
+    <p class="small lowlight">
+        Sommese & Wampler.
+        <em>Numerical algebraic geometry</em>.
+        In The mathematics of numerical analysis (Park City, UT, 1995),
+        volume 32 of Lectures in Appl. Math., pages 749-763. Amer. Math. Soc., Providence, RI, 1996.
+    </p>
+    <ul>
+        <li>Isolated and nonsingular zeros</li>
+        <li>Witness sets for positive-dimensional components</li>
+        <li>...... (many many higher level data structures/algorithms)</li>
+    </ul>
+    <br/>
+    <div class="cols fragment">
+        <div class="col">
+            <img src="book-sw.jpg" width="220" alt="">
+        </div>
+        <div class="col">
+            <img src="book-bhsw.jpg" width="220" alt="">
+        </div>
+        <div class="col">
+            <p class="lowlight small">
+                Also, an accessible introduction:
+                Hauenstein & Sommese.
+                <em>What is numerical algebraic geometry?</em>
+                J Symb Comput 79, (2017).
+            </p>
+        </div>
+    </div>
+</section>
+<section id="goal">
+    <h3>Goal</h3>
+    <p>
+        “Sample” points in of non-isolated components
+        as by-products of computing isolated zero set
+        via polyhedral homotopy method.
+    </p>
+    <br/>
+    <br/>
+    <p class="fragment center">
+        <em>
+            Repurpose waste products from polyhedral homotopy method.
+        </em>
+    </p>
+</section>
+<section id="polyhedral-homotopy-of-huber-and-sturmfels">
+    <h3>Polyhedral homotopy of Huber and Sturmfels</h3>
+    <p class="small lowlight">
+        Huber & Sturmfels.
+        <em>A polyhedral method for solving sparse polynomial systems</em>.
+        Math Comput 64, 1541-1555 (1995).
+    </p>
+    <p>
+        To compute <em>all</em> isolated solutions of
+        a <strong>generic</strong> polynomial system
+        \[
+            \begin{aligned}
+                f_1(x_1, x_2) &=
+                c_1 x_1^3 + c_2 x_2 x_1^2 + c_3 x_1^2 + c_4 = 0\\
+                f_2(x_1, x_2) &=
+                c_5 x_1^3 + c_6 x_2 x_1^2 + c_7 x_1^2 + c_8 = 0
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment">
+        We multiply each term with a random power of
+        a parameter $t$
+        \[
+            \begin{aligned}
+                h_1(x_1, x_2, \, t) &=
+                c_1 x_1^3     \color{blue}{t^{\omega_1}} +
+                c_2 x_2 x_1^2 \color{blue}{t^{\omega_2}} +
+                c_3 x_1^2     \color{blue}{t^{\omega_3}} +
+                c_4           \color{blue}{t^{\omega_4}} = 0 \\
+                h_2(x_1, x_2, \, t) &=
+                c_5 x_1^3     \color{blue}{t^{\omega_5}} +
+                c_6 x_2 x_1^2 \color{blue}{t^{\omega_6}} +
+                c_7 x_1^2     \color{blue}{t^{\omega_7}} +
+                c_8           \color{blue}{t^{\omega_8}} = 0.
+            \end{aligned}
+        \]
+    </p>
+    <ul>
+        <li class="fragment">
+            At $t=1$, it is the original system.
+        </li>
+        <li class="fragment">
+            For generic coefficients, they define smooth
+            curves in $\mathbb{C}^2 \times (0,1]$
+            <!-- (strictly speaking, in <span class="math inline">$(\mathbb{C}^*)^2
+                \times (0,1]$</span>). -->
+        </li>
+        <!-- <li class="fragment">
+            These “paths” converge to isolated solutions of the
+            original system.
+        </li> -->
+        <li class="fragment">
+            Tracking these paths can lead us to <em>all</em> isolated
+            solutions.</li>
+    </ul>
+</section>
+<section id="starting-polyhedral-homotopy">
+    <h3>Starting polyhedral homotopy</h3>
+    <p>
+        Solution paths are defined by
+        \[
+            \begin{aligned}
+                h_1(x_1, x_2, \, t) &=
+                c_1 x_1^3 t^{\omega_1} +
+                c_2 x_2 x_1^2 t^{\omega_2} +
+                c_3 x_1^2 t^{\omega_3} +
+                c_4 t^{\omega_4} = 0 \\
+                h_2(x_1, x_2, \, t) &=
+                c_5 x_1^3 t^{\omega_5} +
+                c_6 x_2 x_1^2 t^{\omega_6} +
+                c_7 x_1^2 t^{\omega_7} +
+                c_8 t^{\omega_8} = 0.
+            \end{aligned}
+        \]
+        At the starting point, i.e., $t \to 0$,
+        the paths escape $(\mathbb{C}^*)^2$
+        The starting points can be computed via...
+    </p>
+    <ul>
+        <li>Mixed cells computation (i.e., intersecting tropical
+            hypersurfaces)</li>
+        <li>Solving binomial systems</li>
+        <li>......</li>
+    </ul>
+    <br/>
+    <br/>
+    <p class="center">
+        It can be done!
+    </p>
+</section>
+<section id="numerical-instability">
+    <h3>Numerical instability</h3>
+    <p>
+        \[
+            \begin{aligned}
+                h_1(x_1, x_2, \, t) &=
+                c_1 x_1^3 t^{\omega_1} +
+                c_2 x_2 x_1^2 t^{\omega_2} +
+                c_3 x_1^2 t^{\omega_3} +
+                c_4 t^{\omega_4} = 0 \\
+                h_2(x_1, x_2, \, t) &=
+                c_5 x_1^3 t^{\omega_5} +
+                c_6 x_2 x_1^2 t^{\omega_6} +
+                c_7 x_1^2 t^{\omega_7} +
+                c_8 t^{\omega_8} = 0.
+            \end{aligned}
+        \]
+        may suffer from numerical instability near $t=0$.
+    </p>
+    <p class="smaller lowlight">
+        Gao, Li, Verschelde & Wu.
+        <em>Balancing the lifting values to improve the numerical stability of polyhedral homotopy continuation methods</em>.
+        Appl. Math. Comput. (2000).
+    </p>
+    <p class="smaller lowlight">
+        Kim & Kojima.
+        <em>Numerical Stability of Path Tracing in Polyhedral Homotopy Continuation Methods</em>.
+        Computing (2004).
+    </p>
+    <p class="smaller lowlight">
+        Lee, Li & Tsai.
+        <em>HOM4PS-2.0: a software package for solving polynomial systems by the polyhedral homotopy continuation method</em>.
+        Computing (2008).
+    </p>
+    <p class="fragment">
+        Numerically (more) stable formulation:
+        \[
+            \begin{aligned}
+                h_1 &=
+                c_1 x_1^3     \color{purple}{e^{-M\omega_1 t}} +
+                c_2 x_2 x_1^2 \color{purple}{e^{-M\omega_2 t}} +
+                c_3 x_1^2     \color{purple}{e^{-M\omega_3 t}} +
+                c_4           \color{purple}{e^{-M\omega_4 t}} = 0 \\
+                h_2 &=
+                c_5 x_1^3     \color{purple}{e^{-M\omega_5 t}} +
+                c_6 x_2 x_1^2 \color{purple}{e^{-M\omega_6 t}} +
+                c_7 x_1^2     \color{purple}{e^{-M\omega_7 t}} +
+                c_8           \color{purple}{e^{-M\omega_8 t}} = 0.
+            \end{aligned}
+        \]
+        for some sufficiently large $M > 0$.
+        And we track the solution paths from $t=1$
+        <em class="highlight">backward</em> toward $t=0$.
+    </p>
+</section>
+<section id="handling-non-generic-coefficients">
+    <h3>Handling non-generic coefficients</h3>
+    <p>
+        The homotopy
+        \[
+            \begin{aligned}
+                h_1 &=
+                c_1 x_1^3 e^{-M\omega_1 t} +
+                c_2 x_2 x_1^2 e^{-M\omega_2 t} +
+                c_3 x_1^2 e^{-M\omega_3 t} +
+                c_4 e^{-M\omega_4 t} = 0 \\
+                h_2 &=
+                c_5 x_1^3 e^{-M\omega_5 t} +
+                c_6 x_2 x_1^2 e^{-M\omega_6 t} +
+                c_7 x_1^2 e^{-M\omega_7 t} +
+                c_8 e^{-M\omega_8 t} = 0.
+            \end{aligned}
+        \]
+        requires the coefficients to be <strong>generic</strong>.
+    </p>
+    <p class="fragment">
+        A minor modifications can be applied to 
+        <strong>non-generic</strong> systems
+        \[
+            \begin{aligned}
+                h_1 &=
+                (c_1 + \color{blue}{t c_1^*}) x_1^3 e^{-M \omega_1 t} +
+                (c_2 + \color{blue}{t c_2^*}) x_2 x_1^2 e^{-M \omega_2 t} +
+                \cdots \\
+                h_2 &=
+                (c_5 + \color{blue}{t c_5^*}) x_1^3 e^{-M \omega_5 t} +
+                (c_6 + \color{blue}{t c_6^*}) x_2 x_1^2 e^{-M \omega_6 t} +
+                \cdots
+            \end{aligned}
+        \]
+        It also restores the original system at <highlight>$t=0$</highlight>.
+    </p>
+</section>
+<section id="general-formulation">
+    <h3>General formulation</h3>
+    <p>
+        To compute <strong>all</strong> $\mathbb{C}^*$-zeros
+        of a (Laurent) polynomial system
+        \[
+            f_i(\mathbf{x}) =
+            \sum_{\mathbf{a} \in S_i}
+            c_{\mathbf{a}} \mathbf{x}^{\mathbf{a}}
+            \quad\text{for } i = 1,\ldots,n
+        \]
+        in $\mathbf{x} = (x_1,\ldots,x_n)$,
+        we define $H = (h_1,\ldots,h_n)$, given by
+        \[
+            h_i (\mathbf{x}, t) =
+            \sum_{\mathbf{a} \in S_i}
+            (c_{\mathbf{a}} + \color{blue}{t c_\mathbf{a}^*}) \,
+            \mathbf{x}^{\mathbf{a}} \,
+            \color{blue}{e^{-M \omega_{\mathbf{a}} t}}.
+        \]
+    </p>
+    <ul>
+        <li class="fragment">
+            $H(\mathbf{x},t) = 0$ defines
+            a finite number of smooth “solution paths”.
+        </li>
+        <li class="fragment">
+            The starting points at $t=1$ can be approximated efficiently.
+        </li>
+        <li class="fragment">
+            Standard path trackers can be used to
+            track them from $t=1$ to $t=0$
+            and reach <strong>all</strong> isolated $\mathbb{C}^*$-zeros
+            of the
+            target system.
+        </li>
+    </ul>
+    <p class="fragment lowlight">
+        <b>Remark.</b>
+        <em>Stable cell method</em> (Huber & Sturmfels) and
+        <em>Random constant deformation</em> (Li & Wang)
+        extend this method so that all isolated $\mathbb{C}$-zeros
+        can be computed.
+    </p>
+</section>
+<section>
+    <h3>Polyhedral homotopy</h3>
+    <ul>
+        <li>
+            The number of paths defined by the polyhedral homotopy
+            equals the Bernshtein-Kushnirenko-Khovanskii (BKK) bound.
+        </li>
+        <li>
+            <em>Optimal</em> 
+            for computing isolated zeros of generic systems.
+        </li>
+        <li>
+            PHCpack, Hom4PS-1,2,3, pHom, HomotopyContinuation.jl,......
+        </li>
+    </ul>
+    <br/>
+    <p class="fragment center">
+        Can polyhedral homotopy compute
+        <em>non-isolated</em> solutions?
+    </p>
+    <div class="fragment lowlight">
+        <p>Different approaches in the same direction:</p>
+        <ul>
+            <li class="small">
+                Verschelde.
+                <em>Polyhedral Methods in Numerical Algebraic Geometry</em>.
+                In Interactions of Classical and Numerical Algebraic Geometry,
+                Contemporary Mathematics 496, pages 243-263, AMS 2009.
+            </li>
+            <li class="small">
+                Adrovic & Verschelde.
+                <em>Computing Puiseux Series for Algebraic Surfaces</em>.
+                In the Proceedings of ISSAC 2012.
+            </li>
+            <li class="small">
+                Bliss & Verschelde.
+                <em>Computing All Space Curve Solutions of Polynomial Systems by Polyhedral Methods</em>.
+                In the Proceedings of CASC 2016.
+            </li>
+            <li class="small">
+                Sommars & Verschelde.
+                <em>Computing Pretropisms for the Cyclic n-Roots Problem</em>.
+                In EuroCG 2016.
+            </li>
+            <li>
+                ......
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="non-isolated-components">
+    <h3>Non-isolated components</h3>
+    <p>
+        Zero set of a polynomial system may contain
+        <strong>non</strong>-isolated components
+        (i.e., positive-dimensional components).
+    </p>
+    <ul>
+        <li>
+            Non-isolated components contain infinitely many points
+            (over $\mathbb{C}$)
+        </li>
+        <li>
+            “Witness set” is the standard data structure
+            these components
+            <span class="lowlight">
+                (Generic linear linear slices of irreducible components)
+            </span>
+        </li>
+    </ul>
+    <br/>
+    <p class="fragment">
+        If a system has non-isolated zero component,
+        then
+        \[
+            \text{N.o. isolated zeros} \;\lneq\;
+            \text{BKK bound} \;=\;
+            \text{N.o. paths}
+        \]
+        Some paths are "wasted".
+        <span class="lowlight smaller">
+            (In a normal procedure)
+        </span>
+    </p>
+    <br/>
+    <p class="fragment">
+        <b>Goal:</b>
+        Generate data structure like witness sets
+        for non-isolated components
+        from these "waste products".
+    </p>
+</section>
+<section id="a-running-example">
+    <h3>A running example</h3>
+    <p>
+        Consider the polynomial system
+        \[
+            F(x_1,x_2) =
+            \begin{bmatrix}
+                (x_1^2 + x_2^2 - 1)(x_1 + x_2 - 3) \\
+                (x_1^2 + x_2^2 - 1)(2x_1 - x_2 - 3)
+            \end{bmatrix}
+        \]
+    </p>
+    <div class="cols">
+        <div class="col">
+            <img src="example.png" width="400" alt="">
+        </div>
+        <div class="col">
+            <p>
+                (Real picture only)
+            </p>
+            <ul>
+                <li class="fragment">
+                    Isolated nonsingular point $V_0$
+                </li>
+                <li class="fragment">
+                    A (generically) reduced 1-dimensional component $V_1$
+                </li>
+                <li class="fragment lowlight">
+                    There are singular points, which we will ignore for now
+                </li>
+            </ul>
+            <p>
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        Can polyhedral homotopy method be used to compute both
+        $V_0$ and $V_1$ from the same process?
+    </p>
+</section>
+<section id="as-a-parametrized-system">
+    <h3>As a parametrized system</h3>
+    <div class="r-stack">
+        <p class="fragment fade-in-then-out">
+        \[
+            F =
+            \begin{bmatrix}
+            (x_1^2 + x_2^2 - 1)(x_1 + x_2 - 3) \\
+            (x_1^2 + x_2^2 - 1)(2x_1 - x_2 - 3)
+            \end{bmatrix}
+        \]
+        </p>
+        <p class="fragment fade-in-then-out">
+        \[
+            F =
+            \begin{bmatrix}
+            x_1^3 + x_2 x_1^2 - 3 x_1^2 + x_2^2 x_1 - x_1 + x_2^3 - 3 x_2^2 -
+            x_2 + 3\\
+            2 x_1^3 - x_2 x_1^2 - 3 x_1^2 + 2 x_2^2 x_1 - 2 x_1 - x_2^3 - 3
+            x_2^2 + x_2 + 3
+            \end{bmatrix}
+        \]
+        </p>
+        <p class="fragment">
+        \[
+            F =
+            \begin{bmatrix}
+            c_1\;\,x_1^3 + c_2\;\,x_2 x_1^2 + c_3\;\,x_1^2 +
+            c_4\;\,x_2^2 x_1 + c_5\;\,x_1 + c_6\; x_2^3 +
+            \cdots \\
+            c_{10} x_1^3 + c_{11} x_2 x_1^2 + c_{12} x_1^2 +
+            c_{13} x_2^2 x_1 + c_{14} x_1 + c_{15} x_2^3 +
+            \cdots
+            \end{bmatrix}
+        \]
+        </p>
+    </div>
+    <p class="fragment">
+        We will write it as
+        \[
+            F(x_1,x_2 \;;\; \mathbf{c})
+        \]
+        where $\mathbf{c}$ is the point in $\mathbb{C}^{18}$
+        whose coordinates are the coefficients.
+    </p>
+    <p class="fragment">
+        This is a polynomial systems
+        parametrized by points in $\mathbb{C}^{18}$.
+    </p>
+    <p class="fragment small lowlight">
+        This is not quite right: Grassmannian
+        is the right space for the parameters.
+    </p>
+</section>
+<section id="zeros-under-perturbation">
+    <h3>Zeros under perturbation</h3>
+    <p>
+        What will happen to the zero set of
+        $F(x_1,x_2 \;;\; \mathbf{c})$
+        if replace $\mathbf{c}$ by a generic point
+        $\mathbf{c}^*$ in the coefficient space $\mathbb{C}^{18}$?
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="r-stack">
+                <div class="fragment"><img src="example.png" width="450" alt=""></div>
+                <div class="fragment"><img src="example-p2.png" width="450" alt=""></div>
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment lowlight">
+                (Blurry dots are non-real zeros)
+            </p>
+            <p class="fragment">
+                Zeros of $F(x_1,y_2 \;;\; \mathbf{c}^*)$
+                are <em>isolated</em> and <em>nonsingular</em>.
+                <br/>
+                <span class="lowlight">
+                    (All different from $V_0$ and $V_1$)
+                </span>
+            </p>
+            <p class="fragment">
+                <strong>Sard's theorem</strong>:
+                For almost all $\mathbf{c}^*$,
+                zeros of $F(x_1,x_2 \;;\;\mathbf{c}^*)$
+                are isolated and nonsingular.
+            </p>
+        </div>
+    </div>
+    <p class="fragment lowlight small">
+        <b>(Generalized Sard's Theorem)</b>
+        Chow, Mallet-Paret & Yorke.
+        <em>Finding zeroes of maps: homotopy methods that are constructive with probability one</em>.
+        Mathematics of Computation 32, no. 143 (1978)
+    </p>
+</section>
+<section id="stratified-perturbation">
+    <h3>Stratified perturbation</h3>
+    <p>
+        The coefficient space contains sets
+        $C_2,C_1,C_0$ such that
+        \[
+            \text{Whole parameter space} \;=\;
+            \overline{C_2} \;\supset\; \overline{C_1} \;\supset\; \overline{C_0}
+        \]
+    </p>
+    <ul>
+        <li class="fragment">
+            $C_0 = \{ \mathbf{c} \}$
+            is just the original coefficient.
+        </li>
+        <li class="fragment">
+            $C_2$ contains almost all coefficient.
+            For almost all $\mathbf{c}^*_2 \in C_2$,
+            the zero set under perturbation $\mathbb{V}(F(x_1,x_2 \;;\; \mathbf{c}^*_2))$
+            consists of <em>isolated</em> and <em>nonsingular</em> points
+            (Generalized Sard's theorem).
+        </li>
+        <li class="fragment">
+            <!-- $C_1$: An set of coefficients such that -->
+            For almost all $\mathbf{c}^*_1 \in C_1$,
+            the zero set of $F(x_1,x_2 \;;\; \mathbf{c}^*_1)$
+            consists of <em>isolated</em> and <em>nonsingular</em> points,
+            some of which are contained in $V_1$
+            <span class="lowlight">(the 1-dimensional component of the original zero set)</span>.
+        </li>
+    </ul>
+</section>
+<section id="at-c1">
+    <h3>Zeros at $\mathbf{c}^*_1$</h3>
+    <p>
+        For almost all $\mathbf{c}^*_1 \in C_1$,
+        the zero set of $F(x_1,x_2 \;;\; \mathbf{c}^*_1)$
+        consists of 9 isolated and nonsingular points.
+        <span class="lowlight small">
+            (Blurry dots are non-real zeros)
+        </span>
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="center">
+                <img src="example-p1.png" width="430" alt="">
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Among them 6 points are also
+                <strong>smooth points of $V_1$.</strong>
+            </p>
+            <p class="fragment">
+                I.e., 
+                when perturbed coefficients $\mathbf{c}^*_1$
+                is restricted to $C_1$,
+                6 of the 9 zeros of $F(x_1,x_2 \;;\; \mathbf{c}^*)$
+                are "stuck" inside the component $V_1$
+                of the original system.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        They can be used as numerically well-behaved sample points
+        for the 1-dimensional component $V_1$ of the original system.
+    </p>
+</section>
+<section id="sample-sets">
+    <h3>Sample sets</h3>
+    <p>
+        New goal: Want to compute finite "sample sets"
+        $W_0$ and $W_1$, s.t.
+    </p>
+    <ul>
+        <li>
+            $W_0$ contains all isolated nonsingular zeros of $F$.
+        </li>
+        <li>
+            $W_1$ contains some smooth points of $V_1$.
+        </li>
+    </ul>
+    <p class="fragment lowlight">
+        Here, a point $\mathbf{x}$ of $V_1$ is considered "<em>smooth</em>"
+        if the null space of $JF(\mathbf{x})$ is 1-dimensional.
+    </p>
+    <br/>
+    <br/>
+    <p class="fragment center">
+        Can we compute $W_0$ and $W_1$ from the
+        same homotopy?
+    </p>
+</section>
+<section id="stratified-polyhedral">
+    <h3>Stratified polyhedral homotopy</h3>
+    <p>
+        \[
+            F =
+            \begin{bmatrix}
+            c_1\;\,x_1^3 + c_2\;\,x_2 x_1^2 + c_3\;\,x_1^2 +
+            c_4\;\,x_2^2 x_1 + c_5\;\,x_1 + c_6\; x_2^3 +
+            \cdots \\
+            c_{10} x_1^3 + c_{11} x_2 x_1^2 + c_{12} x_1^2 +
+            c_{13} x_2^2 x_1 + c_{14} x_1 + c_{15} x_2^3 +
+            \cdots
+            \end{bmatrix}
+        \]
+   </p>
+    <p class="fragment">
+        we construct the generalized polyhedral homotopy
+        \[
+            H(x_1,x_2,\color{purple}{t_1},\color{blue}{t_2})
+            :=
+            \begin{bmatrix}
+            (c_1\,\,\,+ \color{purple}{t_1 c_{1}^*}\, + \color{blue}{t_2 c_1^{**}}) x_1^3
+            \color{blue}{e^{-M \omega_{1} t_2}} +
+            \cdots \\
+            (c_{10} + \color{purple}{t_1 c_{10}^*}  + \color{blue}{t_2 c_{10}^{**}}) x_1^3
+            \color{blue}{e^{-M \omega_{10} t_2}} +
+            \cdots
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        and track the 9 solution path along
+        the parameter path
+        \[
+            \begin{aligned}
+            (1&,1) &&\longrightarrow &
+            (1&,0) &&\longrightarrow &
+            (0&,0) \\
+            &\uparrow && &
+            &\downarrow && &
+            &\downarrow \\
+            \text{Starting } &\text{points} && &
+            &W_1 && &
+            &W_0
+            \end{aligned}
+        \]
+    </p>
+    <ul>
+        <li class="fragment">
+            $W_1$: contains 6 smooth points of 
+            $V_1$ of the original system;
+        </li>
+        <li class="fragment">
+            $W_0$: contains all isolate nonsingular zeros of the original system;
+        </li>
+    </ul>
+</section>
+<section id="smooth-paths">
+    <h3>Differentiable parameter paths</h3>
+    <p>
+        This homotopy is defined along the path
+        \[
+            (1,1) \;\longrightarrow\;
+            (1,0) \;\longrightarrow\;
+            (0,0)
+        \]
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="center">
+                <img src="t-path.png" width="350" alt="">
+            </div>
+        </div>
+        <div class="col fragment">
+            <div class="center">
+                <div class="center">
+                    <img src="t-rounded.png" width="350" alt="">
+                </div>
+            </div>
+            <p>
+                To improve higher order path trackers,
+                this parameter path can be replaced by a smooth one.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="illustration">
+    <p class="center">
+        Isolated nonsingular zeros $W_0$
+        and sample sets for the 1-dim component $W_1$
+        can be computed from the same process.
+    </p>
+    <div class="center">
+        <img src="stratified.png" width="400" alt="">
+    </div>
+    <p>
+        \[
+            \quad
+            \quad
+            \text{Starting points}
+            \quad
+            \quad
+            W_1
+            \quad
+            \quad
+            W_0
+            \quad
+            \text{(singular paths are ignored)}
+        \]
+    </p>
+</section>
+<section id="general-goal">
+    <h3>General goal</h3>
+    <p>
+        Given a (Laurent) polynomial system
+        $F = (f_1,\ldots,f_n)$ with 
+        \[
+            f_i(\mathbf{x}) = \sum_{\mathbf{a} \in S} c_{\mathbf{a}}
+            \mathbf{x}^{\mathbf{a}}
+        \]
+        where $\mathbf{x} = (x_1,\ldots,x_n)$ and
+        $S$ is their <em>common</em> support.
+        We are interesting in computing the zero set of
+        $F$ in the algebraic torus.
+    </p>
+    <div class="fragment">
+        <p>
+            Numerically compute sample sets $W_{n-1},\ldots,W_1,W_0$ s.t.
+        </p>
+        <ul>
+            <li>
+                Each $W_d$ is contained in a
+                $d$-dimensional component;
+            </li>
+            <li>
+                Each $W_d$ contains at least one point
+                from each (generically) <strong>reduced</strong>
+                <strong>irreducible</strong> component;
+            </li>
+            <li>
+                At each point $\mathbf{x} \in W_d$ ,
+                $\operatorname{rank} JF (\mathbf{x}) = n - d$;
+            </li>
+        </ul>
+    </div>
+    <!-- <p>Essentially toric version of witness sets.</p> -->
+</section>
+<!-- <section id="main-idea">
+    <h3>Main idea</h3>
+    <p>Consider the (Laurent) polynomial system <span class="math inline">$F = (f_1,\ldots,f_n)$</span> given by <span
+            class="math display">\[
+            f_i(\mathbf{x}) = \sum_{\mathbf{a} \in S} c_{\mathbf{a}}
+            \mathbf{x}^{\mathbf{a}}
+            \]</span> as a family of systems <span class="math inline">$F(\mathbf{x} \;;\; \mathbf{c})$</span>
+        parametrized by coefficients.</p>
+    <p>We focus on reduced components of the zero set of <span class="math inline">$F(\mathbf{x} \;;\;
+            \mathbf{c})$</span> within
+        <span class="math inline">$(\mathbb{C}^*)^n$</span>.
+    </p>
+</section> -->
+<section id="general-stratified">
+    <h3>Stratified polyhedral homotopy</h3>
+    <p>
+        For the (Laurent) polynomial system
+        \[
+            f_i(\mathbf{x}) = 
+            \sum_{\mathbf{a} \in S}
+                c_{\mathbf{a}}
+                \mathbf{x}^{\mathbf{a}}
+        \]
+        we construct the homotopy
+        \[
+            h_i =
+            \sum_{\mathbf{a} \in S}
+            (
+                c_{\mathbf{a}} +
+                \color{purple}{
+                    t_1(s) c_{\mathbf{a}}^{(1)} + \cdots +
+                    t_n(s) c_{\mathbf{a}}^{(n)}
+                }
+            )
+            \,
+            \mathbf{x}^{\mathbf{a}}
+            \,
+            \color{purple}{e^{-M \omega_{\mathbf{a}} t_n(s)}}
+        \]
+    </p>
+    <ul>
+        <li>
+            $M > 0$ is sufficiently large,
+            $\omega_{\mathbf{a}}$ are generic “lifting” values
+        </li>
+        <li>
+            $c_{\mathbf{a}}^{(k)}$
+            represent a generic perturbed coefficients in $C_k$
+        </li>
+        <li>
+            $(t_1(s),\ldots,t_n(s))$ gives a 
+            path in the $t$-space passing through
+            \[
+                (1,\ldots,1) \to (1,\ldots,1,0) \to \cdots \to
+                (1,0,\ldots,0) \to (0,\ldots,0)
+            \]
+        </li>
+    </ul>
+    <p class="lowlight small center">
+        Certain vertices can be skipped if we know
+        there won't be components of certain dimensions.
+    </p>
+</section>
+<section id="Ck">
+    <h3>$C_k$'s</h3>
+    <p>
+        Each $C_k$ is the manifold consisting of
+        coefficient choices created by adding
+        generic "rank-$k$" perturbation to the original coefficients:
+        \[
+            \mathbf{c}_k^* = \mathbf{c} + \boldsymbol{\epsilon}_k
+        \]
+        if we consider them as matrices.
+        <span class="lowlight">
+            (Better to use Grassmannian)
+        </span>
+    </p>
+    <p class="fragment">
+        \[
+            \overline{C}_n \supset
+            \overline{C}_{n-1} \supset
+            \cdots \supset
+            \overline{C}_1 \supset
+            \overline{C}_0 = \{ \mathbf{c} \}
+        \]
+    </p>
+</section>
+<section>
+    <p>
+        <b>Proposition.</b>
+        The solution paths defined by the homotopy
+        \[
+            h_i(\mathbf{x},s) =
+            \sum_{\mathbf{a} \in S}
+            (
+                c_{\mathbf{a}} +
+                \color{purple}{
+                    t_1(s) c_{\mathbf{a}}^{(1)} + \cdots +
+                    t_n(s) c_{\mathbf{a}}^{(n)}
+                }
+            )
+            \,
+            \mathbf{x}^{\mathbf{a}}
+            \,
+            \color{purple}{e^{-M \omega_{\mathbf{a}} t_n(s)}}
+        \]
+        pass through the "sample sets"
+        \[
+            W_{n-1} \;\to\; W_{n-2} \;\to\; \cdots \;\to\;
+            W_0
+        \]
+        at $\mathbf{t}$-values
+        \[
+            (1,\ldots,1,0) \to \cdots \to
+            (1,0,\ldots,0) \to (0,\ldots,0)
+        \]
+        such that
+    </p>
+    <ul>
+        <li>
+            Each $W_d$ is contained in a
+            $d$-dimensional component;
+        </li>
+        <li>
+            Each $W_d$ contains at least one point
+            from each (generically) <strong>reduced</strong>
+            <strong>irreducible</strong> component;
+        </li>
+        <li>
+            At each point $\mathbf{x} \in W_d$ ,
+            $\operatorname{rank} JF (\mathbf{x}) = n - d$;
+        </li>
+    </ul>
+    <p class="fragment lowlight">
+        These sample sets can be used as numerically well-behaved
+        representations of positive-dimensional components.
+    </p>
+</section>
+<section>
+    <h3>Summary</h3>
+    <p>
+        With a minor modification of
+        how perturbation of the coefficients is done,
+        the (unmixed) polyhedral homotopy of Huber and Sturmfels
+        can extract "sample sets" of non-isolate
+        (positive-dimensional) components as by-products,
+        <em class="highlight">using wasted paths</em>.
+    </p>
+    <div class="center">
+        <img src="c-space.png" width="700" alt="">
+    </div>
+    <p class="fragment">
+        The number of paths to be tracked for
+        $F = (f_1,\ldots,f_n)$ is
+        \[
+            n! \operatorname{Vol} ( \operatorname{conv}(
+                \operatorname{Newt}(f_1)
+                ,\ldots,
+                \operatorname{Newt}(f_n)
+            ))
+            \quad
+            \text{(unmixed BKK bound)}
+        \]
+    </p>
+</section>
+<section>
+    <br/>
+    <div class="center">
+        <h1>
+            Thank you!
+        </h1>
+    </div>
+    <br/>
+    <!-- <p class="center">
+        https://www.tianranchen.org/research/papers/krootcount.pdf
+    </p>
+    <p class="center">
+        https://arxiv.org/abs/2107.12315
+    </p>
+    <p class="center">
+        http://arxiv.org/abs/2108.12875
+    </p> -->
+    <p class="center">
+        ti@nranchen.org
+    </p>
+    <br/>
+    <div class="cols">
+        <div class="col center">
+            <img width=150 src="nsf.png" alt="">
+        </div>
+        <div class="col">
+            <p class="center smaller lowlight">
+                Research supported, in part, by National Science Foundation,
+                and Auburn University at Montgomery via
+                Grant-In-Aid and PIL programs.
+            </p>
+        </div>
+        <div class="col center">
+            <img width=150 src="aum.jpg" alt="">
+        </div>
+    </div>
+
+</section>
