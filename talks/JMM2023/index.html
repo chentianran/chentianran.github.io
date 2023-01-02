@@ -45,10 +45,10 @@ title: Stratified polyhedral homotopy
         </div>
         <div class="col">
             <p class="lowlight small">
-                Also, an accessible introduction:
-                Hauenstein & Sommese.
-                <em>What is numerical algebraic geometry?</em>
-                J Symb Comput 79, (2017).
+                Also, an accessible introduction:<br/>
+                Hauenstein & Sommese.<br/>
+                <em>What is numerical algebraic geometry?</em><br/>
+                J Symb Comput 79 (2017)
             </p>
         </div>
     </div>
@@ -56,7 +56,7 @@ title: Stratified polyhedral homotopy
 <section id="goal">
     <h3>Goal</h3>
     <p>
-        “Sample” points in of non-isolated components
+        "Sample" points in of non-isolated components
         as by-products of computing isolated zero set
         via polyhedral homotopy method.
     </p>
@@ -76,184 +76,6 @@ title: Stratified polyhedral homotopy
         Math Comput 64, 1541-1555 (1995).
     </p>
     <p>
-        To compute <em>all</em> isolated solutions of
-        a <strong>generic</strong> polynomial system
-        \[
-            \begin{aligned}
-                f_1(x_1, x_2) &=
-                c_1 x_1^3 + c_2 x_2 x_1^2 + c_3 x_1^2 + c_4 = 0\\
-                f_2(x_1, x_2) &=
-                c_5 x_1^3 + c_6 x_2 x_1^2 + c_7 x_1^2 + c_8 = 0
-            \end{aligned}
-        \]
-    </p>
-    <p class="fragment">
-        We multiply each term with a random power of
-        a parameter $t$
-        \[
-            \begin{aligned}
-                h_1(x_1, x_2, \, t) &=
-                c_1 x_1^3     \color{blue}{t^{\omega_1}} +
-                c_2 x_2 x_1^2 \color{blue}{t^{\omega_2}} +
-                c_3 x_1^2     \color{blue}{t^{\omega_3}} +
-                c_4           \color{blue}{t^{\omega_4}} = 0 \\
-                h_2(x_1, x_2, \, t) &=
-                c_5 x_1^3     \color{blue}{t^{\omega_5}} +
-                c_6 x_2 x_1^2 \color{blue}{t^{\omega_6}} +
-                c_7 x_1^2     \color{blue}{t^{\omega_7}} +
-                c_8           \color{blue}{t^{\omega_8}} = 0.
-            \end{aligned}
-        \]
-    </p>
-    <ul>
-        <li class="fragment">
-            At $t=1$, it is the original system.
-        </li>
-        <li class="fragment">
-            For generic coefficients, they define smooth
-            curves in $\mathbb{C}^2 \times (0,1]$
-            <!-- (strictly speaking, in <span class="math inline">$(\mathbb{C}^*)^2
-                \times (0,1]$</span>). -->
-        </li>
-        <!-- <li class="fragment">
-            These “paths” converge to isolated solutions of the
-            original system.
-        </li> -->
-        <li class="fragment">
-            Tracking these paths can lead us to <em>all</em> isolated
-            solutions.</li>
-    </ul>
-</section>
-<section id="starting-polyhedral-homotopy">
-    <h3>Starting polyhedral homotopy</h3>
-    <p>
-        Solution paths are defined by
-        \[
-            \begin{aligned}
-                h_1(x_1, x_2, \, t) &=
-                c_1 x_1^3 t^{\omega_1} +
-                c_2 x_2 x_1^2 t^{\omega_2} +
-                c_3 x_1^2 t^{\omega_3} +
-                c_4 t^{\omega_4} = 0 \\
-                h_2(x_1, x_2, \, t) &=
-                c_5 x_1^3 t^{\omega_5} +
-                c_6 x_2 x_1^2 t^{\omega_6} +
-                c_7 x_1^2 t^{\omega_7} +
-                c_8 t^{\omega_8} = 0.
-            \end{aligned}
-        \]
-        At the starting point, i.e., $t \to 0$,
-        the paths escape $(\mathbb{C}^*)^2$
-        The starting points can be computed via...
-    </p>
-    <ul>
-        <li>Mixed cells computation (i.e., intersecting tropical
-            hypersurfaces)</li>
-        <li>Solving binomial systems</li>
-        <li>......</li>
-    </ul>
-    <br/>
-    <br/>
-    <p class="center">
-        It can be done!
-    </p>
-</section>
-<section id="numerical-instability">
-    <h3>Numerical instability</h3>
-    <p>
-        \[
-            \begin{aligned}
-                h_1(x_1, x_2, \, t) &=
-                c_1 x_1^3 t^{\omega_1} +
-                c_2 x_2 x_1^2 t^{\omega_2} +
-                c_3 x_1^2 t^{\omega_3} +
-                c_4 t^{\omega_4} = 0 \\
-                h_2(x_1, x_2, \, t) &=
-                c_5 x_1^3 t^{\omega_5} +
-                c_6 x_2 x_1^2 t^{\omega_6} +
-                c_7 x_1^2 t^{\omega_7} +
-                c_8 t^{\omega_8} = 0.
-            \end{aligned}
-        \]
-        may suffer from numerical instability near $t=0$.
-    </p>
-    <p class="smaller lowlight">
-        Gao, Li, Verschelde & Wu.
-        <em>Balancing the lifting values to improve the numerical stability of polyhedral homotopy continuation methods</em>.
-        Appl. Math. Comput. (2000).
-    </p>
-    <p class="smaller lowlight">
-        Kim & Kojima.
-        <em>Numerical Stability of Path Tracing in Polyhedral Homotopy Continuation Methods</em>.
-        Computing (2004).
-    </p>
-    <p class="smaller lowlight">
-        Lee, Li & Tsai.
-        <em>HOM4PS-2.0: a software package for solving polynomial systems by the polyhedral homotopy continuation method</em>.
-        Computing (2008).
-    </p>
-    <p class="fragment">
-        Numerically (more) stable formulation:
-        \[
-            \begin{aligned}
-                h_1 &=
-                c_1 x_1^3     \color{purple}{e^{-M\omega_1 t}} +
-                c_2 x_2 x_1^2 \color{purple}{e^{-M\omega_2 t}} +
-                c_3 x_1^2     \color{purple}{e^{-M\omega_3 t}} +
-                c_4           \color{purple}{e^{-M\omega_4 t}} = 0 \\
-                h_2 &=
-                c_5 x_1^3     \color{purple}{e^{-M\omega_5 t}} +
-                c_6 x_2 x_1^2 \color{purple}{e^{-M\omega_6 t}} +
-                c_7 x_1^2     \color{purple}{e^{-M\omega_7 t}} +
-                c_8           \color{purple}{e^{-M\omega_8 t}} = 0.
-            \end{aligned}
-        \]
-        for some sufficiently large $M > 0$.
-        And we track the solution paths from $t=1$
-        <em class="highlight">backward</em> toward $t=0$.
-    </p>
-</section>
-<section id="handling-non-generic-coefficients">
-    <h3>Handling non-generic coefficients</h3>
-    <p>
-        The homotopy
-        \[
-            \begin{aligned}
-                h_1 &=
-                c_1 x_1^3 e^{-M\omega_1 t} +
-                c_2 x_2 x_1^2 e^{-M\omega_2 t} +
-                c_3 x_1^2 e^{-M\omega_3 t} +
-                c_4 e^{-M\omega_4 t} = 0 \\
-                h_2 &=
-                c_5 x_1^3 e^{-M\omega_5 t} +
-                c_6 x_2 x_1^2 e^{-M\omega_6 t} +
-                c_7 x_1^2 e^{-M\omega_7 t} +
-                c_8 e^{-M\omega_8 t} = 0.
-            \end{aligned}
-        \]
-        requires the coefficients to be <strong>generic</strong>.
-    </p>
-    <p class="fragment">
-        A minor modifications can be applied to 
-        <strong>non-generic</strong> systems
-        \[
-            \begin{aligned}
-                h_1 &=
-                (c_1 + \color{blue}{t c_1^*}) x_1^3 e^{-M \omega_1 t} +
-                (c_2 + \color{blue}{t c_2^*}) x_2 x_1^2 e^{-M \omega_2 t} +
-                \cdots \\
-                h_2 &=
-                (c_5 + \color{blue}{t c_5^*}) x_1^3 e^{-M \omega_5 t} +
-                (c_6 + \color{blue}{t c_6^*}) x_2 x_1^2 e^{-M \omega_6 t} +
-                \cdots
-            \end{aligned}
-        \]
-        It also restores the original system at <highlight>$t=0$</highlight>.
-    </p>
-</section>
-<section id="general-formulation">
-    <h3>General formulation</h3>
-    <p>
         To compute <strong>all</strong> $\mathbb{C}^*$-zeros
         of a (Laurent) polynomial system
         \[
@@ -263,7 +85,7 @@ title: Stratified polyhedral homotopy
             \quad\text{for } i = 1,\ldots,n
         \]
         in $\mathbf{x} = (x_1,\ldots,x_n)$,
-        we define $H = (h_1,\ldots,h_n)$, given by
+        we construct $H = (h_1,\ldots,h_n)$
         \[
             h_i (\mathbf{x}, t) =
             \sum_{\mathbf{a} \in S_i}
@@ -274,38 +96,76 @@ title: Stratified polyhedral homotopy
     </p>
     <ul>
         <li class="fragment">
-            $H(\mathbf{x},t) = 0$ defines
-            a finite number of smooth “solution paths”.
+            $c_{\mathbf{a}}^*$ are generic coefficients
         </li>
         <li class="fragment">
-            The starting points at $t=1$ can be approximated efficiently.
+            $\omega_{\mathbf{a}}$ are generic rational "lifting" values
         </li>
         <li class="fragment">
-            Standard path trackers can be used to
-            track them from $t=1$ to $t=0$
-            and reach <strong>all</strong> isolated $\mathbb{C}^*$-zeros
-            of the
-            target system.
+            $M > 0$ is sufficiently large
         </li>
     </ul>
-    <p class="fragment lowlight">
-        <b>Remark.</b>
-        <em>Stable cell method</em> (Huber & Sturmfels) and
-        <em>Random constant deformation</em> (Li & Wang)
-        extend this method so that all isolated $\mathbb{C}$-zeros
-        can be computed.
+    <div class="fragment">
+        <p class="smaller lowlight">
+            Kim & Kojima.
+            <em>Numerical Stability of Path Tracing in Polyhedral Homotopy Continuation Methods</em>.
+            Computing (2004).
+        </p>
+        <p class="smaller lowlight">
+            Lee, Li & Tsai.
+            <em>HOM4PS-2.0: a software package for solving polynomial systems by the polyhedral homotopy continuation method</em>.
+            Computing (2008).
+        </p>
+    </div>
+</section>
+<section>
+    <p>
+        \[
+            f_i(\mathbf{x}) =
+            \sum_{\mathbf{a} \in S_i}
+            c_{\mathbf{a}} \mathbf{x}^{\mathbf{a}}
+            \quad\longrightarrow\quad
+            h_i (\mathbf{x}, t) =
+            \sum_{\mathbf{a} \in S_i}
+            (c_{\mathbf{a}} + \color{blue}{t c_\mathbf{a}^*}) \,
+            \mathbf{x}^{\mathbf{a}} \,
+            \color{blue}{e^{-M \omega_{\mathbf{a}} t}}.
+        \]
     </p>
+    <ul>
+        <li class="fragment">
+            $H(\mathbf{x},t) = 0$ defines smooth "solution paths"
+            in $(\mathbb{C}^*)^n \times (0,1)$;
+        </li>
+        <li class="fragment">
+            These paths escape $(\mathbb{C}^*)^n$
+            near the starting point $t=1$ but be approximated via
+            <em>"mixed cells computation" & solving binomial systems......</em>
+            (can be done).
+        </li>
+        <li class="fragment">
+            Standard path trackers can track them
+            from $t=1$ to $t=0$ and reach <strong>all</strong>
+            isolated $\mathbb{C}^*$-zeros of the target system.
+        </li>
+    </ul>
 </section>
 <section>
     <h3>Polyhedral homotopy</h3>
     <ul>
         <li>
-            The number of paths defined by the polyhedral homotopy
-            equals the Bernshtein-Kushnirenko-Khovanskii (BKK) bound.
+            The number of paths equals the
+            Bernshtein-Kushnirenko-Khovanskii (BKK) bound.
         </li>
         <li>
             <em>Optimal</em> 
-            for computing isolated zeros of generic systems.
+            for computing isolated $\mathbb{C}^*$-zeros of
+            generic systems.
+        </li>
+        <li>
+            <em>Stable cell method</em> (Huber & Sturmfels) and
+            <em>Random constant deformation</em> (Li & Wang)
+            extend this method to isolated $\mathbb{C}$-zeros.
         </li>
         <li>
             PHCpack, Hom4PS-1,2,3, pHom, HomotopyContinuation.jl,......
@@ -319,23 +179,23 @@ title: Stratified polyhedral homotopy
     <div class="fragment lowlight">
         <p>Different approaches in the same direction:</p>
         <ul>
-            <li class="small">
+            <li class="smaller">
                 Verschelde.
                 <em>Polyhedral Methods in Numerical Algebraic Geometry</em>.
                 In Interactions of Classical and Numerical Algebraic Geometry,
                 Contemporary Mathematics 496, pages 243-263, AMS 2009.
             </li>
-            <li class="small">
+            <li class="smaller">
                 Adrovic & Verschelde.
                 <em>Computing Puiseux Series for Algebraic Surfaces</em>.
                 In the Proceedings of ISSAC 2012.
             </li>
-            <li class="small">
+            <li class="smaller">
                 Bliss & Verschelde.
                 <em>Computing All Space Curve Solutions of Polynomial Systems by Polyhedral Methods</em>.
                 In the Proceedings of CASC 2016.
             </li>
-            <li class="small">
+            <li class="smaller">
                 Sommars & Verschelde.
                 <em>Computing Pretropisms for the Cyclic n-Roots Problem</em>.
                 In EuroCG 2016.
@@ -360,9 +220,9 @@ title: Stratified polyhedral homotopy
         </li>
         <li>
             “Witness set” is the standard data structure
-            these components
+            for representing these components
             <span class="lowlight">
-                (Generic linear linear slices of irreducible components)
+                (Generic linear linear slices)
             </span>
         </li>
     </ul>
@@ -474,7 +334,7 @@ title: Stratified polyhedral homotopy
         whose coordinates are the coefficients.
     </p>
     <p class="fragment">
-        This is a polynomial systems
+        This is a family of systems
         parametrized by points in $\mathbb{C}^{18}$.
     </p>
     <p class="fragment small lowlight">
@@ -674,7 +534,7 @@ title: Stratified polyhedral homotopy
         </li>
     </ul>
 </section>
-<section id="smooth-paths">
+<!-- <section id="smooth-paths">
     <h3>Differentiable parameter paths</h3>
     <p>
         This homotopy is defined along the path
@@ -702,7 +562,7 @@ title: Stratified polyhedral homotopy
             </p>
         </div>
     </div>
-</section>
+</section> -->
 <section id="illustration">
     <p class="center">
         Isolated nonsingular zeros $W_0$
@@ -919,15 +779,93 @@ title: Stratified polyhedral homotopy
         The number of paths to be tracked for
         $F = (f_1,\ldots,f_n)$ is
         \[
-            n! \operatorname{Vol} ( \operatorname{conv}(
-                \operatorname{Newt}(f_1)
-                ,\ldots,
+            n! \operatorname{vol} ( \operatorname{conv}(
+                \operatorname{Newt}(f_1) \,\cup\,\cdots\cup\,
                 \operatorname{Newt}(f_n)
             ))
             \quad
             \text{(unmixed BKK bound)}
         \]
     </p>
+</section>
+<section id="mixed-vs-unmixed">
+    <h3>N.o. paths: Mixed vs. unmixed</h3>
+    <p>
+        \[
+            n! \operatorname{vol} ( \operatorname{conv}(
+                \operatorname{Newt}(f_1) \,\cup\,\cdots\cup\,
+                \operatorname{Newt}(f_n)
+            ))
+        \]
+        Mixed volume $\longrightarrow$ volume
+    </p>
+    <p class="fragment">
+        Easier?
+        <span class="fragment">
+            Volume and mixed volume computations are both #P.
+        </span>
+        <br/>
+        <span class="fragment smaller lowlight">
+            (Dyer, Gritzmann, Hufnagel. On The Complexity of Computing Mixed Volumes. SIAM J Comput 27, 1998)
+        </span>
+    </p>
+    <br/>
+    <div class="theorem fragment">
+        <strong>Theorem.</strong> (C. 2020)
+        For $m$ points
+        $\{ \mathbf{p}_1, \dots, \mathbf{p}_m \} \subset \mathbb{R}^n$,
+        $m > n$
+        \[
+            n!
+            \operatorname{vol} (
+                \operatorname{conv}
+                \{\,
+                    \mathbf{p}_1, \dots, \mathbf{p}_m
+                \}
+            ) =
+            \operatorname{MV} (
+                \Delta(\mathbf{p}_1), \dots, \Delta(\mathbf{p}_m)
+            )
+        \]
+        where each $\Delta(\mathbf{p}_i)$ is a simplex
+        of dimension $m-n$ in $\mathbb{R}^m$.
+    </div>
+    <!-- <p class="fragment">
+        The specialized problem of computing mixed volume of simplices is
+        at least as "hard" as the general problem of computing volume.
+    </p> -->
+    <br/>
+    <p class="fragment">
+        \[
+            \begin{gathered}
+            \text{General} \\
+            \text{volume computation}
+            \end{gathered}
+            \quad\approx\quad
+            \begin{gathered}
+            \text{Very special} \\
+            \text{mixed volume computation}
+            \end{gathered}
+        \]
+    </p>
+</section>
+<section id="future">
+    <h3>Future work</h3>
+    <ul>
+        <li>
+            GPU accelerated implementation:
+            (Proof-of-concept https://arxiv.org/abs/2111.14317)
+        </li>
+        <li>
+            Irreducible decomposition via monodromy?
+        </li>
+        <li>
+            Computing non-reduced components?
+        </li>
+        <li>
+            Mixed case?
+        </li>
+    </ul>
 </section>
 <section>
     <br/>
@@ -937,15 +875,16 @@ title: Stratified polyhedral homotopy
         </h1>
     </div>
     <br/>
-    <!-- <p class="center">
-        https://www.tianranchen.org/research/papers/krootcount.pdf
+    <p class="center">
+        https://www.tianranchen.org/research/papers/stratified.pdf
     </p>
     <p class="center">
-        https://arxiv.org/abs/2107.12315
+        http://arxiv.org/abs/2108.12875 (Volume equals mixed volume)
     </p>
     <p class="center">
-        http://arxiv.org/abs/2108.12875
-    </p> -->
+        https://arxiv.org/abs/2111.14317 (libDH)
+    </p>
+    <br/>
     <p class="center">
         ti@nranchen.org
     </p>
@@ -958,7 +897,7 @@ title: Stratified polyhedral homotopy
             <p class="center smaller lowlight">
                 Research supported, in part, by National Science Foundation,
                 and Auburn University at Montgomery via
-                Grant-In-Aid and PIL programs.
+                Grant-In-Aid and Professional Improvement Leaves programs.
             </p>
         </div>
         <div class="col center">
