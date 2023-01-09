@@ -1,13 +1,13 @@
 ---
 layout: default
-title: CSCI-1210
+title: ENGR-1210
 ---
 
-# CSCI-1210 A Spring 2020 Course Syllabus
+# ENGR-1210 A (CRN 3157) Spring 2023 Course Syllabus
 
 ### When, where, and who
 
-* Time: MW 9:25am -- 10:40am
+* Time: Tuesday & Thursday 9:30am -- 10:45am
 * Room: 205 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
@@ -93,7 +93,7 @@ The reading assignments are to be completed _before_ each class meeting.
 
 After reading the textbook, you need to complete a short reading test
 through the Blackboard system.
-__No late submission will be accepted__.
+__Late submissions will receive lower scores__.
 However, a missing reading test may be excused if valid reasons
 (military assignments, medical issues, family emergency, etc)
 and _proper documentation_ are provided _in advance_.
@@ -108,8 +108,10 @@ Please see the test descriptions on the Blackboard system for detail.
 
 You will complete short online tests on the Blackboard system
 that are designed to test your overall understanding of the subject.
-All concepts tests are due on the last day of classes,
-and __no late submission will be accepted__.
+__Late submissions will receive lower scores__
+unless valid reasons
+(military assignments, medical issues, family emergency, etc)
+and _proper documentation_ are provided _in advance_.
 However, it is strongly recommended that you complete them as early as possible.
 
 ### In-class worksheets
@@ -124,11 +126,10 @@ Homework problems are more complicated problems that will
 guide you to gain deeper understanding of the material we learn in class.
 Homework problems are listed on our Blackboard system.
 The submission procedures are outlined in the listings.
-__No late homework submission will be accepted__
-However, a missing homework assignment may be excused if valid reasons
+__Late homework submission will receive lower scores__
+unless valid reasons
 (military assignments, medical issues, family emergency, etc)
 and _proper documentation_ are provided _in advance_.
-Otherwise, a missing homework assignment receives a score of zero.
 
 <!-- ### Final exam
 The final exam is scheduled at 10:45am -- 12:00pm May 2nd. -->
@@ -142,7 +143,7 @@ weighted average.
 | Reading tests | 15%    | Blackboard |
 | Concept tests | 15%    | Blackboard |
 | Homework      | 20%    | Blackboard |
-| Worksheets    | 50%    | In-class   |
+| Worksheets    | 40%    | In-class   |
 
 ### Grading scale
 

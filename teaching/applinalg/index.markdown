@@ -7,16 +7,15 @@ title: MATH-3660
 
 This is an introductory course on linear algebra
 and the theory of systems of linear equations
-with a strong emphasis on concrete computational algorithms
+with a strong emphasis on its computational aspect
 as well as their real-world applications.
 The primary focus will be on the theory and applications of
 matrices algebra and various matrix decomposition methods.
 Secondary focus will revolve around the idea of matrices as linear transformations
 and the concept of vector spaces.
 This will be a project-based course that emphasize on hands-on experiences.
-Minimum level of programming experience will be expected.
 
-* [Syllabus](syllabus-S2022/)
+* [Syllabus](syllabus-S2023/)
 * [Lecture slides](lectures/)
 
 <!-- ## How to survive this course?
