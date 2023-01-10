@@ -43,8 +43,8 @@ These prerequisite can be satisfied by any one of the following:
 
 ### Textbook
 
-- _Calculus: Early Transcendentals_ (any edition) by Larson & Edwards
-  (6th edition ISBN: 978-1285774770)
+- _Calculus: Early Transcendentals_ (7th edition) by Larson & Edwards
+  ISBN: 9781337552516
 - Supplement:
   [OpenSTAX Calculus Volume 1](https://openstax.org/details/books/calculus-volume-1)
 

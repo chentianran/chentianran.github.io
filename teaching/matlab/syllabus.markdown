@@ -40,7 +40,7 @@ Course objectives:
 * Plots using Matlab
 * Advanced data structures in Matlab including sparse arrays and cells
 * I/O functions in Matlab
-* Graphics and animation
+* Basic image processing
 * Basic signal processing
 * General programming skills in the context of Matlab
 
@@ -50,8 +50,12 @@ __MATH-1150__ (Precalculus and trigonometry)
 
 ### Textbook
 
-- [Required] [Matlab documentation](https://www.mathworks.com/help/matlab/ (__free__).
-- [Recommended] MATLAB: A Practical Introduction to Programming and Problem Solving 5th Edition by _Stormy Attaway_ (ISBN-13: 978-0128154793)
+- _MATLAB Programming Fundamentals: Analyze Data & Develop Algorithms_
+  by **Sohel Ahamed**;
+  Kindle version can be purchased and read on any computer including iPad and even smartphones
+  (Paperback version is also available)
+- [Optional] _MATLAB: A Practical Introduction to Programming and Problem Solving_
+  (5th Edition) by __Stormy Attaway__ (ISBN-13: 978-0128154793)
 
 ### Attendance and participation
 
