@@ -1,4 +1,4 @@
-**AUM 2021-2022 pandemic plan.**
+**AUM COVID-19 updates.**
 Please follow guidelines detailed in the
 [AUM pandemic plan](https://www.aum.edu/backtocampus)
 relating to the COVID-19 pandemic.

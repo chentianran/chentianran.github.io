@@ -78,15 +78,21 @@ The ability to write formal proofs is also required. -->
 
 ## Textbook and lecture notes
 
+- _Applied Linear Algebra: The Decoupling Principle_
+  (2nd Edition) 
+  by **Lorenzo Sadun**,
+  ISBN: 9780821844410
+- Additional lecture notes and supplemental materials
+  can be found on our course page.
 <!-- The required textbook is:
 _Introduction to applied linear algebra_
 by __Stephen Boyd and Lieven Vandenberghe__
 (ISBN 9781316518960) -->
 
 <!-- The following textbooks are recommended (but not required) supplemental textbooks. -->
-
-Lecture notes
-can be found on our course page.
+Please be aware that the instructor will **not**
+read the textbook to you.
+It is your responsibility to read the textbook.
 
 ## Attendance
 
@@ -135,6 +141,20 @@ In these meetings, I will answer your question, work on problem with you,
 or have other discussions related to this course. -->
 
 ## Graded components
+
+Your overall course grade will be determined
+through a weighted sum of the scores you earn
+in several components, which will be described below in detail.
+Some of the components will be complete during class meetings (in-class)
+while some other components will be completed through
+our online learning system (Blackboard).
+
+Please make sure you are familiar with and have access to
+our online learning system.
+Please also note that you will not receive reminders from the instructor
+about the deadlines/dates of assignments/tests.
+It is your responsibility to keep track of these information
+through the "Calendar" feature in the online learning system.
 
 ### Reading tests
 
