@@ -142,20 +142,15 @@ The final exam is scheduled at 10:45am -- 12:00pm May 2nd. -->
 Your final grade is determined according to the following
 weighted average.
 
-| Component     | Points | Where      |
-|---------------|--------|------------|
-| Reading tests | 15%    | Blackboard |
-| Concept tests | 15%    | Blackboard |
-| Homework      | 20%    | Blackboard |
-| Worksheets    | 40%    | In-class   |
+| Component          | Points | Where      |
+|--------------------|--------|------------|
+| Reading tests      | 15%    | Blackboard |
+| Concept tests      | 15%    | Blackboard |
+| Homework           | 20%    | Blackboard |
+| Worksheets         | 40%    | In-class   |
+| Final exam/project | 10%    |            |
 
-### Grading scale
-
-* A: 90% - 100%
-* B: 80% - 89.9%
-* C: 70% - 79.9%
-* D: 60% - 69.9%
-* F: below 60%
+{% include letter_grades.markdown %}
 
 ### Other policies
 

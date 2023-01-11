@@ -159,16 +159,7 @@ and is calculated according to the following weights:
 | Quizzes          |  45%   | In-class/Blackboard |
 | Final            |  10%   | In-class            |
 
-### Grading scale
-
-* A: 90% - 100%
-* B: 80% - 89.9%
-* C: 70% - 79.9%
-* D: 60% - 69.9%
-* F: below 60%
-
-Border line grades are determined by in-class participation
-(in-class discussions and activities) as well as attendance.
+{% include letter_grades.markdown %}
 
 ### Other policies
 
