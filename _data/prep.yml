@@ -24,27 +24,6 @@
       year = {2022}
     }
     
-- nickname: v-is-mv
-  title: (Short note) Volume of convex polytopes equals mixed volume of simplices
-  pdf: v-is-mv.pdf
-  arxiv: http://arxiv.org/abs/2108.12875
-  abstract: >
-    This note provides a simple proof for the equality between the normalized
-    volume of a convex polytope with $m$ vertices and the mixed volume of $m$
-    simplices and thus shows the seemingly restrictive problem of computing mixed
-    volume of simplices is still at least as hard as computing volumes of convex polytopes.
-  bibtex: |
-    @article{Chen2021Volume,
-      archivePrefix = {arXiv},
-      arxivId = {2108.12875},
-      author = {Chen, Tianran},
-      eprint = {2108.12875},
-      month = {aug},
-      title = {Volume of convex polytopes equals mixed volume of simplices},
-      url = {http://arxiv.org/abs/2108.12875},
-      year = {2021}
-    }
-
 - nickname: k-uniform-cycles
   title: On the root count of algebraic Kuramoto equations in cycle networks with uniform coupling
   coauthors: Evgeniia Korchevskaia
