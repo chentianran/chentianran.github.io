@@ -5,9 +5,9 @@ title: Inner product and frequency analysis
 
 <section class="titlepage">
     <div class="titlebox">
-        <h2 class="title">Sound signal as vectors</h2>
+        <h2 class="title">Inner product and frequency analysis</h2>
         <p class="small">
-            Sound waves are vectors too
+            Extracing frequency information using inner product structure on waves
         </p>
     </div>
         <p>
@@ -49,19 +49,257 @@ title: Inner product and frequency analysis
 </section>
 <section>
     <h3>Combining waves</h3>
+    <p>
+        Sine (and cosine) waves of different amplitudes
+        can be combined to generate much more complicated "waves".
+        \[
+            f(t) =
+            1.5 \sin(3 \cdot 2\pi t) +
+            0.5 \cos(2 \cdot 2\pi t) +
+            0.2 \sin(9 \cdot 2\pi t)
+        \]
+    </p>
+    <div class="r-stack">
+        <img src="../sine3.png" alt="" width="60%" class="fragment">
+        <img src="../cos2.png"  alt="" width="60%" class="fragment">
+        <img src="../sine9.png" alt="" width="60%" class="fragment">
+        <img src="../sine-cosine-combined.png" alt="" width="60%" class="fragment">
+    </div>
 </section>
 <section>
     <h3>The "inverse" problem</h3>
+    <p>
+        Now we are interested in the "inverse":
+        Given the function
+    </p>
+    <div class="r-stack">
+        <img src="../sine-cosine-combined.png" alt="" width="50%" class="fragment">
+    </div>
+    <p class="fragment">
+        Can we figure out the coefficients
+        \[
+            f(t) =
+            \color{red}{?} \, \sin(3 \cdot 2\pi t) +
+            \color{red}{?} \, \cos(2 \cdot 2\pi t) +
+            \color{red}{?} \, \sin(9 \cdot 2\pi t)
+        \]
+    </p>
+    <p class="small lowlight fragment">
+        In general, inverse problems tends to be
+        much more difficult than their corresponding
+        "forward" problems.
+    </p>
 </section>
 <section>
     <h3>An orthonormal basis</h3>
+    <p>
+        We have already shown that the set
+        \[
+            \{
+                \sin( 2k \pi t),
+                \cos( 2k \pi t)
+            \}_{k=1}^N
+        \]
+        for an <em class="highlight">orthogonal basis</em>
+        for the vector space
+        \[
+            V = \left\{
+                    \sum_{k=1}^N
+                    a_k \cos(2k\pi t) + b_k \sin(2k\pi t)
+                    \;:\;
+                    a_k,b_k \in \mathbb{R}
+                \right\}.
+        \]
+    </p>
+    <p class="fragment">
+        This basis is quite useful by itself.
+        However, we can further improve it by
+        "normalize" (i.e. scale) each basis element
+        so that they are all <em class="highlight">unit vectors</em>.
+        The result is an <em class="highlight">orthonormal basis</em>.
+    </p>
+    <p class="fragment">
+        This can be done simply by "dividing"
+        each of the basis element by their norm
+        (i.e., their length).
+    </p>
+</section>
+<section>
+    <h3>Normalizing the sine function</h3>
+    <p>
+        Let $s_k(t) = \sin(2k\pi t)$,
+        then we can calculate
+        \[
+            \langle s_k, s_k \rangle =
+            \int_{-\frac{1}{2}}^{\frac{1}{2}} \sin^2(2k \pi t) \, dt =
+            \frac{1}{2}
+        \]
+    </p>
+    <p class="fragment">
+        Therefore,
+        \[
+            \| s_k \| = \sqrt{ \langle s_k, s_k \rangle } = \sqrt{ \frac{1}{2} }
+        \]
+        <span class="lowlight small">
+            This norm is related to how we scale the $t$ axis.
+        </span>
+    </p>
+    <p class="fragment">
+        Then its "normalized" version
+        \[
+            \sqrt{2} \sin(2k \pi t)
+        \]
+        is a unit vector in the inner product space $V$.
+        <span class="lowlight">
+            This gives us a standarized version
+            of the sine function
+            that is independent from our choice
+            in how the $t$ variable is measured.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Normalizing the cosine function</h3>
+    <p>
+        Similarly, let $c_k(t) = \cos(2k\pi t)$,
+        then we can calculate
+        \[
+            \langle c_k, c_k \rangle =
+            \int_{-\frac{1}{2}}^{\frac{1}{2}} \cos^2(2k \pi t) \, dt =
+            \frac{1}{2}
+        \]
+    </p>
+    <div class="problem fragment">
+        Can you carry out this calculation carefully?
+    </div>
+    <div class="problem fragment">
+        Why is the result independent from $k$?
+    </div>
+    <p class="fragment">
+        Therefore, its "normalized" version
+        \[
+            \sqrt{2} \cos(2k \pi t)
+        \]
+        is also a unit vector in the inner product space $V$.
+    </p>
+</section>
+<section>
+    <h3>An orthonormal basis</h3>
+    <p>
+        Based on the calculations above, the set
+        \[
+            \mathcal{B} =
+            \{
+                \sqrt{2} \sin( 2k \pi t), \,
+                \sqrt{2} \cos( 2k \pi t), \,
+            \}
+        \]
+        form an <em class="highlight">orthonormal basis</em>
+        for the vector space $V$.
+    </p>
+    <div class="fragment">
+        <p>That is,</p>
+        <ul>
+            <li>$\mathcal{B}$ is linearly independent</li>
+            <li class="fragment">$\mathcal{B}$ spans $V$</li>
+            <li class="fragment">Every vector in $\mathcal{B}$ is orthogonal to every other vector in $\mathcal{B}$</li>
+            <li class="fragment">Every vector in $\mathcal{B}$ is a unit vector</li>
+        </ul>
+    </div>
+    <p class="fragment">
+        These properties make an orthonormal basis
+        particularly useful when combined with
+        the operation of inner products.
+    </p>
 </section>
 <section>
     <h3>Properties of an orthonormal basis</h3>
+    <p>
+        <b>Example.</b>
+        Suppose the set
+        $B = \{ 
+            \mathbf{b}_1,
+            \mathbf{b}_2,
+            \mathbf{b}_3,
+            \mathbf{b}_4
+        \}$
+        form an <em class="highlight">orthonormal</em> basis for a vector space $V$,
+        and $\mathbf{v}$ is a vector in $V$ such that
+        \[
+            \mathbf{v} =
+            c_1 \mathbf{b}_1 +
+            c_2 \mathbf{b}_2 +
+            c_3 \mathbf{b}_3 +
+            c_4 \mathbf{b}_4.
+        \]
+    </p>
+    <div class="problem fragment">
+        What is the value of $\langle \mathbf{b}_1, \mathbf{v} \rangle$ ?
+    </div>
+    <div class="problem fragment">
+        What about $\langle \mathbf{b}_2, \mathbf{v} \rangle$ ?
+    </div>
+    <div class="problem fragment">
+        What can you say about the value of $\langle \mathbf{b}_k, \mathbf{v} \rangle$
+        for $k=1,2,3,4$ ?
+    </div>
+    <div class="problem fragment">
+        What will happen if the conditions that $B$ being orthogonal or normal
+        are dropped?
+    </div>
 </section>
 <section>
     <h3>Extracting frequency information</h3>
+    <p>
+        Going back to the "inverse" problem...
+    </p>
+    <div class="r-stack">
+        <img src="../sine-cosine-combined.png" alt="" width="60%" class="fragment">
+    </div>
+    <p class="fragment">
+        We want to figure out the
+        coefficients for the sine and cosine functions
+        of different frequencies
+        that will recreate this wave
+        as a linear combination.
+    </p>
+</section>
+<section>
+    <h3>Extracting frequency information</h3>
+    <p>
+        Given any $f \in V$,
+        it must be a linear combination of $\mathcal{B}$
+        since $\mathcal{B}$ form a basis of $V$.
+    </p>
+    <p class="fragment">
+        That is,
+        \[
+            f(t) = \sum_{k=1}^N a_k \sqrt{2} \cos(2k\pi t) + b_k \sqrt{2}\sin(2k\pi t).
+        \]
+        for some real numbers $a_1,b_1,a_2,b_2,\ldots,a_N,b_N$.
+    </p>
+    <p class="fragment">
+        Now suppose we only have the function (wave) $f(t)$ itself,
+        and the coefficients $\{ a_k, b_k \}$ are lost.
+        Thanks to the orthogonal basis $\mathcal{B}$,
+        we can recover the coefficients.
+    </p>
+    <div class="problem fragment">
+        What will be the inner problem
+        \[
+            \langle f(t), \sqrt{2} \cos(2k \pi t) \rangle \; ?
+        \]
+    </div>
+    <div class="problem fragment">
+        What will be the inner problem
+        \[
+            \langle f(t), \sqrt{2} \cos(2k \pi t) \rangle \; ?
+        \]
+    </div>
 </section>
 <section>
     <h3>Workflow of frequency analysis</h3>
+    <p class="lowlight">
+        (See additional notes)
+    </p>
 </section>
