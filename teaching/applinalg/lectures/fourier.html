@@ -258,9 +258,9 @@ title: Inner product and frequency analysis
     </div>
     <p class="fragment">
         We want to figure out the
-        coefficients for the sine and cosine functions
+        coefficients for the sine/cosine functions
         of different frequencies
-        that will recreate this wave
+        that will recreate this 
         as a linear combination.
     </p>
 </section>
@@ -269,37 +269,64 @@ title: Inner product and frequency analysis
     <p>
         Given any $f \in V$,
         it must be a linear combination of $\mathcal{B}$
-        since $\mathcal{B}$ form a basis of $V$.
+        <span class="small lowlight">
+            ($\mathcal{B}$ is a basis)
+        </span>.
     </p>
     <p class="fragment">
-        That is,
         \[
             f(t) = \sum_{k=1}^N a_k \sqrt{2} \cos(2k\pi t) + b_k \sqrt{2}\sin(2k\pi t).
         \]
         for some real numbers $a_1,b_1,a_2,b_2,\ldots,a_N,b_N$.
     </p>
     <p class="fragment">
-        Now suppose we only have the function (wave) $f(t)$ itself,
-        and the coefficients $\{ a_k, b_k \}$ are lost.
+        Now suppose we only have $f(t)$ itself,
+        and $\{ a_k, b_k \}$ are lost.
         Thanks to the orthogonal basis $\mathcal{B}$,
-        we can recover the coefficients.
+        we can recover these coefficients.
     </p>
     <div class="problem fragment">
-        What will be the inner problem
+        What will be the inner products
         \[
-            \langle f(t), \sqrt{2} \cos(2k \pi t) \rangle \; ?
-        \]
-    </div>
-    <div class="problem fragment">
-        What will be the inner problem
-        \[
-            \langle f(t), \sqrt{2} \cos(2k \pi t) \rangle \; ?
+            \langle f(t), \sqrt{2} \cos(2k \pi t) \rangle 
+            \quad\text{and}\quad
+            \langle f(t), \sqrt{2} \sin(2k \pi t) \rangle 
+            \;?
         \]
     </div>
 </section>
 <section>
     <h3>Workflow of frequency analysis</h3>
-    <p class="lowlight">
-        (See additional notes)
+    <p>
+        To compute the coefficients $\{ a_k, b_k \}$, in
+        \[
+            f(t) = \sum_{k=1}^N a_k \sqrt{2} \cos(2k\pi t) + b_k \sqrt{2}\sin(2k\pi t).
+        \]
     </p>
+    <p class="fragment">
+        we can use important properties
+        \[
+            \begin{aligned}
+                a_k &= \langle f(t), \sqrt{2} \cos(2k \pi t) \rangle 
+                &&\text{and} &
+                b_k &= \langle f(t), \sqrt{2} \sin(2k \pi t) \rangle 
+            \end{aligned}
+        \]
+        to compute the coefficients.
+    </p>
+    <ul>
+        <li class="fragment">
+            We constructed an orthonormal basis
+            $\mathcal{B}$ for the space of "waves" $V$;
+        </li>
+        <li class="fragment">
+            Any "wave" in $V$ can be expressed
+            as a linear combination of $\mathcal{B}$;
+        </li>
+        <li class="fragment">
+            More importantly, the coefficients
+            can be computed using inner products
+            with the basis elements.
+        </li>
+    </ul>
 </section>
