@@ -330,3 +330,105 @@ title: Inner product and frequency analysis
         </li>
     </ul>
 </section>
+<section>
+    <h3>Extracting $k$-th harmonic</h3>
+    <p>
+        To find the amplitude of
+        the frequency $k$ component in and input wave
+        \[
+            \text{Input wave $f$}
+            \;\longrightarrow\;
+            \left\{
+            \begin{aligned}
+                a_k &= \langle f(t), \sqrt{2} \cos(2k \pi t) \rangle \\
+                b_k &= \langle f(t), \sqrt{2} \sin(2k \pi t) \rangle 
+            \end{aligned}
+            \right.
+            \;\longrightarrow\;
+            A_k = \sqrt{a_k^2 + b_k^2}.
+        \]
+        This is usually called
+        the "$k$-th harmonic".
+        <span class="lowlight fragment">
+            The entire sum can be interpreted as a
+            combination of the different harmonics.
+        </span>
+    </p>
+    <p class="fragment">
+        This solves the "inverse problem"!
+    </p>
+    <p class="lowlight fragment">
+        Similar to
+        \[
+            \text{Input food}
+            \quad\longrightarrow\quad
+            \text{Exact amount of each ingredient}
+        \]
+    </p>
+</section>
+<section>
+    <h3>$V$ is isomorphic to $\mathbb{R}^{2N}$</h3>
+    <p>
+        Thanks to the basis $\mathcal{B}$
+        <span class="lowlight">
+            (containing sine/cosine of different frequencies),
+        </span>
+        each element in $V$
+        can be represented by $2N$ real numbers.
+    </p>
+    <p class="fragment">
+        That is, each element in $V$
+        corresponds to a unique vector
+        \[
+            \begin{bmatrix}
+                a_1 \\ b_1 \\
+                \vdots \\
+                a_N \\ b_N
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        Therefore, $V$ has the same structure as $\mathbb{R}^{2N}$
+        (as far as linear algebra is concerned).
+        So we say $V$ is <em class="highlight">isomorphic</em> to $\mathbb{R}^{2N}$.
+        <span class="lowlight smaller">
+            An isomorphism is a structure-preserving map.
+            See the discussion of "linear maps" for more detail on this.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>To infinity and beyond!</h3>
+    <p>
+        So far, our discussions are restricted to
+        "waves" of certain range of frequencies
+        <span class="lowlight">
+            (from 1Hz, 2Hz, 3Hz,..., N Hz),
+        </span>
+        since,
+        \[
+            V = \left\{
+                    \sum_{k=1}^N
+                    a_k \cos(2k\pi t) + b_k \sin(2k\pi t)
+                    \;:\;
+                    a_k,b_k \in \mathbb{R}
+                \right\}.
+        \]
+    </p>
+    <p class="fragment">
+        In general, it is possible to consider
+        all possible (integer) frequencies:
+        \[
+            s(t) = 
+            \sum_{k=1}^\infty
+                a_k \cos(2k\pi t) + b_k \sin(2k\pi t)
+        \]
+    </p>
+    <p class="fragment">
+        Such objects belong to an infinite-dimensional vector space
+        that has some familiar structures and properties.
+    </p>
+    <p class="fragment lowlight">
+        This is the basic idea behind "Fourier series".
+    </p>
+</section>
