@@ -1,3 +1,19 @@
+- nickname: bernd60
+  title: Numerical Nonlinear Algebra
+  pdf: bernd60.pdf
+  arxiv: https://arxiv.org/abs/2302.08585
+  abstract: >
+    Numerical nonlinear algebra is a computational paradigm that uses numerical analysis to study polynomial equations. Its origins were methods to solve systems of polynomial equations based on the classical theorem of Bézout. This was decisively linked to modern developments in algebraic geometry by the polyhedral homotopy algorithm of Huber and Sturmfels, which exploited the combinatorial structure of the equations and led to efficient software for solving polynomial equations. 
+    Subsequent growth of numerical nonlinear algebra continues to be informed by algebraic geometry and its applications. These include new approaches to solving, algorithms for studying positive-dimensional varieties, certification, and a range of applications both within mathematics and from other disciplines. With new implementations, numerical nonlinear algebra is now a fundamental computational tool for algebraic geometry and its applications.
+  bibtex: |
+    @article{Bates2023Numerical, 
+      year = {2023}, 
+      title = {{Numerical Nonlinear Algebra}}, 
+      author = {Bates, Daniel J and Breiding, Paul and Chen, Tianran and Hauenstein, Jonathan D and Leykin, Anton and Sottile, Frank}, 
+      journal = {arXiv}, 
+      eprint = {2302.08585}
+    }
+
 - nickname: krootcount
   title: On the typical and atypical solutions to the Kuramoto equations
   pdf: krootcount.pdf
