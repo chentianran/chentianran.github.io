@@ -24,6 +24,50 @@ title: Covariance matrices
     <!-- </p> -->
 </section>
 <section>
+    <h3>Stats preparations: sample mean</h3>
+    <p>
+        In our context, a <b class="highlight">sample</b>
+        is simply a list of numbers.
+        <span class="lowlight fragment">
+            In statistics, "samples" are samples of data
+            collected from "random variables".
+        </span>
+    </p>
+    <p class="fragment">
+        E.g., the list of numbers
+        \[
+            8, 9, 11, 13, 9
+        \]
+        may represent samples of the ages of trees
+        in a forest
+        <span class="lowlight">
+            (which may have more trees)
+        </span>.
+        <span class="fragment">
+            We may write these numbers as a column (or row) vector.
+        </span>
+    </p>
+    <p class="fragment">
+        The <em class="highlight">sample mean</em>
+        in this example is
+        \[
+            \frac{1}{5} ( 8 + 9 + 11 + 13 + 9 ) = 10
+        \]
+    </p>
+    <p class="fragment">
+        In general, the <b class="highlight">sample mean</b>
+        of a list of numbers $x_1,\ldots,x_n$ is
+        \[
+            \frac{1}{n} (x_1 + \cdots + x_n) =
+            \frac{1}{n} \sum_{i=1}^n x_n.
+        \]
+    </p>
+    <p class="fragment">
+        Very often, we use the notation $\overline{x}$
+        for the sample mean of $x_1,\ldots,x_n$.
+    </p>
+</section>
+<section>
     <h3>Stats preparations: sample variance</h3>
     <p>
         In statistics and data science,
@@ -31,7 +75,7 @@ title: Covariance matrices
         is spread out from their mean value.
     </p>
     <div class="cols fragment">
-        <div class="col">
+        <div class="col small">
             <table>
                 <tbody>
                     <tr><td>8</td></tr>
@@ -41,10 +85,10 @@ title: Covariance matrices
                     <tr><td>9</td></tr>
                 </tbody>
             </table>
-            Mean value is 10,
-            and the variance is small.
+            Mean value 10,
+            small variance.
         </div>
-        <div class="col">
+        <div class="col small">
             <table>
                 <tr><td>1</td></tr>
                 <tr><td>2</td></tr>
@@ -52,10 +96,23 @@ title: Covariance matrices
                 <tr><td>20</td></tr>
                 <tr><td>27</td></tr>
             </table>
-            Mean value is also 10,
-            but the variance is large.
+            Mean value 10,
+            larger variance.
         </div>
     </div>
+    <p class="fragment">
+        The (unbiased) <b class="highlight">sample variance</b>
+        of $x_1,\dots,x_n$ is
+        \[
+            \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline{x})^2.
+        \]
+    </p>
+    <p class="fragment lowlight small">
+        The divisor $(n-1)$ may look very strange.
+        It is here to correct for the bias
+        introduced by the estimator of the population variance.
+        (Long story!)
+    </p>
 </section>
 <section>
     <h3>Covariance</h3>
