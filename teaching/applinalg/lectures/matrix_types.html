@@ -395,8 +395,8 @@ title: Types of matrices
             E.g.,
             \[
                 \begin{bmatrix}
-                    3 & -2 \\
-                    2 &  4
+                    0 & -2 \\
+                    2 &  0
                 \end{bmatrix}
             \]
         </li>
@@ -411,16 +411,15 @@ title: Types of matrices
     <h3>Orthogonal</h3>
     <div class="definition">
         A square matrix $Q$ (with real entries) is
-        an <b class="highlight">orthogonal matrix</b>
-        (a.k.a. <b class="highlight">orthonormal matrix</b>) if
+        <b class="highlight">orthogonal</b>
+        if
         \[
             Q^\top Q = Q Q^\top = I
         \]
     </div>
     <p class="fragment">
         Basically, the columns (or rows) of an orthogonal matrix are unit vectors
-        that are orthogonal to one another
-        (have zero dot product with one another).
+        that are orthogonal to one another.
     </p>
     <div class="cols">
         <div class="col">
@@ -442,6 +441,10 @@ title: Types of matrices
                 <span class="fragment">
                     This is usually how orthogonal matrices are created.
                 </span>
+            </p>
+            <p class="fragment lowlight smaller">
+               The more fitting name <b class="highlight">orthonormal matrix</b>
+               is almost never used (and I don't know why).
             </p>
         </div>
     </div>
