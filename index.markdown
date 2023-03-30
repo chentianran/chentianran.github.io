@@ -29,16 +29,16 @@ Office hours
 ------------
 
 {% include hours.markdown %}
-{% include appointments.markdown %}
+<!-- {% include appointments.markdown %} -->
 
-Appointments
+<!-- Appointments
 ------------
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 
 - <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/advising');return false;">Schedule an advising appointment with me</a>
-- <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/one-on-one');return false;">Schedule a virtual one-on-one meeting with me</a>
+- <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/one-on-one');return false;">Schedule a virtual one-on-one meeting with me</a> -->
 
 <!-- Upcoming conferences
 - [SIAM AG 2019](https://mathsites.unibe.ch/siamag19/)  
