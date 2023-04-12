@@ -29,7 +29,7 @@ Office hours
 ------------
 
 {% include hours.markdown %}
-{% include appointments.markdown %}
+<!-- {% include appointments.markdown %} -->
 
 Appointments
 ------------
@@ -60,11 +60,7 @@ See detail [here](hiring/).
 Grants
 -------------
 
-- 2019--2023 NSF research grant 
-  [DMS-1923099](https://nsf.gov/awardsearch/showAward?AWD_ID=1923099)
-  _AMPS: Collaborative Research: A Convex Geometry and Homotopy Approach for Power-Flow Equations_
-  \$105,281 Role: PI (in collaboration with separately funded co-PI Robert Davis)
-- 2016--2019 AMS-Simons Travel Grant
+{% include grants.markdown %}
 
 News and recent talks
 ---------------------
