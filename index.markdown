@@ -81,17 +81,6 @@ News and recent talks
   [Spring Western Virtual Sectional Meeting](https://www.ams.org/meetings/sectional/2294_program.html)
   May 14-15, 2022
   (formerly at University of Denver)
-- [AMS Fall 2020 Eastern Virtual Sectional Meeting](https://www.ams.org/meetings/sectional/2278_program.html)
-  October 3-4, 2020,  
-  (formerly at Pennsylvania State University)  
-  Special Session on Nonlinear Scientific Computing and Applications,
-  organized by Wenrui Hao  
-  [ [talk slides](/research/ams-2020-gt/) ]
-- [MAAG 2019: Meeting on Applied Algebraic Geometry](https://sites.google.com/view/maag2019/home)
-  April 13-14, 2019,  
-  Georgia Tech, Atlanta, GA USA.  
-  Organized by Greg Blekherman, Anton Leykin, and Josephine Yu  
-  [ [talk slides](/research/maag-2019/) ]
 
 Scientific Software
 -------------------
