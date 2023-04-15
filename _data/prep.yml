@@ -1,3 +1,26 @@
+- nickname: polyposidimo
+  title: A stratified polyhedral homotopy method for sampling positive dimensional zero sets of polynomial systems
+  pdf: polyposidimo.pdf
+  abstract: >
+    Numerical algebraic geometry revolves around the study of
+    solutions to polynomial systems via numerical method.
+    The polyhedral homotopy of Huber and Sturmfels
+    for computing isolated solutions
+    and the concept of witness sets
+    for as numerical representations of non-isolated solution components,
+    put forth by Sommese and Wampler,
+    are two of the fundamental tools in this field.
+    In this paper, we show that a modified
+    polyhedral homotopy can reveal sample sets
+    of non-isolated solution components, akin to witness sets,
+    as by-products from the process of computing isolated solutions.
+  bibtex: |
+    @article{Chen2023Stratified, 
+      year = {2023}, 
+      title = {{A stratified polyhedral homotopy method for sampling positive dimensional zero sets of polynomial systems}}, 
+      author = {Chen, Tianran}, 
+    }
+
 - nickname: bernd60
   title: Numerical Nonlinear Algebra
   coauthors: Daniel J. Bates, Paul Breiding, Tianran Chen, Jonathan D. Hauenstein, Anton Leykin, Frank Sottile
