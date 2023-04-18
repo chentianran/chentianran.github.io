@@ -127,31 +127,30 @@
     }
 
 - nickname: bkk-biii
-  title: On the equality of BKK bound and birationally invariant intersection index
+  title: A geometric criterion on the equality between BKK bound and intersection
   pdf: bkk-biii.pdf
   arxiv: http://arxiv.org/abs/1812.05408
   abstract: > 
     The Bernshtein-Kushnirenko-Khovanskii theorem provides a generic root count
     for system of Laurent polynomials in terms of the mixed volume of their Newton polytopes
-    which has since been known as the BKK bound.
+    (i.e., the BKK bound).
     A recent and far-reaching generalization of this theorem is the study of
     birationally invariant intersection index by Kaveh and Khovanskii.
-    In this paper we generalize the BKK bound
-    in the direction of the birationally invariant intersection index,
-    and the main result allows the application of BKK bound to 
-    Laurent polynomial systems that has algebraic relations among the coefficients.
-    Applying this result, we establish the birationally invariant intersection index
-    for a well-studied algebraic Kuramoto equations.
+    This short note establishes a simple geometric condition
+    on the equality between the BKK bound and the intersection index
+    for a system of vector spaces of Laurent polynomials.
+    Applying this, we show that the intersection index
+    for the algebraic Kuramoto equations equals their BKK bound.
   bibtex: |
-    @article{Chen2018,
+    @article{Chen2023Geometric,
       archivePrefix = {arXiv},
       arxivId = {1812.05408},
       author = {Chen, Tianran},
       eprint = {1812.05408},
-      month = {dec},
-      title = {{On the equality of BKK bound and birationally invariant intersection index}},
+      month = {apr},
+      title = {{A geometric criterion on the equality between BKK bound and intersection}},
       url = {http://arxiv.org/abs/1812.05408},
-      year = {2018}
+      year = {2023}
     }
 
 - nickname: index-resolved
