@@ -19,11 +19,9 @@ and is supported by [NSF grant DMS-1923099](https://nsf.gov/awardsearch/showAwar
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Spring semester of 2023 I am teaching
+In the Summer of 2023 I am teaching
 
-- [ENGR-1210](teaching/matlab/)    (Introduction to computer programming)
-- [MATH-1610](teaching/calc1/)     (Calculus I),
-- [MATH-3660](teaching/applinalg/) (Applied linear algebra)
+- [MATH-1050](teaching/math-1050/)
 
 Office hours
 ------------
