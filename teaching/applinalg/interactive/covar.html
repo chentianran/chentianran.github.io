@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Two.js Coordinate Plane</title>
+
+    <!-- KaTeX stuff -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css">
+
+    <!-- Two.js stuff -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.7.4/two.min.js"></script>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		canvas {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+    <div id="covarmatrix"></div>
+	<div id="canvas-container" style="width: 500px; height: 500px;"></div>
+	<script>
+        var matrix = document.getElementById('covarmatrix');
+		var elem = document.getElementById('canvas-container');
+        var W = elem.clientWidth;
+        var H = elem.clientHeight;
+		var params = { width: W, height: H };
+		var two = new Two(params).appendTo(elem);
+        var xline = two.makeLine(params.width/2, 0, params.width/2, params.height);
+        var yline = two.makeLine(0, params.height/2, params.width, params.height/2);
+		xline.linewidth = 2;
+		yline.linewidth = 2;
+        xline.noStroke()
+        yline.noStroke()
+
+        var dots = [];
+        var Xs = [];
+        var Ys = [];
+
+		// create a new dot, add it to the canvas,
+        // and record the data point
+		function addDot(x, y) {
+			var dot = two.makeCircle(x, y, 5);
+			dot.fill = 'black';
+			dot.noStroke();
+			dots.push(dot);
+			two.update();
+            Xs.push(x);
+            Ys.push(y);
+
+            updateMean();
+		}
+
+        function updateMean() {
+            xmean = 0;
+            for(var i=0; i < Xs.length; i++) {
+                xmean = xmean + Xs[i];
+            }
+            xmean = xmean / Xs.length;
+
+            ymean = 0;
+            for(var i=0; i < Ys.length; i++) {
+                ymean = ymean + Ys[i];
+            }
+            ymean = ymean / Ys.length;
+
+			xline.vertices[0].x = xmean;
+			xline.vertices[1].x = xmean;
+			yline.vertices[0].y = ymean;
+			yline.vertices[1].y = ymean;
+
+		    xline.stroke = 'blue';
+		    yline.stroke = 'purple';
+			two.update();
+
+            let nxmean = xmean / W;
+            let nymean = ymean / H;
+
+            katex.render(
+				'\\overline{x} = ' + nxmean.toFixed(2) + ' \\quad ' +
+				'\\overline{y} = ' + nymean.toFixed(2),
+				matrix
+			);
+        }
+
+		// add a dot when the canvas is clicked
+		elem.addEventListener('mousedown', function(event) {
+			var x = event.offsetX;
+			var y = event.offsetY;
+			addDot(x, y);
+		});
+
+	</script>
+</body>
+</html>
