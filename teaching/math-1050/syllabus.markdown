@@ -80,12 +80,13 @@ Upon successful completion of this course you will
 demonstrate an understanding of and ability to apply
 each of the following topics (time permitting):
 
-* Solve/Graph/Apply Linear, Rational, and Quadratic equations, including for Linear Inequalities
+* Solve and graph linear, rational, and Quadratic equations
+* Solve linear inequalities
 * Graph basic functions (Quadratic, Absolute Value, Square Root) and their transformations
 * Perform algebraic operations of functions and composition of functions
 * Find inverse functions and their graphs
-* Solve applications of Polynomial and Rational Functions
-* Solve Systems of Linear Equations in two and three variables and their applications
+* Solve word problems involving polynomial and rational Functions
+* Solve systems of linear equations in two and three variables and their applications
 * Exponential & Logarithmic Functions/Equations (graphing, solving, applying, properties)
 
 ## Attendance and participation
@@ -139,10 +140,8 @@ A graphing calculator such as the TI-84 (TI-83) is acceptable.
 However, calculators with CAS capability such as TI-89 or higher or similar 
 (Typically with a QUERTY keyboard) are __prohibited__ in all exams and quizzes.
 <!-- Please bring the calculator to all class meetings and exams. -->
-You may use the calculator for each test, but you will be required to show all work on tests.
-If no work is shown, you will receive zero credit.
-You are here to learn mathematics and a calculator should
-only be used as a learning tool.
+You may use the calculator for each test,
+but they are not necessary.
 
 <!-- ## Reading assignments
 
@@ -209,10 +208,26 @@ Otherwise, a missing homework assignment receives a score of zero. -->
 <!-- ### Final exam
 The final exam is scheduled at 10:45am -- 12:00pm May 2nd. -->
 
+## Continuous assessment
+
+The continuous assessment is a long test
+that is designed to test your mastery of
+all the basic mathematical skills covered in this course.
+You can take it multiple times (at most once in each class meeting).
+The highest score you earn will be recorded.
+More detailed instruction on this will be given in class.
+
 ## Exams
 
 There will be three in-class exams and one accumulative final exam.
 If you miss one midterm exam, the final exam will replace only one missed test for “excused” absences as outlined in the AUM Attendance Policy and only with appropriate verification.  If you miss two midterm exams, you will receive a zero for the second one unless you have extensive documentation for your absences. Being absent from the final exam will result in a course grade of FA unless you prove to the instructor’s satisfaction, and with appropriate documentation, that your absence was unavoidable.  You may then make up the final exam at the instructor’s convenience.  Your score on the final exam cannot be dropped.  
+
+## Experience points
+
+In addition to the two major components,
+your participation in in-class activities
+will also earn you "experience points",
+which will be a part of your overall course grade.
 
 ##  <a name="grade"></a> Grade composition
 Your final grade is determined according to the following
@@ -220,14 +235,14 @@ weighted average.
 
 | Component              | Points | Where    |
 |------------------------|--------|----------|
-| Continuous integration | 50%    | In-class |
+| Continuous assessments | 42%    | In-class |
+| Exam 1                 | 12%    | In-class |
+| Exam 2                 | 12%    | In-class |
+| Exam 3                 | 12%    | In-class |
+| Final                  | 12%    | In-class |
 | Experience points      | 10%    | In-class |
-| Exam 1                 | 10%    | In-class |
-| Exam 2                 | 10%    | In-class |
-| Exam 3                 | 10%    | In-class |
-| Final                  | 10%    | In-class |
 
-### Grading scale
+## Grading scale
 
 * A:  90% - 100%
 * B+: 85% - 89%
