@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/two.js/0.8.10/two.min.js" integrity="sha512-D9pUm3+gWPkv/Wl6vd45vRLjdkdEKGje7BxOxYG0N6m4UlEUB7RSljBwpmJNAOuf6txLLtlaRchoKfzngr/bQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/kuramotosystem.js"></script>
+  <script src="/js/kuramotocanvas.js"></script>
+  <style>
+    body {
+      margin: 0;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    } /* Hide default HTML checkbox */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+    .slider.round {
+      border-radius: 34px;
+    }
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div id="canvas"></div>
+    <table>
+      <tr>
+        <td align="center">
+          <button id="randomize">Randomize</button>
+        </td>
+        <td align="right">Running:</td>
+        <td align="left">
+          <label class="switch">
+            <input id="runSwitch" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="right">Coupling:</td>
+        <td align="left">
+          <label class="switch">
+            <input id="coupleSwitch" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="right">Rotational FoR:</td>
+        <td align="left">
+          <label class="switch">
+            <input id="refSwitch" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="right">
+          Coupling scalar:
+        </td>
+        <td align="left">
+          <input type="range" min="0" max="500" value="100" id="rangeCouplingScalar">
+        </td>
+      </tr>
+    </table>
+
+  <script>
+    const toggleRun       = document.getElementById('runSwitch');
+    const toggleCouple    = document.getElementById('coupleSwitch');
+    const toggleRef       = document.getElementById('refSwitch');
+    const buttonRandomize = document.getElementById('randomize');
+    const slideScalar     = document.getElementById('rangeCouplingScalar');
+    const canvas          = document.getElementById('canvas');
+
+    // const trackR = 175;     // track radius
+    // const trackW = 5;     // track width
+    // const diskR  = 18;      // disk radius
+    // const network = new OscillatorNetwork();
+    const params = { width: 400, height: 400 };
+    const animation = new OscillatorAnimation(canvas, params);
+
+    animation.add_random("red");
+    animation.add_random("blue");
+    animation.add_random("green");
+    animation.add_random("purple");
+
+    animation.add_coupling( 0, 1, 0.01);
+    animation.add_coupling( 1, 2, 0.02);
+    animation.add_coupling( 2, 0, 0.1 );
+    animation.add_coupling( 3, 2, 0.1 );
+
+    // Create the Two.js instance and set up the animation container
+    // const two = new Two(params).appendTo(canvas);
+
+    // const cx = params.width  / 2;   // center x value
+    // const cy = params.height / 2;   // center y value
+
+    // Create the outer circle
+    // const track = two.makeCircle(params.width / 2, params.height / 2, trackR);
+    // track.linewidth = trackW;
+    // track.fill = 'transparent';
+    // track.stroke = '#888';
+
+    // // Create couplings
+    // network.couplings.forEach( (c) => {
+    //   c.line = two.makeLine(cx,cx,cy,cy);
+    //   c.line.linewidth = 5;
+    //   c.line.stroke = "#333333";
+    // });
+
+    // // Create the inner circle
+    // network.oscillators.forEach((p) => {
+    //     p.circle = two.makeCircle(cx, cy, diskR);
+    //     p.circle.fill = p.color;
+    // });
+
+    // // Set up animation properties
+    // let speed = 0.05;
+    // let isAnimating  = false;
+    // let isCoupled    = false;
+    // let isRotational = false;
+
+    // Animate the circles
+    // function onToggleAnimate() {
+    //   if (!isAnimating) {
+    //     isAnimating = true;
+    //     two.bind('update', updateAnimation).play();
+    //   } else {
+    //     isAnimating = false;
+    //     two.unbind('update', updateAnimation).pause();
+    //   }
+    // }
+
+    // function onToggleCouple() {
+    //   isCoupled = ! isCoupled;
+    //   network.coupled = isCoupled;
+    //   if (isCoupled) {
+    //     network.couplings.forEach( (c) => {
+    //       c.line.visible = true;
+    //     });
+    //   } else {
+    //     network.couplings.forEach( (c) => {
+    //       c.line.visible = false;
+    //     });
+    //   }
+    // }
+
+    // function onToggleRotational() {
+    //   isRotational = ! isRotational;
+    // }
+
+    // function randomize() {
+    //   network.oscillators.forEach( (p) => {
+    //     p.angle   = Math.random() * 6.28318530718;
+    //     p.natural = Math.random() * 0.1;
+    //   });
+    //   network.couplings.forEach( (c) => {
+    //     c.coef = Math.random() * 0.2;
+    //   });
+    // }
+
+    // // Update animation function
+    // function updateAnimation(frameCount) {
+    //   if (network.oscillators.length > 0) {
+    //     network.update(speed);
+    //     let ref = 0.0;
+    //     if (isRotational) {
+    //       ref = network.oscillators[0].angle;
+    //     }
+    //     network.oscillators.forEach((p) => {
+    //       const x = cx + trackR * Math.sin(p.angle - ref);
+    //       const y = cy - trackR * Math.cos(p.angle - ref);
+    //       p.x = x;
+    //       p.y = y;
+    //       p.circle.translation.set(x, y);
+    //     });
+    //     if (network.coupled) {
+    //       network.couplings.forEach( (c) => {
+    //         const p = network.oscillators[c.src];
+    //         const q = network.oscillators[c.dst];
+    //         c.line.vertices[0].x = p.x;
+    //         c.line.vertices[0].y = p.y;
+    //         c.line.vertices[1].x = q.x;
+    //         c.line.vertices[1].y = q.y;
+    //       });
+    //     }
+    //   }
+    // }
+
+    // updateAnimation(0);
+    animation.update(0);
+    animation.two.update();
+
+    // Event listeners for the buttons
+    toggleRun.addEventListener('click', animation.toggle_animation);
+    toggleCouple.addEventListener('click', animation.toggle_coupling);
+    toggleRef.addEventListener('click', animation.toggle_rotational);
+    buttonRandomize.addEventListener('click',animation.randomize);
+    // slideScalar.oninput = function() {
+    //   network.coupling_scalar = this.value / 100;
+    // }
+  </script>
+</body>
+</html>
