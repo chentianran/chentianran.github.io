@@ -8,6 +8,14 @@
     body {
       margin: 0;
     }
+    .left-div {
+      float: left;
+      width: 55%;
+    }
+    .right-div {
+      float: right;
+      width: 45%;
+    }
     .switch {
       position: relative;
       display: inline-block;
@@ -61,7 +69,8 @@
   </style>
 </head>
 <body>
-  <div id="canvas"></div>
+  <div id="canvas" class="left-div"></div>
+  <div class="right-div">
     <table>
       <tr>
         <td align="center">
@@ -105,7 +114,7 @@
         </td>
       </tr>
     </table>
-
+  </div>
   <script>
     const toggleRun       = document.getElementById('runSwitch');
     const toggleCouple    = document.getElementById('coupleSwitch');
@@ -114,10 +123,6 @@
     const slideScalar     = document.getElementById('rangeCouplingScalar');
     const canvas          = document.getElementById('canvas');
 
-    // const trackR = 175;     // track radius
-    // const trackW = 5;     // track width
-    // const diskR  = 18;      // disk radius
-    // const network = new OscillatorNetwork();
     const params = { width: 400, height: 400 };
     const animation = new OscillatorAnimation(canvas, params);
 
