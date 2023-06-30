@@ -4,8 +4,10 @@ title: CJCS 2023
 ---
 <section class="titlepage">
     <div class="titlebox">
-        <h2 class="title">Lattice polytope and networks of oscillators</h2>
-        <!-- <p class="title"><em>Picking up witness sets on our way to isolated solutions</em></p> -->
+        <h2 class="title">What lattice polytopes can tell us about networks of oscillators?</h2>
+        <p class="title">
+            <em>How discrete geometers can solve the mystery of synchronization</em>
+        </p>
     </div>
     <br/>
     <p>Tianran Chen</p>
@@ -22,6 +24,32 @@ title: CJCS 2023
     </p>
 </section>
 <section>
+    <h3>An outsider looking in......</h3>
+    <ul>
+        <li>
+            My training is in numerical analysis;
+        </li>
+        <li class="fragment">
+            This documents my experiences in finding surprising answers to applied problems
+            in lattice polytopes and seeing interesting connections;
+        </li>
+        <li class="fragment">
+            This covers joint works with my collaborators
+            Rob Davis,
+            Evgeniia Korchevskaia,
+            Julia Lindberg,
+            Jakub Mareček,
+            Dhagash Mehta, and
+            Matthew Niemerg.
+        </li>
+        <li class="fragment">
+            Inspirations from the discussions in a AMS Special Sessions
+            that brought together researchers in discrete geometry,
+            numerical analysis, and electric engineering.
+        </li>
+    </ul>
+</section>
+<section>
     <h3>Symmetric edge polytope</h3>
     <div class="definition">
         For a graph $G$, the
@@ -35,15 +63,103 @@ title: CJCS 2023
         \]
         where $i \sim j$ means $i,j$ are adjacent in $G$.
     </div>
-    <p class="fragment">
-        A generalization of the root system polytope $A_n$.
+    <p class="lowlight smaller">
+        T. Matsui, A. Higashitani, Y. Nagazawa, H. Ohsugi, and T. Hibi,
+        <em>Roots of Ehrhart polynomials arising from graphs</em>,
+        J. Algebraic Combin., 34 (2011), pp. 721--749.
     </p>
     <p class="fragment">
-        TODO: 3-cycle animation
+        A generalization of the root system polytope of type $A_n$.
+        <span class="lowlight">($P_{K_n}$)</span>
+    </p>
+    <div class="cols fragment">
+        <div class="col">
+            <p class="center">
+                <svg height="120" width="200">
+                    <line x1="100" y1="20"  x2="160" y2="100" stroke="#583d72" stroke-width="2"/>
+                    <line x1="100" y1="20"  x2="40"  y2="100" stroke="#583d72" stroke-width="2"/>
+                    <line x1="40"  y1="100" x2="160" y2="100" stroke="#583d72" stroke-width="2"/>
+                    <g transform="translate(100,20)">
+                        <circle cx="0" cy="0" r="20" stroke-width="0" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            0
+                        </text>
+                    </g>
+                    <g transform="translate(160,100)">
+                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            1
+                        </text>
+                    </g>
+                    <g transform="translate(40,100)">
+                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            2
+                        </text>
+                    </g>
+                </svg>
+            </p>
+        </div>
+        <div class="col fragment">
+            <p class="center">
+                <svg height="120" width="120">
+                    <g transform="translate(60,60) scale(1,-1)">
+                        <line x1="-50" y1="0"  x2="50" y2="0"   stroke="#583d72" stroke-width="2"/>
+                        <line x1="-50" y1="50" x2="50" y2="-50" stroke="#583d72" stroke-width="2"/>
+                        <line x1="0"   y1="50" x2="0"  y2="-50" stroke="#583d72" stroke-width="2"/>
+                    </g>
+                </svg>
+            </p>
+        </div>
+        <div class="col fragment">
+            <p class="center">
+                <svg height="120" width="120">
+                    <g transform="translate(60,60) scale(50,-50)">
+                        <polygon points="-1,0 -1,1 0,1 1,0 1,-1 0,-1" fill="#583d72"/>
+                    </g>
+                </svg>
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        \[
+            P_{K_3} =
+            \operatorname{conv}
+            \{
+                \pm( \mathbf{e}_0 - \mathbf{e}_1 ),
+                \pm( \mathbf{e}_1 - \mathbf{e}_2 ),
+                \pm( \mathbf{e}_2 - \mathbf{e}_0 )
+            \}
+            \;\;
+            (\text{with } \mathbf{e}_0 = \mathbf{0})
+        \]
+    </p>
+    <p class="lowlight fragment">
+        Early interests:
+        Ehrhart polynomials of special symmetric edge polytopes
+        share properties similar to the Riemann $\zeta$-function.
     </p>
 </section>
 <section>
     <h3>Some known properties</h3>
+    <ul>
+        <li class="fragment">
+            For a connected simple graph $G$ of $n+1$ nodes,
+            $P_G$ is $n$-dimensional.
+        </li>
+        <li class="fragment">
+            $P_G$ is reflexive.
+        </li>
+        <li class="fragment">
+            Facial complexes of $P_G$ have been described
+            for certain families of $G$.
+        </li>
+        <li class="fragment">
+            For certain families of graphs,
+            $\operatorname{Vol}(P_G)$ are given explicit formulae.
+            (E.g., trees, complete graphs, cycles, wheels graphs, graphs formed by glue cycles along edges,......)
+        </li>
+    </ul>
 </section>
 <section>
     <h3>Directed edge polytope</h3>
@@ -62,12 +178,65 @@ title: CJCS 2023
     <p class="lowlight">
         The inclusion of the origin $\{ \mathbf{0} \}$ is optional.
     </p>
-    <p>
-        TODO: Example
-    </p>
-</section>
-<section>
-    <h3>Link to other problems</h3>
+    <div class="cols fragment">
+        <div class="col">
+            <p class="center">
+                <svg height="120" width="200">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="20" refY="3.5" orient="auto">
+                          <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+                        </marker>
+                      </defs>
+                    <line x1="100" y1="20"  x2="160" y2="100" stroke="#583d72" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <!-- <line x1="100" y1="20"  x2="40"  y2="100" stroke="#583d72" stroke-width="2" marker-end="url(#arrowhead)"/> -->
+                    <line x1="40"  y1="100" x2="160" y2="100" stroke="#583d72" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <g transform="translate(100,20)">
+                        <circle cx="0" cy="0" r="20" stroke-width="0" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            0
+                        </text>
+                    </g>
+                    <g transform="translate(160,100)">
+                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            1
+                        </text>
+                    </g>
+                    <g transform="translate(40,100)">
+                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            2
+                        </text>
+                    </g>
+                </svg>
+            </p>
+        </div>
+        <div class="col fragment">
+            <p class="center">
+                <svg height="120" width="120">
+                    <g transform="translate(60,60) scale(50,-50)">
+                        <polygon points="-1,0 -1,1 0,1 1,0 1,-1 0,-1" fill="#DDDDDD"/>
+                        <circle cx="0"  cy="0" r="0.09" stroke-width="1" fill="black"/>
+                        <circle cx="-1" cy="0" r="0.09" stroke-width="1" fill="black"/>
+                        <circle cx="-1" cy="1" r="0.09" stroke-width="1" fill="black"/>
+                    </g>
+                </svg>
+            </p>
+        </div>
+        <div class="col fragment">
+            <p class="center">
+                <svg height="120" width="120">
+                    <g transform="translate(60,60) scale(50,-50)">
+                        <polygon points="-1,0 -1,1 0,1 1,0 1,-1 0,-1" fill="#DDDDDD"/>
+                        <circle cx="0"  cy="0" r="0.09" stroke-width="1" fill="black"/>
+                        <circle cx="-1" cy="0" r="0.09" stroke-width="1" fill="black"/>
+                        <circle cx="-1" cy="1" r="0.09" stroke-width="1" fill="black"/>
+                        <polygon points="-1,0 -1,1 0,0" fill="#583d72"/>
+                    </g>
+                </svg>
+            </p>
+        </div>
+    </div>
 </section>
 <section>
     <h3>Kuramoto model </h3>
@@ -146,6 +315,43 @@ title: CJCS 2023
     </p>
 </section>
 <section>
+    <h3>Kuramoto model everywhere</h3>
+    <p>
+        Equations similar to
+        \[
+            \dot{\theta}_i =
+            \omega_i - 
+            \sum_{j \sim i} k_{ij} \sin(\theta_i - \theta_j)
+        \]
+        can be found in many applications. E.g.,
+    </p>
+    <ul>
+        <li>
+            biological oscillators
+            (heart cells, brain cells,......)
+        </li>
+        <li>
+            vehicle coordination
+        </li>
+        <li>
+            Swarm formation for drones
+        </li>
+        <li>
+            electric power networks
+        </li>
+        <li>
+            clock synchronization
+        </li>
+    </ul>
+    <br/>
+    <p class="lowlight">
+        (A fairly recent survey)
+        Dörfler, F. & Bullo, F.
+        <em>Synchronization in complex networks of phase oscillators: A survey.</em>
+        Automatica 50, 1539-1564 (2014).
+    </p>
+</section>
+<section>
     <p>
         \[
             \dot{\theta}_i =
@@ -176,9 +382,6 @@ title: CJCS 2023
     <div class="center fragment">
         <iframe data-src="/research/kuramoto/sim2.html" width="700" height="450"></iframe>
     </div>
-</section>
-<section>
-    <h3>Kuramoto model everywhere</h3>
 </section>
 <section>
     <h3>Frequency synchronization configurations</h3>
@@ -313,9 +516,628 @@ title: CJCS 2023
             The facets of $P_G$
             give us a "decomposition" to the solution set.
         </li>
+        <li class="fragment">
+            A special regular subdivision of $P_G$
+            gives rise to a discrete encoding to "oscillator death".
+        </li>
     </ul>
 </section>
-<section> <!-- Reducing variables and equations ------------------------------>
+<section>
+    <h3>Counting synchronization configurations</h3>
+    <div class="problem">
+        Given a (connected and simple) graph $G$,
+        how many distinct solutions $(\theta_1,\ldots,\theta_n)$
+        can we have for
+        \[
+            \overline{\omega}
+            =
+            \omega_i -
+            \sum_{j \sim i} k_{ij} 
+                \sin(
+                    \theta_{i} - \theta_{j}
+                ),
+            \quad\text{for each } i ?
+        \]
+    </div>
+    <p class="fragment center">
+        <b class="highlight">
+            <br/>
+            Too hard!
+            <br/>
+            <br/>
+        </b>
+        <span class="lowlight smaller">
+            (There appear to be no answers
+            that is easier than solving the equations)
+        </span>
+    </p>
+</section>
+<section>
+    <h3>A better counting question</h3>
+    <div class="problem">
+        Given a (connected and simple) graph $G$ of $n+1$ nodes,
+        what is the maximum number of solutions the system
+        \[
+            \overline{\omega}
+            =
+            \omega_i -
+            \sum_{j \sim i} k_{ij} 
+                \sin(
+                    \theta_{i} - \theta_{j}
+                ),
+            \quad\text{for each } i
+        \]
+        can have?
+        (over all possible choices of parameters)
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                <em>Lower bound (of the maximum):</em>
+                \[
+                    2^n
+                \]
+                Came from Morse theory
+            </p>
+            <p class="small lowlight">
+                (Sum of Betti numbers of $(S^1)^n$)
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                <em>Upper bound</em>
+                \[
+                    \binom{2n}{n}
+                \]
+                Came from bi-homogeneous B&eacutezout number.
+            </p>
+        </div>
+    </div>
+    <p class="fragment lowlight small">
+        Baillieul, J. & Byrnes, C.
+        <em>Geometric critical point analysis of lossless power system models.</em>
+        IEEE T Circuits Syst 29, 724-737 (1982).
+    </p>
+</section>
+<section>
+    <p>
+        For a fixed graph $G$ of $n+1$ nodes,
+        \[
+            \overline{\omega}
+            =
+            \omega_i -
+            \sum_{j \sim i} k_{ij} 
+                \sin(
+                    \theta_{i} - \theta_{j}
+                ),
+            \quad\text{for each } i
+        \]
+        we consider all choices of parameters.
+    </p>
+    <p class="fragment">
+        \[
+            2^n \;\le\;
+            \text{Max. n. o. solutions}
+            \;\le\; 
+            \binom{2n}{n}
+        \]
+    </p>
+    <p class="fragment">
+        Both bounds are topology-blind.
+        <span class="fragment">
+            But the max. n. o. solutions
+            is (highly) topology dependent.
+        </span>
+        <span class="fragment">
+            Indeed,
+            \begin{align*}
+                \text{Max. for $T_n$ }
+                &=
+                2^n &
+                \text{Max. for $K_n$ }
+                &=
+                \binom{2n}{n}
+            \end{align*}
+        </span>
+    </p>
+    <p class="lowlight fragment">
+        Molzahn, D. K., Mehta, D. & Niemerg, M.
+        <em>Toward Topologically Based Upper Bounds on the Number of Power Flow Solutions.</em>
+        2016 Am Control Conf (ACC) 5927-5932 (2016) doi:10.1109/acc.2016.7526599.
+    </p>
+</section>
+<section>
+    <h3>Network topology-sensitive root count</h3>
+    <div class="theorem">
+        For a <span class="lowlight small">(connected)</span> graph $G$,
+        the max. n. o. solutions to
+        \[
+            \overline{\omega}
+            =
+            \omega_i -
+            \sum_{j \sim i} k_{ij} 
+                \sin(
+                    \theta_{i} - \theta_{j}
+                ),
+            \quad\text{for each } i
+        \]
+        is bounded by
+        \[
+            \operatorname{Vol}( \; P_G \; )
+        \]
+    </div>
+    <p class="fragment">
+        This bound is sharp,
+        if we also consider complex roots.
+    </p>
+    <div class="fragment">
+        <div class="theorem">
+            (C., Korchevskaia, Lindberg 2022)
+            For generic $\omega_i$'s and
+            generic <span class="highlight">but symmetric</span> $k_{ij}$'s,
+            the number of <em>complex</em> root is exactly
+            \[
+                \operatorname{Vol}( \; P_G \; )
+            \]
+        </div>
+        <p class="smaller lowlight">
+            Chen, T., Korchevskaia, E. & Lindberg, J.
+            <em>On the typical and atypical solutions to the Kuramoto equations.</em>
+            ArXiv (2022) doi:10.48550/arxiv.2210.00784.
+            <br/>
+            Chen, T.
+            <em>Unmixing the Mixed Volume Computation.</em>
+            Discrete Comput Geom 62, 55-86 (2019).
+        </p>
+    </div>
+</section>
+<section>
+    <h3>The simple example of $K_3$ ($C_3$)</h3>
+    <div class="cols">
+        <div class="col">
+            <p class="center">
+                <svg height="120" width="200">
+                    <line x1="100" y1="20"  x2="160" y2="100" stroke="#583d72" stroke-width="2"/>
+                    <line x1="100" y1="20"  x2="40"  y2="100" stroke="#583d72" stroke-width="2"/>
+                    <line x1="40"  y1="100" x2="160" y2="100" stroke="#583d72" stroke-width="2"/>
+                    <g transform="translate(100,20)">
+                        <circle cx="0" cy="0" r="20" stroke-width="0" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            0
+                        </text>
+                    </g>
+                    <g transform="translate(160,100)">
+                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            1
+                        </text>
+                    </g>
+                    <g transform="translate(40,100)">
+                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
+                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
+                            2
+                        </text>
+                    </g>
+                </svg>
+            </p>
+        </div>
+        <div class="col fragment">
+            <p class="center">
+                <svg height="120" width="120">
+                    <g transform="translate(60,60) scale(50,-50)">
+                        <polygon points="-1,0 -1,1 0,1 1,0 1,-1 0,-1" fill="#583d72"/>
+                        <line x1="-1" y1="1" x2="1" y2="-1" stroke="#FFFFFF" stroke-width="0.05"/>
+                        <line x1="-1" y1="0" x2="1" y2="0" stroke="#FFFFFF" stroke-width="0.05"/>
+                        <line x1="0" y1="1" x2="0" y2="-1" stroke="#FFFFFF" stroke-width="0.05"/>
+                    </g>
+                </svg>
+            </p>
+        </div>
+        <div class="col fragment">
+            <p class="small">
+                \[
+                    \begin{aligned}
+                        \bar{\omega} &= \omega_0 - k_{01} \sin(\theta_0 - \theta_1) - k_{02} \sin(\theta_0 - \theta_2) \\
+                        \bar{\omega} &= \omega_1 - k_{10} \sin(\theta_1 - \theta_0) - k_{12} \sin(\theta_1 - \theta_2) \\
+                        \bar{\omega} &= \omega_2 - k_{20} \sin(\theta_2 - \theta_0) - k_{21} \sin(\theta_2 - \theta_1)
+                    \end{aligned}
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="lowlight smaller fragment">
+        This case has been studied in detail in the 1970s.
+        It was analyzed rigorously by Baillieul and Byrnes in the early 1980s.
+        (Baillieul, J. & Byrnes, C. Geometric critical point analysis of lossless power system models. IEEE T Circuits Syst 29, 724-737 (1982).)        
+    </p>
+    <p class="fragment">
+        \[
+            \text{Max. n. o. solutions}
+            \;=\;
+            \operatorname{Vol}(\; P_G \;)
+            \;=\;
+            6
+        \]
+        <br/>
+    </p>
+    <p class="fragment">
+        Simplices in this special triangulation biject to
+        the 6 solutions via a concrete deformation
+        (a homotopy).
+    </p>
+</section>
+<section>
+    <h3>Idea: Turning into an algebraic system</h3>
+    <p>
+        \[
+            \overline{\omega} = 
+            \omega_i - \sum_{ j \in \mathcal{N}_G(i) } k_{ij} \sin(\theta_i - \theta_j)
+        \]
+        is not <em>algebraic</em>.
+    </p>
+    <div class="fragment">
+        <p>
+            There are many ways to reformulate it has an algebraic system
+        </p>
+        <ul>
+            <li>
+                J. Baillieul and C. Byrnes <br>
+                <span class="smaller">
+                    Geometric Critical Point Analysis of Lossless Power System Models
+                </span><br>
+            </li>
+            <li>
+                D. Mehta, N. Daleo, F. Dörfler, and J. Hauenstein <br>
+                <span class="smaller">
+                    Algebraic geometrization of the Kuramoto model: Equilibria and stability analysis
+                </span><br>
+            </li>
+            <li>
+                O. Coss, J. Hauenstein, H. Hong, and D. Molzahn <br>
+                <span class="smaller">
+                    Locating and Counting Equilibria of the Kuramoto Model with Rank-One Coupling
+                </span><br>
+            </li>
+        </ul>
+    </div>
+</section>
+<section> <!-- Algebraic formulation ----------------------------------------->
+    <h3>Algebraic formulation</h3>
+
+    <p>Consider complex phase angles</p>
+    
+    <p>
+        \[
+            \theta_i \;\mapsto\;
+            z_i = \theta_i - \mathbf{i}\, r_i
+            \quad\text{and}\quad
+            x_i = e^{\mathbf{i} z_i} = e^{r_i + \mathbf{i}\,\theta_i}
+        \]
+    </p>
+    <!-- <p class="fragment">
+        and the change of variables
+        \[
+            x_i = e^{\mathbf{i} z_i} = e^{r_i + \mathbf{i}\,\theta_i}
+        \]
+    </p> -->
+    <p class="fragment">
+        and the transformation
+        \[
+            \sin(z_i - z_j) = \frac{
+                e^{\mathbf{i}z_i - \mathbf{i}z_j} -
+                e^{\mathbf{i}z_j - \mathbf{i}z_i}
+            }{2\mathbf{i}}
+            =
+            \frac{1}{2\mathbf{i}} \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+        \]
+    </p>
+    <div class="equgroup">
+        <p class="fragment">
+            \[
+                \omega_i - \sum_{ j \sim j } k_{ij} \sin(\theta_i - \theta_j)
+            \]
+        </p>
+        <p class="fragment">
+            \[
+                \to
+            \]
+        </p>
+        <p class="fragment">
+            \[
+                f_i =
+                \omega_i - \sum_{ j \sim i } \frac{ k_{ij} }{2 \mathbf{i}} 
+                \left(
+                    \frac{x_i}{x_j} - \frac{x_j}{x_i}
+                \right)
+            \]
+        </p>
+    </div>
+    <p class="fragment">
+        The transcendental system is turned into a Laurent polynomial system.
+    </p>
+    <p class="fragment">
+        \[
+            P_G =
+            \operatorname{conv} \left(
+                \bigcup_i \operatorname{Newt}(f_i)
+            \right)
+        \]
+    </p>
+</section>
+<section>
+    <h3> Some root counting results </h3>
+    <table>
+        <tr>
+            <th>Types of network</th>
+            <th align="center">AP bound</th>
+        </tr>
+        <tr>
+            <td>Complete graphs $K_n$</td>
+            <td align="center">$\binom{2n}{n}$</td>
+        </tr>
+        <tr>
+            <td>Trees $T_n$</td>
+            <td align="center">$2^n$</td>
+        </tr>
+        <tr>
+            <td>Cycles $C_n$</td>
+            <td align="center">$(n+1) \binom{n}{\lfloor n/2 \rfloor}$</td>
+        </tr>
+        <tr>
+            <td>Odd cycles $C_{i+1}$ and $C_{j+1}$<br/>glued together along an edge</td>
+            <td align="center">$(i+j+2ij) \binom{2i}{i} \binom{2j}{j}$</td>
+        </tr>
+        <tr>
+            <td>Odd wheels $K_1 * C_n$</td>
+            <td align="center">$(1-\sqrt{3})^n + (1+\sqrt{3})^n$</td>
+        </tr>
+        <tr>
+            <td>Even wheels $K_1 * C_n$</td>
+            <td align="center">$(1-\sqrt{3})^n + (1+\sqrt{3})^n - 2$</td>
+        </tr>
+    </table>
+    <p class="smaller lowlight">
+        T. Chen, R. Davis, D. Mehta,
+        <em>Counting equilibria of the Kuramoto model using birationally invariant intersection index</em>
+        SIAM Journal on Applied Algebra and Geometry, 2018, Vol. 2, No. 4 pp. 489-507
+    </p>
+    <p class="smaller lowlight">
+        A D'Alì, E Delucchi, M Michałek,
+        <em>Many faces of symmetric edge polytopes</em>
+        Electron J Comb 29, (2022).
+    </p>
+    <p class="smaller lowlight">
+        H. Ohsugi, A. Tsuchiya,
+        <em>The $h^*$-Polynomials of Locally Anti-Blocking Lattice Polytopes and Their 𝛾-Positivity.</em>
+        Discrete Comput Geom 66, 701–722 (2021). https://doi.org/10.1007/s00454-020-00236-6
+    </p>
+</section>
+<section>
+    <h3>What about real root count?</h3>
+    <p>
+        Recall that......
+    </p>
+    <div class="theorem">
+        (C., Korchevskaia, Lindberg)
+        For generic $\omega_i$'s and
+        generic but symmetric $k_{ij}$'s,
+        the number of <em class="highlight">complex</em> roots is 
+        $\operatorname{Vol}( \; P_G \; )$.
+        <span class="fragment highlight">
+            (In some cases, it works for real roots too)
+        </span>
+    </div>
+    <div class="fragment">
+        <table>
+            <tr>
+                <th>Types of network</th>
+                <th>Max. $\mathbb{R}$ roots</th>
+                <th>Max. $\mathbb{C}$ roots</th>
+            </tr>
+            <tr>
+                <td>Complete graph $K_3$</td>
+                <td align="center">6</td>
+                <td align="center">6</td>
+            </tr>
+            <tr>
+                <td>Trees $T_{n+1}$</td>
+                <td align="center">$2^{n}$</td>
+                <td align="center">$2^{n}$</td>
+            </tr>
+            <tr>
+                <td>Cycles</td>
+                <td align="center">$(n+1) \binom{n}{\lfloor n/2 \rfloor}$</td>
+                <td align="center">$(n+1) \binom{n}{\lfloor n/2 \rfloor}$</td>
+            </tr>
+        </table>
+        <p class="small lowlight">
+            Baillieul, J. & Byrnes, C.
+            <em>Geometric critical point analysis of lossless power system models.</em>
+            IEEE T Circuits Syst 29, 724-737 (1982).
+        </p>
+        <p class="small lowlight">
+            J. Lindberg, A. Zachariah, N. Boston, B. Lesieutre,
+            <em>The Distribution of the Number of Real Solutions to the Power Flow Equations</em>
+            IEEE T Power Syst PP, (2022).
+        </p>
+    </div>
+</section>
+<section>
+    <h3>In general......</h3>
+    <p>
+        \[
+            \text{Max. $\mathbb{R}$ roots}
+            \;\stackrel{?}{=}\;
+            \text{Max. $\mathbb{C}$ roots}
+            \;=\;
+            \operatorname{Vol}(\; P_G \;)
+        \]
+        for graphs other than trees or cycles?
+        <br/>
+        <br/>
+        <br/>
+    </p>
+    <p class="fragment center large">
+        We do not know!
+    </p>
+</section>
+<section>
+    <h3>When is maximum not achieved</h3>
+    <p>
+        \[
+            \begin{gathered}
+            \text{Generic n.o.} \\
+            \mathbb{C}\text{-roots} \\
+            \end{gathered}
+            \;\;=\;
+            \begin{gathered}
+            \text{Max. n.o.} \\
+            \mathbb{C}\text{-roots} \\
+            \end{gathered}
+            \;\;=\;
+            \operatorname{Vol}(\; P_G \;)
+        \]
+        <br/>
+        <br/>
+        Natural questions to ask:
+    </p>
+    <ul>
+        <li>when will the actual root count drop below this maximum?</li>
+        <li>by how much?</li>
+    </ul>
+</section>
+<section>
+    <h3>Missing roots: Exceptional couplings</h3>
+    <div class="theorem"> (Sard's)
+        For generic choices of 
+        $\omega_1,\ldots,\omega_n$ the roots of 
+        \[
+            f(\theta_1,\ldots,\theta_n) =
+            \omega_i - \sum_{j \sim i} k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i = 1,\ldots,n
+        \]
+        <span class="lowlight">(fixing $\theta_0 = 0$)</span>
+        are all isolated and regular.
+    </div>
+    <p class="fragment">
+        Generic choices of $\omega$'s
+        help us to avoid multiplicities.
+    </p>
+    <div class="fragment problem">
+        Under the assumption of generic $\omega$'s,
+        what are the choices of coupling coefficients
+        $k_{ij}$'s for which
+        \[
+            \text{Actual n.o. $\mathbb{C}$-root}
+            \; < \;
+            \text{Generic/max n.o. $\mathbb{C}$-root}
+        \]
+    </div>
+    <p class="fragment">
+        This set is the <strong class="highlight">exceptional coupling coefficients</strong>.
+    </p>
+</section>
+<section>
+    <h3>Cycle basis description of exceptional coupling</h3>
+    <div class="theorem">
+        (C., Korchevskaia, Lindberg)
+        Let $G$ be a graph consisting of $d$ independent even cycles,
+        $C_1,\ldots,C_d$ that overlap at a single edge.
+        Let $U_i \subset \{ -1, 0, +1 \}^{|E(G)|}$,
+        for $i=1,\ldots,d$ be the set of
+        <strong>balanced primitive cycle vectors</strong>
+        associated with $C_1,\ldots,C_d$.
+        Then the set of exceptional coupling is the
+        union of subsets satisfying
+        <div class="small">
+            \[
+                \sum_{j=1}^d
+                (-1)^{|C_{i_j}| / 2} \mathbf{k}^{\vec{\eta}_{i_j}}
+                = 1
+                \text{ where }
+                (\vec{\eta}_{i_1},\ldots,\vec{\eta}_{i_t}) \in
+                U_{i_1} \times \cdots \times U_{i_t}
+                \text{ is consistent}
+            \]
+        </div>
+    </div>
+    <p class="lowlight smaller">
+        Chen, T., Korchevskaia, E. & Lindberg, J.
+        <em>On the typical and atypical solutions to the Kuramoto equations.</em>
+        ArXiv (2022) doi:10.48550/arxiv.2210.00784.
+    </p>
+    <p class="fragment">
+        <br/>
+        Takeaway:
+        Descriptions of exceptional coupling coefficients
+        come from certain <em class="highlight">subdigraphs</em>,
+        which, in turn, come from the
+        <em class="highlight">facial complex</em> of $P_G$.
+    </p>
+</section>
+<section>
+    <h3>General description</h3>
+    <div class="theorem">
+        <strong>Proposition.</strong>
+        Let $\mathcal{B}$ be the set of subgraphs of $G$ that are
+        <ol type="1">
+            <li>bridgeless (and hence cyclic), and</li>
+            <li>maximally bipartite in their induced subgraphs.</li>
+        </ol>
+        <p>
+            Then the set of exceptional coupling coefficients
+            is the union
+            \[
+                \bigcup_{B \in \mathcal{G}} \mathcal{K}(B).
+            \]
+            where each $\mathcal{K}(B)$ is the exceptional coupling coefficients
+            on $B$, similar to that given in the previous
+            slide.
+        </p>
+    </div>
+</section>
+<section>
+    <h3>Example: $C_4$</h3>
+    <div class="cols">
+        <div class="col">
+            <img src="kuramoto.png" height=225 class="centering">
+        </div>
+        <div class="col">
+            <p>
+                There are 4 coupling coefficients
+                $k_{01},k_{12},k_{23},k_{30} \ne 0$
+            </p>
+            <p>
+                <strong>Proposition.</strong>
+                The $\mathbb{C}$-root count is less than the generic root count
+                $\operatorname{Vol}(P_{C_4}) = 12$
+                if and only if......
+            </p>
+        </div>
+    </div>
+    <p>
+        \[
+            \begin{aligned}
+            \frac{ k_{01} k_{12} }{ k_{23} k_{30} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{30} }{ k_{12} k_{23} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{23} }{ k_{12} k_{30} } &= 1
+            \end{aligned}
+        \]
+    </p>
+    <div class="center">
+        <img src="c4subnets.png" alt="" class="r-stretch fragment">
+    </div>
+    <p class="fragment">
+        Takeaway:
+        These 3 subdigraphs come from
+        the 6 <em class="highlight">facets</em> of $P_{C_4}$.
+    </p>
+</section>
+<!-- <section>
     <div class="cols">
         <div class="col">
                 <img src="kuramoto.png" width=300>
@@ -354,196 +1176,470 @@ title: CJCS 2023
         only $n$ equations in $n$ unknowns are needed
         (square system).
     </p>
-</section>
+</section> -->
 <section>
     <h3>Non-isolated synchronization configurations</h3>
-</section>
-<section>
-    <h3>Other Kuramoto-like equations</h3>
-</section>
-<section> <!-- General Adjacency Polytope --------------------------------->
-    <h3>General adjacency polytopes</h3>
     <p>
-        Given a connected graph $G$,
-        represented by its adjacency/edge list $A$
-        (list of edges and loops),
-        we consider a function
-        \[
-            f : A \to \mathcal{P}^n
-        \]
-        where $\mathcal{P}^n$ is the set of convex (lattice) polytopes
-        in $\mathbb{R}^n$.
+        Synchronization configurations
+        with at least one degree of freedom.
     </p>
-    <div class="definition fragment">
-        <p>
-            The <b>adjacency polytope</b> of $G$,
-            induced by $f$, is the (lattice) polytope
-            \[
-                P =
-                \operatorname{conv}
-                \left(
-                    \{ \mathbf{0} \}
-                    \cup
-                    \bigcup_{ \{i,j\} \in A } f(\{i,j\})
-                \right)
-                \; \subset \;
-                \mathbb{R}^n
-            \]
-        </p>
+    <ul class="fragment">
+        <li class="small lowlight">
+            ($K_n$): P. Ashwin, C. Bick, and O. Burylko.
+            <em>Identical Phase Oscillator Networks: Bifurcations, Symmetry and Reversibility for Generalized Coupling,</em>
+            Frontiers in Applied Mathematics and Statistics, 2 (2016)
+        </li>
+        <li class="small lowlight">
+            ($K_n$) O. Coss, J. D. Hauenstein, H. Hong, and D. K. Molzahn.
+            <em>Locating and counting equilibria of the Kuramoto model with rank-one coupling,</em>
+            SIAM J. Appl. Algebra Geom., 2 (2018)
+        </li>
+        <li class="small lowlight">
+            ($K_n$ and $C_n$) J. Lindberg, A. Zachariah, N. Boston, and B. Lesieutre.
+            <em>The Distribution of the Number of Real Solutions to the Power Flow Equations.</em>
+            IEEE Transactions on Power Systems, PP (2022)
+        </li>
+        <li class="small lowlight">
+            D. Sclosa.
+            <em>Kuramoto networks with infinitely many stable equilibria.</em>
+            (2022)
+        </li>
+        <li class="small lowlight">
+            ......
+        </li>
+    </ul>
+    <div class="theorem fragment">
+        (D. Sclosa 2022)
+        For every $d \ge 1$ there is a Kuramoto network
+        whose stable equilibria form a manifold of dimension $d$
+    </div>
+</section>
+<!-- <section>
+    <h3>Constructing orbits of synchronization configurations</h3>
+    <p>
+        Unicycle cases:
+        1-dim. orbits of synchronization configurations
+        can be constructed from the facets of $P_G$.
+    </p>
+    <p class="fragment">
+        Basically, there is a toric construction
+        of non-isolated synchronization configurations from facets.
+    </p>
+</section> -->
+<section>
+    <h3>The $C_4$ example, again</h3>
+    <!-- <div class="theorem">
+        For a graph $G$ that contains a unique even cycle,
+        if $k_{ij}$'s are all identical,
+        then the $\mathbb{C}^*$-orbit constructed
+        contains a $S^1$-robit in the real torus.
     </div>
     <p class="fragment">
-        We only care about the properties that are invariant
-        under unimodular transformations.
-    </p>
-</section>
-<section> <!-- First example ------------------------------------------------->
-    <p>
-        <b>Example.</b>
-        Consider the complete graph with 3 nodes:
-    </p>
+        The original Kuramoto equations
+        will have positive-dimensional
+        real solution components.
+    </p> -->
     <div class="cols">
-        <div class="col">
-            <p class="center">
-                <svg height="120" width="200">
-                    <line x1="100" y1="20"  x2="160" y2="100" stroke="#583d72" stroke-width="2"/>
-                    <line x1="100" y1="20"  x2="40"  y2="100" stroke="#583d72" stroke-width="2"/>
-                    <line x1="40"  y1="100" x2="160" y2="100" stroke="#583d72" stroke-width="2"/>
-                    <g transform="translate(100,20)">
-                        <circle cx="0" cy="0" r="20" stroke-width="0" fill="#583d72"/>
-                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
-                            0
-                        </text>
-                    </g>
-                    <g transform="translate(160,100)">
-                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
-                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
-                            1
-                        </text>
-                    </g>
-                    <g transform="translate(40,100)">
-                        <circle cx="0" cy="0" r="20" stroke-width="1" fill="#583d72"/>
-                        <text text-anchor="middle" dominant-baseline="middle" x="0" y="0" fill="white">
-                            2
-                        </text>
-                    </g>
-                </svg>
-            </p>
+        <div class="col center">
+            <img src="kuramoto.png" height=250 class="centering">
         </div>
         <div class="col">
             <p>
-                \begin{align*}
-                    A &= \{\; \{0,1\}, \{1,2\}, \{2,0\} \;\} \\
-                    f(\{i,j\}) &= \operatorname{conv} \{
-                        \mathbf{e}_i - \mathbf{e}_j,
-                        \mathbf{e}_j - \mathbf{e}_i
-                    \}
-                \end{align*}
+                When the natural frequencies are identical,
+                and the coupling coefficients $k_{ij}$'s are identical,
+                we can construct three 1-dimensional orbits
+                of synchronization configurations
+                <span class="lowlight">(parametrized by $t$)</span>.
             </p>
         </div>
     </div>
-    <p class="fragment">
-        The adjacency polytope is the convex hull
-        \[
-            P =
-            \operatorname{conv}
-            \{
-                \mathbf{e}_0 - \mathbf{e}_1,
-                \mathbf{e}_1 - \mathbf{e}_0,
-                \mathbf{e}_1 - \mathbf{e}_2,
-                \mathbf{e}_2 - \mathbf{e}_1,
-                \mathbf{e}_2 - \mathbf{e}_0,
-                \mathbf{e}_0 - \mathbf{e}_2
-            \}
-        \]
-    </p>
-    <div class="cols">
-        <div class="col fragment">
-            <p class="center">
-                <svg height="120" width="120">
-                    <g transform="translate(60,60) scale(1,-1)">
-                        <line x1="-50" y1="0"  x2="50" y2="0"   stroke="#583d72" stroke-width="2"/>
-                        <line x1="-50" y1="50" x2="50" y2="-50" stroke="#583d72" stroke-width="2"/>
-                        <line x1="0"   y1="50" x2="0"  y2="-50" stroke="#583d72" stroke-width="2"/>
-                    </g>
-                </svg>
-            </p>
-        </div>
-        <div class="col fragment">
-            <p class="center">
-                <svg height="120" width="120">
-                    <g transform="translate(60,60) scale(50,-50)">
-                        <polygon points="-1,0 -1,1 0,1 1,0 1,-1 0,-1" fill="#583d72"/>
-                    </g>
-                </svg>
-            </p>
-        </div>
-    </div>
-    <ul>
-        <li class="fragment">
-            Is there any connections between the
-            topological properties of $G$
-            and geometric properties of $P$?
-        </li>
-        <li class="fragment">
-            How does this connection (if exist)
-            depends on the choice of $f$?
-        </li>
-    </ul>
-</section>
-<section> <!-- Directed Adjacency Polytope --------------------------------->
-    <h3>Adjacency polytopes (directed version)</h3>
     <p>
-        Given a (weakly connected) <em>digraph</em> $\vec{G}$,
-        represented by its list of directed edges $A$ (and loops),
-        we consider a function
         \[
-            f : A \to \mathcal{P}^n
+            \left\{
+            \begin{aligned}
+                \theta_0 &= 0 \\
+                \theta_1 &= t + \pi + \sigma^{10} \\
+                \theta_2 &= \pi + \sigma^{12}_{10} \\
+                \theta_3 &= t + \sigma^{30} \\
+            \end{aligned}
+            \right.
+            \quad
+            \left\{
+            \begin{aligned}
+                \theta_0 &= 0 \\
+                \theta_1 &= \sigma^{10} + t \\
+                \theta_2 &= \pi + \sigma^{21}_{10} \\
+                \theta_3 &= \sigma^{30} - t
+            \end{aligned}
+            \right.
+            \quad
+            \left\{
+            \begin{aligned}
+                \theta_0 &= 0 \\
+                \theta_1 &= \sigma^{10} - t \\
+                \theta_2 &= \sigma^{21}_{10} -2t \\ %\sigma(k_{21}/k_{10}) \\
+                \theta_3 &= \pi + \sigma^{30} -t \\
+            \end{aligned}
+            \right.
         \]
-        where $\mathcal{P}^n$ is the set of convex (lattice) polytopes
-        in $\mathbb{R}^n$.
+        <span class="smaller lowlight">
+            $\sigma$'s are phase shift values, $0$ or $\pi$,
+            that only used to adjust for the signs of $k_{ij}$'s
+            (not very important).
+        </span>
     </p>
-    <div class="theorem fragment">
-        <p>
-            The <b>adjacency polytope</b> of $\vec{G}$,
-            induced by $f$, is the (lattice) polytope
-            \[
-                P =
-                \operatorname{conv}
-                \left(
-                    \{ \mathbf{0} \}
-                    \cup
-                    \bigcup_{ (i,j) \in A } f((i,j))
-                \right)
-                \; \subset \;
-                \mathbb{R}^n
-            \]
-        </p>
-    </div>
     <p class="fragment">
-        Again, they are only defined up to unimodular transformations.
+        These three orbits correspond to the 6 facets
+        (3 antipode pairs) of $P_{C_4}$.
     </p>
 </section>
 <section>
-    <p>
-        Adjacency polytope of $\vec{G}$ with directed edge set $A$
-        induced by $f$:
+    <h3>Constructing positive-dimensional solutions</h3>
+    <div class="theorem fragment">
+        (C., Korchevskaia, Lindberg)
+        For $G = C_{2k}$, if......
+        <ul>
+            <li>
+                $(G,K)$ contains a "balanced" subnetwork $(\vec{H},K)$, and
+            </li>
+            <li>
+                $|k_{ij}|$ are identical,
+            </li>
+        </ul>
+        <p>
+            then
+            <!-- algebraic Kuramoto system derived from the network
+            of identical oscillators has a positive-dimensional $\mathbb{C}^*$-zero set. -->
+            \[
+                \boldsymbol{\theta}(t) =
+                \log \left[
+                -\mathfrak{i}
+                (
+                    \lambda \cdot
+                    \boldsymbol{\eta}_{\vec{T}} \circ
+                    (\mathbf{k}(\vec{T})^{-I})
+                )^{Q(\vec{T})^{-1}}
+                \right]
+            \]
+            form an 1-dimensional complex component of
+            synchronization configurations,
+            which contains 1-dimensional real orbit.
+        </p>
+    </div>
+    <!-- <p class="fragment">
+        Indeed we can construct a $\mathbb{C}^*$-orbit
+        \begin{align*}
+            \begin{bmatrix}
+                x_1(\lambda) &
+                \cdots &
+                x_m(\lambda)
+            \end{bmatrix}
+            &=
+            (
+                \lambda \cdot
+                \boldsymbol{\eta}_{\vec{T}} \circ
+                (\mathbf{k}(\vec{T})^{-I})
+            )^{Q(\vec{T})^{-1}}
+            \\
+            x_i &= \pm x_{\pi(i)}
+            \quad\text{for } i = m+1, \ldots, n,
+        \end{align*}
+    </p> -->
+    <p class="fragment">
+        (Require further explanation) Main point:
+        In this, $\vec{T}$, $\eta_{\vec{T}}$, and the map itself
+        are parametrized by (antipode pairs of) facets of $P_G$.
+    </p>
+    <p class="fragment">
+        <br/>
         \[
-            P = 
-            \operatorname{conv}
-            \left(
-                \{ \mathbf{0} \}
-                \cup
-                \bigcup_{ (i,j) \in A } f((i,j))
-            \right)
-            \; \subset \;
-            \mathbb{R}^n
+            \text{Facets of } P_G
+            \Longrightarrow
+            \text{parametrization of 1D orbits}
         \]
     </p>
-    <p class="center fragment">
+</section>
+<section>
+    <h3>Beyond unicycles: 2 cycles sharing an edge</h3>
+    <div class="center">
+        <img src="fig8.png" width=400 alt="">
+    </div>
+    <p>
+        The construction produces the
+        1-dimensional real solution set
+        \[
+            (\theta_0,\theta_1,\theta_2,\theta_3,\theta_4,\theta_5) =
+            (
+                0, 
+                t + \pi,
+                0,
+                t,
+                \pi,
+                t
+            )
+        \]
+        <span class="lowlight">
+            This is one of many real orbits,
+            one for each antipode pair of facets of $P_G$.
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Beyond unicycle networks</h3>
+    <div class="theorem">
+        (C., Korchevskaia, Lindberg)
+        Suppose $G$ consists of $d$ independent even cycles
+        $C_1,\ldots,C_d$ that share a single edge $e$,
+        then with the choice of the coupling coefficients
+        \[
+            k_{ij} =
+            \begin{cases}
+                sd &\text{if } \{i,j\} = e \text{ (shared edge)}\\
+                s  &\text{othewise},
+            \end{cases}
+        \]
+        for any $s \ne 0$,
+        and identical natural frequencies $\omega$'s,
+        there are 1-dimensional real/complex
+        components of synchronization configurations.
+    </div>
+    <p class="fragment">
+        (Slightly more complicated formula)
+        They correspond to antipode pairs of facets of $P_G$.
+    </p>
+</section>
+<!-- <section>
+    <h3>Theme and open problems</h3>
+    <p>
+        The symmetric edge polytope $P_G$
+        encodes important information
+        relating to orbits of synchronization configurations.
+    </p>
+    <div class="fragment">
+        <p>
+            Open problems:
+        </p>
+        <ul>
+            <li>
+                Are there positive-dimensional solution sets
+                other than the $\mathbb{C}^*$-orbits we constructed here?
+            </li>
+            <li>
+                Can positive-dimensional and isolated solutions coexist?
+            </li>
+            <li>
+                Stability analysis
+            </li>
+        </ul>
+    </div>
+</section> -->
+<!-- <section>
+    <h3>Other Kuramoto-like equations</h3>
+</section> -->
+<section>
+    <h3>Toric amplitude oscillators</h3>
+    <p>
+        A toy model for a network of $n+1$ amplitude oscillators on the plane
+        \[
+            \left\{
+            \begin{alignedat}{5}
+            \dot{\theta}_i =
+            \omega_i - \sum_{j \sim i} k_{ij} \cosh(\rho_i - \rho_j)
+            \sin(\theta_i - \theta_j) \\
+            \dot{\rho}_i =
+            0 - \sum_{j \sim i} k_{ij} \sinh(\rho_i - \rho_j)
+            \cos(\theta_i - \theta_j) \\
+            \end{alignedat}
+            \right.
+            \;\text{for } i=1,\dots,n.
+        \]
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="center">
+                <img src="toriccoupling.png" alt="" class="r-stretch">
+            </div>
+        </div>
+        <div class="col">
+            <ul>
+                <li>$x_i = e^{-\rho_i + \mathfrak{i} \theta_i}$</li>
+                <li>$\theta_i$ is still the phase angle</li>
+                <li>$\rho_i = - \ln |x_i|$ measures the radial position in log scale</li>
+            </ul>
+            <p class="fragment">
+                The system live in the algebraic torus
+                $(\mathbb{C}^*)^n = (\mathbb{C} \setminus \{0\})^n$.
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Like the Kuramoto model, but not restricted to $S^1$</h3>
+    <div class="center">
+        <img src="torickuramoto.png" width="600" alt="">
+    </div>
+</section>
+<section>
+    <h3>Locking configuration</h3>
+    <div class="r-stack">
+    <p>
+        \[
+            \left\{
+            \begin{alignedat}{5}
+            \dot{\theta}_i =
+            \omega_i - \sum_{j \sim i} k_{ij} \cosh(\rho_i - \rho_j)
+            \sin(\theta_i - \theta_j) \\
+            \dot{\rho}_i =
+            0 - \sum_{j \sim i} k_{ij} \sinh(\rho_i - \rho_j)
+            \cos(\theta_i - \theta_j) \\
+            \end{alignedat}
+            \right.
+            \;\text{for } i=1,\dots,n.
+        \]
+    </p>
+    <div class="definition fragment">
+        A <b class="highlight">locked configuration</b> 
+        is a point $(\theta_0,\rho_0,\dots,\theta_n,\rho_n)$
+        such that
+        \[
+            \left\{
+            \begin{alignedat}{5}
+            \overline{\omega} =
+            \omega_i - \sum_{j \sim i} k_{ij} \cosh(\rho_i - \rho_j)
+            \sin(\theta_i - \theta_j) \\
+            0 =
+            0 - \sum_{j \sim i} k_{ij} \sinh(\rho_i - \rho_j)
+            \cos(\theta_i - \theta_j) \\
+            \end{alignedat}
+            \right.
+            \;\text{for } i=1,\dots,n.
+        \]
+    </div>
+    </div>
+    <p class="fragment">
+        A locked configuration become a static configuration
+        (up to rotation and scaling)
+        similar to synchronization configurations.
+    </p>
+    <div class="theorem fragment">
+        (C.)
+        For generic $\omega$'s
+        and generic but symmetric $k_{ij}$'s,
+        locked configurations are isolated and regular
+        (modulo rotation and scaling)
+        and the total number is
+        \[
+            \operatorname{Vol}(\; P_G \;).
+        \]
+    </div>
+</section>
+<section>
+    <h3>Time dependent parameters</h3>
+    <p>
+        A <b>locked configuration</b> 
+        satisfies
+        \[
+            \left\{
+            \begin{alignedat}{5}
+            \overline{\omega} =
+            \omega_i - \sum_{j \sim i} k_{ij} \cosh(\rho_i - \rho_j)
+            \sin(\theta_i - \theta_j) \\
+            0 =
+            0 - \sum_{j \sim i} k_{ij} \sinh(\rho_i - \rho_j)
+            \cos(\theta_i - \theta_j) \\
+            \end{alignedat}
+            \right.
+            \;\text{for } i=1,\dots,n.
+        \]
+    </p>
+    <div class="problem fragment">
+        What happens when we allow coupling coefficients to change over time?
+        (i.e., $k_{ij}(t)$ are functions of $t$)
+    </div>
+    <p class="fragment">
+        <em>Local continuity:</em>
+        Under small changes, locked configuration
+        will deform continuously to form new locked configurations
+        to meet the changing constraints.
+        <span class="small lowlight fragment">
+            (Implicit Functions or local uniformization of analytic varieties)
+        </span>
+    </p>
+    <p class="fragment">
+        Global picture: Oscillators may <em class="highlight">"die"</em>.
+    </p>
+</section>
+<section>
+    <h3>Algebraic amplitude death</h3>
+    <p>
+        We may define the <em class="highlight">amplitude death</em>
+        of a moving locked configuration 
+        $(\boldsymbol{\theta},\boldsymbol{\rho})$
+        satisfing
+        \[
+            \left\{
+            \begin{alignedat}{5}
+            \overline{\omega} =
+            \omega_i - \sum_{j \sim i} k_{ij}(t) \cosh(\rho_i - \rho_j)
+            \sin(\theta_i - \theta_j) \\
+            0 =
+            0 - \sum_{j \sim i} k_{ij}(t) \sinh(\rho_i - \rho_j)
+            \cos(\theta_i - \theta_j) \\
+            \end{alignedat}
+            \right.
+            \;\text{for } i=1,\dots,n.
+        \]
+        as the condition
+        \[
+            \rho_i(t) \to \pm \infty
+            \quad\text{for all } i.
+        \]
+    </p>
+    <p class="fragment">
+        Recall that $\rho_i(t) = - \ln | x_i |$.
+        <span class="fragment">
+            So this condition means $|x_i| \to 0 \text{ or } \infty$.
+        </span>
+    </p>
+    <p class="fragment">
+        We may also consider
+        <em class="highlight">"partial death"</em>
+        in which some (but not all) oscillator
+        in a locking configuration "die".
+    </p>
+    <p class="fragment lowlight">
+        Amplitude death is well studied in dynamics.
+        We borrow this term here because it is the 
+        algebraic analog of this phenomenon.
+    </p>
+</section>
+<section>
+    <h3>Preliminary results</h3>
+    <ul>
+        <li class="fragment">
+            If all $k_{ij}(t) \to 0$ at the same asymptotic rate,
+            then (generically) all locked configurations converge to
+            amplitude death (partial death).
+            <span class="fragment">
+                And the relative rate at which $\rho_i \to \pm \infty$
+                is determined by the normal vectors of facets of $P_G$.
+            </span>
+        </li>
+        <li class="fragment">
+            If only some $k_{ij}(t) \to 0$,
+            then (generically) some locked configurations converge to
+            amplitude death.
+            <span class="fragment">
+                And the relative rate at which $\rho_i \to \pm \infty$
+                is determined by cells in a regular subdivision of $P_G$.
+            </span>
+        </li>
+    </ul>
+    <p class="fragment center">
         <br/>
-        <br/>
-        <br/>
-        Why should we care?
+        Takeaway: Geometric structures in $P_G$
+        describe how oscillators "die"
+        under time dependent coupling.
     </p>
 </section>
 <!-- <section>
@@ -571,862 +1667,47 @@ title: CJCS 2023
     </p>
 </section> -->
 <section>
-    <h3>
-        Turning into an algebraic system
-    </h3>
+    <h3>In summary......</h3>
     <p>
-        Synchronization configurations are roots of the nonlinear system
-        \[
-            p_i(\theta_0,\ldots,\theta_n) = 
-            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } k_{ij} \sin(\theta_i - \theta_j)
-            \quad\text{for } i=0,\dots,n,
-        \]
-        which is not <em>algebraic</em>.
-    </p>
-    <div class="fragment">
-        <p>
-            There are many ways to reformulate it has an algebraic system
-        </p>
-        <ul>
-            <li>
-                J. Baillieul and C. Byrnes <br>
-                <span class="smaller">
-                    Geometric Critical Point Analysis of Lossless Power System Models
-                </span><br>
-            </li>
-            <li>
-                D. Mehta, N. Daleo, F. Dörfler, and J. Hauenstein <br>
-                <span class="smaller">
-                    Algebraic geometrization of the Kuramoto model: Equilibria and stability analysis
-                </span><br>
-            </li>
-            <li>
-                O. Coss, J. Hauenstein, H. Hong, and D. Molzahn <br>
-                <span class="smaller">
-                    Locating and Counting Equilibria of the Kuramoto Model with Rank-One Coupling
-                </span><br>
-            </li>
-        </ul>
-    </div>
-</section>
-<section> <!-- Algebraic formulation ----------------------------------------->
-    <h3>Algebraic formulation</h3>
-
-    <p>Consider complex phase angles</p>
-    
-    <p>
-        \[
-            \theta_i \;\mapsto\;
-            z_i = \theta_i - \mathbf{i}\, r_i
-        \]
-    </p>
-
-    <p class="fragment">
-        and the change of variables
-        \[
-            x_i = e^{\mathbf{i} z_i} = e^{r_i + \mathbf{i}\,\theta_i}
-        \]
-    </p>
-    <p class="fragment">
-        and the transformation
-        \[
-            \sin(z_i - z_j) = \frac{
-                e^{\mathbf{i}z_i - \mathbf{i}z_j} -
-                e^{\mathbf{i}z_j - \mathbf{i}z_i}
-            }{2\mathbf{i}}
-            =
-            \frac{1}{2\mathbf{i}} \left(
-                \frac{x_i}{x_j} - \frac{x_j}{x_i}
-            \right)
-        \]
-    </p>
-    <div class="equgroup">
-        <p class="fragment">
-            \[
-                \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } k_{ij} \sin(\theta_i - \theta_j)
-            \]
-        </p>
-        <p class="fragment">
-            \[
-                \to
-            \]
-        </p>
-        <p class="fragment">
-            \[
-                \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } a_{ij}' 
-                \left(
-                    \frac{x_i}{x_j} - \frac{x_j}{x_i}
-                \right)
-            \]
-        </p>
-    </div>
-    <p class="fragment">
-        The transcendental system is turned into a Laurent polynomial system.
-    </p>
-</section>
-<!-- <section>
-    <img src="kuramoto.png" border=5 class="stretch">
-    <p>
-        \[
-        \begin{aligned}
-            \omega_0 &= a_{01}' (x_0 / x_1 - x_1 / x_0) + a_{02}' (x_0 / x_2 - x_2 / x_0) \\
-            \omega_1 &= a_{10}' (x_1 / x_0 - x_0 / x_1) + a_{13}' (x_1 / x_3 - x_3 / x_1) \\
-            \omega_2 &= a_{20}' (x_2 / x_0 - x_0 / x_2) + a_{23}' (x_2 / x_3 - x_3 / x_2) \\
-            \omega_3 &= a_{31}' (x_3 / x_1 - x_1 / x_3) + a_{32}' (x_3 / x_2 - x_2 / x_3)
-        \end{aligned}
-        \]
-    </p>
-</section> -->
-<section> <!-- Randomization ------------------------------------------------->
-    <h3>
-        Randomization
-    </h3>
-    <p>
-        \[
-            p_i (x_1,\ldots,x_n) =
-            \bar{\omega}_i - \sum_{ j \in \mathcal{N}_G(i) } a_{ij}'
-            \left(
-                \frac{x_i}{x_j} - \frac{x_j}{x_i}
-            \right)
-            =0
-            \quad\text{for } i = 1,\ldots,n
-        \]
-        is a system of $n$ Laurent polynomials in $n$ complex variables.
-    </p>
-    <p class="fragment">
-        For numerical computation,
-        we usually consider the "randomized" version
-        \[
-            \begin{bmatrix}
-                q_1 (x_1,\ldots,x_n) \\
-                \vdots \\
-                q_n (x_1,\ldots,x_n)
-            \end{bmatrix}
-            =
-            M \cdot
-            \begin{bmatrix}
-                p_1 (x_1,\ldots,x_n) \\
-                \vdots \\
-                p_n (x_1,\ldots,x_n)
-            \end{bmatrix}
-            =
-            \mathbf{0}
-        \]
-        for an $n \times n$ nonsingular matrix $M$
-        to improve numerical condition.
-    </p>
-    <p class="fragment">
-        \[
-            q_k(x_1,\ldots,x_n) =
-            c_{k,0,0} - 
-            \sum_{ \{i,j\} \in E } 
-            c_{k,i,j}
-            \left(
-                \frac{x_i}{x_j} - \frac{x_j}{x_i}
-            \right)
-        \]
-    </p>
-</section>
-<section>
-    <h3>
-        The main questions
-    </h3>
-    <p>
-        Synchronization configurations in a Kuramoto model
-        are represented by certain complex solutions to the
-        Laurent polynomial system
-        \[
-            q_k(x_1,\ldots,x_n) =
-            c_{k,0,0} - 
-            \sum_{ \{i,j\} \in E } 
-            c_{k,i,j}
-            \left(
-                \frac{x_i}{x_j} - \frac{x_j}{x_i}
-            \right)
-            = 0
-        \]
-        for $k=1,\ldots,n$.
-    </p>
-    <br/>
-    <br/>
-    <ul>
-        <li class="fragment">How many solutions are there?</li>
-        <li class="fragment">How to find all solutions?</li>
-        <li class="fragment">What can network topology tell us?</li>
-        <li class="fragment">Can we decompose large networks into smaller ones?</li>
-    </ul>
-</section>
-<section>
-    <h3>The root counting question</h3>
-    <p>
-        What is the maximum number of isolated complex solutions to the system
-        \[
-            q_k(x_1,\ldots,x_n) =
-            c_{k,0,0} - 
-            \sum_{ \{i,j\} \in E } 
-            c_{k,i,j}
-            \left(
-                \frac{x_i}{x_j} - \frac{x_j}{x_i}
-            \right)
-            = 0
-            \quad\text{for } k = 1,\ldots,n ?
-        \]
-    </p>
-    <br/>
-    <ul class="fragment">
-        <li>Bezout number</li>
-        <li>Bi-homogeneous Bezout number</li>
-        <li>Bernshtein-Kushnirenko-Khovanskii bound</li>
-    </ul>
-</section>
-<section>
-    <h3>Root count as normalized volume</h3>
-    <p>
-        \[
-            q_k(x_1,\ldots,x_n) =
-            c_{k,0,0} - 
-            \sum_{ \{i,j\} \in E } 
-            c_{k,i,j}
-            \left(
-                \frac{x_i}{x_j} - \frac{x_j}{x_i}
-            \right)
-            = 0.
-        \]
-    </p>
-    <div class="theorem">
-        <p>
-            <b>Kushnirenko's Theorem.</b>
-            The number of isolated $\mathbb{C}^*$-roots $(q_1,\ldots,q_n)$ has
-            is less than or equal to the normalized volume of
-            the common <em>Newton polytope</em> of $q_1,\ldots,q_n$.
-        </p>
-    </div>
-    <!-- <p class="fragment small">
-        In general the Kushnirenko Theorem counts isolated solutions
-        in $(\mathbb{C}^*)^n = (\mathbb{C} \setminus \{0\})^n$.
-    </p> -->
-    <p class="fragment">
-        The root count (n.o. "complex" synchronization configurations)
-        is bounded by the normalized volume of the polytope
-        \[
-            \operatorname{conv}
-            \left(
-            \bigcup_{ \{i,j\} \in E }
-                \{ 
-                    \mathbf{e}_i - \mathbf{e}_j \;,\;
-                    \mathbf{e}_j - \mathbf{e}_i
-                \}
-            \cup \{ \mathbf{0} \}
-            \right)
-        \]
-    </p>
-    <p class="fragment">
-        This is precisely the <em class="highlight">adjacency polytope</em>
-        of the network $G$ induced by
-        \[
-            f( \{ i,j \} ) =
-            \operatorname{conv}
-            \{ 
-                \mathbf{e}_i - \mathbf{e}_j \;,\;
-                \mathbf{e}_j - \mathbf{e}_i
-            \}.
-        \]
-    </p>
-</section>
-<section>
-    <h3>
-        Adjacency polytope associated with the Kuramoto model
-    </h3>
-    <div class="cols">
-        <div class="col">
-            <img src="kuramoto.png" height=370>
-        </div>
-        <div class="col">
-            <p>
-                For a Kuramoto network of $n+1$ oscillators
-                modeled by $G = (V,E)$, we constructed the
-                <em class="highlight">adjacency polytope</em>
-                \[
-                    P =
-                    \operatorname{conv}
-                    \left(
-                        \bigcup_{ \{i,j\} \in E }
-                        f( \{i,j\} )
-                        \cup \{ \mathbf{0} \}
-                    \right)
-                \]
-                where
-                \[
-                    f( \{i,j\} ) =
-                    \operatorname{conv}
-                    \{ 
-                        \mathbf{e}_i - \mathbf{e}_j \;,\;
-                        \mathbf{e}_j - \mathbf{e}_i
-                    \}.
-                \]
-            </p>
-        </div>
-    </div>
-    <p class="fragment">
-        The maximum number of "complex" synchronization configurations is
-        \[
-            n! \operatorname{Vol}_n (P),
-        \]
-        which we will call "adjacency polytope bound" or "AP bound"
-        (a special case of the BKK bound).
-    </p>
-</section>
-<section>
-    <h3>
-        Some root counting results
-    </h3>
-    <table>
-        <tr>
-            <th>Types of network</th>
-            <th align="center">AP bound</th>
-        </tr>
-        <tr>
-            <td>Complete graphs $K_n$</td>
-            <td align="center">$\binom{2n}{n}$</td>
-        </tr>
-        <tr>
-            <td>Trees $T_n$</td>
-            <td align="center">$2^n$</td>
-        </tr>
-        <tr>
-            <td>Cycles $C_n$</td>
-            <td align="center">$(n+1) \binom{n}{\lfloor n/2 \rfloor}$</td>
-        </tr>
-        <tr>
-            <td>Odd cycles $C_{i+1}$ and $C_{j+1}$<br/>glued together along an edge</td>
-            <td align="center">$(i+j+2ij) \binom{2i}{i} \binom{2j}{j}$</td>
-        </tr>
-        <tr>
-            <td>Odd wheels $K_1 * C_n$</td>
-            <td align="center">$(1-\sqrt{3})^n + (1+\sqrt{3})^n$</td>
-        </tr>
-        <tr>
-            <td>Even wheels $K_1 * C_n$</td>
-            <td align="center">$(1-\sqrt{3})^n + (1+\sqrt{3})^n - 2$</td>
-        </tr>
-    </table>
-    <p class="smaller">
-        T. Chen, R. Davis, D. Mehta,
-        <em>Counting equilibria of the Kuramoto model using birationally invariant intersection index</em>
-        SIAM Journal on Applied Algebra and Geometry, 2018, Vol. 2, No. 4 pp. 489-507
-    </p>
-    <p class="smaller">
-        A D'Alì, E Delucchi, M Michałek,
-        <em>Many faces of symmetric edge polytopes</em>
-        <a href="https://arxiv.org/abs/1910.05193">arXiv:1910.05193</a>
-    </p>
-    <p class="smaller">
-        H. Ohsugi, A. Tsuchiya,
-        <em>The $h^*$-Polynomials of Locally Anti-Blocking Lattice Polytopes and Their 𝛾-Positivity.</em>
-        Discrete Comput Geom 66, 701–722 (2021). https://doi.org/10.1007/s00454-020-00236-6
-    </p>
-</section>
-<section>
-    <h3>
-        Some real root counting results
-    </h3>
-    <p>
-        "Complex" synchronization configurations
-        $(x_1,\ldots,x_n)$
-        corresponds to "real" configurations $(\theta_1,\ldots,\theta_n)$ via
-        \[
-            x_i = e^{r_i + \mathbf{i} \theta_i}.
-        \]
-    </p>
-    <p class="fragment">
-        Only "complex" synchronization configurations
-        with $|x_i| = 1$ are "real".
-    </p>
-    <div class="fragment">
-        <table>
-            <tr>
-                <th>Types of network</th>
-                <th>Max. real roots</th>
-                <th>AP bound</th>
-            </tr>
-            <tr>
-                <td>Complete graph $K_3$</td>
-                <td align="center">6</td>
-                <td align="center">6</td>
-            </tr>
-            <tr>
-                <td>Trees $T_{n+1}$</td>
-                <td align="center">$2^{n}$</td>
-                <td align="center">$2^{n}$</td>
-            </tr>
-            <tr>
-                <td>Cycles</td>
-                <td align="center">$(n+1) \binom{n}{\lfloor n/2 \rfloor}$</td>
-                <td align="center">$(n+1) \binom{n}{\lfloor n/2 \rfloor}$</td>
-            </tr>
-        </table>
-        <p class="smaller">
-            J. Baillieul, C. Byrnes,
-            <em>Geometric critical point analysis of lossless power system models,</em>
-            in IEEE Transactions on Circuits and Systems, vol. 29, no. 11, pp. 724-737, 1982, doi: 10.1109/TCS.1982.1085093.
-        </p>
-        <p class="smaller">
-            J. Lindberg, A. Zachariah, N. Boston, B. Lesieutre,
-            <em>The Distribution of the Number of Real Solutions to the Power Flow Equations</em>
-            <a href="https://arxiv.org/abs/2010.03069">arXiv:2010.03069</a>
-        </p>
-    </div>
-</section>
-<section>
-    <h3>
-        Other connections
-    </h3>
-    <p>
-        Geometric invariants/constructs have natural correspondence
-        to aspects of the study of synchronization configurations
-        of Kuramoto networks.
-    </p>
-    <table>
-        <tr>
-            <th>In adjacency polytope</th>
-            <th></th>
-            <th>In networks</th>
-        </tr>
-        <tr>
-            <td>Normalized volume</td>
-            <td>$=$</td>
-            <td>Max. complex roots</td>
-        </tr>
-        <tr>
-            <td>Simplicial facets</td>
-            <td>$\to$</td>
-            <td>Spanning trees</td>
-        </tr>
-        <tr>
-            <td>Circuit facets</td>
-            <td>$\to$</td>
-            <td>Spanning chordless cycles</td>
-        </tr>
-        <tr>
-            <td>Facets</td>
-            <td>$\leftrightarrow$</td>
-            <td>Max. bipartite subgraphs</td>
-        </tr>
-        <tr>
-            <td>Triangulations</td>
-            <td>$\leftarrow$</td>
-            <td>"Primitive" subnetwork decompositions</td>
-        </tr>
-        <tr>
-            <td>Unimodular triangulations</td>
-            <td>$\leftarrow$</td>
-            <td>?</td>
-        </tr>
-    </table>
-</section>
-<section>
-    <h3>
-        The facet-subgraph correspondence
-    </h3>
-    <p>
-        The graph-polytope correspondence given by the adjacency polytope construction
-        extends to the polyhedral complex.
-    </p>
-    <p class="fragment">
-        We associate a subset $X \subseteq P$ with a subgraph $G_X$ of $G$
-        with the edge set
-        \[
-            \{ \; 
-                \{ i, j \} 
-                \;\mid\; \mathbf{e}_i - \mathbf{e}_j \in X \text{ or } \mathbf{e}_j - \mathbf{e}_i \in X 
-            \}.
-        \]
-    </p>
-    <p class="fragment">
-        Then each face of $P$ is associated with a subgraph of $G$
-        (an order-preserving map, indeed a matroid morphism).
-    </p>
-    <p class="small fragment">
-        (Actually, this is a map between the <em>point configurations</em> and subgraphs.)
-    </p>
-    <div class="theorem fragment">
-        <p>
-            <b>Proposition.</b>
-            If $F$ is a <em>simplicial</em> facet of $P$,
-            then $G_F$ is a spanning tree.
-        </p>
-    </div>
-    <div class="theorem fragment">
-        <p>
-            <b>Proposition.</b>
-            If $F$ is a <em>circuit</em> facet of $P$,
-            then $G_F$ is a spanning chordless cycle of $G$.
-        </p>
-    </div>
-</section>
-<section>
-    <h3>
-        Facet-subgraph correspondence
-    </h3>
-    <div class="theorem">
-        <p>
-            <b>Theorem.</b> (C., R. Davis, E. Korchevskaia)
-            A subgraph $H$ of $G$ is a facet subgraph of $G$
-            if and only if it is a <em>maximal bipartite subgraph</em> of $G$.
-        </p>
-    </div>
-    <p class="fragment">
-        <b>Sketch of proof</b>
-        ($\Leftarrow$)
-        Let $B$ be a maximal bipartite subgraph of $G$
-        with partition of nodes $V_+ \cup V_-$.
-    </p>
-    <p class="fragment">
-        Define $\boldsymbol{\alpha} = (\alpha_1,\dots,\alpha_n) \in \mathbb{R}^n$ with
-        \begin{align*}
-            \alpha_i &=
-            \begin{cases}
-                +1/2 &\text{if } i \in V_+ \\
-                -1/2 &\text{if } i \in V_-
-            \end{cases}
-        \end{align*}
-    </p>
-    <p class="fragment">
-        Then 
-        \[
-            \langle \mathbf{e}_i - \mathbf{e}_j \,,\, \boldsymbol{\alpha} \rangle =
-            \begin{cases}
-                0     &\text{if } i,j \in V_+ \text{ or } i,j \in V_- \\
-                \pm 1 &\text{if } i \in V_\pm \text{ and } j \in V_\mp.
-            \end{cases}
-        \]
-        <!-- In particular,  
-        since $V_+$ and $V_-$ partition the vertices of $B$, which is bipartite,
-        $\inner{ \bolde_i - \bolde_j }{ \boldalpha } = \pm 1$
-        for every $\{i,j\} \in \edges(B)$.
-        Let
-        \[
-            F = \{ 
-                \bolde_i - \bolde_j \mid 
-                \inner{ \bolde_i - \bolde_j }{ \boldalpha } = -1
-            \}.
-        \]
-        By definition, the linear functional $\inner{ \,\cdot\, }{ \boldalpha }$
-        attains its minimum over $\adjp_G$ on $F$,
-        and therefore $F$ is a face of $\adjp_G$.
-        Moreover, $G_F$ is a bipartite subgraph of $G[\nodes(B)]$ that contains $B$.
-        But $B$ is assumed to be a maximal bipartite subgraph of $G[\nodes(B)]$,
-        therefore $B = G_F$, i.e., $B$ is a face subgraph. -->
-    </p>
-    <p class="fragment">
-        Therefore, $\boldsymbol{\alpha}$ is an inner normal of $P$.
-    </p>
-    <p class="smaller fragment">
-        T. Chen, R. Davis, E. Korchevskaia,
-        <em>Facets and facet subgraphs of adjacency polytopes.</em>
-        <a href="https://arxiv.org/abs/2107.12315">arXiv:2107.12315</a>
-    </p>
-</section>
-<section>
-    <h3>Face-subgraph correspondence</h3>
-
-    <p>
-        The same idea generalizes to faces of $P$ in general.
-    </p>
-
-    <div class="theorem">
-        <p>
-            <b>Theorem.</b>
-            A connected nontrivial subgraph $H$ is a face subgraph
-            if and only if it is a maximally bipartite in the induced subgraph $G[N(H)]$.
-        </p>
-    </div>
-    <div class="theorem fragment">
-        <p>
-            <b>Corollary.</b>
-            If $F$ be a face of $P$,
-            then each connected component $H$ of $G_F$ is a maximal bipartite subgraph of
-            the induced subgraph $G[N(H)]$.
-        </p>
-    </div>
-    <div class="theorem fragment">
-        <p>
-            <b>Corollary</b>
-            $P$ is simplicial if and only if $G$ has no even cycles.
-        </p>
-    </div>
-
-    <div class="fragment">
-        <p class="smaller">
-            T. Chen, R. Davis, E. Korchevskaia,
-            <em>Facets and facet subgraphs of adjacency polytopes.</em>
-            <a href="https://arxiv.org/abs/2107.12315">arXiv:2107.12315</a>
-        </p>
-        <p class="small">
-            These indirectly provide positive answers
-            to Tien-Yien. Li's "bipartite subgraph ideal" conjecture.
-            (T.Y. Li, 2013 Lecture at Michigan State University)
-        </p>
-    </div>
-</section>
-<section>
-    <h3>Facet count estimation</h3>
-    <p>
-        How many facets can $P$ have?
-    </p>
-    <div class="theorem fragment">
-        <p>
-            <b>Proposition.</b>
-            (<em>D'Alì, Delucchi, and Michałek</em>)<br/>
-            If $G$ is bipartite, then
-            The number of facets $P$ has is bounded by $2^{n}$
-        </p>
-    </div>
-    <div class="theorem fragment">
-        <p>
-            <b>Proposition.</b>(<em>C., Davis, Korchevskaia</em>)<br/>
-            In general, the number of facets $P$ has is bounded by
-            \[
-                \beta \cdot 2^{n},
-            \]
-            where $\beta$ is the number of maximal bipartite subgraphs that $G$ has.
-        </p>
-    </div>
-    <div class="fragment">
-        <p class="smaller">
-            A D'Alì, E Delucchi, M Michałek,
-            <em>Many faces of symmetric edge polytopes</em>
-            <a href="https://arxiv.org/abs/1910.05193">arXiv:1910.05193</a>
-        </p>
-        <p class="smaller">
-            T. Chen, R. Davis, E. Korchevskaia,
-            <em>Facets and facet subgraphs of adjacency polytopes.</em>
-            <a href="https://arxiv.org/abs/2107.12315">arXiv:2107.12315</a>
-        </p>
-    </div>
-</section>
-<section>
-    <h3>
-        Symmetric edge polytopes
-    </h3>
-    <p>
-        The same polytopes also appear in other seemingly independent fields of studies.
-    </p>
-    <p class="fragment">
-        E.g., the <b>symmetric edge polytope</b> associated with a graph $G = (V,E)$:
-        \[
-            P_G =
-            \operatorname{conv}
-            \{
-                \mathbf{e}_i - \mathbf{e}_j
-                \mid \{i,j\} \in E
-            \},
-        \]
-        which is unimodularly equivalent to the adjacency polytope
-        of a Kuramoto network $G = (V,E)$.
-    </p>
-    <p class="fragment small">
-        "<em>Early interest in symmetric edge polytopes was spurred by the fact that certain families
-            of polynomials sharing properties similar to Riemann’s $\zeta$-function are Ehrhart polynomials
-            of special symmetric edge polytopes...</em>"
-        <span class="smaller">
-            (from <em>Many faces of symmetric edge polytopes</em>
-            by A D'Alì, E Delucchi, M Michałek.)
-        </span>
-    </p>
-    <div class="fragment">
-        <p class="small">
-            T. Matsui, A. Higashitani, Y. Nagazawa, H. Ohsugi, T. Hibi,
-            <em>Roots of Ehrhart polynomials arising from graphs,</em>
-            Journal of Algebraic Combinatorics, 34 (2011).
-        </p>
-    </div>
-</section>
-<section>
-    <h3>Fundamental polytopes of metric spaces</h3>
-    <p>
-        In the study of finite metric spaces, A. M. Vershik
-        proposed the fundamental polytopes of metric spaces
-        in 2015.
-    </p>
-    <p class="fragment">
-        For a a finite metric space $(X,d)$, its
-        <b>fundamental polytope</b> is
-        \[
-            \operatorname{conv}
-            \left\{
-                \frac{ \mathbf{e}_i - \mathbf{e}_j }{ d(i,j) }
-                \;:\; i,j \in X
-            \right\}.
-        \]
-    </p>
-    <div class="fragment">
-        <p class="small">
-            A. M. Vershik,
-            <em>Classification of finite metric spaces and combinatorics of convex polytopes,</em>
-            Arnold Mathematical Journal, 1 (2015), pp. 75–81.
-        </p>
-        <p class="small">
-            E. Delucchi, L. Hoessly,
-            <em>Fundamental polytopes of metric trees via hyperplane arrangements,</em>
-            arXiv:1612.05534, (2016)
-        </p>
-        <p class="small">
-            J. Gordon, F. Petrov,
-            <em>Combinatorics of the Lipschitz polytope,</em>
-            Arnold Mathematical Journal, 3 (2017), pp. 205–218.
-        </p>
-        <p class="small">
-            F. D. Jevtic, M. Jelic, and R. T. Zivaljevic,
-            <em>Cyclohedron and Kantorovich–Rubinstein polytopes,</em>
-            Arnold Mathematical Journal, 4 (2018), pp. 87–112.
-        </p>
-    </div>
-</section>
-<!-- <section>
-    <h3>
-        Other constructions?
-    </h3>
-</section> -->
-<section>
-    <h3>Power-flow equations (Lossless PQ-formulation)</h3>
-    <p>
-        <span class="alert">Power networks</span>
-        carry alternating current (AC) electric power.
-    </p>
-    <p class="fragment">
-        The <em>power-flow equations</em> (a.k.a. load-flow equations)
-        describe the synchronization/balancing conditions
-        of a power network.
-    </p>
-    <p class="fragment">
-        Derived from Kirchhoff's circuit laws,
-        the "PQ-type" power-flow equations for power network $G = (V,E)$
-        (with loops)
-        consisting of $n+1$ buses 
-        (buses $0,1,\ldots,n$) is a system of $n$ equations
-    </p>
-    <p class="fragment">
-        \[
-            S_i = \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
-            \quad\text{for } i = 1,\dots,n
-        \]
-    </p>
-    <p class="fragment">
-        in the $n$ nonzero complex variables
-        $v_1, \dots, v_n$ with constant $v_0 = 1$
-        <span class="fragment">
-            , where $\overline{v}_j$ is the
-            complex conjugate of $v_j$
-        </span>
-    </p>
-    <br/>
-    <p class="fragment">
-        <b>Not an algebraic system.</b>
-    </p>
-</section>
-<section>
-    <h3>Turning into an algebraic system</h3>
-    <p>
-        Examples of different approaches of turning power-flow equations into
-        polynomial systems
+        The symmetric edge polytope tells us about
     </p>
     <ul>
         <li>
-            J. Baillieul and C. Byrnes 
-            <span class="smaller">
-                Geometric Critical Point Analysis of Lossless Power System Models. (1982)
-                IEEE Transactions on Circuits and Systems
-            </span>
+            Max. n. o. synchronization configurations
+            on the Kuramoto model.
         </li>
         <li>
-            T.-Y. Li, T. Sauer, and J. Yorke
-            <span class="smaller">
-                Numerical Solution of a Class of Deficient Polynomial Systems
-                SIAM Journal of Numerical Analysis (1987)
-            </span>
+            How to compute exceptional coupling coefficieints.
         </li>
         <li>
-            (Recent survey) D. Mehta, D. Molzahn and K. Turitsyn 
-            <span class="small">
-                "Recent advances in computational methods for the power flow equations", 
-                (2016) American Control Conference.
-            </span>
+            How to construct non-isolated synchronization configurations.
+        </li>
+        <li>
+            How oscillators "die" in a toric amplitude oscillator model.
+        </li>
+        <li>
+            ......
         </li>
     </ul>
-    <p class="smaller">
-        (Not a complete list)
-    </p>
 </section>
-<section>
+<section> <!-- General Adjacency Polytope --------------------------------->
+    <h3>Final thoughts: Beyond symmetric edge polytopes</h3>
     <p>
+        Given a connected graph
+        <span class="lowlight">(or digraph or finite quiver)</span> $G$,
+        represented by its adjacency/edge list $A$,
+        we consider a function
         \[
-            S_i - \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i \overline{v}_j
-            \quad\text{for } i = 1,\dots,n
+            f : A \to \mathcal{P}^n
         \]
+        where $\mathcal{P}^n$ is the set of convex (lattice) polytopes
+        in $\mathbb{R}^n$.
     </p>
-    <p class="fragment">
-        Introducing new variables $u_i = \overline{v}_i$:
-        \[
-            S_i - \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i u_j
-            \quad\text{for } i = 1,\dots,n
-        \]
-    </p> 
-    <p class="fragment">
-        We can consider the square system
-        \[
-            \left\{
-                \begin{aligned}
-                    S_i &- \sum_{j \in N_G(i)} \overline{Y}_{ij} v_i u_j
-                    \quad\text{for } i = 1,\dots,n \\
-                    \overline{S}_i &- \sum_{j \in N_G(i)} Y_{ij} u_i v_j
-                    \quad\text{for } i = 1,\dots,n 
-                \end{aligned}
-            \right.
-        \]
-        which is a system of $2n$ polynomials
-        in the $2n$ (nonzero) complex variables $v_1,\ldots,v_n,u_1,\ldots,u_n$.
-    </p>
-    <p class="small fragment">
-        <em>
-            T.-Y. Li, T. Sauer, and J. Yorke,
-            Numerical Solution of a Class of Deficient Polynomial Systems,
-            SIAM Journal of Numerical Analysis (1987)
-        </em>
-    </p>
-</section>
-<section>
-    <h3>Adjacency polytope of PQ-type power-flow equations</h3>
-    <p>
-        After a similar randomization process,
-        the common Newton polytope is
+    <div class="definition fragment">
+        The <b>adjacency polytope</b> of $G$,
+        induced by $f$, is the polytope
         \[
             P =
-            \operatorname{conv}
-            \left(
-            \left\{
-                \begin{bmatrix}
-                    \mathbf{e}_i \\
-                    \mathbf{e}_j
-                \end{bmatrix}
-                ,
-                \begin{bmatrix}
-                    \mathbf{e}_j \\
-                    \mathbf{e}_i
-                \end{bmatrix}
-                \,:\,
-                \{i,j\} \in A
-            \right\}
-            \cup \{ \mathbf{0} \}
-            \right)
-            \subset \mathbb{R}^{2n},
-        \]
-        where $A$ is the list of edges and loops (adjacency list).
-    </p>
-    <p class="fragment">
-        This is equivalent to the construction
-        \begin{align*}
-            P &=
             \operatorname{conv}
             \left(
                 \{ \mathbf{0} \}
@@ -1435,73 +1716,11 @@ title: CJCS 2023
             \right)
             \; \subset \;
             \mathbb{R}^n
-            \\
-            f( \{i,j\} ) &=
-            \operatorname{conv}
-            \left\{
-                \begin{bmatrix}
-                    \mathbf{e}_i \\
-                    \mathbf{e}_j
-                \end{bmatrix}
-                ,
-                \begin{bmatrix}
-                    \mathbf{e}_j \\
-                    \mathbf{e}_i
-                \end{bmatrix}
-            \right\}.
-        \end{align*}
-    </p>
-    <div class="fragment">
-        <p>
-            The combinatorial properties of this polytope
-            is being actively studied.
-        </p>
-        <p class="smaller">
-            R. Davis, T. Chen,
-            <em>Computing volumes of adjacency polytopes via draconian sequences</em>
-            <a href="https://arxiv.org/abs/2007.11051">	arXiv:2007.11051</a>
-        </p>
-        <p class="smaller">
-            T. Chen, D. Mehta,
-            <em>On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations,</em>
-            IEEE Transactions on Power Systems, vol. 33, no. 2, pp. 1451-1460, March 2018, doi: 10.1109/TPWRS.2017.2724030.
-        </p>
-    </div>
-</section>
-<section>
-    <h3>Adjacency polytope</h3>
-    <p>
-        We outlined several examples of the constructions
-        \[
-            P =
-            \operatorname{conv}
-            \left(
-                \{ \mathbf{0} \}
-                \cup
-                \bigcup_{ \{i,j\} \in A } f(\{i,j\})
-            \right)
         \]
-        induced by a function $f$ that maps the set of edges and loops $A$
-        to convex sets (or point configurations).
+    </div>
+    <p class="fragment">
+        They play a similar role for other network-based models.
     </p>
-    <br/>
-    <ul>
-        <li class="fragment">
-            Is there any connections between the
-            topological properties of $G$
-            and geometric properties of $P$?
-        </li>
-        <li class="fragment">
-            How does this connection (if exist)
-            depends on the choice of $f$?
-        </li>
-        <li class="fragment">
-            What is the tropical interpretation here?
-        </li>
-        <li class="fragment">
-            Are there other examples missed here?
-        </li>
-    </ul>
 </section>
 <section class="titlepage">
     <br/>
@@ -1523,9 +1742,10 @@ title: CJCS 2023
             <img height="180" src="nsf.png">
         </div>
         <div class="col">
-            <p class="small">
+            <p class="smaller">
                 Research supported, in part, by National Science Foundation,
                 Auburn University at Montgomery Grant-In-Aid,
+                Auburn University at Montgomery Professional Improvement Leave program,
                 and AMS-Simons travel grants
             </p>
         </div>

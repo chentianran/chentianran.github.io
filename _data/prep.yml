@@ -1,6 +1,7 @@
 - nickname: polyposidimo
   title: A stratified polyhedral homotopy method for sampling positive dimensional zero sets of polynomial systems
   pdf: polyposidimo.pdf
+  arxiv: http://arxiv.org/abs/2304.08598
   abstract: >
     Numerical algebraic geometry revolves around the study of
     solutions to polynomial systems via numerical method.
@@ -19,11 +20,13 @@
       year = {2023}, 
       title = {{A stratified polyhedral homotopy method for sampling positive dimensional zero sets of polynomial systems}}, 
       author = {Chen, Tianran}, 
+      journal = {arXiv}, 
+      eprint = {2304.08598}
     }
 
 - nickname: bernd60
   title: Numerical Nonlinear Algebra
-  coauthors: Daniel J. Bates, Paul Breiding, Tianran Chen, Jonathan D. Hauenstein, Anton Leykin, Frank Sottile
+  coauthors: Daniel Bates, Paul Breiding, Jonathan Hauenstein, Anton Leykin, and Frank Sottile
   pdf: bernd60.pdf
   arxiv: https://arxiv.org/abs/2302.08585
   abstract: >
@@ -40,6 +43,7 @@
 
 - nickname: krootcount
   title: On the typical and atypical solutions to the Kuramoto equations
+  coauthors: Evgeniia Korchevskaia and Julia Lindberg
   pdf: krootcount.pdf
   arxiv: https://arxiv.org/abs/2210.00784
   abstract: > 
@@ -56,7 +60,7 @@
     @article{Chen2022Typical,
       archivePrefix = {arXiv},
       arxivId = {2210.00784},
-      author = {Chen, Tianran},
+      author = {Chen, Tianran and Korchevskaia, Evgeniia and Lindberg, Julia},
       eprint = {2210.00784},
       month = {oct},
       title = {On the typical and atypical solutions to the Kuramoto equations},
@@ -64,6 +68,32 @@
       year = {2022}
     }
     
+- nickname: libdh
+  title: GPU-accelerated path tracker for polyhedral homotopy
+  arxiv: http://arxiv.org/abs/2111.14317
+  abstract: >
+    The polyhedral homotopy method of Huber and Sturmfels is a particularly
+    efficient and robust numerical method for solving system of (Laurent)
+    polynomial equations. A central component in an implementation of this method
+    is an efficient and scalable path tracker. While the implementation issues in a
+    scalable path tracker for computer clusters or multi-core CPUs have been solved
+    thoroughly, designing good GPU-based implementations is still an active
+    research topic. This paper addresses the core issue of efficiently evaluate a
+    multivariate system of Laurent polynomials together with all its partial
+    derivatives. We propose a simple approach that maps particularly well onto the
+    parallel computing architectures of modern GPUs. As a by-product, we also
+    simplify and accelerate the path tracker by consolidating the computation of
+    Euler and Newton directions.
+  bibtex: |
+    @article{Chen2021GPU, 
+      year = {2021}, 
+      title = {{GPU-accelerated path tracker for polyhedral homotopy}}, 
+      author = {Chen, Tianran}, 
+      journal = {arXiv}, 
+      doi = {10.48550/arxiv.2111.14317}, 
+      eprint = {2111.14317}, 
+    }
+
 - nickname: k-uniform-cycles
   title: On the root count of algebraic Kuramoto equations in cycle networks with uniform coupling
   coauthors: Evgeniia Korchevskaia

@@ -22,10 +22,10 @@ OscillatorNetwork.prototype.add_random = function (c) {
 };
 
 OscillatorNetwork.prototype.update = function(dt) {
+    this.oscillators.forEach( (p) => {
+        p.velocity = p.natural;
+    });
     if (this.coupled) {
-        this.oscillators.forEach( (p) => {
-            p.velocity = p.natural;
-        });
         this.couplings.forEach( (c) => {
             const p = this.oscillators[c.src];
             const q = this.oscillators[c.dst];

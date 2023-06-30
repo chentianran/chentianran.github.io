@@ -243,9 +243,9 @@
     toggleCouple.addEventListener('click', animation.toggle_coupling);
     toggleRef.addEventListener('click', animation.toggle_rotational);
     buttonRandomize.addEventListener('click',animation.randomize);
-    // slideScalar.oninput = function() {
-    //   network.coupling_scalar = this.value / 100;
-    // }
+    slideScalar.oninput = function() {
+      animation.network.coupling_scalar = this.value / 100;
+    }
   </script>
 </body>
 </html>

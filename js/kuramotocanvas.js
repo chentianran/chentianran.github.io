@@ -9,9 +9,9 @@ OscillatorAnimation = function(parent, params) {
         params.height / 2,
         this.track_radius
     );
-    this.track.linewidth = 5;
+    this.track.linewidth = 2;
     this.track.fill = 'transparent';
-    this.track.stroke = '#888';
+    this.track.stroke = '#A0A0A0';
     this.network = new OscillatorNetwork();
     this.speed = 0.05;
     this.isAnimating  = false;
@@ -35,7 +35,7 @@ OscillatorAnimation = function(parent, params) {
         const c = { src: src, dst: dst, coef: coef };
         c.line = this.two.makeLine(this.cx,this.cx,this.cy,this.cy);
         c.line.linewidth = 5;
-        c.line.stroke = "#333333";
+        c.line.stroke = "#888888";
         this.network.couplings.push(c);
     }
 
