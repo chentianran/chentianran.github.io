@@ -5,10 +5,18 @@ title: MATH-2630
 
 # MATH-2630
 
-<!-- This course focuses on multivariable calculus
-which is a fundamental pillar for modern science and engineering. -->
+This is the third course in the standard calculus sequence.
+In this course, we embark on an exciting journey
+beyond the boundaries of single-variable calculus
+to explore the intricacies of functions of multiple variables.
+Our focus will shift from the limitations of
+two-dimensional graphs to the dynamic landscapes of three dimensions and beyond.
+With multi-variable calculus,
+we equip ourselves with the tools to understand and analyze
+the world in a richer, more comprehensive way.
+Prepare to unlock the new dimensions!
 
-* [Syllabus](syllabus-S2022/)
+* [Course syllabus](syllabus/)
 
 ## Lecture slide
 

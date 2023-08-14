@@ -3,7 +3,7 @@ layout: default
 title: MATH-4400A
 ---
 
-# MATH-4400A (CRN 2246) Spring 2019 Course Syllabus
+# MATH-4400 (CRN 11110) Fall 2023 Course Syllabus
 
 ## Mathematical Models and Simulations
 
@@ -13,8 +13,8 @@ models as well as an introduction of selected standard models.
 
 ### When, where, and who
 
-* Time: MW 6:20am -- 7:35pm (75 min)
-* Room: 222 Goodwyn Hall
+* Time: Tuesday and Thursday 9:30am -- 10:45am
+* Room: 221 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/modsim/>
@@ -34,16 +34,22 @@ Along the way, we will also learn how to use some of the basic mathematical tool
 
 ### Prerequisite
 
-* MATH-2660 (Linear algebra)
+* MATH-2660 or MATH-3660 (Linear algebra or applied linear algebra)
+* MATH-1610 (Calculus I)
 
 ### Textbook
 
-- [Required] _An introduction to mathematical modeling_
+No physical textbook is required.
+You will be provided lecture notes
+and other online material.
+- [Recommended, but _not_ required]
+  _An introduction to mathematical modeling_
   by E. Bender
   ISBN: 978-0-486-41180-4
   (This is a very old book, and many topics in this book is outdated. We will only use this book for the fundamental topics.)
 
-- [Recommended, but _not_ required] _A first course in mathematical modeling_ (4th edition)
+- [Recommended, but _not_ required]
+  _A first course in mathematical modeling_ (4th edition)
   by F. Giordano, W. Fox, S. Horton, and M. Weir
   ISBN: 978-0-495-01159-0
 
@@ -97,7 +103,7 @@ _not required but strongly recommended_:
 - Julia
 - Javascript
 
-### Reading assignments
+<!-- ### Reading assignments
 
 After reading the textbook, you need to complete a short reading test
 through the Blackboard system.
@@ -110,27 +116,23 @@ It is recommended that you finish the reading test at least a few days
 before the due date.
 
 Each reading test allows multiple attempts (2 attempts).
-Please see the test descriptions on the Blackboard system for detail.
+Please see the test descriptions on the Blackboard system for detail. -->
 
-### Concept tests
+<!-- ### Concept tests
 
 You will complete short online tests on the Blackboard system
 that are designed to test your overall understanding of the subject.
 All concepts tests are due on the last week of classes,
 and __no late submission will be accepted__.
-However, it is strongly recommended that you complete them as early as possible.
+However, it is strongly recommended that you complete them as early as possible. -->
 
-### Worksheets
+### In-class worksheets
 
 Worksheet problems will also be assigned in class.
 Since these must be completed in class,
 __no makeup worksheets will be offered__.
-However, a missing worksheet may be excused if valid reasons
-(official university events, illness or medical emergencies,
-death of immediate family, military orders, jury duty,
-religious holidays, or extreme weather conditions)
-and _proper documentation_ are provided (preferably _in advance_).
-Otherwise, a missing worksheet receives a score of _zero_.
+However, a missing worksheet may be replaced by
+closed-book exams cover similar material.
 
 ### Homework assignments
 
@@ -145,40 +147,46 @@ however, you must submit your own solutions.
 
 This course is largely based on projects which are longer open-ended problems.
 You are expected to spent much of your time in these projects.
-You can discuss with others about these projects,
-however, you must submit your own solutions.
+<!-- You can discuss with others about these projects,
+however, you must submit your own solutions. -->
 
-### Discussions
+### In-class participation
 
-Participation in in-class and online discussions will an important component
+Participation in in-class discussions
+will an important component
 of the learning process.
 
 ### Grade composition
-Your final course grade is determined according to your overall performance in
-(team) projects, in-class and online discussions, and the final exam.
-It is calculated according to the following weights.
+
+Your final course grade is determined by
+performance in the following learning components.
 
 | Component        | Points | Where      |
 |------------------|--------|------------|
-| Reading tests    | 10%    | Blackboard |
-| Worksheets       | 10%    | In-class   |
-| Homework         | 20%    | Blackboard |
-| Projects         | 50%    | Blackboard |
-| Concept tests    | 10%    | Blackboard |
+| Worksheets       | 65%    | In-class   |
+| Participation    | 10%    | In-class   |
+| Homework         | 10%    | Blackboard |
+| Projects/final   | 15%    | Blackboard/in-class |
 
-### Grading scale
+{% include letter_grades.markdown %}
 
-* A: 90% - 100%
-* B: 80% - 89.9%
-* C: 70% - 79.9%
-* D: 60% - 69.9%
-* F: below 60%
+### Policy on AI usage
+
+Artificial intelligence (AI) language models, such as ChatGPT, 
+may be used for homework assignments
+__with appropriate citation__,
+but not for projects, final exam, or in-class workseehts.
+If you are in doubt as to whether you are
+using AI language models appropriately in this course,
+I encourage you to discuss your situation with me.
+You are responsible for fact checking statements
+composed by AI language models.
 
 ### Other policies
 
 {% include syllabus_policy.markdown %}
 
-### <a name="schedule"></a> Schedule
+<!-- ### <a name="schedule"></a> Schedule
 
 * Day 1  : Basic languages of mathematics
     - The language of calculus
@@ -219,4 +227,4 @@ It is calculated according to the following weights.
 * Day 24 : Case study: Turing patterns
 * Day 25 : Case study: swarm behavior (Project 4 due)
 * Day 26 : Project discussions
-* Day 27 : Project discussions
+* Day 27 : Project discussions -->

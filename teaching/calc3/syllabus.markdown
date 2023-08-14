@@ -3,12 +3,12 @@ layout: default
 title: MATH-2630
 ---
 
-# MATH-2630 A (CRN 2122) Spring 2018 Course Syllabus
+# MATH-2630 (CRN 10215) Fall 2023 Course Syllabus
 
 ### When, where, and who
 
-* Time: MW 2:10pm --- 3:50pm (100 min)
-* Room: 222 Goodwyn Hall
+* Time: Tuesday & Thursday 12:30pm -- 2:10pm
+* Room: 317 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
 * Email: <tchen1@aum.edu>
 * Course page: <http://www.tianranchen.org/teaching/calc3/>
@@ -67,14 +67,14 @@ These prerequisite can be satisfied by MATH-1610 and MATH-1620
 
 ### Textbook
 
-- [Required] _Calculus: Early Transcendentals_ (any edition) by Larson & Edwards
-  (6th edition ISBN: 978-1285774770)
+- [Required] _Calculus: Early Transcendentals_ (7th edition) by Larson & Edwards
+  ISBN: 9781337552516
 - [Optional] _Calculus_ by Gilbert Strang (PDF version is _free_!)
     * [One single big PDF file](http://ocw.mit.edu/ans7870/resources/Strang/Edited/Calculus/Calculus.pdf)
     * [PDF files by chapters](https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook/)
     * [A few great video lectures](https://ocw.mit.edu/resources/res-18-005-highlights-of-calculus-spring-2010/highlights_of_calculus/big-picture-of-calculus/)
 
-Reading assignment and homework problems will be assigned from these textbook.
+<!-- Reading assignment and homework problems will be assigned from these textbook. -->
 
 ### Attendance and participation
 
@@ -110,7 +110,7 @@ However, all the quizzes and exams are designed so that no calculator will be ne
 Therefore calculators or any smart devices with Internet capabilities
 are not allowed on any of the in-class quizzes and exams.
 
-### Daily reading tests
+<!-- ### Daily reading tests
 
 After reading the textbook, you need to complete a short reading test
 through the Blackboard system.
@@ -124,17 +124,17 @@ It is recommended that you finish the reading test at least a few days
 before the due date.
 
 Each reading test allows multiple attempts.
-Please see the test descriptions on the Blackboard system for detail.
+Please see the test descriptions on the Blackboard system for detail. -->
 
-### Concept tests
+<!-- ### Concept tests
 
 You will need to complete short online tests on the Blackboard system
 that are designed to test your overall understanding of the subject.
 All concepts tests are due on the last day of classes,
 and __no late submission will be accepted__.
-However, it is strongly recommended that you complete them as early as possible.
+However, it is strongly recommended that you complete them as early as possible. -->
 
-### Weekly in-class quizzes
+### In-class quizzes
 
 There will be a short in-class quiz _every week_
 (except the first and the last week of the semester) to test
@@ -150,7 +150,7 @@ Otherwise, a missing quiz receives a score of zero.
 In-class practice is a crucially important component of the learning process.
 Your in-class worksheets will be _collected and graded_.
 
-### Weekly homework assignments
+<!-- ### Weekly homework assignments
 
 Homework problems are more complicated mathematical problems that will
 guide you to gain deeper understanding of the material we learn in class.
@@ -161,32 +161,22 @@ __No late homework submission will be accepted__
 However, a missing homework assignment may be excused if valid reasons
 (military assignments, medical issues, family emergency, etc)
 and _proper documentation_ are provided _in advance_.
-Otherwise, a missing homework assignment receives a score of zero.
+Otherwise, a missing homework assignment receives a score of zero. -->
 
 ### Final exam
 
-The final exam is scheduled at __1:30pm---2:30pm May 2nd__.
+The final exam is scheduled at __10:45am---12:15pm Dec. 5__.
 
 ###  <a name="grade"></a> Grade composition
 Your final grade is determined according to the following weighted average.
 
-| Component     | Points | Where      |
-|---------------|--------|------------|
-| Reading tests | 160    | Blackboard |
-| Concept tests | 200    | Blackboard |
-| Homework      | 300    | Blackboard |
-| Quizzes       | 140    | In-class   |
-| Worksheets    | 100    | In-class   |
-| Final exam    | 100    | In-class   |
+| Component     | Percentage | Where      |
+|---------------|------------|------------|
+| Quizzes       | 60%        | In-class   |
+| Worksheets    | 30%        | In-class   |
+| Final exam    | 10%        | In-class   |
 
-
-### Grading scale
-
-* A: 90% - 100%
-* B: 80% - 89.9%
-* C: 70% - 79.9%
-* D: 60% - 69.9%
-* F: below 60%
+{% include letter_grades.markdown %}
 
 ### Other policies
 

@@ -19,24 +19,17 @@ and is supported by [NSF grant DMS-1923099](https://nsf.gov/awardsearch/showAwar
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Summer of 2023 I am teaching
+In the Fall of 2023 I am teaching
 
-- [MATH-1050](teaching/math-1050/)
+- [MATH-1610](teaching/calc1/)     (Calculus I),
+- [MATH-2630](teaching/calc3/)     (Multivariable Calculus)
+- [MATH-4400](teaching/modsim/)    (Math Models and Simulations)
 
 Office hours
 ------------
 
 {% include hours.markdown %}
 <!-- {% include appointments.markdown %} -->
-
-<!-- Appointments
-------------
-
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-
-- <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/advising');return false;">Schedule an advising appointment with me</a>
-- <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/chentianran/one-on-one');return false;">Schedule a virtual one-on-one meeting with me</a> -->
 
 <!-- Upcoming conferences
 - [SIAM AG 2019](https://mathsites.unibe.ch/siamag19/)  
@@ -60,8 +53,13 @@ Grants
 
 {% include grants.markdown %}
 
-News and recent talks
+<!-- News and recent talks
 ---------------------
+
+- Georgia Tech algebra seminar
+  October 3, 2022  
+  Georgia Tech, Atlanta, GA, USA.  
+  [ [talk slides](/talks/GT-2022F/) ]
 
 - Georgia Tech algebra seminar
   October 3, 2022  
@@ -74,7 +72,7 @@ News and recent talks
   at the
   [Spring Western Virtual Sectional Meeting](https://www.ams.org/meetings/sectional/2294_program.html)
   May 14-15, 2022
-  (formerly at University of Denver)
+  (formerly at University of Denver) -->
 
 Scientific Software
 -------------------
