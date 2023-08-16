@@ -3,14 +3,14 @@ layout: default
 title: MATH-2630
 ---
 
-# MATH-2630 (CRN 10215) Fall 2023 Course Syllabus
+# MATH-2630 (CRN 10215 T. Chen) Fall 2023 Course Syllabus
 
 ### When, where, and who
 
 * Time: Tuesday & Thursday 12:30pm -- 2:10pm
 * Room: 317 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
-* Email: <tchen1@aum.edu>
+* Email: <tchen1@aum.edu> (It is best to email me directly; I do not check Blackboard message very often.)
 * Course page: <http://www.tianranchen.org/teaching/calc3/>
 {% include hours.markdown %}
 
@@ -188,7 +188,7 @@ Listed below are the topics of discussion of each day.
 Reading the book _before_ the class meetings is very important.
 Reading assignments, i.e., sections (from the required textbook)
 that you should read to get ready for our class meeting are also listed below.
-The reading tests (on the Blackboard system) are to be completed _before_ each class meeting.
+<!-- The reading tests (on the Blackboard system) are to be completed _before_ each class meeting. -->
 
 * Day 0 : Overview and motivations
 * Day 1 : Coordinate systems for plane and space

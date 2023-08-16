@@ -3,14 +3,14 @@ layout: default
 title: MATH-1610
 ---
 
-# MATH-1610 002 (CRN 10381) Fall 2023 Course Syllabus
+# MATH-1610 002 (CRN 10381 T.Chen) Fall 2023 Course Syllabus
 
 ### When, where, and who
 
 * Time: Monday & Wednesday 12:30pm -- 2:10pm
 * Room: 318 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
-* Email: <tchen1@aum.edu>
+* Email: <tchen1@aum.edu> (It is best to email me directly; I do not check Blackboard message very often.)
 * Course page: <http://www.tianranchen.org/teaching/calc1/>
 {% include hours.markdown %}
 
@@ -55,7 +55,7 @@ These prerequisite can be satisfied by any one of the following:
 
 Participation in in-class discussions and activities is an important part
 of the learning process.
-Therefore class attendance is expected and recorded.
+Therefore, class attendance is expected and recorded.
 
 ### Code of conduct
 
@@ -110,14 +110,14 @@ Short in-class quizzes are designed
 to test our understanding of the material discussed in the previous weeks.
 Slightly longer online quizzes (via Blackboard system) serve a similar purpose.
 These quizzes will be a major part of your course grade.
-Since the solutions will be released on the same day,
+Since the solutions may be released on the same day,
 __no makeup quiz will be offered__.
-However, a missing quiz may be replaced by an online quiz
+However, a missing quiz may be replaced by an online quiz,
 <!-- (official university events, illness or medical emergencies,
 death of immediate family, military orders, jury duty,
 religious holidays, or extreme weather conditions)
 and _proper documentation_ are provided (preferably _in advance_). -->
-if proper justfications are given.
+if proper justifications are given.
 Otherwise, a missing quiz receives a score of _zero_.
 
 <!-- ### Homework

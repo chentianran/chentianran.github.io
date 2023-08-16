@@ -3,7 +3,7 @@ layout: default
 title: MATH-4400A
 ---
 
-# MATH-4400 (CRN 11110) Fall 2023 Course Syllabus
+# MATH-4400 (CRN 11110 T. Chen) Fall 2023 Course Syllabus
 
 ## Mathematical Models and Simulations
 
@@ -16,7 +16,7 @@ models as well as an introduction of selected standard models.
 * Time: Tuesday and Thursday 9:30am -- 10:45am
 * Room: 221 Goodwyn Hall
 * Instructor: Dr. Tianran Chen
-* Email: <tchen1@aum.edu>
+* Email: <tchen1@aum.edu> (It is best to email me directly; I do not check Blackboard message very often.)
 * Course page: <http://www.tianranchen.org/teaching/modsim/>
 {% include hours.markdown %}
 
@@ -30,7 +30,7 @@ alternative meeting time may be arranged
 ### What we will learn
 
 Use of mathematical models and computer simulations for solving real world problems.
-Along the way, we will also learn how to use some of the basic mathematical tools.
+Along the way, we will also learn how to use some basic mathematical tools.
 
 ### Prerequisite
 
