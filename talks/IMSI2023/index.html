@@ -1,0 +1,701 @@
+---
+layout: mtalk
+title: Polynomials in economy and the polyhedral homotopy
+---
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">{{page.title}}</h2>
+    </div>
+    <br/>
+    <p>Tianran Chen</p>
+    <p class="smaller">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+    <br/>
+    <br/>
+    <p class="smaller">
+        Sep. 21, 2023<br/>
+        Invitation to algebraic statistics and applications<br/>
+        IMSI<br/>
+        Chicago, IL USA
+    </p>
+</section>
+
+<section>
+    <p>
+        A "game" is a strategic interaction
+        involving multiple "players",
+        where each player's outcome depends on the choices of all players.
+    </p>
+    <div class="r-stack">
+        <img src="rock-paper-scissors.svg" alt="" width="620">
+        <div class="fragment">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <table>
+                <tr>
+                    <td>A\B</td>
+                    <td>🪨</td>
+                    <td>📜</td>
+                    <td>✂️</td>
+                </tr>
+                <tr>
+                    <td>🪨</td>
+                    <td align="right">0</td>
+                    <td align="right">-1</td>
+                    <td align="right">+1</td>
+                </tr>
+                <tr>
+                    <td>📜</td>
+                    <td align="right">+1</td>
+                    <td align="right">0</td>
+                    <td align="right">-1</td>
+                </tr>
+                <tr>
+                    <td>✂️</td>
+                    <td align="right">-1</td>
+                    <td align="right">+1</td>
+                    <td align="right">0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h3>Three-person games with two strategies</h3>
+    <p>
+        Three players, A, B, C
+        play a <em>non-cooperative</em> game.
+    </p>
+    <p class="fragment smaller lowlight">
+        (Players cannot form binding agreements)
+    </p>
+</section>
+
+<section>
+    <div class="center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+            <!-- First Row: Stick Figures -->
+            <!-- First Stick Figure -->
+            <circle cx="50" cy="75" r="15" fill="black" /> <!-- Head -->
+            <text x="47" y="80" font-family="Arial" font-size="12" fill="white">A</text> <!-- Label for Head A -->
+            <line x1="50" y1="100" x2="40" y2="90" stroke="black" stroke-width="2" /> <!-- Left Arm -->
+            <line x1="50" y1="100" x2="60" y2="90" stroke="black" stroke-width="2" /> <!-- Right Arm -->
+            <line x1="50" y1="90" x2="50" y2="125" stroke="black" stroke-width="2" /> <!-- Body -->
+            <line x1="50" y1="125" x2="40" y2="190" stroke="black" stroke-width="2" /> <!-- Left Leg -->
+            <line x1="50" y1="125" x2="60" y2="190" stroke="black" stroke-width="2" /> <!-- Right Leg -->
+            
+            <!-- Arrows from Stick Figure A to Boxes -->
+            <line x1="50" y1="190" x2="75" y2="225" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a1 -->
+            <line x1="50" y1="190" x2="175" y2="225" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a2 -->
+            
+            <!-- Second Stick Figure -->
+            <circle cx="150" cy="75" r="15" fill="black" /> <!-- Head -->
+            <text x="147" y="80" font-family="Arial" font-size="12" fill="white">B</text> <!-- Label for Head B -->
+            <line x1="150" y1="100" x2="140" y2="90" stroke="black" stroke-width="2" /> <!-- Left Arm -->
+            <line x1="150" y1="100" x2="160" y2="90" stroke="black" stroke-width="2" /> <!-- Right Arm -->
+            <line x1="150" y1="90" x2="150" y2="125" stroke="black" stroke-width="2" /> <!-- Body -->
+            <line x1="150" y1="125" x2="140" y2="190" stroke="black" stroke-width="2" /> <!-- Left Leg -->
+            <line x1="150" y1="125" x2="160" y2="190" stroke="black" stroke-width="2" /> <!-- Right Leg -->
+            
+            <!-- Arrows from Stick Figure B to Boxes -->
+            <line x1="150" y1="190" x2="75" y2="265" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a1 -->
+            <line x1="150" y1="190" x2="175" y2="265" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a2 -->
+            
+            <!-- Third Stick Figure -->
+            <circle cx="250" cy="75" r="15" fill="black" /> <!-- Head -->
+            <text x="247" y="80" font-family="Arial" font-size="12" fill="white">C</text> <!-- Label for Head C -->
+            <line x1="250" y1="100" x2="240" y2="90" stroke="black" stroke-width="2" /> <!-- Left Arm -->
+            <line x1="250" y1="100" x2="260" y2="90" stroke="black" stroke-width="2" /> <!-- Right Arm -->
+            <line x1="250" y1="90" x2="250" y2="125" stroke="black" stroke-width="2" /> <!-- Body -->
+            <line x1="250" y1="125" x2="240" y2="190" stroke="black" stroke-width="2" /> <!-- Left Leg -->
+            <line x1="250" y1="125" x2="260" y2="190" stroke="black" stroke-width="2" /> <!-- Right Leg -->
+            
+            <!-- Arrows from Stick Figure C to Boxes -->
+            <line x1="250" y1="190" x2="75" y2="305" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a1 -->
+            <line x1="250" y1="190" x2="175" y2="305" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a2 -->
+            
+            <!-- Second Row: Boxes -->
+            <!-- Box #1 -->
+            <rect x="75" y="275" width="50" height="50" fill="blue" />
+            <text x="100" y="300" font-family="Arial" font-size="12" fill="white">#1</text> <!-- Label for Box #1 -->
+            
+            <!-- Box #2 -->
+            <rect x="175" y="275" width="50" height="50" fill="green" />
+            <text x="200" y="300" font-family="Arial" font-size="12" fill="white">#2</text> <!-- Label for Box #2 -->
+            
+            <!-- Arrowhead marker definition -->
+            <defs>
+                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="0" refY="0" orient="auto" markerUnits="strokeWidth">
+                    <path d="M0,0 L10,5 L0,10 z" fill="black" />
+                </marker>
+            </defs>
+        </svg>
+        
+    </div>
+</section>
+<section>
+    <h3> Player A's view </h3>
+    <p>
+        There are 8 situations:
+    </p>
+    <ul class="small fragment">
+        <li>
+            A choose #1, B choose #1, C choose #1 
+            <span class="fragment">("111")</span>
+            <span class="fragment">
+                Payoff: $A_{111}$
+            </span>
+        </li>
+        <li>
+            A choose #1, B choose #1, C choose #2 
+            <span class="fragment">("112")</span>
+            <span class="fragment">
+                Payoff: $A_{112}$
+            </span>
+        </li>
+        <li>
+            A choose #1, B choose #2, C choose #1 
+            <span class="fragment">("121")</span>
+            <span class="fragment">
+                Payoff: $A_{121}$
+            </span>
+        </li>
+        <li>
+            A choose #1, B choose #2, C choose #2 
+            <span class="fragment">("122")</span>
+            <span class="fragment">
+                Payoff: $A_{122}$
+            </span>
+        </li>
+        <li>
+            A choose #2, B choose #1, C choose #1 
+            <span class="fragment">("211")</span>
+            <span class="fragment">
+                Payoff: $A_{211}$
+            </span>
+        </li>
+        <li>......</li>
+        <li>......</li>
+        <li>
+            A choose #2, B choose #2, C choose #2 
+            <span class="fragment">("222")</span>
+            <span class="fragment">
+                Payoff: $A_{222}$
+            </span>
+        </li>
+    </ul>
+    <p class="fragment">
+        <br/>
+        \[
+            A_{ijk} \; := \;
+            \text{The payoff for situation } (ijk)
+        \]
+    </p>
+</section>
+
+<section>
+    <h3>Payoff arrays</h3>
+    <p>
+        \[
+            A_{ijk} \; := \;
+            \text{The payoff for situation } (ijk)
+        \]
+    </p>
+</section>
+<section>
+    <h3>Player A's payoff</h3>
+    <p>
+        \[
+            A_{ijk} \; := \;
+            \text{The payoff for situation } (ijk)
+        \]
+    </p>
+    <p class="fragment">
+        \[
+            \text{The probability for } (ijk) \;=\;
+            a_i \, b_j \, c_k
+        \]
+    </p>
+    <p class="fragment">
+        Payoff:
+        \[
+            \begin{aligned}
+            A_{111} a_1 b_1 c_1 &+
+            A_{112} a_1 b_1 c_2 +
+            A_{121} a_1 b_2 c_1 +
+            A_{122} a_1 b_2 c_2 +
+            \\
+            A_{211} a_2 b_1 c_1 &+
+            A_{212} a_2 b_1 c_2 +
+            A_{221} a_2 b_2 c_1 +
+            A_{222} a_2 b_2 c_2 
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment">
+        \[
+            \sum_{i=1}^2 \sum_{j=1}^2 \sum_{k=1}^2 A_{ijk} \, a_i \, b_i \, c_i
+        \]
+    </p>
+</section>
+
+<section>
+    <p>
+        \[
+            \begin{aligned}
+                \text{Player A's payoff} &= \sum_{i,j,k=1}^2 A_{ijk} \, a_i \, b_i \, c_i \\
+                \text{Player B's payoff} &= \sum_{i,j,k=1}^2 B_{ijk} \, a_i \, b_i \, c_i \\
+                \text{Player C's payoff} &= \sum_{i,j,k=1}^2 C_{ijk} \, a_i \, b_i \, c_i
+            \end{aligned}
+        \]
+    </p>
+    <div class="fragment definition">
+        A vector $(a_1,a_2,b_1,b_2,c_1,c_2)$
+        is called a <strong class="highlight">Nash equilibrium</strong>
+        if no player can increase his/her own payoff
+        while the other two players keep their strategies fixed.
+    </div>
+
+</section>
+
+<section data-auto-animate>
+    <span class="fragment fade-out" data-fragment-index="2">
+        9 polynomial equations in the 9 variables
+        $a_1,a_2,b_1,b_2,c_1,c_2$ (mixed strategies)
+        and $\alpha,\beta,\gamma$ (payoffs).
+    </span>
+    <span class="fragment highlight-red" data-fragment-index="1">
+        \[
+            \begin{aligned}
+                \alpha &=
+                A_{111} \, b_1 c_1 
+                + A_{112} \, b_1 c_2 
+                + A_{121} \, b_2 c_1 
+                + A_{122} \, b_2 c_2 
+                \\
+                \alpha &=
+                A_{211} \, b_1 c_1 
+                + A_{212} \, b_1 c_2 
+                + A_{221} \, b_2 c_1 
+                + A_{222} \, b_2 c_2 
+            \end{aligned}
+        \]
+    </span>
+    <div class="r-stack">
+        <div>
+            <span class="fragment fade-out" data-fragment-index="2">
+                \[
+                    \begin{aligned}
+                        \beta &=
+                        B_{111} a_1 c_1
+                        + B_{112} a_1 c_2
+                        + B_{121} a_2 c_1
+                        + B_{122} a_2 c_2
+                        \\
+                        \beta &=
+                        B_{211} a_1 c_1
+                        + B_{212} a_1 c_2
+                        + B_{221} a_2 c_1
+                        + B_{222} a_2 c_2
+                        \\
+                        \gamma &=
+                        C_{111} a_1 b_1
+                        + C_{112} a_1 b_2
+                        + C_{121} a_2 b_1
+                        + C_{122} a_2 b_2
+                        \\
+                        \gamma &=
+                        C_{211} a_1 b_1
+                        + C_{212} a_1 b_2
+                        + C_{221} a_2 b_1
+                        + C_{222} a_2 b_2
+                        \\
+                        1 &= a_1 + a_2 = b_1 + b_2 = c_1 + c_2
+                    \end{aligned}
+                \]
+            </span>
+        </div>
+        <div class="fragment" data-fragment-index="3">
+            <p>
+                \[
+                    \downarrow
+                \]
+            </p>
+            <p>
+                \[
+                    0 =
+                    (A_{111} - A_{211}) b_1 c_1 + 
+                    (A_{112} - A_{212}) b_1 c_2 + 
+                    \cdots
+                \]
+            </p>
+            <p class="fragment">
+                \[
+                    \downarrow
+                \]
+                <span data-id="Aij">
+                    \[
+                        0 =
+                        \overline{A}_{11} \, b_1 c_1 +
+                        \overline{A}_{12} \, b_1 c_2 +
+                        \overline{A}_{21} \, b_2 c_1 +
+                        \overline{A}_{22} \, b_2 c_2
+                    \]
+                </span>
+            </p>
+        </div>
+    </div>
+    <p class="fragment fade-out" data-fragment-index="2">
+        Real solutions with
+        $a_1,a_2,b_1,b_2,c_1,c_2 > 0$
+        correspond to totally mixed Nash equilibria.
+    </p>
+</section>
+
+<section data-auto-animate>
+    <p>
+        <span data-id="Aij">
+        \[
+            0 =
+            \overline{A}_{11} \, b_1 c_1 + 
+            \overline{A}_{12} \, b_1 c_2 + 
+            \overline{A}_{21} \, b_2 c_1 + 
+            \overline{A}_{22} \, b_2 c_2 
+        \]
+        </span>
+        <span class="fragment" data-id="BijCij">
+            \[
+                \begin{aligned}
+                    0 &=
+                    \overline{B}_{11} a_1 c_1 + 
+                    \overline{B}_{12} a_1 c_2 + 
+                    \overline{B}_{21} a_2 c_1 + 
+                    \overline{B}_{22} a_2 c_2 
+                    \\
+                    0 &=
+                    \overline{C}_{11} a_1 b_1 + 
+                    \overline{C}_{12} a_1 b_2 + 
+                    \overline{C}_{21} a_2 b_1 + 
+                    \overline{C}_{22} a_2 b_2 
+                    \\
+                    1 &= a_1 + a_2 \\
+                    1 &= b_1 + b_2 \\
+                    1 &= c_1 + c_2
+                \end{aligned}
+            \]
+        </span>
+    </p>
+    <p class="fragment">
+        6 equations in 6 unknowns (payoff variables eliminated).
+    </p>
+    <p class="fragment">
+        Real solutions with
+        $a_1,a_2,b_1,b_2,c_1,c_2 > 0$ correspond to<br>
+        <span class="highlight">
+            totally mixed Nash equilibria.
+        </span>
+    </p>
+</section>
+
+<section>
+    <br/>
+    <br/>
+    <br/>
+    <p>
+        Approach:
+    </p>
+    <ul>
+        <li>
+            Compute all complex solutions
+        </li>
+        <li>
+            Numerical homotopy method (continuous deformation)
+        </li>
+        <li>
+            Polyhedral homotopy
+        </li>
+    </ul>
+</section>
+
+<section data-auto-animate="">
+    <p>
+        <!-- <span class="highlight">Totally mixed Nash equilibria</span>
+        are defined by -->
+        <span data-id="Aij">
+        \[
+            0 =
+            \overline{A}_{11} \, b_1 c_1 + 
+            \overline{A}_{12} \, b_1 c_2 + 
+            \overline{A}_{21} \, b_2 c_1 + 
+            \overline{A}_{22} \, b_2 c_2 
+        \]
+        </span>
+        <span data-id="BijCij">
+            \[
+                \begin{aligned}
+                    0 &=
+                    \overline{B}_{11} a_1 c_1 + 
+                    \overline{B}_{12} a_1 c_2 + 
+                    \overline{B}_{21} a_2 c_1 + 
+                    \overline{B}_{22} a_2 c_2 
+                    \\
+                    0 &=
+                    \overline{C}_{11} a_1 b_1 + 
+                    \overline{C}_{12} a_1 b_2 + 
+                    \overline{C}_{21} a_2 b_1 + 
+                    \overline{C}_{22} a_2 b_2 
+                    \\
+                    1 &= a_1 + a_2 \\
+                    1 &= b_1 + b_2 \\
+                    1 &= c_1 + c_2
+                \end{aligned}
+            \]
+        </span>
+    </p>
+    <div class="center">
+        <p class="fragment">
+            How to solve?
+        </p>
+        <p class="fragment">
+            How many solutions?
+        </p>
+    </div>
+    <div class="theoremlike fragment" data-type="Assumption">
+        Only finite many solutions,
+        all isolated.
+        <span class="fragment">
+            This holds for <span class="highlight">generic</span> coefficients.
+            (a Zariski-dense subset of coefficients)
+        </span>
+    </div>
+    <p class="smaller fragment lowlight">
+        Harsanyi.
+        <em>Oddness of the number of equilibrium points: A new proof.</em>
+        Int. J. Game Theory 2, 235-250 (1973).
+    </p>
+    <div class="center">
+        <p class="fragment">
+            \[
+                \class{highlight}{\text{Generic}}
+                \;\approx\;
+                \text{Randomly perturbed}
+            \]
+        </p>
+    </div>
+</section>
+
+<section data-auto-animate>
+    <p data-id="nashsys">
+        \[
+            \begin{aligned}
+                0 &=
+                \overline{A}_{111} \, b_1 c_1 + 
+                \overline{A}_{112} \, b_1 c_2 + 
+                \overline{A}_{121} \, b_2 c_1 + 
+                \overline{A}_{122} \, b_2 c_2 
+                \\
+                0 &=
+                \overline{B}_{111} \,a_1 c_1 + 
+                \overline{B}_{112} \,a_1 c_2 + 
+                \overline{B}_{121} \,a_2 c_1 + 
+                \overline{B}_{122} \,a_2 c_2 
+                \\
+                0 &=
+                \overline{C}_{111} \,a_1 b_1 + 
+                \overline{C}_{112} \,a_1 b_2 + 
+                \overline{C}_{121} \,a_2 b_1 + 
+                \overline{C}_{122} \,a_2 b_2 
+                \\
+                1 &= a_1 + a_2 \\
+                1 &= b_1 + b_2 \\
+                1 &= c_1 + c_2
+            \end{aligned}
+        \]
+    </p>
+    <br>
+    <div class="center">
+        <p class="fragment">
+            What will happen to the solutions as
+            \[
+                \begin{aligned}
+                    \overline{A}_{ijk}, \overline{B}_{ijk}, \overline{C}_{ijk} \; &\to \; 0 \\
+                    a_1 + a_2,\;
+                    b_1 + b_2,\;
+                    c_1 + c_2 \; &\to \; \infty
+                \end{aligned}
+            \]
+        </p>
+    </div>
+    <div class="problem fragment">
+        What does this procedure mean?
+        <span class="fragment">
+            How are we changing the game?
+        </span>
+        <span class="fragment">
+            Is it a reasonable thing to do?
+        </span>
+    </div>
+</section>
+
+<section data-auto-animate>
+    <p data-id="nashsys">
+        \[
+            \begin{aligned}
+                0 &=
+                \overline{A}_{111} \class{highlight}{t^{1.0}} b_1 c_1 + 
+                \overline{A}_{112} \class{highlight}{t^{1.4}} b_1 c_2 + 
+                \overline{A}_{121} \class{highlight}{t^{1.2}} b_2 c_1 + 
+                \overline{A}_{122} \class{highlight}{t^{0.7}} b_2 c_2 
+                \\
+                0 &=
+                \overline{B}_{111} \class{highlight}{t^{1.2}} a_1 c_1 + 
+                \overline{B}_{112} \class{highlight}{t^{0.8}} a_1 c_2 + 
+                \overline{B}_{121} \class{highlight}{t^{1.9}} a_2 c_1 + 
+                \overline{B}_{122} \class{highlight}{t^{1.1}} a_2 c_2 
+                \\
+                0 &=
+                \overline{C}_{111} \class{highlight}{t^{0.5}} a_1 b_1 + 
+                \overline{C}_{112} \class{highlight}{t^{0.3}} a_1 b_2 + 
+                \overline{C}_{121} \class{highlight}{t^{1.3}} a_2 b_1 + 
+                \overline{C}_{122} \class{highlight}{t^{1.6}} a_2 b_2 
+                \\
+                1 &= \class{highlight}{t} \,a_1 + \class{highlight}{t} \,a_2 \\
+                1 &= \class{highlight}{t} \,b_1 + \class{highlight}{t} \,b_2 \\
+                1 &= \class{highlight}{t} \,c_1 + \class{highlight}{t} \,c_2
+            \end{aligned}
+        \]
+    </p>
+    <div class="center">
+        <p class="fragment">
+            What happens when
+            <span class="highlight">$t \to 0$</span> ?
+        </p>
+    </div>
+</section>
+
+<section>
+    <p>
+        Can we <span class="highlight">"describe"</span>
+        the local behavior of the paths as
+        <span class="highlight">$t \to 0$</span> ?
+    </p>
+    <!-- <p class="fragment">
+        <strong>Goal:</strong>
+        Find a local parametrization for each path.
+    </p> -->
+    <div class="theoremlike fragment" data-type="Assumption">
+        Near $t=0$, each path is parametrized by some
+        \[
+            \begin{aligned}
+                a_1(t) &= t^{\alpha_1} x_1(t) &
+                a_2(t) &= t^{\alpha_2} x_2(t) \\
+                b_1(t) &= t^{\beta_1} y_1(t) &
+                b_2(t) &= t^{\beta_2} y_2(t) \\
+                c_1(t) &= t^{\gamma_1} z_1(t) &
+                c_2(t) &= t^{\gamma_2} z_2(t)
+            \end{aligned}
+        \]
+        where 
+        <ul>
+            <li>
+                $\alpha_1,\alpha_2,\beta_1,\beta_2,\gamma_1,\gamma_2 \in \mathbb{Q}$
+                are constants (path dependent),
+            </li>
+            <li>
+                $x_1(0),\, x_2(0),\, y_1(0),\, y_2(0), \, z_1(0),\, z_2(0) \in \mathbb{C}^* = \mathbb{C} \setminus \{0\}$.
+            </li>
+            <li>
+                $x_1,x_2,y_1,y_2,z_1,z_2$ are holomorphic in $t^m$ for some $m \in \mathbb{Z}^+$.
+            </li>
+        </ul>
+    </div>
+    <div class="fragment">
+        <p>Key questions:</p>
+        <ul>
+            <li>
+                How to find 
+                $\alpha_1,\alpha_2,\beta_1,\beta_2,\gamma_1,\gamma_2$ ?
+            </li>
+            <li>
+                How to find
+                $x_1(0),\, x_2(0),\, y_1(0),\, y_2(0), \, z_1(0),\, z_2(0)$ ?
+            </li>
+        </ul>
+        <p>
+            With these, numerical "path trackers" can take over.
+        </p>
+    </div>
+</section>
+
+<section>
+    <p>
+        That means
+        \[
+            H(
+                t^{\alpha_1} x_1,
+                t^{\alpha_2} x_2,
+                t^{\beta_1}  y_1,
+                t^{\beta_2}  y_2,
+                t^{\gamma_1} z_1,
+                t^{\gamma_2} z_2,
+                t
+            )
+            = 0
+        \]
+    </p>
+
+    <p class="fragment">
+        \[
+            \operatorname{init}_{\mathbf{v}} H ( \mathbf{x}(0) ) = \mathbf{0}
+        \]
+    </p>
+    <p class="fragment">
+        The starting point is a zero of the initial system.
+    </p>
+
+</section>
+
+<section>
+    <p>
+        \[
+            \begin{aligned}
+                \class{lowlight}{ 0 } &=
+                \class{highlight}{\overline{A}_{111} \, b_1 c_1 } + 
+                \class{lowlight}{ \overline{A}_{112} \, b_1 c_2 } + 
+                \class{highlight}{\overline{A}_{121} \, b_2 c_1 } + 
+                \class{lowlight}{ \overline{A}_{122} \, b_2 c_2 }
+                \\
+                \class{lowlight}{ 0 } &=
+                \class{lowlight}{ \overline{B}_{111} \,a_1 c_1 } + 
+                \class{lowlight}{ \overline{B}_{112} \,a_1 c_2 } + 
+                \class{highlight}{\overline{B}_{121} \,a_2 c_1 } + 
+                \class{highlight}{\overline{B}_{122} \,a_2 c_2 }
+                \\
+                \class{lowlight}{ 0 } &=
+                \class{lowlight}{ \overline{C}_{111} \,a_1 b_1 } + 
+                \class{highlight}{\overline{C}_{112} \,a_1 b_2 } + 
+                \class{highlight}{\overline{C}_{121} \,a_2 b_1 } + 
+                \class{lowlight}{ \overline{C}_{122} \,a_2 b_2 }
+                \\
+                \class{highlight}{1} &= 
+                \class{lowlight}{ a_1 } + 
+                \class{highlight}{a_2}
+                \\
+                \class{highlight}{1} &=
+                \class{lowlight}{ b_1 } +
+                \class{highlight}{b_2 }
+                \\
+                \class{highlight}{1} &= 
+                \class{highlight}{c_1} + 
+                \class{lowlight}{ c_2}
+            \end{aligned}
+        \]
+    </p>
+</section>

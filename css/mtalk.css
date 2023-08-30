@@ -30,7 +30,66 @@
 .reveal .title {
   color: white; }
 
+.theorem, .theoremlike, .definition, .example, .problem {
+  box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.5);
+  transition: 0.3s;
+  text-align: left;
+  margin: 15px 2px;
+  border-radius: 8px; }
+
 .theorem {
+  background: #d6cdd2;
+  padding: 5px 15px;
+  color: #000000; }
+
+.theoremlike {
+  background: #d6cdd2;
+  padding: 5px 15px;
+  color: #000000; }
+
+.definition {
+  background: #f2e0dc;
+  padding: 5px 15px;
+  color: #0d0709; }
+
+.example {
+  background: #EEEEEE;
+  padding: 5px 5px;
+  color: #000000; }
+
+.problem {
+  background: #EEEEEE;
+  padding: 5px 5px;
+  color: #000000; }
+
+div.theorem:before {
+  content: "Theorem.";
+  font-weight: bold;
+  color: #600f16; }
+
+div.theoremlike:before {
+  content: attr(data-type) ".";
+  font-weight: bold;
+  color: #600f16; }
+
+div.definition:before {
+  content: "Definition.";
+  font-weight: bold;
+  color: #600f16; }
+
+div.example:before {
+  counter-increment: example;
+  content: "Example " counter(example) ".";
+  font-weight: bold;
+  color: #600f16; }
+
+div.problem:before {
+  counter-increment: problem;
+  content: "Problem " counter(problem) ".";
+  font-weight: bold;
+  color: #600f16; }
+
+/* .theorem {
   box-shadow: 0 4px 8px 0 #2f2a44a8;
   background: #d6daf0;
   border-radius: 10px;
@@ -48,7 +107,7 @@
   padding: 2px 15px;
   margin: 15px 2px;
   /* color: #0257B7; */
-}
+} */
 
 .small {
   font-size: 85%; }
