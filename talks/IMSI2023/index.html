@@ -30,7 +30,7 @@ title: Polynomials in economy and the polyhedral homotopy
         where each player's outcome depends on the choices of all players.
     </p>
     <div class="r-stack">
-        <img src="rock-paper-scissors.svg" alt="" width="620">
+        <img src="rock-paper-scissors.svg" alt="" width="640" class="fragment">
         <div class="fragment">
             <br>
             <br>
@@ -68,78 +68,251 @@ title: Polynomials in economy and the polyhedral homotopy
 </section>
 
 <section>
-    <h3>Three-person games with two strategies</h3>
-    <p>
-        Three players, A, B, C
-        play a <em>non-cooperative</em> game.
+    <h3>Normal form game</h3>
+    <div class="r-stack">
+        <img src="two-players.svg" alt="" width="640">
+    </div>
+    <div class="cols">
+        <div class="col">
+            <table>
+                <tr>
+                    <td>A\B</td>
+                    <td>🪨</td>
+                    <td>📜</td>
+                    <td>✂️</td>
+                </tr>
+                <tr>
+                    <td>🪨</td>
+                    <td align="right">0</td>
+                    <td align="right">-1</td>
+                    <td align="right">+1</td>
+                </tr>
+                <tr>
+                    <td>📜</td>
+                    <td align="right">+1</td>
+                    <td align="right">0</td>
+                    <td align="right">-1</td>
+                </tr>
+                <tr>
+                    <td>✂️</td>
+                    <td align="right">-1</td>
+                    <td align="right">+1</td>
+                    <td align="right">0</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col">
+            <table>
+                <tr>
+                    <td>B\A</td>
+                    <td>🪨</td>
+                    <td>📜</td>
+                    <td>✂️</td>
+                </tr>
+                <tr>
+                    <td>🪨</td>
+                    <td align="right">0</td>
+                    <td align="right">-1</td>
+                    <td align="right">+1</td>
+                </tr>
+                <tr>
+                    <td>📜</td>
+                    <td align="right">+1</td>
+                    <td align="right">0</td>
+                    <td align="right">-1</td>
+                </tr>
+                <tr>
+                    <td>✂️</td>
+                    <td align="right">-1</td>
+                    <td align="right">+1</td>
+                    <td align="right">0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section data-auto-animate>
+    <h3>Pure vs mixed strategies</h3>
+    <div class="r-stack">
+        <img src="pure-strategies.svg" alt="" width="640">
+        <img src="mixed-strategy.svg" alt="" width="640" class="fragment">
+        <img src="mixed-strategies.svg" alt="" width="640" class="fragment">
+    </div>
+    <p class="fragment">
+        <b class="highlight">Mixed strategy</b>:
+        assignment of probabilities for pure strategies.
     </p>
-    <p class="fragment smaller lowlight">
-        (Players cannot form binding agreements)
+    <p class="fragment">
+        <b class="highlight">Totally mixed strategy</b>:
+        assignment of positive probabilities.
     </p>
 </section>
 
-<section>
+<section data-auto-animate>
+    <div class="r-stack">
+        <img src="mixed-strategies.svg" alt="" width="500">
+    </div>
+    <div class="cols">
+        <div class="col">
     <div class="center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
-            <!-- First Row: Stick Figures -->
-            <!-- First Stick Figure -->
-            <circle cx="50" cy="75" r="15" fill="black" /> <!-- Head -->
-            <text x="47" y="80" font-family="Arial" font-size="12" fill="white">A</text> <!-- Label for Head A -->
-            <line x1="50" y1="100" x2="40" y2="90" stroke="black" stroke-width="2" /> <!-- Left Arm -->
-            <line x1="50" y1="100" x2="60" y2="90" stroke="black" stroke-width="2" /> <!-- Right Arm -->
-            <line x1="50" y1="90" x2="50" y2="125" stroke="black" stroke-width="2" /> <!-- Body -->
-            <line x1="50" y1="125" x2="40" y2="190" stroke="black" stroke-width="2" /> <!-- Left Leg -->
-            <line x1="50" y1="125" x2="60" y2="190" stroke="black" stroke-width="2" /> <!-- Right Leg -->
-            
-            <!-- Arrows from Stick Figure A to Boxes -->
-            <line x1="50" y1="190" x2="75" y2="225" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a1 -->
-            <line x1="50" y1="190" x2="175" y2="225" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a2 -->
-            
-            <!-- Second Stick Figure -->
-            <circle cx="150" cy="75" r="15" fill="black" /> <!-- Head -->
-            <text x="147" y="80" font-family="Arial" font-size="12" fill="white">B</text> <!-- Label for Head B -->
-            <line x1="150" y1="100" x2="140" y2="90" stroke="black" stroke-width="2" /> <!-- Left Arm -->
-            <line x1="150" y1="100" x2="160" y2="90" stroke="black" stroke-width="2" /> <!-- Right Arm -->
-            <line x1="150" y1="90" x2="150" y2="125" stroke="black" stroke-width="2" /> <!-- Body -->
-            <line x1="150" y1="125" x2="140" y2="190" stroke="black" stroke-width="2" /> <!-- Left Leg -->
-            <line x1="150" y1="125" x2="160" y2="190" stroke="black" stroke-width="2" /> <!-- Right Leg -->
-            
-            <!-- Arrows from Stick Figure B to Boxes -->
-            <line x1="150" y1="190" x2="75" y2="265" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a1 -->
-            <line x1="150" y1="190" x2="175" y2="265" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a2 -->
-            
-            <!-- Third Stick Figure -->
-            <circle cx="250" cy="75" r="15" fill="black" /> <!-- Head -->
-            <text x="247" y="80" font-family="Arial" font-size="12" fill="white">C</text> <!-- Label for Head C -->
-            <line x1="250" y1="100" x2="240" y2="90" stroke="black" stroke-width="2" /> <!-- Left Arm -->
-            <line x1="250" y1="100" x2="260" y2="90" stroke="black" stroke-width="2" /> <!-- Right Arm -->
-            <line x1="250" y1="90" x2="250" y2="125" stroke="black" stroke-width="2" /> <!-- Body -->
-            <line x1="250" y1="125" x2="240" y2="190" stroke="black" stroke-width="2" /> <!-- Left Leg -->
-            <line x1="250" y1="125" x2="260" y2="190" stroke="black" stroke-width="2" /> <!-- Right Leg -->
-            
-            <!-- Arrows from Stick Figure C to Boxes -->
-            <line x1="250" y1="190" x2="75" y2="305" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a1 -->
-            <line x1="250" y1="190" x2="175" y2="305" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" /> <!-- Arrow a2 -->
-            
-            <!-- Second Row: Boxes -->
-            <!-- Box #1 -->
-            <rect x="75" y="275" width="50" height="50" fill="blue" />
-            <text x="100" y="300" font-family="Arial" font-size="12" fill="white">#1</text> <!-- Label for Box #1 -->
-            
-            <!-- Box #2 -->
-            <rect x="175" y="275" width="50" height="50" fill="green" />
-            <text x="200" y="300" font-family="Arial" font-size="12" fill="white">#2</text> <!-- Label for Box #2 -->
-            
-            <!-- Arrowhead marker definition -->
-            <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="0" refY="0" orient="auto" markerUnits="strokeWidth">
-                    <path d="M0,0 L10,5 L0,10 z" fill="black" />
-                </marker>
-            </defs>
-        </svg>
-        
+        <table>
+            <tr>
+                <td>A\B</td>
+                <td>🪨</td>
+                <td>📜</td>
+                <td>✂️</td>
+            </tr>
+            <tr>
+                <td>🪨</td>
+                <td align="right">0</td>
+                <td align="right">-1</td>
+                <td align="right">+1</td>
+            </tr>
+            <tr>
+                <td>📜</td>
+                <td align="right">+1</td>
+                <td align="right">0</td>
+                <td align="right">-1</td>
+            </tr>
+            <tr>
+                <td>✂️</td>
+                <td align="right">-1</td>
+                <td align="right">+1</td>
+                <td align="right">0</td>
+            </tr>
+        </table>
+    </div>
+        </div>
+        <div class="col">
+    <p>
+        \[
+            \begin{aligned}
+            &\text{A's expected payoff} \\ &=
+            (\,0\,) \cdot a_1 b_1 + (-1)    \cdot a_1 b_2 + (+1) \cdot a_1 b_3 \\ &+
+            (+1)    \cdot a_2 b_1 + (\,0\,) \cdot a_2 b_2 + (-1) \cdot a_2 b_3 \\ &+
+            (-1)    \cdot a_3 b_1 + (+1)    \cdot a_3 b_2 + (\,0\,) \cdot a_3 b_3
+            \end{aligned}
+        \]
+    </p>
+
+        </div>
     </div>
 </section>
+
+<section data-auto-animate>
+    <div class="r-stack">
+        <img src="one-side-equilibrium.svg" alt="" width="460" data-id="nash-eq">
+    </div>
+    <p class="fragment">
+        \[
+            \begin{aligned}
+                \text{A's payoff} &=
+                (\;0\;) \cdot a_1 \class{highlight}{\frac{1}{3}} + (-1)    \cdot a_1 \class{highlight}{\frac{1}{3}} + (+1)    \cdot a_1 \class{highlight}{\frac{1}{3}} \\ &+
+                (+1)    \cdot a_2 \class{highlight}{\frac{1}{3}} + (\;0\;) \cdot a_2 \class{highlight}{\frac{1}{3}} + (-1)    \cdot a_2 \class{highlight}{\frac{1}{3}} \\ &+
+                (-1)    \cdot a_3 \class{highlight}{\frac{1}{3}} + (+1)    \cdot a_3 \class{highlight}{\frac{1}{3}} + (\;0\;) \cdot a_3 \class{highlight}{\frac{1}{3}}
+                \class{highlight}{=0}
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment center">
+        No way A can improve it.
+    </p>
+</section>
+
+<section data-auto-animate>
+    <div class="r-stack">
+        <img src="nash-equilibrium.svg" alt="" width="460">
+    </div>
+    <div class="cols fragment">
+        <div class="col">
+            <p class="smaller">
+                \[
+                    \begin{aligned}
+                    \class{highlight}{0} &\ge
+                    (\;0\;) \cdot a_1 \class{highlight}{\frac{1}{3}} + (-1)    \cdot a_1 \class{highlight}{\frac{1}{3}} + (+1)    \cdot a_1 \class{highlight}{\frac{1}{3}} \\ &+
+                    (+1)    \cdot a_2 \class{highlight}{\frac{1}{3}} + (\;0\;) \cdot a_2 \class{highlight}{\frac{1}{3}} + (-1)    \cdot a_2 \class{highlight}{\frac{1}{3}} \\ &+
+                    (-1)    \cdot a_3 \class{highlight}{\frac{1}{3}} + (+1)    \cdot a_3 \class{highlight}{\frac{1}{3}} + (\;0\;) \cdot a_3 \class{highlight}{\frac{1}{3}}
+                    \end{aligned}
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p class="smaller">
+                \[
+                    \begin{aligned}
+                    \class{highlight}{0} &\ge
+                    (\;0\;) \cdot \class{highlight}{\frac{1}{3}} b_1 + (-1)    \cdot \class{highlight}{\frac{1}{3}} b_1 + (+1)    \cdot \class{highlight}{\frac{1}{3}} b_1 \\ &+
+                    (+1)    \cdot \class{highlight}{\frac{1}{3}} b_2 + (\;0\;) \cdot \class{highlight}{\frac{1}{3}} b_2 + (-1)    \cdot \class{highlight}{\frac{1}{3}} b_2 \\ &+
+                    (-1)    \cdot \class{highlight}{\frac{1}{3}} b_3 + (+1)    \cdot \class{highlight}{\frac{1}{3}} b_3 + (\;0\;) \cdot \class{highlight}{\frac{1}{3}} b_3 
+                    \end{aligned}
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        <b class="highlight">Nash equilibrium</b>:
+        strategies
+        $(a_1,a_2,a_3)$ and $(b_1,b_2,b_3)$
+        where neither can increase payoff by changing their strategy unilaterally.
+        <br>
+        <span class="lowlight smaller">
+            J. Nash.
+            <em>Equilibrium points in n-person games.</em>
+            Proc. Natl. Acad. Sci. 36, 48-49 (1950).
+        </span>
+    </p>
+</section>
+
+<!--------------------------- 3 Players ----------------------------->
+<section>
+    <!-- <h3>Three-person games with two pure strategies</h3> -->
+    <p>
+        $A,B,C$ play a non-cooperative game.
+        Each have 2 pure strategies.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="r-stack">
+                <img src="three-players.svg" alt="">
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                Three mixed strategies
+                \[
+                    \begin{aligned}
+                        A &: (a_1,a_2) \\
+                        B &: (b_1,b_2) \\
+                        C &: (c_1,c_2)
+                    \end{aligned}
+                \]
+                with
+                \[
+                    \begin{aligned}
+                        a_1 + a_2 &= 1 \\
+                        b_1 + b_2 &= 1 \\
+                        c_1 + c_2 &= 1 \\
+                    \end{aligned}
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        We only focus on totally mixed strategies
+        ($a_1,a_2,b_1,b_2,c_1,c_2 > 0$).
+    </p>
+    <p class="fragment">
+        \[
+            \begin{aligned}
+                (a_1,a_2) &\in \operatorname{int} \Delta &
+                (b_1,b_2) &\in \operatorname{int} \Delta &
+                (c_1,c_2) &\in \operatorname{int} \Delta
+            \end{aligned}
+        \]
+    </p>
+</section>
+
 <section>
     <h3> Player A's view </h3>
     <p>
@@ -202,11 +375,27 @@ title: Polynomials in economy and the polyhedral homotopy
 
 <section>
     <h3>Payoff arrays</h3>
+    <div class="r-stack"><img src="2x2x2-payoff.svg" alt="" width="450"></div>
     <p>
         \[
             A_{ijk} \; := \;
-            \text{The payoff for situation } (ijk)
+            \text{The payoff for situation } (ijk) \text{ for A}
         \]
+    </p>
+    <p class="fragment">
+        \[
+            B_{ijk} \; := \;
+            \text{The payoff for situation } (ijk) \text{ for B}
+        \]
+    </p>
+    <p class="fragment">
+        \[
+            C_{ijk} \; := \;
+            \text{The payoff for situation } (ijk) \text{ for C}
+        \]
+    </p>
+    <p class="center fragment">
+        The game is encoded in $2 \times 2 \times 2$ arrays $A,B,C$.
     </p>
 </section>
 <section>
@@ -239,35 +428,114 @@ title: Polynomials in economy and the polyhedral homotopy
             \end{aligned}
         \]
     </p>
-    <p class="fragment">
-        \[
-            \sum_{i=1}^2 \sum_{j=1}^2 \sum_{k=1}^2 A_{ijk} \, a_i \, b_i \, c_i
-        \]
-    </p>
+    <div class="equ">
+        <span class="fragment">
+            \[
+                \sum_{i=1}^2 \sum_{j=1}^2 \sum_{k=1}^2 A_{ijk} \, a_i \, b_j \, c_k
+            \]
+        </span>
+        <span class="fragment">
+            \[
+                =\;
+                \sum_{i,j,k=1}^2 A_{ijk} \, a_i \, b_j \, c_k
+            \]
+        </span>
+    </div>
 </section>
 
-<section>
+<section data-auto-animate>
     <p>
         \[
             \begin{aligned}
-                \text{Player A's payoff} &= \sum_{i,j,k=1}^2 A_{ijk} \, a_i \, b_i \, c_i \\
-                \text{Player B's payoff} &= \sum_{i,j,k=1}^2 B_{ijk} \, a_i \, b_i \, c_i \\
-                \text{Player C's payoff} &= \sum_{i,j,k=1}^2 C_{ijk} \, a_i \, b_i \, c_i
+                \text{Player A's payoff} &= \sum_{i,j,k=1}^2 A_{ijk} \, a_i \, b_j \, c_k \\
+                \text{Player B's payoff} &= \sum_{i,j,k=1}^2 B_{ijk} \, a_i \, b_j \, c_k \\
+                \text{Player C's payoff} &= \sum_{i,j,k=1}^2 C_{ijk} \, a_i \, b_j \, c_k
             \end{aligned}
         \]
     </p>
-    <div class="fragment definition">
+    <div class="fragment definition" data-id="def-nash">
         A vector $(a_1,a_2,b_1,b_2,c_1,c_2)$
         is called a <strong class="highlight">Nash equilibrium</strong>
         if no player can increase his/her own payoff
         while the other two players keep their strategies fixed.
     </div>
+    <p class="fragment">
+        There are two aspects: The <span class="fragment highlight-red">algebraic</span> and the combinatorial.
+    </p>
+    <div class="fragment definition">
+        A Nash equilibrium is <strong class="highlight">totally mixed</strong>
+        (fully mixed) if it contains only <em>positive entries</em>.
+        <em class="lowlight">(Every pure strategy is used)</em>
+    </div>
+
+</section>
+
+<section data-auto-animate>
+    <div class="fragment definition" data-id="def-nash">
+        A vector $(a_1,a_2,b_1,b_2,c_1,c_2)$
+        is called a <strong class="highlight">Nash equilibrium</strong>
+        if no player can increase his/her own payoff
+        while the other two players keep their strategies fixed.
+    </div>
+    <div class="equ">
+        <span class="fragment">
+            \[
+                \begin{gathered}
+                    \text{A's payoff with} \\
+                    \text{strategy } (a_1,a_2)
+                \end{gathered}
+            \]
+        </span>
+        <span class="fragment">
+            \[
+                \ge \;
+                \begin{gathered}
+                    \text{A's payoff with} \\
+                    \text{any strategy }
+                    (\,
+                        \class{highlight}{\overline{a}_1},
+                        \class{highlight}{\overline{a}_2}
+                    )
+                \end{gathered}
+                \;\;
+                \left(
+                \begin{gathered}
+                    \text{with fixed} \\ (b_1,b_2), (c_1,c_2)
+                \end{gathered}
+                \right)
+            \]
+        </span>
+    </div>
+    <p class="fragment">
+        \[
+            \sum_{i,j,k=1}^2 A_{ijk} \, a_i \, b_j \, c_k
+            \ge
+            \sum_{i,j,k=1}^2 A_{ijk} \, 
+                \class{highlight}{\overline{a}_i} \, b_j \, c_k
+            \quad\text{for any }
+            (\class{highlight}{\overline{a}_1},\class{highlight}{\overline{a}_2}) \in \operatorname{int} \Delta
+        \]
+    </p>
+    <p class="fragment">
+        In particular, this is true for
+        $(1,0)$ and $(0,1)$.
+    </p>
+    <p class="fragment">
+        \[
+            \begin{aligned}
+                \alpha &= \sum_{i,j,k=1}^2 A_{ijk} \, a_i \, b_j \, c_k &
+                \alpha &\ge \sum_{j,k=1}^2 A_{\class{highlight}{1}jk} \, b_j \, c_k \\ && 
+                \alpha &\ge \sum_{j,k=1}^2 A_{\class{highlight}{2}jk} \, b_j \, c_k
+            \end{aligned}
+        \]
+    </p>
 
 </section>
 
 <section data-auto-animate>
     <span class="fragment fade-out" data-fragment-index="2">
-        9 polynomial equations in the 9 variables
+        After some algebraic manipuations,
+        we get 9 equations in the 9 variables
         $a_1,a_2,b_1,b_2,c_1,c_2$ (mixed strategies)
         and $\alpha,\beta,\gamma$ (payoffs).
     </span>
@@ -406,6 +674,11 @@ title: Polynomials in economy and the polyhedral homotopy
 
 <section>
     <br/>
+    <p>
+        <strong>Question</strong>:
+        How to compute totally mixed Nash equilibria
+        (in general) ?
+    </p>
     <br/>
     <br/>
     <p>
@@ -413,7 +686,7 @@ title: Polynomials in economy and the polyhedral homotopy
     </p>
     <ul>
         <li>
-            Compute all complex solutions
+            Compute all <em>nonzero</em> complex solutions ($\mathbb{C}^*$-solutions)
         </li>
         <li>
             Numerical homotopy method (continuous deformation)
@@ -426,8 +699,8 @@ title: Polynomials in economy and the polyhedral homotopy
 
 <section data-auto-animate="">
     <p>
-        <!-- <span class="highlight">Totally mixed Nash equilibria</span>
-        are defined by -->
+        <span class="highlight">Totally mixed Nash equilibria</span>
+        are defined by the equations
         <span data-id="Aij">
         \[
             0 =
@@ -492,6 +765,43 @@ title: Polynomials in economy and the polyhedral homotopy
 </section>
 
 <section data-auto-animate>
+    <p>
+        We consider the <em class="highlight">generic</em> version
+    </p>
+    <p data-id="nashsys">
+        \[
+            \begin{aligned}
+                0 &=
+                \class{highlight}{\overline{A}_{111}} \, b_1 c_1 + 
+                \class{highlight}{\overline{A}_{112}} \, b_1 c_2 + 
+                \class{highlight}{\overline{A}_{121}} \, b_2 c_1 + 
+                \class{highlight}{\overline{A}_{122}} \, b_2 c_2 
+                \\
+                0 &=
+                \class{highlight}{\overline{B}_{11}} a_1 c_1 + 
+                \class{highlight}{\overline{B}_{12}} a_1 c_2 + 
+                \class{highlight}{\overline{B}_{21}} a_2 c_1 + 
+                \class{highlight}{\overline{B}_{22}} a_2 c_2 
+                \\
+                0 &=
+                \class{highlight}{\overline{C}_{11}} a_1 b_1 + 
+                \class{highlight}{\overline{C}_{12}} a_1 b_2 + 
+                \class{highlight}{\overline{C}_{21}} a_2 b_1 + 
+                \class{highlight}{\overline{C}_{22}} a_2 b_2 
+                \\
+                \class{highlight}{\delta_1} &= a_1 + a_2 \\
+                \class{highlight}{\delta_2} &= b_1 + b_2 \\
+                \class{highlight}{\delta_3} &= c_1 + c_2
+            \end{aligned}
+        \]
+    </p>
+    <p>
+        where highlight coefficients are randomly perturbed.
+    </p>
+
+</section>
+
+<section data-auto-animate>
     <p data-id="nashsys">
         \[
             \begin{aligned}
@@ -513,9 +823,9 @@ title: Polynomials in economy and the polyhedral homotopy
                 \overline{C}_{121} \,a_2 b_1 + 
                 \overline{C}_{122} \,a_2 b_2 
                 \\
-                1 &= a_1 + a_2 \\
-                1 &= b_1 + b_2 \\
-                1 &= c_1 + c_2
+                \delta_1 &= a_1 + a_2 \\
+                \delta_2 &= b_1 + b_2 \\
+                \delta_3 &= c_1 + c_2
             \end{aligned}
         \]
     </p>
@@ -566,9 +876,9 @@ title: Polynomials in economy and the polyhedral homotopy
                 \overline{C}_{121} \class{highlight}{t^{1.3}} a_2 b_1 + 
                 \overline{C}_{122} \class{highlight}{t^{1.6}} a_2 b_2 
                 \\
-                1 &= \class{highlight}{t} \,a_1 + \class{highlight}{t} \,a_2 \\
-                1 &= \class{highlight}{t} \,b_1 + \class{highlight}{t} \,b_2 \\
-                1 &= \class{highlight}{t} \,c_1 + \class{highlight}{t} \,c_2
+                \delta_1 &= \class{highlight}{t} \,a_1 + \class{highlight}{t} \,a_2 \\
+                \delta_2 &= \class{highlight}{t} \,b_1 + \class{highlight}{t} \,b_2 \\
+                \delta_3 &= \class{highlight}{t} \,c_1 + \class{highlight}{t} \,c_2
             \end{aligned}
         \]
     </p>
@@ -578,9 +888,122 @@ title: Polynomials in economy and the polyhedral homotopy
             <span class="highlight">$t \to 0$</span> ?
         </p>
     </div>
+    <div class="equ fragment" data-id="homotopy">
+        <span class="small">
+            \[
+                H(a_1,a_2,b_1,b_2,c_1,c_2,\class{highlight}{t}) =
+            \]
+        </span>
+        <span class="smaller">
+        \[
+            \left\{
+            \begin{aligned}
+                &\overline{A}_{111} \class{highlight}{t^{1.0}} b_1 c_1 + 
+                \overline{A}_{112} \class{highlight}{t^{1.4}} b_1 c_2 + 
+                \overline{A}_{121} \class{highlight}{t^{1.2}} b_2 c_1 + 
+                \overline{A}_{122} \class{highlight}{t^{0.7}} b_2 c_2 
+                \\
+                &
+                \overline{B}_{111} \class{highlight}{t^{1.2}} a_1 c_1 + 
+                \overline{B}_{112} \class{highlight}{t^{0.8}} a_1 c_2 + 
+                \overline{B}_{121} \class{highlight}{t^{1.9}} a_2 c_1 + 
+                \overline{B}_{122} \class{highlight}{t^{1.1}} a_2 c_2 
+                \\
+                &
+                \overline{C}_{111} \class{highlight}{t^{0.5}} a_1 b_1 + 
+                \overline{C}_{112} \class{highlight}{t^{0.3}} a_1 b_2 + 
+                \overline{C}_{121} \class{highlight}{t^{1.3}} a_2 b_1 + 
+                \overline{C}_{122} \class{highlight}{t^{1.6}} a_2 b_2 
+                \\
+                &\class{highlight}{t} \,a_1 + \class{highlight}{t} \,a_2 - \delta_1 \\
+                &\class{highlight}{t} \,b_1 + \class{highlight}{t} \,b_2 - \delta_2 \\
+                &\class{highlight}{t} \,c_1 + \class{highlight}{t} \,c_2 - \delta_3
+            \end{aligned}
+            \right.
+        \]
+        </span>
+    </div>
+    <p class="fragment">
+        We considered the <em>homotopy</em> function
+        $H: (\mathbb{C}^*)^6 \times [0,1] \to \mathbb{C}^6$,
+        and the "paths" defined by $H = 0$.
+    </p>
+</section>
+
+<section data-auto-animate>
+    <div class="equ" data-id="homotopy">
+        <span class="small">
+            \[
+                H(a_1,a_2,b_1,b_2,c_1,c_2,\class{highlight}{t}) =
+            \]
+        </span>
+        <span class="smaller">
+            \[
+                \left\{
+                \begin{aligned}
+                    &\overline{A}_{111} \class{highlight}{t^{1.0}} b_1 c_1 + 
+                    \overline{A}_{112} \class{highlight}{t^{1.4}} b_1 c_2 + 
+                    \overline{A}_{121} \class{highlight}{t^{1.2}} b_2 c_1 + 
+                    \overline{A}_{122} \class{highlight}{t^{0.7}} b_2 c_2 
+                    \\
+                    &
+                    \overline{B}_{111} \class{highlight}{t^{1.2}} a_1 c_1 + 
+                    \overline{B}_{112} \class{highlight}{t^{0.8}} a_1 c_2 + 
+                    \overline{B}_{121} \class{highlight}{t^{1.9}} a_2 c_1 + 
+                    \overline{B}_{122} \class{highlight}{t^{1.1}} a_2 c_2 
+                    \\
+                    &
+                    \overline{C}_{111} \class{highlight}{t^{0.5}} a_1 b_1 + 
+                    \overline{C}_{112} \class{highlight}{t^{0.3}} a_1 b_2 + 
+                    \overline{C}_{121} \class{highlight}{t^{1.3}} a_2 b_1 + 
+                    \overline{C}_{122} \class{highlight}{t^{1.6}} a_2 b_2 
+                    \\
+                    &\class{highlight}{t} \,a_1 + \class{highlight}{t} \,a_2 - \delta_1 \\
+                    &\class{highlight}{t} \,b_1 + \class{highlight}{t} \,b_2 - \delta_2 \\
+                    &\class{highlight}{t} \,c_1 + \class{highlight}{t} \,c_2 - \delta_3
+                \end{aligned}
+                \right.
+            \]
+        </span>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <div class="center fragment">
+                <img src="two-paths.svg" alt="">
+            </div>
+        </div>
+        <div class="col">
+            <ol>
+                <li class="fragment">
+                    <b>IF</b> we can locate the starting points near $t=0$......
+                </li>
+                <li class="fragment">
+                    <b>IF</b> we can track these paths......
+                </li>
+                <li class="fragment">
+                    <b>IF</b> we can reach their limit points at $t=1$......
+                </li>
+            </ol>
+            <p class="center fragment">
+                ......then we can find <strong>all</strong>
+                (totally mixed) Nash equilibria.
+            </p>
+            <p class="center lowlight fragment">
+                (We will focus on the 1st "IF")
+            </p>
+        </div>
+    </div>
 </section>
 
 <section>
+    <div class="r-stack"><img src="starting-at-infinity.svg" alt=""></div>
+    <p class="center">
+        <strong>Complication:</strong>
+        Near $t=0$, the paths escapes $(\mathbb{C}^*)^6$.
+    </p>
+</section>
+
+<section data-auto-animate>
     <p>
         Can we <span class="highlight">"describe"</span>
         the local behavior of the paths as
@@ -590,29 +1013,26 @@ title: Polynomials in economy and the polyhedral homotopy
         <strong>Goal:</strong>
         Find a local parametrization for each path.
     </p> -->
-    <div class="theoremlike fragment" data-type="Assumption">
+    <div class="theoremlike fragment" data-type="Assumption" data-id="starting-assumption">
         Near $t=0$, each path is parametrized by some
         \[
             \begin{aligned}
-                a_1(t) &= t^{\alpha_1} x_1(t) &
-                a_2(t) &= t^{\alpha_2} x_2(t) \\
-                b_1(t) &= t^{\beta_1} y_1(t) &
-                b_2(t) &= t^{\beta_2} y_2(t) \\
-                c_1(t) &= t^{\gamma_1} z_1(t) &
-                c_2(t) &= t^{\gamma_2} z_2(t)
+                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} a_1 + o(t) &
+                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} a_2 + o(t) \\
+                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} b_1 + o(t) &
+                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} b_2 + o(t) \\
+                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} c_1 + o(t) &
+                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} c_2 + o(t)
             \end{aligned}
         \]
         where 
         <ul>
             <li>
-                $\alpha_1,\alpha_2,\beta_1,\beta_2,\gamma_1,\gamma_2 \in \mathbb{Q}$
+                $\alpha_1,\alpha_2,\beta_1,\beta_2,\gamma_1,\gamma_2,m \in \mathbb{Z}$
                 are constants (path dependent),
             </li>
             <li>
-                $x_1(0),\, x_2(0),\, y_1(0),\, y_2(0), \, z_1(0),\, z_2(0) \in \mathbb{C}^* = \mathbb{C} \setminus \{0\}$.
-            </li>
-            <li>
-                $x_1,x_2,y_1,y_2,z_1,z_2$ are holomorphic in $t^m$ for some $m \in \mathbb{Z}^+$.
+                $a_1, a_2, b_1, b_2, c_1, c_2 \in \mathbb{C}^*$.
             </li>
         </ul>
     </div>
@@ -620,12 +1040,12 @@ title: Polynomials in economy and the polyhedral homotopy
         <p>Key questions:</p>
         <ul>
             <li>
-                How to find 
-                $\alpha_1,\alpha_2,\beta_1,\beta_2,\gamma_1,\gamma_2$ ?
+                How to find exponents
+                $\alpha_1,\alpha_2,\beta_1,\beta_2,\gamma_1,\gamma_2$ and $m$ ?
             </li>
             <li>
-                How to find
-                $x_1(0),\, x_2(0),\, y_1(0),\, y_2(0), \, z_1(0),\, z_2(0)$ ?
+                How to find leading coefficient
+                $a_1,\, a_2,\, b_1,\, b_2, \, c_1,\, c_2$ ?
             </li>
         </ul>
         <p>
@@ -634,36 +1054,193 @@ title: Polynomials in economy and the polyhedral homotopy
     </div>
 </section>
 
-<section>
+<section data-auto-animate>
+    <div class="theoremlike fragment" data-type="Assumption" data-id="starting-assumption">
+        Near $t=0$, each path is parametrized by some
+        \[
+            \begin{aligned}
+                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} a_1 + o(t) &
+                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} a_2 + o(t) \\
+                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} b_1 + o(t) &
+                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} b_2 + o(t) \\
+                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} c_1 + o(t) &
+                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} c_2 + o(t)
+            \end{aligned}
+        \]
+    </div>
     <p>
         That means
         \[
             H(
-                t^{\alpha_1} x_1,
-                t^{\alpha_2} x_2,
-                t^{\beta_1}  y_1,
-                t^{\beta_2}  y_2,
-                t^{\gamma_1} z_1,
-                t^{\gamma_2} z_2,
+                \boldsymbol{a}_1(t),
+                \boldsymbol{a}_2(t),
+                \boldsymbol{b}_1(t),
+                \boldsymbol{b}_2(t),
+                \boldsymbol{c}_1(t),
+                \boldsymbol{c}_2(t),
                 t
             )
             = 0
         \]
     </p>
-
     <p class="fragment">
+        Define
         \[
-            \operatorname{init}_{\mathbf{v}} H ( \mathbf{x}(0) ) = \mathbf{0}
+            \mathbf{v} =
+            \begin{bmatrix}
+                \frac{\alpha_1}{m},
+                \frac{\alpha_2}{m},
+                \frac{\beta_1}{m},
+                \frac{\beta_2}{m},
+                \frac{\gamma_1}{m},
+                \frac{\gamma_2}{m},
+                1
+            \end{bmatrix}
+            \in \mathbb{Q}^6 \times \mathbb{Q}
         \]
     </p>
     <p class="fragment">
-        The starting point is a zero of the initial system.
+        Then
+        <span data-id="init-condition">
+            \[
+                \operatorname{init}_{\mathbf{v}} H ( 
+                    a_1, a_2,
+                    b_1, b_2,
+                    c_1, c_2,
+                    1
+                ) = \mathbf{0}
+            \]
+        </span>
+        i.e., the starting point is a zero of the initial system
+        (in $(\mathbb{C}^*)^6$).
     </p>
 
 </section>
 
 <section>
+    <h3>Initial systems</h3>
     <p>
+        \[
+            f(\mathbf{x}) = 
+            \sum_{\mathbf{a} \in S} \, c_{\mathbf{a}} \mathbf{x}^{\mathbf{a}}
+            \quad\longrightarrow\quad
+            \operatorname{init}_{\mathbf{v}} f =
+            \sum_{\mathbf{a} \in (S)_{\mathbf{v}}} \, c_{\mathbf{a}} \mathbf{x}^{\mathbf{a}}
+        \]
+        where $(S)_\mathbf{v}$ is the subset of $S$
+        on which $\langle \cdot, \mathbf{v} \rangle$ is minimized.
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="r-stack">
+                <img src="newton-polygon.svg" alt="" width="250" class="fragment fade-in-then-out">
+                <img src="newton-polygon-inner1.svg" alt="" width="330" class="fragment fade-in-then-out">
+                <img src="newton-polygon-inner2.svg" alt="" width="250" class="fragment">
+            </div>
+        </div>
+        <div class="col">
+            <p class="small">
+                \[
+                    f(x,y) 
+                        = c_{00} \color{purple}{x^0 y^0}
+                        + c_{10} \color{green}{x^2 y^0} 
+                        + c_{22} \color{blue}{x^2 y^2} 
+                        + c_{12} \color{red}{x^1 y^2} 
+                \]
+            </p>
+            <p class="fragment fade-in-then-out">
+                \[
+                    \operatorname{init}_{\mathbf{v}} f(x,y) 
+                        = c_{00} \color{purple}{x^0 y^0}
+                \]
+            </p>
+            <p class="fragment fade-in-then-out">
+                \[
+                    \operatorname{init}_{\mathbf{v}} f(x,y) 
+                        = c_{00} \color{purple}{x^0 y^0}
+                        + c_{12} \color{red}{x^1 y^2} 
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        \[
+            \operatorname{init}_{\mathbf{v}}
+            \begin{bmatrix}
+                f_1 \\ \vdots \\ f_n
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                \operatorname{init}_{\mathbf{v}} f_1 \\ 
+                \vdots \\ 
+                \operatorname{init}_{\mathbf{v}} f_n
+            \end{bmatrix}
+        \]
+    </p>
+    <p class="fragment">
+        \[
+            \operatorname{init}_{\mathbf{v}} H ( 
+                a_1, a_2,
+                b_1, b_2,
+                c_1, c_2,
+                1
+            ) = \mathbf{0}
+        \]
+    </p>
+    <p class="fragment">
+        This requires very special $\mathbf{v}$.
+    </p>
+</section>
+
+<section>
+    <p>
+        For a "<em>bad</em>" choice of $\mathbf{v}$,
+        $\operatorname{init}_{\mathbf{v}} H = \mathbf{0} \; \to$
+        \[
+            \begin{aligned}
+                \class{lowlight}{ 0 } &=
+                \class{highlight}{\overline{A}_{111} \, b_1 c_1 } + 
+                \class{lowlight}{ \overline{A}_{112} \, b_1 c_2 } + 
+                \class{lowlight}{\overline{A}_{121} \, b_2 c_1 } + 
+                \class{lowlight}{ \overline{A}_{122} \, b_2 c_2 }
+                \\
+                \class{lowlight}{ 0 } &=
+                \class{highlight}{ \overline{B}_{111} \,a_1 c_1 } + 
+                \class{lowlight}{ \overline{B}_{112} \,a_1 c_2 } + 
+                \class{lowlight}{\overline{B}_{121} \,a_2 c_1 } + 
+                \class{lowlight}{\overline{B}_{122} \,a_2 c_2 }
+                \\
+                \class{lowlight}{ 0 } &=
+                \class{highlight}{ \overline{C}_{111} \,a_1 b_1 } + 
+                \class{lowlight}{\overline{C}_{112} \,a_1 b_2 } + 
+                \class{lowlight}{\overline{C}_{121} \,a_2 b_1 } + 
+                \class{lowlight}{ \overline{C}_{122} \,a_2 b_2 }
+                \\
+                \class{lowlight}{1} &= 
+                \class{highlight}{ a_1 } + 
+                \class{lowlight}{a_2}
+                \\
+                \class{lowlight}{1} &=
+                \class{highlight}{ b_1 } +
+                \class{lowlight}{b_2 }
+                \\
+                \class{lowlight}{1} &= 
+                \class{highlight}{c_1} + 
+                \class{lowlight}{ c_2}
+            \end{aligned}
+        \]
+    </p>
+    <p class="center fragment">
+        $\operatorname{init}_{\mathbf{v}} H = \mathbf{0} \; \to$
+        has <strong>no</strong> solution in
+        $(\mathbb{C}^*)^6$.
+    </p>
+</section>
+
+<section>
+    <p>
+        For a "<em>good</em>" choice of $\mathbf{v}$,
+        $\operatorname{init}_{\mathbf{v}} H = \mathbf{0} \; \to$
         \[
             \begin{aligned}
                 \class{lowlight}{ 0 } &=
@@ -698,4 +1275,209 @@ title: Polynomials in economy and the polyhedral homotopy
             \end{aligned}
         \]
     </p>
+    <ul class="fragment">
+        <li>A system of binomials</li>
+        <li>Has solution(s) in $(\mathbb{C}^*)^6$</li>
+    </ul>
+</section>
+
+<section>
+    <p>
+        Another "<em>good</em>" choice of $\mathbf{v}$,
+        $\operatorname{init}_{\mathbf{v}} H = \mathbf{0} \; \to$
+        \[
+            \begin{aligned}
+                \class{lowlight}{ 0 } &=
+                \class{highlight}{\overline{A}_{111} \, b_1 c_1 } + 
+                \class{lowlight}{ \overline{A}_{112} \, b_1 c_2 } + 
+                \class{lowlight}{ \overline{A}_{121} \, b_2 c_1 } + 
+                \class{highlight}{\overline{A}_{122} \, b_2 c_2 }
+                \\
+                \class{lowlight}{ 0 } &=
+                \class{lowlight}{ \overline{B}_{111} \,a_1 c_1 } + 
+                \class{highlight}{\overline{B}_{112} \,a_1 c_2 } + 
+                \class{lowlight}{ \overline{B}_{121} \,a_2 c_1 } + 
+                \class{highlight}{\overline{B}_{122} \,a_2 c_2 }
+                \\
+                \class{lowlight}{ 0 } &=
+                \class{highlight}{\overline{C}_{111} \,a_1 b_1 } + 
+                \class{highlight}{\overline{C}_{112} \,a_1 b_2 } + 
+                \class{lowlight}{ \overline{C}_{121} \,a_2 b_1 } + 
+                \class{lowlight}{ \overline{C}_{122} \,a_2 b_2 }
+                \\
+                \class{highlight}{1} &= 
+                \class{lowlight}{ a_1 } + 
+                \class{highlight}{a_2}
+                \\
+                \class{highlight}{1} &=
+                \class{highlight}{b_1 } +
+                \class{lowlight}{ b_2 }
+                \\
+                \class{highlight}{1} &= 
+                \class{highlight}{c_1} + 
+                \class{lowlight}{ c_2}
+            \end{aligned}
+        \]
+    </p>
+    <ul class="fragment">
+        <li>Also a system of binomials</li>
+        <li>Also has one solution in $(\mathbb{C}^*)^6$</li>
+    </ul>
+</section>
+
+<section data-auto-animate>
+    <p class="small">
+        \[
+            \left\{
+            \begin{aligned}
+                \class{lowlight}{ 0 } &=
+                \class{highlight}{\overline{A}_{111} \, b_1 c_1 } + 
+                \class{lowlight}{ \overline{A}_{112} \, b_1 c_2 } + 
+                \class{highlight}{\overline{A}_{121} \, b_2 c_1 } + 
+                \class{lowlight}{ \overline{A}_{122} \, b_2 c_2 }
+                \\
+                \class{lowlight}{ 0 } &=
+                \class{lowlight}{ \overline{B}_{111} \,a_1 c_1 } + 
+                \class{lowlight}{ \overline{B}_{112} \,a_1 c_2 } + 
+                \class{highlight}{\overline{B}_{121} \,a_2 c_1 } + 
+                \class{highlight}{\overline{B}_{122} \,a_2 c_2 }
+                \\
+                \class{lowlight}{ 0 } &=
+                \class{lowlight}{ \overline{C}_{111} \,a_1 b_1 } + 
+                \class{highlight}{\overline{C}_{112} \,a_1 b_2 } + 
+                \class{highlight}{\overline{C}_{121} \,a_2 b_1 } + 
+                \class{lowlight}{ \overline{C}_{122} \,a_2 b_2 }
+                \\
+                \class{highlight}{1} &= 
+                \class{lowlight}{ a_1 } + 
+                \class{highlight}{a_2}
+                \\
+                \class{highlight}{1} &=
+                \class{lowlight}{ b_1 } +
+                \class{highlight}{b_2 }
+                \\
+                \class{highlight}{1} &= 
+                \class{highlight}{c_1} + 
+                \class{lowlight}{ c_2}
+            \end{aligned}
+            \right.
+        \]
+        \[
+            \left\{
+            \begin{aligned}
+                \class{lowlight}{ 0 } &=
+                \class{highlight}{\overline{A}_{111} \, b_1 c_1 } + 
+                \class{lowlight}{ \overline{A}_{112} \, b_1 c_2 } + 
+                \class{lowlight}{ \overline{A}_{121} \, b_2 c_1 } + 
+                \class{highlight}{\overline{A}_{122} \, b_2 c_2 }
+                \\
+                \class{lowlight}{ 0 } &=
+                \class{lowlight}{ \overline{B}_{111} \,a_1 c_1 } + 
+                \class{highlight}{\overline{B}_{112} \,a_1 c_2 } + 
+                \class{lowlight}{ \overline{B}_{121} \,a_2 c_1 } + 
+                \class{highlight}{\overline{B}_{122} \,a_2 c_2 }
+                \\
+                \class{lowlight}{ 0 } &=
+                \class{highlight}{\overline{C}_{111} \,a_1 b_1 } + 
+                \class{highlight}{\overline{C}_{112} \,a_1 b_2 } + 
+                \class{lowlight}{ \overline{C}_{121} \,a_2 b_1 } + 
+                \class{lowlight}{ \overline{C}_{122} \,a_2 b_2 }
+                \\
+                \class{highlight}{1} &= 
+                \class{lowlight}{ a_1 } + 
+                \class{highlight}{a_2}
+                \\
+                \class{highlight}{1} &=
+                \class{highlight}{b_1 } +
+                \class{lowlight}{ b_2 }
+                \\
+                \class{highlight}{1} &= 
+                \class{highlight}{c_1} + 
+                \class{lowlight}{ c_2}
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <p data-id="starting-point-can-be">
+        Starting points of the "solution paths"
+        can be computed.
+    </p>
+</section>
+
+<section data-auto-animate>
+    <p data-id="starting-point-can-be">
+        Starting points of the "solution paths"
+        can be computed.
+    </p>
+    <div class="r-stack">
+        <img src="starting-at-infinity.svg" alt="" width="580">
+    </div>
+    <p>
+        "Tracking" these paths lead to two
+        (totally mixed) Nash equilibria.
+    </p>
+</section>
+
+<section>
+    <h3>Revisiting our assumption</h3>
+    <div class="theoremlike" data-type="Assumption" data-id="starting-assumption">
+        Near $t=0$, each path is parametrized by some
+        \[
+            \begin{aligned}
+                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} a_1 + o(t) &
+                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} a_2 + o(t) \\
+                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} b_1 + o(t) &
+                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} b_2 + o(t) \\
+                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} c_1 + o(t) &
+                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} c_2 + o(t)
+            \end{aligned}
+        \]
+        where 
+        <ul>
+            <li>
+                $\alpha_1,\alpha_2,\beta_1,\beta_2,\gamma_1,\gamma_2,m \in \mathbb{Z}$
+                are constants (path dependent),
+            </li>
+            <li>
+                $a_1, a_2, b_1, b_2, c_1, c_2 \in \mathbb{C}^*$.
+            </li>
+        </ul>
+    </div>
+    <p class="fragment">
+        Why is this true?
+    </p>
+    <ul>
+        <li class="fragment">
+            Newton-Puiseux Theorem
+        </li>
+        <li class="fragment">
+            Local Uniformization Theorem
+        </li>
+        <li class="fragment">
+            Local Parametrization Theorem 
+        </li>
+    </ul>
+</section>
+
+<section>
+    <div class="theorem">
+        Near $t=0$, each path defined by
+        \[
+            H(
+                \boldsymbol{a}_1,
+                \boldsymbol{a}_1,
+                \boldsymbol{b}_1,
+                \boldsymbol{b}_1,
+                \boldsymbol{c}_1,
+                \boldsymbol{c}_1,
+                t
+            ) = \mathbf{0}
+        \]
+        has (convergent) Laurent power series expansions
+        $a_1(s), a_2(s), b_1(s), b_2(s), c_1(s), c_2(s)$
+        and an $m \in \mathbb{Z}^+$ such that
+        \[
+            t = s^{m}
+        \]
+    </div>
 </section>

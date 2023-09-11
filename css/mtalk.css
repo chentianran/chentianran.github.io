@@ -89,26 +89,6 @@ div.problem:before {
   font-weight: bold;
   color: #600f16; }
 
-/* .theorem {
-  box-shadow: 0 4px 8px 0 #2f2a44a8;
-  background: #d6daf0;
-  border-radius: 10px;
-  transition: 0.3s;
-  text-align: left;
-  padding: 2px 15px;
-  margin: 15px 2px; }
-
-.definition {
-  box-shadow: 0 4px 8px 0 #2f2a44a8;
-  background: #d6daf0;
-  border-radius: 10px;
-  transition: 0.3s;
-  text-align: left;
-  padding: 2px 15px;
-  margin: 15px 2px;
-  /* color: #0257B7; */
-} */
-
 .small {
   font-size: 85%; }
 
