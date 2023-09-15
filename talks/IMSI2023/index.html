@@ -561,28 +561,28 @@ title: Polynomials in economy and the polyhedral homotopy
             <span class="fragment fade-out" data-fragment-index="2">
                 \[
                     \begin{aligned}
-                        \beta &=
-                        B_{111} a_1 c_1
+                        \beta
+                        &=B_{111} a_1 c_1
                         + B_{112} a_1 c_2
-                        + B_{121} a_2 c_1
-                        + B_{122} a_2 c_2
+                        + B_{211} a_2 c_1
+                        + B_{112} a_2 c_2
                         \\
-                        \beta &=
-                        B_{211} a_1 c_1
-                        + B_{212} a_1 c_2
+                        \beta 
+                        &=B_{121} a_1 c_1
+                        + B_{122} a_1 c_2
                         + B_{221} a_2 c_1
                         + B_{222} a_2 c_2
                         \\
-                        \gamma &=
-                        C_{111} a_1 b_1
-                        + C_{112} a_1 b_2
-                        + C_{121} a_2 b_1
-                        + C_{122} a_2 b_2
+                        \gamma
+                        &=C_{111} a_1 b_1
+                        + C_{121} a_1 b_2
+                        + C_{211} a_2 b_1
+                        + C_{221} a_2 b_2
                         \\
-                        \gamma &=
-                        C_{211} a_1 b_1
-                        + C_{212} a_1 b_2
-                        + C_{221} a_2 b_1
+                        \gamma
+                        &=C_{112} a_1 b_1
+                        + C_{122} a_1 b_2
+                        + C_{212} a_2 b_1
                         + C_{222} a_2 b_2
                         \\
                         1 &= a_1 + a_2 = b_1 + b_2 = c_1 + c_2
@@ -624,6 +624,12 @@ title: Polynomials in economy and the polyhedral homotopy
         Real solutions with
         $a_1,a_2,b_1,b_2,c_1,c_2 > 0$
         correspond to totally mixed Nash equilibria.
+    </p>
+    <p class="fragment" data-fragment-index="4">
+        \[
+            \overline{A}_{jk} =
+            \text{Difference in payoff between two choices}
+        \]
     </p>
 </section>
 
@@ -772,10 +778,10 @@ title: Polynomials in economy and the polyhedral homotopy
         \[
             \begin{aligned}
                 0 &=
-                \class{highlight}{\overline{A}_{111}} \, b_1 c_1 + 
-                \class{highlight}{\overline{A}_{112}} \, b_1 c_2 + 
-                \class{highlight}{\overline{A}_{121}} \, b_2 c_1 + 
-                \class{highlight}{\overline{A}_{122}} \, b_2 c_2 
+                \class{highlight}{\overline{A}_{11}} \, b_1 c_1 + 
+                \class{highlight}{\overline{A}_{12}} \, b_1 c_2 + 
+                \class{highlight}{\overline{A}_{21}} \, b_2 c_1 + 
+                \class{highlight}{\overline{A}_{22}} \, b_2 c_2 
                 \\
                 0 &=
                 \class{highlight}{\overline{B}_{11}} a_1 c_1 + 
@@ -806,22 +812,22 @@ title: Polynomials in economy and the polyhedral homotopy
         \[
             \begin{aligned}
                 0 &=
-                \overline{A}_{111} \, b_1 c_1 + 
-                \overline{A}_{112} \, b_1 c_2 + 
-                \overline{A}_{121} \, b_2 c_1 + 
-                \overline{A}_{122} \, b_2 c_2 
+                \overline{A}_{11} \, b_1 c_1 + 
+                \overline{A}_{12} \, b_1 c_2 + 
+                \overline{A}_{21} \, b_2 c_1 + 
+                \overline{A}_{22} \, b_2 c_2 
                 \\
                 0 &=
-                \overline{B}_{111} \,a_1 c_1 + 
-                \overline{B}_{112} \,a_1 c_2 + 
-                \overline{B}_{121} \,a_2 c_1 + 
-                \overline{B}_{122} \,a_2 c_2 
+                \overline{B}_{11} \,a_1 c_1 + 
+                \overline{B}_{12} \,a_1 c_2 + 
+                \overline{B}_{21} \,a_2 c_1 + 
+                \overline{B}_{22} \,a_2 c_2 
                 \\
                 0 &=
-                \overline{C}_{111} \,a_1 b_1 + 
-                \overline{C}_{112} \,a_1 b_2 + 
-                \overline{C}_{121} \,a_2 b_1 + 
-                \overline{C}_{122} \,a_2 b_2 
+                \overline{C}_{11} \,a_1 b_1 + 
+                \overline{C}_{12} \,a_1 b_2 + 
+                \overline{C}_{21} \,a_2 b_1 + 
+                \overline{C}_{22} \,a_2 b_2 
                 \\
                 \delta_1 &= a_1 + a_2 \\
                 \delta_2 &= b_1 + b_2 \\
@@ -835,7 +841,7 @@ title: Polynomials in economy and the polyhedral homotopy
             What will happen to the solutions as
             \[
                 \begin{aligned}
-                    \overline{A}_{ijk}, \overline{B}_{ijk}, \overline{C}_{ijk} \; &\to \; 0 \\
+                    \overline{A}_{jk}, \overline{B}_{ik}, \overline{C}_{ij} \; &\to \; 0 \\
                     a_1 + a_2,\;
                     b_1 + b_2,\;
                     c_1 + c_2 \; &\to \; \infty
@@ -859,26 +865,26 @@ title: Polynomials in economy and the polyhedral homotopy
         \[
             \begin{aligned}
                 0 &=
-                \overline{A}_{111} \class{highlight}{t^{1.0}} b_1 c_1 + 
-                \overline{A}_{112} \class{highlight}{t^{1.4}} b_1 c_2 + 
-                \overline{A}_{121} \class{highlight}{t^{1.2}} b_2 c_1 + 
-                \overline{A}_{122} \class{highlight}{t^{0.7}} b_2 c_2 
+                \overline{A}_{11} \class{highlight}{t^{1.0}} b_1 c_1 + 
+                \overline{A}_{12} \class{highlight}{t^{1.4}} b_1 c_2 + 
+                \overline{A}_{21} \class{highlight}{t^{1.2}} b_2 c_1 + 
+                \overline{A}_{22} \class{highlight}{t^{0.7}} b_2 c_2 
                 \\
                 0 &=
-                \overline{B}_{111} \class{highlight}{t^{1.2}} a_1 c_1 + 
-                \overline{B}_{112} \class{highlight}{t^{0.8}} a_1 c_2 + 
-                \overline{B}_{121} \class{highlight}{t^{1.9}} a_2 c_1 + 
-                \overline{B}_{122} \class{highlight}{t^{1.1}} a_2 c_2 
+                \overline{B}_{11} \class{highlight}{t^{1.2}} a_1 c_1 + 
+                \overline{B}_{12} \class{highlight}{t^{0.8}} a_1 c_2 + 
+                \overline{B}_{21} \class{highlight}{t^{1.9}} a_2 c_1 + 
+                \overline{B}_{22} \class{highlight}{t^{1.1}} a_2 c_2 
                 \\
                 0 &=
-                \overline{C}_{111} \class{highlight}{t^{0.5}} a_1 b_1 + 
-                \overline{C}_{112} \class{highlight}{t^{0.3}} a_1 b_2 + 
-                \overline{C}_{121} \class{highlight}{t^{1.3}} a_2 b_1 + 
-                \overline{C}_{122} \class{highlight}{t^{1.6}} a_2 b_2 
+                \overline{C}_{11} \class{highlight}{t^{0.5}} a_1 b_1 + 
+                \overline{C}_{12} \class{highlight}{t^{0.3}} a_1 b_2 + 
+                \overline{C}_{21} \class{highlight}{t^{1.3}} a_2 b_1 + 
+                \overline{C}_{22} \class{highlight}{t^{1.6}} a_2 b_2 
                 \\
-                \delta_1 &= \class{highlight}{t} \,a_1 + \class{highlight}{t} \,a_2 \\
-                \delta_2 &= \class{highlight}{t} \,b_1 + \class{highlight}{t} \,b_2 \\
-                \delta_3 &= \class{highlight}{t} \,c_1 + \class{highlight}{t} \,c_2
+                \delta_1 &= \class{highlight}{t^{1.0}} \,a_1 + \class{highlight}{t^{4.5}} \,a_2 \\
+                \delta_2 &= \class{highlight}{t^{1.0}} \,b_1 + \class{highlight}{t^{5.2}} \,b_2 \quad\quad\text{With generic exponents (``liftings'')}\\
+                \delta_3 &= \class{highlight}{t^{1.0}} \,c_1 + \class{highlight}{t^{7.1}} \,c_2
             \end{aligned}
         \]
     </p>
@@ -898,26 +904,27 @@ title: Polynomials in economy and the polyhedral homotopy
         \[
             \left\{
             \begin{aligned}
-                &\overline{A}_{111} \class{highlight}{t^{1.0}} b_1 c_1 + 
-                \overline{A}_{112} \class{highlight}{t^{1.4}} b_1 c_2 + 
-                \overline{A}_{121} \class{highlight}{t^{1.2}} b_2 c_1 + 
-                \overline{A}_{122} \class{highlight}{t^{0.7}} b_2 c_2 
+                &
+                \overline{A}_{11} \class{highlight}{t^{1.0}} b_1 c_1 + 
+                \overline{A}_{12} \class{highlight}{t^{1.4}} b_1 c_2 + 
+                \overline{A}_{21} \class{highlight}{t^{1.2}} b_2 c_1 + 
+                \overline{A}_{22} \class{highlight}{t^{0.7}} b_2 c_2 
                 \\
                 &
-                \overline{B}_{111} \class{highlight}{t^{1.2}} a_1 c_1 + 
-                \overline{B}_{112} \class{highlight}{t^{0.8}} a_1 c_2 + 
-                \overline{B}_{121} \class{highlight}{t^{1.9}} a_2 c_1 + 
-                \overline{B}_{122} \class{highlight}{t^{1.1}} a_2 c_2 
+                \overline{B}_{11} \class{highlight}{t^{1.2}} a_1 c_1 + 
+                \overline{B}_{12} \class{highlight}{t^{0.8}} a_1 c_2 + 
+                \overline{B}_{21} \class{highlight}{t^{1.9}} a_2 c_1 + 
+                \overline{B}_{22} \class{highlight}{t^{1.1}} a_2 c_2 
                 \\
                 &
-                \overline{C}_{111} \class{highlight}{t^{0.5}} a_1 b_1 + 
-                \overline{C}_{112} \class{highlight}{t^{0.3}} a_1 b_2 + 
-                \overline{C}_{121} \class{highlight}{t^{1.3}} a_2 b_1 + 
-                \overline{C}_{122} \class{highlight}{t^{1.6}} a_2 b_2 
+                \overline{C}_{11} \class{highlight}{t^{0.5}} a_1 b_1 + 
+                \overline{C}_{12} \class{highlight}{t^{0.3}} a_1 b_2 + 
+                \overline{C}_{21} \class{highlight}{t^{1.3}} a_2 b_1 + 
+                \overline{C}_{22} \class{highlight}{t^{1.6}} a_2 b_2 
                 \\
-                &\class{highlight}{t} \,a_1 + \class{highlight}{t} \,a_2 - \delta_1 \\
-                &\class{highlight}{t} \,b_1 + \class{highlight}{t} \,b_2 - \delta_2 \\
-                &\class{highlight}{t} \,c_1 + \class{highlight}{t} \,c_2 - \delta_3
+                &\class{highlight}{t^{1.0}} \,a_1 + \class{highlight}{t^{4.5}} \,a_2 - \delta_1 \\
+                &\class{highlight}{t^{1.0}} \,b_1 + \class{highlight}{t^{5.2}} \,b_2 - \delta_2 \\
+                &\class{highlight}{t^{1.0}} \,c_1 + \class{highlight}{t^{7.1}} \,c_2 - \delta_3
             \end{aligned}
             \right.
         \]
@@ -941,26 +948,27 @@ title: Polynomials in economy and the polyhedral homotopy
             \[
                 \left\{
                 \begin{aligned}
-                    &\overline{A}_{111} \class{highlight}{t^{1.0}} b_1 c_1 + 
-                    \overline{A}_{112} \class{highlight}{t^{1.4}} b_1 c_2 + 
-                    \overline{A}_{121} \class{highlight}{t^{1.2}} b_2 c_1 + 
-                    \overline{A}_{122} \class{highlight}{t^{0.7}} b_2 c_2 
+                    &
+                    \overline{A}_{11} \class{highlight}{t^{1.0}} b_1 c_1 + 
+                    \overline{A}_{12} \class{highlight}{t^{1.4}} b_1 c_2 + 
+                    \overline{A}_{21} \class{highlight}{t^{1.2}} b_2 c_1 + 
+                    \overline{A}_{22} \class{highlight}{t^{0.7}} b_2 c_2 
                     \\
                     &
-                    \overline{B}_{111} \class{highlight}{t^{1.2}} a_1 c_1 + 
-                    \overline{B}_{112} \class{highlight}{t^{0.8}} a_1 c_2 + 
-                    \overline{B}_{121} \class{highlight}{t^{1.9}} a_2 c_1 + 
-                    \overline{B}_{122} \class{highlight}{t^{1.1}} a_2 c_2 
+                    \overline{B}_{11} \class{highlight}{t^{1.2}} a_1 c_1 + 
+                    \overline{B}_{12} \class{highlight}{t^{0.8}} a_1 c_2 + 
+                    \overline{B}_{21} \class{highlight}{t^{1.9}} a_2 c_1 + 
+                    \overline{B}_{22} \class{highlight}{t^{1.1}} a_2 c_2 
                     \\
                     &
-                    \overline{C}_{111} \class{highlight}{t^{0.5}} a_1 b_1 + 
-                    \overline{C}_{112} \class{highlight}{t^{0.3}} a_1 b_2 + 
-                    \overline{C}_{121} \class{highlight}{t^{1.3}} a_2 b_1 + 
-                    \overline{C}_{122} \class{highlight}{t^{1.6}} a_2 b_2 
+                    \overline{C}_{11} \class{highlight}{t^{0.5}} a_1 b_1 + 
+                    \overline{C}_{12} \class{highlight}{t^{0.3}} a_1 b_2 + 
+                    \overline{C}_{21} \class{highlight}{t^{1.3}} a_2 b_1 + 
+                    \overline{C}_{22} \class{highlight}{t^{1.6}} a_2 b_2 
                     \\
-                    &\class{highlight}{t} \,a_1 + \class{highlight}{t} \,a_2 - \delta_1 \\
-                    &\class{highlight}{t} \,b_1 + \class{highlight}{t} \,b_2 - \delta_2 \\
-                    &\class{highlight}{t} \,c_1 + \class{highlight}{t} \,c_2 - \delta_3
+                    &\class{highlight}{t^{1.0}} \,a_1 + \class{highlight}{t^{4.5}} \,a_2 - \delta_1 \\
+                    &\class{highlight}{t^{1.0}} \,b_1 + \class{highlight}{t^{5.2}} \,b_2 - \delta_2 \\
+                    &\class{highlight}{t^{1.0}} \,c_1 + \class{highlight}{t^{7.1}} \,c_2 - \delta_3
                 \end{aligned}
                 \right.
             \]
@@ -1111,8 +1119,7 @@ title: Polynomials in economy and the polyhedral homotopy
                 ) = \mathbf{0}
             \]
         </span>
-        i.e., the starting point is a zero of the initial system
-        (in $(\mathbb{C}^*)^6$).
+        i.e., the leading coefficients form a $\mathbb{C}^*$-zero of the initial system.
     </p>
 
 </section>
@@ -1133,28 +1140,28 @@ title: Polynomials in economy and the polyhedral homotopy
     <div class="cols">
         <div class="col">
             <div class="r-stack">
-                <img src="newton-polygon.svg" alt="" width="250" class="fragment fade-in-then-out">
-                <img src="newton-polygon-inner1.svg" alt="" width="330" class="fragment fade-in-then-out">
-                <img src="newton-polygon-inner2.svg" alt="" width="250" class="fragment">
+                <img src="newton-polygon.svg" alt="" width="200" class="fragment fade-in-then-out" data-fragment-index="2">
+                <img src="newton-polygon-inner1.svg" alt="" width="330" class="fragment fade-in-then-out" data-fragment-index="3">
+                <img src="newton-polygon-inner2.svg" alt="" width="200" class="fragment" data-fragment-index="4">
             </div>
         </div>
         <div class="col">
-            <p class="small">
+            <p class="fragment" data-fragment-index="2">
                 \[
-                    f(x,y) 
+                    f
                         = c_{00} \color{purple}{x^0 y^0}
                         + c_{10} \color{green}{x^2 y^0} 
                         + c_{22} \color{blue}{x^2 y^2} 
                         + c_{12} \color{red}{x^1 y^2} 
                 \]
             </p>
-            <p class="fragment fade-in-then-out">
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
                 \[
                     \operatorname{init}_{\mathbf{v}} f(x,y) 
                         = c_{00} \color{purple}{x^0 y^0}
                 \]
             </p>
-            <p class="fragment fade-in-then-out">
+            <p class="fragment" data-fragment-index="4">
                 \[
                     \operatorname{init}_{\mathbf{v}} f(x,y) 
                         = c_{00} \color{purple}{x^0 y^0}
@@ -1177,7 +1184,11 @@ title: Polynomials in economy and the polyhedral homotopy
             \end{bmatrix}
         \]
     </p>
-    <p class="fragment">
+</section>
+
+<section>
+    <p>
+        Recall that from the assumption we derived
         \[
             \operatorname{init}_{\mathbf{v}} H ( 
                 a_1, a_2,
@@ -1190,41 +1201,38 @@ title: Polynomials in economy and the polyhedral homotopy
     <p class="fragment">
         This requires very special $\mathbf{v}$.
     </p>
-</section>
-
-<section>
-    <p>
+    <p class="fragment">
         For a "<em>bad</em>" choice of $\mathbf{v}$,
         $\operatorname{init}_{\mathbf{v}} H = \mathbf{0} \; \to$
         \[
             \begin{aligned}
                 \class{lowlight}{ 0 } &=
-                \class{highlight}{\overline{A}_{111} \, b_1 c_1 } + 
-                \class{lowlight}{ \overline{A}_{112} \, b_1 c_2 } + 
-                \class{lowlight}{\overline{A}_{121} \, b_2 c_1 } + 
-                \class{lowlight}{ \overline{A}_{122} \, b_2 c_2 }
+                \class{highlight}{\overline{A}_{11} \, b_1 c_1 } + 
+                \class{lowlight}{ \overline{A}_{12} \, b_1 c_2 } + 
+                \class{lowlight}{ \overline{A}_{21} \, b_2 c_1 } + 
+                \class{lowlight}{ \overline{A}_{22} \, b_2 c_2 }
                 \\
                 \class{lowlight}{ 0 } &=
-                \class{highlight}{ \overline{B}_{111} \,a_1 c_1 } + 
-                \class{lowlight}{ \overline{B}_{112} \,a_1 c_2 } + 
-                \class{lowlight}{\overline{B}_{121} \,a_2 c_1 } + 
-                \class{lowlight}{\overline{B}_{122} \,a_2 c_2 }
+                \class{highlight}{ \overline{B}_{11} \,a_1 c_1 } + 
+                \class{lowlight}{ \overline{B}_{12} \,a_1 c_2 } + 
+                \class{lowlight}{\overline{B}_{21} \,a_2 c_1 } + 
+                \class{lowlight}{\overline{B}_{22} \,a_2 c_2 }
                 \\
                 \class{lowlight}{ 0 } &=
-                \class{highlight}{ \overline{C}_{111} \,a_1 b_1 } + 
-                \class{lowlight}{\overline{C}_{112} \,a_1 b_2 } + 
-                \class{lowlight}{\overline{C}_{121} \,a_2 b_1 } + 
-                \class{lowlight}{ \overline{C}_{122} \,a_2 b_2 }
+                \class{highlight}{ \overline{C}_{11} \,a_1 b_1 } + 
+                \class{lowlight}{\overline{C}_{12} \,a_1 b_2 } + 
+                \class{lowlight}{\overline{C}_{21} \,a_2 b_1 } + 
+                \class{lowlight}{ \overline{C}_{22} \,a_2 b_2 }
                 \\
-                \class{lowlight}{1} &= 
+                \class{lowlight}{\delta_1} &= 
                 \class{highlight}{ a_1 } + 
                 \class{lowlight}{a_2}
                 \\
-                \class{lowlight}{1} &=
+                \class{lowlight}{\delta_2} &=
                 \class{highlight}{ b_1 } +
                 \class{lowlight}{b_2 }
                 \\
-                \class{lowlight}{1} &= 
+                \class{lowlight}{\delta_3} &= 
                 \class{highlight}{c_1} + 
                 \class{lowlight}{ c_2}
             \end{aligned}
@@ -1239,86 +1247,102 @@ title: Polynomials in economy and the polyhedral homotopy
 
 <section>
     <p>
-        For a "<em>good</em>" choice of $\mathbf{v}$,
+        For one "<em>good</em>" choice of $\mathbf{v}$,
         $\operatorname{init}_{\mathbf{v}} H = \mathbf{0} \; \to$
         \[
             \begin{aligned}
-                \class{lowlight}{ 0 } &=
-                \class{highlight}{\overline{A}_{111} \, b_1 c_1 } + 
-                \class{lowlight}{ \overline{A}_{112} \, b_1 c_2 } + 
-                \class{highlight}{\overline{A}_{121} \, b_2 c_1 } + 
-                \class{lowlight}{ \overline{A}_{122} \, b_2 c_2 }
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  \overline{A}_{11} \, b_1 c_1 } + 
+                \class{lowlowlight}{\overline{A}_{12} \, b_1 c_2 } + 
+                \class{lowlowlight}{\overline{A}_{21} \, b_2 c_1 } + 
+                \class{highlight}{  \overline{A}_{22} \, b_2 c_2 }
                 \\
-                \class{lowlight}{ 0 } &=
-                \class{lowlight}{ \overline{B}_{111} \,a_1 c_1 } + 
-                \class{lowlight}{ \overline{B}_{112} \,a_1 c_2 } + 
-                \class{highlight}{\overline{B}_{121} \,a_2 c_1 } + 
-                \class{highlight}{\overline{B}_{122} \,a_2 c_2 }
+                \class{lowlowlight}{0} &=
+                \class{lowlowlight}{\overline{B}_{11} \,a_1 c_1 } + 
+                \class{highlight}{  \overline{B}_{12} \,a_1 c_2 } + 
+                \class{lowlowlight}{\overline{B}_{21} \,a_2 c_1 } + 
+                \class{highlight}{  \overline{B}_{22} \,a_2 c_2 }
                 \\
-                \class{lowlight}{ 0 } &=
-                \class{lowlight}{ \overline{C}_{111} \,a_1 b_1 } + 
-                \class{highlight}{\overline{C}_{112} \,a_1 b_2 } + 
-                \class{highlight}{\overline{C}_{121} \,a_2 b_1 } + 
-                \class{lowlight}{ \overline{C}_{122} \,a_2 b_2 }
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  \overline{C}_{11} \,a_1 b_1 } + 
+                \class{highlight}{  \overline{C}_{12} \,a_1 b_2 } + 
+                \class{lowlowlight}{\overline{C}_{21} \,a_2 b_1 } + 
+                \class{lowlowlight}{\overline{C}_{22} \,a_2 b_2 }
                 \\
-                \class{highlight}{1} &= 
-                \class{lowlight}{ a_1 } + 
-                \class{highlight}{a_2}
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  a_1 } + 
+                \class{lowlowlight}{a_2} -
+                \class{highlight}{\delta_1} 
+                \\ 
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  b_1 } +
+                \class{lowlowlight}{b_2 } -
+                \class{highlight}{\delta_2}
                 \\
-                \class{highlight}{1} &=
-                \class{lowlight}{ b_1 } +
-                \class{highlight}{b_2 }
-                \\
-                \class{highlight}{1} &= 
-                \class{highlight}{c_1} + 
-                \class{lowlight}{ c_2}
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  c_1} + 
+                \class{lowlowlight}{c_2} -
+                \class{highlight}{\delta_3} 
             \end{aligned}
         \]
     </p>
     <ul class="fragment">
         <li>A system of binomials</li>
-        <li>Has solution(s) in $(\mathbb{C}^*)^6$</li>
+        <li>Has a solution in $(\mathbb{C}^*)^6$</li>
     </ul>
+    <p class="fragment">
+        \[
+            \text{``Good''} \;\Longrightarrow\;
+            \mathbf{v} \in \bigcap_{i=1}^6 \mathbb{V}(\operatorname{Trop}(h_i))
+        \]
+    </p>
 </section>
 
-<section>
+<section data-auto-animate>
     <p>
         Another "<em>good</em>" choice of $\mathbf{v}$,
         $\operatorname{init}_{\mathbf{v}} H = \mathbf{0} \; \to$
+    </p>
+    <div data-id="init-sys2">
+        <span>
         \[
             \begin{aligned}
-                \class{lowlight}{ 0 } &=
-                \class{highlight}{\overline{A}_{111} \, b_1 c_1 } + 
-                \class{lowlight}{ \overline{A}_{112} \, b_1 c_2 } + 
-                \class{lowlight}{ \overline{A}_{121} \, b_2 c_1 } + 
-                \class{highlight}{\overline{A}_{122} \, b_2 c_2 }
+                \class{lowlowlight}{ 0 } &=
+                \class{highlight}{  \overline{A}_{11} \, b_1 c_1 } + 
+                \class{lowlowlight}{\overline{A}_{12} \, b_1 c_2 } + 
+                \class{highlight}{  \overline{A}_{21} \, b_2 c_1 } + 
+                \class{lowlowlight}{\overline{A}_{22} \, b_2 c_2 }
                 \\
-                \class{lowlight}{ 0 } &=
-                \class{lowlight}{ \overline{B}_{111} \,a_1 c_1 } + 
-                \class{highlight}{\overline{B}_{112} \,a_1 c_2 } + 
-                \class{lowlight}{ \overline{B}_{121} \,a_2 c_1 } + 
-                \class{highlight}{\overline{B}_{122} \,a_2 c_2 }
+                \class{lowlowlight}{ 0 } &=
+                \class{lowlowlight}{\overline{B}_{11} \,a_1 c_1 } + 
+                \class{lowlowlight}{\overline{B}_{12} \,a_1 c_2 } + 
+                \class{highlight}{  \overline{B}_{21} \,a_2 c_1 } + 
+                \class{highlight}{  \overline{B}_{22} \,a_2 c_2 }
                 \\
-                \class{lowlight}{ 0 } &=
-                \class{highlight}{\overline{C}_{111} \,a_1 b_1 } + 
-                \class{highlight}{\overline{C}_{112} \,a_1 b_2 } + 
-                \class{lowlight}{ \overline{C}_{121} \,a_2 b_1 } + 
-                \class{lowlight}{ \overline{C}_{122} \,a_2 b_2 }
+                \class{lowlowlight}{ 0 } &=
+                \class{lowlowlight}{\overline{C}_{11} \,a_1 b_1 } + 
+                \class{highlight}{\overline{C}_{12} \,a_1 b_2 } + 
+                \class{highlight}{ \overline{C}_{21} \,a_2 b_1 } + 
+                \class{lowlowlight}{ \overline{C}_{22} \,a_2 b_2 }
                 \\
-                \class{highlight}{1} &= 
-                \class{lowlight}{ a_1 } + 
-                \class{highlight}{a_2}
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  a_1 } + 
+                \class{lowlowlight}{a_2} -
+                \class{highlight}{\delta_1}
                 \\
-                \class{highlight}{1} &=
-                \class{highlight}{b_1 } +
-                \class{lowlight}{ b_2 }
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  b_1 } +
+                \class{lowlowlight}{b_2 } -
+                \class{highlight}{\delta_2}
                 \\
-                \class{highlight}{1} &= 
+                \class{lowlowlight}{ 0 } &=
                 \class{highlight}{c_1} + 
-                \class{lowlight}{ c_2}
+                \class{lowlowlight}{ c_2} -
+                \class{highlight}{\delta_3}
             \end{aligned}
         \]
-    </p>
+        </span>
+    </div>
     <ul class="fragment">
         <li>Also a system of binomials</li>
         <li>Also has one solution in $(\mathbb{C}^*)^6$</li>
@@ -1326,79 +1350,93 @@ title: Polynomials in economy and the polyhedral homotopy
 </section>
 
 <section data-auto-animate>
-    <p class="small">
-        \[
-            \left\{
-            \begin{aligned}
-                \class{lowlight}{ 0 } &=
-                \class{highlight}{\overline{A}_{111} \, b_1 c_1 } + 
-                \class{lowlight}{ \overline{A}_{112} \, b_1 c_2 } + 
-                \class{highlight}{\overline{A}_{121} \, b_2 c_1 } + 
-                \class{lowlight}{ \overline{A}_{122} \, b_2 c_2 }
-                \\
-                \class{lowlight}{ 0 } &=
-                \class{lowlight}{ \overline{B}_{111} \,a_1 c_1 } + 
-                \class{lowlight}{ \overline{B}_{112} \,a_1 c_2 } + 
-                \class{highlight}{\overline{B}_{121} \,a_2 c_1 } + 
-                \class{highlight}{\overline{B}_{122} \,a_2 c_2 }
-                \\
-                \class{lowlight}{ 0 } &=
-                \class{lowlight}{ \overline{C}_{111} \,a_1 b_1 } + 
-                \class{highlight}{\overline{C}_{112} \,a_1 b_2 } + 
-                \class{highlight}{\overline{C}_{121} \,a_2 b_1 } + 
-                \class{lowlight}{ \overline{C}_{122} \,a_2 b_2 }
-                \\
-                \class{highlight}{1} &= 
-                \class{lowlight}{ a_1 } + 
-                \class{highlight}{a_2}
-                \\
-                \class{highlight}{1} &=
-                \class{lowlight}{ b_1 } +
-                \class{highlight}{b_2 }
-                \\
-                \class{highlight}{1} &= 
-                \class{highlight}{c_1} + 
-                \class{lowlight}{ c_2}
-            \end{aligned}
-            \right.
-        \]
-        \[
-            \left\{
-            \begin{aligned}
-                \class{lowlight}{ 0 } &=
-                \class{highlight}{\overline{A}_{111} \, b_1 c_1 } + 
-                \class{lowlight}{ \overline{A}_{112} \, b_1 c_2 } + 
-                \class{lowlight}{ \overline{A}_{121} \, b_2 c_1 } + 
-                \class{highlight}{\overline{A}_{122} \, b_2 c_2 }
-                \\
-                \class{lowlight}{ 0 } &=
-                \class{lowlight}{ \overline{B}_{111} \,a_1 c_1 } + 
-                \class{highlight}{\overline{B}_{112} \,a_1 c_2 } + 
-                \class{lowlight}{ \overline{B}_{121} \,a_2 c_1 } + 
-                \class{highlight}{\overline{B}_{122} \,a_2 c_2 }
-                \\
-                \class{lowlight}{ 0 } &=
-                \class{highlight}{\overline{C}_{111} \,a_1 b_1 } + 
-                \class{highlight}{\overline{C}_{112} \,a_1 b_2 } + 
-                \class{lowlight}{ \overline{C}_{121} \,a_2 b_1 } + 
-                \class{lowlight}{ \overline{C}_{122} \,a_2 b_2 }
-                \\
-                \class{highlight}{1} &= 
-                \class{lowlight}{ a_1 } + 
-                \class{highlight}{a_2}
-                \\
-                \class{highlight}{1} &=
-                \class{highlight}{b_1 } +
-                \class{lowlight}{ b_2 }
-                \\
-                \class{highlight}{1} &= 
-                \class{highlight}{c_1} + 
-                \class{lowlight}{ c_2}
-            \end{aligned}
-            \right.
-        \]
+    <p>
+        Exactly 2 "good" choices.
+        They produce <em>binomial systems</em>
     </p>
+    <div>
+        <span class="small">
+        \[
+            \begin{aligned}
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  \overline{A}_{11} \, b_1 c_1 } + 
+                \class{lowlowlight}{\overline{A}_{12} \, b_1 c_2 } + 
+                \class{lowlowlight}{\overline{A}_{21} \, b_2 c_1 } + 
+                \class{highlight}{  \overline{A}_{22} \, b_2 c_2 }
+                \\
+                \class{lowlowlight}{0} &=
+                \class{lowlowlight}{\overline{B}_{11} \,a_1 c_1 } + 
+                \class{highlight}{  \overline{B}_{12} \,a_1 c_2 } + 
+                \class{lowlowlight}{\overline{B}_{21} \,a_2 c_1 } + 
+                \class{highlight}{  \overline{B}_{22} \,a_2 c_2 }
+                \\
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  \overline{C}_{11} \,a_1 b_1 } + 
+                \class{highlight}{  \overline{C}_{12} \,a_1 b_2 } + 
+                \class{lowlowlight}{\overline{C}_{21} \,a_2 b_1 } + 
+                \class{lowlowlight}{\overline{C}_{22} \,a_2 b_2 }
+                \\
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  a_1 } + 
+                \class{lowlowlight}{a_2} -
+                \class{highlight}{\delta_1} 
+                \\ 
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  b_1 } +
+                \class{lowlowlight}{b_2 } -
+                \class{highlight}{\delta_2}
+                \\
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  c_1} + 
+                \class{lowlowlight}{c_2} -
+                \class{highlight}{\delta_3} 
+            \end{aligned}
+        \]
+        </span>
+    </div>
+    <p class="smaller">and</p>
+    <div data-id="init-sys2">
+        <span class="small">
+        \[
+            \begin{aligned}
+                \class{lowlowlight}{ 0 } &=
+                \class{highlight}{  \overline{A}_{11} \, b_1 c_1 } + 
+                \class{lowlowlight}{\overline{A}_{12} \, b_1 c_2 } + 
+                \class{highlight}{  \overline{A}_{21} \, b_2 c_1 } + 
+                \class{lowlowlight}{\overline{A}_{22} \, b_2 c_2 }
+                \\
+                \class{lowlowlight}{ 0 } &=
+                \class{lowlowlight}{\overline{B}_{11} \,a_1 c_1 } + 
+                \class{lowlowlight}{\overline{B}_{12} \,a_1 c_2 } + 
+                \class{highlight}{  \overline{B}_{21} \,a_2 c_1 } + 
+                \class{highlight}{  \overline{B}_{22} \,a_2 c_2 }
+                \\
+                \class{lowlowlight}{ 0 } &=
+                \class{lowlowlight}{\overline{C}_{11} \,a_1 b_1 } + 
+                \class{highlight}{\overline{C}_{12} \,a_1 b_2 } + 
+                \class{highlight}{ \overline{C}_{21} \,a_2 b_1 } + 
+                \class{lowlowlight}{ \overline{C}_{22} \,a_2 b_2 }
+                \\
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  a_1 } + 
+                \class{lowlowlight}{a_2} -
+                \class{highlight}{\delta_1}
+                \\
+                \class{lowlowlight}{0} &=
+                \class{highlight}{  b_1 } +
+                \class{lowlowlight}{b_2 } -
+                \class{highlight}{\delta_2}
+                \\
+                \class{lowlowlight}{ 0 } &=
+                \class{highlight}{c_1} + 
+                \class{lowlowlight}{ c_2} -
+                \class{highlight}{\delta_3}
+            \end{aligned}
+        \]
+        </span>
+    </div>
     <p data-id="starting-point-can-be">
+        Their $\mathbb{C}^*$-solutions give us leading coefficients.
         Starting points of the "solution paths"
         can be computed.
     </p>
@@ -1415,6 +1453,7 @@ title: Polynomials in economy and the polyhedral homotopy
     <p>
         "Tracking" these paths lead to two
         (totally mixed) Nash equilibria.
+        Problem solved!
     </p>
 </section>
 
@@ -1451,7 +1490,7 @@ title: Polynomials in economy and the polyhedral homotopy
             Newton-Puiseux Theorem
         </li>
         <li class="fragment">
-            Local Uniformization Theorem
+            Local Uniformizer
         </li>
         <li class="fragment">
             Local Parametrization Theorem 
@@ -1459,25 +1498,508 @@ title: Polynomials in economy and the polyhedral homotopy
     </ul>
 </section>
 
-<section>
+<section data-auto-animate>
     <div class="theorem">
         Near $t=0$, each path defined by
         \[
             H(
                 \boldsymbol{a}_1,
-                \boldsymbol{a}_1,
+                \boldsymbol{a}_2,
                 \boldsymbol{b}_1,
-                \boldsymbol{b}_1,
+                \boldsymbol{b}_2,
                 \boldsymbol{c}_1,
-                \boldsymbol{c}_1,
+                \boldsymbol{c}_2,
                 t
             ) = \mathbf{0}
         \]
         has (convergent) Laurent power series expansions
-        $a_1(s), a_2(s), b_1(s), b_2(s), c_1(s), c_2(s)$
-        and an $m \in \mathbb{Z}^+$ such that
         \[
-            t = s^{m}
+            \begin{aligned}
+                \boldsymbol{a}_1(s) &= a_{10} s^{\alpha_1} + a_{11} s^{\alpha_1 + 1} + \cdots \\
+                &\vdots \\
+                \boldsymbol{c}_2(s) &= c_{20} s^{\gamma_2} + c_{21} s^{\gamma_2 + 1} + \cdots \\
+                t(s) &= s^{m}
+            \end{aligned}
+        \]
+        for some $m \in \mathbb{Z}^+$.
+    </div>
+    <div class="fragment">
+        <p>
+            We have Puiseux series (fractional power series) expansion
+            \[
+                \begin{aligned}
+                    \boldsymbol{a}_1(t) &= a_{10} t^{\frac{\alpha_1}{m}} + a_{11} t^{\frac{\alpha_1 + 1}{m}} + \cdots \in \mathbb{C}\{t\} \\
+                    &\vdots \\
+                    \boldsymbol{c}_2(t) &= c_{20} t^{\frac{\gamma_2}{m}} + c_{21} t^{\frac{\gamma_2 + 1}{m}} + \cdots \in \mathbb{C}\{t\}
+                \end{aligned}
+            \]
+        </p>
+    </div>
+</section>
+
+<section data-auto-animate>
+    <div>
+        <p>
+            We have Puiseux series (fractional power series) expansion
+            \[
+                \begin{aligned}
+                    \boldsymbol{a}_1(t) &= a_{10} t^{\frac{\alpha_1}{m}} + a_{11} t^{\frac{\alpha_1 + 1}{m}} + \cdots \in \mathbb{C}\{t\} \\
+                    &\vdots \\
+                    \boldsymbol{c}_2(t) &= c_{20} t^{\frac{\gamma_2}{m}} + c_{21} t^{\frac{\gamma_2 + 1}{m}} + \cdots \in \mathbb{C}\{t\}
+                \end{aligned}
+            \]
+        </p>
+    </div>
+    <div class="theoremlike fragment" data-type="Assumption" data-id="starting-assumption">
+        <strong>(Justified)</strong>
+        Near $t=0$, each path is parametrized by
+        \[
+            \begin{aligned}
+                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} a_1 + o(t) &
+                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} a_2 + o(t) \\
+                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} b_1 + o(t) &
+                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} b_2 + o(t) \\
+                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} c_1 + o(t) &
+                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} c_2 + o(t)
+            \end{aligned}
         \]
     </div>
+</section>
+
+<section data-auto-animate>
+    <p> Polyhedral homotopy for totally mixed Nash equilibrium </p>
+    <div class="center">
+        <img src="three-players.svg" alt="" width="600">
+    </div>
+</section>
+
+<section data-auto-animate>
+    <div class="cols">
+        <div class="col">
+            <div data-id="three-players-again"><img src="three-players.svg" alt=""></div>
+        </div>
+        <div class="col">
+            <div data-id="nash-sys-again">
+            <span>
+                \[
+                    \begin{aligned}
+                        0 &=
+                        \overline{A}_{11} \, b_1 c_1 + 
+                        \overline{A}_{12} \, b_1 c_2 + 
+                        \overline{A}_{21} \, b_2 c_1 + 
+                        \overline{A}_{22} \, b_2 c_2 
+                        \\
+                        0 &=
+                        \overline{B}_{11} \,a_1 c_1 + 
+                        \overline{B}_{12} \,a_1 c_2 + 
+                        \overline{B}_{21} \,a_2 c_1 + 
+                        \overline{B}_{22} \,a_2 c_2 
+                        \\
+                        0 &=
+                        \overline{C}_{11} \,a_1 b_1 + 
+                        \overline{C}_{12} \,a_1 b_2 + 
+                        \overline{C}_{21} \,a_2 b_1 + 
+                        \overline{C}_{22} \,a_2 b_2 
+                        \\
+                        \delta_1 &= a_1 + a_2 \\
+                        \delta_2 &= b_1 + b_2 \\
+                        \delta_3 &= c_1 + c_2
+                    \end{aligned}
+                \]
+            </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-auto-animate>
+    <div class="cols">
+        <div class="col">
+            <div class="small" data-id="nash-sys-again">
+            <span>
+                \[
+                    \begin{aligned}
+                        0 &=
+                        \overline{A}_{11} \, b_1 c_1 + 
+                        \overline{A}_{12} \, b_1 c_2 + 
+                        \overline{A}_{21} \, b_2 c_1 + 
+                        \overline{A}_{22} \, b_2 c_2 
+                        \\
+                        0 &=
+                        \overline{B}_{11} \,a_1 c_1 + 
+                        \overline{B}_{12} \,a_1 c_2 + 
+                        \overline{B}_{21} \,a_2 c_1 + 
+                        \overline{B}_{22} \,a_2 c_2 
+                        \\
+                        0 &=
+                        \overline{C}_{11} \,a_1 b_1 + 
+                        \overline{C}_{12} \,a_1 b_2 + 
+                        \overline{C}_{21} \,a_2 b_1 + 
+                        \overline{C}_{22} \,a_2 b_2 
+                        \\
+                        \delta_1 &= a_1 + a_2 \\
+                        \delta_2 &= b_1 + b_2 \\
+                        \delta_3 &= c_1 + c_2
+                    \end{aligned}
+                \]
+            </span>
+            </div>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <div data-id="homotopy-again">
+                <span>
+                \[
+                    H =
+                    \left\{
+                    \begin{aligned}
+                        &
+                        \overline{A}_{11} \class{highlight}{t^{1.0}} b_1 c_1 + 
+                        \overline{A}_{12} \class{highlight}{t^{1.4}} b_1 c_2 + 
+                        \overline{A}_{21} \class{highlight}{t^{1.2}} b_2 c_1 + 
+                        \overline{A}_{22} \class{highlight}{t^{0.7}} b_2 c_2 
+                        \\
+                        &
+                        \overline{B}_{11} \class{highlight}{t^{1.2}} a_1 c_1 + 
+                        \overline{B}_{12} \class{highlight}{t^{0.8}} a_1 c_2 + 
+                        \overline{B}_{21} \class{highlight}{t^{1.9}} a_2 c_1 + 
+                        \overline{B}_{22} \class{highlight}{t^{1.1}} a_2 c_2 
+                        \\
+                        &
+                        \overline{C}_{11} \class{highlight}{t^{0.5}} a_1 b_1 + 
+                        \overline{C}_{12} \class{highlight}{t^{0.3}} a_1 b_2 + 
+                        \overline{C}_{21} \class{highlight}{t^{1.3}} a_2 b_1 + 
+                        \overline{C}_{22} \class{highlight}{t^{1.6}} a_2 b_2 
+                        \\
+                        &\class{highlight}{t^{1.0}} \,a_1 + \class{highlight}{t^{4.5}} \,a_2 - \delta_1 \\
+                        &\class{highlight}{t^{1.0}} \,b_1 + \class{highlight}{t^{5.2}} \,b_2 - \delta_2 \\
+                        &\class{highlight}{t^{1.0}} \,c_1 + \class{highlight}{t^{7.1}} \,c_2 - \delta_3
+                    \end{aligned}
+                    \right.
+                \]
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-auto-animate>
+    <div class="cols">
+        <div class="col">
+            <div class="tiny" data-id="nash-sys-again">
+            <span>
+                \[
+                    \begin{aligned}
+                        0 &=
+                        \overline{A}_{11} \, b_1 c_1 + 
+                        \overline{A}_{12} \, b_1 c_2 + 
+                        \overline{A}_{21} \, b_2 c_1 + 
+                        \overline{A}_{22} \, b_2 c_2 
+                        \\
+                        0 &=
+                        \overline{B}_{11} \,a_1 c_1 + 
+                        \overline{B}_{12} \,a_1 c_2 + 
+                        \overline{B}_{21} \,a_2 c_1 + 
+                        \overline{B}_{22} \,a_2 c_2 
+                        \\
+                        0 &=
+                        \overline{C}_{11} \,a_1 b_1 + 
+                        \overline{C}_{12} \,a_1 b_2 + 
+                        \overline{C}_{21} \,a_2 b_1 + 
+                        \overline{C}_{22} \,a_2 b_2 
+                        \\
+                        \delta_1 &= a_1 + a_2 \\
+                        \delta_2 &= b_1 + b_2 \\
+                        \delta_3 &= c_1 + c_2
+                    \end{aligned}
+                \]
+            </span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="tiny" data-id="homotopy-again">
+                <span>
+                \[
+                    H =
+                    \left\{
+                    \begin{aligned}
+                        &
+                        \overline{A}_{11} \class{highlight}{t^{1.0}} b_1 c_1 + 
+                        \overline{A}_{12} \class{highlight}{t^{1.4}} b_1 c_2 + 
+                        \overline{A}_{21} \class{highlight}{t^{1.2}} b_2 c_1 + 
+                        \overline{A}_{22} \class{highlight}{t^{0.7}} b_2 c_2 
+                        \\
+                        &
+                        \overline{B}_{11} \class{highlight}{t^{1.2}} a_1 c_1 + 
+                        \overline{B}_{12} \class{highlight}{t^{0.8}} a_1 c_2 + 
+                        \overline{B}_{21} \class{highlight}{t^{1.9}} a_2 c_1 + 
+                        \overline{B}_{22} \class{highlight}{t^{1.1}} a_2 c_2 
+                        \\
+                        &
+                        \overline{C}_{11} \class{highlight}{t^{0.5}} a_1 b_1 + 
+                        \overline{C}_{12} \class{highlight}{t^{0.3}} a_1 b_2 + 
+                        \overline{C}_{21} \class{highlight}{t^{1.3}} a_2 b_1 + 
+                        \overline{C}_{22} \class{highlight}{t^{1.6}} a_2 b_2 
+                        \\
+                        &\class{highlight}{t^{1.0}} \,a_1 + \class{highlight}{t^{4.5}} \,a_2 - \delta_1 \\
+                        &\class{highlight}{t^{1.0}} \,b_1 + \class{highlight}{t^{5.2}} \,b_2 - \delta_2 \\
+                        &\class{highlight}{t^{1.0}} \,c_1 + \class{highlight}{t^{7.1}} \,c_2 - \delta_3
+                    \end{aligned}
+                    \right.
+                \]
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <div>
+                <div class="small" data-id="init-sys-again">
+                    <span>
+                    \[
+                        \left\{
+                        \begin{aligned}
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  \overline{A}_{11} \, b_1 c_1 } + 
+                            \class{lowlowlight}{\overline{A}_{12} \, b_1 c_2 } + 
+                            \class{lowlowlight}{\overline{A}_{21} \, b_2 c_1 } + 
+                            \class{highlight}{  \overline{A}_{22} \, b_2 c_2 }
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{lowlowlight}{\overline{B}_{11} \,a_1 c_1 } + 
+                            \class{highlight}{  \overline{B}_{12} \,a_1 c_2 } + 
+                            \class{lowlowlight}{\overline{B}_{21} \,a_2 c_1 } + 
+                            \class{highlight}{  \overline{B}_{22} \,a_2 c_2 }
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  \overline{C}_{11} \,a_1 b_1 } + 
+                            \class{highlight}{  \overline{C}_{12} \,a_1 b_2 } + 
+                            \class{lowlowlight}{\overline{C}_{21} \,a_2 b_1 } + 
+                            \class{lowlowlight}{\overline{C}_{22} \,a_2 b_2 }
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  a_1 } + 
+                            \class{lowlowlight}{a_2} -
+                            \class{highlight}{\delta_1} 
+                            \\ 
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  b_1 } +
+                            \class{lowlowlight}{b_2 } -
+                            \class{highlight}{\delta_2}
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  c_1} + 
+                            \class{lowlowlight}{c_2} -
+                            \class{highlight}{\delta_3} 
+                        \end{aligned}
+                        \right.
+                    \]
+                    \[
+                        \left\{
+                        \begin{aligned}
+                            \class{lowlowlight}{ 0 } &=
+                            \class{highlight}{  \overline{A}_{11} \, b_1 c_1 } + 
+                            \class{lowlowlight}{\overline{A}_{12} \, b_1 c_2 } + 
+                            \class{highlight}{  \overline{A}_{21} \, b_2 c_1 } + 
+                            \class{lowlowlight}{\overline{A}_{22} \, b_2 c_2 }
+                            \\
+                            \class{lowlowlight}{ 0 } &=
+                            \class{lowlowlight}{\overline{B}_{11} \,a_1 c_1 } + 
+                            \class{lowlowlight}{\overline{B}_{12} \,a_1 c_2 } + 
+                            \class{highlight}{  \overline{B}_{21} \,a_2 c_1 } + 
+                            \class{highlight}{  \overline{B}_{22} \,a_2 c_2 }
+                            \\
+                            \class{lowlowlight}{ 0 } &=
+                            \class{lowlowlight}{\overline{C}_{11} \,a_1 b_1 } + 
+                            \class{highlight}{\overline{C}_{12} \,a_1 b_2 } + 
+                            \class{highlight}{ \overline{C}_{21} \,a_2 b_1 } + 
+                            \class{lowlowlight}{ \overline{C}_{22} \,a_2 b_2 }
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  a_1 } + 
+                            \class{lowlowlight}{a_2} -
+                            \class{highlight}{\delta_1}
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  b_1 } +
+                            \class{lowlowlight}{b_2 } -
+                            \class{highlight}{\delta_2}
+                            \\
+                            \class{lowlowlight}{ 0 } &=
+                            \class{highlight}{c_1} + 
+                            \class{lowlowlight}{ c_2} -
+                            \class{highlight}{\delta_3}
+                        \end{aligned}
+                        \right.
+                    \]
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-auto-animate>
+    <div class="cols">
+        <div class="col">
+            <div class="tiny" data-id="nash-sys-again">
+            <span>
+                \[
+                    \begin{aligned}
+                        0 &=
+                        \overline{A}_{11} \, b_1 c_1 + 
+                        \overline{A}_{12} \, b_1 c_2 + 
+                        \overline{A}_{21} \, b_2 c_1 + 
+                        \overline{A}_{22} \, b_2 c_2 
+                        \\
+                        0 &=
+                        \overline{B}_{11} \,a_1 c_1 + 
+                        \overline{B}_{12} \,a_1 c_2 + 
+                        \overline{B}_{21} \,a_2 c_1 + 
+                        \overline{B}_{22} \,a_2 c_2 
+                        \\
+                        0 &=
+                        \overline{C}_{11} \,a_1 b_1 + 
+                        \overline{C}_{12} \,a_1 b_2 + 
+                        \overline{C}_{21} \,a_2 b_1 + 
+                        \overline{C}_{22} \,a_2 b_2 
+                        \\
+                        \delta_1 &= a_1 + a_2 \\
+                        \delta_2 &= b_1 + b_2 \\
+                        \delta_3 &= c_1 + c_2
+                    \end{aligned}
+                \]
+            </span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="tiny" data-id="homotopy-again">
+                <span>
+                \[
+                    H =
+                    \left\{
+                    \begin{aligned}
+                        &
+                        \overline{A}_{11} \class{highlight}{t^{1.0}} b_1 c_1 + 
+                        \overline{A}_{12} \class{highlight}{t^{1.4}} b_1 c_2 + 
+                        \overline{A}_{21} \class{highlight}{t^{1.2}} b_2 c_1 + 
+                        \overline{A}_{22} \class{highlight}{t^{0.7}} b_2 c_2 
+                        \\
+                        &
+                        \overline{B}_{11} \class{highlight}{t^{1.2}} a_1 c_1 + 
+                        \overline{B}_{12} \class{highlight}{t^{0.8}} a_1 c_2 + 
+                        \overline{B}_{21} \class{highlight}{t^{1.9}} a_2 c_1 + 
+                        \overline{B}_{22} \class{highlight}{t^{1.1}} a_2 c_2 
+                        \\
+                        &
+                        \overline{C}_{11} \class{highlight}{t^{0.5}} a_1 b_1 + 
+                        \overline{C}_{12} \class{highlight}{t^{0.3}} a_1 b_2 + 
+                        \overline{C}_{21} \class{highlight}{t^{1.3}} a_2 b_1 + 
+                        \overline{C}_{22} \class{highlight}{t^{1.6}} a_2 b_2 
+                        \\
+                        &\class{highlight}{t^{1.0}} \,a_1 + \class{highlight}{t^{4.5}} \,a_2 - \delta_1 \\
+                        &\class{highlight}{t^{1.0}} \,b_1 + \class{highlight}{t^{5.2}} \,b_2 - \delta_2 \\
+                        &\class{highlight}{t^{1.0}} \,c_1 + \class{highlight}{t^{7.1}} \,c_2 - \delta_3
+                    \end{aligned}
+                    \right.
+                \]
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <div>
+                <div class="tiny" data-id="init-sys-again">
+                    <span>
+                    \[
+                        \left\{
+                        \begin{aligned}
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  \overline{A}_{11} \, b_1 c_1 } + 
+                            \class{lowlowlight}{\overline{A}_{12} \, b_1 c_2 } + 
+                            \class{lowlowlight}{\overline{A}_{21} \, b_2 c_1 } + 
+                            \class{highlight}{  \overline{A}_{22} \, b_2 c_2 }
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{lowlowlight}{\overline{B}_{11} \,a_1 c_1 } + 
+                            \class{highlight}{  \overline{B}_{12} \,a_1 c_2 } + 
+                            \class{lowlowlight}{\overline{B}_{21} \,a_2 c_1 } + 
+                            \class{highlight}{  \overline{B}_{22} \,a_2 c_2 }
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  \overline{C}_{11} \,a_1 b_1 } + 
+                            \class{highlight}{  \overline{C}_{12} \,a_1 b_2 } + 
+                            \class{lowlowlight}{\overline{C}_{21} \,a_2 b_1 } + 
+                            \class{lowlowlight}{\overline{C}_{22} \,a_2 b_2 }
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  a_1 } + 
+                            \class{lowlowlight}{a_2} -
+                            \class{highlight}{\delta_1} 
+                            \\ 
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  b_1 } +
+                            \class{lowlowlight}{b_2 } -
+                            \class{highlight}{\delta_2}
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  c_1} + 
+                            \class{lowlowlight}{c_2} -
+                            \class{highlight}{\delta_3} 
+                        \end{aligned}
+                        \right.
+                    \]
+                    \[
+                        \left\{
+                        \begin{aligned}
+                            \class{lowlowlight}{ 0 } &=
+                            \class{highlight}{  \overline{A}_{11} \, b_1 c_1 } + 
+                            \class{lowlowlight}{\overline{A}_{12} \, b_1 c_2 } + 
+                            \class{highlight}{  \overline{A}_{21} \, b_2 c_1 } + 
+                            \class{lowlowlight}{\overline{A}_{22} \, b_2 c_2 }
+                            \\
+                            \class{lowlowlight}{ 0 } &=
+                            \class{lowlowlight}{\overline{B}_{11} \,a_1 c_1 } + 
+                            \class{lowlowlight}{\overline{B}_{12} \,a_1 c_2 } + 
+                            \class{highlight}{  \overline{B}_{21} \,a_2 c_1 } + 
+                            \class{highlight}{  \overline{B}_{22} \,a_2 c_2 }
+                            \\
+                            \class{lowlowlight}{ 0 } &=
+                            \class{lowlowlight}{\overline{C}_{11} \,a_1 b_1 } + 
+                            \class{highlight}{\overline{C}_{12} \,a_1 b_2 } + 
+                            \class{highlight}{ \overline{C}_{21} \,a_2 b_1 } + 
+                            \class{lowlowlight}{ \overline{C}_{22} \,a_2 b_2 }
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  a_1 } + 
+                            \class{lowlowlight}{a_2} -
+                            \class{highlight}{\delta_1}
+                            \\
+                            \class{lowlowlight}{0} &=
+                            \class{highlight}{  b_1 } +
+                            \class{lowlowlight}{b_2 } -
+                            \class{highlight}{\delta_2}
+                            \\
+                            \class{lowlowlight}{ 0 } &=
+                            \class{highlight}{c_1} + 
+                            \class{lowlowlight}{ c_2} -
+                            \class{highlight}{\delta_3}
+                        \end{aligned}
+                        \right.
+                    \]
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <img src="starting-at-infinity.svg" alt="">
+        </div>
+    </div>
+    <p class="fragment">
+        Standard numerical "path trackers"
+        can track these paths and produce
+        totally mixed Nash equilibria.
+    </p>
 </section>

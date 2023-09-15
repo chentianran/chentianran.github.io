@@ -107,6 +107,9 @@ div.problem:before {
 .lowlight {
   color: #505050; }
 
+.lowlowlight {
+  color: #9F9F9F; }
+
 .equ {
   display: flex;
   justify-content: center;
