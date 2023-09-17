@@ -1568,8 +1568,13 @@ title: Polynomials in economy and the polyhedral homotopy
 
 <section data-auto-animate>
     <p> Polyhedral homotopy for totally mixed Nash equilibrium </p>
+    <p class="small lowlight">
+        Huber & Sturmfels.
+        <em>A polyhedral method for solving sparse polynomial systems</em>.
+        Math Comput 64, 1541-1555 (1995).
+    </p>
     <div class="center">
-        <img src="three-players.svg" alt="" width="600">
+        <img src="three-players.svg" alt="" width="550">
     </div>
 </section>
 
@@ -2002,4 +2007,440 @@ title: Polynomials in economy and the polyhedral homotopy
         can track these paths and produce
         totally mixed Nash equilibria.
     </p>
+</section>
+
+<section>
+    <h3>Polyhedral homotopy method</h3>
+    <p class="smaller lowlight">
+        Huber & Sturmfels.
+        <em>A polyhedral method for solving sparse polynomial systems</em>.
+        Math Comput 64, 1541-1555 (1995).
+    </p>
+    <p>
+        For a system of $n$ (Laurent) polynomials
+        \[
+            f_i (\mathbf{x}) = \sum_{a \in S_i} c_{\mathbf{a}} \mathbf{x}^{\mathbf{a}}
+            \quad\text{for } i = 1,\ldots,n
+        \]
+        in $n$ variables $\mathbf{x} = (x_1,\ldots,x_n)$, where
+    </p>
+    <ul>
+        <li>
+            $\mathbf{x}^{\mathbf{a}} = x_1^{a_1} x_2^{a_2} \cdots x_n^{a_n}$ denotes a monomial
+        </li>
+        <li>
+            $S_i$ is the support of $f_i$
+        </li>
+        <li>
+            $c_{\mathbf{a}}$'s are nonzero complex coefficients...
+        </li>
+    </ul>
+    <p class="fragment">
+        the <strong class="highlight">polyhedral homotopy method</strong>
+        of Huber and Sturmfels is an efficient and stable
+        numerical method for compute <em class="highlight">all</em>
+        $\mathbb{C}^*$-zeros.
+    </p>
+    <div class="fragment smaller lowlight">
+        <p>Extensions to $\mathbb{C}^n$:</p>
+        <ul>
+            <li>
+                Rojas.
+                A convex geometric approach to counting the roots of a polynomial system.
+                Theor. Comput. Sci. 133, 105-140 (1994).
+            </li>
+            <li>
+                Li & Wang.
+                The BKK root count in $\mathbb{C}^n$.
+                Math. Comput. 65, 1477-1484 (1996).
+            </li>
+            <li>
+                Huber & Sturmfels.
+                Bernstein's theorem in affine space.
+                Discrete Comput Geom 17, 137-141 (1997).
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h3>Root counting</h3>
+    <div class="cols">
+        <div class="col">
+            <div data-id="three-players-again"><img src="three-players.svg" alt=""></div>
+        </div>
+        <div class="col">
+            <p class="small">
+                \[
+                    \begin{aligned}
+                        0 &=
+                        \overline{A}_{11} \, b_1 c_1 + 
+                        \overline{A}_{12} \, b_1 c_2 + 
+                        \overline{A}_{21} \, b_2 c_1 + 
+                        \overline{A}_{22} \, b_2 c_2 
+                        \\
+                        0 &=
+                        \overline{B}_{11} \,a_1 c_1 + 
+                        \overline{B}_{12} \,a_1 c_2 + 
+                        \overline{B}_{21} \,a_2 c_1 + 
+                        \overline{B}_{22} \,a_2 c_2 
+                        \\
+                        0 &=
+                        \overline{C}_{11} \,a_1 b_1 + 
+                        \overline{C}_{12} \,a_1 b_2 + 
+                        \overline{C}_{21} \,a_2 b_1 + 
+                        \overline{C}_{22} \,a_2 b_2 
+                        \\
+                        \delta_1 &= a_1 + a_2 \\
+                        \delta_2 &= b_1 + b_2 \\
+                        \delta_3 &= c_1 + c_2
+                    \end{aligned}
+                \]
+            </p>
+            <p class="fragment center">
+                What is the generic root count?
+            </p>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <p class="fragment center">
+        Why 2 ?
+    </p>
+</section>
+
+<section>
+    <h3>Bernshtein-Kushnirenko-Khovanskii (BKK) bound</h3>
+    <div class="theorem">
+        (Bernshtein, Kushnirenko, Khovanskii)
+        Given a system of (Laurent) polynomials
+        $f_1,\dots,f_n$ in $(x_1,\dots,x_n)$
+        with <em>generic</em> coefficients,
+        the number of isolated common roots in
+        $(\mathbb{C}^*)^n$ is 
+        \[
+            \operatorname{MVol}(
+                \operatorname{Newt}(f_1),
+                \dots,
+                \operatorname{Newt}(f_n)
+            ).
+        \]
+    </div>
+    <ul>
+        <li class="fragment">
+            $\operatorname{MVol}$ denotes the <b>mixed volume</b> function,
+        </li>
+        <li class="fragment">
+            $\operatorname{Newt}(f_i)$ is the Newton polytope of $f_i$,
+            i.e., the convex hull of the exponent vectors
+            in $f_i$ as points in $\mathbb{R}^n$.
+        </li>
+    </ul>
+    <p class="fragment">
+        This "BKK" bound is also the <em>maximum</em> number of
+        isolated $\mathbb{C}^*$-solutions such a system can have
+        for any choice of coefficients.
+    </p>
+    <br/>
+    <p class="fragment lowlight">
+        (This is the number of paths the polyhedral homotopy has to trace.)
+    </p>
+</section>
+<section>
+    <h3>Mixed volume</h3>
+    <p>
+        \[
+            \text{Minkowski sum: }
+            A + B := \{ a + b \mid a \in A, b \in B \}
+        \]
+    </p>
+    <br/>
+    <div class="center fragment">
+        <svg height="140" width="600">
+            <g fill="none" stroke="purple" stroke-width="1">
+              <path stroke-linecap="round" d="M10 20 l100 100" />
+            </g>
+            <text x="150" y="75" fill="black"> +</text>
+            <text x="320" y="75" fill="black"> =</text>
+            <circle cx="240" cy="70" r="20" stroke="black" stroke-width="1" fill="purple" />
+            <g fill="none" stroke="purple" stroke-width="40">
+              <path stroke-linecap="round" d="M400 20 l100 100" />
+            </g>
+        </svg>
+    </div>
+    <br/>
+    <div class="definition fragment">
+        (Minkowski)
+        For convex polytopes $P_1,\dots,P_n$ in $\mathbb{R}^n$,
+        the <b class="highlight">mixed volume</b>
+        $\operatorname{MVol}(P_1,\dots,P_n)$
+        is the coefficient of $\lambda_1 \cdots \lambda_n$ in
+        \[
+            \operatorname{vol}(\lambda_1 P_1 + \cdots + \lambda_n P_n)
+        \]
+    </div>
+    <br/>
+    <p class="fragment lowlight center small">
+        Many researchers prefer the definition with an additional
+        factor of $\frac{1}{n!}$.
+    </p>
+</section>
+<section>
+    <h3>2-dimensional case</h3>
+    <p class="center">
+        $\text{MVol}(A,B)$
+        is the coefficient of $\lambda_1 \lambda_2$ in
+        $
+            \text{vol}(\lambda_1 A + \lambda_2 B)
+        $
+    </p>
+    <div class="center fragment">
+        <svg height="350" width="800">
+            <g transform="translate(0,300), scale(0.75,-0.75)">
+                <g>
+                    <polygon 
+                        points="0,0 200,100 100,200"
+                        style="fill:lightsteelblue;stroke:black;stroke-width:1"
+                    />
+                </g>
+                <g transform="translate(300,0)">
+                    <polygon 
+                        points="0,0 200,0 200,200 0,200"
+                        style="fill:coral;stroke:black;stroke-width:1"
+                    />
+                </g>
+                <text x="225" y="120" fill="black"> + </text>
+                <text x="525" y="120" fill="black"> =</text>
+                <g transform="translate(570,0)">
+                    <polygon 
+                        points="0,0 200,0 200,200 0,200"
+                        style="fill:coral;stroke:black;stroke-width:1"
+                    />
+                    <g transform="translate(200,200)">
+                        <polygon 
+                            points="0,0 200,100 100,200"
+                            style="fill:lightsteelblue;stroke:black;stroke-width:1"
+                        />
+                    </g>
+                    <g transform="translate(200,0)">
+                        <polygon 
+                            points="0,0 200,100 200,300 0,200"
+                            style="fill:orchid;stroke:black;stroke-width:1"
+                        />
+                    </g>
+                    <g transform="translate(0,200)">
+                        <polygon 
+                            points="0,0 200,0 300,200 100,200"
+                            style="fill:orchid;stroke:black;stroke-width:1"
+                        />
+                    </g>
+                </g>
+            </g>
+          </svg>
+    </div>
+    <p class="fragment">
+        \[
+            \text{MVol}(A,B) =
+            \text{vol}(A+B) - \text{vol}(A) - \text{vol}(B)
+        \]
+    </p>
+    <br/>
+    <p class="fragment">
+        This formula can be generalized to higher dimensional,
+        <span class="fragment">
+            but this is <b>not</b> how we compute mixed volume (BKK bound) in practice.
+        </span>
+    </p>
+</section>
+
+<section data-auto-animate>
+    <h3>
+        BKK bound for Nash equilibria
+    </h3>
+    <div class="theorem">
+        (McKelvey & McLennan)
+        The maximum number of isolated totally mixed Nash equilibria
+        for any $n$-player game where the $i$-th player has $d_i$ pure strategies
+        equals the mixed volume of $\Delta[ d_1, \ldots, d_n ]$.
+        <span class="small lowlight">
+            ($n$ products of simplicies)
+        </span>
+        <div class="fragment" data-id="MM-bound">
+            <p>
+            This mixed volume equals the number of partitions of
+            \[
+                \{
+                    p_k^{(i)} \mid
+                    i=1,\ldots,n,\;
+                    k=1,\ldots,d_i-1
+                \}
+                \;=\;
+                \bigcup_{i=1}^n B_1
+            \]
+            </p>
+            <ul>
+                <li>
+                    $|B_i| = d_i - 1$
+                </li>
+                <li>
+                    $p_k^{(i)} \not\in B_i$ for any $k$.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <p class="smaller lowlight">
+        McKelvey, & McLennan.
+        <em>The Maximal Number of Regular Totally Mixed Nash Equilibria</em>.
+        J. Econ. Theory 72, 411-425
+    </p>
+    <p class="fragment">
+        This maximum number can be attained by counting
+        real Nash equilibria with $p_k^{(i)} \in (0,1)$.
+    </p>
+</section>
+
+<section data-auto-animate>
+    <div data-id="MM-bound">
+        <p>
+            This mixed volume equals the number of partitions of
+            \[
+                \{
+                    p_k^{(i)} \mid
+                    i=1,\ldots,n,\;
+                    k=1,\ldots,d_i-1
+                \}
+                \;=\;
+                \bigcup_{i=1}^n B_1
+            \]
+        </p>
+        <ul>
+            <li>
+                $|B_i| = d_i - 1$
+            </li>
+            <li>
+                $p_k^{(i)} \not\in B_i$ for any $k$.
+            </li>
+        </ul>
+    </div>
+    <br/>
+    <div class="cols">
+        <div class="col">
+            <p>
+                The 3-player-2-strategies case
+            </p>
+            <img src="three-players.svg" alt="" width="300" data-id="three-players-again">
+        </div>
+        <div class="col">
+            <p>
+                ($n=3, d_i=2$)
+                BKK bound equals the number of partitions
+                \[
+                    \{
+                        a, b, c
+                    \}
+                    =
+                    B_1 \cup B_2 \cup B_3
+                \]
+                such that $|B_1| = |B_2| = |B_3| = 1$
+            </p>
+            <ul>
+                <li>$a \not\in B_1$</li>
+                <li>$b \not\in B_2$</li>
+                <li>$c \not\in B_3$</li>
+            </ul>
+            <p class="tiny lowlight">
+                (Coincide with the number of derangements in this special case)
+            </p>
+        </div>
+    </div>
+</section>
+
+<section data-auto-animate>
+    <div class="cols">
+        <div class="col">
+            <p>
+                The 3-player-2-strategies case
+            </p>
+            <img src="three-players.svg" alt="" width="300" data-id="three-players-again">
+        </div>
+        <div class="col">
+            <p>
+                ($n=3, d_i=2$)
+                BKK bound equals the number of partitions
+                \[
+                    \{
+                        a, b, c
+                    \}
+                    =
+                    B_1 \cup B_2 \cup B_3
+                \]
+                such that $|B_1| = |B_2| = |B_3| = 1$
+            </p>
+            <ul>
+                <li>$a \not\in B_1$</li>
+                <li>$b \not\in B_2$</li>
+                <li>$c \not\in B_3$</li>
+            </ul>
+            <p class="tiny lowlight">
+                (Coincide with the number of derangements in this special case)
+            </p>
+        </div>
+    </div>
+    <br>
+    <p>
+        There are only two possibilities:
+        \[
+            \begin{aligned}
+                B_1 &= \{ c \} &&           & B_1 &= \{ b \} \\
+                B_2 &= \{ a \} &&\text{and} & B_2 &= \{ c \} \\
+                B_3 &= \{ b \} &&           & B_3 &= \{ a \}
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment center">
+        There are exactly 2 totally mixed Nash equilibria.
+    </p>
+</section>
+
+<section>
+    <div class="cols">
+        <div class="col">
+            <p>
+                3 players with 3 pure strategies
+            </p>
+            <img src="three-players-three-strategies.svg" alt="" width="300" data-id="three-players-again">
+        </div>
+        <div class="col">
+            <p>
+                ($n=3, d_i=3$)
+                BKK bound equals the number of partitions
+                \[
+                    \{
+                        a_1, a_2, b_1, b_2, c_1, c_2
+                    \}
+                    =
+                    B_1 \cup B_2 \cup B_3
+                \]
+                such that $|B_1| = |B_2| = |B_3| = 2$
+            </p>
+            <ul>
+                <li>$a_1,a_2 \not\in B_1$</li>
+                <li>$b_1,b_2 \not\in B_2$</li>
+                <li>$c_1,c_2 \not\in B_3$</li>
+            </ul>
+        </div>
+    </div>
+    <div class="problem fragment">
+        How many such partitions are there?
+        What are they?
+    </div>
+    <div class="problem fragment">
+        Follow the exercise
+        written by Irem Portakal: 
+        <span class="small">
+            <a href="http://www.juliahomotopycontinuation.org/examples/nash/">
+                https://www.juliahomotopycontinuation.org/examples/nash/
+            </a>
+        </span>
+    </div>
 </section>

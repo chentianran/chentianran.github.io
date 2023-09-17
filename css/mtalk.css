@@ -30,6 +30,9 @@
 .reveal .title {
   color: white; }
 
+body {
+  counter-reset: example problem; }
+
 .theorem, .theoremlike, .definition, .example, .problem {
   box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.5);
   transition: 0.3s;
