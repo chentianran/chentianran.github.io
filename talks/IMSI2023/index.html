@@ -2009,7 +2009,7 @@ title: Polynomials in economy and the polyhedral homotopy
     </p>
 </section>
 
-<section>
+<section data-auto-animate>
     <h3>Polyhedral homotopy method</h3>
     <p class="smaller lowlight">
         Huber & Sturmfels.
@@ -2017,11 +2017,17 @@ title: Polynomials in economy and the polyhedral homotopy
         Math Comput 64, 1541-1555 (1995).
     </p>
     <p>
-        For a system of $n$ (Laurent) polynomials
-        \[
-            f_i (\mathbf{x}) = \sum_{a \in S_i} c_{\mathbf{a}} \mathbf{x}^{\mathbf{a}}
-            \quad\text{for } i = 1,\ldots,n
-        \]
+        For a system of $n$ (Laurent) polynomials $F$
+    </p>
+    <div data-id="general-polysys">
+        <span>
+            \[
+                f_i (\mathbf{x}) = \sum_{\mathbf{a} \in S_i} c_{\mathbf{a}} \mathbf{x}^{\mathbf{a}}
+                \quad\text{for } i = 1,\ldots,n
+            \]
+        </span>
+    </div>
+    <p>
         in $n$ variables $\mathbf{x} = (x_1,\ldots,x_n)$, where
     </p>
     <ul>
@@ -2060,6 +2066,61 @@ title: Polynomials in economy and the polyhedral homotopy
                 Discrete Comput Geom 17, 137-141 (1997).
             </li>
         </ul>
+    </div>
+</section>
+
+<section data-auto-animate>
+    <div data-id="general-polysys">
+        <span>
+            \[
+                f_i (\mathbf{x}) = \sum_{\mathbf{a} \in S_i} c_{\mathbf{a}} \mathbf{x}^{\mathbf{a}}
+                \quad\text{for } i = 1,\ldots,n
+            \]
+        </span>
+    </div>
+    <p>
+        For <em>generic</em> coefficients,
+        all $\mathbb{C}^*$-solutions to $F = \mathbf{0}$
+        are isolated, and the total number is the BKK bound
+        $\operatorname{MVol}(\operatorname{Newt}(f_1),\ldots,\operatorname{Newt}(f_n))$.
+    </p>
+    <div class="fragment">
+        <p>We construction the homotopy function $H = (h_1,\ldots,h_n)$</p>
+        <div data-id="general-polyhedral">
+            <span>
+                \[
+                    h_i (\mathbf{x},\class{highlight}{t}) =
+                    \sum_{\mathbf{a} \in S_i}
+                        c_{\mathbf{a}}
+                        \mathbf{x}^{\mathbf{a}}
+                        \class{highlight}{t^{\omega_i(\mathbf{a})}}
+                    \quad\text{for } i = 1,\ldots,n
+                \]
+            </span>
+        </div>
+        <p>
+            where each $\omega_i : S_i \to \mathbb{Q}$
+            is a "lifting" function with <em>generic</em> images.
+        </p>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <ul class="fragment">
+                <li>$H$ is continuous</li>
+                <li>$H(\mathbf{x},1) \equiv F(\mathbf{x})$</li>
+                <li>As $t$ varies between 1 and 0, $H$ "deforms" the target system $F$</li>
+            </ul>
+            <p class="fragment">
+                For generic coefficients,
+                $\mathbb{C}^*$-solutions to $H = \mathbf{0}$
+                also move continuously forming "solution paths".
+            </p>
+        </div>
+        <div class="col">
+            <div class="fragment center">
+                <img src="starting-at-infinity.svg" alt="" width="320">
+            </div>
+        </div>
     </div>
 </section>
 
