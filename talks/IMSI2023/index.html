@@ -542,7 +542,7 @@ title: Polynomial systems in Economics
             \sum_{i,j,k=1}^2 A_{ijk} \, 
                 \class{highlight}{\overline{a}_i} \, b_j \, c_k
             \quad\text{for any }
-            (\class{highlight}{\overline{a}_1},\class{highlight}{\overline{a}_2}) \in \operatorname{int} \Delta
+            (\class{highlight}{\overline{a}_1},\class{highlight}{\overline{a}_2}) \in \Delta
         \]
     </p>
     <p class="fragment">
@@ -633,20 +633,24 @@ title: Polynomial systems in Economics
                     \cdots
                 \]
             </p>
-            <p class="fragment">
-                \[
-                    \downarrow
-                \]
-                <span data-id="Aij">
+            <div class="fragment">
+                <p>
                     \[
-                        0 =
-                        \overline{A}_{11} \, b_1 c_1 +
-                        \overline{A}_{12} \, b_1 c_2 +
-                        \overline{A}_{21} \, b_2 c_1 +
-                        \overline{A}_{22} \, b_2 c_2
+                        \downarrow
                     \]
-                </span>
-            </p>
+                </p>
+                <div data-id="Aij">
+                    <span>
+                        \[
+                            0 =
+                            \overline{A}_{11} \, b_1 c_1 +
+                            \overline{A}_{12} \, b_1 c_2 +
+                            \overline{A}_{21} \, b_2 c_1 +
+                            \overline{A}_{22} \, b_2 c_2
+                        \]
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
     <p class="fragment fade-out" data-fragment-index="2">
@@ -664,15 +668,17 @@ title: Polynomial systems in Economics
 
 <section data-auto-animate>
     <p>
-        <span data-id="Aij">
-        \[
-            0 =
-            \overline{A}_{11} \, b_1 c_1 + 
-            \overline{A}_{12} \, b_1 c_2 + 
-            \overline{A}_{21} \, b_2 c_1 + 
-            \overline{A}_{22} \, b_2 c_2 
-        \]
-        </span>
+        <div data-id="Aij">
+            <span data-id="Aij">
+            \[
+                0 =
+                \overline{A}_{11} \, b_1 c_1 + 
+                \overline{A}_{12} \, b_1 c_2 + 
+                \overline{A}_{21} \, b_2 c_1 + 
+                \overline{A}_{22} \, b_2 c_2 
+            \]
+            </span>
+        </div>
         <span class="fragment" data-id="BijCij">
             \[
                 \begin{aligned}
@@ -727,7 +733,7 @@ title: Polynomial systems in Economics
             Numerical homotopy method (continuous deformation)
         </li>
         <li>
-            Polyhedral homotopy
+            Polyhedral homotopy of Huber & Sturmfels
         </li>
     </ul>
 </section>
@@ -837,33 +843,35 @@ title: Polynomial systems in Economics
 </section>
 
 <section data-auto-animate>
-    <p data-id="nashsys">
-        \[
-            \begin{aligned}
-                0 &=
-                \overline{A}_{11} \, b_1 c_1 + 
-                \overline{A}_{12} \, b_1 c_2 + 
-                \overline{A}_{21} \, b_2 c_1 + 
-                \overline{A}_{22} \, b_2 c_2 
-                \\
-                0 &=
-                \overline{B}_{11} \,a_1 c_1 + 
-                \overline{B}_{12} \,a_1 c_2 + 
-                \overline{B}_{21} \,a_2 c_1 + 
-                \overline{B}_{22} \,a_2 c_2 
-                \\
-                0 &=
-                \overline{C}_{11} \,a_1 b_1 + 
-                \overline{C}_{12} \,a_1 b_2 + 
-                \overline{C}_{21} \,a_2 b_1 + 
-                \overline{C}_{22} \,a_2 b_2 
-                \\
-                \delta_1 &= a_1 + a_2 \\
-                \delta_2 &= b_1 + b_2 \\
-                \delta_3 &= c_1 + c_2
-            \end{aligned}
-        \]
-    </p>
+    <div data-id="nashsys">
+        <p>
+            \[
+                \begin{aligned}
+                    0 &=
+                    \overline{A}_{11} \, b_1 c_1 + 
+                    \overline{A}_{12} \, b_1 c_2 + 
+                    \overline{A}_{21} \, b_2 c_1 + 
+                    \overline{A}_{22} \, b_2 c_2 
+                    \\
+                    0 &=
+                    \overline{B}_{11} \,a_1 c_1 + 
+                    \overline{B}_{12} \,a_1 c_2 + 
+                    \overline{B}_{21} \,a_2 c_1 + 
+                    \overline{B}_{22} \,a_2 c_2 
+                    \\
+                    0 &=
+                    \overline{C}_{11} \,a_1 b_1 + 
+                    \overline{C}_{12} \,a_1 b_2 + 
+                    \overline{C}_{21} \,a_2 b_1 + 
+                    \overline{C}_{22} \,a_2 b_2 
+                    \\
+                    \delta_1 &= a_1 + a_2 \\
+                    \delta_2 &= b_1 + b_2 \\
+                    \delta_3 &= c_1 + c_2
+                \end{aligned}
+            \]
+        </p>
+    </div>
     <br>
     <div class="center">
         <p class="fragment">
@@ -884,13 +892,14 @@ title: Polynomial systems in Economics
             How are we changing the game?
         </span>
         <span class="fragment">
-            Is it a reasonable thing to do?
+            Is there a reasonable interpretation?
         </span>
     </div>
 </section>
 
 <section data-auto-animate>
-    <p data-id="nashsys">
+    <div data-id="nashsys">
+    <p>
         \[
             \begin{aligned}
                 0 &=
@@ -917,6 +926,7 @@ title: Polynomial systems in Economics
             \end{aligned}
         \]
     </p>
+    </div>
     <div class="center">
         <p class="fragment">
             What happens when
@@ -963,6 +973,9 @@ title: Polynomial systems in Economics
         We considered the <em>homotopy</em> function
         $H: (\mathbb{C}^*)^6 \times [0,1] \to \mathbb{C}^6$,
         and the "paths" defined by $H = 0$.
+        <em class="fragment">
+            This is the polyhedral homotopy.
+        </em>
     </p>
 </section>
 
@@ -1062,7 +1075,6 @@ title: Polynomial systems in Economics
                 \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} (c_2 + o(t))
             \end{aligned}
         \]
-        where 
         <ul>
             <li>
                 $\alpha_1,\alpha_2,\beta_1,\beta_2,\gamma_1,\gamma_2,m \in \mathbb{Z}$
@@ -1235,35 +1247,35 @@ title: Polynomial systems in Economics
         $\operatorname{init}_{\mathbf{v}} H = \mathbf{0} \; \to$
         \[
             \begin{aligned}
-                \class{lowlight}{ 0 } &=
+                \class{lowlowlight}{ 0 } &=
                 \class{highlight}{\overline{A}_{11} \, b_1 c_1 } + 
-                \class{lowlight}{ \overline{A}_{12} \, b_1 c_2 } + 
-                \class{lowlight}{ \overline{A}_{21} \, b_2 c_1 } + 
-                \class{lowlight}{ \overline{A}_{22} \, b_2 c_2 }
+                \class{lowlowlight}{ \overline{A}_{12} \, b_1 c_2 } + 
+                \class{lowlowlight}{ \overline{A}_{21} \, b_2 c_1 } + 
+                \class{lowlowlight}{ \overline{A}_{22} \, b_2 c_2 }
                 \\
-                \class{lowlight}{ 0 } &=
+                \class{lowlowlight}{ 0 } &=
                 \class{highlight}{ \overline{B}_{11} \,a_1 c_1 } + 
-                \class{lowlight}{ \overline{B}_{12} \,a_1 c_2 } + 
-                \class{lowlight}{\overline{B}_{21} \,a_2 c_1 } + 
-                \class{lowlight}{\overline{B}_{22} \,a_2 c_2 }
+                \class{lowlowlight}{ \overline{B}_{12} \,a_1 c_2 } + 
+                \class{lowlowlight}{\overline{B}_{21} \,a_2 c_1 } + 
+                \class{lowlowlight}{\overline{B}_{22} \,a_2 c_2 }
                 \\
-                \class{lowlight}{ 0 } &=
+                \class{lowlowlight}{ 0 } &=
                 \class{highlight}{ \overline{C}_{11} \,a_1 b_1 } + 
-                \class{lowlight}{\overline{C}_{12} \,a_1 b_2 } + 
-                \class{lowlight}{\overline{C}_{21} \,a_2 b_1 } + 
-                \class{lowlight}{ \overline{C}_{22} \,a_2 b_2 }
+                \class{lowlowlight}{\overline{C}_{12} \,a_1 b_2 } + 
+                \class{lowlowlight}{\overline{C}_{21} \,a_2 b_1 } + 
+                \class{lowlowlight}{ \overline{C}_{22} \,a_2 b_2 }
                 \\
-                \class{lowlight}{\delta_1} &= 
+                \class{lowlowlight}{\delta_1} &= 
                 \class{highlight}{ a_1 } + 
-                \class{lowlight}{a_2}
+                \class{lowlowlight}{a_2}
                 \\
-                \class{lowlight}{\delta_2} &=
+                \class{lowlowlight}{\delta_2} &=
                 \class{highlight}{ b_1 } +
-                \class{lowlight}{b_2 }
+                \class{lowlowlight}{b_2 }
                 \\
-                \class{lowlight}{\delta_3} &= 
+                \class{lowlowlight}{\delta_3} &= 
                 \class{highlight}{c_1} + 
-                \class{lowlight}{ c_2}
+                \class{lowlowlight}{ c_2}
             \end{aligned}
         \]
     </p>
@@ -1634,9 +1646,9 @@ title: Polynomial systems in Economics
                         \overline{C}_{21} \,a_2 b_1 + 
                         \overline{C}_{22} \,a_2 b_2 
                         \\
-                        \delta_1 &= a_1 + a_2 \\
-                        \delta_2 &= b_1 + b_2 \\
-                        \delta_3 &= c_1 + c_2
+                        1 &= a_1 + a_2 \\
+                        1 &= b_1 + b_2 \\
+                        1 &= c_1 + c_2
                     \end{aligned}
                 \]
             </span>
@@ -1670,9 +1682,9 @@ title: Polynomial systems in Economics
                         \overline{C}_{21} \,a_2 b_1 + 
                         \overline{C}_{22} \,a_2 b_2 
                         \\
-                        \delta_1 &= a_1 + a_2 \\
-                        \delta_2 &= b_1 + b_2 \\
-                        \delta_3 &= c_1 + c_2
+                        1 &= a_1 + a_2 \\
+                        1 &= b_1 + b_2 \\
+                        1 &= c_1 + c_2
                     \end{aligned}
                 \]
             </span>
@@ -1742,9 +1754,9 @@ title: Polynomial systems in Economics
                         \overline{C}_{21} \,a_2 b_1 + 
                         \overline{C}_{22} \,a_2 b_2 
                         \\
-                        \delta_1 &= a_1 + a_2 \\
-                        \delta_2 &= b_1 + b_2 \\
-                        \delta_3 &= c_1 + c_2
+                        1 &= a_1 + a_2 \\
+                        1 &= b_1 + b_2 \\
+                        1 &= c_1 + c_2
                     \end{aligned}
                 \]
             </span>
@@ -1898,9 +1910,9 @@ title: Polynomial systems in Economics
                         \overline{C}_{21} \,a_2 b_1 + 
                         \overline{C}_{22} \,a_2 b_2 
                         \\
-                        \delta_1 &= a_1 + a_2 \\
-                        \delta_2 &= b_1 + b_2 \\
-                        \delta_3 &= c_1 + c_2
+                        1 &= a_1 + a_2 \\
+                        1 &= b_1 + b_2 \\
+                        1 &= c_1 + c_2
                     \end{aligned}
                 \]
             </span>
@@ -2113,7 +2125,7 @@ title: Polynomial systems in Economics
         $\operatorname{MVol}(\operatorname{Newt}(f_1),\ldots,\operatorname{Newt}(f_n))$.
     </p>
     <div class="fragment">
-        <p>We construction the homotopy function $H = (h_1,\ldots,h_n)$</p>
+        <p>We construct the homotopy function $H = (h_1,\ldots,h_n)$</p>
         <div data-id="general-polyhedral">
             <span>
                 \[
@@ -2331,6 +2343,100 @@ title: Polynomial systems in Economics
     <p class="fragment lowlight center small">
         Many researchers prefer the definition with an additional
         factor of $\frac{1}{n!}$.
+    </p>
+</section>
+<section>
+    <h3>2-dimensional case</h3>
+    <svg width="960" height="460" id="canvas">
+        <text x="250" y="390">+</text>
+        <text x="480" y="390">=</text>
+    </svg>
+    
+    <div class="mcols">
+        <div class="col5">
+            <label>$\lambda_1$</label>
+            <input type="range" min="30" max="120" value="100" class="slider" id="scale1">
+        </div>
+        <div class="col5">
+            <label>$\lambda_2$</label>
+            <input type="range" min="30" max="100" value="80" class="slider" id="scale2">
+        </div>
+        <div class="col2">
+            <label class="switch">
+                <input type="checkbox" id="showarea">
+                Area
+            </label>
+        </div>
+    </div>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script>
+        d3.select("#scale1")  .on("input", function() { update(); });
+        d3.select("#scale2")  .on("input", function() { update(); });
+        d3.select("#showarea").on("input", function() { showarea = this.checked; update(); });
+
+        let showarea = false;
+        let A = [
+            [  0,   0],
+            [200,   0],
+            [200, 200],
+            [  0, 200]
+        ];
+        let B = [
+            [100,200],
+            [200,100],
+            [0,0],
+        ];
+        let tA = [  10, 10];  // translation for A
+        let tB = [ 280, 10];  // translation for B
+        let tM = [ 520, 10];  // translation for A+B
+
+        let svg    = d3.select("#canvas");
+        let width  = svg.attr("width");
+        let height = svg.attr("height");
+
+        let sA  = undefined;   // scaled and shifted version of A
+        let sB  = undefined;   // scaled and shifted version of B
+        let sM  = undefined;   // scaled and shifted version of A+B
+        let sMA = undefined;
+        let sMB = undefined;
+
+        let oA  = svg.append("path").attr("class", "shape1");   // outline of A
+        let oB  = svg.append("path").attr("class", "shape2");   // outline of B
+        let oM  = svg.append("path").attr("class", "shape3");   // outline of A+B
+        let oMA = svg.append("path").attr("class", "shape1");   // outline of A in A+B
+        let oMB = svg.append("path").attr("class", "shape2");   // outline of B in A+B
+
+        update();
+
+        function update () {
+        let s1 = d3.select("#scale1").property("value");
+        let s2 = d3.select("#scale2").property("value");
+        let v1 = s1 / 100;
+        let v2 = s2 / 100;
+        let vA = A.map( x => [ v1*x[0], v1*x[1] ]);
+        let vB = B.map( x => [ v2*x[0], v2*x[1] ]);
+        sA  = vA.map( x => [ tA[0]+x[0], height-x[1]-tA[1] ] );
+        sB  = vB.map( x => [ tB[0]+x[0], height-x[1]-tB[1] ] );
+        sM  = vA.map( a => vB.map( b => ([ tM[0]+a[0]+b[0], height-tM[1]-a[1]-b[1]]))).flat();
+        sMA = vA.map( a => [ tM[0]+a[0], height-tM[1]-a[1] ]);
+        sMB = vB.map( b => [ tM[0]+b[0]+vA[2][1], height-tM[1]-b[1]-vA[2][1] ]);
+
+        oA.datum(sA).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+        oB.datum(sB).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+        oM.datum(d3.geom.hull(sM)).attr("d", function(d) { return "M" + d.join("L") + "Z"; });
+        if (showarea) {
+            oMA.datum(sMA).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
+            oMB.datum(sMB).attr("d", d => "M" + d.join("L") + "Z").style("opacity",1);
+        } else {
+            oMA.style("opacity",0);
+            oMB.style("opacity",0);
+        }
+        }
+    </script>
+    <p>
+        $\text{MVol}(A,B) = \text{Coef. of } \lambda_1 \lambda2 
+        \text{ in }
+        (\lambda_1 A + \lambda_2 B)$
     </p>
 </section>
 <section>

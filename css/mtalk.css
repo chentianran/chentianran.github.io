@@ -30,6 +30,34 @@
 .reveal .title {
   color: white; }
 
+.shape1 {
+  fill: #FC7343;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.shape2 {
+  fill: #ba95eb;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.shape3 {
+  fill: #367F84;
+  stroke: #367F84;
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+.shape4 {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
 body {
   counter-reset: example problem; }
 
@@ -111,7 +139,7 @@ div.problem:before {
   color: #B09090; }
 
 .lowlowlight {
-  color: #9F9F9F; }
+  color: #BFAFAF; }
 
 .equ {
   display: flex;
