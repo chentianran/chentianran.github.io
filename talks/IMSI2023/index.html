@@ -1,11 +1,14 @@
 ---
 layout: mtalk
-title: Polynomials in economy and the polyhedral homotopy
+title: Polynomial systems in Economics
 ---
 
 <section class="titlepage">
     <div class="titlebox">
         <h2 class="title">{{page.title}}</h2>
+        <p>
+            ...and the polyhedral homotopy
+        </p>
     </div>
     <br/>
     <p>Tianran Chen</p>
@@ -20,6 +23,27 @@ title: Polynomials in economy and the polyhedral homotopy
         Invitation to algebraic statistics and applications<br/>
         IMSI<br/>
         Chicago, IL USA
+    </p>
+</section>
+
+<section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>
+        \[
+            \text{Nash equilibrium}
+            \quad + \quad
+            \text{Polyhedral homotopy}
+        \]
+    </p>
+    <br>
+    <br>
+    <br>
+    <p class="fragment center">
+        Start from the very very basic...
     </p>
 </section>
 
@@ -313,7 +337,7 @@ title: Polynomials in economy and the polyhedral homotopy
     </p>
 </section>
 
-<section>
+<section data-auto-animate>
     <h3> Player A's view </h3>
     <p>
         There are 8 situations:
@@ -321,35 +345,35 @@ title: Polynomials in economy and the polyhedral homotopy
     <ul class="small fragment">
         <li>
             A choose #1, B choose #1, C choose #1 
-            <span class="fragment">("111")</span>
+            <span>("111")</span>
             <span class="fragment">
                 Payoff: $A_{111}$
             </span>
         </li>
         <li>
             A choose #1, B choose #1, C choose #2 
-            <span class="fragment">("112")</span>
+            <span>("112")</span>
             <span class="fragment">
                 Payoff: $A_{112}$
             </span>
         </li>
         <li>
             A choose #1, B choose #2, C choose #1 
-            <span class="fragment">("121")</span>
+            <span>("121")</span>
             <span class="fragment">
                 Payoff: $A_{121}$
             </span>
         </li>
         <li>
             A choose #1, B choose #2, C choose #2 
-            <span class="fragment">("122")</span>
+            <span>("122")</span>
             <span class="fragment">
                 Payoff: $A_{122}$
             </span>
         </li>
         <li>
             A choose #2, B choose #1, C choose #1 
-            <span class="fragment">("211")</span>
+            <span>("211")</span>
             <span class="fragment">
                 Payoff: $A_{211}$
             </span>
@@ -358,30 +382,35 @@ title: Polynomials in economy and the polyhedral homotopy
         <li>......</li>
         <li>
             A choose #2, B choose #2, C choose #2 
-            <span class="fragment">("222")</span>
+            <span>("222")</span>
             <span class="fragment">
                 Payoff: $A_{222}$
             </span>
         </li>
     </ul>
-    <p class="fragment">
-        <br/>
-        \[
-            A_{ijk} \; := \;
-            \text{The payoff for situation } (ijk)
-        \]
-    </p>
+    <div data-id="A_ijk">
+        <p class="fragment">
+            <br/>
+            \[
+                A_{ijk} \; := \;
+                \text{The payoff for situation } (ijk)
+            \]
+        </p>
+    </div>
 </section>
 
-<section>
+<section data-auto-animate>
     <h3>Payoff arrays</h3>
     <div class="r-stack"><img src="2x2x2-payoff.svg" alt="" width="450"></div>
-    <p>
-        \[
-            A_{ijk} \; := \;
-            \text{The payoff for situation } (ijk) \text{ for A}
-        \]
-    </p>
+    <div data-id="A_ijk">
+        <p>
+            <br/>
+            \[
+                A_{ijk} \; := \;
+                \text{The payoff for situation } (ijk) \text{ for A}
+            \]
+        </p>
+    </div>
     <p class="fragment">
         \[
             B_{ijk} \; := \;
@@ -1025,12 +1054,12 @@ title: Polynomials in economy and the polyhedral homotopy
         Near $t=0$, each path is parametrized by some
         \[
             \begin{aligned}
-                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} a_1 + o(t) &
-                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} a_2 + o(t) \\
-                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} b_1 + o(t) &
-                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} b_2 + o(t) \\
-                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} c_1 + o(t) &
-                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} c_2 + o(t)
+                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} (a_1 + o(t)) &
+                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} (a_2 + o(t)) \\
+                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} (b_1 + o(t)) &
+                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} (b_2 + o(t)) \\
+                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} (c_1 + o(t)) &
+                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} (c_2 + o(t))
             \end{aligned}
         \]
         where 
@@ -1067,12 +1096,12 @@ title: Polynomials in economy and the polyhedral homotopy
         Near $t=0$, each path is parametrized by some
         \[
             \begin{aligned}
-                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} a_1 + o(t) &
-                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} a_2 + o(t) \\
-                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} b_1 + o(t) &
-                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} b_2 + o(t) \\
-                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} c_1 + o(t) &
-                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} c_2 + o(t)
+                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} (a_1 + o(t)) &
+                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} (a_2 + o(t)) \\
+                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} (b_1 + o(t)) &
+                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} (b_2 + o(t)) \\
+                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} (c_1 + o(t)) &
+                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} (c_2 + o(t))
             \end{aligned}
         \]
     </div>
@@ -1463,15 +1492,14 @@ title: Polynomials in economy and the polyhedral homotopy
         Near $t=0$, each path is parametrized by some
         \[
             \begin{aligned}
-                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} a_1 + o(t) &
-                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} a_2 + o(t) \\
-                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} b_1 + o(t) &
-                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} b_2 + o(t) \\
-                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} c_1 + o(t) &
-                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} c_2 + o(t)
+                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} (a_1 + o(t)) &
+                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} (a_2 + o(t)) \\
+                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} (b_1 + o(t)) &
+                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} (b_2 + o(t)) \\
+                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} (c_1 + o(t)) &
+                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} (c_2 + o(t))
             \end{aligned}
         \]
-        where 
         <ul>
             <li>
                 $\alpha_1,\alpha_2,\beta_1,\beta_2,\gamma_1,\gamma_2,m \in \mathbb{Z}$
@@ -1555,12 +1583,12 @@ title: Polynomials in economy and the polyhedral homotopy
         Near $t=0$, each path is parametrized by
         \[
             \begin{aligned}
-                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} a_1 + o(t) &
-                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} a_2 + o(t) \\
-                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} b_1 + o(t) &
-                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} b_2 + o(t) \\
-                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} c_1 + o(t) &
-                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} c_2 + o(t)
+                \boldsymbol{a}_1(t) &= t^{\frac{\alpha_1}{m}} (a_1 + o(t)) &
+                \boldsymbol{a}_2(t) &= t^{\frac{\alpha_2}{m}} (a_2 + o(t)) \\
+                \boldsymbol{b}_1(t) &= t^{\frac{\beta_1 }{m}} (b_1 + o(t)) &
+                \boldsymbol{b}_2(t) &= t^{\frac{\beta_2 }{m}} (b_2 + o(t)) \\
+                \boldsymbol{c}_1(t) &= t^{\frac{\gamma_1}{m}} (c_1 + o(t)) &
+                \boldsymbol{c}_2(t) &= t^{\frac{\gamma_2}{m}} (c_2 + o(t))
             \end{aligned}
         \]
     </div>
@@ -2122,6 +2150,65 @@ title: Polynomials in economy and the polyhedral homotopy
             </div>
         </div>
     </div>
+</section>
+
+<section data-auto-animate>
+    <div class="cols">
+        <div class="col">
+            <p>How to start ?</p>
+            <p class="fragment">
+                Near $t=0$, the paths may escape
+                $(\mathbb{C}^*)^n$,
+                but they have Puiseux series expansions
+                \[
+                    x_i = t^{\class{highlight}{\frac{\alpha_i}{m}}}(y_i + o(t))
+                    \quad\text{for } i = 1,\ldots,n
+                \]
+            </p>
+            <p class="fragment">
+                The "exponent" vector
+                \[
+                    \begin{bmatrix}
+                        \class{highlight}{\frac{\alpha_1}{m}} &
+                        \cdots &
+                        \class{highlight}{\frac{\alpha_n}{m}} &
+                        1
+                    \end{bmatrix}
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <div class="center">
+                <img src="starting-at-infinity.svg" alt="" width="320">
+            </div>
+        </div>
+    </div>
+    <p class="fragment">
+        is a common inner normal vector of
+        $n$ edges of the Newton polytopes of
+        \[
+            h_i (\mathbf{x},t) =
+            \sum_{\mathbf{a} \in S_i}
+                c_{\mathbf{a}}
+                \mathbf{x}^{\mathbf{a}}
+                t^{\omega_i(\mathbf{a})}
+            \quad\text{for } i = 1,\ldots,n
+        \]
+        <span class="fragment lowlight small">
+            (i.e., $\mathbf{v}$ corresponds to a point in $\bigcap_{i=1}^n \mathbb{V}(\operatorname{Trop}(h_i))$)
+        </span>
+    </p>
+    <p class="fragment">
+        And the leading coefficients $y_1,\ldots,y_n$ satisfies
+        \[
+            \operatorname{init}_{\mathbf{v}} (y_1,\ldots,y_n,1) = \mathbf{0}.
+        \]
+    </p>
+    <p class="fragment">
+        These initial systems are generically binomial systems
+        and can be solved directly and efficiently.
+        Path trackers can then take over......
+    </p>
 </section>
 
 <section>

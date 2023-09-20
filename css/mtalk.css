@@ -19,13 +19,13 @@
   /* Tianran Chen */ }
 
 .reveal .titlebox {
-  box-shadow: 0 4px 8px 0 rgba(126, 120, 120, 0.8);
-  background: #0257B7;
+  box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.5);
+  background: #600f16;
   transition: 0.3s;
-  margin: 15px 15px;
-  text-shadow: 2px 2px 8px #383D3D;
-  border-radius: 10px;
-}
+  margin: 20px 20px;
+  padding: 15px 20px;
+  color: #FFFFFF;
+  border-radius: 8px; }
 
 .reveal .title {
   color: white; }
@@ -102,13 +102,13 @@ div.problem:before {
   font-size: 50%; }
 
 .term {
-  color: #0257B7; }
+  color: #600f16; }
 
 .highlight {
-  color: #0257B7; }
+  color: #A00f16; }
 
 .lowlight {
-  color: #505050; }
+  color: #B09090; }
 
 .lowlowlight {
   color: #9F9F9F; }
@@ -199,8 +199,9 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #0257B7;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+  color: #600f16;
+  /* font-family: Impact, sans-serif; */
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
