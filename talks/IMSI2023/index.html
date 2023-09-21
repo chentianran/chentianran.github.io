@@ -64,12 +64,12 @@ title: Polynomial systems in Economics
             <table>
                 <tr>
                     <td>A\B</td>
-                    <td>🪨</td>
+                    <td>💎</td>
                     <td>📜</td>
                     <td>✂️</td>
                 </tr>
                 <tr>
-                    <td>🪨</td>
+                    <td>💎</td>
                     <td align="right">0</td>
                     <td align="right">-1</td>
                     <td align="right">+1</td>
@@ -101,12 +101,12 @@ title: Polynomial systems in Economics
             <table>
                 <tr>
                     <td>A\B</td>
-                    <td>🪨</td>
+                    <td>💎</td>
                     <td>📜</td>
                     <td>✂️</td>
                 </tr>
                 <tr>
-                    <td>🪨</td>
+                    <td>💎</td>
                     <td align="right">0</td>
                     <td align="right">-1</td>
                     <td align="right">+1</td>
@@ -129,12 +129,12 @@ title: Polynomial systems in Economics
             <table>
                 <tr>
                     <td>B\A</td>
-                    <td>🪨</td>
+                    <td>💎</td>
                     <td>📜</td>
                     <td>✂️</td>
                 </tr>
                 <tr>
-                    <td>🪨</td>
+                    <td>💎</td>
                     <td align="right">0</td>
                     <td align="right">-1</td>
                     <td align="right">+1</td>
@@ -183,12 +183,12 @@ title: Polynomial systems in Economics
         <table>
             <tr>
                 <td>A\B</td>
-                <td>🪨</td>
+                <td>💎</td>
                 <td>📜</td>
                 <td>✂️</td>
             </tr>
             <tr>
-                <td>🪨</td>
+                <td>💎</td>
                 <td align="right">0</td>
                 <td align="right">-1</td>
                 <td align="right">+1</td>
@@ -322,19 +322,6 @@ title: Polynomial systems in Economics
             </p>
         </div>
     </div>
-    <p class="fragment">
-        We only focus on totally mixed strategies
-        ($a_1,a_2,b_1,b_2,c_1,c_2 > 0$).
-    </p>
-    <p class="fragment">
-        \[
-            \begin{aligned}
-                (a_1,a_2) &\in \operatorname{int} \Delta &
-                (b_1,b_2) &\in \operatorname{int} \Delta &
-                (c_1,c_2) &\in \operatorname{int} \Delta
-            \end{aligned}
-        \]
-    </p>
 </section>
 
 <section data-auto-animate>
@@ -403,13 +390,12 @@ title: Polynomial systems in Economics
     <h3>Payoff arrays</h3>
     <div class="r-stack"><img src="2x2x2-payoff.svg" alt="" width="450"></div>
     <div data-id="A_ijk">
-        <p>
-            <br/>
+        <span>
             \[
                 A_{ijk} \; := \;
                 \text{The payoff for situation } (ijk) \text{ for A}
             \]
-        </p>
+        </span>
     </div>
     <p class="fragment">
         \[
@@ -427,14 +413,16 @@ title: Polynomial systems in Economics
         The game is encoded in $2 \times 2 \times 2$ arrays $A,B,C$.
     </p>
 </section>
-<section>
+<section data-auto-animate>
     <h3>Player A's payoff</h3>
-    <p>
-        \[
-            A_{ijk} \; := \;
-            \text{The payoff for situation } (ijk)
-        \]
-    </p>
+    <div data-id="A_ijk">
+        <span>
+            \[
+                A_{ijk} \; := \;
+                \text{The payoff for situation } (ijk) \text{ for A}
+            \]
+        </span>
+    </div>
     <p class="fragment">
         \[
             \text{The probability for } (ijk) \;=\;
@@ -485,8 +473,7 @@ title: Polynomial systems in Economics
     <div class="fragment definition" data-id="def-nash">
         A vector $(a_1,a_2,b_1,b_2,c_1,c_2)$
         is called a <strong class="highlight">Nash equilibrium</strong>
-        if no player can increase his/her own payoff
-        while the other two players keep their strategies fixed.
+        if no player can increase their own payoff unilaterally.
     </div>
     <p class="fragment">
         There are two aspects: The <span class="fragment highlight-red">algebraic</span> and the combinatorial.
@@ -1525,14 +1512,14 @@ title: Polynomial systems in Economics
     <p class="fragment">
         Why is this true?
     </p>
-    <ul>
-        <li class="fragment">
+    <ul class="fragment">
+        <li>
             Newton-Puiseux Theorem
         </li>
-        <li class="fragment">
+        <li>
             Local Uniformizer
         </li>
-        <li class="fragment">
+        <li>
             Local Parametrization Theorem 
         </li>
     </ul>
@@ -1607,7 +1594,7 @@ title: Polynomial systems in Economics
 </section>
 
 <section data-auto-animate>
-    <p> Polyhedral homotopy for totally mixed Nash equilibrium </p>
+    <p> Polyhedral homotopy for totally mixed Nash equilibria</p>
     <p class="small lowlight">
         Huber & Sturmfels.
         <em>A polyhedral method for solving sparse polynomial systems</em>.
@@ -2081,7 +2068,7 @@ title: Polynomial systems in Economics
             $c_{\mathbf{a}}$'s are nonzero complex coefficients...
         </li>
     </ul>
-    <p class="fragment">
+    <p>
         the <strong class="highlight">polyhedral homotopy method</strong>
         of Huber and Sturmfels is an efficient and stable
         numerical method for compute <em class="highlight">all</em>
@@ -2339,11 +2326,6 @@ title: Polynomial systems in Economics
             \operatorname{vol}(\lambda_1 P_1 + \cdots + \lambda_n P_n)
         \]
     </div>
-    <br/>
-    <p class="fragment lowlight center small">
-        Many researchers prefer the definition with an additional
-        factor of $\frac{1}{n!}$.
-    </p>
 </section>
 <section>
     <!-- <h3>2-dimensional case</h3> -->
