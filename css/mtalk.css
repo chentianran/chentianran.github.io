@@ -32,21 +32,21 @@
 
 .shape1 {
   fill: #FC7343;
-  stroke: white;
+  stroke: black;
   stroke-width: 3px;
   stroke-linejoin: round;
 }
 
 .shape2 {
   fill: #ba95eb;
-  stroke: white;
+  stroke: black;
   stroke-width: 3px;
   stroke-linejoin: round;
 }
 
 .shape3 {
   fill: #367F84;
-  stroke: #367F84;
+  stroke: black;
   stroke-width: 5px;
   stroke-linejoin: round;
 }
