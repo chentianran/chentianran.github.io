@@ -14,8 +14,9 @@ and received my Ph.D. in Applied Mathematics from Michigan State University.
 
 My main research interests are numerical analysis and scientific computing
 as well as their applications in physics, chemistry, biology, and engineering.
-My current research focuses on _numerical algebraic geometry_
-and is supported by [NSF grant DMS-1923099](https://nsf.gov/awardsearch/showAward?AWD_ID=1923099).
+My recent research focuses on _numerical algebraic geometry_
+and is supported by
+[NSF grant DMS-1923099](https://nsf.gov/awardsearch/showAward?AWD_ID=1923099).
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
@@ -53,26 +54,29 @@ Grants
 
 {% include grants.markdown %}
 
-<!-- News and recent talks
+News and recent talks
 ---------------------
 
-- Georgia Tech algebra seminar
-  October 3, 2022  
-  Georgia Tech, Atlanta, GA, USA.  
-  [ [talk slides](/talks/GT-2022F/) ]
+- Recently, I gave a talk titled
+  _Polynomials in economics and polyhedral homotopy_
+  in the workshop
+  [Invitation to Algebraic Statistics and Applications](https://www.imsi.institute/activities/invitation-to-algebraic-statistics-and-applications/)
+  which is a part of the long program on
+  [Algebraic Statistics and Our Changing World](https://www.imsi.institute/activities/algebraic-statistics-and-our-changing-world/)
+  hosted by _Institute of Mathematical and Statistical Innovation_
+  at the University of Chicago  
+  September 21, 2023  
+  University of Chicago, Chicago, IL, USA.  
+  [ [talk slides](/talks/IMSI2023/) ]
 
-- Georgia Tech algebra seminar
-  October 3, 2022  
-  Georgia Tech, Atlanta, GA, USA.  
-  [ [talk slides](/talks/GT-2022F/) ]
-
-- Together with Julia Lindberg and Rob Davis,
-  I am organizing a special session on
-  _Algebraic, Combinatorial, and Optimization Methods for Kuramoto and Power-flow Equations_
-  at the
-  [Spring Western Virtual Sectional Meeting](https://www.ams.org/meetings/sectional/2294_program.html)
-  May 14-15, 2022
-  (formerly at University of Denver) -->
+- I gave a talk titled
+  _Stratified polyhedral homotopy_
+  in the
+  [AMS Special Session on Polynomial Systems, Homotopy Continuation and Applications](https://www.jointmathematicsmeetings.org/meetings/national/jmm2023/2270_program_ss95.html)
+  during the _Joint Mathematics Meetings_  
+  January 4, 2023  
+  Boston, MA, USA.  
+  [ [talk slides](/talks/JMM2023/) ]
 
 Scientific Software
 -------------------
