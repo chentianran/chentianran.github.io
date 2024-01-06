@@ -20,28 +20,17 @@ and is supported by
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Fall of 2023 I am teaching
+In the Spring semester of 2024 I am teaching
 
-- [MATH-1610](teaching/calc1/)     (Calculus I),
+- [ENGR-1210](teaching/matlab/)    (Introduction to computer programming)
 - [MATH-2630](teaching/calc3/)     (Multivariable Calculus)
-- [MATH-4400](teaching/modsim/)    (Math Models and Simulations)
+- [MATH-3660](teaching/applinalg/) (Applied linear algebra)
 
 Office hours
 ------------
 
 {% include hours.markdown %}
 <!-- {% include appointments.markdown %} -->
-
-<!-- Upcoming conferences
-- [SIAM AG 2019](https://mathsites.unibe.ch/siamag19/)  
-  July 9--13, 2019  
-  Bern, Switzerland -->
-  
-<!-- - [AMS 2019 Spring Southeastern Sectional Meeting](http://www.ams.org/meetings/sectional/2261_program.html)  
-  March 15-17, 2019 (Friday - Sunday)  
-  Auburn University, Auburn, AL USA  
-  [Special Session on Applications of Algebraic Geometry](http://www.ams.org/meetings/sectional/2261_program_ss25.html#title)
-  organized by Greg Blekherman, Michael Burr, and I -->
 
 Hiring
 ------

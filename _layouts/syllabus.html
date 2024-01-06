@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include head.html %}
+    </head>
+
+    <body>
+
+       {% include header.html %}
+
+		<div id="ww">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<h1>
+							{{ page.course }}
+							(CRN {{ page.crn }})
+							{{ page.term }}
+							Course Syllabus
+						</h1>
+
+						<h2>What, when, where, and who</h2>
+
+						<ul>
+							<li>Time: {{ page.days }}, {{ page.time }} </li>
+							<li>Room: {{ page.room }} </li>
+							<li>Instructor: Dr. Tianran Chen</li>
+							<li>Email: <a href="mailto:tchen1@aum.edu?subject={{ page.course }}">tchen1@aum.edu</a></li>
+							<li><a href="../">Course page</a></li>
+							<li>Instructor's office</li>
+							{% capture officeinfo %}{% include hours.markdown %}{% endcapture %}
+							{{ officeinfo | markdownify }}
+						</ul>
+
+						{{ content }}
+
+						<h2>This syllabus is subject to change</h2>
+						This syllabus is subject to change based on the needs of the class.
+						The instructor reserves the right to adjust the policies and schedule outlined in this course syllabus.
+						All changes will be clearly communicated to the students in class.
+					</div><!-- /col-lg-8 -->
+				</div><!-- /row -->
+			</div> <!-- /container -->
+		</div>
+
+		{% include footer.html %}
+
+    </body>
+</html>
