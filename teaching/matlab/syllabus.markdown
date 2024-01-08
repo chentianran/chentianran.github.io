@@ -1,26 +1,13 @@
 ---
-layout: default
+layout: syllabus
 title: ENGR-1210
+course: ENGR-1210
+crn: 21314
+term: Spring 2024
+days: Monday and Wednesday
+time: 2:00pm--3:15pm
+room: 205 Goodwyn Hall
 ---
-
-# ENGR 1210 - 001 (CRN 21314 ) Spring 2024 Course Syllabus
-
-### When, where, and who
-
-* Title: Intro Computing Engr & Science
-* Time: Monday & Wednesday 2:00pm -- 3:15pm
-* Room: 205 Goodwyn Hall
-* Instructor: Dr. Tianran Chen
-* Email: <tchen1@aum.edu> (It is best to email me directly; I do not check Blackboard message very often.)
-* Course page: <http://www.tianranchen.org/teaching/matlab/>
-{% include hours.markdown %}
-
-My job is to help you to succeed in this class.
-I will be happy to discuss issues related to this course
-in person or via email.
-In addition to the normal office hours listed above,
-alternative meeting time may be arranged
-(please give me at least 48hr advanced notice).
 
 ### What we will learn
 
@@ -112,12 +99,15 @@ unless valid reasons
 and _proper documentation_ are provided _in advance_.
 However, it is strongly recommended that you complete them as early as possible. -->
 
-### Daily surveys
+### Daily/weekly surveys
 
-Daily surveys are brief questionnaires designed to evaluate your progress. Completing these surveys will earn you points that contribute to your overall grades.
+Daily/weekly surveys are brief questionnaires designed to evaluate your progress.
+Completing these surveys will earn you points that contribute to your overall grades.
 _There will be no make-up surveys_.
 However, a missed survey may be replaced by additional surveys
 offered at the end of the semester.
+
+You can find surveys in the "Surveys" folder on our Blackboard course page.
 
 ### In-class worksheets
 
@@ -147,13 +137,13 @@ The final exam is scheduled at 10:45am -- 12:00pm May 2nd. -->
 Your final grade is determined according to the following
 weighted average.
 
-| Component               | Points | Where      |
-|-------------------------|--------|------------|
-| Surveys                 | 2%     | In-class   |
-| In-class participations | 3%     | In-class   |
-| In-class worksheets     | 55%    | In-class   |
-| Homework assignments    | 30%    | Blackboard |
-| Final project           | 10%    | Blackboard |
+| Component              | Points | Where      |
+|------------------------|--------|------------|
+| In-class worksheets    | 55%    | In-class   |
+| In-class participation | 3%     | In-class   |
+| Surveys                | 2%     | Blackboard |
+| Homework assignments   | 30%    | Blackboard |
+| Final project          | 10%    | Blackboard |
 
 {% include letter_grades.markdown %}
 
