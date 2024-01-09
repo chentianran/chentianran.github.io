@@ -15,7 +15,7 @@ Secondary focus will revolve around the idea of matrices as linear transformatio
 and the concept of vector spaces.
 This will be a project-based course that emphasize on hands-on experiences.
 
-* [Syllabus](syllabus-S2023/)
+* [Syllabus](syllabus/)
 * [Lecture slides](lectures/)
 
 <!-- ## How to survive this course?
