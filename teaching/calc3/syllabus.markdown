@@ -1,25 +1,13 @@
 ---
-layout: default
+layout: syllabus
 title: MATH-2630
+course: MATH-2630
+crn: 20518
+term: Spring 2024
+days: Tuesday and Thursday
+time: 11:00pm--12:40pm
+room: 318 Goodwyn Hall
 ---
-
-# MATH-2630 - 001 (CRN 20518 T. Chen) Spring 2024 Course Syllabus
-
-### When, where, and who
-
-* Time: Tuesday & Thursday 11:00pm -- 12:40pm
-* Room: 318 Goodwyn Hall
-* Instructor: Dr. Tianran Chen
-* Email: <tchen1@aum.edu> (It is best to email me directly; I do not check Blackboard message very often.)
-* Course page: <http://www.tianranchen.org/teaching/calc3/>
-{% include hours.markdown %}
-
-My job is to help you to succeed in this class.
-I will be happy to discuss issues related to this course
-(or anything mathematical) in person or via email.
-In addition to the normal office hours listed above,
-alternative meeting time may be arranged
-(please give me at least 48hr advanced notice).
 
 ### What we will learn
 
@@ -46,18 +34,56 @@ This is the third course in the calculus sequence.
 We will extend calculus to functions with more than one variable.
 In particular, we will cover...
 
-* Coordinate systems for 3-dimensional spaces
-* Basic algebra using vectors and matrices
-* Calculus of functions in multiple variables
-* Calculus of vector-valued functions and vector fields
-* Geometry of space curves
-* Geometry of curved surfaces
-* Lagrange multipliers and optimization problems
-* Double and triple integrals
-* Line integrals
-* Green's theorem
-* (Optional) Stokes' and Gauss's theorems
-* (Optional) Fourier transformation and DCT
+- Cartesian coordinate systems for two and three dimensional spaces
+  - How to represent points on the plane and in the space
+  - How to represent vectors on the plane and in the space
+- Other coordinate systems
+  - Polar coordinate system for the plane
+  - Cylindrical coordinate system
+  - Spherical coordinate system
+- Basic algebra involving vectors
+  - Norm of vectors
+  - Scalar product on vectors
+  - Dot product between vectors
+  - Angle between vectors
+  - Cross product between vectors
+- Calculus of vector-valued functions in one variable
+  - Tangent vectors
+  - Acceleration vectors
+  - Normal and principle normal vectors
+  - (Optional) binormal vectors
+  - (Optional) The TNB frame
+  - Arc-length parameter
+  - Curvatures
+- Calculus of functions in multiple variables
+  - Differentiability
+  - Partial derivatives
+  - Directional derivatives
+  - Gradient vector
+  - Multivariate chain rules
+  - (Optional) Differentials
+  - Jacobian matrix and change of variables
+  - Tangent plane and normal lines
+  - Extrema of real-valued functions in two variables
+  - Method of Lagrange multipliers
+- Iterated integrals
+- Double and triple integrals
+- Iterated/double integral in polar and other coordiante systems
+- (Optional) Center of mass and moments of inertia
+- (Optional) Surface area computation
+- Calculus of vector fields
+- Geometry of space curves
+- Geometry of curved surfaces
+  - Surfaces as graphs
+  - Parametric representations of surfaces
+- Calculus of vector fields
+  - Divergence
+  - Curl
+  - Line integrals
+  - Fundamental theorems of line integrals
+  - Green's theorem
+  - (Optional) Stokes' and Gauss's theorems
+  - (Optional) Fourier transformation and DCT
 
 ### Prerequisite
 
