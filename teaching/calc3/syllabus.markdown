@@ -171,7 +171,13 @@ In-class practice is a crucial component of the learning process. You will recei
 
 ### Reading assignment
 
-Reading the textbook is crucial for comprehending complex concepts, gaining deep insights, and establishing a solid foundation for acquiring advanced mathematical skills. Hence, it is expected that you read the textbook attentively. Weekly reading assessments will be conducted and will contribute to your overall grade.
+Reading the textbook is crucial for
+comprehending complex concepts, gaining deep insights,
+and establishing a solid foundation for acquiring advanced mathematical skills.
+Hence, it is expected that you read the textbook attentively.
+Weekly reading assessments will be conducted and will contribute to your overall grade.
+You can find the suggested reading schedule on the
+[Reading schedule](../reading/) on the course webpage.
 
 ### Exercise problems
 
@@ -222,22 +228,3 @@ Your final grade is determined according to the following weighted average.
 ### Other policies
 
 {% include syllabus_policy.markdown %}
-
-### <a name="schedule"></a> Reading schedule
-
-Listed below are the topics you should read about each week.
-
-* Week 1 : Vectors, vector-valued functions, velocity vector, and acceleration vectors
-* Week 2 : Unit tangent and principle unit normal vectors
-* Week 3 : Arc length parameter
-* Week 4 : Real-valued functions in several variables, directional derivatives, and partial derivatives
-* Week 5 : Gradient vectors and differentiability
-* Week 6 : Critical points of different kinds
-* Week 7 : Second derivative tests for critical points
-* Week 8 : Constrained optimization problems and the method of Lagrange multipliers
-* Week 9 : Double and triple integrals
-* Week 10 : Vector fields
-* Week 11 : Line integrals
-* Week 12 : Conservative fields and the Fundamental Theory of Line Integrals
-* Week 13 : Divergence and curl of vector fields
-* Week 14 : Green's Theorem

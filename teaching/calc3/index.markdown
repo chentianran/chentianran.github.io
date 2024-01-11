@@ -17,6 +17,7 @@ the world in a richer, more comprehensive way.
 Prepare to unlock the new dimensions!
 
 * [Course syllabus](syllabus/)
+* [Reading schedule](reading/)
 
 ## Lecture slide
 
