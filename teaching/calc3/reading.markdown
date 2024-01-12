@@ -42,7 +42,18 @@ title: MATH-2630 Reading schedule
     This section defines two important vectors associated with a point
     on the image of a vector-valued (or point-valued) function
     --- the unit tangent vector and the principal unit normal vector.
+    Note that this is a difficult section.
+- Week 3:
+  - Revisit section 12.4.
   - Section 12.5:
     This section reviews the concept of arc-length
     and introduces the concept of arc-length parameter.
+- Week 4:
+  - Section 13.1:
+    This section provides a broad overview of
+    (real-valued) functions in several variables.
+    Pay close attention to the new concepts introduced here.
+  - Section 13.2:
+    This section shows you how the concept of limits and continuity
+    can be generalized to this new context.
     
