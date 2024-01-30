@@ -56,4 +56,12 @@ title: MATH-2630 Reading schedule
   - Section 13.2:
     This section shows you how the concept of limits and continuity
     can be generalized to this new context.
-    
+- Week 5:
+  - Revisit the subsection titled
+    _Summary of Velocity, Acceleration, and Curvature_
+    at the end of section 12.5.
+    Make sure you have a solid understanding of all the vectors and scalars
+    involved in those equations.
+  - Section 13.3:
+    This section introduces the concept of partial derivatives.
+    They will be the basic tools with which we do calculus.
