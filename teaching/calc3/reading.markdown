@@ -65,3 +65,16 @@ title: MATH-2630 Reading schedule
   - Section 13.3:
     This section introduces the concept of partial derivatives.
     They will be the basic tools with which we do calculus.
+- Week 6:
+  - Review Chapter 12.
+  - Revisit section 13.3 and focus on
+    higher order partial derivatives
+    especially 2nd order partial derivative
+    including mixed partials.
+- Week 7:
+  - Section 13.4:
+    This section introduces two important concepts:
+    differentials and differentiability.
+    First, we should prioritize the concept of differentiability.
+    Please carefully consider the subtlety in the definition of differentiability.
+    It is much more complex than its 1-dimensional counterpart.
