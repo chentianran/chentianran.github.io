@@ -78,3 +78,14 @@ title: MATH-2630 Reading schedule
     First, we should prioritize the concept of differentiability.
     Please carefully consider the subtlety in the definition of differentiability.
     It is much more complex than its 1-dimensional counterpart.
+- Week 8:
+  - Briefly read section 13.5 and 13.6.
+    These two sections are technical.
+    Don't get bogged down by the details.
+    We will have detailed discussions in class.
+  - Section 13.8:
+    Read this section carefully as it contains the core concepts
+    fundamental to the 2nd part of this course.
+- Week 9:
+  - Section 13.10:
+    This section introduces the method of Lagrange multipliers.
