@@ -18,6 +18,7 @@ Prepare to unlock the new dimensions!
 
 * [Course syllabus](syllabus/)
 * [Reading schedule](reading/)
+* [Suggested exercises](problems/)
 
 ## Lecture slide
 
