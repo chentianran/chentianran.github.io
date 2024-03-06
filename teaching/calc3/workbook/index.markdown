@@ -7,3 +7,5 @@ title: MATH-2630 Workbook solutions
 
 - Vector-valued functions
     - [Case study: Helix](helix.html)
+- Real-valued function in several variables
+    - [Chain rule](chainrule.html)
