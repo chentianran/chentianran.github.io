@@ -9,3 +9,5 @@ title: MATH-2630 Workbook solutions
     - [Case study: Helix](helix.html)
 - Real-valued function in several variables
     - [Chain rule](chainrule.html)
+    - [Critical points](criticalpoints.html)
+ 
