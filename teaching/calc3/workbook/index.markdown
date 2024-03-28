@@ -10,4 +10,5 @@ title: MATH-2630 Workbook solutions
 - Real-valued function in several variables
     - [Chain rule](chainrule.html)
     - [Critical points](criticalpoints.html)
+    - [Constrained optimization problems](lagrangemultipliers.html)
  
