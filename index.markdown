@@ -14,17 +14,20 @@ and received my Ph.D. in Applied Mathematics from Michigan State University.
 
 My main research interests are numerical analysis and scientific computing
 as well as their applications in physics, chemistry, biology, and engineering.
-My recent research focuses on _numerical algebraic geometry_
-and is supported by
-[NSF grant DMS-1923099](https://nsf.gov/awardsearch/showAward?AWD_ID=1923099).
+My current research focuses on _numerical algebraic geometry_
+with applications in power flow studies
+and is supported by the National Science Foundation through
+award DMS-2318837.
 You can find out more about [my research here](research/).
 For more information, please see [my CV here](cv/) ([PDF version](cv.pdf)).
 
-In the Spring semester of 2024 I am teaching
+In the Fall semester of 2024 I am teaching
 
-- [ENGR-1210](teaching/matlab/)    (Introduction to computer programming)
+{% include current_teaching.markdown %}
+
+<!-- - [ENGR-1210](teaching/matlab/)    (Introduction to computer programming)
 - [MATH-2630](teaching/calc3/)     (Multivariable Calculus)
-- [MATH-3660](teaching/applinalg/) (Applied linear algebra)
+- [MATH-3660](teaching/applinalg/) (Applied linear algebra) -->
 
 Office hours
 ------------

@@ -1,3 +1,9 @@
+- 2024-2027 NSF research grant
+  DMS-2318837
+  _AMPS: Topological disturbance for power flow equations through the lens of convex and algebraic geometry_
+  \$149,940 Role: PI
+  (with a subaward for University of Texas at Austin
+  managed by co-PIs Julia Lindberg and Joseph Kileel)
 - 2023--2025 AMS-Simons Research Enhancement Grant for Primarily Undergraduate Institution Faculty
 - 2019--2023 NSF research grant
   [DMS-1923099](https://nsf.gov/awardsearch/showAward?AWD_ID=1923099)
