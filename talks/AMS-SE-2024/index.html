@@ -285,18 +285,34 @@ title: Balanced networks and positive-dimensional solutions to Kuramoto equation
         <iframe data-src="https://www.tianranchen.org/research/kuramoto/sim" height="600" width="860"></iframe>
     </div>
 </section>
-<section>
+<section data-auto-animate>
     <h3>Synchronization</h3>
     <p>
         \[
             \frac{d \theta_i}{dt} =
             w_i -
-            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
-            \quad\text{for } i = 0,\ldots,n
+            \sum_{j \sim i} k_{ij} \sin(\theta_i - \theta_j)
         \]
+    </p>
+    <p>
         <strong class=term>Frequency synchronization</strong class=term>:
         all oscillators are tuned to
         a common frequency (angular velocity).
+    </p>
+    <p class="fragment">
+            \[
+                \frac{d \theta_0}{dt} = \frac{d \theta_1}{dt}
+                \,=\, \cdots \, = \,
+                \frac{d \theta_n}{dt}
+                = c
+            \]
+            for some constant $c$ (synchronized frequency).
+    </p>
+    <p class="fragment">
+        Indeed,
+        \[
+            c = \overline{w} = \frac{w_0 + \cdots + w_{N-1}}{N}
+        \]
     </p>
     <br/>
     <ul class="fragment">
@@ -308,95 +324,61 @@ title: Balanced networks and positive-dimensional solutions to Kuramoto equation
         </li>
     </ul>
 </section>
-<section>
-    <h3>Synchronization: a static view</h3>
-    <p>
-        A (frequency)
-        <strong class="term">synchronization configuration</strong class="term">
-        for a Kuramoto network $(G,K,w)$ is a configuration
-        $(\theta_0,\ldots,\theta_n)$ such that
-        \[
-            \frac{d \theta_0}{dt} = \frac{d \theta_1}{dt}
-            \,=\, \cdots \, = \,
-            \frac{d \theta_n}{dt}
-            = c
-        \]
-        for some constant $c$ (synchronized frequency).
-    </p>
-    <br/>
-    <p class="fragment">
-        I.e., solutions to the system of equations
-        \[
-            c =
-            w_i -
-            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
-            \quad\text{for } i = 0,\ldots,n
-        \]
-    </p>
-</section>
-<section>
-    <h3>Synchronized frequency</h3>
+<section data-auto-animate>
     <p>
         \[
-            c =
+            \frac{d \theta_i}{dt} =
             w_i -
-            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
-            \quad\text{for } i = 0,\ldots,n
+            \sum_{j \sim i} k_{ij} \sin(\theta_i - \theta_j)
         \]
     </p>
-    <p class="fragment">
-        under the symmetry assumption $k_{ij} = k_{ji}$,
+    <p>
+        \[ \downarrow \]
+    </p>
+    <p>
         \[
-            c = \frac{w_0 + \cdots + w_n}{n+1} = \overline{w}
-        \]
-    </p>
-    <p class="fragment">
-        I.e., the common frequency must be the
-        <em class="highlight">mean natural frequency</em>.
-    </p>
-    <p class="fragment">
-        We can always normalize the network so that
-        $\overline{w} = 0$.
-    </p>
-    <p class="fragment">
-        And the equations become
-        \[
-            0 =
+            \overline{w} =
             w_i -
-            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
-            \quad\text{for } i = 0,\ldots,n
+            \sum_{j \sim i} k_{ij} \sin(\theta_i - \theta_j)
         \]
+    </p>
+    <p>
+        Its solutions are the
+        <em class=term>frequency synchronization configurations</em class=term>.
     </p>
 </section>
-<section>
+<section data-auto-animate>
     <h3>Kuramoto equations</h3>
     <p>
-        Synchronization configurations are exactly the solutions
-        $(\theta_0,\ldots,\theta_n) \in [0,2\pi)^{n+1}$
-        to the system of equations
         \[
-            0 =
+            \overline{w} =
             w_i -
-            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
-            \quad\text{for } i = 0,\ldots,n
+            \sum_{j \sim i} k_{ij} \sin(\theta_i - \theta_j)
         \]
     </p>
+    <p>
+        $N$ equations in $N$ unknowns ($\theta_0,\ldots,\theta_{N-1}$).
+    </p>
     <p class="fragment">
-        "<strong class="term">Kuramoto system</strong>":
-        $n+1$ equations in $n+1$ unknowns.
+        It coincide with the lossless PV-type power flow equation
+        derived from <em>Kirchhoff's circuit laws</em>
+        for AC power networks.
+        \[
+            P_i = \sum_{j \sim i} b_{ij} \sin(\theta_i - \theta_j)
+        \]
     </p>
 </section>
 <section data-auto-animate>
     <h3>Removing redundancy</h3>
     <p>
+        We can remove 1 equation and 1 unknowns from
+    </p>
+    <p>
         \[
-            0 =
-            \overline{w}_i -
-            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
-            \quad\text{for } i = 0,\ldots,n
+            \overline{w} =
+            w_i -
+            \sum_{j \sim i} k_{ij} \sin(\theta_i - \theta_j)
         \]
-        We can assume $\theta_0 = 0$.
-        (equivalent to choosing a rotational frame of reference)
     </p>
     <ul>
         <li class="fragment">
