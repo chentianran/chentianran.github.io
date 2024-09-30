@@ -1,0 +1,1965 @@
+---
+layout: mtalk
+title: Balanced networks and positive-dimensional solutions to Kuramoto equations
+---
+
+<section class="titlepage">
+
+    <div class="titlebox">
+        <h3 class="title">
+            Generic and non-generic synchronization configurations
+        </h3>
+    </div>
+    <br/>
+    <p>Tianran Chen</p>
+    <p class="smaller">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+    <br/>
+    <p class="smaller">
+        Joint work with 
+    </p>
+    <p class="small">
+        Evgeniia Korchevskaia and Julia Lindberg
+    </p>
+    <br/>
+    <p class="smaller">
+        October 6, 2024<br/>
+        2024 Fall Southeastern Sectional Meeting<br/>
+        Georgia Southern University<br/>
+    </p>
+</section>
+<section class="level2">
+    <h3>Overview</h3>
+    <ul>
+        <li class="fragment">
+            Coupled oscillators are studied in
+            biology, chemistry, physics, engineering,
+            and many other fields.
+        </li>
+        <li class="fragment">
+            The Kuramoto model models the nonlinear interaction
+            among coupled oscillators.
+        </li>
+        <li class="fragment">
+            It is simple enough to be analyzed rigorously
+            yet complex enough to exhibit interesting emergent behaviors.
+        </li>
+        <li class="fragment">
+            One emergent behavior is the spontaneous synchronization.
+        </li>
+        <li class="fragment">
+            We will explore the new insight to this problem
+            provided by an algebraic/tropical approach.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Oscillators</h3>
+    <div class="cols">
+        <div class="col">
+            <p>Real-world motivation:</p>
+            <ul>
+                <li>heart cells</li>
+                <li>neurons in our brain</li>
+                <li>chemical oscillators</li>
+                <li>electric oscillators.....</li>
+            </ul>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                <b>Abstraction</b>:
+                Anything that has a
+                <em class="highlight">periodic</em> behavior.
+            </p>
+            <p class="fragment">
+                <b>A better abstraction</b>:
+                a function
+                $x(t) : \mathbb{R} \to S^1$ in $t$.
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        <b>Boring example</b>:
+        \[
+            x(t) = (\cos(w \, t), \sin(w \, t)).
+        \]
+    </p>
+    <p class="fragment">
+        I.e.,
+        \[
+            \theta(t) = w \, t
+        \]
+        if we focus on phase angle.
+    </p>
+</section>
+<section>
+    <h3>Coupled oscillators</h3>
+    <p>We have more interesting behavior when oscillators are coupled.</p>
+    <p>
+        \[
+            \frac{d\theta}{dt} =
+            \quad
+            \begin{gathered}
+            \text{One's own} \\
+            \text{drum beat}
+            \end{gathered}
+            \quad
+            -
+            \quad
+            \begin{gathered}
+            \text{Influence} \\
+            \text{of others}
+            \end{gathered}
+            \]
+    </p>
+    <p class="fragment">
+        Two oscillators:
+        \[
+            \left\{
+            \begin{aligned}
+            \dot{\theta}_0 \;=\;
+            w_0
+            \;
+            -
+            \;
+            \text{pulling}(\theta_0,\theta_1)
+            \\
+            \dot{\theta}_1 \;=\;
+            w_1
+            \;
+            -
+            \;
+            \text{pulling}(\theta_1,\theta_0)
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <br/>
+    <p class="fragment smaller lowlight center">
+        This is a very naive simplification.
+        It is a limit cycle description of
+        "weakly coupled oscillators".
+    </p>
+</section>
+<section>
+    <h3>Coupling</h3>
+    <p>
+        The "pulling" should be...
+    </p>
+    <ul>
+        <li class="fragment">
+            ... a function of phase difference;
+        </li>
+        <li class="fragment">
+            ... 0 when the phase difference is 0 or $\pi$;
+        </li>
+        <li class="fragment">
+            ... anti-symmetric.
+        </li>
+    </ul>
+    <p class="fragment lowlight small">
+        These are just reasonable requirements.
+        Certain variations deviate from these.
+    </p>
+    <br/>
+    <p class="fragment">
+        What about
+        \[
+            \text{pulling}(\theta_i,\theta_j)
+            =
+            \sin(\theta_i - \theta_j) ?
+        \]
+        This can give rise to spontaneous synchronization
+        (E.g., sympathetic vibration)
+    </p>
+</section>
+<section>
+    <h3>Network of coupled oscillators</h3>
+    <p>
+        We can generalize this model to networks of many oscillators
+        coupled to one another: with
+        \[
+            \frac{d\theta_i}{dt} \;=
+            \quad
+            \begin{gathered}
+            \text{One's own} \\
+            \text{drum beat}
+            \end{gathered}
+            \quad
+            -
+            \quad
+            \begin{gathered}
+            \text{Influence} \\
+            \text{of others}
+            \end{gathered}
+        \]
+        There is a long history in studying models of this
+        form in seemingly independent fields.
+    </p>
+    <br/>
+    <ul class="fragment">
+        <li>Clock synchronization</li>
+        <li>Consensus model</li>
+        <li>Power-flow equations</li>
+        <li>......</li>
+    </ul>
+</section>
+<section data-auto-animate>
+    <h3>Kuramoto model</h3>
+    <p>
+        The Kuramoto model is a simple dynamical system that models the
+        nonlinear interaction among <em>weakly coupled</em> oscillators.
+    </p>
+    <p class="tiny lowlight">
+        Kuramoto. 1975, Self-entrainment of a population of coupled non-linear oscillators
+        doi:10.1007/bfb0013365.
+    </p>
+    <ul class="fragment">
+        <li>Simple enough to be analyzed</li>
+        <li>Complex enough to exhibit interesting emergent behavior</li>
+    </ul>
+    <div class="fragment">
+        <p>
+            The "classic" form
+            \[
+                \frac{d \theta_i}{dt} =
+                w_i -
+                \frac{K}{N} \sum_{j = 0}^N \sin(\theta_i - \theta_j)
+                \quad\text{for } i = 0,\ldots,N-1
+            \]
+        </p>
+        <ul class="fragment">
+            <li>
+                $N$ is the number of oscillators
+            </li>
+            <li>
+                $K$ is the <strong class="highlight">coupling coefficient</strong>
+            </li>
+            <li>
+                $w_i$ is the <strong class="highlight">natural frequency</strong> of the $i$-th oscillator
+            </li>
+        </ul>
+    </div>
+</section>
+<section data-auto-animate>
+        <p>
+            The "classic" form
+            \[
+                \frac{d \theta_i}{dt} =
+                w_i -
+                \frac{K}{N} \sum_{j = 0}^N \sin(\theta_i - \theta_j)
+                \quad\text{for } i = 0,\ldots,N-1
+            \]
+        </p>
+    <div class="fragment">
+        \[
+            \downarrow
+        \]
+        <p>
+            \[
+                \frac{d \theta_i}{dt} =
+                w_i -
+                \sum_{\color{red}{j \sim i}} \color{red}{k_{ij}} \sin(\theta_i - \theta_j)
+                \quad\text{for } i = 0,\ldots,N-1
+            \]
+        </p>
+        <ul>
+            <li>
+                <em>Non-uniform</em> coupling
+                ($\color{red}{k_{ij} = k_{ji}}$ symmetric but not identical)
+            </li>
+            <li>
+                <em>Sparse</em> coupling ( $\color{red}{j \sim i}$ given by a graph)
+            </li>
+        </ul>
+    </div>
+    <div class="fragment">
+        <img src="C4.png" width="250">
+    </div>
+</section>
+<section>
+    <h3>Simple simulation</h3>
+    <div class="center">
+        <iframe data-src="https://www.tianranchen.org/research/kuramoto/sim" height="600" width="860"></iframe>
+    </div>
+</section>
+<section>
+    <h3>Synchronization</h3>
+    <p>
+        \[
+            \frac{d \theta_i}{dt} =
+            w_i -
+            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i = 0,\ldots,n
+        \]
+        <strong class=term>Frequency synchronization</strong class=term>:
+        all oscillators are tuned to
+        a common frequency (angular velocity).
+    </p>
+    <br/>
+    <ul class="fragment">
+        <li>
+            Oscillators' relative phase angle stop changing
+        </li>
+        <li>
+            The dynamic picture becomes a static picture
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Synchronization: a static view</h3>
+    <p>
+        A (frequency)
+        <strong class="term">synchronization configuration</strong class="term">
+        for a Kuramoto network $(G,K,w)$ is a configuration
+        $(\theta_0,\ldots,\theta_n)$ such that
+        \[
+            \frac{d \theta_0}{dt} = \frac{d \theta_1}{dt}
+            \,=\, \cdots \, = \,
+            \frac{d \theta_n}{dt}
+            = c
+        \]
+        for some constant $c$ (synchronized frequency).
+    </p>
+    <br/>
+    <p class="fragment">
+        I.e., solutions to the system of equations
+        \[
+            c =
+            w_i -
+            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i = 0,\ldots,n
+        \]
+    </p>
+</section>
+<section>
+    <h3>Synchronized frequency</h3>
+    <p>
+        \[
+            c =
+            w_i -
+            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i = 0,\ldots,n
+        \]
+    </p>
+    <p class="fragment">
+        under the symmetry assumption $k_{ij} = k_{ji}$,
+        \[
+            c = \frac{w_0 + \cdots + w_n}{n+1} = \overline{w}
+        \]
+    </p>
+    <p class="fragment">
+        I.e., the common frequency must be the
+        <em class="highlight">mean natural frequency</em>.
+    </p>
+    <p class="fragment">
+        We can always normalize the network so that
+        $\overline{w} = 0$.
+    </p>
+    <p class="fragment">
+        And the equations become
+        \[
+            0 =
+            w_i -
+            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i = 0,\ldots,n
+        \]
+    </p>
+</section>
+<section>
+    <h3>Kuramoto equations</h3>
+    <p>
+        Synchronization configurations are exactly the solutions
+        $(\theta_0,\ldots,\theta_n) \in [0,2\pi)^{n+1}$
+        to the system of equations
+        \[
+            0 =
+            w_i -
+            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i = 0,\ldots,n
+        \]
+    </p>
+    <p class="fragment">
+        "<strong class="term">Kuramoto system</strong>":
+        $n+1$ equations in $n+1$ unknowns.
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>Removing redundancy</h3>
+    <p>
+        \[
+            0 =
+            \overline{w}_i -
+            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i = 0,\ldots,n
+        \]
+        We can assume $\theta_0 = 0$.
+        (equivalent to choosing a rotational frame of reference)
+    </p>
+    <ul>
+        <li class="fragment">
+            a solution remains a solution under translation.
+        </li>
+        <li class="fragment">
+            equations are also linearly dependent: (sum to 0).
+        </li>
+    </ul>
+    <p class="fragment">
+        We can set $\theta_0 = 0$ and discard one equation.
+    </p>
+    <p class="fragment">
+        \[
+            0 =
+            \overline{w}_i -
+            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i = 1,\ldots,n
+        \]
+    </p>
+    <p class="fragment">
+        A system of $n = N-1$ equations
+        in $n$ unknowns $\theta_1,\ldots,\theta_n$.
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>Central questions</h3>
+    <p>
+        \[
+            0 =
+            \overline{w}_i -
+            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i = 1,\ldots,n
+        \]
+    </p>
+    <ul>
+        <li>
+            What is the maximum number of solutions? (Is it even finite?)
+            <ul>
+                <li>Lower bound: $2^n$</li>
+                <li>Upper bound: $\binom{2n}{n}$</li>
+                <li>Complication: the maximum number is topology-sensitive</li>
+            </ul>
+        </li>
+        <li>
+            Are the solutions isolated (0-dimensional) ?
+        </li>
+    </ul>
+    <ul class="fragment">
+        <li class="smaller lowlight">
+            J. Baillieul and C. Byrnes, Geometric critical point analysis of lossless power system models, IEEE Trans-
+actions on Circuits and Systems, 29 (1982)
+        </li>
+        <li class="smaller lowlight">
+            O. Coss, J. D. Hauenstein, H. Hong, and D. K. Molzahn, Locating and counting equilibria of the Kuramoto
+model with rank-one coupling, SIAM J. Appl. Algebra Geom., 2 (2018)
+        </li>
+        <li class="smaller lowlight">
+            S. Guo and F. Salam, Determining the solutions of the load flow of power systems: Theoretical results and
+computer implementation, 29th IEEE Conference on Decision and Control, (1990)
+        </li>
+        <li class="smaller lowlight">
+            J. Lindberg, A. Zachariah, N. Boston, and B. Lesieutre, The Distribution of the Number of Real Solutions
+to the Power Flow Equations, IEEE Transactions on Power Systems, PP (2022)
+        </li>
+        <li class="smaller lowlight">
+            D. K. Molzahn, D. Mehta, and M. Niemerg, Toward Topologically Based Upper Bounds on the Number of
+Power Flow Solutions, 2016 American Control Conference (ACC), (2016)
+        </li>
+        <li class="lowlight">
+            ......
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>It's not algebraic</h3>
+    <p>
+        \[
+            0 =
+            w_i -
+            \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
+            \quad\text{for } i = 1,\ldots,n
+        \]
+        is <em>not algebraic</em>,
+        <span class="fragment">
+            but we can make it <em>algebraic</em>!
+        </span>
+    </p>
+    <br/>
+    <p>
+        <strong class="fragment">Why?</strong>
+        <span class="fragment">Because!</span>
+    </p>
+</section>
+<section>
+    <h3>Algebraic formulations</h3>
+    <p>Many different ways to turn this into an algebraic system</p>
+    <ul>
+        <li class="fragment">
+            $s_i = \sin(\theta_i), \; c_i = \cos(\theta_i)$,
+            and add $s_i^2 + c_i^2 = 1$;
+        </li>
+        <li class="fragment">
+            half-angle tangent formula
+        </li>
+        <li class="fragment">
+            exponential formula
+            $x_i = e^{\mathfrak{i} \theta_i}$, then
+            \[
+                \sin(\theta_i - \theta_j) =
+                \frac{1}{2 \mathfrak{i}}
+                \left(
+                \frac{x_i}{x_j} -
+                \frac{x_j}{x_i}
+                \right)
+            \]
+            it produces the algebraic system
+            \[
+                0 =
+                w_i -
+                \sum_{j \in \mathcal{N}_G(i)}
+                \frac{k_{ij}}{2 \mathfrak{i}}
+                \left(
+                \frac{x_i}{x_j} -
+                \frac{x_j}{x_i}
+                \right)
+                \quad\text{for } i = 1,\ldots,n
+            \]
+            We prefer this one.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Laurent polynomial formulation</h3>
+    <p>
+        System of $n$ Laurent polynomial equations
+        \[
+            0 =
+            w_i -
+            \sum_{j \in \mathcal{N}_G(i)}
+            \frac{k_{ij}}{2 \mathfrak{i}}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for } i = 1,\ldots,n
+        \]
+        in $n$ complex unknowns $x_1,\ldots,x_n \ne 0$
+        ($x_0 = 1$ is a constant).
+    </p>
+    <p>Algebraic geometers can get to work!</p>
+    <ul class="fragment">
+        <li>What is the maximum number of solutions? (Is it even finite?)</li>
+        <li>Are the solutions isolated (0-dimensional) ?</li>
+    </ul>
+</section>
+<section>
+    <h3>A complex algebraic relaxation</h3>
+    <p>
+        \[
+            \begin{aligned}
+                (\text{T})
+                \quad
+                w_i 
+                &-
+                \sum_{j \in \mathcal{N}_G(i)} k_{ij} \sin(\theta_i - \theta_j)
+                \\
+                (\text{A})\quad
+                w_i 
+                &-
+                \sum_{j \in \mathcal{N}_G(i)}
+                \frac{k_{ij}}{2 \mathfrak{i}}
+                \left(
+                \frac{x_i}{x_j} -
+                \frac{x_j}{x_i}
+                \right)
+            \end{aligned}
+        \]
+        Every real root of (T) corresponds to a complex root of (A).
+    </p>
+    <p class="fragment">
+        Only complex roots of (A) on the real torus $(S^1)^n$
+        ($|x_i| = 1$) correspond to real roots of (T).
+        I.e., this is a relaxation can potentially introduce extraneous solutions.
+        (A good trade-off)
+    </p>
+</section>
+<section>
+    <h3>Digression: 2D Toric Kumamoto problem</h3>
+    <p>
+        \[
+            0 =
+            w_i -
+            \sum_{j \in \mathcal{N}_G(i)}
+            \frac{k_{ij}}{2 \mathfrak{i}}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for } i = 1,\ldots,n
+        \]
+        Extraneous roots are roots outside the real torus $(S^1)^n$,
+        i.e., roots with some $|x_i| \ne 1$.
+    </p>
+    <p class="fragment">Do they mean anything?</p>
+    <div class="center fragment">
+        <img src="torickuramoto.png" alt="" class="r-stretch">
+    </div>
+</section>
+<section>
+    <h3>Digression: 2D Toric Kumamoto problem</h3>
+    <p>
+        \[
+            \left\{
+            \begin{alignedat}{5}
+            \dot{\theta}_i =
+            \omega_i - \sum_{j=0}^n k_{ij} \cosh(\rho_i - \rho_j)
+            \sin(\theta_i - \theta_j) \\
+            \dot{\rho}_i =
+            0 - \sum_{j=0}^n k_{ij} \sinh(\rho_i - \rho_j)
+            \cos(\theta_i - \theta_j) \\
+            \end{alignedat}
+            \right.
+            \;\text{for } i=1,\dots,n.
+        \]
+    </p>
+    <div class="cols">
+        <div class="col">
+            <div class="center">
+                <img src="toriccoupling.png" alt="" class="r-stretch">
+            </div>
+        </div>
+        <div class="col">
+            <ul>
+                <li>$x_i = e^{-\rho_i + \mathfrak{i} \theta_i}$</li>
+                <li>$\theta_i$ is still the phase angle</li>
+                <li>$\rho_i = - \ln |x_i|$ measures the radial position</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Central questions, relaxed</h3>
+    <p>
+        For the algebraic Kuramoto system
+        \[
+            f_i(\mathbf{x}) =
+            w_i -
+            \sum_{j \in \mathcal{N}_G(i)}
+            \frac{k_{ij}}{2 \mathfrak{i}}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for } i = 1,\ldots,n
+        \]
+    </p>
+    <ul>
+        <li>
+            What is the maximum number of $\mathbb{C}^*$-roots?
+            (Is it even finite?)
+        </li>
+        <li>
+            Are the $\mathbb{C}^*$-roots isolated (0-dimensional) ?
+        </li>
+    <p class="fragment">
+        If the $\mathbb{C}^*$-roots are isolated
+        then the total number is finite,
+        and
+        \[
+            \begin{gathered}
+            \text{Maximum} \\
+            \text{root count}
+            \end{gathered}
+            \quad=\quad
+            \begin{gathered}
+            \text{``Generic''} \\
+            \text{root count}
+            \end{gathered}
+        \]
+    </p>
+    <p class="fragment">
+        Here “generic” means generic choices of parameters
+        $w_1,\ldots,w_n$ and $k_{ij}$
+        (which form a Zariski closed subset of the coefficients).
+    </p>
+</section>
+<section>
+    <h3>Q1: Generic complex root count</h3>
+    <p>
+        <strong>Question.</strong>
+        For <em class="highlight">generic</em> (real or complex)
+        natural frequencies $w_1,\ldots,w_n$
+        and <em class="highlight">generic</em>
+        <strong class="highlight">but symmetric</strong>
+        (real or complex) coupling coefficients
+        $k_{ij} = k_{ji} \ne 0$,
+        what is the n.o. <em>complex</em> solutions to
+        \[
+            0 =
+            w_i - \sum_{j \in \mathcal{N}_G(i)} k_{ij}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for }
+            i = 1,\ldots,n \; ?
+        \]
+    </p>
+    <div class="fragment">
+        <p>Tools:</p>
+        <ul>
+            <li>Bernshtein’s theorems</li>
+            <li>Adjacency polytope bound</li>
+            <li>Face bipartite subgraph correspondence</li>
+            <li>Structure preserving polyhedral homotopy</li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h3>Bernshtein’s theorem and the BKK bound</h3>
+    <div class="theorem">
+        (Bernshtein 1975)
+        For <em>generic</em> coefficients,
+        the $\mathbb{C}^*$-root count of the
+        <em>square</em> Laurent system $(f_1,\ldots,f_n)$
+        is the <em>mixed volume</em>
+        \[
+            \operatorname{MV}(
+            \operatorname{Newt}(f_1),
+            \ldots,
+            \operatorname{Newt}(f_n)
+            )
+        \]
+    </div>
+    <ul>
+        <li>
+            This is the <strong class="highlight">BKK bound</strong>
+            <span class="small lowlight">(Bernshtein, Kushnirenko, Khovanskii)</span>
+        </li>
+        <li>
+            $\mathbb{C}^* = \mathbb{C} \setminus \{ 0 \}$,
+            and $\mathbb{C}^*$-zeros are zeros inside
+            $(\mathbb{C}^*)^n$
+        </li>
+        <li>
+            $\operatorname{Newt}(f_i)$ is the
+            <em class="highlight">Newton polytope</em> of $f_i$
+        </li>
+        <li>
+            $\operatorname{MV}$ is the <em class="highlight">mixed volume</em>
+            of $n$ convex polytopes
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Bernshtein’s 2nd theorem</h3>
+    <div class=theorem>
+        <strong>Theorem.</strong> (Bernshtein 1975)
+        If for all nonzero vectors $\mathbf{v} \in \mathbb{R}^n$,
+        the initial system $\operatorname{init}_{\mathbf{v}}(F)$ has
+        no zero in $(\mathbb{C}^*)^n$,
+        then all zeros of $F$ in $(\mathbb{C}^*)^n$ are isolated,
+        and the total number, counting multiplicity, is
+        $\operatorname{MV}(\operatorname{Newt}(f_1),\dots,\operatorname{Newt}(f_n))$.
+    </div>
+    <br/>
+    <p class="fragment">The converse is also true when $\operatorname{MV} > 0$.</p>
+    <p class="fragment">
+        Laurent polynomial systems satisfies this condition
+        are said to be <b class="term">Bernshtein-general</b>.
+    </p>
+</section>
+<section>
+    <h3>Adjacency polytope</h3>
+    <div class="definition">
+        <strong>Definition.</strong>
+        For a graph $G = (V,E)$ 
+        with $V = \{0,1,\ldots,n\}$,
+        we define the
+        (<em>PV-type</em>) <strong class="term">adjacency polytope</strong>
+        to be the convex hull of
+        \[
+            \nabla_G :=
+            \{ \mathbf{0} \} \cup
+            \{
+            \pm (\mathbf{e}_i - \mathbf{e}_j)
+            \mid
+            \{ i, j \} \in E
+            \}
+        \]
+        where $\mathbf{e}_0 = \mathbf{0}$.
+        <span class="smaller lowlight">(We do not distinguish $\nabla_G$ and its convex hull)</span>
+    </div>
+    <p class="fragment">
+        Each edge contribute a line segment through the origin.
+        $\mathbf{0}$ is an interior point,
+        but still important when we consider the combinatorial features.
+    </p>
+    <p class="fragment">
+        Equivalent to <strong class="term">symmetric edge polytope</strong>
+        studied in other fields.
+        <span class="smaller lowlight">
+            (See, e.g. D'Alì, Delucchi, Michałek. Many
+            Faces of Symmetric Edge Polytopes. <em>Electron J Comb</em>
+            29, 2022)
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Adjacency polytope and Newton polytopes</h3>
+    <p>
+        The algebraic Kuramoto system
+        \[
+            f_i(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} k_{ij}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for }
+            i = 1,\ldots,n,
+        \]
+        involves constant terms and monomials $x_i / x_j$ for $\{ i, j \} \in E$.
+        Therefore, 
+        \[
+            \begin{aligned}
+            \nabla_G
+            &:=
+            \{ \mathbf{0} \} \cup
+            \{
+            \pm (\mathbf{e}_i - \mathbf{e}_j)
+            \mid
+            \{ i, j \} \in E
+            \}
+            \\
+            &=
+            \operatorname{Supp}(f_i)
+            \; \cup \, \cdots \, \cup \;
+            \operatorname{Supp}(f_n)
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment">
+        It is the Newton polytope of the randomization
+        $R \cdot F(\mathbf{x})$ for a square matrix $R$
+        (random linear combinations):
+        \[
+            \nabla_G = \operatorname{Newt}( R \cdot F )
+        \]
+    </p>
+</section>
+<section>
+    <h3>Adjacency polytope bound</h3>
+    <div class="theorem">
+        <strong>Lemma.</strong>
+        The number of isolated complex zeros to
+        the algebraic Kuramoto system
+        \[
+            f_i(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} k_{ij}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for }
+            i = 1,\ldots,n,
+        \]
+        counting multiplicity, is bounded the normalized volume
+        \[
+            \operatorname{Vol}(\operatorname{conv}(\nabla_G)).
+        \]
+    </div>
+    <p>
+        This is the <strong>adjacency polytope bound</strong>.
+    </p>
+    <p>
+        \[
+            \begin{gathered}
+            \text{Generic} \\
+            \mathbb{C}\text{-root count}
+            \end{gathered}
+            \quad\le\quad
+            \begin{gathered}
+            \text{Adjacency} \\
+            \text{polytope bound} \\
+            \end{gathered}
+        \]
+    </p>
+</section>
+<section>
+    <h3>Why adjacency polytope ?</h3>
+    <p>
+        We know much about
+        $\nabla_G := \{ \mathbf{0} \} \cup \{ \pm (\mathbf{e}_i - \mathbf{e}_j) \mid \{ i, j \} \in E \}$
+    </p>
+    <div class="theorem">
+        <strong>Lemma.</strong>
+            <span class="small">
+                (Higashitani, Jochemko, Michałek and C., Davis, Korchevskaia)
+            </span>
+        <ul>
+            <li>
+                Faces of $\nabla_G$ correspond to subgraphs of $G$
+                that are maximally bipartite in their induced subgraphs.
+            </li>
+            <li>
+                Facets of $\nabla_G$ correspond to maximal bipartite subgraph of $G$.
+            </li>
+        </ul>
+    </div>
+    <!-- <p>This correspondence is <em>surjective</em> but <em>not
+            injective</em>.</p> -->
+    <div class="theorem">
+        <strong>Lemma.</strong>
+            <span class="small">
+                (C., Davis, Korchevskaia)
+            </span>
+        Facets of $\nabla_G$ are in 1-to-1 correspondence with
+        "balanced" assignments arc orientations in cut sets of
+        maximally bipartite subgraphs of $G$.
+    </div>
+    <ul class="smaller lowlight">
+        <li>
+            Higashitani, Jochemko, Michałek.
+            Arithmetic aspects of symmetric edge polytopes. Mathematika 65, 2019.
+        </li>
+        <li>
+            Chen, Davis, Korchevskaia.
+            Facets and facet subgraphs of adjacency polytopes. Arxiv 2021.
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>A series of relaxations</h3>
+    <p>
+        For the algebraic Kuramoto system
+        \[
+            f_i(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} k_{ij}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for }
+            i = 1,\ldots,n
+        \]
+        with parameters $w_1,\ldots,w_n$ (natural frequencies) and
+        symmetric coupling coefficients $k_{ij} = k_{ji}$,
+        \[
+            \begin{gathered}
+            \text{Real} \\
+            \text{(isolated)} \\
+            \text{root count}
+            \end{gathered}
+            \;\le\;
+            \begin{gathered}
+            \text{Generic} \\
+            \mathbb{C}\text{-root} \\
+            \text{count}
+            \end{gathered}
+            \;\le\;
+            \begin{gathered}
+            \text{BKK} \\
+            \text{bound}
+            \end{gathered}
+            \;\le\;
+            \begin{gathered}
+            \text{Adjacency} \\
+            \text{polytope} \\
+            \text{bound} \\
+            \end{gathered}
+            \]
+        </p>
+</section>
+<section>
+    <h3>A reasonable conjecture</h3>
+    <p>
+        \[
+            \begin{gathered}
+            \text{Generic} \\
+            \mathbb{C}\text{-root} \\
+            \text{count}
+            \end{gathered}
+            \;=\;\;
+            \begin{gathered}
+            \text{BKK} \\
+            \text{bound}
+            \end{gathered}
+            \;\;=\;
+            \begin{gathered}
+            \text{Adjacency} \\
+            \text{polytope} \\
+            \text{bound} \\
+            \end{gathered}
+            \]</p>
+</section>
+<section>
+    <h3>Generic root count result</h3>
+    <div class="theorem">
+        <strong>Theorem.</strong> (C., Korchevskaia, Lindberg)
+        For <em>generic</em> natural frequencies $w_1,\ldots,w_n$ and
+        <em>generic</em> <strong>but symmetric</strong> coupling $k_{ij} = k_{ji}$,
+        the <em>complex</em> zeros of
+        \[
+            f(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} \frac{k_{ij}}{2
+            \mathbf{i}}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for }
+            i = 1,\ldots,n
+        \]
+        are all isolated, and the total number
+        <strong>equal</strong> to the <strong>normalized volume of the adjacency
+        polytope</strong> $\operatorname{Vol}(\nabla_G)$.
+    </div>
+    <p><span class="math display">\[
+            \begin{gathered}
+            \text{Generic} \\
+            \mathbb{C}\text{-root} \\
+            \text{count}
+            \end{gathered}
+            \;=\;\;
+            \begin{gathered}
+            \text{BKK} \\
+            \text{bound}
+            \end{gathered}
+            \;\;=\;
+            \begin{gathered}
+            \text{Adjacency} \\
+            \text{polytope} \\
+            \text{bound} \\
+            \end{gathered}
+            \]</span></p>
+</section>
+<section>
+    <h3>Obstacles</h3>
+    <p>
+        \[
+            f(\mathbf{x}) = 
+            w_i - 
+            \sum_{j \in \mathcal{N}_G(i)} 
+            \frac{k_{ij}}{2 \mathbf{i}}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for }
+            i = 1,\ldots,n
+        \]
+        <!-- Indeed, the allowed choices of coefficients consists
+        of a nowhere dense subset of (Lebesgue) measure 0 among the space of all
+        possible complex coefficients;  -->
+    </p>
+    <ol>
+        <li class="fragment">
+            In each polynomial, the monomials $x_i/x_j$ and $x_j/x_i$,
+            must share the same coefficient
+            $\frac{k_{ij}}{2 \mathbf{i}}$.
+        </li>
+        <li class="fragment">
+            For any edge $\{i,j\} \in E$, the $i$-th and
+            $j$-th polynomial always have the terms
+            $\frac{k_{ij}}{2\mathbf{i}} (x_i x_j^{-1} - x_j x_i^{-1})$ and 
+            $\frac{k_{ji}}{2\mathbf{i}} (x_j x_i^{-1} - x_i x_j^{-1})$.
+        </li>
+        <li class="fragment">
+            Unless $G$ is the complete graph,
+            the Newton polytopes are not all full-dimensional.
+        </li>
+    </ol>
+</section>
+<section>
+    <h3>How to prove this?</h3>
+    <p>There are many ways. We followed a familiar recipe</p>
+    <ol>
+        <li>Construct a homotopy</li>
+        <li>Prove smoothness</li>
+        <li>Count the number of homotopy paths</li>
+    </ol>
+</section>
+<section>
+    <h3>A nonlinear homotopy</h3>
+    <p>Basing on <span class="math display">\[
+            f_i(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)}
+            \frac{k_{ij}}{2 \mathbf{i}}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for }
+            i = 1,\ldots,n
+            \]</span> we define <span class="math inline">$H(\mathbf{x},t) =
+            (h_1,\ldots,h_n)$</span> <span class="math display">\[
+            h_i (\mathbf{x},t) =
+            w_i - \sum_{j \in \mathcal{N}_G(i)}
+            \frac{k_{ij}}{2 \mathfrak{i}} \; t^{\alpha_{ij}} \;
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for } i = 1, \ldots,n
+            \]</span> with <em>generic but symmetric</em> rational “lifting” values
+        <span class="math inline">$\alpha_{ij} = \alpha_{ji} \approx
+            1$</span>.
+    </p>
+</section>
+<section>
+    <h3>Structure preserving polyhedral homotopy</h3>
+    <p>
+        \[
+            h_i :=
+            w_i - \sum_{j \in \mathcal{N}_G(i)}
+            \frac{k_{ij}}{2 \mathfrak{i}} \; t^{\alpha_{ij}} \;
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \;\text{for } i = 1, \ldots,n
+        \]
+        with <em>generic but symmetric</em> rational “lifting” values
+        $\alpha_{ij} = \alpha_{ji} \approx 1$.
+        defines a <em>structure preserving</em>
+        polyhedral homotopy
+        <span class="smaller lowlight">
+            (Huber & Sturmfels.
+            A polyhedral method for solving sparse polynomial systems.
+            Math Comput 64, 1541-1555, 1995)
+        </span>
+    </p>
+    <ul>
+        <li class="fragment">
+            At $t=1$, $h_i(\mathbf{x},1) \equiv f_i(\mathbf{x})$
+        </li>
+        <li class="fragment">
+            Each $h_i (\mathbf{x}, t)$ is holomorphic in $\mathbf{x}$ and $t$
+            away from $t=0$
+        </li>
+        <li class="fragment"i>
+            For any $t \ne 0$, symmetry in the coefficients
+            is preserved
+            \[
+                \frac{k_{ij}}{2 \mathfrak{i}} t^{\alpha_{ij}} =
+                \frac{k_{ji}}{2 \mathfrak{i}} t^{\alpha_{ji}}
+            \]
+            <!-- This a symmetry preserving version of the polyhedral
+            homotopy -->
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Homotopy paths</h3>
+    <p>
+        \[
+            0 =
+            h_i =
+            w_i - \sum_{j \in \mathcal{N}_G(i)}
+            \frac{k_{ij}}{2 \mathfrak{i}} \; t^{\alpha_{ij}} \;
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+        \]
+        for $i = 1, \ldots,n$ defines
+        smooth homotopy paths over $t \in (0,1]$.
+    </p>
+    <p class="fragment">
+        Under the assumption that $k_{ij}$'s and $w_i$'s
+        are chosen generically,
+        \[
+            \text{N.o. paths} \;=\; \text{Generic root count}
+        \]
+        So the root counting question becomes a path counting question.
+    </p>
+</section>
+<section>
+    <h3>Side note: the tropical view</h3>
+    <p>
+        Half of the question is tropical: Going back to
+        \[
+            f_i(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)}
+            \frac{k_{ij}}{2 \mathbf{i}}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for }
+            i = 1,\ldots,n
+        \]
+        We assign the symmetry preserving valuations
+        \[
+            \begin{aligned}
+                \operatorname{val}(w_i) &= 0
+                &&\text{and} &
+                \operatorname{val}(k_{ij}) &= 
+                \operatorname{val}(k_{ji}) =
+                \alpha_{ij}
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment">
+        What is the intersection number of the $n$
+        tropical hypersurfaces
+        \[
+            \mathbb{V}(\;\operatorname{Trop}(f_1) \;)
+            \;\cap\;
+            \cdots
+            \;\cap\;
+            \mathbb{V}(\;\operatorname{Trop}(f_n) \;)
+        \]
+    </p>
+    <p class="fragment">
+        This is the tropical version of the
+        generic root count question.
+    </p>
+</section>
+<!-- <section>
+    <h3>Randomization</h3>
+    <p>
+        For a square algebraic system
+        $F = (f_1,\ldots,f_n)$, analysis can be simplified through
+        "randomization" (random linear combinations):
+        For any $n \times n$ nonsingular matrix $R$,
+        \[
+            F(\mathbf{x})
+            \quad\quad\text{and}\quad\quad
+            R \cdot F(\mathbf{x})
+        \]
+        have the same zero set.
+        <span class="fragment">
+            So we can study the
+            "<em>randomized</em> Kuramoto system"
+            $R \cdot F(\mathbf{x})$ instead.
+        </span>
+    </p>
+    <ul>
+        <li class="fragment">
+            all polynomials in $R \cdot F (\mathbf{x})$
+            involve all monomials;
+        </li>
+        <li class="fragment">
+            the Newton polytopes are all identical (unmixed case);
+        </li>
+    </ul>
+    <p class="fragment small lowlight">
+        Terminology: Numerical analysts would call $F \mapsto R \cdot F$
+        "<strong>preconditioning</strong>" (a standard practice to improve the
+        numerical condition of systems of equations).</p>
+</section>
+<section>
+    <h3>Digression: Why randomize?</h3>
+    <p>
+        Randomization turns a mixed system to an unmixed system
+        (every polynomial involves every monomial).
+    </p>
+    <ul>
+        <li class="fragment">
+            Tropical intersection $\to$ Stable self-intersection
+        </li>
+        <li class="fragment">
+            Fine mixed subdivision $\to$ Triangulation
+        </li>
+        <li class="fragment">
+            Mixed volume computation $\to$ volume computation
+        </li>
+    </ul>
+    <p class="fragment">
+        Easier?
+        <span class="fragment">
+            Volume and mixed volume computations are both #P.
+        </span>
+    </p>
+        <p class="fragment smaller lowlight">
+            (Dyer, Gritzmann, Hufnagel. On The Complexity of Computing Mixed Volumes. SIAM J Comput 27, 1998)
+        </p>
+</section> -->
+<section>
+    <h3>Digression: Mixed volume vs. volume</h3>
+    <div class="fragment">
+        <strong>Theorem.</strong> (C. 2020)
+        For $m$ distinct points
+        $\{ \mathbf{p}_1, \dots, \mathbf{p}_m \} \subset \mathbb{R}^n$,
+        with $m > n$
+        \[
+            \operatorname{Vol} (
+                \operatorname{conv}
+                \{\,
+                    \mathbf{p}_1, \dots, \mathbf{p}_m
+                \}
+            ) =
+            \operatorname{MV} (
+                \Delta(\mathbf{p}_1), \dots, \Delta(\mathbf{p}_m)
+            )
+        \]
+        where each $\Delta(\mathbf{p}_i)$ is a simplex
+        of dimension $m-n$ in $\mathbb{R}^m$.
+    </div>
+    <br/>
+    <p class="fragment">
+        The specialized problem of computing mixed volume of simplices is
+        at least as "hard" as the general problem of computing volume.
+        <span class="smaller lowlight">
+            (http://arxiv.org/abs/2108.12875)
+        </span>
+    </p>
+    <br/>
+    <p class="fragment">
+        \[
+            \begin{gathered}
+            \text{General} \\
+            \text{volume computation}
+            \end{gathered}
+            \quad\approx\quad
+            \begin{gathered}
+            \text{Very special} \\
+            \text{mixed volume computation}
+            \end{gathered}
+            \]</p>
+</section>
+<section>
+    <h3>Stable self intersection</h3>
+    <p>
+        There are exactly $\operatorname{Vol}(\nabla_G)$ stable
+        self-intersections of $\operatorname{Trop}(H^*)$.
+    </p>
+    <p>
+        Each gives rise to a single path defined by
+        the structure preserving polyhedral homotopy
+        \[
+            0 =
+            h_i =
+            w_i - \sum_{j \in \mathcal{N}_G(i)}
+            \frac{k_{ij}}{2 \mathfrak{i}} \; t^{\alpha_{ij}} \;
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \;\text{for } i = 1, \ldots,n.
+        \]
+    </p>
+    <p class="fragment">
+        Therefore
+        \[
+            \operatorname{Vol}(\nabla_G)
+            \;\le\;
+            \begin{gathered}
+            \text{N. o.} \\
+            \text{paths}
+            \end{gathered}
+            \;=\;
+            \begin{gathered}
+            \text{Generic} \\
+            \text{root count}
+            \end{gathered}
+            \;\le\;
+            \operatorname{Vol}(\nabla_G)
+            \]
+        </p>
+</section>
+<section>
+    <h3>Bernshtein-generalness</h3>
+    <p>
+        \[
+            \begin{gathered}
+            \text{Generic} \\
+            \mathbb{C}\text{-root} \\
+            \text{count}
+            \end{gathered}
+            \;=\;\;
+            \begin{gathered}
+            \text{Adjacency} \\
+            \text{polytope} \\
+            \text{bound} \\
+            \end{gathered}
+        \]
+    </p>
+    <p class="fragment">
+        We also know that
+        \[
+            \begin{gathered}
+            \text{Generic} \\
+            \mathbb{C}\text{-root} \\
+            \text{count}
+            \end{gathered}
+            \le
+            \begin{gathered}
+            \text{BKK} \\
+            \text{bound}
+            \end{gathered}
+            \le
+            \begin{gathered}
+            \text{Adjacency} \\
+            \text{polytope} \\
+            \text{bound} \\
+            \end{gathered}
+        \]
+        So they must be all equal,
+        and the algebraic Kuramoto system is Bernshtein-general.
+    </p>
+</section>
+<section>
+    <h3>Recap: Generic root count</h3>
+    <div class="theorem"><strong>Theorem.</strong> (C., Korchevskaia, Lindberg)
+        For <em>generic</em> natural frequencies $w_1,\ldots,w_n$ and
+        <em>generic</em> <strong>but symmetric</strong>
+        coupling coefficients $k_{ij} = k_{ji}$,
+        the <em>complex</em> zeros of
+        \[
+            f(\mathbf{x}) = 
+            w_i - \sum_{j \in \mathcal{N}_G(i)} 
+            \frac{k_{ij}}{2 \mathbf{i}}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for }
+            i = 1,\ldots,n
+        \]
+        are all isolated, and the total number of solutions
+        <strong>equal</strong> to the
+        <strong>normalized volume of the adjacency polytope</strong>
+        $\operatorname{Vol}(\nabla_G)$.
+    </div>
+    <br/>
+    <p><span class="math display">\[
+            \begin{gathered}
+            \text{Generic} \\
+            \mathbb{C}\text{-root} \\
+            \text{count}
+            \end{gathered}
+            \;=\;\;
+            \begin{gathered}
+            \text{BKK} \\
+            \text{bound}
+            \end{gathered}
+            \;\;=\;
+            \begin{gathered}
+            \text{Adjacency} \\
+            \text{polytope} \\
+            \text{bound} \\
+            \end{gathered}
+            \]</span></p>
+</section>
+<section>
+    <h3>Computational implications</h3>
+    <p>
+        \[
+            \text{Generic } \mathbb{C}\text{-roots}
+            \;=\;
+            \text{A.P. bound}
+        \]
+    </p>
+    <p>
+        The structure preserving polyhedral homotopy is an
+        optimal homotopy method for solving algebraic Kuramoto equations...
+    </p>
+    <p class="fragment">... IF $\mathbb{C}$-roots are needed.</p>
+    <div class="theorem fragment">
+        <strong>Proposition.</strong> (Lindberg, Zachariah, Boston, Lesieutre. 2022)
+        For tree and cycle networks, and networks
+        formed by gluing trees and cycles along cut vertices,
+        \[
+            \text{Max. $\mathbb{R}$-root count}
+            \;=\;
+            \text{A.P. bound}.
+        \]
+        <span class="smaller lowlight">
+            (Lindberg, Zachariah, Boston, Lesieutre,
+            The Distribution of the Number of Real Solutions to the Power Flow Equations.
+            IEEE T Power Syst PP, 2022).
+        </span>
+    </div>
+</section>
+<section>
+    <h3>Non-generic situations</h3>
+    <p>
+        \[
+            \begin{gathered}
+            \text{Generic} \\
+            \mathbb{C}\text{-root} \\
+            \text{count}
+            \end{gathered}
+            \;\;=\;
+            \begin{gathered}
+            \text{Adjacency} \\
+            \text{polytope} \\
+            \text{bound} \\
+            \end{gathered}
+        \]
+    </p>
+    <ul>
+        <li>when will the actual root count drop below generic root count?</li>
+        <li>by how much?</li>
+    </ul>
+</section>
+<section>
+    <h3>Exceptional couplings</h3>
+    <div class="lemma">
+        For generic choices of natural frequencies
+        $w_1,\ldots,w_n$ the zeros of the algebraic Kuramoto system
+        \[
+            f(\mathbf{x}) = w_i - \sum_{j \in \mathcal{N}_G(i)} \frac{k_{ij}}{2
+            \mathbf{i}}
+            \left(
+            \frac{x_i}{x_j} -
+            \frac{x_j}{x_i}
+            \right)
+            \quad\text{for }
+            i = 1,\ldots,n
+        \]
+        are all isolated and regular.
+        <span class="lowlight">
+            (Just Sard's Theorem, restated)
+        </span>
+    </div>
+    <p class="fragment">
+        <strong>Q2</strong>:
+        Under the assumption of generic $w$'s,
+        what are the choices of coupling coefficients
+        $k_{ij}$'s for which
+        \[
+            \text{Actual $\mathbb{C}$-root count}
+            \; < \;
+            \text{Generic $\mathbb{C}$-root count}
+        \]
+    </p>
+    <p class="fragment">
+        This set is the <strong>exceptional coupling coefficients</strong>.
+    </p>
+</section>
+<section>
+    <h3>Cycle basis description</h3>
+    <div class="theorem">
+        <strong>Proposition.</strong>
+        Let $G$ be a graph consisting of $d$ independent even cycles,
+        $C_1,\ldots,C_d$ that overlap at a single edge.
+        Let $U_i \subset \{ -1, 0, +1 \}^{|E(G)|}$,
+        for $i=1,\ldots,d$ be the set of
+        <strong>balanced primitive cycle vectors</strong>
+        associated with $C_1,\ldots,C_d$.
+        Then the set of exceptional coupling is the
+        union of subsets satisfying
+        <div class="small">
+            \[
+                \sum_{j=1}^d
+                (-1)^{|C_{i_j}| / 2} \mathbf{k}^{\vec{\eta}_{i_j}}
+                = 1
+                \text{ where }
+                (\vec{\eta}_{i_1},\ldots,\vec{\eta}_{i_t}) \in
+                U_{i_1} \times \cdots \times U_{i_t}
+                \text{ is consistent}
+            \]
+        </div>
+    </div>
+    <br/>
+    <p class="center">
+        There are a few variations based on graph topology.
+    </p>
+</section>
+<section>
+    <h3>General description</h3>
+    <div class="theorem">
+        <strong>Proposition.</strong>
+        Let $\mathcal{B}$ be the set of subgraphs of $G$ that are
+        <ol type="1">
+            <li>bridgeless (and hence cyclic), and</li>
+            <li>maximally bipartite in their induced subgraphs.</li>
+        </ol>
+        <p>
+            Then the set of exceptional coupling coefficients
+            is the union
+            \[
+                \bigcup_{B \in \mathcal{G}} \mathcal{K}(B).
+            \]
+            where each $\mathcal{K}(B)$ is the exceptional coupling coefficients
+            on $B$, similar to that given in the previous
+            slide.
+        </p>
+    </div>
+</section>
+<section>
+    <h3>Example: 4-cycle</h3>
+    <p>
+        There are 4 coupling coefficients
+        $k_{01},k_{12},k_{23},k_{30} \ne 0$
+    </p>
+    <div class="proposition fragment">
+        $\mathbb{C}$-root count is less than the generic root count
+        $\operatorname{Vol}(\nabla_{C_4}) = 12$ (i.e., system is not Bernshtein-general)
+        if and only if
+        \[
+            \begin{aligned}
+            \frac{ k_{01} k_{12} }{ k_{23} k_{30} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{30} }{ k_{12} k_{23} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{23} }{ k_{12} k_{30} } &= 1
+            \end{aligned}
+        \]
+    </div>
+    <div class="center">
+        <img src="c4subnets.png" alt="" class="r-stretch fragment">
+    </div>
+</section>
+<section>
+    <h3>Refined root count for $C_4$</h3>
+    <p>
+        Root count drops below the generic root count if and only if
+        \[
+            \begin{aligned}
+            \frac{ k_{01} k_{12} }{ k_{23} k_{30} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{30} }{ k_{12} k_{23} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{23} }{ k_{12} k_{30} } &= 1
+            \end{aligned}
+        \]
+    </p>
+    <p class="fragment">By how much?</p>
+    <ul>
+        <li class="fragment">
+            Only 1 out of 3 holds:
+            <strong>10</strong> roots (missing 2),
+            and all can be real
+        </li>
+        <li class="fragment">
+            Only 2 out of 3 hold:
+            <strong>8</strong> roots (missing 4),
+            and all can be real
+        </li>
+        <li class="fragment">
+            All 3 holds: <strong>6</strong> roots (missing 6),
+            and all can be real
+        </li>
+    </ul>
+</section>
+<section>
+    <h3>Balanced subnetwork</h3>
+    <div class="definition">
+        <strong>Definition.</strong>
+        For graph $G$ that contains a unique cycle $O$,
+        an acyclic subdigraph $\vec{H}$ supports a
+        <strong>balanced subnetwork</strong> if... 
+        <ul>
+            <li>
+                It has the same n. o. arcs in either orientation
+            </li>
+            <li>
+                \[
+                    \frac{
+                        \text{Product of clockwise $k_{ij}$'s}
+                    }{
+                        \text{Product of counterclockwise $k_{ij}$'s}
+                    }
+                    =
+                    (-1)^{ |O| / 2}.
+                \]
+            </li>
+        </ul>
+    </div>
+    <p class="center fragment lowlight">
+        Balanced subnetworks always come in transpose pairs.
+    </p>
+    <p class="fragment">
+        \[
+            \begin{aligned}
+            \frac{ k_{01} k_{12} }{ k_{23} k_{30} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{30} }{ k_{12} k_{23} } &= 1
+            &&\text{or} &
+            \frac{ k_{01} k_{23} }{ k_{12} k_{30} } &= 1
+            \end{aligned}
+        \]
+    </p>
+</section>
+<!-- <section>
+    <h3>Example: 6-cycle case</h3>
+    <p>Generic root count: 60</p>
+    <ul>
+        <li class="fragment">
+            Choosing 
+            \[
+                [ k_{01}, k_{12}, k_{23}, k_{34}, k_{45}, k_{50} ] =
+                [ \pm 1, \pm 1, \pm 1, \pm 1, \pm 1, \pm 1 ]
+            \]
+            with an <em>odd</em> number of negative choices,
+            then there will be 20 max. balanced subetworks
+            (10 transpose pairs), and
+            \[
+                \text{Root count} \;=\;
+                60 - 20 \;=\; 40
+            \]
+        </li>
+        <li class="fragment">
+            Choosing
+            \[
+                [ k_{01}, k_{12}, k_{23}, k_{34}, k_{45}, k_{50} ] =
+                [ \pm s, \pm s, \pm t, \pm t, \pm t, \pm t ]
+            \]
+            with an <em>odd</em> number of negative choices and
+            $s \ne t$, then there will be 12 max. balanced subnetworks
+            (12 transpose pairs),
+            and
+            \[
+                \text{Root count} \;=\;
+                60 - 12 \;=\; 48
+            \]
+        </li>
+    </ul>
+</section> -->
+<section>
+    <h3>Non-isolated solution sets</h3>
+    <p>
+        Another way generic root count is broken:
+        appearance of non-isolated (positive-dimensional) components.
+        They represent synchronization configurations
+        with at least one degree of freedom.
+    </p>
+    <ul class="fragment">
+        <li class="small">
+            (Complete graphs) P. Ashwin, C. Bick, and O. Burylko.
+            Identical Phase Oscillator Networks:
+            Bifurcations, Symmetry and Reversibility for Generalized Coupling,
+            Frontiers in Applied Mathematics and Statistics, 2 (2016)
+        </li>
+        <li class="small">
+            (Complete graphs) O. Coss, J. D. Hauenstein, H. Hong, and D. K. Molzahn.
+            Locating and counting equilibria of the Kuramoto
+            model with rank-one coupling,
+            SIAM J. Appl. Algebra Geom., 2 (2018)
+        </li>
+        <li class="small">
+            (Complete graphs and cycles) J. Lindberg, A. Zachariah, N. Boston, and B. Lesieutre.
+            The Distribution of the Number of Real Solutions to
+            the Power Flow Equations.
+            IEEE Transactions on Power Systems, PP (2022)
+        </li>
+        <li class="small">
+            D. Sclosa, Kuramoto networks with infinitely many stable equilibria. (2022)
+        </li>
+    </ul>
+    <div class="theorem fragment">
+        <b>Theorem.</b> (D. Sclosa)
+        For every $d \ge 1$ there is a Kuramoto network
+        whose stable equilibria form a manifold of dimension $d$
+    </div>
+</section>
+<section>
+    <h3>Constructing positive-dimensional solutions</h3>
+    <!-- <p>
+        For certain bipartite networks,
+        there is a formula:
+        for constructing
+        positive-dimensional solution sets
+    </p> -->
+    <div class="theorem fragment">
+        <b>Proposition.</b>
+        <p>
+            Let $G$ be a unicycle graph on $n+1$ nodes that contains a unique even cycle $O$.
+            Suppose the coupling coefficients satisfy:
+        </p>
+        <ul>
+            <li>
+                $(G,K)$ contains a balanced subnetwork $(\vec{H},K)$;
+            </li>
+            <li>
+                $|k_{ij}|$ are identical for edges on $O$.
+            </li>
+        </ul>
+        <p>
+            Then algebraic Kuramoto system derived from the network
+            of identical oscillators has a positive-dimensional $\mathbb{C}^*$-zero set.
+        </p>
+    </div>
+    <p class="fragment">
+        Indeed we can construct a $\mathbb{C}^*$-orbit
+        \begin{align*}
+            \begin{bmatrix}
+                x_1(\lambda) &
+                \cdots &
+                x_m(\lambda)
+            \end{bmatrix}
+            &=
+            (
+                \lambda \cdot
+                \boldsymbol{\eta}_{\vec{T}} \circ
+                (\mathbf{k}(\vec{T})^{-I})
+            )^{Q(\vec{T})^{-1}}
+            \\
+            x_i &= \pm x_{\pi(i)}
+            \quad\text{for } i = m+1, \ldots, n,
+        \end{align*}
+    </p>
+    <p class="fragment lowlight small">
+        (Require further explanation) Main point:
+        It contain an 1-dimensional orbit
+        parametrized by a system of Laurent monomials.
+    </p>
+</section>
+<section>
+    <h3>Real-orbits</h3>
+    <div class="theorem">
+        <b>Corollary.</b>
+        ...... Furthermore, if $k_{ij}$'s are all identical,
+        then the $\mathbb{C}^*$-orbit constructed
+        contains a $S^1$-robit in the real torus.
+    </div>
+    <p class="fragment">
+        The original Kuramoto equations
+        will have positive-dimensional
+        real solution components.
+    </p>
+    <p class="fragment">
+        For the 4-cycle example,
+        when the natural frequencies are identical,
+        and $k_{ij}$'s are identical,
+        we have 1-dimensional solution sets
+        \[
+            \left\{
+            \begin{aligned}
+                \theta_0 &= 0 \\
+                \theta_1 &= t + \pi + \sigma^{10} \\
+                \theta_2 &= \pi + \sigma^{12}_{10} \\
+                \theta_3 &= t + \sigma^{30} \\
+            \end{aligned}
+            \right.
+            \quad
+            \left\{
+            \begin{aligned}
+                \theta_0 &= 0 \\
+                \theta_1 &= \sigma^{10} + t \\
+                \theta_2 &= \pi + \sigma^{21}_{10} \\
+                \theta_3 &= \sigma^{30} - t
+            \end{aligned}
+            \right.
+            \quad
+            \left\{
+            \begin{aligned}
+                \theta_0 &= 0 \\
+                \theta_1 &= \sigma^{10} - t \\
+                \theta_2 &= \sigma^{21}_{10} -2t \\ %\sigma(k_{21}/k_{10}) \\
+                \theta_3 &= \pi + \sigma^{30} -t \\
+            \end{aligned}
+            \right.
+        \]
+        <span class="smaller lowlight">
+            $\sigma$'s are phase shift values, $0$ or $\pi$,
+            that only used to adjust for the signs of $k_{ij}$'s
+            (not very important).
+        </span>
+    </p>
+</section>
+<section>
+    <h3>Beyond unicycle networks</h3>
+    <div class="theorem">
+        <b>Proposition.</b>
+        Suppose $G$ consists of $d$ independent even cycles
+        $C_1,\ldots,C_d$ that share a single edge $e$,
+        then with the choice of the coupling coefficients
+        \[
+            k_{ij} =
+            \begin{cases}
+                sd &\text{if } \{i,j\} = e \text{ (shared edge)}\\
+                s  &\text{othewise},
+            \end{cases}
+        \]
+        for any $s \in \mathbb{C}^*$,
+        and identical natural frequencies,
+        the algebraic Kuramoto system
+        has a positive-dimensional $\mathbb{C}^*$-zero set.
+    </div>
+    <p class="fragment">
+        There is a similar $\mathbb{C}^*$-orbit formula
+        that parametrizes an 1-dimensional orbit
+        inside the zero set.
+    </p>
+    <div class="theorem fragment">
+        <b>Corollary.</b>
+        ...... there also can be real orbits
+        in the solution set.
+    </div>
+</section>
+<section>
+    <h3>Example: 2 cycles sharing an edge</h3>
+    <div class="center">
+        <img src="fig8.png" width=400 alt="">
+    </div>
+    <p>
+        The construction produces the
+        1-dimensional real solution set
+        \[
+            (\theta_0,\theta_1,\theta_2,\theta_3,\theta_4,\theta_5) =
+            (
+                0, 
+                t + \pi,
+                0,
+                t,
+                \pi,
+                t
+            )
+        \]
+        <span class="smaller lowlight">
+            This is one of many real orbits.
+        </span>
+    </p>
+</section>
+<section>
+    <p>
+        <b>Observation:</b>
+        The positive-dimensional solution sets
+        constructed this way are actually
+        solution set of <em>certain initial systems</em>!
+    </p>
+    <div class="fragment">
+        <p>
+            Open problems:
+        </p>
+        <ul>
+            <li>
+                Are there positive-dimensional solution sets
+                other than the $\mathbb{C}^*$-orbits we constructed here?
+            </li>
+            <li>
+                Can positive-dimensional and isolated solutions coexist?
+            </li>
+            <li>
+                Stability analysis
+            </li>
+        </ul>
+    </div>
+</section>
+<section>
+    <br/>
+    <div class="center">
+        <h1>
+            Thank you!
+        </h1>
+    </div>
+    <br/>
+    <p class="center">
+        https://www.tianranchen.org/research/papers/krootcount.pdf
+    </p>
+    <p class="center">
+        https://arxiv.org/abs/2107.12315
+    </p>
+    <p class="center">
+        http://arxiv.org/abs/2108.12875
+    </p>
+    <br/>
+    <div class="cols">
+        <div class="col center">
+            <img width=150 src="nsf.png" alt="">
+        </div>
+        <div class="col">
+            <p class="center smaller lowlight">
+                Research supported, in part, by National Science Foundation,
+                and Auburn University at Montgomery via
+                Grant-In-Aid program, PIL program,
+                and undergraduate research experience program.
+            </p>
+        </div>
+        <div class="col center">
+            <img width=150 src="aum.jpg" alt="">
+        </div>
+    </div>
+
+</section>

@@ -61,37 +61,60 @@
 body {
   counter-reset: example problem; }
 
-.theorem, .theoremlike, .definition, .example, .problem {
+.theorem, .theoremlike, .definition, .example, .problem, .corollary, .lemma, .proposition {
   box-shadow: 0 4px 8px 0 rgba(112, 96, 96, 0.5);
   transition: 0.3s;
   text-align: left;
   margin: 15px 2px;
+  padding: 5px 15px;
   border-radius: 8px; }
 
 .theorem {
   background: #d6cdd2;
-  padding: 5px 15px;
+  color: #000000; }
+
+.corollary {
+  background: #d6cdd2;
+  color: #000000; }
+
+.lemma {
+  background: #d6cdd2;
+  color: #000000; }
+
+.proposition {
+  background: #d6cdd2;
   color: #000000; }
 
 .theoremlike {
   background: #d6cdd2;
-  padding: 5px 15px;
   color: #000000; }
 
 .definition {
   background: #f2e0dc;
-  padding: 5px 15px;
   color: #0d0709; }
 
 .example {
   background: #EEEEEE;
-  padding: 5px 5px;
   color: #000000; }
 
 .problem {
   background: #EEEEEE;
-  padding: 5px 5px;
   color: #000000; }
+
+div.lemma:before {
+  content: "Lemma.";
+  font-weight: bold;
+  color: #600f16; }
+
+div.proposition:before {
+  content: "Proposition.";
+  font-weight: bold;
+  color: #600f16; }
+
+div.corollary:before {
+  content: "Corollary.";
+  font-weight: bold;
+  color: #600f16; }
 
 div.theorem:before {
   content: "Theorem.";
