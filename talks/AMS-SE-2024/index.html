@@ -7,7 +7,7 @@ title: Balanced networks and positive-dimensional solutions to Kuramoto equation
 
     <div class="titlebox">
         <h3 class="title">
-            Generic and non-generic synchronization configurations
+            Balanced networks and positive-dimensional solutions to Kuramoto and power-flow equations
         </h3>
     </div>
     <br/>
@@ -25,35 +25,806 @@ title: Balanced networks and positive-dimensional solutions to Kuramoto equation
     </p>
     <br/>
     <p class="smaller">
-        October 6, 2024<br/>
-        2024 Fall Southeastern Sectional Meeting<br/>
-        Georgia Southern University<br/>
+        March 8, 2025<br/>
+        2025 Spring Southeastern Sectional Meeting<br/>
+        Clemson University<br/>
     </p>
 </section>
-<section class="level2">
-    <h3>Overview</h3>
-    <ul>
-        <li class="fragment">
-            Coupled oscillators are studied in
-            biology, chemistry, physics, engineering,
-            and many other fields.
-        </li>
-        <li class="fragment">
-            The Kuramoto model models the nonlinear interaction
-            among coupled oscillators.
-        </li>
-        <li class="fragment">
-            It is simple enough to be analyzed rigorously
-            yet complex enough to exhibit interesting emergent behaviors.
-        </li>
-        <li class="fragment">
-            One emergent behavior is the spontaneous synchronization.
-        </li>
-        <li class="fragment">
-            We will explore the new insight to this problem
-            provided by an algebraic/tropical approach.
-        </li>
-    </ul>
+<section data-auto-animate>
+    <h3>How electricity work</h3>
+    <div class="center">
+        <img src="electrons.svg" alt="electrons in wire">
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p>
+                \[
+                    W = \text{work}
+                \]
+            </p>
+            <p class="fragment center">
+                \[
+                    v(t) = \frac{dW}{dq}
+                \]
+                Voltage
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                \[
+                    q = \text{charge}
+                \]
+            </p>
+            <p class="fragment center">
+                \[
+                    i(t) = \frac{dq}{dt}
+                \]
+                Current
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        \[
+            \frac{dW}{dt} = \frac{dW}{dq} \, \frac{dq}{dt}
+        \]
+    </p>
+    <p class="fragment">
+        \[
+            p(t) = v(t) \, i(t)
+        \]
+    </p>
+</section>
+<section data-auto-animate>
+    <p>Instantaneous power equation</p>
+    <p>
+        \[
+            p(t) = v(t) \, i(t)
+        \]
+    </p>
+    <p class="fragment">
+        Phasor representation of steady state AC solution
+        \[
+            P + \mathfrak{i} Q = V \, \overline{I}
+            \quad \text{where}
+            \left\{
+                \begin{aligned}
+                    V &= V_{max} e^{\mathfrak{i} \theta_V} & P &: \text{ real power} \\
+                    I &= I_{max} e^{\mathfrak{i} \theta_I} & Q &: \text{ reaactive power}
+                \end{aligned}
+            \right.
+        \]
+    </p>
+    <div class="cols fragment">
+        <div class="col">
+
+        </div>
+        <div class="col">
+            <p>
+                Nodal analysis: Each bus has its own
+                $P_i, Q_i, V_i, I_i$.
+            </p>
+        </div>
+    </div>
+    <div class="fragment">
+        <p>
+            Kirchhoff's Current Law (KCL) $+$ Ohm's Law in AC Circuits:
+        </p>
+        <p>
+            \[
+                P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+                \quad\text{for each bus } i=1,\ldots,n
+            \]
+        </p>
+        <p>
+            $Y_{ij}$: Nodal admittance.
+        </p>
+    </div>
+</section>
+<section data-auto-animate>
+    <h3>Power flow equation</h3>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <table>
+        <thead>
+          <tr data-id="var-const">
+            <th>Bus type</th>
+            <th>Constants</th>
+            <th>Unknowns</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Slack bus</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+            <td>$P_i,Q_i$</td>
+          </tr>
+          <tr data-id="PV-row">
+            <td>PV bus</td>
+            <td>$|V_i|,P_i$</td>
+            <td>$\arg(V_i),Q_i$</td>
+          </tr>
+          <tr>
+            <td>PQ bus</td>
+            <td>$P_i,Q_i$</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+          </tr>
+        </tbody>
+    </table>
+    <p class="fragment">
+        A real power network always operates at a solution
+        to this system of equations (<em>operating point</em>).
+    </p>
+    <p class="fragment">
+        Learning about the landscape of all (or a large portion of)
+        solutions is an important problem.
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>All PV system</h3>
+    <p>
+        Assuming all buses are PV buses, i.e., generator buses
+        (not realistic but useful for analysis)
+    </p>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <table>
+        <thead>
+          <tr data-id="var-const">
+            <th>Bus type</th>
+            <th>Constants</th>
+            <th>Unknowns</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr class="lowlight">
+            <td>Slack bus</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+            <td>$P_i,Q_i$</td>
+          </tr> -->
+          <tr data-id="PV-row">
+            <td>PV bus</td>
+            <td>$|V_i|,P_i$</td>
+            <td>$\arg(V_i),Q_i$</td>
+          </tr>
+          <!-- <tr>
+            <td>PQ bus</td>
+            <td>$P_i,Q_i$</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+          </tr> -->
+        </tbody>
+    </table>
+      
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i =
+            \sum_{j=0}^n
+                \overline{Y}_{ij}
+                |V_i| |V_j|
+                e^{\mathfrak{i}(
+                    \class{highlight}{\theta_i} - 
+                    \class{highlight}{\theta_j}
+                )}
+            \quad\text{for } i=1,\ldots,n
+        \]
+    </p>
+    <p>
+        $\class{highlight}{\theta_i}$'s being the only variables.
+        <span class="fragment">
+            Generalized "Kuramoto equation"
+        </span>
+    </p>
+</section>
+<section data-auto-animate>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i =
+            \sum_{j=0}^n
+                \overline{Y}_{ij}
+                |V_i| |V_j|
+                e^{\mathfrak{i}(
+                    \class{highlight}{\theta_i} - 
+                    \class{highlight}{\theta_j}
+                )}
+            \quad\text{for } i=1,\ldots,n
+        \]
+    </p>
+    <p>
+        Root count is bounded by the normalized volume of
+        the symmetric edge polytope
+        (adjacency polytope of the PV type)
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>All PQ system</h3>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = 
+            \sum_{j=0}^n \overline{Y}_{ij} 
+                \class{highlight}{V_i}
+                \class{highlight}{\overline{V_j}}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <p>
+        Unknowns: $\class{highlight}{V_1},\ldots,\class{highlight}{V_n}$.
+        <span>
+            $n$ equations, $n$ unknowns.
+        </span>
+        <span class="fragment">
+            Not algebraic.
+        </span>
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>Wirtinger coordinates</h3>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = 
+            \sum_{j=0}^n \overline{Y}_{ij} 
+                \class{highlight}{V_i}
+                \class{highlight}{\overline{V_j}}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <p>
+        Let $\class{highlight}{U_i} = \class{highlight}{\overline{V}_i}$.
+        <span class="fragment lowlight">
+            Separating holomorphic and anti-holomorphic parts in the equations.
+        </span>
+    </p>
+    <p class="fragment">
+        \[
+            P_i + \mathfrak{i} Q_i = 
+            \sum_{j=0}^n \overline{Y}_{ij} 
+                \class{highlight}{V_i}
+                \class{highlight}{U_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <p class="fragment">
+        After relaxing the requirement $U_i = \overline{V}_i$,
+        we have a polynomial system.
+    </p>
+    <p class="fragment">
+        Problem: $2n$ unknowns, $n$ equations
+    </p>
+</section>
+<section data-auto-animate>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = 
+            \sum_{j=0}^n \overline{Y}_{ij} 
+                \class{highlight}{V_i}
+                \class{highlight}{U_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <p class="fragment">
+        \[
+            P_i - \mathfrak{i} Q_i = 
+            \sum_{j=0}^n Y_{ij} 
+                \class{highlight}{U_i}
+                \class{highlight}{V_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <p class="fragment">
+        $2n$ complex unknowns, $2n$ equations
+    </p>
+    <p class="fragment">
+        \[
+            \text{$\mathbb{C}$-root count}
+            \leq \binom{2n}{n}
+        \]
+    </p>
+    <div class="smaller fragment lowlight">
+        <p>
+            Baillieul & Byrnes
+            <em>Geometric critical point analysis of lossless power system models.</em>
+            IEEE T Circuits Syst 29 (1982).
+        </p>
+        <p>
+            Li, Sauer & Yorke
+            <em>Numerical Solution of a Class of Deficient Polynomial Systems.</em>
+            SIAM J. Numer. Anal. 24 (1987).
+        </p>
+    </div>
+    <p class="fragment">
+        \[
+            2^n \le
+            \text{Generic $\mathbb{C}$-root count}
+            \leq \binom{2n}{n}
+        \]
+    </p>
+    <p class="fragment">
+        \[
+            T_{n+1} \leftarrow
+            \text{ sparse } \leftarrow \quad
+            \rightarrow \text{ dense }
+            \rightarrow K_{n+1}
+        \]
+    </p>
+    <div class="center">
+        <p class="fragment">
+            Sparsity: $Y_{ij} \ne 0 \Leftrightarrow i \sim j \text{ in } G$,
+            for some graph $G$.
+        </p>
+    </div>
+</section>
+<section data-auto-animate>
+    <h3>
+        Sparse all-PQ networks
+    </h3>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = 
+            \sum_{j=0}^n \overline{Y}_{ij} 
+                \class{highlight}{V_i}
+                \class{highlight}{U_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <p>
+        \[
+            P_i - \mathfrak{i} Q_i = 
+            \sum_{j=0}^n Y_{ij} 
+                \class{highlight}{U_i}
+                \class{highlight}{V_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <br/>
+    <p class="fragment">
+        \[
+            \text{$\mathbb{C}$-root count}
+            \leq \operatorname{Vol}(\nabla_G^{PQ})
+        \]
+    </p>
+    <br/>
+    <p class="fragment">
+        \[
+            \nabla_G^{PQ} =
+            \operatorname{conv}
+            \{
+                (e_i, e_j) \mid i \sim j
+            \}
+            \cup
+            \{
+                (e_i, e_i) \mid i = 1,\ldots,n
+            \}
+            \cup
+            \{
+                (\mathbf{0},\mathbf{0})
+            \}
+        \]
+    </p>
+    <p class="fragment center">
+        "Adjacency polytope of PQ type"
+    </p>
+    <p class="fragment small lowlight">
+        <b>(Dragon marriage problem)</b>
+        <em> A. Postnikov </em>
+        Permutohedra, Associahedra, and Beyond.
+        <em>Int. Math. Res. Not. 2009, 1026-1106 (2009).</em>
+    </p>
+</section>
+<section data-auto-animate> <!-- C3 example -->
+    <h3>Example: 3-cycle</h3>
+    <p>
+        \[
+            \nabla_G^{PQ} =
+            \operatorname{conv}
+            \{
+                (e_i, e_j) \mid i \sim j
+            \}
+            \cup
+            \{
+                (e_i, e_i) \mid i = 1,\ldots,n
+            \}
+            \cup
+            \{
+                (\mathbf{0},\mathbf{0})
+            \}
+        \]
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                \[
+                    \nabla_{C_3}^{PQ} =
+                    \operatorname{conv}
+                    \left\{
+                    \begin{aligned}
+                        (e_1,e_0) &\;,\; (e_0,e_1) \\
+                        (e_1,e_2) &\;,\; (e_2,e_1) \\
+                        (e_2,e_0) &\;,\; (e_0,e_2) \\
+                        (e_1,e_1) &\;,\; (e_2,e_2) \\
+                        (e_0,e_0)
+                    \end{aligned}
+                    \right\}
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                \[
+                    =
+                    \operatorname{conv}
+                    \left\{
+                    \begin{aligned}
+                        (1,0,0,0) &\;,\; (0,0,1,0) \\
+                        (1,0,0,1) &\;,\; (0,1,1,0) \\
+                        (0,1,0,0) &\;,\; (0,0,0,1) \\
+                        (1,0,1,0) &\;,\; (0,1,0,1) \\
+                        (0,0,0,0)
+                    \end{aligned}
+                    \right\}
+                \]
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <!-- TODO Figure: C3 with loops -->
+        </div>
+        <div class="col">
+            <p class="fragment">
+                \[
+                    \operatorname{Vol}
+                    \left(
+                        \nabla_{C_3}^{PQ}
+                    \right) = 6
+                \]
+            </p>
+        </div>
+    </div>
+</section>
+<section data-auto-animate> <!-- C4 example -->
+    <h3>Example: 4-cycle</h3>
+    <p>
+        \[
+            \nabla_G^{PQ} =
+            \operatorname{conv}
+            \{
+                (e_i, e_j) \mid i \sim j
+            \}
+            \cup
+            \{
+                (e_i, e_i) \mid i = 1,\ldots,n
+            \}
+            \cup
+            \{
+                (\mathbf{0},\mathbf{0})
+            \}
+        \]
+    </p>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment small">
+                \[
+                    \nabla_{C_4}^{PQ} =
+                    \operatorname{conv}
+                    \left\{
+                    \begin{aligned}
+                        (e_1,e_0) &\;,\; (e_0,e_1) \\
+                        (e_1,e_2) &\;,\; (e_2,e_1) \\
+                        (e_2,e_3) &\;,\; (e_3,e_2) \\
+                        (e_3,e_0) &\;,\; (e_0,e_3) \\
+                        (e_1,e_1) &\;,\; (e_2,e_2) \\
+                        (e_3,e_3) &\;,\; (e_0,e_0)
+                    \end{aligned}
+                    \right\}
+                    \;\subset \mathbb{R}^6.
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <!-- TODO Figure: C4 with loops -->
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p class="fragment">
+                \[
+                    \operatorname{Vol}
+                    \left(
+                        \nabla_{C_4}^{PQ}
+                    \right) = 16
+                \]
+            </p>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+</section>
+<section data-auto-animate>
+    <div class="cols">
+        <div class="col">
+            <p>
+                \[
+                    \nabla_{C_4}^{PQ} =
+                    \operatorname{conv}
+                    \left\{
+                    \begin{aligned}
+                        (e_1,e_0) &\;,\; (e_0,e_1) \\
+                        (e_1,e_2) &\;,\; (e_2,e_1) \\
+                        (e_2,e_3) &\;,\; (e_3,e_2) \\
+                        (e_3,e_0) &\;,\; (e_0,e_3) \\
+                        (e_1,e_1) &\;,\; (e_2,e_2) \\
+                        (e_3,e_3) &\;,\; (e_0,e_0)
+                    \end{aligned}
+                    \right\}
+                    \;\subset \mathbb{R}^6.
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                \[
+                    \operatorname{Vol}
+                    \left(
+                        \nabla_{C_4}^{PQ}
+                    \right) = 16
+                \]
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        \[
+            \left\{
+                \begin{aligned}
+                    P_i + \mathfrak{i} Q_i &= 
+                    \sum_{j=0}^n \overline{Y}_{ij} 
+                        \class{highlight}{V_i}
+                        \class{highlight}{U_j}
+                    \quad\text{for } i=1,2,3,4 \\
+                    P_i - \mathfrak{i} Q_i &= 
+                    \sum_{j=0}^n Y_{ij} 
+                        \class{highlight}{U_i}
+                        \class{highlight}{V_j}
+                    \quad\text{for } i=1,2,3,4
+                \end{aligned}
+            \right.
+        \]
+    </p>
+    <p class="fragment">
+        as at most 16 complex isolated solutions.
+        <span class="fragment">
+            For generic $Y_{ij} \in \mathbb{C}$ and $P_i, Q_i \in \mathbb{R}$,
+            there are exactly 16 complex solutions.
+        </span>
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>Bernshtein-generalness</h3>
+    <p>
+        \[
+            \left\{
+                \begin{aligned}
+                    P_i + \mathfrak{i} Q_i &= 
+                    \sum_{j=0}^n \overline{Y}_{ij} 
+                        \class{highlight}{V_i}
+                        \class{highlight}{U_j}
+                    \quad\text{for } i=1,\ldots,n \\
+                    P_i - \mathfrak{i} Q_i &= 
+                    \sum_{j=0}^n Y_{ij} 
+                        \class{highlight}{U_i}
+                        \class{highlight}{V_j}
+                    \quad\text{for } i=1,\ldots,n
+                \end{aligned}
+            \right.
+        \]
+    </p>
+    <div class="fragment">
+        <div class="theorem">
+            Even though the coefficients are related,
+            its generic root count reaches the BKK bound.
+        </div>
+        <p class="fragment small lowlight">
+            Chen, T. & Mehta, D. On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations. IEEE T Power Syst 33, 1451-1460 (2017).
+        </p>
+    </div>
+    <p class="fragment center">
+        <b>Bernshtein-general</b>
+    </p>
+    <br/>
+    <p class="fragment center">
+        <b>Question.</b>
+        When is the Bernshtein-generalness broken?
+    </p>
+</section>
+<section data-auto-animate>
+    <p class="center">
+        <b>Question.</b>
+        When is the Bernshtein-generalness broken?
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p><b>Why do we care?</b></p>
+            <p>
+                Computational evidence suggests that
+                real power networks break Bernshtein-generalness.
+            </p>
+            <p class="smaller lowlight">
+                Dan Wu, Bin Wang, July 1, 2019, "Collection of numerous power flow solutions of standard ieee test systems", IEEE Dataport, doi: https://dx.doi.org/10.21227/24bh-hj72
+            </p>
+            <p class="fragment">
+                Good source of counterexamples
+                to engineering assumptions.
+            </p>
+            <div class="proposition fragment">
+                For any $n = 4k$,
+                there exist a choice of parameters
+                for which the PQ power flow equation
+                has infinitely many (real) solutions.
+            </div>
+        </div>
+        <div class="col">
+            <div class="center">
+                <p class="fragment">
+                    <b>The $C_4$ example</b>
+                </p>
+                <img src="C4-with-loops.svg" alt="C4 with loops" width="400">
+                <p class="fragment">
+                    Answer:
+                    <em>"Balanced" cycle</em>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section data-auto-animate>
+    <div class="cols">
+        <div class="col">
+            <img src="C4-with-loops.svg" alt="C4 with loops" width="320">
+            <img src="C4-with-loops-balanced.svg" alt="C4 with loops" width="320" class="fragment">
+        </div>
+        <div class="col">
+            <p>
+                The PQ power flow system on $C_4$
+            </p>
+            <p class="small">
+                \[
+                    \left\{
+                        \begin{aligned}
+                            P_i + \mathfrak{i} Q_i &= 
+                            \sum_{j=0}^n \overline{Y}_{ij} 
+                                \class{highlight}{V_i}
+                                \class{highlight}{U_j}
+                            \quad\text{for } i=1,2,3 \\
+                            P_i - \mathfrak{i} Q_i &= 
+                            \sum_{j=0}^n Y_{ij} 
+                                \class{highlight}{U_i}
+                                \class{highlight}{V_j}
+                            \quad\text{for } i=1,2,3
+                        \end{aligned}
+                    \right.
+                \]
+            </p>
+            <p>
+                has at most 16 isolated solutions.
+                <span class="lowlight small">
+                    For generic $Y_{ij} \in \mathbb{C}$ and $P_i, Q_i \in \mathbb{R}$,
+                    there are exactly 16 complex solutions.
+                </span>
+            </p>
+            <div class="proposition fragment">
+                If nonzero $Y_{ij}$ satisfies the equation
+                \[
+                    \color{blue}{Y_{30} Y_{12}} =
+                    \color{red}{Y_{10} Y_{32}}
+                \]
+                then there are <b>less than</b> 16 complex isolated solutions.
+            </div>
+            <p class="fragment center">
+                <b>"Balanced" cycle</b>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>The 6-cycle case</h3>
+    <div class="cols">
+        <div class="col">
+            <img src="C6-with-loops-balanced.svg" alt="C6 with loops" width="320">
+        </div>
+        <div class="col">
+            <p class="small">
+                \[
+                    \left\{
+                        \begin{aligned}
+                            P_i + \mathfrak{i} Q_i &= 
+                            \sum_{j=0}^n \overline{Y}_{ij} 
+                                \class{highlight}{V_i}
+                                \class{highlight}{U_j}
+                            \quad\text{for } i=1,\ldots,5 \\
+                            P_i - \mathfrak{i} Q_i &= 
+                            \sum_{j=0}^n Y_{ij} 
+                                \class{highlight}{U_i}
+                                \class{highlight}{V_j}
+                            \quad\text{for } i=1,\ldots,5
+                        \end{aligned}
+                    \right.
+                \]
+            </p>
+            <p>
+                has at most <b>96</b> isolated solutions.
+            </p>
+            <p class="lowlight small">
+                For generic $Y_{ij} \in \mathbb{C}$ and $P_i, Q_i \in \mathbb{R}$,
+                there are exactly 96 complex solutions.
+            </p>
+        </div>
+    </div>
+    <div class="proposition fragment">
+        If nonzero $Y_{ij}$ satisfies the equation
+        \[
+            \color{blue}{Y_{12} Y_{34} Y_{50}} = \class{highlight}{-}
+            \color{red}{Y_{10} Y_{54} Y_{32}}
+        \]
+        then there are <b>less than</b> 96 complex isolated solutions.
+    </div>
+    <p class="fragment center">
+        <b>"Balanced" cycle</b>
+    </p>
+</section>
+<section>
+    <h3>General even cycles</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                For a cycle network $C_N$
+                with even $N$
+            </p>
+        </div>
+        <div class="col">
+            <p class="smaller">
+                \[
+                    \left\{
+                        \begin{aligned}
+                            P_i + \mathfrak{i} Q_i &= 
+                            \sum_{j=0}^n \overline{Y}_{ij} 
+                                \class{highlight}{V_i}
+                                \class{highlight}{U_j}
+                            \quad\text{for } i=1,\ldots,N-1 \\
+                            P_i - \mathfrak{i} Q_i &= 
+                            \sum_{j=0}^n Y_{ij} 
+                                \class{highlight}{U_i}
+                                \class{highlight}{V_j}
+                            \quad\text{for } i=1,\ldots,N-1
+                        \end{aligned}
+                    \right.
+                \]
+            </p>
+        </div>
+    </div>
+    <div class="theorem fragment">
+        (Rob Davis & C.)
+        This system has at most
+        \[
+            N 2^{N-2}
+        \]
+        isolated complex solutions.
+    </div>
+    <div class="proposition fragment">
+        If there is a partition $E_+ \cup E_-$ of equal size and
+        \[
+            \prod_{ij \in E_+} \color{blue}{Y_{ij}} =
+            \class{highlight}{(-1)^{N/2}}
+            \prod_{ij \in E_-} \color{red}{Y_{ij}}
+        \]
+        then there are <b>less than</b>
+        $N 2^{N-2}$ isolated complex solutions.
+    </div>
 </section>
 <section>
     <h3>Oscillators</h3>
