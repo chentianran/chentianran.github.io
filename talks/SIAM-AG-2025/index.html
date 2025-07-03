@@ -1,0 +1,1274 @@
+---
+layout: mtalk
+title: SIAM AG 2025
+---
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">
+            Power-flow System and Semi-Bernshtein-generalness
+        </h2>
+    </div>
+    <br/>
+    <p>Tianran Chen</p>
+    <p class="smaller">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+    <br/>
+    <p class="smaller">
+        Joint work with
+    </p>
+    <p class="small">
+        Julia Lindberg ,
+        Evgeniia Korchevskaia ,
+        Nana Li
+    </p>
+    <br/>
+    <p class="smaller">
+        July 7, 2025<br/>
+        SIAM AG 2025
+        <br/>
+        Madison, Wisconsin
+    </p>
+</section>
+<section>
+    <h3>How many zeros?</h3>
+    <div class="cols">
+        <div class="col">
+            <p>
+                How many zero does
+                \[
+                    a x^2 + b x + c
+                \]
+                have?
+            </p>
+            <div class="fragment">
+                <p>Interpretation:</p>
+                <ul>
+                    <li>Counting complex zeros</li>
+                    <li>Counting finite zeros only</li>
+                    <li>Counting with multiplicity</li>
+                </ul>
+            </div>
+            <div class="fragment">
+                <p>Answer:</p>
+                <ul>
+                    <li>2 <span class="highlight fragment">(generic answer)</span></li>
+                    <li>1 <span class="highlight fragment">(if $a = 0, b \ne 0$)</span></li>
+                    <li>0 <span class="highlight fragment">(if $a,b = 0, c \ne 0$)</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <p class="fragment">
+                How many zero does
+                \[
+                    \left\{
+                    \begin{aligned}
+                        &a_1 x^2 + a_2 y^2 + a_3 x^2 y^2 + a_4 \\
+                        &b_1 x^2 y + b_2 x y^2  + b_3
+                    \end{aligned}
+                    \right.
+                \]
+                have?
+            </p>
+            <ul>
+                <li class="fragment">
+                    Bezout bound: $4 \times 3 = 12$
+                </li>
+                <li class="fragment">
+                    Max/generic zero count: 8
+                </li>
+                <li class="fragment">
+                    BKK bound: Mixed volume of
+                    <svg width="320" height="120" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(10, 10)">
+                            <defs>
+                                <pattern id="grid1" width="40" height="40" patternUnits="userSpaceOnUse">
+                                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+                                </pattern>
+                            </defs>
+                            <g transform="translate(0, 100) scale(1, -1)">
+                                <rect width="100" height="100" fill="url(#grid1)"/>
+                            </g>
+                            <circle cx="80" cy="100" r="4" fill="#d32f2f"/>
+                            <circle cx="0" cy="20" r="4" fill="#d32f2f"/>
+                            <circle cx="80" cy="20" r="4" fill="#d32f2f"/>
+                            <circle cx="0" cy="100" r="4" fill="#d32f2f"/>
+                            <polygon points="0,100 80,100 80,20 0,20" fill="rgba(211,47,47,0.3)" stroke="#d32f2f" stroke-width="2"/>
+                        </g>
+                        <g transform="translate(150, 10)">
+                            <g transform="translate(0, 100) scale(1, -1)">
+                                <rect width="100" height="100" fill="url(#grid1)"/>
+                            </g>
+                            <circle cx="80" cy="60" r="4" fill="#1976d2"/>
+                            <circle cx="40" cy="20" r="4" fill="#1976d2"/>
+                            <circle cx="0" cy="100" r="4" fill="#1976d2"/>
+                            <polygon points="0,100 80,60 40,20" fill="rgba(25,118,210,0.3)" stroke="#1976d2" stroke-width="2"/>
+                        </g>
+                    </svg>
+                </li>
+            </ul>
+            <p class="fragment">
+                Counting multiplicity, always 8 zeros
+                for <em class="highlight">any</em> choice of nonzero coefficients.
+                <strong class="fragment highlight">(Bernshtein-general)</strong>
+            </p>
+        </div>
+    </div>
+</section>
+<section data-auto-animate>
+    <h3>Power-flow equations</h3>
+    <p>Instantaneous power equation</p>
+    <p>
+        \[
+            p(t) = v(t) \, i(t)
+        \]
+    </p>
+    <p class="fragment">
+        Phasor representation of steady state AC solution
+        \[
+            P + \mathfrak{i} Q = V \, \overline{I}
+            \quad \text{where}
+            \left\{
+                \begin{aligned}
+                    V &= V_{max} e^{\mathfrak{i} \theta_V} & P &: \text{ real power} \\
+                    I &= I_{max} e^{\mathfrak{i} \theta_I} & Q &: \text{ reactive power}
+                \end{aligned}
+            \right.
+        \]
+    </p>
+    <div class="cols fragment">
+        <div class="col">
+            <img src="nodal-analysis.png" alt="Nodal analysis" width="420">
+        </div>
+        <div class="col">
+            <p>
+                Nodal analysis: Each bus has its own
+                $P_i, Q_i, V_i, I_i$.
+            </p>
+            <p class="lowlight smaller">
+                Nodal analysis [Image]. In Wikipedia, The Free Encyclopedia. Retrieved Sep 7, 2024, from https://en.wikipedia.org/wiki/Nodal_analysis
+            </p>
+        </div>
+    </div>
+    <div class="fragment">
+        <p>
+            Kirchhoff's Current Law (KCL) $+$ Ohm's Law in AC Circuits:
+        </p>
+        <p>
+            \[
+                P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+                \quad\text{for each bus } i=1,\ldots,n
+            \]
+        </p>
+    </div>
+</section>
+<section data-auto-animate>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <table data-id="var-const-table">
+        <thead>
+          <tr data-id="var-const">
+            <th>Bus type</th>
+            <th>Constants</th>
+            <th>Unknowns</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="slack-row">
+            <td>Slack bus</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+            <td>$P_i,Q_i$</td>
+          </tr>
+          <tr data-id="PV-row">
+            <td>PV bus</td>
+            <td>$|V_i|,P_i$</td>
+            <td>$\arg(V_i),Q_i$</td>
+          </tr>
+          <tr data-id="PQ-row">
+            <td>PQ bus</td>
+            <td>$P_i,Q_i$</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+          </tr>
+        </tbody>
+    </table>
+</section>
+<section data-auto-animate>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <table data-id="var-const-table">
+        <thead>
+          <tr data-id="var-const">
+            <th>Bus type</th>
+            <th>Constants</th>
+            <th>Unknowns</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="slack-row" class="lowlight">
+            <td>Slack bus</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+            <td>$P_i,Q_i$</td>
+          </tr>
+          <tr data-id="PV-row" class="highlight">
+            <td>PV bus</td>
+            <td>$|V_i|,P_i$</td>
+            <td>$\arg(V_i),Q_i$</td>
+          </tr>
+          <tr data-id="PQ-row" class="lowlight">
+            <td>PQ bus</td>
+            <td>$P_i,Q_i$</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+          </tr>
+        </tbody>
+    </table>
+    <p class="fragment">
+        All PV power-flow system
+        \[
+            P_i + \mathfrak{i} Q_i =
+            \sum_{j=0}^n
+                \overline{Y}_{ij}
+                |V_i| |V_j|
+                e^{\mathfrak{i}(
+                    \class{highlight}{\theta_i} - 
+                    \class{highlight}{\theta_j}
+                )}
+            \quad\text{for } i=1,\ldots,n
+        \]
+    </p>
+    <div class="fragment">
+        <p>
+            Real part (with constraints): Algebraic Kuramoto equations
+        </p>
+        <p>
+            \[
+                w_i =
+                \sum_{j=0}^n
+                    k_{ij} \left(
+                        \frac{\class{highlight}{x_i}}{\class{highlight}{x_j}} -
+                        \frac{\class{highlight}{x_j}}{\class{highlight}{x_i}}
+                    \right)
+                \quad\text{for } i=1,\ldots,n
+            \]
+        </p>
+    </div>
+</section>
+<section data-auto-animate>
+    <p class="small lowlight">
+        \[
+            w_i =
+            \sum_{j=0}^n
+                k_{ij} \left(
+                    \frac{\class{highlight}{x_i}}{\class{highlight}{x_j}} -
+                    \frac{\class{highlight}{x_j}}{\class{highlight}{x_i}}
+                \right)
+            \quad\text{for } i=1,\ldots,n
+        \]
+    </p>
+    <p class="fragment">
+        In the $n=2$ case, we have the Laurent polynomial system
+        \[
+            F(
+                \class{highlight}{x_1},
+                \class{highlight}{x_2};
+                \{k_{ij},w_{i}\}
+            )
+            =
+            \left\{
+            \begin{aligned}
+            k_{10} \left(
+                \frac{\class{highlight}{x_1}}{                  x_0 } -
+                \frac{                  x_0 }{\class{highlight}{x_1}}
+            \right)
+            +
+            k_{12} \left(
+                \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}} -
+                \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}}
+            \right)
+            - w_1 \\
+            k_{21} \left(
+                \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}} -
+                \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}}
+            \right)
+            +
+            k_{20} \left(
+                \frac{\class{highlight}{x_2}}{                  x_0 } -
+                \frac{                  x_0 }{\class{highlight}{x_2}}
+            \right)
+            - w_2
+            \end{aligned}
+            \right.
+        \]
+        where $x_0 = 1$ is a constant.
+    </p>
+    <div class="cols">
+        <div class="col fragment">
+            <p class="center">
+                General independent coefficients:
+            </p>
+            <p class="center">
+                <strong class="highlight">6</strong> zeros.
+            </p>
+        </div>
+        <div class="col fragment">
+            <p class="center">
+                General but
+                <em class="highlight">symmetric</em>
+                $\{ k_{ij} \}$, general $w_i$:
+            </p>
+            <p class="center">
+                <strong class="highlight">6</strong> zeros.
+            </p>
+        </div>
+        <div class="col fragment">
+            <p class="center">
+                Any choice of nonzero coefficients
+            </p>
+            <p class="center">
+                <strong class="highlight">6</strong> zeros.
+            </p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col fragment center">
+            <p>
+                MV of
+            <svg width="220" height="110" xmlns="http://www.w3.org/2000/svg" style="transform: scale(1.5); transform-origin: top left;">
+                <g transform="translate(5, 5)">
+                    <!-- Grid lines -->
+                    <defs>
+                    <pattern id="grid1" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+                    </pattern>
+                    </defs>
+                    <!-- Grid starting from (0,0) at center -->
+                    <g transform="translate(50, 50)">
+                    <rect x="-30" y="-30" width="60" height="60" fill="url(#grid1)"/>
+                    </g>
+                    
+                    <circle cx="70" cy="50" r="3" fill="#d32f2f"/>
+                    <circle cx="30" cy="50" r="3" fill="#d32f2f"/>
+                    <circle cx="70" cy="70" r="3" fill="#d32f2f"/>
+                    <circle cx="30" cy="30" r="3" fill="#d32f2f"/>
+                    <circle cx="50" cy="50" r="3" fill="#d32f2f"/>
+                    <polygon points="30,30 70,50 70,70 30,50" fill="rgba(211,47,47,0.3)" stroke="#d32f2f" stroke-width="2"/>
+                </g>
+                <g transform="translate(115, 5)">
+                    <!-- Grid lines -->
+                    <g transform="translate(50, 50)">
+                    <rect x="-30" y="-30" width="60" height="60" fill="url(#grid1)"/>
+                    </g>
+                    
+                    <circle cx="30" cy="30" r="3" fill="#1976d2"/>
+                    <circle cx="70" cy="70" r="3" fill="#1976d2"/>
+                    <circle cx="50" cy="30" r="3" fill="#1976d2"/>
+                    <circle cx="50" cy="70" r="3" fill="#1976d2"/>
+                    <circle cx="50" cy="50" r="3" fill="#1976d2"/>
+                    <polygon points="30,30 50,30 70,70 50,70" fill="rgba(25,118,210,0.3)" stroke="#1976d2" stroke-width="2"/>
+                </g>
+            </svg>
+            </p>
+        </div>
+        <div class="col fragment center">
+            <p>
+                Normalized V of
+                <svg width="110" height="110" xmlns="http://www.w3.org/2000/svg" style="transform: scale(1.5); transform-origin: top left;">
+                    <g transform="translate(5, 5)">
+                        <!-- Grid lines -->
+                        <defs>
+                        <pattern id="grid1" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+                        </pattern>
+                        </defs>
+                        <!-- Grid starting from (0,0) at center -->
+                        <g transform="translate(50, 50)">
+                            <rect x="-30" y="-30" width="60" height="60" fill="url(#grid1)"/>
+                        </g>
+                        <circle cx="70" cy="50" r="3" fill="#666"/>  <!-- (1,0) -->
+                        <circle cx="30" cy="50" r="3" fill="#666"/>  <!-- (-1,0) -->
+                        <circle cx="70" cy="70" r="3" fill="#666"/>  <!-- (1,-1) -->
+                        <circle cx="30" cy="30" r="3" fill="#666"/>  <!-- (-1,1) -->
+                        <circle cx="50" cy="50" r="3" fill="#666"/>  <!-- (0,0) -->
+                        <circle cx="50" cy="30" r="3" fill="#666"/>  <!-- (0,1) -->
+                        <circle cx="50" cy="70" r="3" fill="#666"/>  <!-- (0,-1) -->
+                        <polygon points="30,30 50,30 70,50 70,70 50,70 30,50" fill="rgba(102,102,102,0.3)" stroke="#666" stroke-width="2"/>
+                    </g>
+                </svg>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>General setup</h3>
+    <p>
+        Consider a Laurent system $F$
+        with supports $A_1,\ldots,A_n$ span $\mathbb{R}^n$
+        (otherwise no isolated zeros).
+        For generic coefficients,
+        zeros of $F$ are nonsingular
+        and the total number is a constant.
+    </p>
+    <div class="theorem fragment">
+        (Bernshtein's 1st Theorem) This constant is
+        the mixed volume $\text{MV}(A_1,\ldots,A_n)$ (BKK bound).
+        <p class="tiny lowlight">
+            Bernshtein,
+            <em>The number of roots of a system of equations.</em>
+            Funct Anal Appl+ 9, 183-185 (1975).
+        </p>
+    </div>
+    <p class="fragment">
+        For specific coefficients,
+        number of isolated zeros of  $F$
+        to be strictly less than the BKK bound (even counting multiplicity).
+    </p>
+    <div class="fragment">
+        <ul>
+            <li>
+                Zeros fly off to toric infinity;
+            </li>
+            <li>
+                Isolated zeros absorbed into positive dimensional components;
+            </li>
+        </ul>
+    </div>
+    <div class="theorem fragment">
+        (Bernshtein's 2nd)
+        These can happen only when there exists a nonzero vector $\mathbf{v}$
+        such that $\operatorname{init}_{\mathbf{v}} F$ has nontrivial zeros.
+    </div>
+    <p class="fragment center">
+        <strong class="highlight">Not Bernshtein-general.</strong>
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>Algebraic Kuramoto (PV power flow) system on $C_4$</h3>
+    <p data-id="kc4">
+        \[
+            F(\class{highlight}{\mathbf{x}}; (\mathbf{k},\mathbf{w}))=
+            \left\{
+            \begin{aligned}
+                k_{10}
+                \left(
+                    \frac{\class{highlight}{x_1}}{1} - 
+                    \frac{1}{\class{highlight}{x_1}}
+                \right)
+                &+
+                k_{12}
+                \left(
+                    \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}} - 
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}}
+                \right)
+                - w_1 \\
+                k_{21}
+                \left(
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}} - 
+                    \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}}
+                \right)
+                &+
+                k_{23}
+                \left(
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_3}} - 
+                    \frac{\class{highlight}{x_3}}{\class{highlight}{x_2}}
+                \right)
+                - w_2 \\
+                k_{32}
+                \left(
+                    \frac{\class{highlight}{x_3}}{\class{highlight}{x_2}} - 
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_3}}
+                \right)
+                &+
+                k_{30}
+                \left(
+                    \frac{\class{highlight}{x_3}}{1} - 
+                    \frac{1}{\class{highlight}{x_3}}
+                \right)
+                - w_3
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <br/>
+    <p class="fragment" data-id="bkk12">
+        \[
+            \text{BKK bound} =
+            \class{highlight}{12}
+        \]
+    </p>
+    <p class="fragment center">
+        For general (nonzero) parameters,
+        there are 12 complex zeros.
+    </p>
+</section>
+<section data-auto-animate>
+    <p class="small" data-id="kc4">
+        \[
+            F(\class{highlight}{\mathbf{x}}; (\mathbf{k},\mathbf{w}))=
+            \left\{
+            \begin{aligned}
+                k_{10}
+                \left(
+                    \frac{\class{highlight}{x_1}}{1} - 
+                    \frac{1}{\class{highlight}{x_1}}
+                \right)
+                &+
+                k_{12}
+                \left(
+                    \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}} - 
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}}
+                \right)
+                - w_1 \\
+                k_{21}
+                \left(
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}} - 
+                    \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}}
+                \right)
+                &+
+                k_{23}
+                \left(
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_3}} - 
+                    \frac{\class{highlight}{x_3}}{\class{highlight}{x_2}}
+                \right)
+                - w_2 \\
+                k_{32}
+                \left(
+                    \frac{\class{highlight}{x_3}}{\class{highlight}{x_2}} - 
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_3}}
+                \right)
+                &+
+                k_{30}
+                \left(
+                    \frac{\class{highlight}{x_3}}{1} - 
+                    \frac{1}{\class{highlight}{x_3}}
+                \right)
+                - w_3
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <p data-id="bkk12">
+        \[
+            \text{BKK bound} =
+            \class{highlight}{12}
+        \]
+    </p>
+    <p>
+        <strong>IF</strong>
+        \[
+            k_{10} k_{12} k_{32}^{-1} k_{30}^{-1} = 1
+        \]
+        there are <em>at most</em>
+        <strong class="highlight">10</strong>
+        isolated $\mathbb{C}^*$-zeros
+        (counting multiplicity).
+    </p>
+    <p class="center">
+        Not Bernshtein-general
+    </p>
+    <br/>
+    <p class="fragment">
+        Actually their are 3 different "components" in coefficient space
+        \[
+            \begin{align*}
+                k_{10} k_{12} k_{32}^{-1} k_{30}^{-1} &= 1 &
+                k_{10} k_{12}^{-1} k_{32}^{-1} k_{30} &= 1 &
+                k_{10} k_{12}^{-1} k_{32} k_{30}^{-1} &= 1
+            \end{align*}
+        \]
+    </p>
+</section>
+<section data-auto-animate>
+    <div class="cols">
+        <div class="col">
+            <p class="tiny" data-id="kc4">
+                \[
+                    F(\class{highlight}{x_1},\class{highlight}{x_2},\class{highlight}{x_3}; (k_{ij},w_i))=
+                    \left\{
+                    \begin{aligned}
+                        k_{10}
+                        \left(
+                            \frac{\class{highlight}{x_1}}{1} - 
+                            \frac{1}{\class{highlight}{x_1}}
+                        \right)
+                        +
+                        k_{12}
+                        \left(
+                            \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}} - 
+                            \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}}
+                        \right)
+                        - w_1 &= 0 \\
+                        k_{21}
+                        \left(
+                            \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}} - 
+                            \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}}
+                        \right)
+                        +
+                        k_{23}
+                        \left(
+                            \frac{\class{highlight}{x_2}}{\class{highlight}{x_3}} - 
+                            \frac{\class{highlight}{x_3}}{\class{highlight}{x_2}}
+                        \right)
+                        - w_2 &= 0 \\
+                        k_{32}
+                        \left(
+                            \frac{\class{highlight}{x_3}}{\class{highlight}{x_2}} - 
+                            \frac{\class{highlight}{x_2}}{\class{highlight}{x_3}}
+                        \right)
+                        +
+                        k_{30}
+                        \left(
+                            \frac{\class{highlight}{x_3}}{1} - 
+                            \frac{1}{\class{highlight}{x_3}}
+                        \right)
+                        - w_3 &= 0
+                    \end{aligned}
+                    \right.
+                \]
+            </p>
+        </div>
+        <div class="col">
+            <p data-id="bkk12">
+                \[
+                    \text{BKK bound} =
+                    \class{highlight}{12}
+                \]
+            </p>
+        </div>
+    </div>
+    <table data-id="mytable">
+        <tr>
+            <td>
+                \[
+                    k_{10} k_{12} k_{32}^{-1} k_{30}^{-1} = 1
+                \]
+            </td>
+            <td>
+                \[
+                    \left\{
+                    \begin{aligned}
+                        k_{10} k_{12} k_{32}^{-1} k_{30}^{-1} &= 1 \\
+                        k_{10} k_{12}^{-1} k_{32}^{-1} k_{30} &= 1
+                    \end{aligned}
+                    \right.
+                \]
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                \[
+                    k_{10} k_{12}^{-1} k_{32}^{-1} k_{30} = 1
+                \]
+            </td>
+            <td>
+                \[
+                    \left\{
+                    \begin{aligned}
+                        k_{10} k_{12}^{-1} k_{32}^{-1} k_{30} &= 1 \\
+                        k_{10} k_{12}^{-1} k_{32} k_{30}^{-1} &= 1
+                    \end{aligned}
+                    \right.
+                \]
+            </td>
+            <td data-id="special-cell">
+                <p data-id="special-sys">
+                    \[
+                        \left\{
+                        \begin{aligned}
+                            k_{10} k_{12} k_{32}^{-1} k_{30}^{-1} &= 1 \\
+                            k_{10} k_{12}^{-1} k_{32}^{-1} k_{30} &= 1 \\
+                            k_{10} k_{12}^{-1} k_{32} k_{30}^{-1} &= 1
+                        \end{aligned}
+                        \right.
+                    \]
+                </p>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                \[
+                    k_{10} k_{12}^{-1} k_{32} k_{30}^{-1} = 1
+                \]
+            </td>
+            <td>
+                \[
+                    \left\{
+                    \begin{aligned}
+                        k_{10} k_{12} k_{32}^{-1} k_{30}^{-1} &= 1 \\
+                        k_{10} k_{12}^{-1} k_{32} k_{30}^{-1} &= 1
+                    \end{aligned}
+                    \right.
+                \]
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                At most
+                <strong class="highlight">10</strong>
+                zeros
+            </td>
+            <td style="text-align: center;">
+                At most
+                <strong class="highlight">8</strong>
+                zeros
+            </td>
+            <td style="text-align: center;">
+                At most
+                <strong class="highlight">6</strong>
+                zeros
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</section>
+<section data-auto-animate>
+    <table data-id="mytable">
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                \[
+                    k_{10} k_{12}^{-1} k_{32}^{-1} k_{30} = 1
+                \]
+            </td>
+            <td>
+                \[
+                    \left\{
+                    \begin{aligned}
+                        k_{10} k_{12}^{-1} k_{32}^{-1} k_{30} &= 1 \\
+                        k_{10} k_{12}^{-1} k_{32} k_{30}^{-1} &= 1
+                    \end{aligned}
+                    \right.
+                \]
+            </td>
+            <td data-id="special-cell">
+                <p data-id="special-sys">
+                    \[
+                        \left\{
+                        \begin{aligned}
+                            k_{10} k_{12} k_{32}^{-1} k_{30}^{-1} &= 1 \\
+                            k_{10} k_{12}^{-1} k_{32}^{-1} k_{30} &= 1 \\
+                            k_{10} k_{12}^{-1} k_{32} k_{30}^{-1} &= 1
+                        \end{aligned}
+                        \right.
+                    \]
+                </p>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                At most
+                <strong class="highlight">10</strong>
+                zeros
+            </td>
+            <td style="text-align: center;">
+                At most
+                <strong class="highlight">8</strong>
+                zeros
+            </td>
+            <td style="text-align: center;">
+                At most
+                <strong class="highlight">6</strong>
+                zeros
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</section>
+<section data-auto-animate>
+    <table>
+        <tr></tr>
+        <tr>
+            <td></td>
+            <td>
+                \[
+                    E = \text{Set of } (k_{ij}) \text{ s.t. }
+                \]
+            </td>
+            <td data-id="special-cell">
+                <p data-id="special-sys">
+                    \[
+                        \left\{
+                        \begin{aligned}
+                            k_{10} k_{12}      k_{32}^{-1} k_{30}^{-1} &= 1 \\
+                            k_{10} k_{12}^{-1} k_{32}^{-1} k_{30}      &= 1 \\
+                            k_{10} k_{12}^{-1} k_{32}      k_{30}^{-1} &= 1
+                        \end{aligned}
+                        \right.
+                    \]
+                </p>
+            </td>
+            <td style="text-align: center;">
+                At most
+                <strong class="highlight">6</strong>
+                zeros
+            </td>
+        </tr>
+        <tr></tr>
+    </table>
+    <p class="fragment">
+        $E$ is 1-dimensional and is defined by a
+        <em class="highlight">binomial</em> system.
+    </p>
+    <p class="fragment">
+        It contains a "torus orbit":
+        \[
+            (k_{10},k_{12},k_{32},k_{30},w_1,w_2,w_3)(t) =
+            (a t^1, a t^1, a t^1, a t^1, b t^0, c t^0, d t^0)
+        \]
+        is in $E$ for all $t \in \mathbb{C}^*$.
+        <span class="lowlight">($a,b,c,d \ne 0$ are arbitrary complex numbers)</span>
+    </p>
+    <div class="proposition fragment">
+        (C., Lindberg, Li)
+        N.o. zeros for
+        <em class="highlight">generic</em> 
+        <span class="highlight">$(\mathbf{k},\mathbf{w}) \in E$</span>:
+        \[
+            \sum_{v} \text{Root count of } \operatorname{init}_v
+            F(\mathbf{x}; a t^1, a t^1, a t^1, a t^1, b t^0, c t^0, d t^0)
+            = 6
+        \]
+        for generic $a,b,c,d \ne 0$.
+        <em class="highlight">(Strictly less than BKK bound: 12)</em>
+    </div>
+</section>
+<section data-auto-animate>
+    <p>
+        One of the initial system
+        \[
+            \begin{aligned}
+                \operatorname{init}_v f_1 &= k_{10} \class{highlight}{x_1} + k_{12} \class{highlight}{x_1} \class{highlight}{x_2}^{-1} - w_1 \\
+                \operatorname{init}_v f_2 &= -k_{21} \class{highlight}{x_1} \class{highlight}{x_2}^{-1} - k_{23} \class{highlight}{x_3} \class{highlight}{x_2}^{-1} - w_2 \\
+                \operatorname{init}_v f_3 &= k_{32} \class{highlight}{x_3} \class{highlight}{x_2}^{-1} + k_{30} \class{highlight}{x_3} - w_3
+            \end{aligned}
+        \]
+        <em>normally</em> has 2 solutions. But under the conditions
+    </p>
+    <p data-id="special-sys">
+        \[
+            \left\{
+            \begin{aligned}
+                k_{10} k_{12} k_{32}^{-1} k_{30}^{-1} &= 1 \\
+                k_{10} k_{12}^{-1} k_{32}^{-1} k_{30} &= 1 \\
+                k_{10} k_{12}^{-1} k_{32} k_{30}^{-1} &= 1
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <p>
+        the initial system has only <strong class="highlight">1</strong> solution.
+    </p>
+    <p class="fragment">
+        In total, there are 6 similar initial systems
+        each producing 1 solution.
+        Therefore, the total zero count is
+        \[
+            1 + 1 + 1 + 1 + 1 + 1 = 6
+        \]
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>Torically discriminated system</h3>
+    <p>
+        Consider a square system of $n$ Laurent polynomials
+        \[
+            F(\mathbf{x}; \mathbf{c}) =
+            F(x_1,\ldots,x_n; c_1,\ldots,c_m)
+        \]
+        parametrized by its coefficients $c_1,\ldots,c_m$
+        (one for each monomial)
+        with supports $A = (A_1,\ldots,A_n)$ spanning $\mathbb{R}^n$.
+    </p>
+    <p class="small fragment lowlight">
+        Coefficients do not provide a crisp parametrization.
+        We must form the quotient modulo a group actions.
+        Coefficients can still be proxy parameters.
+    </p>
+    <p class="fragment">
+        For generic coefficients $\mathbf{c}$,
+        the $\mathbb{C}^*$-root count is a positive constant.
+    </p>
+    <div class="theorem fragment">
+        (Bernshtein)
+        This constant is $\operatorname{MV}(A_1,\ldots,A_n)$.
+        <span class="highlight">(BKK)</span>
+    </div>
+    <p class="fragment" data-id="interested-in">
+        We are interested in:
+        There is a set of $E$ of parameters such that
+        \[
+            \text{Isolated $\mathbb{C}^*$-zero count of } F(\mathbf{x}; \mathbf{c})
+            \lneq \text{BKK bound}
+            \quad \forall \mathbf{c} \in E.
+        \]
+    </p>
+    <p class="fragment">
+        How many zeros?
+        <span class="fragment">
+            What happened to the missing ones?
+        </span>
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>Special case: Torus orbit in $E$</h3>
+    <p class="lowlight smaller" data-id="interested-in">
+        We are interested:
+        There is a set of $E$ of parameters such that
+        \[
+            \text{Isolated zero count of } F(\mathbf{x}; \mathbf{c})
+            \lneq \text{BKK bound}
+            \quad \forall \mathbf{c} \in E.
+        \]
+    </p>
+    <div class="definition fragment">
+        A <strong class="highlight">1-parameter torus orbit</strong> in $E$
+        is the image of a map
+        \[
+            t \;\mapsto\; \mathbf{c} \circ t^{\mathbf{w}} = (c_1 t^{w_1} , \ldots, c_m t^{w_m}) \in E
+            \quad\text{for all } t \in \mathbb{C}^*
+        \]
+    </div>
+    <p class="fragment">
+        Not all such torus orbits are interesting.
+    </p>
+    <div class="definition fragment">
+        An orbit $t \mapsto \mathbf{c} \circ t^{\mathbf{w}}$
+        in $E$ is <strong class="highlight">trivial</strong>
+        if $\mathbf{w}$ is in the row space of the Cayley embedding matrix $\hat{A}$.
+        <span class="lowlight smaller">
+            (...and consider other symmetries)
+        </span>
+    </div>
+    <div class="proposition fragment" data-id="thm">
+        (C., Lindberg; C., Korchevskaia, Li)
+        The $\mathbb{C}^*$-zero count for
+        <em class="highlight">generic</em> choices of coefficients
+        <span class="highlight">in $E$</span>
+        \[
+            \sum_{v} \text{$\mathbb{C}^*$-zero count of } \operatorname{init}_v
+            F(\mathbf{x}; \mathbf{c} \circ t^{\mathbf{w}})
+        \]
+        for generic $\mathbf{c} \in E$.
+    </div>
+</section>
+<section data-auto-animate>
+    <div class="proposition" data-id="thm">
+        The root count for
+        <em class="highlight">generic</em> parameters
+        <span class="highlight">in $E$</span>
+        \[
+            \sum_{v} \text{Root count of } \operatorname{init}_v
+            F(\mathbf{x}; \mathbf{c} \circ t^{\mathbf{w}})
+        \]
+        for generic $\mathbf{c} \in E$.
+    </div>
+    <p>Applying this to the Kuramoto equations</p>
+    <div class="proposition fragment">
+        For the algebraic Kuramoto (PV power flow) system
+        \[
+            \sum_{j=0}^{N-1} k_{ij} 
+            \left(
+                \frac{x_i}{x_j} - \frac{x_j}{x_i}
+            \right)
+        \]
+        derived from an even cycle $C_N$.
+        Counting mulitplicity, the complex root count is
+        \[
+            \left[
+                N \binom{N-1}{N/2 - 1} - \beta 
+            \right],
+        \]
+        where $\beta$ is the number of <em>balanced cycles</em>.
+        <em class="highlight">
+            (Less than BKK bound)
+        </em>
+    </div>
+</section>
+<section data-auto-animate>
+    <h3>Where did the missing zeros go?</h3>
+    <div class="fragment">
+        <p class="small" data-id="kc4">
+            \[
+                F(\class{highlight}{\mathbf{x}}; (\mathbf{k},\mathbf{w}))=
+                \left\{
+                \begin{aligned}
+                    k_{10}
+                    \left(
+                        \frac{\class{highlight}{x_1}}{1} - 
+                        \frac{1}{\class{highlight}{x_1}}
+                    \right)
+                    &+
+                    k_{12}
+                    \left(
+                        \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}} - 
+                        \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}}
+                    \right)
+                    - w_1 \\
+                    k_{21}
+                    \left(
+                        \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}} - 
+                        \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}}
+                    \right)
+                    &+
+                    k_{23}
+                    \left(
+                        \frac{\class{highlight}{x_2}}{\class{highlight}{x_3}} - 
+                        \frac{\class{highlight}{x_3}}{\class{highlight}{x_2}}
+                    \right)
+                    - w_2 \\
+                    k_{32}
+                    \left(
+                        \frac{\class{highlight}{x_3}}{\class{highlight}{x_2}} - 
+                        \frac{\class{highlight}{x_2}}{\class{highlight}{x_3}}
+                    \right)
+                    &+
+                    k_{30}
+                    \left(
+                        \frac{\class{highlight}{x_3}}{1} - 
+                        \frac{1}{\class{highlight}{x_3}}
+                    \right)
+                    - w_3
+                \end{aligned}
+                \right.
+            \]
+        </p>
+        <p>
+            \[
+                \text{BKK bound} \;=\; \class{highlight}{12}
+            \]
+        </p>
+    </div>
+    <div class="fragment">
+        <p>
+            \[
+                \begin{aligned}
+                    &
+                    \left\{
+                    \begin{aligned}
+                        k_{10} k_{12} k_{32}^{-1} k_{30}^{-1} &= 1 \\
+                        k_{10} k_{12}^{-1} k_{32}^{-1} k_{30} &= 1 \\
+                        k_{10} k_{12}^{-1} k_{32} k_{30}^{-1} &= 1
+                    \end{aligned}
+                    \right.
+                    &&\Longrightarrow &
+                    (k_{10},k_{12},k_{32},k_{30}) = (s,s,s,s)
+                \end{aligned}
+            \]
+        </p>
+        <p>
+            \[
+                \text{``Generic'' root count} \;=\; 6
+            \]
+        </p>
+    </div>
+</section>
+<section data-auto-animate>
+    <h3>The $w_i = 0$ case</h3>
+    <p class="small" data-id="kc4">
+        \[
+            F(\class{highlight}{\mathbf{x}}; (\mathbf{k},\mathbf{w}))=
+            \left\{
+            \begin{aligned}
+                k_{10}
+                \left(
+                    \frac{\class{highlight}{x_1}}{1} - 
+                    \frac{1}{\class{highlight}{x_1}}
+                \right)
+                &+
+                k_{12}
+                \left(
+                    \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}} - 
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}}
+                \right)
+                - \class{highlight}{0} \\
+                k_{21}
+                \left(
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_1}} - 
+                    \frac{\class{highlight}{x_1}}{\class{highlight}{x_2}}
+                \right)
+                &+
+                k_{23}
+                \left(
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_3}} - 
+                    \frac{\class{highlight}{x_3}}{\class{highlight}{x_2}}
+                \right)
+                - \class{highlight}{0} \\
+                k_{32}
+                \left(
+                    \frac{\class{highlight}{x_3}}{\class{highlight}{x_2}} - 
+                    \frac{\class{highlight}{x_2}}{\class{highlight}{x_3}}
+                \right)
+                &+
+                k_{30}
+                \left(
+                    \frac{\class{highlight}{x_3}}{1} - 
+                    \frac{1}{\class{highlight}{x_3}}
+                \right)
+                - \class{highlight}{0}
+            \end{aligned}
+            \right.
+        \]
+    </p>
+    <ul class="fragment">
+        <li data-id="isolated-points">
+            <span>2 nonsingular isolated zeros</span>
+            <span>\[ \{ (1,1,1), (-1,1,-1) \}\]</span>
+        </li>
+        <li data-id="one-d-components">
+            <span>3 one-dimensional components</span>
+            <span>
+            parametrized by
+            \[
+                \begin{aligned}
+                    &\left(-2 i \lambda, -1, 2 i \lambda\right), &
+                    &\left( 2 i \lambda, -1, \frac{1}{ 2 i \lambda} \right ), &
+                    &\left( 1 / 2 i \lambda, \frac{-1}{4\lambda^2}, \frac{-1}{2 i \lambda} \right),
+                \end{aligned}
+            \]
+            </span>
+        </li>
+        <li data-id="embedded-component">
+            <span data-id="embedded-points">2 embedded points</span>
+            <span>
+            \[ \{ (-i,-1,i), (i,-1,i) \}\]
+            that are intersections of the one-dimensional components.
+            </span>
+        </li>
+    </ul>
+</section>
+<section data-auto-animate>
+    <h3>Stratified polyhedral homotopy method</h3>
+    <p class="fragment">
+        There is "stratified" polyhedral homotopy $H(\mathbf{x},t)$
+        defining 12 smooth homotopy paths
+    </p>
+    <div class="cols">
+        <div class="col">
+            <ul>
+                <li data-id="isolated-points">
+                    <span>2 nonsingular isolated zeros</span>
+                </li>
+                <li data-id="one-d-components">
+                    <span>3 one-dimensional components</span>
+                </li>
+                <li data-id="embedded-component">
+                    <span data-id="embedded-points">2 embedded points</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul>
+                <li class="fragment">
+                    1 paths converging to each (2)
+                </li>
+                <li class="fragment">
+                    2 paths converging to each (6)
+                </li>
+                <li class="fragment">
+                    2 paths converging to each (4)
+                </li>
+            </ul>
+        </div>
+    </div>
+    <p class="fragment">
+        \[
+            \text{BKK bound} = 12
+            =
+            \underbrace{1 + 1    }_{\substack{\text{Isolated}\\\text{points}}}
+            +
+            \underbrace{2 + 2 + 2}_{\substack{\text{1-dimensional}\\\text{components}}}
+            +
+            \underbrace{2 + 2    }_{\substack{\text{Embedded}\\\text{points}}}
+        \]
+    </p>
+    <p class="fragment">
+        Every homotopy path converge to a point in $(\mathbb{C}^*)^3$:
+        (If counted "correctly") the intersection index in $(\mathbb{C}^*)^3$
+        equal the BKK bound.
+    </p>
+    <!-- <p class="center fragment">
+        <strong class="highlight">
+            Semi-Bernshtein-general?
+        </strong>
+    </p> -->
+    <div class="definition fragment">
+        $F$ is <strong class="highlight">semi-Bernshtein-general</strong>
+        if for its $\mathbb{C}^*$-zero set
+        \[
+            \sum_{U} i(U) =
+            \text{BKK bound}
+        \]
+        summing over all subvariety???
+    </div>
+</section>
+<section class="titlepage">
+    <br/>
+    <br/>
+    <h1>Thank You!</h1>
+
+    <p>
+        <code>
+            arXiv:2210.00784
+        </code>
+    </p>
+    <p>
+        <code>
+            arXiv:2304.08598
+        </code>
+    </p>
+    <br/>
+    <p>
+        <code>ti@nranchen.org</code>
+    </p>
+    <p class="lowlight">
+        <code>
+        http://www.tianranchen.org/
+        </code>
+    </p>
+    <br/>
+    <div class="cols">
+        <div class="col">
+            <img height="180" src="nsf.png">
+        </div>
+        <div class="col">
+            <p class="smaller">
+                Research supported, in part, by National Science Foundation,
+                Auburn University at Montgomery Grant-In-Aid,
+                Auburn University at Montgomery Professional Improvement Leave program,
+                and AMS-Simons travel grants
+            </p>
+        </div>
+        <div class="col">
+            <img height="180" src="aum.jpg">
+        </div>
+    </div>
+</section>
