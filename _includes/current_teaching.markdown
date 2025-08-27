@@ -1,6 +1,3 @@
-- [MATH-1610]({{ "teaching/calc1/" | relative_url }})     (Calculus I),
-- [MATH-1620]({{ "teaching/calc2/" | relative_url }})     (Calculus II)
+- [MATH-3690]({{ "teaching/ode/" | relative_url }})     (Ordinary differential equations),
+- [MATH-4600]({{ "teaching/math-4600/" | relative_url }})     (Numerical analysis)
 
-...and manage online courses
-
-- MATH-1020 (Online)
