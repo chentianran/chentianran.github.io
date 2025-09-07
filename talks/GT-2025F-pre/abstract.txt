@@ -1,0 +1,1 @@
+This talk provides an introduction to mixed volume, mixed cells, and their connections to the Bernshtein–Kushnirenko–Khovanskii bound, as well as stable intersections of tropical hypersurfaces.

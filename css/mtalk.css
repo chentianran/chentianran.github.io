@@ -31,21 +31,21 @@
   color: white; }
 
 .shape1 {
-  fill: #FC7343;
+  fill: #EDC5A6;
   stroke: black;
   stroke-width: 3px;
   stroke-linejoin: round;
 }
 
 .shape2 {
-  fill: #ba95eb;
+  fill: #A6C3ED;
   stroke: black;
   stroke-width: 3px;
   stroke-linejoin: round;
 }
 
 .shape3 {
-  fill: #367F84;
+  fill: #C4BCE1;
   stroke: black;
   stroke-width: 5px;
   stroke-linejoin: round;
@@ -138,8 +138,9 @@ div.example:before {
   color: #600f16; }
 
 div.problem:before {
-  counter-increment: problem;
-  content: "Problem " counter(problem) ".";
+  /* counter-increment: problem; */
+  /* content: "Problem " counter(problem) "."; */
+  content: "Problem.";
   font-weight: bold;
   color: #600f16; }
 
