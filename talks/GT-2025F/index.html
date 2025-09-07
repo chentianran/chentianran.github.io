@@ -1,0 +1,1881 @@
+---
+layout: mtalk
+title: GT 2025 pre-talk
+---
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"></script>
+
+<section class="titlepage">
+    <div class="titlebox">
+        <h2 class="title">
+            Power-flow, toric deficiency, and strata-confined polyhedral homotopies
+        </h2>
+    </div>
+    <br/>
+    <p>Tianran Chen</p>
+    <p class="smaller">
+        Department of Mathematics<br>
+        Auburn University at Montgomery
+    </p>
+    <br/>
+    <br/>
+    <p class="smaller">
+        September 8, 2025<br/>
+        Georgia Institute of Technology
+        <br/>
+        Atlanta, GA
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>How electricity works</h3>
+    <div class="center">
+        <img src="electrons.svg" alt="electrons in wire">
+    </div>
+    <div class="cols">
+        <div class="col">
+            <p>
+                \[
+                    q = \text{charge}
+                \]
+            </p>
+            <p class="fragment center">
+                \[
+                    i(t) = \frac{dq}{dt}
+                \]
+                Current
+            </p>
+        </div>
+        <div class="col">
+            <p>
+                \[
+                    W = \text{work}
+                \]
+            </p>
+            <p class="fragment center">
+                \[
+                    v(t) = \frac{dW}{dq}
+                \]
+                Voltage
+                <span class="small lowlight">
+                    (abused notation)
+                </span>
+            </p>
+        </div>
+    </div>
+    <p class="fragment">
+        \[
+            \frac{dW}{dt} = \frac{dW}{dq} \, \frac{dq}{dt}
+        \]
+    </p>
+    <p class="fragment">
+        \[
+            p(t) = v(t) \, i(t)
+        \]
+    </p>
+</section>
+<section data-auto-animate>
+    <div class="cols">
+        <div class="col">
+            <p>Instantaneous power equation</p>
+            <p>
+                \[
+                    p(t) = v(t) \, i(t)
+                \]
+            </p>
+        </div>
+        <div class="col center fragment">
+            <img src="steady-AC.png" alt="" width="250">
+        </div>
+    </div>
+    <p class="fragment">
+        Phasor representation of steady state AC solution
+        \[
+            P + \mathfrak{i} Q = V \, \overline{I}
+            \quad \text{where}
+            \left\{
+                \begin{aligned}
+                    V &= V_{max} e^{\mathfrak{i} \theta_V} & P &: \text{ real power} \\
+                    I &= I_{max} e^{\mathfrak{i} \theta_I} & Q &: \text{ reactive power}
+                \end{aligned}
+            \right.
+        \]
+    </p>
+    <div class="cols fragment">
+        <div class="col center">
+            <img src="nodal-analysis.png" alt="Nodal analysis" width="350">
+        </div>
+        <div class="col">
+            <p>
+                Nodal analysis: Each bus has its own
+                $P_i, Q_i, V_i, I_i$.
+            </p>
+            <p class="lowlight tiny">
+                Wikipedia, The Free Encyclopedia. https://en.wikipedia.org/wiki/Nodal_analysis
+            </p>
+        </div>
+    </div>
+    <div class="fragment">
+        <p>
+            Kirchhoff's Current Law (KCL) $+$ Ohm's Law in AC Circuits:
+        </p>
+        <p>
+            \[
+                P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+                \quad\text{for each bus } i=1,\ldots,n
+            \]
+        </p>
+        <p>
+            $Y_{ij}$: Nodal admittance.
+        </p>
+    </div>
+</section>
+<section data-auto-animate>
+    <h3>Power-flow equation</h3>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <table data-id="var-const-table">
+        <thead>
+          <tr data-id="var-const">
+            <th>Bus type</th>
+            <th>Constants</th>
+            <th>Unknowns</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="slack-row">
+            <td>Slack bus</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+            <td>$P_i,Q_i$</td>
+          </tr>
+          <tr data-id="PV-row">
+            <td>PV bus</td>
+            <td>$P_i,|V_i|$</td>
+            <td>$\arg(V_i),Q_i$</td>
+          </tr>
+          <tr data-id="PQ-row">
+            <td>PQ bus</td>
+            <td>$P_i,Q_i$</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+          </tr>
+        </tbody>
+    </table>
+    <p class="fragment">
+        A real power network always operates at a (approximate) solution
+        to this system of equations (<em>operating point</em>).
+    </p>
+    <p class="fragment">
+        Learning about the landscape of all (or a large portion of)
+        solutions is an important problem.
+    </p>
+</section>
+<section data-auto-animate>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <table data-id="var-const-table">
+        <thead>
+          <tr data-id="var-const">
+            <th>Bus type</th>
+            <th>Constants</th>
+            <th>Unknowns</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="slack-row" class="lowlight">
+            <td>Slack bus</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+            <td>$P_i,Q_i$</td>
+          </tr>
+          <tr data-id="PV-row" class="highlight">
+            <td>PV bus</td>
+            <td>$P_i,|V_i|$</td>
+            <td>$\arg(V_i),Q_i$</td>
+          </tr>
+          <tr data-id="PQ-row" class="lowlight">
+            <td>PQ bus</td>
+            <td>$P_i,Q_i$</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+          </tr>
+        </tbody>
+    </table>
+    <p class="fragment">
+        All-PV power-flow system
+        \[
+            P_i + \mathfrak{i} \class{highlight}{Q_i} =
+            \sum_{j=0}^n
+                \overline{Y}_{ij}
+                |V_i| |V_j|
+                e^{\mathfrak{i}(
+                    \class{highlight}{\theta_i} - 
+                    \class{highlight}{\theta_j}
+                )}
+            \quad\text{for } i=1,\ldots,n
+        \]
+    </p>
+    <div class="fragment">
+        <p>
+            Real part
+        </p>
+        <p>
+            \[
+                P_i =
+                \sum_{j=0}^n
+                    g_{ij} \cos(\class{highlight}{\theta_i} - \class{highlight}{\theta_j}) +
+                    b_{ij} \sin(\class{highlight}{\theta_i} - \class{highlight}{\theta_j})
+                \quad\text{for } i=1,\ldots,n
+            \]
+        </p>
+    </div>
+    <!-- <p>
+        Root count is bounded by the normalized volume of
+        the symmetric edge polytope
+        (adjacency polytope of the PV type)
+    </p> -->
+</section>
+<section data-auto-animate>
+    <div>
+        <p>
+            Real part
+        </p>
+        <p>
+            \[
+                P_i =
+                \sum_{j=0}^n
+                    g_{ij} \cos(\class{highlight}{\theta_i} - \class{highlight}{\theta_j}) +
+                    b_{ij} \sin(\class{highlight}{\theta_i} - \class{highlight}{\theta_j})
+                \quad\text{for } i=1,\ldots,n
+            \]
+        </p>
+    </div>
+    <div class="fragment">
+        <p>
+            Special case:
+            <em class="fragment highlight">
+                Kuramoto equation
+            </em>
+        </p>
+        <p>
+            \[
+                P_i =
+                \sum_{j=0}^n
+                    \class{lowlight}{g_{ij} \cos(\theta_i - \theta_j) +}
+                    b_{ij} \sin(\class{highlight}{\theta_i} - \class{highlight}{\theta_j})
+                \quad\text{for } i=1,\ldots,n
+            \]
+        </p>
+    </div>
+    <div class="fragment">
+        <p>How to make it <em class="highlight">algebraic</em>?</p>
+        <ul>
+            <li>Let $c_i = \cos(\theta_i),s_i = \sin(\theta_i)$ ?</li>
+            <li>Let $x_i = e^{\mathfrak{i} \theta_i}$ ?</li>
+        </ul>
+    </div>
+    <div class="fragment">
+        <p>
+            Algebraic Kuramoto equation (all-PV power-flow equation)
+        </p>
+        <p>
+            \[
+                P_i =
+                \sum_{j=0}^n
+                    a_{ij} \frac{\class{highlight}{x_i}}{\class{highlight}{x_j}} +
+                    b_{ij} \frac{\class{highlight}{x_j}}{\class{highlight}{x_i}}
+                \quad\text{for } i=1,\ldots,n
+            \]
+        </p>
+    </div>
+</section>
+<section data-auto-animate>
+    <div>
+        <p>
+            \[
+                P_i =
+                \sum_{j=0}^n
+                    a_{ij} \frac{\class{highlight}{x_i}}{\class{highlight}{x_j}} +
+                    b_{ij} \frac{\class{highlight}{x_j}}{\class{highlight}{x_i}}
+                \quad\text{for } i=1,\ldots,n
+            \]
+        </p>
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                We can consider sparsity:
+                For a graph $G$,
+                \[
+                    P_i =
+                    \sum_{j \sim i}^n
+                        a_{ij} \frac{\class{highlight}{x_i}}{\class{highlight}{x_j}} +
+                        b_{ij} \frac{\class{highlight}{x_j}}{\class{highlight}{x_i}}
+                \]
+                where $j \sim i$ denotes adjacency in graph $G$
+            </p>
+        </div>
+        <div class="col fragment">
+            <p>
+                We can also consider directed edges in a digraph $\vec{G}$:
+                \[
+                    P_i =
+                    \sum_{j \leftarrow i}^n
+                        a_{ij} \frac{\class{highlight}{x_i}}{\class{highlight}{x_j}} +
+                    \sum_{j \rightarrow i}^n
+                        b_{ij} \frac{\class{highlight}{x_j}}{\class{highlight}{x_i}}
+                \]
+                where $j \leftarrow i$ and $j \rightarrow i$ denote directed edges.
+            </p>
+        </div>
+    </div>
+</section>
+<section data-auto-animate> <!-------------- C4 -------------->
+    <!-- <div class="fragment">
+        <p>
+            \[
+                \begin{aligned}
+                P_1 = a_{10} \frac{x_1}{x_0} + b_{10} \frac{x_0}{x_1} + a_{12} \frac{x_1}{x_2} + b_{12} \frac{x_2}{x_1} \\
+                P_2 = a_{21} \frac{x_2}{x_1} + b_{21} \frac{x_1}{x_2} + a_{23} \frac{x_2}{x_3} + b_{23} \frac{x_3}{x_2} \\
+                P_3 = a_{30} \frac{x_3}{x_0} + b_{30} \frac{x_0}{x_3} + a_{32} \frac{x_3}{x_2} + b_{32} \frac{x_2}{x_3}
+                \end{aligned}
+            \]
+        </p>
+    </div> -->
+    <p>
+        Example: all-PV system on $C_4$ (4-cycle)
+    </p>
+    <div>
+        <div class="equ">
+            <p>\[ P_1 \]</p>
+            <p>\[ = \]</p>
+            <p>\[ a_{10} \frac{x_1}{x_0} \]</p>
+            <p>\[ + \]</p>
+            <p>\[ b_{10} \frac{x_0}{x_1} \]</p>
+            <p>\[ + \]</p>
+            <p>\[ a_{12} \frac{x_1}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p>\[ b_{12} \frac{x_2}{x_1} \]</p>
+        </div>
+        <div class="equ">
+            <p>\[ P_2 \]</p>
+            <p>\[ = \]</p>
+            <p>\[ a_{21} \frac{x_2}{x_1} \]</p>
+            <p>\[ + \]</p>
+            <p>\[ b_{21} \frac{x_1}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p>\[ a_{23} \frac{x_2}{x_3} \]</p>
+            <p>\[ + \]</p>
+            <p>\[ b_{23} \frac{x_3}{x_2} \]</p>
+        </div>
+        <div class="equ">
+            <p>\[ P_3 \]</p>
+            <p>\[ = \]</p>
+            <p>\[ a_{30} \frac{x_3}{x_0} \]</p>
+            <p>\[ + \]</p>
+            <p>\[ b_{30} \frac{x_0}{x_3} \]</p>
+            <p>\[ + \]</p>
+            <p>\[ a_{32} \frac{x_3}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p>\[ b_{32} \frac{x_2}{x_3} \]</p>
+        </div>
+        <div class="center">
+            <div class="r-stack">
+            <img src="facet-graph-1.svg">
+            <img src="facet-graph-2.svg">
+            </div>
+        </div>
+    </div>
+</section>
+<section data-auto-animate> <!---------- C4 highlight with direction ---------->
+    <div>
+        <div class="equ">
+            <p>\[ P_1 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight2">\[ a_{10} \frac{x_1}{x_0} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{10} \frac{x_0}{x_1} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ a_{12} \frac{x_1}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{12} \frac{x_2}{x_1} \]</p>
+        </div>
+        <div class="equ">
+            <p>\[ P_2 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight3">\[ a_{21} \frac{x_2}{x_1} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ b_{21} \frac{x_1}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ a_{23} \frac{x_2}{x_3} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ b_{23} \frac{x_3}{x_2} \]</p>
+        </div>
+        <div class="equ">
+            <p>\[ P_3 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight2">\[ a_{30} \frac{x_3}{x_0} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{30} \frac{x_0}{x_3} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ a_{32} \frac{x_3}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{32} \frac{x_2}{x_3} \]</p>
+        </div>
+        <div class="center">
+            <div class="r-stack">
+            <img src="facet-graph-1.svg">
+            <img src="facet-graph-2.svg">
+            </div>
+        </div>
+    </div>
+</section>
+<section data-auto-animate> <!---------- C4 rearranged ---------->
+    <div>
+        <div class="equ">
+            <p>\[ P_1 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight2">\[ a_{10} \frac{x_1}{x_0} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ a_{12} \frac{x_1}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{10} \frac{x_0}{x_1} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{12} \frac{x_2}{x_1} \]</p>
+        </div>
+        <div class="equ">
+            <p>\[ P_2 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight2">\[ b_{21} \frac{x_1}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ b_{23} \frac{x_3}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ a_{21} \frac{x_2}{x_1} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ a_{23} \frac{x_2}{x_3} \]</p>
+        </div>
+        <div class="equ">
+            <p>\[ P_3 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight2">\[ a_{30} \frac{x_3}{x_0} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ a_{32} \frac{x_3}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{30} \frac{x_0}{x_3} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{32} \frac{x_2}{x_3} \]</p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col center">
+            <img src="facet-graph-1.svg">
+            <p class="fragment">
+                \[ \operatorname{init}_{v} F \]
+            </p>
+        </div>
+        <div class="col center">
+            <img src="facet-graph-2.svg">
+            <p class="fragment">
+                \[ \operatorname{init}_{-v} F \]
+            </p>
+        </div>
+    </div>
+</section>
+<section> <!-------------- PV equation on directed graphs -------------->
+    <div>
+        <p>
+            We can define generalized all-PV power-flow system $F_{\vec{G}}$
+            \[
+                P_i =
+                \sum_{j \leftarrow i}^n
+                    a_{ij} \frac{\class{highlight}{x_i}}{\class{highlight}{x_j}} +
+                \sum_{j \rightarrow i}^n
+                    b_{ij} \frac{\class{highlight}{x_j}}{\class{highlight}{x_i}}
+                \quad\text{for } i=1,\ldots,n
+            \]
+            on a directed graph $\vec{G}$.
+            <em class="fragment">
+                We get a nice lattice structure.
+            </em>
+        </p>
+    </div>
+    <div class="cols">
+        <div class="col fragment">
+            <p>
+                \[ F_{\vec{G}} \]
+            </p>
+            <div>
+                <svg width="300" height="300" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Arrow marker -->
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L6,3 z" fill="inherit" stroke="inherit"/>
+                        </marker>
+                    </defs>
+                    <!-- Nodes -->
+                    <circle id="node0" cx="50" cy="50" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <circle id="node3" cx="50" cy="150" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <circle id="node2" cx="150" cy="150" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <circle id="node1" cx="150" cy="50" r="20" stroke="black" stroke-width="2" fill="white"/>
+
+                    <line x2="130" y2="50" x1="70" y1="50" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x2="150" y2="70" x1="150" y1="130" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x2="50" y2="130" x1="50" y1="70" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x2="70" y2="150" x1="130" y1="150" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x1="130" y1="50"  x2="70"  y2="50"  stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x1="150" y1="70"  x2="150" y2="130" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x1="50"  y1="130" x2="50"  y2="70"  stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x1="70"  y1="150" x2="130" y2="150" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                </svg>
+            </div>
+        </div>
+        <div class="col fragment">
+            <p>
+                \[ \operatorname{init}_{v} F_{\vec{G}} = F_{\vec{H}_1} \]
+            </p>
+            <div>
+                <svg width="300" height="300" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L6,3 z" fill="inherit" stroke="inherit"/>
+                        </marker>
+                    </defs>
+                    <circle id="node0" cx="50" cy="50" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <circle id="node3" cx="50" cy="150" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <circle id="node2" cx="150" cy="150" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <circle id="node1" cx="150" cy="50" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <line x2="130" y2="50" x1="70" y1="50" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x2="150" y2="70" x1="150" y1="130" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x2="50" y2="130" x1="50" y1="70" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x2="70" y2="150" x1="130" y1="150" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                </svg>
+            </div>
+        </div>
+        <div class="col fragment">
+            <p>
+                \[ \operatorname{init}_{w}(\operatorname{init}_{v} F) \]
+            </p>
+            <div>
+                <svg width="300" height="300" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L6,3 z" fill="inherit" stroke="inherit"/>
+                        </marker>
+                    </defs>
+                    <circle id="node0" cx="50" cy="50" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <circle id="node3" cx="50" cy="150" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <circle id="node2" cx="150" cy="150" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <circle id="node1" cx="150" cy="50" r="20" stroke="black" stroke-width="2" fill="white"/>
+                    <line x2="130" y2="50" x1="70" y1="50" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x2="150" y2="70" x1="150" y1="130" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+                    <!-- <line x2="50" y2="130" x1="50" y1="70" stroke="black" stroke-width="2" marker-end="url(#arrow)"/> -->
+                    <!-- <line x2="70" y2="150" x1="130" y1="150" stroke="black" stroke-width="2" marker-end="url(#arrow)"/> -->
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+<section> <!-------------- Root counting results for all-PV -------------->
+    <div>
+        <div class="theorem">
+            (C., Korchevskaia, Lindberg)
+            For generic $P_i$'s and
+            generic <span class="highlight">but symmetric</span> $a_{ij},b_{ij}$,
+            the number of <em>complex</em> solutions is
+            \[
+                \operatorname{Vol}( \; P_G \; )
+                = 
+                \operatorname{Vol}( \operatorname{conv} \{ \pm (e_i - e_j) \mid (i,j) \in E(G) \}   )
+            \]
+            <span class="smaller lowlight">
+                <em>On the typical and atypical solutions to the Kuramoto equations.</em>
+                ArXiv (2022) doi:10.48550/arxiv.2210.00784.
+            </span>
+        </div>
+    </div>
+    <table>
+        <tr>
+            <td>Complete graphs $K_n$</td>
+            <td align="center">$\binom{2n}{n}$</td>
+        </tr>
+        <tr>
+            <td>Trees $T_n$</td>
+            <td align="center">$2^n$</td>
+        </tr>
+        <tr>
+            <td>Cycles $C_n$</td>
+            <td align="center">$(n+1) \binom{n}{\lfloor n/2 \rfloor}$</td>
+        </tr>
+        <tr>
+            <td>Odd $C_{i+1}, C_{j+1}$ sharing an edge</td>
+            <td align="center">$(i+j+2ij) \binom{2i}{i} \binom{2j}{j}$</td>
+        </tr>
+        <tr>
+            <td>Odd wheels $K_1 * C_n$</td>
+            <td align="center">$(1-\sqrt{3})^n + (1+\sqrt{3})^n$</td>
+        </tr>
+        <tr>
+            <td>Even wheels $K_1 * C_n$</td>
+            <td align="center">$(1-\sqrt{3})^n + (1+\sqrt{3})^n - 2$</td>
+        </tr>
+    </table>
+    <p class="smaller lowlight">
+        T. Chen, R. Davis, D. Mehta,
+        <em>Counting equilibria of the Kuramoto model using birationally invariant intersection index</em>
+        SIAM Journal on Applied Algebra and Geometry, 2018, Vol. 2, No. 4 pp. 489-507
+    </p>
+    <p class="smaller lowlight">
+        A D'Alì, E Delucchi, M Michałek,
+        <em>Many faces of symmetric edge polytopes</em>
+        Electron J Comb 29, (2022).
+    </p>
+    <p class="smaller lowlight">
+        H. Ohsugi, A. Tsuchiya,
+        <em>The $h^*$-Polynomials of Locally Anti-Blocking Lattice Polytopes and Their 𝛾-Positivity.</em>
+        Discrete Comput Geom 66, 701–722 (2021). https://doi.org/10.1007/s00454-020-00236-6
+    </p>
+</section>
+<section data-auto-animate> <!-------------- General power flow again -------------->
+    <h3>Power-flow equation, again</h3>
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <table data-id="var-const-table">
+        <thead>
+          <tr data-id="var-const">
+            <th>Bus type</th>
+            <th>Constants</th>
+            <th>Unknowns</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="slack-row">
+            <td>Slack bus</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+            <td>$P_i,Q_i$</td>
+          </tr>
+          <tr data-id="PV-row">
+            <td>PV bus</td>
+            <td>$P_i,|V_i|$</td>
+            <td>$\arg(V_i),Q_i$</td>
+          </tr>
+          <tr data-id="PQ-row">
+            <td>PQ bus</td>
+            <td>$P_i,Q_i$</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+          </tr>
+        </tbody>
+    </table>
+</section>
+<section data-auto-animate> <!-------------- focus on PQ -------------->
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = \sum_{j=0}^n \overline{Y}_{ij} V_i \overline{V_j}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <table data-id="var-const-table">
+        <thead>
+          <tr data-id="var-const">
+            <th>Bus type</th>
+            <th>Constants</th>
+            <th>Unknowns</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="slack-row" class="lowlight">
+            <td>Slack bus</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+            <td>$P_i,Q_i$</td>
+          </tr>
+          <tr data-id="PV-row" class="lowlight">
+            <td>PV bus</td>
+            <td>$P_i,|V_i|$</td>
+            <td>$\arg(V_i),Q_i$</td>
+          </tr>
+          <tr data-id="PQ-row" class="highlight">
+            <td>PQ bus</td>
+            <td>$P_i,Q_i$</td>
+            <td>$|V_i|,\arg(V_i)$</td>
+          </tr>
+        </tbody>
+    </table>
+    <h3>All-PQ system</h3>
+    <p data-id="all-PQ">
+        \[
+            P_i + \mathfrak{i} Q_i = 
+            \sum_{j=0}^n \overline{Y}_{ij} 
+                \class{highlight}{V_i}
+                \class{highlight}{\overline{V_j}}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <p>
+        ...more fundamental and general system.
+    </p>
+</section>
+<section data-auto-animate> <!-------------- all PQ system -------------->
+    <h3>All-PQ system</h3>
+    <p data-id="all-PQ">
+        \[
+            P_i + \mathfrak{i} Q_i = 
+            \sum_{j=0}^n \overline{Y}_{ij} 
+                \class{highlight}{V_i}
+                \class{highlight}{\overline{V_j}}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <p>
+        Not algebraic!
+    </p>
+    <div class="fragment">
+        <p>How to turn this algebraic?</p>
+        <ul data-id="different-change-of-var">
+            <li>
+                $V_i = \class{highlight}{x_i} + \mathfrak{i} \class{highlight}{y_i}$
+            </li>
+            <li>
+                $V_i = \class{highlight}{r_i} (\class{highlight}{c_i} + \mathfrak{i} \class{highlight}{s_i})$ with $c_i^2 + s_i^2 = 1$.
+            </li>
+            <li>
+                $\class{highlight}{U_i} = \overline{V}_i$.
+            </li>
+        </ul>
+    </div>
+    <p class="fragment">
+        Different algebraic formulations create different numbers of extraneous complex solutions.
+    </p>
+</section>
+<section data-auto-animate> <!-------------- all-PQ with circle inversion -------------->
+    <p class="small" data-id="all-PQ">
+        \[
+            P_i + \mathfrak{i} Q_i = 
+            \sum_{j=0}^n \overline{Y}_{ij} 
+                \class{highlight}{V_i}
+                \class{highlight}{\overline{V_j}}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+        <ul class="lowlight" data-id="different-change-of-var">
+            <li>
+                $V_i = \class{highlight}{x_i} + \mathfrak{i} \class{highlight}{y_i}$
+            </li>
+            <li>
+                $V_i = \class{highlight}{r_i} (\class{highlight}{c_i} + \mathfrak{i} \class{highlight}{s_i})$ with $c_i^2 + s_i^2 = 1$.
+            </li>
+            <li>
+                $\class{highlight}{U_i} = \overline{V}_i$.
+            </li>
+        </ul>
+    <p class="fragment">
+        Consider a different formulation: Let
+        \[ \class{highlight}{W_i} = (\overline{V}_i)^{-1}. \]
+    </p>
+    <div class="fragment">
+        <p>then the system becomes</p>
+        <p>
+            \[
+                P_i + \mathfrak{i} Q_i = 
+                \sum_{j \sim i}^n \overline{Y}_{ij} 
+                    \frac{
+                        \class{highlight}{V_i}
+                    }{
+                        \class{highlight}{W_j}
+                    }
+                \quad\text{for each bus } i=1,\ldots,n
+            \]
+        </p>
+    </div>
+    <p class="fragment">
+        Treating $V_i,W_i$ as independent variables,
+        we have a Laurent polynomial system.
+        <span class="fragment highlight">
+            Problem: $2n$ unknowns, $n$ equations
+        </span>
+    </p>
+</section>
+<section data-auto-animate> <!-------------- PQ doubling equations -------------->
+    <p>
+        \[
+            P_i + \mathfrak{i} Q_i = 
+            \sum_{j \sim i}^n \overline{Y}_{ij} 
+                \frac{
+                    \class{highlight}{V_i}
+                }{
+                    \class{highlight}{W_j}
+                }
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <p class="fragment">
+        \[
+            P_i - \mathfrak{i} Q_i = 
+            \sum_{j \sim i}^n Y_{ij} 
+                \frac{
+                    \class{highlight}{V_j}
+                }{
+                    \class{highlight}{W_i}
+                }
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <p class="fragment">
+        $2n$ complex unknowns, $2n$ equations
+    </p>
+    <p class="fragment">
+        \[
+            \text{$\mathbb{C}$-root count}
+            \leq \binom{2n}{n}
+        \]
+    </p>
+    <div class="smaller fragment lowlight">
+        <p>
+            Baillieul & Byrnes
+            <em>Geometric critical point analysis of lossless power system models.</em>
+            IEEE T Circuits Syst 29 (1982).
+        </p>
+        <p>
+            Li, Sauer & Yorke
+            <em>Numerical Solution of a Class of Deficient Polynomial Systems.</em>
+            SIAM J. Numer. Anal. 24 (1987).
+        </p>
+    </div>
+    <p class="fragment">
+        \[
+            2^n \le
+            \text{Generic $\mathbb{C}$-root count}
+            \leq \binom{2n}{n}
+        \]
+    </p>
+    <p class="fragment">
+        \[
+            T_{n+1} \leftarrow
+            \text{ sparse } \leftarrow \quad
+            \rightarrow \text{ dense }
+            \rightarrow K_{n+1}
+        \]
+    </p>
+    <div class="center">
+        <p class="fragment">
+            Sparsity: $Y_{ij} \ne 0 \Leftrightarrow i \sim j \text{ in } G$,
+            for some graph $G$.
+        </p>
+    </div>
+</section>
+<section data-auto-animate> <!-------------- sparse all-PQ -------------->
+    <div class="small">
+        <p>
+            \[
+                P_i + \mathfrak{i} Q_i = 
+                \sum_{j \sim i}^n \overline{Y}_{ij} 
+                    \frac{
+                        \class{highlight}{V_i}
+                    }{
+                        \class{highlight}{W_j}
+                    }
+                \quad\text{for each bus } i=1,\ldots,n
+            \]
+        </p>
+        <p>
+            \[
+                P_i - \mathfrak{i} Q_i = 
+                \sum_{j \sim i}^n Y_{ij} 
+                    \frac{
+                        \class{highlight}{V_j}
+                    }{
+                        \class{highlight}{W_i}
+                    }
+                \quad\text{for each bus } i=1,\ldots,n
+            \]
+        </p>
+    </div>
+    <div>
+        <div class="theorem">
+            (C. & Mehta)
+            Even though the coefficients are related,
+            its generic root count reaches the BKK bound.
+            <span class="smaller lowlight">
+                On the Network Topology Dependent Solution Count of the Algebraic Load Flow Equations. IEEE T Power Syst 33.
+            </span>
+        </div>
+    </div>
+    <div class="theorem fragment">
+        (C. 2019)
+        <span class="lowlight smaller">
+            Unmixing the Mixed Volume Computation. Discrete Comput Geom 62
+        </span>
+        \[
+            \text{Generic $\mathbb{C}$-root count}
+            = \operatorname{Vol}(\nabla_G^{PQ})
+        \]
+    </div>
+    <p class="fragment">
+        \[
+            \nabla_G^{PQ} =
+            \operatorname{conv}
+            \{
+                (e_i, e_j) \mid i \sim j
+            \}
+            \cup
+            \{
+                (e_i, e_i) \mid i = 1,\ldots,n
+            \}
+            \cup
+            \{
+                (\mathbf{0},\mathbf{0})
+            \}
+        \]
+    </p>
+    <div class="small lowlight fragment">
+        <p>
+            <b>(Related to "Dragon Marriage" problem)</b>
+            <em> A. Postnikov </em>
+            Permutohedra, Associahedra, and Beyond.
+            <em>Int. Math. Res. Not. 2009, 1026-1106 (2009).</em>
+        </p>
+        <p>
+            Ohsugi, Hidefumi, and Akiyoshi Tsuchiya.
+            <em>PQ-type adjacency polytopes of join graphs.</em>
+            Discrete & Computational Geometry 70.1 (2023): 214-235.
+        </p>
+    </div>
+</section>
+<section data-auto-animate> <!-------------- C3 PQ -------------->
+    <div class="cols">
+        <div class="col">
+            <div class="smaller">
+                <p>
+                    \[
+                        P_i + \mathfrak{i} Q_i = 
+                        \sum_{j \sim i}^n \overline{Y}_{ij} 
+                            \frac{
+                                \class{highlight}{V_i}
+                            }{
+                                \class{highlight}{W_j}
+                            }
+                        \quad\text{for each bus } i=1,\ldots,n
+                    \]
+                </p>
+                <p>
+                    \[
+                        P_i - \mathfrak{i} Q_i = 
+                        \sum_{j \sim i}^n Y_{ij} 
+                            \frac{
+                                \class{highlight}{V_j}
+                            }{
+                                \class{highlight}{W_i}
+                            }
+                        \quad\text{for each bus } i=1,\ldots,n
+                    \]
+                </p>
+            </div>
+        </div>
+        <div class="col center">
+            <svg width="160" height="160" viewBox="20 20 180 180" xmlns="http://www.w3.org/2000/svg">
+                <circle id="node0" cx="50" cy="50" r="20" stroke="black" stroke-width="2" fill="white"/>
+                <circle id="node3" cx="50" cy="150" r="20" stroke="black" stroke-width="2" fill="white"/>
+                <circle id="node2" cx="150" cy="150" r="20" stroke="black" stroke-width="2" fill="white"/>
+                <circle id="node1" cx="150" cy="50" r="20" stroke="black" stroke-width="2" fill="white"/>
+                <text x="50" y="55" font-size="16" text-anchor="middle" fill="black">0</text>
+                <text x="150" y="55" font-size="16" text-anchor="middle" fill="black">1</text>
+                <text x="150" y="155" font-size="16" text-anchor="middle" fill="black">2</text>
+                <text x="50" y="155" font-size="16" text-anchor="middle" fill="black">3</text>
+                <line x2="130" y2="50"  x1="70"  y1="50"  stroke="black" stroke-width="2"/>
+                <line x2="150" y2="70"  x1="150" y1="130" stroke="black" stroke-width="2"/>
+                <line x1="50"  y1="130" x2="50"  y2="70"  stroke="black" stroke-width="2"/>
+                <line x1="70"  y1="150" x2="130" y2="150" stroke="black" stroke-width="2"/>
+            </svg>
+        </div>
+    </div>
+    <div class="equ">
+        <p> \[ P_1 + \mathfrak{i} Q_1 \] </p>
+        <p> \[ = \] </p>
+        <p> \[ \overline{Y}_{10} \frac{\class{highlight}{V_1}}{\class{highlight}{W_0}} \] </p>
+        <p> \[ + \] </p>
+        <p> \[ \overline{Y}_{11} \frac{\class{highlight}{V_1}}{\class{highlight}{W_1}} \] </p>
+        <p> \[ + \] </p>
+        <p> \[ \overline{Y}_{12} \frac{\class{highlight}{V_1}}{\class{highlight}{W_2}} \] </p>
+    </div>
+    <div class="equ">
+        <p> \[ P_2 + \mathfrak{i} Q_2 \] </p>
+        <p> \[ = \] </p>
+        <p> \[ \overline{Y}_{20} \frac{\class{highlight}{V_2}}{\class{highlight}{W_0}} \] </p>
+        <p> \[ + \] </p>
+        <p> \[ \overline{Y}_{21} \frac{\class{highlight}{V_2}}{\class{highlight}{W_1}} \] </p>
+        <p> \[ + \] </p>
+        <p> \[ \overline{Y}_{22} \frac{\class{highlight}{V_2}}{\class{highlight}{W_2}} \] </p>
+    </div>
+    <div class="equ">
+        <p> \[ P_1 - \mathfrak{i} Q_1 \] </p>
+        <p> \[ = \] </p>
+        <p> \[ Y_{10} \frac{\class{highlight}{V_0}}{\class{highlight}{W_1}} \] </p>
+        <p> \[ + \] </p>
+        <p> \[ Y_{11} \frac{\class{highlight}{V_1}}{\class{highlight}{W_1}} \] </p>
+        <p> \[ + \] </p>
+        <p> \[ Y_{12} \frac{\class{highlight}{V_2}}{\class{highlight}{W_1}} \] </p>
+    </div>
+    <div class="equ">
+        <p> \[ P_2 - \mathfrak{i} Q_2 \] </p>
+        <p> \[ = \] </p>
+        <p> \[ Y_{20} \frac{\class{highlight}{V_0}}{\class{highlight}{W_2}} \] </p>
+        <p> \[ + \] </p>
+        <p> \[ Y_{21} \frac{\class{highlight}{V_1}}{\class{highlight}{W_2}} \] </p>
+        <p> \[ + \] </p>
+        <p> \[ Y_{22} \frac{\class{highlight}{V_2}}{\class{highlight}{W_2}} \] </p>
+    </div>
+</section>
+<section data-auto-animate> <!-------------- C3 PQ -------------->
+    <div class="cols">
+        <div class="col">
+            <div class="equ">
+                <!-- <p class="smaller"> \[ P_1 + \mathfrak{i} Q_1 \] </p>
+                <p class="smaller"> \[ = \] </p> -->
+                <p> \[ \overline{Y}_{10} \frac{\class{highlight}{V_1}}{\class{highlight}{W_0}} \] </p>
+                <p> \[ + \] </p>
+                <p> \[ \overline{Y}_{11} \frac{\class{highlight}{V_1}}{\class{highlight}{W_1}} \] </p>
+                <p> \[ + \] </p>
+                <p> \[ \overline{Y}_{12} \frac{\class{highlight}{V_1}}{\class{highlight}{W_2}} \] </p>
+            </div>
+            <div class="equ">
+                <!-- <p class="smaller"> \[ P_2 + \mathfrak{i} Q_2 \] </p>
+                <p class="smaller"> \[ = \] </p> -->
+                <p> \[ \overline{Y}_{20} \frac{\class{highlight}{V_2}}{\class{highlight}{W_0}} \] </p>
+                <p> \[ + \] </p>
+                <p> \[ \overline{Y}_{21} \frac{\class{highlight}{V_2}}{\class{highlight}{W_1}} \] </p>
+                <p> \[ + \] </p>
+                <p> \[ \overline{Y}_{22} \frac{\class{highlight}{V_2}}{\class{highlight}{W_2}} \] </p>
+            </div>
+            <div class="equ">
+                <!-- <p class="smaller"> \[ P_1 - \mathfrak{i} Q_1 \] </p>
+                <p class="smaller"> \[ = \] </p> -->
+                <p> \[ Y_{10} \frac{\class{highlight}{V_0}}{\class{highlight}{W_1}} \] </p>
+                <p> \[ + \] </p>
+                <p> \[ Y_{11} \frac{\class{highlight}{V_1}}{\class{highlight}{W_1}} \] </p>
+                <p> \[ + \] </p>
+                <p> \[ Y_{12} \frac{\class{highlight}{V_2}}{\class{highlight}{W_1}} \] </p>
+            </div>
+            <div class="equ">
+                <!-- <p class="smaller"> \[ P_2 - \mathfrak{i} Q_2 \] </p>
+                <p class="smaller"> \[ = \] </p> -->
+                <p> \[ Y_{20} \frac{\class{highlight}{V_0}}{\class{highlight}{W_2}} \] </p>
+                <p> \[ + \] </p>
+                <p> \[ Y_{21} \frac{\class{highlight}{V_1}}{\class{highlight}{W_2}} \] </p>
+                <p> \[ + \] </p>
+                <p> \[ Y_{22} \frac{\class{highlight}{V_2}}{\class{highlight}{W_2}} \] </p>
+            </div>
+        </div>
+        <div class="col">
+            <div id="cy" style="width: 300px; height: 500px; margin: 0 auto;"></div>
+        </div>
+    </div>
+    <span class="fragment" id="trigger1" style="display:none;"></span>
+    <div class="fragment">
+        <p>
+            \[
+                \text{All-PQ system on $C_3$}
+                \;=\;
+                \text{All-PV system on $\vec{D}(C_3)$}
+            \]
+        </p>
+    </div>
+    <script>
+        // Wait for the slide to be fully loaded
+        setTimeout(function() {
+            var cy = cytoscape({
+                container: document.getElementById('cy'),
+                elements: [
+                    { data: { id: 'W0' }, position: { x: 150, y: 20.5 } },
+                    { data: { id: 'W1' }, position: { x: 250, y: 300.9 } },
+                    { data: { id: 'W2' }, position: { x:  50, y: 300.5 } },
+                    { data: { id:  '0' }, position: { x: 150, y: 20 } },
+                    { data: { id:  '1' }, position: { x: 250, y: 300 } },
+                    { data: { id:  '2' }, position: { x:  50, y: 300 } },
+                    { data: { id: 'e00', source: '0', target: 'W0' } },
+                    { data: { id: 'e01', source: '0', target: 'W1' } },
+                    { data: { id: 'e02', source: '0', target: 'W2' } },
+                    { data: { id: 'e10', source: '1', target: 'W0' } },
+                    { data: { id: 'e11', source: '1', target: 'W1' } },
+                    { data: { id: 'e12', source: '1', target: 'W2' } },
+                    { data: { id: 'e20', source: '2', target: 'W0' } },
+                    { data: { id: 'e21', source: '2', target: 'W1' } },
+                    { data: { id: 'e22', source: '2', target: 'W2' } },
+                ],
+                style: [
+                    {
+                        selector: 'node',
+                        style: {
+                            'background-color': 'white',
+                            'border-color': 'black',
+                            'border-width': 2,
+                            'width': 60,
+                            'height': 60,
+                            'label': 'data(id)',           // This shows the label
+                            'text-valign': 'center',       // Vertical alignment
+                            'text-halign': 'center',       // Horizontal alignment
+                            'color': 'black',              // Text color
+                            'font-size': 18,               // Text size
+                            'font-weight': 'bold'          // Text weight
+                        }
+                    },
+                    {
+                        selector: 'edge',
+                        style: {
+                            'curve-style': 'unbundled-bezier',
+                            'control-point-distances': [50],    // distance from line, positive = one side
+                            'control-point-weights': [0.5],     // where along the line to place the control point
+                            'target-arrow-shape': 'triangle',
+                            'line-color': '#333',
+                            'target-arrow-color': '#333'
+                        }
+                    }
+                ],
+                layout: { name: 'preset' },
+            });
+            Reveal.on('fragmentshown', event => {
+                if(event.fragment.id === 'trigger1') {
+                    cy.getElementById('0').animate(
+                        { position: { x:  50, y: 20  } }, { duration: 3000, easing: 'ease-out' }
+                    );
+                    cy.getElementById('1').animate(
+                        { position: { x:  50, y: 190 } }, { duration: 3000, easing: 'ease-out' }
+                    );
+                    cy.getElementById('2').animate(
+                        { position: { x:  50, y: 400 } }, { duration: 3000, easing: 'ease-out' }
+                    );
+                    cy.getElementById('W0').animate(
+                        { position: { x: 250, y: 20  } }, { duration: 3000, easing: 'ease-out' }
+                    );
+                    cy.getElementById('W1').animate(
+                        { position: { x: 250, y: 190 } }, { duration: 3000, easing: 'ease-out' }
+                    );
+                    cy.getElementById('W2').animate(
+                        { position: { x: 250, y: 400 } }, { duration: 3000, easing: 'ease-out' }
+                    );
+                }
+            });
+        }, 500); // Adjust the timeout as needed
+    </script>
+</section>
+<section>
+    <h3>Back to all-PV systems</h3>
+    <p>
+        Since
+        \[
+            \text{All-PQ system on $G$}
+            \;=\;
+            \text{Specialized all-PV system on $\vec{D}(G)$}
+        \]
+    </p>
+    <p>
+        We can focus on
+        \[
+            P_i =
+            \sum_{j \leftarrow i} a_{ij} \frac{x_i}{x_j} +
+            \sum_{j \rightarrow i} b_{ij} \frac{x_j}{x_i}
+            \quad\text{for each bus } i=1,\ldots,n
+        \]
+    </p>
+    <div class="fragment">
+        <div class="theorem">
+            (R. Davis & C.)
+            For a $C_N$ with even $N$,
+            this system has
+            \[
+                N 2^{N-2}
+            \]
+            <em class="highlight">isolated</em> complex solutions for generic parameters.
+            <p class="smaller lowlight">
+                <em>Computing Volumes of Adjacency Polytopes via Draconian Sequences</em>
+                Electron J Comb 29.
+            </p>
+        </div>
+        <p class="small lowlight">
+            R. Davis, J. Jakovleski, and Q. Pan.
+            <em>
+                Normalized volumes of type-PQ adjacency polytopes for certain classes of graphs.
+            </em>Involve (2024): 425-440.
+        </p>
+        <p class="small lowlight">
+            R. Davis, and F. Kohl.
+            <em>
+                Perfectly matchable set polynomials and $h^*$-polynomials for stable set polytopes of complements of graphs.
+            </em>
+            Discrete Mathematics 347.7 (2024).
+        </p>
+    </div>
+</section>
+<section> <!-------------- Bernshtein-generalness -------------->
+    <h3>Bernshtein-generalness, again</h3>
+    <div class="theorem">
+        (C., Korchevskaia, Lindberg)
+        For generic $P_i$'s and
+        generic <span class="highlight">but symmetric</span> $a_{ij},b_{ij}$,
+        the number of <em>complex</em> solutions is
+        \[
+            \operatorname{Vol}( \; P_G \; )
+            = 
+            \operatorname{Vol}( \operatorname{conv} \{ \pm (e_i - e_j) \mid (i,j) \in E(G) \}   )
+        \]
+        <span class="smaller lowlight">
+            <em>On the typical and atypical solutions to the Kuramoto equations.</em>
+            ArXiv (2022) doi:10.48550/arxiv.2210.00784.
+        </span>
+    </div>
+    <p class="fragment">
+        For generic (but symmetric) coefficients,
+        the system is Bernshtein/Kushnirenko-general.
+    </p>
+    <div class="definition fragment">
+        A system of Laurent polynomials is
+        <b>Bernshtein-general</b>
+        if its number of isolated complex solutions
+        is equal to the BKK bound
+        (the mixed volume of the Newton polytopes).
+    </div>
+    <p class="fragment">
+        Note: This is a special property of the algebraic formulation we chose.
+        Other formulations may not be Bernshtein-general.
+    </p>
+    <br>
+    <p class="fragment center">
+        Question: When is the system NOT Bernshtein-general?
+    </p>
+</section>
+<section data-auto-animate> <!---------- C4 highlight with direction ---------->
+    <h3>Bernshtein-deficiency</h3>
+    <p>
+        Returning to all-PV power-flow system on $C_4$:
+    </p>
+    <div>
+        <div class="equ">
+            <p>\[ P_1 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight2">\[ a_{10} \frac{x_1}{x_0} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{10} \frac{x_0}{x_1} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ a_{12} \frac{x_1}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{12} \frac{x_2}{x_1} \]</p>
+        </div>
+        <div class="equ">
+            <p>\[ P_2 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight3">\[ a_{21} \frac{x_2}{x_1} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ b_{21} \frac{x_1}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ a_{23} \frac{x_2}{x_3} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ b_{23} \frac{x_3}{x_2} \]</p>
+        </div>
+        <div class="equ">
+            <p>\[ P_3 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight2">\[ a_{30} \frac{x_3}{x_0} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{30} \frac{x_0}{x_3} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ a_{32} \frac{x_3}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{32} \frac{x_2}{x_3} \]</p>
+        </div>
+    </div>
+</section>
+<section data-auto-animate> <!---------- C4 rearranged again ---------->
+    <div>
+        <div class="equ">
+            <p>\[ P_1 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight2">\[ a_{10} \frac{x_1}{x_0} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ a_{12} \frac{x_1}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{10} \frac{x_0}{x_1} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{12} \frac{x_2}{x_1} \]</p>
+        </div>
+        <div class="equ">
+            <p>\[ P_2 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight2">\[ b_{21} \frac{x_1}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ b_{23} \frac{x_3}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ a_{21} \frac{x_2}{x_1} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ a_{23} \frac{x_2}{x_3} \]</p>
+        </div>
+        <div class="equ">
+            <p>\[ P_3 \]</p>
+            <p>\[ = \]</p>
+            <p class="highlight2">\[ a_{30} \frac{x_3}{x_0} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight2">\[ a_{32} \frac{x_3}{x_2} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{30} \frac{x_0}{x_3} \]</p>
+            <p>\[ + \]</p>
+            <p class="highlight3">\[ b_{32} \frac{x_2}{x_3} \]</p>
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col center fragment">
+            <p>
+                \[
+                    \begin{gathered}
+                        \class{highlight2}{a_{12} a_{30} = a_{32} a_{10}} \\
+                    \end{gathered}
+                \]
+            </p>
+            <span>NOT Bernshtein-general</span>
+            <img src="facet-graph-1.svg">
+        </div>
+        <div class="col center fragment">
+            <p>
+                \[
+                    \begin{gathered}
+                        \class{highlight3}{b_{12} b_{30} = b_{32} b_{10}} \\
+                    \end{gathered}
+                \]
+            </p>
+            <span>NOT Bernshtein-general</span>
+            <img src="facet-graph-2.svg">
+        </div>
+    </div>
+</section>
+<section data-auto-animate>
+    <h3>Exceptional strata</h3>
+    <div class="cols">
+        <div class="col center">
+            <p>
+                \[
+                    \begin{gathered}
+                        \class{highlight2}{a_{12} a_{30} = a_{32} a_{10}} \\
+                    \end{gathered}
+                \]
+            </p>
+            <img src="facet-graph-1.svg">
+        </div>
+        <div class="col center">
+            <p>
+                \[
+                    \begin{gathered}
+                        \class{highlight2}{a_{12} a_{32} = a_{10} a_{30}} \\
+                    \end{gathered}
+                \]
+            </p>
+            <img src="facet-graph-3.svg">
+        </div>
+        <div class="col center">
+            <p>
+                \[
+                    \begin{gathered}
+                        \class{highlight2}{a_{12} a_{10} = a_{32} a_{30}} \\
+                    \end{gathered}
+                \]
+            </p>
+            <img src="facet-graph-5.svg">
+        </div>
+    </div>
+    <div class="cols">
+        <div class="col center">
+            <p>
+                \[
+                    \begin{gathered}
+                        \class{highlight3}{b_{12} b_{30} = b_{32} b_{10}} \\
+                    \end{gathered}
+                \]
+            </p>
+            <img src="facet-graph-2.svg">
+        </div>
+        <div class="col center">
+            <p>
+                \[
+                    \begin{gathered}
+                        \class{highlight3}{b_{12} b_{32} = b_{10} b_{30}} \\
+                    \end{gathered}
+                \]
+            </p>
+            <img src="facet-graph-4.svg">
+        </div>
+        <div class="col center">
+            <p>
+                \[
+                    \begin{gathered}
+                        \class{highlight3}{b_{12} b_{10} = b_{32} b_{30}} \\
+                    \end{gathered}
+                \]
+            </p>
+            <img src="facet-graph-6.svg">
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Exceptional strata of coefficient space</h3>
+    <p>
+        \[
+            \mathcal{C} = \mathcal{C}_{\text{gen}} \cup \mathcal{E}
+        \]
+    </p>
+    where
+    <p>
+        \[
+            \mathcal{E} = \{ (a_{ij},b_{ij}) \mid \text{system is NOT Bernshtein-general} \}
+        \]
+    </p>
+    <p class="fragment">
+        the maximal exceptional strata...
+        \[
+            \mathcal{E} = \bigcup_k \mathcal{E}_k
+        \]
+        are defined by the sparse resultant of certain initial systems.
+        But...
+    </p>
+    <div class="proposition fragment">
+        For a graph $G = (V,E)$,
+        if there is a partition $E_+ \cup E_-, |E_+| = |E_-|$
+        of the edges of a chordless cycle and
+        \[
+            \prod_{ij \in E_+} \class{highlight2}{a_{ij}} =
+            \class{highlight}{(-1)^{N/2}}
+            \prod_{ij \in E_-} \class{highlight2}{a_{ij}}
+            \;\text{or}\;
+            \prod_{ij \in E_+} \class{highlight3}{b_{ij}} =
+            \class{highlight}{(-1)^{N/2}}
+            \prod_{ij \in E_-} \class{highlight3}{b_{ij}}
+        \]
+        then the system is NOT Bernshtein-general.
+        <span class="smaller lowlight">
+            Chen, Korchevskaia, Lindberg.
+            <em>On the typical and atypical solutions to the Kuramoto equations.</em>
+            ArXiv (doi:10.48550/arxiv.2210.00784).
+        </span>
+    </div>
+</section>
+<section data-auto-animate>
+    <h3>Where did the missing zeros go?</h3>
+
+    <ul class="fragment">
+        <li>
+            Missing zeros at (toric) infinity
+        </li>
+        <li>
+            Missing zeros in positive-dimensional zero sets
+        </li>
+    </ul>
+    <br>
+    <br>
+    <div class="fragment">
+    <h3>Positive-dimensional zero sets (A quick example)</h3>
+        <div>
+            <div class="equ">
+                <p>\[ P_1 \]</p>
+                <p>\[ = \]</p>
+                <p>\[ a_{10} \frac{x_1}{x_0} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{10} \frac{x_0}{x_1} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ a_{12} \frac{x_1}{x_2} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{12} \frac{x_2}{x_1} \]</p>
+            </div>
+            <div class="equ">
+                <p>\[ P_2 \]</p>
+                <p>\[ = \]</p>
+                <p>\[ a_{21} \frac{x_2}{x_1} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{21} \frac{x_1}{x_2} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ a_{23} \frac{x_2}{x_3} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{23} \frac{x_3}{x_2} \]</p>
+            </div>
+            <div class="equ">
+                <p>\[ P_3 \]</p>
+                <p>\[ = \]</p>
+                <p>\[ a_{30} \frac{x_3}{x_0} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{30} \frac{x_0}{x_3} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ a_{32} \frac{x_3}{x_2} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{32} \frac{x_2}{x_3} \]</p>
+            </div>
+        </div>
+        <p>
+            when $k = a_{ij} = -b_{ij}$
+            the system is not Bernshtein-general.
+        </p>
+    </div>
+</section>
+<section data-auto-animate>
+    <h3>Positive-dimensional zero sets (A quick example)</h3>
+    <div>
+        <div>
+            <div class="equ">
+                <p>\[ 0 \]</p>
+                <p>\[ = \]</p>
+                <p>\[ a_{10} \frac{x_1}{x_0} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{10} \frac{x_0}{x_1} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ a_{12} \frac{x_1}{x_2} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{12} \frac{x_2}{x_1} \]</p>
+            </div>
+            <div class="equ">
+                <p>\[ 0 \]</p>
+                <p>\[ = \]</p>
+                <p>\[ a_{21} \frac{x_2}{x_1} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{21} \frac{x_1}{x_2} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ a_{23} \frac{x_2}{x_3} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{23} \frac{x_3}{x_2} \]</p>
+            </div>
+            <div class="equ">
+                <p>\[ 0 \]</p>
+                <p>\[ = \]</p>
+                <p>\[ a_{30} \frac{x_3}{x_0} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{30} \frac{x_0}{x_3} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ a_{32} \frac{x_3}{x_2} \]</p>
+                <p>\[ + \]</p>
+                <p>\[ b_{32} \frac{x_2}{x_3} \]</p>
+            </div>
+            <p>
+                when $k = a_{ij} = -b_{ij}$
+                the system is not Bernshtein-general.
+                <em class="fragment">And has positive-dimensional zero sets.</em>
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <p class="fragment">
+        There is a "stratified" polyhedral homotopy $H(\mathbf{x},t)$
+        defining 12 smooth homotopy paths
+    </p>
+    <div class="cols">
+        <div class="col">
+            <ul>
+                <li data-id="isolated-points">
+                    <span>2 nonsingular isolated zeros</span>
+                </li>
+                <li data-id="one-d-components">
+                    <span>3 one-dimensional components</span>
+                </li>
+                <li data-id="embedded-component">
+                    <span data-id="embedded-points">2 singular points</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul>
+                <li class="fragment">
+                    1 path  converging to each (2)
+                </li>
+                <li class="fragment">
+                    2 paths converging to each (6)
+                </li>
+                <li class="fragment">
+                    2 paths converging to each (4)
+                </li>
+            </ul>
+        </div>
+    </div>
+    <p class="fragment">
+        \[
+            \text{BKK bound} = 12
+            =
+            \underbrace{1 + 1    }_{\substack{\text{Isolated}\\\text{points}}}
+            +
+            \underbrace{2 + 2 + 2}_{\substack{\text{1-dimensional}\\\text{components}}}
+            +
+            \underbrace{2 + 2    }_{\substack{\text{Singular}\\\text{points}}}
+        \]
+    </p>
+    <p class="fragment">
+        Every homotopy path converge to a point in $(\mathbb{C}^*)^3$:
+        (If counted "correctly") the intersection index in $(\mathbb{C}^*)^3$
+        equals the BKK bound.
+    </p>
+    <!-- <p class="center fragment">
+        <strong class="highlight">
+            Semi-Bernshtein-general?
+        </strong>
+    </p> -->
+    <div class="definition fragment">
+        $F$ is <strong class="highlight">semi-Bernshtein-general</strong>
+        if for its $\mathbb{C}^*$-zero set
+        \[
+            \sum_{U} i(U) =
+            \text{BKK bound}
+        \]
+        summing over all subvariety???
+    </div>
+</section>
+<section data-auto-animate>
+    <h3>Missing zeros: Running example</h3>
+    <p>
+        In the all-PV system on $C_4$ with
+        $a_{ij} = -b_{ij} = k_{ij}$ (and generic $P_i$),
+        one exceptional stratum is given by
+    </p>
+    <table>
+        <tr>
+            <td>
+                \[
+                    \mathcal{E} = \text{Set of } (k_{ij}) \text{ s.t. }
+                \]
+            </td>
+            <td data-id="special-cell">
+                <p data-id="special-sys">
+                    \[
+                        \left\{
+                        \begin{aligned}
+                            k_{10} k_{12}      k_{32}^{-1} k_{30}^{-1} &= 1 \\
+                            k_{10} k_{12}^{-1} k_{32}^{-1} k_{30}      &= 1 \\
+                            k_{10} k_{12}^{-1} k_{32}      k_{30}^{-1} &= 1
+                        \end{aligned}
+                        \right.
+                    \]
+                </p>
+            </td>
+            <td style="text-align: center;">
+                At most
+                <strong class="highlight">6</strong>
+                zeros
+            </td>
+        </tr>
+        <tr></tr>
+    </table>
+    <p class="fragment">
+        $\mathcal{E}$ is 1-dimensional and is defined by a
+        <em class="highlight">binomial</em> system.
+    </p>
+    <p class="fragment">
+        It contains a "torus orbit":
+        (<em>image of a monomial map)</em>
+        \[
+            (k_{10},k_{12},k_{32},k_{30})(t) =
+            (k t^1, k t^1, k t^1, k t^1)
+        \]
+        is in $\mathcal{E}$ for almost all $t \in \mathbb{C}^*$.
+        <span class="lowlight">($k \in \mathbb{C}^*$ are arbitrary)</span>
+    </p>
+    <p class="fragment">
+        This is a general phenomenon
+        that appears in all power-flow systems
+        on graphs with chordless even cycles.
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>System with "toric deficiency"</h3>
+    <p>
+        Consider a square system of $n$ Laurent polynomials
+        \[
+            F(\mathbf{x}; \mathbf{c}) =
+            F(x_1,\ldots,x_n; c_1,\ldots,c_m)
+        \]
+        parametrized by its coefficients $c_1,\ldots,c_m$
+        (one for each monomial)
+        with supports $A = (A_1,\ldots,A_n)$ spanning $\mathbb{R}^n$.
+    </p>
+    <p class="small fragment lowlight">
+        Coefficients do not provide a crisp parametrization.
+        We must form the quotient modulo a group action.
+        Coefficients can still be proxy parameters.
+    </p>
+    <div class="fragment">
+        <p>
+            For generic coefficients $\mathbf{c}$,
+            the $\mathbb{C}^*$-root count is a positive constant.
+        </p>
+        <div class="theorem">
+            (Bernshtein)
+            This constant is $\operatorname{MV}(A_1,\ldots,A_n)$.
+            <span class="highlight">(BKK)</span>
+        </div>
+    </div>
+    <p class="fragment" data-id="interested-in">
+        We are interested in:
+        There is a set of $E$ of parameters such that
+        \[
+            \text{Isolated $\mathbb{C}^*$-zero count of } F(\mathbf{x}; \mathbf{c})
+            \lneq \text{BKK bound}
+            \quad \forall \mathbf{c} \in E.
+        \]
+    </p>
+    <p class="fragment">
+        How many zeros?
+        <span class="fragment">
+            What happened to the missing ones?
+        </span>
+    </p>
+</section>
+<section data-auto-animate>
+    <h3>Special case: Torus orbit in an exceptional stratum $\mathcal{E}$</h3>
+    <p class="lowlight smaller" data-id="interested-in">
+        We are interested:
+        There is a set of $E$ of parameters such that
+        \[
+            \text{Isolated zero count of } F(\mathbf{x}; \mathbf{c})
+            \lneq \text{BKK bound}
+            \quad \forall \mathbf{c} \in E.
+        \]
+    </p>
+    <div class="definition">
+        A <strong class="term">1-parameter torus orbit</strong> in $\mathcal{E}$
+        is the image of a map
+        \[
+            t \;\mapsto\; \mathbf{c} \circ t^{\mathbf{w}} = (c_1 t^{w_1} , \ldots, c_m t^{w_m}) \in E
+            \quad\text{for almost all } t \in \mathbb{C}^*
+        \]
+    </div>
+    <p class="fragment">
+        Not all such torus orbits are interesting.
+    </p>
+    <div class="definition fragment">
+        An orbit $t \mapsto \mathbf{c} \circ t^{\mathbf{w}}$
+        in $E$ is <strong class="highlight">trivial</strong>
+        if $\mathbf{w}$ is in the row space of the Cayley embedding matrix $\hat{A}$.
+        <span class="lowlight smaller">
+            (...and consider other symmetries)
+        </span>
+    </div>
+    <p class="fragment">
+        Systems with an exceptional stratum containing a
+        <em class="highlight">non-trivial</em> torus orbit are said to have
+        <strong class="term">toric deficiency</strong>.
+    </p>
+    <div class="fragment">
+        <p>
+            Example: The all-PV/PQ system on $C_{2n}$ has toric deficiency.
+        </p>
+        <p>
+            Example: The all-PV/PQ system on any graph that contains a
+            chordless even cycle has toric deficiency.
+        </p>
+    </div>
+</section>
+<section data-auto-animate>
+    <div class="proposition" data-id="thm">
+        The root count for
+        <em class="highlight">generic</em> parameters
+        <span class="highlight">in $E$</span>
+        \[
+            \sum_{v} \text{Root count of } \operatorname{init}_v
+            F(\mathbf{x}; \mathbf{c} \circ t^{\mathbf{w}})
+        \]
+        for generic $\mathbf{c} \in E$.
+    </div>
+    <p>Applying this to the power-flow equations</p>
+    <div class="proposition fragment">
+        For the (all-PV) power-flow system
+        derived from an even cycle $C_N$.
+        Counting multiplicity, the complex root count is
+        \[
+            \left[
+                N \binom{N-1}{N/2 - 1} - \beta 
+            \right],
+        \]
+        where $\beta$ is the number of <em>balanced cycles</em>.
+        <em class="highlight">
+            (Less than BKK bound)
+        </em>
+    </div>
+</section>
+<section>
+    <h3>Stratum-confined polyhedral homotopy</h3>
+    <p>
+        Consider the polyhedral homotopy
+        $H : (\mathbb{C}^*)^n \times \mathbb{C}^* \to \mathbb{C}^n$:
+        \[
+            H(\boldsymbol{x},t) = F(\boldsymbol{x}; \boldsymbol{c}_0 \circ t^{\boldsymbol{w}}).
+        \]
+    </p>
+    <div class="fragment">
+        <div class="proposition">
+            If the image of
+            $t \mapsto \boldsymbol{c}_0 \circ t^{\boldsymbol{w}}$
+            is in the closure of an exceptional stratum $\mathcal{E}$,
+            then for generic $\boldsymbol{c}_0$ in $\mathcal{E}$,
+            every $\mathbb{C}^*$-zero of $F(\boldsymbol{x}; c_0)$
+            is reached by a homotopy path defined by $H(\boldsymbol{x},t) = 0$.
+            And the total number of paths is strictly less than the BKK bound.
+        </div>
+        <p>
+            <em>Sketch of proof.</em>
+            For generic $\boldsymbol{c}_0 \in \mathcal{E}$ and $t$,
+            the number of $\mathbb{C}^*$-zeros $H(\boldsymbol{x},t)$
+            is a constant, which is less than the BKK bound...
+        </p>
+        <div>
+            <p>Relating to</p>
+            <ul>
+                <li class="small">
+                    Anton Leykin and Josephine Yu.
+                    <em>Beyond Polyhedral Homotopies.</em>
+                    J. Symb. Comput. 91 (2017): 173-180.
+                </li>
+                <li class="small">
+                    Timothy Duff and Simon Telen and Elise Walker and Thomas Yahl.
+                    <em>Polyhedral Homotopies in Cox Coordinates.</em>
+                    Journal of Algebra and Its Applications (2020).
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section>
+    <h3>Conclusion</h3>
+    <ul>
+        <li>all PV are PQ, and all PQ are PV on "dragon marriage" graphs</li>
+        <li>PV/PQ systems have "toric deficiency"</li>
+        <li>With a minor modification, strata-confined polyhedral homotopy can be optimal</li>
+    </ul>
+</section>
+<section class="titlepage">
+    <br/>
+    <br/>
+    <h1>Thank You!</h1>
+
+    <p><code>arXiv:2304.08598</code></p>
+    <p><code>arXiv:2210.00784</code></p>
+    <br/>
+    <p>
+        <code>ti@nranchen.org</code>
+    </p>
+    <p class="lowlight">
+        <code>
+        http://www.tianranchen.org/
+        </code>
+    </p>
+    <br/>
+    <div class="cols">
+        <div class="col">
+            <img height="180" src="nsf.png">
+        </div>
+        <div class="col">
+            <p class="smaller">
+                Research supported, in part, by National Science Foundation,
+                Auburn University at Montgomery Grant-In-Aid,
+                Auburn University at Montgomery Professional Improvement Leave program,
+                and AMS-Simons travel grants
+            </p>
+        </div>
+        <div class="col">
+            <img height="180" src="aum.jpg">
+        </div>
+    </div>
+</section>

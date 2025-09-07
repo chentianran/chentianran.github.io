@@ -1,0 +1,25 @@
+<svg width="250" height="250" viewBox="20 20 180 180" xmlns="http://www.w3.org/2000/svg">
+    <!-- Arrow marker -->
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L6,3 z" fill="inherit" stroke="inherit"/>
+        </marker>
+    </defs>
+    <circle id="node0" cx="50" cy="50" r="20" stroke="#B0530f" stroke-width="2" fill="white"/>
+    <circle id="node3" cx="50" cy="150" r="20" stroke="#B0530f" stroke-width="2" fill="white"/>
+    <circle id="node2" cx="150" cy="150" r="20" stroke="#B0530f" stroke-width="2" fill="white"/>
+    <circle id="node1" cx="150" cy="50" r="20" stroke="#B0530f" stroke-width="2" fill="white"/>
+
+    <!-- Labels -->
+    <text x="50" y="55" font-size="16" text-anchor="middle" fill="black">0</text>
+    <text x="150" y="55" font-size="16" text-anchor="middle" fill="black">1</text>
+    <text x="150" y="155" font-size="16" text-anchor="middle" fill="black">2</text>
+    <text x="50" y="155" font-size="16" text-anchor="middle" fill="black">3</text>
+
+
+    <!-- Edges adjusted to stop at circle boundaries -->
+    <line class="highlight2" x1="130" y1="50"  x2="70"  y2="50"  stroke="#B0530f" stroke-width="2" marker-end="url(#arrow)"/>
+    <line class="highlight2" x1="150" y1="70"  x2="150" y2="130" stroke="#B0530f" stroke-width="2" marker-end="url(#arrow)"/>
+    <line class="highlight2" x2="50"  y2="130" x1="50"  y1="70"  stroke="#B0530f" stroke-width="2" marker-end="url(#arrow)"/>
+    <line class="highlight2" x2="70"  y2="150" x1="130" y1="150" stroke="#B0530f" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

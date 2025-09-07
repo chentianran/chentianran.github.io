@@ -158,6 +158,18 @@ div.problem:before {
 .highlight {
   color: #A00f16; }
 
+.highlight2 {
+  color: #B0530f;
+  fill: #B0530f;
+  stroke: #B0530f;
+}
+
+.highlight3 {
+  color: #0f53A0;
+  fill: #0f53A0;
+  stroke: #0f53A0;
+}
+
 .lowlight {
   color: #B09090; }
 
