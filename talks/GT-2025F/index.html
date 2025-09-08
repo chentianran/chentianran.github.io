@@ -979,18 +979,16 @@ title: GT 2025 pre-talk
         </div>
         <div class="col center">
             <svg width="160" height="160" viewBox="20 20 180 180" xmlns="http://www.w3.org/2000/svg">
+                <line x2="130" y2="50"  x1="70"  y1="50"  stroke="black" stroke-width="2"/>
+                <line x2="150" y2="70"  x1="150" y1="130" stroke="black" stroke-width="2"/>
+                <!-- <line x1="50"  y1="130" x2="50"  y2="70"  stroke="black" stroke-width="2"/> -->
+                <line x1="50"  y1="50" x2="150" y2="150" stroke="black" stroke-width="2"/>
                 <circle id="node0" cx="50" cy="50" r="20" stroke="black" stroke-width="2" fill="white"/>
-                <circle id="node3" cx="50" cy="150" r="20" stroke="black" stroke-width="2" fill="white"/>
                 <circle id="node2" cx="150" cy="150" r="20" stroke="black" stroke-width="2" fill="white"/>
                 <circle id="node1" cx="150" cy="50" r="20" stroke="black" stroke-width="2" fill="white"/>
                 <text x="50" y="55" font-size="16" text-anchor="middle" fill="black">0</text>
                 <text x="150" y="55" font-size="16" text-anchor="middle" fill="black">1</text>
                 <text x="150" y="155" font-size="16" text-anchor="middle" fill="black">2</text>
-                <text x="50" y="155" font-size="16" text-anchor="middle" fill="black">3</text>
-                <line x2="130" y2="50"  x1="70"  y1="50"  stroke="black" stroke-width="2"/>
-                <line x2="150" y2="70"  x1="150" y1="130" stroke="black" stroke-width="2"/>
-                <line x1="50"  y1="130" x2="50"  y2="70"  stroke="black" stroke-width="2"/>
-                <line x1="70"  y1="150" x2="130" y2="150" stroke="black" stroke-width="2"/>
             </svg>
         </div>
     </div>
@@ -1709,29 +1707,27 @@ title: GT 2025 pre-talk
     </div>
     <p class="fragment" data-id="interested-in">
         We are interested in:
-        There is a set of $E$ of parameters such that
+        There is a set $\mathcal{E}$ of parameters such that
         \[
             \text{Isolated $\mathbb{C}^*$-zero count of } F(\mathbf{x}; \mathbf{c})
             \lneq \text{BKK bound}
-            \quad \forall \mathbf{c} \in E.
+            \quad \forall \mathbf{c} \in \mathcal{E}.
         \]
     </p>
     <p class="fragment">
         How many zeros?
-        <span class="fragment">
-            What happened to the missing ones?
-        </span>
+        And how to find them efficiently?
     </p>
 </section>
 <section data-auto-animate>
     <h3>Special case: Torus orbit in an exceptional stratum $\mathcal{E}$</h3>
     <p class="lowlight smaller" data-id="interested-in">
         We are interested:
-        There is a set of $E$ of parameters such that
+        There is a set $\mathcal{E}$ of parameters such that
         \[
             \text{Isolated zero count of } F(\mathbf{x}; \mathbf{c})
             \lneq \text{BKK bound}
-            \quad \forall \mathbf{c} \in E.
+            \quad \forall \mathbf{c} \in \mathcal{E}.
         \]
     </p>
     <div class="definition">
@@ -1781,6 +1777,7 @@ title: GT 2025 pre-talk
     </div>
     <p>Applying this to the power-flow equations</p>
     <div class="proposition fragment">
+        (C., Korchevskaia, Lindberg)
         For the (all-PV) power-flow system
         derived from an even cycle $C_N$.
         Counting multiplicity, the complex root count is
@@ -1812,7 +1809,7 @@ title: GT 2025 pre-talk
             then for generic $\boldsymbol{c}_0$ in $\mathcal{E}$,
             every $\mathbb{C}^*$-zero of $F(\boldsymbol{x}; c_0)$
             is reached by a homotopy path defined by $H(\boldsymbol{x},t) = 0$.
-            And the total number of paths is strictly less than the BKK bound.
+            And the total number of paths is less than the BKK bound.
         </div>
         <p>
             <em>Sketch of proof.</em>
@@ -1823,12 +1820,12 @@ title: GT 2025 pre-talk
         <div>
             <p>Relating to</p>
             <ul>
-                <li class="small">
+                <li>
                     Anton Leykin and Josephine Yu.
                     <em>Beyond Polyhedral Homotopies.</em>
                     J. Symb. Comput. 91 (2017): 173-180.
                 </li>
-                <li class="small">
+                <li>
                     Timothy Duff and Simon Telen and Elise Walker and Thomas Yahl.
                     <em>Polyhedral Homotopies in Cox Coordinates.</em>
                     Journal of Algebra and Its Applications (2020).
@@ -1870,8 +1867,7 @@ title: GT 2025 pre-talk
             <p class="smaller">
                 Research supported, in part, by National Science Foundation,
                 Auburn University at Montgomery Grant-In-Aid,
-                Auburn University at Montgomery Professional Improvement Leave program,
-                and AMS-Simons travel grants
+                AMS-Simons Research Enhancement Grant for Primarily Undergraduate Institution Faculty
             </p>
         </div>
         <div class="col">
