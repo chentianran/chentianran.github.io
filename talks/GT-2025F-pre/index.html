@@ -5,7 +5,7 @@ title: GT 2025 pre-talk
 <section class="titlepage">
     <div class="titlebox">
         <h2 class="title">
-            Mixed volume, mixed cells, and stable self intersections
+            Mixed volume, mixed cells, and stable intersections
         </h2>
     </div>
     <br/>
@@ -35,18 +35,18 @@ title: GT 2025 pre-talk
             \operatorname{vol}(\lambda_1 P_1 + \cdots + \lambda_n P_n)
         \]
     </div>
-    <div class="theorem">
-        <p>
-            (Bernshtein-Kushnirenko-Khovanskii)
-            Given a system of Laurent polynomials
-            $f_1,\dots,f_n$ in $(x_1,\dots,x_n)$
-            with <span class="emph">generic</span> coefficients,
-            the number of isolated common roots in
-            $(\mathbb{C}^*)^n$ is bounded by
-        </p>
-        <p>
-            \[ \text{MVol}(\text{Newt}(f_1),\dots,\text{Newt}(f_n)) \]
-        </p>
+    <div class="theorem fragment">
+        Mixed volume equals to the sum of the volumes of
+        the mixed cells in a <em class="highlight">mixed subdivision</em>.
+    </div>
+    <div class="theorem fragment">
+        (Bernshtein-Kushnirenko-Khovanskii)
+        Given a system of Laurent polynomials
+        $f_1,\dots,f_n$ in $(x_1,\dots,x_n)$
+        with <span class="emph">generic</span> coefficients,
+        the number of isolated common roots in
+        $(\mathbb{C}^*)^n$ is bounded by
+        \[ \text{MV}(\text{Newt}(f_1),\dots,\text{Newt}(f_n)) \]
     </div>
 </section>
 <section data-auto-animate>
@@ -323,9 +323,9 @@ title: GT 2025 pre-talk
         has positive contribution to the mixed volume.
     </p>
 </section>
-<section>
+<section data-auto-animate>
     <h3>Well-behaving subdivisions</h3>
-    <div class="definition">
+    <div class="definition" data-id="def-mixed-subdiv">
         For finite sets $S_1,\ldots,S_n \subset \mathbb{R}^n$
         (or point configurations), a
         <strong class="term">
@@ -372,28 +372,19 @@ title: GT 2025 pre-talk
 
     </div>
 </section>
-<section>
-    <div class="definition lowlight">
-        For finite sets $S_1,\ldots,S_n \subset \mathbb{R}^n$
-        (or point configurations), a
-        <strong class="term">
-            mixed subdivision
-        </strong>
-        $M$ of $(S_1,\ldots,S_n)$ is a subdivision of
-        $\sum_{i=1}^n S_i$ such that
-        <ul>
-            <li>
-               Each cell $C$ of $M$ can be expressed as a Minkowski sum $C = \sum_{i=1}^n C_i$ with $C_i \subseteq S_i$;
-            </li>
-            <li>
-                If $A = \sum_{i=1}^n A_i$ with $A_i \subseteq S_i$
-                and $B = \sum_{i=1}^n B_i$ with $B_i \subseteq S_i$
-                are cells in $M$ and $A \cap B \neq \varnothing$, then
-                $A \cap B = \sum_{i=1}^n A_i \cap B_i$.
-            </li>
-        </ul>
-    </div>
+<section data-auto-animate>
     <div>
+        <p>
+            \[
+                \begin{aligned}
+                    \operatorname{vol}(\lambda_1 S_1 + \lambda_2 S_2)
+                    &=
+                    \sum_{C \in M} \operatorname{vol}(\lambda_1 C_1 + \lambda_2 C_2) \\
+                    &=
+                    \sum_{C \in M} \lambda_1^{\dim C_1} \lambda_2^{\dim C_2} \operatorname{vol}(C_1 + C_2)
+                \end{aligned}
+            \]
+        </p>
         <p>
             <strong class="term">
                 Mixed cells:
@@ -409,7 +400,7 @@ title: GT 2025 pre-talk
     </div>
     <div class="fragment">
         <p>
-            How to fine mixed cells?
+            How to find mixed cells?
             A naive approach:
         </p>
         <ul>
@@ -515,29 +506,45 @@ title: GT 2025 pre-talk
             <text x="0" y="0" fill="black"> Normalized vol. = 8</text>
     </svg>
     </div>    
-    <ul>
-        <li>
-            C. 
-            <span class="footnote">"Unmixing the mixed volume computation"</span>
-        </li>
-        <li>
-            F. Bihan & I. Soprunov 
-            <span class="footnote">
-                "Criteria for Strict Monotonicity of the Mixed Volume of Convex Polytopes"
-            </span>
-        </li>
-    </ul>
+    <p class="small lowlight">
+        Rojas, J. Maurice. 
+        <em>A convex geometric approach to counting the roots of a polynomial system.</em>
+        Theoretical Computer Science 133.1 (1994): 105-140.
+    </p>
+    <p class="small lowlight">
+        Bihan, Frédéric, and Ivan Soprunov. 
+        <em>Criteria for strict monotonicity of the mixed volume of convex polytopes.</em>
+        Advances in Geometry 19.4 (2019): 527-540.
+    </p>
+    <p class="small lowlight">
+        Chen, Tianran.
+        <em>Unmixing the mixed volume computation.</em>
+        Discrete & Computational Geometry 62.1 (2019): 55-86.
+    </p>
 </section>
 <section>
     <h3>BKK bound</h3>
     <div class="theorem">
-        (Bernshtein-Kushnirenko-Khovanskii)
+        (BKK, again)
         Given a system of Laurent polynomials
         $f_1,\dots,f_n$ in $(x_1,\dots,x_n)$
         with <span class="emph">generic</span> coefficients,
         the number of isolated common roots in
         $(\mathbb{C}^*)^n$ is bounded by
         \[ \text{MV}(\text{Newt}(f_1),\dots,\text{Newt}(f_n)) \]
+    </div>
+    <p class="fragment">
+        What is the generic $\mathbb{C}$-root count for
+        \[
+            \begin{cases}
+                a x^{2} y^{1} + b x^{1} y^{2} + c x^{0} y^{0} \\
+                d x^{2} y^{0} + e x^{0} y^{2} + f x^{2} y^{2} + g x^{0} y^{0}
+            \end{cases}
+            \;?
+        \]
+    </p>
+    <div class="center fragment">
+        <img src="two-np.png" alt="" width="720"/>
     </div>
 </section>
 <section>
