@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Animation Demo - Mass-Spring System</title>
+  <style>
+    :root {
+      --color-primary: #AA1111;
+      --color-primary-hover: #CC1111;
+      --color-primary-shadow: rgba(170, 17, 17, 0.3);
+      --color-text: #555;
+      --color-heading: #333;
+      --color-border: #dee2e6;
+      --color-background: #ffffff;
+      --color-bg-light: #f8f9fa;
+      --color-gray: #666;
+      --color-gray-dark: #555;
+      --color-gray-darker: #333;
+      --color-gray-light: #777;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--color-background);
+      color: var(--color-text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: var(--color-background);
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      max-width: 900px;
+      width: 100%;
+      border: 1px solid #e0e0e0;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .canvas-container {
+      flex: 1;
+      min-width: 400px;
+      background: var(--color-bg-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      gap: 15px;
+    }
+
+    canvas {
+      border: 2px solid var(--color-border);
+      border-radius: 10px;
+      background: var(--color-background);
+      display: block;
+    }
+
+    #springCanvas {
+      width: 400px;
+      height: 400px;
+    }
+
+    #graphCanvas {
+      width: 400px;
+      height: 200px;
+    }
+
+    #phaseCanvas {
+      width: 400px;
+      height: 200px;
+    }
+
+    .controls {
+      flex: 1;
+      min-width: 300px;
+      padding: 30px;
+    }
+
+    .control-group {
+      margin-bottom: 25px;
+    }
+
+    .control-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--color-heading);
+      font-size: 0.95em;
+    }
+
+    .control-group input[type="range"] {
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--color-border);
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .control-group input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      cursor: pointer;
+    }
+
+    .control-group input[type="range"]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      cursor: pointer;
+      border: none;
+    }
+
+    .value-display {
+      display: inline-block;
+      margin-left: 10px;
+      color: var(--color-primary);
+      font-weight: 600;
+      min-width: 60px;
+    }
+
+    .scenario-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .scenario-btn {
+      padding: 12px 20px;
+      border: 2px solid var(--color-primary);
+      background: var(--color-background);
+      color: var(--color-primary);
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 0.9em;
+    }
+
+    .scenario-btn:hover {
+      background: var(--color-primary);
+      color: var(--color-background);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--color-primary-shadow);
+    }
+
+    .scenario-btn:active {
+      transform: translateY(0);
+    }
+
+    .control-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .control-btn {
+      padding: 15px;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .reset-btn {
+      background: var(--color-gray-dark);
+      box-shadow: 0 2px 8px rgba(85, 85, 85, 0.2);
+    }
+
+    .reset-btn:hover {
+      background: var(--color-gray-darker);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(85, 85, 85, 0.3);
+    }
+
+    .reset-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(85, 85, 85, 0.2);
+    }
+
+    .play-pause-btn {
+      background: var(--color-primary);
+      box-shadow: 0 2px 8px rgba(170, 17, 17, 0.2);
+    }
+
+    .play-pause-btn:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--color-primary-shadow);
+    }
+
+    .play-pause-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(170, 17, 17, 0.2);
+    }
+
+    .play-pause-btn.paused {
+      background: var(--color-gray);
+      box-shadow: 0 2px 8px rgba(102, 102, 102, 0.2);
+    }
+
+    .play-pause-btn.paused:hover {
+      background: var(--color-gray-light);
+      box-shadow: 0 4px 12px rgba(102, 102, 102, 0.3);
+    }
+
+    .info-panel {
+      background: var(--color-bg-light);
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+
+    .info-panel h3 {
+      margin: 0 0 10px 0;
+      color: var(--color-heading);
+      font-size: 1em;
+    }
+
+    .info-panel p {
+      margin: 5px 0;
+      color: var(--color-text);
+    }
+
+    .info-panel .value {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    /* Additional CSS classes for inline-styled elements */
+    .forcing-select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid var(--color-border);
+      font-size: 0.95em;
+      cursor: pointer;
+    }
+
+    .forcing-param-label {
+      margin-bottom: 8px;
+      display: block;
+      font-weight: 600;
+      color: var(--color-heading);
+      font-size: 0.95em;
+    }
+
+    .forcing-param-slider {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  </style>
+  <script type="module">
+    var t=Object.defineProperty,e=Object.getOwnPropertySymbols,i=Object.prototype.hasOwnProperty,n=Object.prototype.propertyIsEnumerable,o=(e,i,n)=>i in e?t(e,i,{enumerable:!0,configurable:!0,writable:!0,value:n}):e[i]=n,s=(t,s)=>{for(var a in s||(s={}))i.call(s,a)&&o(t,a,s[a]);if(e)for(var a of e(s))n.call(s,a)&&o(t,a,s[a]);return t};!function(){const t=document.createElement("link").relList;if(!(t&&t.supports&&t.supports("modulepreload"))){for(const t of document.querySelectorAll('link[rel="modulepreload"]'))e(t);new MutationObserver(t=>{for(const i of t)if("childList"===i.type)for(const t of i.addedNodes)"LINK"===t.tagName&&"modulepreload"===t.rel&&e(t)}).observe(document,{childList:!0,subtree:!0})}function e(t){if(t.ep)return;t.ep=!0;const e=function(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerPolicy&&(e.referrerPolicy=t.referrerPolicy),"use-credentials"===t.crossOrigin?e.credentials="include":"anonymous"===t.crossOrigin?e.credentials="omit":e.credentials="same-origin",e}(t);fetch(t.href,e)}}();const a={none:function(t){return 0},constant:function(t,{force:e=1}){return e},sine:function(t,{amplitude:e=1,frequency:i=1}){const n=2*Math.PI*i;return e*Math.sin(n*t)},cosine:function(t,{amplitude:e=1,frequency:i=1}){const n=2*Math.PI*i;return e*Math.cos(n*t)},step:function(t,{amplitude:e=1,stepTime:i=0}){return t>=i?e:0},square:function(t,{amplitude:e=1,frequency:i=1}){const n=1/i;return e*(t%n/n<.5?1:-1)},impulse:function(t,{amplitude:e=1,impulseTime:i=0,width:n=.01}){return t>=i&&t<i+n?e/n:0}},l={none:{},constant:{force:1},sine:{amplitude:1,frequency:1},cosine:{amplitude:1,frequency:1},step:{amplitude:1,stepTime:1},square:{amplitude:1,frequency:1},impulse:{amplitude:1,impulseTime:1,width:.01}};const r=1e3/60,h=r/1e3,m=document.getElementById("springCanvas").getContext("2d"),d=document.getElementById("graphCanvas").getContext("2d"),c=document.getElementById("phaseCanvas").getContext("2d"),p=new class{constructor({m:t=1,b:e=.1,k:i=1,y0:n=1,v0:o=0}){if(t<=0)throw new Error("Mass must be positive");if(e<0)throw new Error("Damping coefficient must be non-negative");if(i<0)throw new Error("Spring constant must be non-negative");this.m=t,this.b=e,this.k=i,this.y0=n,this.v0=o,this.state={y:n,v:o,t:0},this.forcingName="none",this.forcingFn=a.none,this.forcingParams={}}computeDerivatives(t){const{y:e,v:i,t:n}=t,{m:o,b:s,k:a}=this;return{dydt:i,dvdt:(-s*i-a*e+this.forcingFn(n,this.forcingParams))/o}}step(t){return this.state=function(t,e,i){const{y:n,v:o,t:s}=t,a=e({y:n,v:o,t:s}),l=e({y:n+.5*a.dydt*i,v:o+.5*a.dvdt*i,t:s+.5*i}),r=e({y:n+.5*l.dydt*i,v:o+.5*l.dvdt*i,t:s+.5*i}),h=e({y:n+r.dydt*i,v:o+r.dvdt*i,t:s+i});return{y:n+(a.dydt+2*l.dydt+2*r.dydt+h.dydt)/6*i,v:o+(a.dvdt+2*l.dvdt+2*r.dvdt+h.dvdt)/6*i,t:s+i}}(this.state,t=>this.computeDerivatives(t),t),s({},this.state)}setParameters({m:t,b:e,k:i}){if(void 0!==t){if(t<=0)throw new Error("Mass must be positive");this.m=t}if(void 0!==e){if(e<0)throw new Error("Damping coefficient must be non-negative");this.b=e}if(void 0!==i){if(i<0)throw new Error("Spring constant must be non-negative");this.k=i}}setForcing(t,e={}){if(!a[t])throw new Error(`Unknown forcing function: ${t}`);this.forcingName=t,this.forcingFn=a[t],this.forcingParams=s(s({},l[t]),e)}getState(){return s({},this.state)}getParameters(){return{m:this.m,b:this.b,k:this.k}}getForcing(){return{name:this.forcingName,params:s({},this.forcingParams)}}reset(){this.state={y:this.y0,v:this.v0,t:0}}getSystemProperties(){const{m:t,b:e,k:i}=this,n=Math.sqrt(i/t),o=n/(2*Math.PI),s=1/o,a=e/(2*Math.sqrt(t*i));let l;const r=e*e-4*t*i;l=Math.abs(r)<1e-10?"critical":r>0?"overdamped":"underdamped";const h="underdamped"===l?n*Math.sqrt(1-a*a):0;return{omega0:n,f0:o,T0:s,zeta:a,regime:l,omegaD:h,fD:h/(2*Math.PI),Q:Math.sqrt(t*i)/e}}getEnergy(){const{y:t,v:e}=this.state;return.5*this.m*e*e+.5*this.k*t*t}}({m:1,b:.1,k:1,y0:1,v0:0}),u=new class{constructor({width:t=400,height:e=600,scale:i=100,springCoils:n=10,massWidth:o=60,massHeight:s=40,springColor:a="#4a90e2",massColor:l="#e74c3c",equilibriumColor:r="#95a5a6",systemParams:h=null}={}){this.width=t,this.height=e,this.scale=i,this.springCoils=n,this.massWidth=o,this.massHeight=s,this.springColor=a,this.massColor=l,this.equilibriumColor=r,this.systemParams=h,this.anchorX=t/2,this.anchorY=e-50,this.equilibriumY=e/2}setSystemParams(t){this.systemParams=t}physicsToCanvasY(t){return this.equilibriumY-t*this.scale}drawSpring(t,e,i){const n=this.anchorX,o=i-e,s=4*this.springCoils;t.strokeStyle=this.springColor,t.lineWidth=3,t.lineCap="round",t.lineJoin="round",t.beginPath(),t.moveTo(n,e);for(let a=0;a<=s;a++){const i=e+a/s*o,l=a*Math.PI/2,r=15*Math.sin(l);t.lineTo(n+r,i)}t.stroke()}drawMass(t,e){const i=this.anchorX-this.massWidth/2,n=e-this.massHeight/2;t.fillStyle="rgba(0, 0, 0, 0.2)",t.fillRect(i+3,n+3,this.massWidth,this.massHeight),t.fillStyle=this.massColor,t.fillRect(i,n,this.massWidth,this.massHeight),t.strokeStyle="#c0392b",t.lineWidth=2,t.strokeRect(i,n,this.massWidth,this.massHeight),t.fillStyle="#ffffff",t.font="bold 16px Arial",t.textAlign="center",t.textBaseline="middle",t.fillText("m",this.anchorX,e)}drawAnchor(t){const e=this.anchorX,i=this.anchorY;t.strokeStyle="#34495e",t.lineWidth=4,t.beginPath(),t.moveTo(e-40,i),t.lineTo(e+40,i),t.stroke(),t.lineWidth=2;for(let n=-40;n<=40;n+=10)t.beginPath(),t.moveTo(e+n,i),t.lineTo(e+n-5,i+8),t.stroke();t.fillStyle="#34495e",t.beginPath(),t.arc(e,i,6,0,2*Math.PI),t.fill()}drawEquilibriumLine(t){const e=this.equilibriumY;t.strokeStyle=this.equilibriumColor,t.lineWidth=2,t.setLineDash([5,5]),t.beginPath(),t.moveTo(20,e),t.lineTo(this.width-20,e),t.stroke(),t.setLineDash([]),t.fillStyle=this.equilibriumColor,t.font="12px Arial",t.textAlign="left",t.fillText("equilibrium",25,e-8)}drawInfo(t,e,i){t.fillStyle="#2c3e50",t.font="14px monospace",t.textAlign="left";[`Position: ${e>=0?"+":""}${e.toFixed(3)} m`,`Velocity: ${i>=0?"+":""}${i.toFixed(3)} m/s`].forEach((e,i)=>{t.fillText(e,20,20+20*i)})}drawVelocityVector(t,e,i){if(Math.abs(i)<.01)return;const n=this.anchorX+this.massWidth/2+20,o=Math.min(30*Math.abs(i),100),s=i>0?-1:1;t.strokeStyle="#27ae60",t.fillStyle="#27ae60",t.lineWidth=3,t.beginPath(),t.moveTo(n,e),t.lineTo(n,e+o*s),t.stroke();t.beginPath(),t.moveTo(n,e+o*s),t.lineTo(n-3,e+o*s-6*s),t.lineTo(n+3,e+o*s-6*s),t.closePath(),t.fill(),t.font="12px Arial",t.textAlign="left",t.fillText("v",n+10,e)}drawAccelerationVector(t,e,i){if(Math.abs(i)<.01)return;const n=this.anchorX-this.massWidth/2-20,o=Math.min(20*Math.abs(i),100),s=i>0?-1:1;t.strokeStyle="#e67e22",t.fillStyle="#e67e22",t.lineWidth=3,t.beginPath(),t.moveTo(n,e),t.lineTo(n,e+o*s),t.stroke();t.beginPath(),t.moveTo(n,e+o*s),t.lineTo(n-3,e+o*s-6*s),t.lineTo(n+3,e+o*s-6*s),t.closePath(),t.fill(),t.font="12px Arial",t.textAlign="right",t.fillText("a",n-10,e)}clear(t){t.fillStyle="#ffffff",t.fillRect(0,0,this.width,this.height)}draw(t,e,i=0){const{y:n,v:o}=e;this.clear(t);const s=this.physicsToCanvasY(n);let a=null;if(this.systemParams){const{m:t,b:e,k:s}=this.systemParams;a=(-e*o-s*n+i)/t}this.drawEquilibriumLine(t),this.drawAnchor(t),this.drawSpring(t,this.anchorY,s),this.drawMass(t,s),this.drawVelocityVector(t,s,o),null!==a&&this.drawAccelerationVector(t,s,a),this.drawInfo(t,n,o)}getStats(t){const{y:e}=t,i=this.physicsToCanvasY(e);return{massY:i,springLength:Math.abs(this.anchorY-i),isCompressed:e>0,isExtended:e<0,isAtEquilibrium:Math.abs(e)<.001}}}({width:400,height:400,systemParams:{m:1,b:.1,k:1}}),g=new class{constructor({width:t=400,height:e=200,marginLeft:i=50,marginRight:n=20,marginTop:o=20,marginBottom:s=40,lineColor:a="#e74c3c",gridColor:l="#e0e0e0",axisColor:r="#2c3e50"}={}){this.width=t,this.height=e,this.marginLeft=i,this.marginRight=n,this.marginTop=o,this.marginBottom=s,this.lineColor=a,this.gridColor=l,this.axisColor=r,this.plotWidth=t-i-n,this.plotHeight=e-o-s,this.plotLeft=i,this.plotTop=o,this.plotRight=i+this.plotWidth,this.plotBottom=o+this.plotHeight}clear(t){t.fillStyle="#ffffff",t.fillRect(0,0,this.width,this.height)}calculateNiceBounds(t,e){if(Math.abs(e-t)<.001)return{min:t-1,max:e+1,interval:.5};const i=e-t,n=Math.pow(10,Math.floor(Math.log10(i))),o=i/n;let s;s=o<=1.5?.2*n:o<=3?.5*n:o<=7?1*n:2*n;return{min:Math.floor(t/s)*s,max:Math.ceil(e/s)*s,interval:s}}drawGrid(t,e,i){t.strokeStyle=this.gridColor,t.lineWidth=1,t.setLineDash([2,2]);for(let n=0;n<=e.tMax;n+=i.tInterval){const i=this.plotLeft+n/e.tMax*this.plotWidth;t.beginPath(),t.moveTo(i,this.plotTop),t.lineTo(i,this.plotBottom),t.stroke()}for(let n=e.yMin;n<=e.yMax;n+=i.yInterval){if(Math.abs(n)<.01*i.yInterval)continue;const o=this.plotBottom-(n-e.yMin)/(e.yMax-e.yMin)*this.plotHeight;t.beginPath(),t.moveTo(this.plotLeft,o),t.lineTo(this.plotRight,o),t.stroke()}t.setLineDash([])}drawAxes(t,e,i){if(t.strokeStyle=this.axisColor,t.fillStyle=this.axisColor,t.lineWidth=2,t.font="12px Arial",t.beginPath(),t.moveTo(this.plotLeft,this.plotBottom),t.lineTo(this.plotRight,this.plotBottom),t.stroke(),t.beginPath(),t.moveTo(this.plotLeft,this.plotTop),t.lineTo(this.plotLeft,this.plotBottom),t.stroke(),e.yMin<0&&e.yMax>0){const i=this.plotBottom-(0-e.yMin)/(e.yMax-e.yMin)*this.plotHeight;t.strokeStyle=this.axisColor,t.lineWidth=1.5,t.beginPath(),t.moveTo(this.plotLeft,i),t.lineTo(this.plotRight,i),t.stroke()}t.fillStyle=this.axisColor,t.textAlign="center",t.textBaseline="top";for(let n=0;n<=e.tMax;n+=i.tInterval){const i=this.plotLeft+n/e.tMax*this.plotWidth;t.fillText(n.toFixed(1)+"s",i,this.plotBottom+5)}t.font="bold 14px Arial",t.fillText("Time (s)",this.plotLeft+this.plotWidth/2,this.plotBottom+25),t.font="12px Arial",t.textAlign="right",t.textBaseline="middle";for(let n=e.yMin;n<=e.yMax;n+=i.yInterval){const i=this.plotBottom-(n-e.yMin)/(e.yMax-e.yMin)*this.plotHeight;t.fillText(n.toFixed(1)+"m",this.plotLeft-5,i)}t.save(),t.translate(15,this.plotTop+this.plotHeight/2),t.rotate(-Math.PI/2),t.font="bold 14px Arial",t.textAlign="center",t.textBaseline="top",t.fillText("Position (m)",0,0),t.restore()}drawForcingPlot(t,e,i,n){t.strokeStyle="#999999",t.lineWidth=1,t.lineCap="round",t.lineJoin="round",t.beginPath();const o=(n.tMax-n.tMin)/200;for(let s=0;s<=200;s++){const a=n.tMin+s*o,l=e(a,i),r=this.plotLeft+(a-n.tMin)/(n.tMax-n.tMin)*this.plotWidth,h=this.plotBottom-(l-n.yMin)/(n.yMax-n.yMin)*this.plotHeight;0===s?t.moveTo(r,h):t.lineTo(r,h)}t.stroke()}drawPlot(t,e,i){if(e.length<2)return;t.strokeStyle=this.lineColor,t.lineWidth=2,t.lineCap="round",t.lineJoin="round",t.beginPath();for(let a=0;a<e.length;a++){const n=e[a],o=this.plotLeft+(n.t-i.tMin)/(i.tMax-i.tMin)*this.plotWidth,s=this.plotBottom-(n.y-i.yMin)/(i.yMax-i.yMin)*this.plotHeight;0===a?t.moveTo(o,s):t.lineTo(o,s)}t.stroke();const n=e[e.length-1],o=this.plotLeft+(n.t-i.tMin)/(i.tMax-i.tMin)*this.plotWidth,s=this.plotBottom-(n.y-i.yMin)/(i.yMax-i.yMin)*this.plotHeight;t.fillStyle=this.lineColor,t.beginPath(),t.arc(o,s,4,0,2*Math.PI),t.fill()}draw(t,e,i=null,n=null){if(this.clear(t),0===e.length)return t.fillStyle="#999",t.font="14px Arial",t.textAlign="center",t.textBaseline="middle",void t.fillText("Waiting for data...",this.width/2,this.height/2);const o=e.map(t=>t.t),s=e.map(t=>t.y),a=Math.max(...o),l=Math.max(a,5),r=Math.min(...s),h=Math.max(...s);let m,d;if(null!==i){const t=Math.abs(i);m=Math.min(r,-t),d=Math.max(h,t)}else m=r,d=h;if(n&&"none"!==n.name&&n.fn){const t=50,e=l/t;for(let i=0;i<=t;i++){const t=i*e,o=n.fn(t,n.params);m=Math.min(m,o),d=Math.max(d,o)}}const c=this.calculateNiceBounds(m,d);let p;p=l<=5?1:l<=20?2:l<=50?5:l<=100?10:20;const u={tMin:0,tMax:l,yMin:c.min,yMax:c.max},g={tInterval:p,yInterval:c.interval};this.drawGrid(t,u,g),this.drawAxes(t,u,g),n&&"none"!==n.name&&n.fn&&this.drawForcingPlot(t,n.fn,n.params,u),this.drawPlot(t,e,u)}getStats(t){if(0===t.length)return{dataPoints:0,tRange:0,yRange:0};const e=t.map(t=>t.t),i=t.map(t=>t.y);return{dataPoints:t.length,tMin:Math.min(...e),tMax:Math.max(...e),tRange:Math.max(...e)-Math.min(...e),yMin:Math.min(...i),yMax:Math.max(...i),yRange:Math.max(...i)-Math.min(...i)}}}({width:400,height:200}),y=new class{constructor({width:t=400,height:e=200,marginLeft:i=50,marginRight:n=20,marginTop:o=20,marginBottom:s=40,trajectoryColor:a="#888888",currentPointColor:l="#e74c3c",gridColor:r="#e0e0e0",axisColor:h="#2c3e50"}={}){this.width=t,this.height=e,this.marginLeft=i,this.marginRight=n,this.marginTop=o,this.marginBottom=s,this.trajectoryColor=a,this.currentPointColor=l,this.gridColor=r,this.axisColor=h,this.plotWidth=t-i-n,this.plotHeight=e-o-s,this.plotLeft=i,this.plotTop=o,this.plotRight=i+this.plotWidth,this.plotBottom=o+this.plotHeight}clear(t){t.fillStyle="#ffffff",t.fillRect(0,0,this.width,this.height)}calculateNiceBounds(t,e){if(Math.abs(e-t)<.001)return{min:t-1,max:e+1,interval:.5};const i=e-t,n=Math.pow(10,Math.floor(Math.log10(i))),o=i/n;let s;s=o<=1.5?.2*n:o<=3?.5*n:o<=7?1*n:2*n;return{min:Math.floor(t/s)*s,max:Math.ceil(e/s)*s,interval:s}}drawGrid(t,e,i){t.strokeStyle=this.gridColor,t.lineWidth=1,t.setLineDash([2,2]);for(let n=e.vMin;n<=e.vMax;n+=i.vInterval){if(Math.abs(n)<.01*i.vInterval)continue;const o=this.plotLeft+(n-e.vMin)/(e.vMax-e.vMin)*this.plotWidth;t.beginPath(),t.moveTo(o,this.plotTop),t.lineTo(o,this.plotBottom),t.stroke()}for(let n=e.yMin;n<=e.yMax;n+=i.yInterval){if(Math.abs(n)<.01*i.yInterval)continue;const o=this.plotBottom-(n-e.yMin)/(e.yMax-e.yMin)*this.plotHeight;t.beginPath(),t.moveTo(this.plotLeft,o),t.lineTo(this.plotRight,o),t.stroke()}t.setLineDash([])}drawAxes(t,e,i){t.strokeStyle=this.axisColor,t.fillStyle=this.axisColor,t.lineWidth=2,t.font="12px Arial";let n=this.plotBottom;e.yMin<0&&e.yMax>0&&(n=this.plotBottom-(0-e.yMin)/(e.yMax-e.yMin)*this.plotHeight),t.beginPath(),t.moveTo(this.plotLeft,n),t.lineTo(this.plotRight,n),t.stroke();let o=this.plotLeft;e.vMin<0&&e.vMax>0&&(o=this.plotLeft+(0-e.vMin)/(e.vMax-e.vMin)*this.plotWidth),t.beginPath(),t.moveTo(o,this.plotTop),t.lineTo(o,this.plotBottom),t.stroke(),t.fillStyle=this.axisColor,t.textAlign="center",t.textBaseline="top";for(let s=e.vMin;s<=e.vMax+.01*i.vInterval;s+=i.vInterval){const i=this.plotLeft+(s-e.vMin)/(e.vMax-e.vMin)*this.plotWidth;t.fillText(s.toFixed(1),i,this.plotBottom+5)}t.font="bold 14px Arial",t.fillText("y' (m/s)",this.plotLeft+this.plotWidth/2,this.plotBottom+22),t.font="12px Arial",t.textAlign="right",t.textBaseline="middle";for(let s=e.yMin;s<=e.yMax+.01*i.yInterval;s+=i.yInterval){const i=this.plotBottom-(s-e.yMin)/(e.yMax-e.yMin)*this.plotHeight;t.fillText(s.toFixed(1),this.plotLeft-5,i)}t.save(),t.translate(15,this.plotTop+this.plotHeight/2),t.rotate(-Math.PI/2),t.font="bold 14px Arial",t.textAlign="center",t.textBaseline="top",t.fillText("y (m)",0,0),t.restore()}drawTrajectory(t,e,i){if(!(e.length<2)){t.strokeStyle=this.trajectoryColor,t.lineWidth=1.5,t.lineCap="round",t.lineJoin="round",t.beginPath();for(let n=0;n<e.length;n++){const o=e[n],s=this.plotLeft+(o.v-i.vMin)/(i.vMax-i.vMin)*this.plotWidth,a=this.plotBottom-(o.y-i.yMin)/(i.yMax-i.yMin)*this.plotHeight;0===n?t.moveTo(s,a):t.lineTo(s,a)}t.stroke()}}drawCurrentPoint(t,e,i){const n=this.plotLeft+(e.v-i.vMin)/(i.vMax-i.vMin)*this.plotWidth,o=this.plotBottom-(e.y-i.yMin)/(i.yMax-i.yMin)*this.plotHeight;t.fillStyle=this.currentPointColor,t.beginPath(),t.arc(n,o,5,0,2*Math.PI),t.fill()}draw(t,e,i=1,n=0){if(this.clear(t),0===e.length)return t.fillStyle="#999",t.font="14px Arial",t.textAlign="center",t.textBaseline="middle",void t.fillText("Waiting for data...",this.width/2,this.height/2);const o=e.map(t=>t.y),s=e.map(t=>t.v),a=Math.min(...o),l=Math.max(...o),r=Math.min(...s),h=Math.max(...s),m=Math.max(Math.abs(i),.5),d=Math.max(Math.abs(n),1),c=Math.min(a,-m),p=Math.max(l,m),u=Math.min(r,-d),g=Math.max(h,d),y=this.calculateNiceBounds(c,p),f=this.calculateNiceBounds(u,g),v={vMin:f.min,vMax:f.max,yMin:y.min,yMax:y.max},M={vInterval:f.interval,yInterval:y.interval};this.drawGrid(t,v,M),this.drawAxes(t,v,M),this.drawTrajectory(t,e,v);const x=e[e.length-1];this.drawCurrentPoint(t,x,v)}getStats(t){if(0===t.length)return{dataPoints:0,yRange:0,vRange:0};const e=t.map(t=>t.y),i=t.map(t=>t.v);return{dataPoints:t.length,yMin:Math.min(...e),yMax:Math.max(...e),yRange:Math.max(...e)-Math.min(...e),vMin:Math.min(...i),vMax:Math.max(...i),vRange:Math.max(...i)-Math.min(...i)}}}({width:400,height:200});let f=[],v=[],M=!0,x=1,b=0;const T=document.getElementById("mass-slider"),B=document.getElementById("damping-slider"),w=document.getElementById("spring-slider"),F=document.getElementById("y0-slider"),P=document.getElementById("v0-slider"),C=document.getElementById("forcing-select"),E=document.getElementById("forcing-params-container"),I=document.getElementById("constant-params"),k=document.getElementById("cosine-params"),L=document.getElementById("step-params"),S=document.getElementById("impulse-params"),W=document.getElementById("force-slider"),A=document.getElementById("amplitude-slider"),q=document.getElementById("frequency-slider"),H=document.getElementById("step-amplitude-slider"),R=document.getElementById("step-time-slider"),$=document.getElementById("impulse-amplitude-slider"),N=document.getElementById("impulse-time-slider");function D(){document.getElementById("force-value").textContent=`${parseFloat(W.value).toFixed(2)} N`,document.getElementById("amplitude-value").textContent=`${parseFloat(A.value).toFixed(2)} N`,document.getElementById("frequency-value").textContent=`${parseFloat(q.value).toFixed(2)} Hz`,document.getElementById("step-amplitude-value").textContent=`${parseFloat(H.value).toFixed(2)} N`,document.getElementById("step-time-value").textContent=`${parseFloat(R.value).toFixed(2)} s`,document.getElementById("impulse-amplitude-value").textContent=`${parseFloat($.value).toFixed(2)} N·s`,document.getElementById("impulse-time-value").textContent=`${parseFloat(N.value).toFixed(2)} s`}function Y(){document.getElementById("mass-value").textContent=`${parseFloat(T.value).toFixed(2)} kg`,document.getElementById("damping-value").textContent=`${parseFloat(B.value).toFixed(2)} N·s/m`,document.getElementById("spring-value").textContent=`${parseFloat(w.value).toFixed(2)} N/m`,document.getElementById("y0-value").textContent=`${parseFloat(F.value).toFixed(2)} m`,document.getElementById("v0-value").textContent=`${parseFloat(P.value).toFixed(2)} m/s`;const t=p.getSystemProperties();document.getElementById("freq-display").textContent=`${t.f0.toFixed(3)} Hz`,document.getElementById("regime-display").textContent=t.regime,document.getElementById("zeta-display").textContent=t.zeta.toFixed(3),document.getElementById("q-display").textContent=t.Q.toFixed(2)}function j(){const t={m:parseFloat(T.value),b:parseFloat(B.value),k:parseFloat(w.value)};p.setParameters(t),u.setSystemParams(t),Y()}function O(){M=!M;const t=document.getElementById("play-pause-btn");M?(t.textContent="⏸️ Pause",t.classList.remove("paused")):(t.textContent="▶️ Play",t.classList.add("paused"))}function V(){p.setForcing("cosine",{amplitude:parseFloat(A.value),frequency:parseFloat(q.value)}),D()}function X(){p.setForcing("step",{amplitude:parseFloat(H.value),stepTime:parseFloat(R.value)}),D()}function z(){p.setForcing("impulse",{amplitude:parseFloat($.value),impulseTime:parseFloat(N.value)}),D()}T.addEventListener("input",()=>{j()}),B.addEventListener("input",()=>{j()}),w.addEventListener("input",()=>{j()}),F.addEventListener("input",()=>{Y()}),P.addEventListener("input",()=>{Y()}),C.addEventListener("change",function(){const t=C.value;I.style.display="none",k.style.display="none",L.style.display="none",S.style.display="none","none"===t?(E.style.display="none",p.setForcing("none",{})):(E.style.display="block","constant"===t?(I.style.display="block",p.setForcing("constant",{force:parseFloat(W.value)})):"cosine"===t?(k.style.display="block",p.setForcing("cosine",{amplitude:parseFloat(A.value),frequency:parseFloat(q.value)})):"step"===t?(L.style.display="block",p.setForcing("step",{amplitude:parseFloat(H.value),stepTime:parseFloat(R.value)})):"impulse"===t&&(S.style.display="block",p.setForcing("impulse",{amplitude:parseFloat($.value),impulseTime:parseFloat(N.value)}))),D()}),W.addEventListener("input",function(){p.setForcing("constant",{force:parseFloat(W.value)}),D()}),A.addEventListener("input",V),q.addEventListener("input",V),H.addEventListener("input",X),R.addEventListener("input",X),$.addEventListener("input",z),N.addEventListener("input",z),document.getElementById("reset-btn").addEventListener("click",function(){const t=parseFloat(F.value),e=parseFloat(P.value);x=t,b=e;const i=p.getForcing();p.reset(),p.setParameters({m:parseFloat(T.value),b:parseFloat(B.value),k:parseFloat(w.value),y0:t,v0:e}),p.setForcing(i.name,i.params),f=[],v=[],M||O(),Y()}),document.getElementById("play-pause-btn").addEventListener("click",O),document.querySelectorAll(".scenario-btn").forEach(t=>{t.addEventListener("click",()=>{!function(t){switch(t){case"shm":T.value=1,B.value=0,w.value=1;break;case"underdamped":T.value=1,B.value=.2,w.value=1;break;case"critical":T.value=1,B.value=2,w.value=1;break;case"overdamped":T.value=1,B.value=5,w.value=1}p.reset(),p.setParameters({m:parseFloat(T.value),b:parseFloat(B.value),k:parseFloat(w.value)}),f=[],v=[],Y()}(t.dataset.scenario)})});let G=performance.now();Y(),D(),requestAnimationFrame(function t(e){if(e-G>=r){if(M){const t=p.step(h);f.push({t:t.t,y:t.y}),v.push({y:t.y,v:t.v})}const t=p.getState(),i=p.getForcing(),n={name:i.name,fn:a[i.name],params:i.params},o=n.fn(t.t,n.params);u.draw(m,t,o),g.draw(d,f,x,n),y.draw(c,v,x,b),G=e}requestAnimationFrame(t)})
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="canvas-container">
+        <canvas id="springCanvas" width="400" height="400"></canvas>
+        <canvas id="graphCanvas" width="400" height="200"></canvas>
+        <canvas id="phaseCanvas" width="400" height="200"></canvas>
+      </div>
+
+      <div class="controls">
+        <div class="control-group">
+          <label>
+            Mass (m):
+            <span class="value-display" id="mass-value">1.00 kg</span>
+          </label>
+          <input type="range" id="mass-slider" min="0.1" max="5" step="0.1" value="1">
+        </div>
+
+        <div class="control-group">
+          <label>
+            Damping (b):
+            <span class="value-display" id="damping-value">0.10 N·s/m</span>
+          </label>
+          <input type="range" id="damping-slider" min="0" max="2" step="0.05" value="0.1">
+        </div>
+
+        <div class="control-group">
+          <label>
+            Spring Constant (k):
+            <span class="value-display" id="spring-value">1.00 N/m</span>
+          </label>
+          <input type="range" id="spring-slider" min="0.1" max="5" step="0.1" value="1">
+        </div>
+
+        <div class="control-group">
+          <label>
+            Initial Position (y₀):
+            <span class="value-display" id="y0-value">1.00 m</span>
+          </label>
+          <input type="range" id="y0-slider" min="-2" max="2" step="0.1" value="1">
+        </div>
+
+        <div class="control-group">
+          <label>
+            Initial Velocity (v₀):
+            <span class="value-display" id="v0-value">0.00 m/s</span>
+          </label>
+          <input type="range" id="v0-slider" min="-5" max="5" step="0.1" value="0">
+        </div>
+
+        <div class="control-group">
+          <label>
+            Forcing Function f(t):
+          </label>
+          <select id="forcing-select" class="forcing-select">
+            <option value="none">None (free oscillation)</option>
+            <option value="constant">Constant (gravity-like)</option>
+            <option value="cosine">Cosine: a·cos(ωt)</option>
+            <option value="step">Step function</option>
+            <option value="impulse">Impulse: a·δ(t - t₀)</option>
+          </select>
+        </div>
+
+        <div class="control-group" id="forcing-params-container" style="display: none;">
+          <!-- Constant force parameter -->
+          <div id="constant-params" style="display: none;">
+            <label>
+              Force (g):
+              <span class="value-display" id="force-value">1.00 N</span>
+            </label>
+            <input type="range" id="force-slider" min="-10" max="10" step="0.1" value="1">
+          </div>
+
+          <!-- Cosine parameters -->
+          <div id="cosine-params" style="display: none;">
+            <label class="forcing-param-label">
+              Amplitude (a):
+              <span class="value-display" id="amplitude-value">1.00 N</span>
+            </label>
+            <input type="range" id="amplitude-slider" min="0" max="5" step="0.1" value="1" class="forcing-param-slider">
+
+            <label class="forcing-param-label">
+              Frequency (ω/2π):
+              <span class="value-display" id="frequency-value">1.00 Hz</span>
+            </label>
+            <input type="range" id="frequency-slider" min="0.1" max="5" step="0.1" value="1">
+          </div>
+
+          <!-- Step function parameters -->
+          <div id="step-params" style="display: none;">
+            <label class="forcing-param-label">
+              Amplitude:
+              <span class="value-display" id="step-amplitude-value">1.00 N</span>
+            </label>
+            <input type="range" id="step-amplitude-slider" min="-10" max="10" step="0.1" value="1" class="forcing-param-slider">
+
+            <label class="forcing-param-label">
+              Step Time:
+              <span class="value-display" id="step-time-value">1.00 s</span>
+            </label>
+            <input type="range" id="step-time-slider" min="0" max="10" step="0.1" value="1">
+          </div>
+
+          <!-- Impulse parameters -->
+          <div id="impulse-params" style="display: none;">
+            <label class="forcing-param-label">
+              Impulse Magnitude (a):
+              <span class="value-display" id="impulse-amplitude-value">1.00 N·s</span>
+            </label>
+            <input type="range" id="impulse-amplitude-slider" min="-10" max="10" step="0.1" value="1" class="forcing-param-slider">
+
+            <label class="forcing-param-label">
+              Impulse Time (t₀):
+              <span class="value-display" id="impulse-time-value">1.00 s</span>
+            </label>
+            <input type="range" id="impulse-time-slider" min="0" max="10" step="0.1" value="1">
+          </div>
+        </div>
+
+        <div class="scenario-buttons">
+          <button class="scenario-btn" data-scenario="shm">Simple Harmonic</button>
+          <button class="scenario-btn" data-scenario="underdamped">Underdamped</button>
+          <button class="scenario-btn" data-scenario="critical">Critical Damping</button>
+          <button class="scenario-btn" data-scenario="overdamped">Overdamped</button>
+        </div>
+
+        <div class="control-buttons">
+          <button class="control-btn reset-btn" id="reset-btn">🔄 Reset</button>
+          <button class="control-btn play-pause-btn" id="play-pause-btn">⏸️ Pause</button>
+        </div>
+
+        <div class="info-panel">
+          <h3>System Properties</h3>
+          <p>Natural Frequency: <span class="value" id="freq-display">0.159 Hz</span></p>
+          <p>Damping Regime: <span class="value" id="regime-display">underdamped</span></p>
+          <p>Damping Ratio (ζ): <span class="value" id="zeta-display">0.100</span></p>
+          <p>Quality Factor (Q): <span class="value" id="q-display">5.00</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
