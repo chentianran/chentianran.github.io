@@ -31,7 +31,7 @@ which is a _saddle point_.
 
 <div id="plot-saddle"></div>
 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-1.58.5.min.js" integrity="sha384-W7FXNbEY44RgDK8MunBe4gETSKi3Qo2bJAXX3PH8v5l3hdabFb9dbCIn3X69OFjX" crossorigin="anonymous"></script>
 
 <script>
     var size = 100, x = new Array(size), y = new Array(size), z = new Array(size), i, j;

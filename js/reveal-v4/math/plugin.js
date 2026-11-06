@@ -57,7 +57,7 @@ const Plugin = () => {
 			let revealOptions = deck.getConfig().math || {};
 
 			let options = { ...defaultOptions, ...revealOptions };
-			let mathjax = options.mathjax || 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js';
+			let mathjax = options.mathjax || 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js';
 			let config = options.config || 'TeX-AMS_HTML-full';
 			let url = mathjax + '?config=' + config;
 
