@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ring Road Traffic</title>
+<style>
+  :root {
+    --primary: #AA1111;
+    --primary-hover: #CC1111;
+    --text: #444;
+    --heading: #222;
+    --muted: #777;
+    --border: #e0e0e0;
+    --bg: #ffffff;
+    --bg-light: #f7f7f8;
+    --warn-bg: #fff4e5;
+    --warn-border: #f0b45a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    padding: 16px;
+  }
+  header { max-width: 1400px; margin: 0 auto 12px; }
+  header h1 { color: var(--heading); font-size: 22px; font-weight: 600; }
+  header p { color: var(--muted); }
+  header a { color: var(--primary); text-decoration: none; }
+
+  .layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr) 300px;
+    gap: 16px;
+    align-items: start;
+  }
+  .panel {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .panel + .panel { margin-top: 12px; }
+  .panel h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--heading);
+    margin-bottom: 10px;
+  }
+  .center { min-width: 0; }
+  #track-wrap {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  #track { display: block; cursor: pointer; touch-action: manipulation; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: 1fr auto; row-gap: 4px; column-gap: 8px; }
+  .stats dt { color: var(--muted); }
+  .stats dd { font-variant-numeric: tabular-nums; text-align: right; color: var(--heading); }
+  .legend { display: flex; gap: 12px; font-size: 12px; margin-top: 6px; color: var(--muted); }
+  .legend span::before {
+    content: ""; display: inline-block; width: 14px; height: 3px;
+    vertical-align: middle; margin-right: 4px; background: var(--c);
+  }
+  #colorbar { width: 100%; height: 12px; border-radius: 3px; display: block; }
+  .colorbar-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* Controls */
+  .control { margin-bottom: 10px; }
+  .control label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 3px; }
+  .control label .val { font-variant-numeric: tabular-nums; color: var(--primary); font-weight: 600; }
+  input[type=range] { width: 100%; accent-color: var(--primary); }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .row + .row { margin-top: 8px; }
+  button {
+    font: inherit;
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  button:hover:not(:disabled) { background: var(--primary-hover); }
+  button.secondary { background: #fff; color: var(--primary); }
+  button.secondary:hover:not(:disabled) { background: #fbeaea; }
+  button:disabled { opacity: 0.45; cursor: not-allowed; }
+  select, input[type=number] {
+    font: inherit; padding: 4px 6px; border: 1px solid var(--border); border-radius: 6px; background: #fff;
+  }
+  .mix { display: grid; grid-template-columns: 1fr 70px; gap: 6px; align-items: center; margin-bottom: 10px; }
+  .checkbox { display: flex; gap: 6px; align-items: center; font-size: 13px; }
+  .hint { color: var(--muted); font-size: 13px; }
+  #warning {
+    display: none;
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+  }
+  #warning.show { display: block; }
+  details { margin-top: 12px; }
+  details summary { cursor: pointer; color: var(--primary); }
+  details p { margin-top: 6px; line-height: 1.5; }
+
+  @media (max-width: 1150px) {
+    .layout { grid-template-columns: 1fr 1fr; }
+    .center { grid-column: 1 / -1; order: -1; }
+  }
+  @media (max-width: 700px) {
+    body { padding: 16px; }
+    .layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ring Road Traffic</h1>
+  <p>Cars following the Intelligent Driver Model on a circular track. Click a car to select it. <a href="./">MATH-4400</a></p>
+</header>
+
+<main class="layout">
+  <!-- ============ LEFT: info & plot ============ -->
+  <aside>
+    <div class="panel">
+      <h2>Measurements</h2>
+      <dl class="stats">
+        <dt>Time</dt><dd id="st-time">0 s</dd>
+        <dt>Cars</dt><dd id="st-n"></dd>
+        <dt>Density</dt><dd id="st-density"></dd>
+        <dt>Mean speed</dt><dd id="st-mean"></dd>
+        <dt>Min / max speed</dt><dd id="st-minmax"></dd>
+        <dt>Flow ρ·v̄</dt><dd id="st-flow"></dd>
+        <dt>Detector flow (30 s)</dt><dd id="st-det"></dd>
+      </dl>
+    </div>
+    <div class="panel">
+      <h2>Flow over time</h2>
+      <canvas id="plot"></canvas>
+      <div class="legend">
+        <span style="--c:#AA1111">ρ·v̄</span>
+        <span style="--c:#3b6fb6">detector</span>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Speed color</h2>
+      <canvas id="colorbar"></canvas>
+      <div class="colorbar-labels"><span>0</span><span>20</span><span>40</span><span>60</span><span>80 mph</span></div>
+      <details>
+        <summary>The model</summary>
+        <p>Each car <i>i</i> accelerates by
+          <br>a = A [1 − (v/v₀)<sup>δ</sup> − (s*/s)²],
+          <br>s* = s₀ + vT + vΔv / (2√(AB)),
+          <br>where s is the gap to the car ahead and Δv the closing speed.
+          Distracted drivers use the gap and leader speed from the moment they looked away.
+          An emergency override brakes (up to 9 m/s²) whenever the real situation demands
+          more than the comfortable braking B.</p>
+      </details>
+    </div>
+  </aside>
+
+  <!-- ============ CENTER: track ============ -->
+  <section class="center">
+    <div id="track-wrap"><canvas id="track"></canvas></div>
+  </section>
+
+  <!-- ============ RIGHT: controls ============ -->
+  <aside>
+    <div id="warning"></div>
+
+    <div class="panel">
+      <h2>Simulation</h2>
+      <div class="row">
+        <button id="btn-play">Pause</button>
+        <button id="btn-restart" class="secondary">Restart</button>
+      </div>
+      <div style="height:10px"></div>
+      <div id="sim-sliders"></div>
+      <label class="checkbox"><input type="checkbox" id="chk-ride" disabled> Ride along with selected car</label>
+    </div>
+
+    <div class="panel">
+      <h2>Population</h2>
+      <div class="mix" id="mix"></div>
+      <div id="pop-sliders"></div>
+      <div class="row"><button id="btn-apply" class="secondary">Apply &amp; restart</button></div>
+      <div class="row">
+        <select id="add-type"></select>
+        <button id="btn-add" class="secondary">Add car</button>
+        <button id="btn-remove" class="secondary">Remove car</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 id="sel-title">Selected car</h2>
+      <p class="hint" id="sel-hint">Click a car on the track to select it.</p>
+      <div id="sel-body" style="display:none">
+        <div class="row" style="margin-bottom:10px">
+          <button id="btn-brake">Brake</button>
+          <button id="btn-distract">Distract</button>
+          <button id="btn-deselect" class="secondary">Deselect</button>
+        </div>
+        <div id="car-sliders"></div>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<script type="module">
+// =====================================================================
+// Constants and driver presets
+// =====================================================================
+const MPH = 0.44704;               // m/s per mph
+const COLOR_MAX = 80 * MPH;        // speed mapped to full green
+const DT = 0.02;                   // physics step (simulated seconds)
+const A_MAX = 9;                   // physical braking limit (m/s^2)
+const BRAKE_DECEL = 6;             // "Brake" button deceleration (m/s^2)
+const BRAKE_TIME = 2;              // brake time in seconds
+const DISTRACT_TIME = 4;           // distract time in seconds
+const DETECTOR_WINDOW = 30;        // s
+const PLOT_WINDOW = 120;           // s
+const SAMPLE_EVERY = 0.5;          // s
+
+const PRESETS = {
+  normal:     { label: 'Normal',     v0: 33.5, T: 1.5, A: 0.7, B: 1.5, s0: 2.0, delta: 4, len: 5 },
+  cautious:   { label: 'Cautious',   v0: 29.0, T: 2.0, A: 0.6, B: 1.2, s0: 3.0, delta: 4, len: 5 },
+  aggressive: { label: 'Aggressive', v0: 36.0, T: 0.9, A: 1.5, B: 2.5, s0: 1.5, delta: 4, len: 5 },
+};
+
+// Per-driver knobs, shown in the selected-car panel (UI units may differ from SI).
+// LaTeX labels are not rendered in the UI (bug in MathJax?) so unicode is used for now (ugly)
+const PARAM_SPECS = [
+  { key: 'v0',    label: 'Desired speed v₀',   min: 20,  max: 100, step: 1,    unit: 'mph',  toUI: v => v / MPH, fromUI: u => u * MPH, digits: 0 },
+  { key: 'T',     label: 'Time gap T',         min: 0.5, max: 3,   step: 0.05, unit: 's',    digits: 2 },
+  { key: 'A',     label: 'Max acceleration A', min: 0.2, max: 3,   step: 0.05, unit: 'm/s²', digits: 2 },
+  { key: 'B',     label: 'Comfort braking B',  min: 0.5, max: 4,   step: 0.05, unit: 'm/s²', digits: 2 },
+  { key: 's0',    label: 'Minimum gap s₀',     min: 0.5, max: 6,   step: 0.1,  unit: 'm',    digits: 1 },
+  { key: 'delta', label: 'Accel. exponent δ',  min: 1,   max: 10,  step: 0.5,  unit: '',     digits: 1 },
+  { key: 'len',   label: 'Car length ℓ',       min: 3,   max: 15,  step: 0.5,  unit: 'm',    digits: 1 },
+];
+
+// =====================================================================
+// Model: state, IDM, RK4 integrator
+//    cars[] is ordered around the ring: cars[i+1] is the leader of cars[i].
+//    x is the front-bumper position in [0, L).
+// =====================================================================
+const sim = {
+  L: 1000,
+  t: 0,
+  cars: [],
+  nextId: 1,
+  crossings: [],     // detector crossing times
+  series: [],        // {t, q, qDet}
+  lastSample: 0,
+};
+
+function idm(p, v, s, dv) {
+  s = Math.max(s, 0.1);
+  const sStar = p.s0 + Math.max(0, v * p.T + v * dv / (2 * Math.sqrt(p.A * p.B)));
+  const vr = Math.max(v, 0) / p.v0;
+  return p.A * (1 - Math.pow(vr, p.delta) - (sStar / s) ** 2);
+}
+
+// Distance from car i's front bumper to its leader's front bumper.
+function rawHeadway(xs, i) {
+  const N = xs.length;
+  if (N === 1) return sim.L;
+  const d = xs[(i + 1) % N] - xs[i];
+  return ((d % sim.L) + sim.L) % sim.L;
+}
+
+// Acceleration of every car given positions/velocities at time t.
+// When `record` is true, emergency-override events are flagged for display.
+function accelerations(xs, vs, t, out, record) {
+  const cars = sim.cars, N = cars.length;
+  for (let i = 0; i < N; i++) {
+    const car = cars[i], j = (i + 1) % N, lead = cars[j];
+    const sReal = rawHeadway(xs, i) - lead.p.len;
+    const vLead = vs[j];
+
+    // What the driver perceives.
+    let s = sReal, vl = vLead;
+    if (t < car.distractUntil) { s = car.frozenS; vl = car.frozenVLead; }
+
+    let a = t < car.brakeUntil ? -BRAKE_DECEL : idm(car.p, vs[i], s, vs[i] - vl);
+
+    // Emergency override uses the *real* gap, regardless of attention.
+    const closing = vs[i] - vLead;
+    if (closing > 0) {
+      const bReq = closing * closing / (2 * Math.max(sReal - 0.5, 0.05));
+      if (bReq > car.p.B && -bReq < a) {
+        a = -Math.min(bReq, A_MAX);
+        if (record) car.emergencyUntil = t + 0.6;
+      }
+    }
+    a = Math.max(a, -A_MAX);
+    if (vs[i] <= 0 && a < 0) a = 0;
+    out[i] = a;
+  }
+}
+
+function step(h) {
+  const cars = sim.cars, N = cars.length, t = sim.t;
+  const x0 = new Float64Array(N), v0 = new Float64Array(N);
+  for (let i = 0; i < N; i++) { x0[i] = cars[i].x; v0[i] = cars[i].v; }
+
+  const k1 = new Float64Array(N), k2 = new Float64Array(N), k3 = new Float64Array(N), k4 = new Float64Array(N);
+  const xt = new Float64Array(N), vt = new Float64Array(N), v2 = new Float64Array(N), v3 = new Float64Array(N);
+
+  accelerations(x0, v0, t, k1, true);
+  for (let i = 0; i < N; i++) { xt[i] = x0[i] + h / 2 * v0[i]; vt[i] = v2[i] = v0[i] + h / 2 * k1[i]; }
+  accelerations(xt, vt, t + h / 2, k2, false);
+  for (let i = 0; i < N; i++) { xt[i] = x0[i] + h / 2 * v2[i]; vt[i] = v3[i] = v0[i] + h / 2 * k2[i]; }
+  accelerations(xt, vt, t + h / 2, k3, false);
+  for (let i = 0; i < N; i++) { xt[i] = x0[i] + h * v3[i]; vt[i] = v0[i] + h * k3[i]; }
+  accelerations(xt, vt, t + h, k4, false);
+
+  sim.t = t + h;
+  for (let i = 0; i < N; i++) {
+    const c = cars[i];
+    let x = x0[i] + h / 6 * (v0[i] + 2 * v2[i] + 2 * v3[i] + vt[i]);
+    c.v = Math.max(0, v0[i] + h / 6 * (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i]));
+    if (x >= sim.L) { x -= sim.L; sim.crossings.push(sim.t); }   // loop detector at x = 0
+    c.x = x;
+    c.lastAcc = k1[i];
+  }
+
+  // Last-resort guard: gaps never go below a few cm.
+  if (N > 1) {
+    const xs = cars.map(c => c.x);
+    for (let i = N - 1; i >= 0; i--) {
+      const lead = cars[(i + 1) % N];
+      const gap = rawHeadway(xs, i) - lead.p.len;
+      if (gap < 0.05) {
+        let x = xs[i] - (0.05 - gap);
+        if (x < 0) x += sim.L;
+        cars[i].x = xs[i] = x;
+        cars[i].v = Math.min(cars[i].v, lead.v);
+      }
+    }
+  }
+}
+
+// Equilibrium speed for a driver at a given gap (IDM with dv = 0), by bisection.
+function equilibriumSpeed(p, gap) {
+  let lo = 0, hi = p.v0;
+  if (idm(p, 0, gap, 0) <= 0) return 0;
+  for (let k = 0; k < 50; k++) {
+    const m = (lo + hi) / 2;
+    if (idm(p, m, gap, 0) > 0) lo = m; else hi = m;
+  }
+  return lo;
+}
+
+function spaceNeeded(cars = sim.cars) {
+  return cars.reduce((sum, c) => sum + c.p.len + c.p.s0, 0);
+}
+
+// =====================================================================
+// Population: presets, mix, spread, insert/remove
+// =====================================================================
+const population = {
+  mix: { normal: 30, cautious: 0, aggressive: 0 },
+  spread: 0.05,
+};
+
+function sampleParams(type, spread) {
+  const base = PRESETS[type], p = {};
+  for (const { key } of PARAM_SPECS) {
+    const jitter = key === 'delta' ? 0 : spread * (2 * Math.random() - 1);
+    p[key] = base[key] * (1 + jitter);
+  }
+  return p;
+}
+
+function makeCar(type, p) {
+  return {
+    id: sim.nextId++, type, p, x: 0, v: 0, lastAcc: 0,
+    brakeUntil: -1, distractUntil: -1, frozenS: 0, frozenVLead: 0, emergencyUntil: -1,
+  };
+}
+
+function buildPopulation() {
+  const types = [];
+  for (const [type, n] of Object.entries(population.mix)) for (let k = 0; k < n; k++) types.push(type);
+  for (let i = types.length - 1; i > 0; i--) {             // shuffle types around the ring
+    const j = Math.floor(Math.random() * (i + 1));
+    [types[i], types[j]] = [types[j], types[i]];
+  }
+  sim.nextId = 1;
+  return types.map(type => makeCar(type, sampleParams(type, population.spread)));
+}
+
+function restart() {
+  const cars = buildPopulation();
+  if (cars.length === 0) { warn('The population needs at least one car.'); return false; }
+  if (spaceNeeded(cars) > sim.L) {
+    warn(`These ${cars.length} cars need at least ${spaceNeeded(cars).toFixed(0)} m, but the track is ${sim.L} m.`);
+    return false;
+  }
+  const N = cars.length, spacing = sim.L / N;
+  cars.forEach((c, i) => {
+    c.x = (i + 0.5) * spacing;
+    c.v = equilibriumSpeed(c.p, spacing - c.p.len);
+  });
+  cars[0].x += 0.5;                                          // tiny nudge to break symmetry
+  sim.cars = cars;
+  sim.t = 0; sim.crossings = []; sim.series = []; sim.lastSample = 0;
+  selectCar(null);
+  return true;
+}
+
+function insertCar(type) {
+  const cars = sim.cars, N = cars.length, p = sampleParams(type, population.spread);
+  // Find the largest free gap.
+  const xs = cars.map(c => c.x);
+  let best = -1, bestGap = -Infinity;
+  for (let i = 0; i < N; i++) {
+    const gap = rawHeadway(xs, i) - cars[(i + 1) % N].p.len;
+    if (gap > bestGap) { bestGap = gap; best = i; }
+  }
+  const need = p.len + 2 * p.s0;
+  if (bestGap < need) {
+    warn(`No gap is large enough for another car (largest gap ${bestGap.toFixed(1)} m, need ${need.toFixed(1)} m).`);
+    return;
+  }
+  const rear = cars[best], lead = cars[(best + 1) % N];
+  const lo = rear.x + p.s0 + p.len, hi = rear.x + bestGap - p.s0;  // front-bumper range
+  const car = makeCar(type, p);
+  car.x = ((lo + hi) / 2) % sim.L;
+  car.v = (rear.v + lead.v) / 2;
+  // Only the cyclic order matters: insert right after `rear`.
+  cars.splice(best + 1, 0, car);
+}
+
+function removeCar() {
+  if (sim.cars.length <= 1) { warn('At least one car must remain on the track.'); return; }
+  let idx = sim.cars.indexOf(selected);
+  if (idx < 0) {
+    let maxId = -1;
+    sim.cars.forEach((c, i) => { if (c.id > maxId) { maxId = c.id; idx = i; } });
+  }
+  sim.cars.splice(idx, 1);
+  selectCar(null);
+}
+
+function setTrackLength(L) {
+  if (spaceNeeded() > L) {
+    warn(`The current cars need at least ${spaceNeeded().toFixed(0)} m of track.`);
+    return false;
+  }
+  const r = L / sim.L;
+  for (const c of sim.cars) c.x *= r;
+  sim.L = L;
+  return true;
+}
+
+// =====================================================================
+// 4. Measurement
+// =====================================================================
+function measure() {
+  const cars = sim.cars, N = cars.length;
+  let sum = 0, min = Infinity, max = 0;
+  for (const c of cars) { sum += c.v; min = Math.min(min, c.v); max = Math.max(max, c.v); }
+  const mean = N ? sum / N : 0;
+  const density = N / sim.L;                        // veh/m
+  const q = density * mean * 3600;                  // veh/h
+  while (sim.crossings.length && sim.crossings[0] < sim.t - DETECTOR_WINDOW) sim.crossings.shift();
+  const window = Math.min(sim.t, DETECTOR_WINDOW);
+  const qDet = window > 1 ? sim.crossings.length / window * 3600 : 0;
+  return { N, mean, min, max, density, q, qDet };
+}
+
+function sample(m) {
+  if (sim.t - sim.lastSample < SAMPLE_EVERY) return;
+  sim.lastSample = sim.t;
+  sim.series.push({ t: sim.t, q: m.q, qDet: m.qDet });
+  while (sim.series.length && sim.series[0].t < sim.t - PLOT_WINDOW) sim.series.shift();
+}
+
+// =====================================================================
+// 5. Rendering
+// =====================================================================
+
+// Speed color: red -> green at constant perceptual lightness (OKLCH), with a fixed bit of blue.
+function oklchToLinearRGB(L, C, hDeg) {
+  const h = hDeg * Math.PI / 180, a = C * Math.cos(h), b = C * Math.sin(h);
+  const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3;
+  const m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3;
+  const s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3;
+  return [
+    4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
+    -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+    -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s,
+  ];
+}
+const gamma = c => { c = Math.min(1, Math.max(0, c)); return c <= 0.0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - 0.055; };
+const BLUE = [0.05, 0.12, 0.65], BLUE_MIX = 0.15;
+const COLOR_LUT = Array.from({ length: 101 }, (_, k) => {
+  const f = k / 100;
+  const lin = oklchToLinearRGB(0.74, 0.15, 25 + f * (145 - 25));
+  const rgb = lin.map((c, i) => gamma((1 - BLUE_MIX) * c + BLUE_MIX * BLUE[i]));
+  return `rgb(${rgb.map(c => Math.round(c * 255)).join(',')})`;
+});
+const speedColor = v => COLOR_LUT[Math.round(Math.min(1, Math.max(0, v / COLOR_MAX)) * 100)];
+
+function fitCanvas(canvas, w, h) {
+  const dpr = window.devicePixelRatio || 1;
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  canvas.width = Math.round(w * dpr);
+  canvas.height = Math.round(h * dpr);
+  const ctx = canvas.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  return ctx;
+}
+
+const trackCanvas = document.getElementById('track');
+const plotCanvas = document.getElementById('plot');
+let trackCtx, plotCtx, trackSize = 600, plotW = 250, plotH = 170;
+let carScreen = [];   // [{car, px, py}] for hit-testing
+
+function geometry() {
+  const S = trackSize;
+  return { S, cx: S / 2, cy: S / 2, R: S * 0.38, road: Math.max(18, S * 0.045) };
+}
+
+function refOffset() {
+  return rideAlong && selected ? selected.x : 0;
+}
+
+// Track position -> canvas angle (0 at top, clockwise).
+function angleOf(x) {
+  return -Math.PI / 2 + 2 * Math.PI * (x - refOffset()) / sim.L;
+}
+
+function drawTrack() {
+  const ctx = trackCtx, { S, cx, cy, R, road } = geometry();
+  ctx.clearRect(0, 0, S, S);
+
+  // Road
+  ctx.strokeStyle = '#d6d6da';
+  ctx.lineWidth = road;
+  ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2 * Math.PI); ctx.stroke();
+  ctx.strokeStyle = '#ffffff';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([8, 10]);
+  ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2 * Math.PI); ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Tick marks every L/20 (fixed to the ground, so they move in the co-rotating frame)
+  ctx.strokeStyle = '#999';
+  ctx.fillStyle = '#999';
+  ctx.font = '11px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  for (let k = 0; k < 20; k++) {
+    const th = angleOf(k * sim.L / 20), c = Math.cos(th), s = Math.sin(th);
+    const r0 = R - road / 2 - 4, r1 = R - road / 2 - (k % 5 === 0 ? 14 : 8);
+    ctx.lineWidth = k % 5 === 0 ? 2 : 1;
+    ctx.beginPath(); ctx.moveTo(cx + r0 * c, cy + r0 * s); ctx.lineTo(cx + r1 * c, cy + r1 * s); ctx.stroke();
+    if (k % 5 === 0 && k > 0) {
+      const rl = R - road / 2 - 36;
+      ctx.fillText(`${Math.round(k * sim.L / 20)} m`, cx + rl * c, cy + rl * s);
+    }
+  }
+
+  // Loop detector at x = 0: checkered strip across the road
+  {
+    const th = angleOf(0), c = Math.cos(th), s = Math.sin(th);
+    const n = 6, w = 6;
+    ctx.save();
+    ctx.translate(cx + R * c, cy + R * s);
+    ctx.rotate(th);
+    for (let k = 0; k < n; k++) {
+      for (let col = 0; col < 2; col++) {
+        ctx.fillStyle = (k + col) % 2 ? '#222' : '#fff';
+        ctx.fillRect(-road / 2 + k * road / n, -w + col * w, road / n, w);
+      }
+    }
+    ctx.restore();
+    const rl = R - road / 2 - 26;
+    ctx.fillStyle = '#AA1111';
+    ctx.font = 'bold 11px sans-serif';
+    ctx.fillText('detector', cx + rl * c, cy + rl * s);
+  }
+
+  // Cars
+  const circumference = 2 * Math.PI * R;
+  const N = sim.cars.length;
+  const labelSpace = circumference / Math.max(N, 1);
+  carScreen = [];
+  for (const car of sim.cars) {
+    const xc = car.x - car.p.len / 2;                     // body center
+    const th = angleOf(xc), c = Math.cos(th), s = Math.sin(th);
+    const px = cx + R * c, py = cy + R * s;
+    const lenPx = Math.max(car.p.len / sim.L * circumference, 20);
+    const widPx = Math.max(road * 0.42, 8);
+    carScreen.push({ car, px, py });
+
+    ctx.save();
+    ctx.translate(px, py);
+    ctx.rotate(th + Math.PI / 2);                          // car's long axis along the tangent
+    ctx.fillStyle = speedColor(car.v);
+    roundRect(ctx, -lenPx / 2, -widPx / 2, lenPx, widPx, 3);
+    ctx.fill();
+
+    const emergency = sim.t < car.emergencyUntil;
+    const braking = sim.t < car.brakeUntil;
+    const distracted = sim.t < car.distractUntil;
+    if (emergency) {
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = Math.floor(sim.t * 10) % 2 ? '#ff2a2a' : '#ffffff';
+      ctx.stroke();
+    } else if (car === selected) {
+      ctx.lineWidth = 3; ctx.strokeStyle = '#222'; ctx.stroke();
+    } else {
+      ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(0,0,0,0.35)'; ctx.stroke();
+    }
+    if (braking) {                                         // brake lights at the rear
+      ctx.fillStyle = '#ff1a1a';
+      ctx.fillRect(-lenPx / 2 - 1, -widPx / 2, 3, widPx);
+    }
+    ctx.restore();
+
+    if (distracted) {                                      // dashed halo
+      ctx.save();
+      ctx.strokeStyle = '#7a3db8';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath(); ctx.arc(px, py, Math.max(lenPx, widPx) * 0.75, 0, 2 * Math.PI); ctx.stroke();
+      ctx.restore();
+    }
+
+    // Number label outside the ring (skip if too crowded, but always label the selected car)
+    if (labelSpace >= 16 || car === selected) {
+      const rl = R + road / 2 + 12;
+      ctx.fillStyle = car === selected ? '#AA1111' : '#444';
+      ctx.font = car === selected ? 'bold 12px sans-serif' : '11px sans-serif';
+      ctx.fillText(String(car.id), cx + rl * c, cy + rl * s);
+    }
+  }
+
+  // Center readout
+  const m = lastMeasure;
+  ctx.fillStyle = '#222';
+  ctx.font = `600 ${Math.round(S * 0.06)}px sans-serif`;
+  ctx.fillText(m ? `${(m.mean / MPH).toFixed(0)} mph` : '', cx, cy - S * 0.02);
+  ctx.fillStyle = '#777';
+  ctx.font = `${Math.round(S * 0.025)}px sans-serif`;
+  ctx.fillText('mean speed', cx, cy + S * 0.035);
+  ctx.fillText(rideAlong && selected ? `frame: riding with car ${selected.id}` : 'frame: ground', cx, cy + S * 0.075);
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+function niceMax(v) {
+  if (v <= 0) return 1;
+  const p = 10 ** Math.floor(Math.log10(v)), f = v / p;
+  return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10) * p;
+}
+
+function drawPlot() {
+  const ctx = plotCtx, W = plotW, H = plotH;
+  const ml = 40, mr = 14, mt = 8, mb = 22, pw = W - ml - mr, ph = H - mt - mb;
+  ctx.clearRect(0, 0, W, H);
+  const data = sim.series;
+  const t1 = Math.max(sim.t, PLOT_WINDOW), t0 = t1 - PLOT_WINDOW;
+  const yMax = niceMax(Math.max(100, ...data.map(d => Math.max(d.q, d.qDet))));
+  const X = t => ml + (t - t0) / PLOT_WINDOW * pw;
+  const Y = q => mt + ph - q / yMax * ph;
+
+  ctx.strokeStyle = '#eee'; ctx.lineWidth = 1;
+  ctx.fillStyle = '#888'; ctx.font = '10px sans-serif';
+  ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+  for (let k = 0; k <= 4; k++) {
+    const q = yMax * k / 4, y = Y(q);
+    ctx.beginPath(); ctx.moveTo(ml, y); ctx.lineTo(ml + pw, y); ctx.stroke();
+    ctx.fillText(q.toFixed(0), ml - 4, y);
+  }
+  ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  for (let t = Math.ceil(t0 / 30) * 30; t <= t1; t += 30) ctx.fillText(`${t}s`, X(t), mt + ph + 5);
+  ctx.save();
+  ctx.translate(10, mt + ph / 2); ctx.rotate(-Math.PI / 2);
+  ctx.textBaseline = 'middle'; ctx.fillText('veh/h', 0, 0);
+  ctx.restore();
+
+  const line = (key, color) => {
+    if (data.length < 2) return;
+    ctx.strokeStyle = color; ctx.lineWidth = 2;
+    ctx.beginPath();
+    data.forEach((d, i) => (i ? ctx.lineTo : ctx.moveTo).call(ctx, X(d.t), Y(d[key])));
+    ctx.stroke();
+  };
+  line('qDet', '#3b6fb6');
+  line('q', '#AA1111');
+}
+
+function drawColorbar() {
+  const cb = document.getElementById('colorbar');
+  const w = cb.clientWidth || 250;
+  const ctx = fitCanvas(cb, w, 12);
+  for (let k = 0; k <= 100; k++) {
+    ctx.fillStyle = COLOR_LUT[k];
+    ctx.fillRect(k / 101 * w, 0, w / 101 + 1, 12);
+  }
+}
+
+function updateStats(m) {
+  const set = (id, s) => { document.getElementById(id).textContent = s; };
+  set('st-time', `${sim.t.toFixed(0)} s`);
+  set('st-n', m.N);
+  set('st-density', `${(m.density * 1000).toFixed(1)} veh/km`);
+  set('st-mean', `${(m.mean / MPH).toFixed(1)} mph`);
+  set('st-minmax', `${(m.min / MPH).toFixed(0)} / ${(m.max / MPH).toFixed(0)} mph`);
+  set('st-flow', `${m.q.toFixed(0)} veh/h`);
+  set('st-det', sim.t > 1 ? `${m.qDet.toFixed(0)} veh/h` : '—');
+}
+
+function resize() {
+  const wrap = document.getElementById('track-wrap');
+  trackSize = Math.max(280, Math.min(wrap.clientWidth, window.innerHeight - 110));
+  trackCtx = fitCanvas(trackCanvas, trackSize, trackSize);
+  plotW = Math.max(200, plotCanvas.parentElement.clientWidth - 28);
+  plotCtx = fitCanvas(plotCanvas, plotW, plotH);
+  drawColorbar();
+}
+
+// =====================================================================
+// 6. UI
+// =====================================================================
+let selected = null;
+let rideAlong = false;
+let running = true;
+let playback = 1;
+let warnTimer = null;
+
+function warn(msg) {
+  const el = document.getElementById('warning');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(warnTimer);
+  warnTimer = setTimeout(() => el.classList.remove('show'), 5000);
+}
+
+function makeSlider(parent, { label, min, max, step, value, format, onInput }) {
+  const wrap = document.createElement('div');
+  wrap.className = 'control';
+  wrap.innerHTML = `<label><span>${label}</span><span class="val"></span></label>
+                    <input type="range" min="${min}" max="${max}" step="${step}">`;
+  const input = wrap.querySelector('input'), val = wrap.querySelector('.val');
+  const show = () => { val.textContent = format(+input.value); };
+  input.value = value; show();
+  input.addEventListener('input', () => {
+    const ok = onInput(+input.value);
+    if (ok === false) input.value = input.dataset.last; else input.dataset.last = input.value;
+    show();
+  });
+  input.dataset.last = input.value;
+  parent.appendChild(wrap);
+  return { set(v) { input.value = v; input.dataset.last = input.value; show(); } };
+}
+
+// --- Simulation panel
+const simSliders = document.getElementById('sim-sliders');
+makeSlider(simSliders, {
+  label: 'Playback speed', min: 1, max: 10, step: 1, value: 1,
+  format: v => `${v}×`, onInput: v => { playback = v; },
+});
+const lengthSlider = makeSlider(simSliders, {
+  label: 'Track length L', min: 200, max: 3000, step: 50, value: sim.L,
+  format: v => `${v} m`, onInput: v => setTrackLength(v),
+});
+
+document.getElementById('btn-play').addEventListener('click', e => {
+  running = !running;
+  e.target.textContent = running ? 'Pause' : 'Play';
+});
+document.getElementById('btn-restart').addEventListener('click', restart);
+
+const rideBox = document.getElementById('chk-ride');
+rideBox.addEventListener('change', () => { rideAlong = rideBox.checked; });
+
+// --- Population panel
+const mixEl = document.getElementById('mix');
+const addType = document.getElementById('add-type');
+for (const [type, p] of Object.entries(PRESETS)) {
+  const label = document.createElement('label');
+  label.textContent = p.label;
+  const input = document.createElement('input');
+  input.type = 'number'; input.min = 0; input.max = 300; input.value = population.mix[type];
+  input.addEventListener('change', () => {
+    population.mix[type] = Math.max(0, Math.floor(+input.value || 0));
+    input.value = population.mix[type];
+  });
+  mixEl.append(label, input);
+  const opt = document.createElement('option');
+  opt.value = type; opt.textContent = p.label;
+  addType.appendChild(opt);
+}
+makeSlider(document.getElementById('pop-sliders'), {
+  label: 'Spread (per-car variation)', min: 0, max: 30, step: 1, value: population.spread * 100,
+  format: v => `±${v}%`, onInput: v => { population.spread = v / 100; },
+});
+document.getElementById('btn-apply').addEventListener('click', restart);
+document.getElementById('btn-add').addEventListener('click', () => insertCar(addType.value));
+document.getElementById('btn-remove').addEventListener('click', removeCar);
+
+// --- Selected-car panel
+const carSliders = {};
+const carSliderEl = document.getElementById('car-sliders');
+for (const spec of PARAM_SPECS) {
+  const toUI = spec.toUI || (v => v), fromUI = spec.fromUI || (u => u);
+  carSliders[spec.key] = makeSlider(carSliderEl, {
+    label: spec.label, min: spec.min, max: spec.max, step: spec.step, value: spec.min,
+    format: v => `${v.toFixed(spec.digits)} ${spec.unit}`,
+    onInput: u => {
+      if (!selected) return false;
+      const old = selected.p[spec.key];
+      selected.p[spec.key] = fromUI(u);
+      if ((spec.key === 'len' || spec.key === 's0') && spaceNeeded() > sim.L) {
+        selected.p[spec.key] = old;
+        warn(`Not enough room on the track: the cars would need more than ${sim.L} m.`);
+        return false;
+      }
+    },
+  });
+}
+
+function selectCar(car) {
+  selected = car;
+  document.getElementById('sel-hint').style.display = car ? 'none' : '';
+  document.getElementById('sel-body').style.display = car ? '' : 'none';
+  document.getElementById('sel-title').textContent = car ? `Car ${car.id} · ${PRESETS[car.type].label}` : 'Selected car';
+  rideBox.disabled = !car;
+  if (!car) { rideBox.checked = false; rideAlong = false; return; }
+  for (const spec of PARAM_SPECS) {
+    const toUI = spec.toUI || (v => v);
+    carSliders[spec.key].set(toUI(car.p[spec.key]));
+  }
+}
+
+document.getElementById('btn-brake').addEventListener('click', () => {
+  if (selected) selected.brakeUntil = sim.t + BRAKE_TIME;
+});
+document.getElementById('btn-distract').addEventListener('click', () => {
+  if (!selected) return;
+  const xs = sim.cars.map(c => c.x), i = sim.cars.indexOf(selected);
+  const lead = sim.cars[(i + 1) % sim.cars.length];
+  selected.frozenS = rawHeadway(xs, i) - lead.p.len;
+  selected.frozenVLead = lead.v;
+  selected.distractUntil = sim.t + DISTRACT_TIME;
+});
+document.getElementById('btn-deselect').addEventListener('click', () => selectCar(null));
+
+trackCanvas.addEventListener('click', e => {
+  const r = trackCanvas.getBoundingClientRect();
+  const mx = e.clientX - r.left, my = e.clientY - r.top;
+  let best = null, bestD = 22;
+  for (const { car, px, py } of carScreen) {
+    const d = Math.hypot(px - mx, py - my);
+    if (d < bestD) { bestD = d; best = car; }
+  }
+  if (best) selectCar(best);
+});
+
+// =====================================================================
+// 7. Main loop: fixed physics step, decoupled from rendering
+// =====================================================================
+let lastMeasure = null;
+let lastFrame = performance.now();
+let accumulator = 0;
+
+function frame(now) {
+  const real = Math.min((now - lastFrame) / 1000, 0.1);
+  lastFrame = now;
+  if (running) {
+    accumulator += real * playback;
+    let n = 0;
+    while (accumulator >= DT && n < 2000) { step(DT); accumulator -= DT; n++; }
+  }
+  lastMeasure = measure();
+  if (running) sample(lastMeasure);
+  updateStats(lastMeasure);
+  drawTrack();
+  drawPlot();
+  requestAnimationFrame(frame);
+}
+
+new ResizeObserver(resize).observe(document.getElementById('track-wrap'));
+window.addEventListener('resize', resize);
+resize();
+restart();
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
